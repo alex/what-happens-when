@@ -11,6 +11,8 @@ This is a collaborative process, so dig in and try to help out! There's tons of
 details missing, just waiting for you to add them! So send us a pull request,
 please!
 
+This is all licensed under the terms of the `Creative Commons Zero`_ license.
+
 Interrupt fires...
 ------------------
 
@@ -34,3 +36,6 @@ Javascript execution
 
 CSS interpretation
 ------------------
+
+
+.. _`Creative Commons Zero`: https://creativecommons.org/publicdomain/zero/1.0/
