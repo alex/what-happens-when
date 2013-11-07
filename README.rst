@@ -34,18 +34,21 @@ DNS lookup...
 
 Opening of a socket
 -------------------
-Once the browser receives the IP address of the destination server it takes that
-and the given port number from the URL and makes a call to the system library function
-names ``socket`` and requests a TCP socket stream - AF_INET and SOCK_STREAM.
+Once the browser receives the IP address of the destination server it takes
+that and the given port number from the URL and makes a call to the system
+library function names ``socket`` and requests a TCP socket stream -
+``AF_INET`` and ``SOCK_STREAM``.
 
-This request is passed to the Transport Layer where the extra love that TCP/IP requires
-for ensuring packet delivery and ordering is added and then a UDP datagram is fashioned.
-The UDP datagram is handed off to the physical network layer which inspects the target IP
-address, looks up the subnet in it's route tables and wraps the datagram in an envelope with
-the proper gateway address as the recipient.
+This request is passed to the Transport Layer where the extra love that TCP/IP
+requires for ensuring packet delivery and ordering is added and then a UDP
+datagram is fashioned. The UDP datagram is handed off to the physical network
+layer which inspects the target IP address, looks up the subnet in it's route
+tables and wraps the datagram in an envelope with the proper gateway address as
+the recipient.
 
-This address lookup and wrapping of datagrams continues until one of two things happen, the time-to-live
-value for a datagram reaches zero at which point the packet is dropped or it reaches the destination.
+This address lookup and wrapping of datagrams continues until one of two things
+happen, the time-to-live value for a datagram reaches zero at which point the
+packet is dropped or it reaches the destination.
 
 This send and receive happens multiple times following the TCP connection flow:
 
@@ -53,8 +56,6 @@ This send and receive happens multiple times following the TCP connection flow:
 * target receives SYN and if it's in an agreeable mood, replies with SYN/ACK
 * source sends ACK to acknowledge socket is established
 * data is transferred until FIN/ACK is sent and acknowledged
-
-(not sure how deep down this rabbit hole you want to go :)
 
 UDP packets
 ~~~~~~~~~~~
