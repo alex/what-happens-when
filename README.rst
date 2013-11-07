@@ -21,10 +21,16 @@ Check HSTS list...
 
 DNS lookup...
 -------------
-* Browser checks if the domain is in it's cache
-* If not found, calls gethostbyname library function (varies by OS) to do the lookup
-* If gethostbyname does not have it cached then a request is made to the known DNS server that was given to the network stack. This is typical the local router or the ISP's caching DNS server
-* If the local/ISP DNS server does not have it, then a recursive search is requested and that flows up the list of DNS servers until the SOA is reached, and if found an answer is returned.
+
+* Browser checks if the domain is in it's cache.
+* If not found, calls ``gethostbyname`` library function (varies by OS) to do
+  the lookup.
+* If ``gethostbyname`` does not have it cached then a request is made to the
+  known DNS server that was given to the network stack. This is typical the
+  local router or the ISP's caching DNS server
+* If the local/ISP DNS server does not have it, then a recursive search is
+  requested and that flows up the list of DNS servers until the SOA is reached,
+  and if found an answer is returned.
 
 BGP lookup
 ~~~~~~~~~~
