@@ -22,8 +22,17 @@ Check HSTS list...
 DNS lookup...
 -------------
 
+BGP lookup
+~~~~~~~~~~
+
+UDP packets
+~~~~~~~~~~~
+
 TLS handshake...
 ----------------
+
+TCP packets
+~~~~~~~~~~~
 
 HTTP protocol...
 ----------------
