@@ -19,23 +19,23 @@ Interrupt fires...
 Check HSTS list...
 ------------------
 
-DNS lookup
-----------
-
-TLS handshake
+DNS lookup...
 -------------
 
-HTTP protocol
--------------
+TLS handshake...
+----------------
 
-Page rendering
---------------
+HTTP protocol...
+----------------
 
-Javascript execution
---------------------
+Page rendering...
+-----------------
 
-CSS interpretation
-------------------
+Javascript execution...
+-----------------------
+
+CSS interpretation...
+---------------------
 
 
 .. _`Creative Commons Zero`: https://creativecommons.org/publicdomain/zero/1.0/
