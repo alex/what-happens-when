@@ -63,11 +63,11 @@ library function names ``socket`` and requests a TCP socket stream -
 ``AF_INET`` and ``SOCK_STREAM``.
 
 This request is passed to the Transport Layer where the extra love that TCP/IP
-requires for ensuring packet delivery and ordering is added and then a UDP
-datagram is fashioned. The UDP datagram is handed off to the physical network
+requires for ensuring packet delivery and ordering is added and then a IP
+packet is fashioned. The IP packet is then handed off to the physical network
 layer which inspects the target IP address, looks up the subnet in it's route
-tables and wraps the datagram in an envelope with the proper gateway address as
-the recipient.
+tables and wrapped in an ethernet frame with the proper gateway address as the
+recipient.
 
 This address lookup and wrapping of datagrams continues until one of two things
 happen, the time-to-live value for a datagram reaches zero at which point the
