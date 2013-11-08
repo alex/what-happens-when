@@ -108,14 +108,27 @@ TCP packets
 HTTP protocol...
 ----------------
 
-Page rendering...
+HTML parsing...
 -----------------
 
-Javascript execution...
------------------------
+* Fetch contents of requested document from network layer in 8kb chunks
+* Parse HTML document
+* Convert elements to DOM nodes in the content tree
 
 CSS interpretation...
 ---------------------
+
+* Parse CSS files and <style> tag contents using "CSS lexical and syntax grammar" (http://www.w3.org/TR/CSS2/grammar.html)
+
+Page Rendering
+---------------------
+
+* Create render tree from CSS and visual instructions in HTML
+* Layout (reflow) render tree nodes by giving them exact coordiantes of where they should appear
+* Traverse and "paint" each DOM node
+
+Javascript execution...
+-----------------------
 
 
 .. _`Creative Commons Zero`: https://creativecommons.org/publicdomain/zero/1.0/
