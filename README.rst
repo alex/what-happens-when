@@ -118,7 +118,7 @@ HTML parsing...
 CSS interpretation...
 ---------------------
 
-* Parse CSS files and <style> tag contents using `"CSS lexical and syntax
+* Parse CSS files and ``<style>`` tag contents using `"CSS lexical and syntax
   grammar"`_
 
 Page Rendering
