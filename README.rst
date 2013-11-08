@@ -118,13 +118,15 @@ HTML parsing...
 CSS interpretation...
 ---------------------
 
-* Parse CSS files and <style> tag contents using "CSS lexical and syntax grammar" (http://www.w3.org/TR/CSS2/grammar.html)
+* Parse CSS files and <style> tag contents using `"CSS lexical and syntax
+  grammar"`_
 
 Page Rendering
 ---------------------
 
 * Create render tree from CSS and visual instructions in HTML
-* Layout (reflow) render tree nodes by giving them exact coordiantes of where they should appear
+* Layout (reflow) render tree nodes by giving them exact coordiantes of where
+  they should appear
 * Traverse and "paint" each DOM node
 
 Javascript execution...
@@ -132,3 +134,4 @@ Javascript execution...
 
 
 .. _`Creative Commons Zero`: https://creativecommons.org/publicdomain/zero/1.0/
+.. _`"CSS lexical and syntax grammar"`: http://www.w3.org/TR/CSS2/grammar.html
