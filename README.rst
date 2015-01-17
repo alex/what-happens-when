@@ -55,7 +55,7 @@ converts the HID usage into a scancode. In this case the scan code is
 ``VK_RETURN`` (``0x0D``). The ``KBDHID.sys`` driver interfaces with the
 ``KBDCLASS.sys`` (keyboard class driver). This driver is responsible for
 handling all keyboard and keypad input in a secure manner. It then calls into
-``Win32K.sys`` (after potentially passing the message through an 3rd party
+``Win32K.sys`` (after potentially passing the message through 3rd party
 keyboard filters that are installed). This all happens in kernel mode.
 
 ``Win32K.sys`` figures out what window is the active window through the
@@ -150,7 +150,7 @@ recipient. At this point the packet is ready to be transmitted through either:
 
 In all cases the last point at which the packet leaves your computer is a
 digital-to-analog (DAC) converter which fires off electrical 1's and 0's on a
-wire. On the other end of the physical bit transfer is a `analog-to-digital
+wire. On the other end of the physical bit transfer is an `analog-to-digital
 converter`_  which converts the electrical bits into logic signals to be
 processed by the next `network node`_ where its from and to addresses would be
 analyzed further.
