@@ -29,7 +29,7 @@ connection, but historically has been over PS/2 or ADB connections.
 In the case of the USB example: the USB circuitry of the keyboard is powered
 by the 5V supply provided over pin 1 from the computer's USB host controller.
 17.78 mA of this current is returned on either the D+ or D- pin (the middle 2)
-of the keyboard's USB connector. Which pin carries the current is rapidly
+of the keyboard's USB connector. Which pin carries the current is
 toggled between the two creating a high speed bitstream (the rate depending on
 USB 1, 2, or 3) serially encoding the digital value of the enter key.  This
 serial signal is then decoded at the computer's host USB controller, and
@@ -67,7 +67,7 @@ case), the actual scan code (can be OEM dependent, but generally wouldn't be
 for ``VK_RETURN``), whether extended keys (e.g. alt, shift, ctrl) were also
 pressed (they weren't), and some other state.
 
-The Windows ``SendMessage`` API is a relatively straightforward function that
+The Windows ``SendMessage`` API is a straightforward function that
 adds the message to a queue for the particular window handle (``hWnd``).
 Later, the main message processing function (called a ``WindowProc``) assigned
 to the ``hWnd`` is called in order to process each message in the queue.
@@ -142,8 +142,7 @@ requires for ensuring packet delivery and ordering is added and then an IP
 packet is fashioned. The IP packet is then handed off to the physical network
 layer which inspects the target IP address, looks up the subnet in its route
 tables and wrapped in an ethernet frame with the proper gateway address as the
-recipient. At this point the packet is ready to be transmitted, most likely
-through either:
+recipient. At this point the packet is ready to be transmitted through either:
 
 * `Ethernet`_
 * `WiFi`_
