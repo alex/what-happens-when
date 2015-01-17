@@ -118,13 +118,40 @@ DNS lookup...
 * If ``gethostbyname`` does not have it cached nor in the ``hosts`` file then a request
   is made to the known DNS server that was given to the network stack. This is typically the
   local router or the ISP's caching DNS server.
+  OnWindows it will use an algorithm to determine which DNS server to try first
+  to resolve the hostname. http://technet.microsoft.com/en-us/library/dd197552(WS.10).aspx
 * The local DNS server (or local gateway's) MAC address is looked up in the ARP
   cache. If the MAC address is missing, an ARP request packet is sent.
 * Port 53 is opened to send a UDP request to DNS server (if the response size is
-  too large, TCP will be used instead).
+  too large, TCP will be used instead, but it's definitely not the case for a simple A or AAAA
+  request to www.google.com).
 * If the local/ISP DNS server does not have it, then a recursive search is
   requested and that flows up the list of DNS servers until the SOA is reached,
   and if found an answer is returned.
+* Almost every time, this DNS servers is not resolving the google.com (the only exceptions are
+  for those doing this request from a computer directly in the Google's datacenter, connected
+  to DNS having the google.com SOA record... this is probably not your case), so this DNS will
+  try to find which server is OWNING the google.com domain.
+  *  A list of predefined "root servers" is set in the configuration of this DNS server. Using
+    its own algorithm, it will pick a root server to find the SOA (Start Of Authority) server.
+  * Once the root server is choosen, a request for the TLD is done. In this case, it's "com".
+    So the NS request for "com." is asked to the root server.
+  * A response will generate a list of servers for the "com" TLD, normally X.gtld-servers.net
+    (served by Verisgn)
+  * Another NS request is send to one of the dtld-servers.net for "google.com."
+  * The Verisign's dns server will respond with the 4 google's DNS servers, ns1.google.com
+    to ns4.google.com and will also include "glue records" (IPv4 Addresses) to reach them directly.
+  * The requesting DNS server will use this information to reach the "real" google.com DNS server
+    (the one owning the SOA of the domain) and ask for for a A (or AAAA if IPv6) with
+    "www.google.com." as the request.
+  * The Google DNS server will use the remotely connecting IP address and resolve it through a
+    recent snapshot of the BGP network to identify the source ASN (Autonomous System Number) of
+    the request (the unique number of your ISP)
+  * The ASN is checked agains a database to know which google's datacenter is considered the best
+    one to respond to a request from your ISP
+  * The Google's DNS server return the IP address of the closest datacenter according to the
+    recursive DNS ASN.
+  * The recursive DNS server will return the IP address back to your OS...
 
 Opening of a socket
 -------------------
