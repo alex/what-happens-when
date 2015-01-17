@@ -23,10 +23,10 @@ current to flow into the logic circuitry of the keyboard, which scans the state
 of each key switch, debounces the electrical noise of the rapid intermittent
 closure of the switch, and converts it to a keycode integer, in this case 13.
 The keyboard controller then encodes the keycode for transport to the computer.
-This is now almost universally over a Universal Serial Bus (USB) connection,
+This is now almost universally over a Universal Serial Bus (USB) or Bluetooth connection,
 but historically has been over PS/2 or ADB connections.
 
-The USB circuitry of the keyboard is powered by the 5V supply provided over pin
+In the case of the the USB example: the USB circuitry of the keyboard is powered by the 5V supply provided over pin
 1 from the computer's USB host controller. 17.78 mA of this current is returned
 on either the D+ or D- pin (the middle 2) of the keyboard's USB connector.
 Which pin carries the current is rapidly toggled between the two creating
