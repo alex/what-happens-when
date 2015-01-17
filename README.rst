@@ -102,9 +102,9 @@ DNS lookup...
 Opening of a socket
 -------------------
 Once the browser receives the IP address of the destination server it takes
-that and the given port number from the URL and makes a call to the system
-library function names ``socket`` and requests a TCP socket stream -
-``AF_INET`` and ``SOCK_STREAM``.
+that and the given port number from the URL(the http protocol defaults to port 
+80) and makes a call to the system library function names ``socket`` and 
+requests a TCP socket stream - ``AF_INET`` and ``SOCK_STREAM``.
 
 This request is passed to the Transport Layer where the extra love that TCP/IP
 requires for ensuring packet delivery and ordering is added and then a IP
