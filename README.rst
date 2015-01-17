@@ -159,6 +159,11 @@ HTML parsing...
 * Parse HTML document
 * Convert elements to DOM nodes in the content tree
 
+Content Delivery Networks
+-------------------------
+
+* If there were any cdn references in the ``<link>`` or ``<script>`` tags the process will begin again at DNS Lookup for these addresses
+
 CSS interpretation...
 ---------------------
 
