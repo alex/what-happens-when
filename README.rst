@@ -170,6 +170,7 @@ HTML parsing...
 * Fetch contents of requested document from network layer in 8kb chunks
 * Parse HTML document
 * Convert elements to DOM nodes in the content tree
+* Prefetch external resources linked to the page (CSS, Images, JavaScript files etc.)
 
 CSS interpretation...
 ---------------------
@@ -187,7 +188,7 @@ Page Rendering
 
 Javascript execution...
 -----------------------
-
+* Depending on whether the script is asynchronous, the HTML rendering will pause until the JS file is fully executed.
 
 .. _`Creative Commons Zero`: https://creativecommons.org/publicdomain/zero/1.0/
 .. _`"CSS lexical and syntax grammar"`: http://www.w3.org/TR/CSS2/grammar.html
