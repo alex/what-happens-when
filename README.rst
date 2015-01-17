@@ -78,7 +78,7 @@ This code looks within the 3rd parameter that was passed to ``SendMessage``
 key.
 
 Is it a URL or a search term?
-------------------
+-----------------------------
 
 Parse URL...
 ------------
@@ -86,8 +86,8 @@ Parse URL...
 Check HSTS list...
 ------------------
 
-Convert non-ASCII Unicode characters in hostname...
----------------------------
+Convert non-ASCII Unicode characters in hostname
+------------------------------------------------
 
 * The browser checks the hostname for characters that are not in ``a-z``,
   ``A-Z``, ``0-9``, ``-``, or ``.``.
@@ -103,8 +103,8 @@ DNS lookup...
 * If ``gethostbyname`` does not have it cached then a request is made to the
   known DNS server that was given to the network stack. This is typically the
   local router or the ISP's caching DNS server.
-* The local DNS server (or local gateway's) MAC address is looked up in the ARP cache.
-  If the MAC address is missing, an ARP request packet is sent.
+* The local DNS server (or local gateway's) MAC address is looked up in the ARP
+  cache. If the MAC address is missing, an ARP request packet is sent.
 * Port 53 is opened to send a UDP request to DNS server (if the response size is
   too large, TCP will be used instead).
 * If the local/ISP DNS server does not have it, then a recursive search is
@@ -170,7 +170,8 @@ HTML parsing...
 * Fetch contents of requested document from network layer in 8kb chunks
 * Parse HTML document
 * Convert elements to DOM nodes in the content tree
-* Prefetch external resources linked to the page (CSS, Images, JavaScript files etc.)
+* Prefetch external resources linked to the page (CSS, Images, JavaScript files,
+  etc.)
 
 CSS interpretation...
 ---------------------
@@ -179,7 +180,7 @@ CSS interpretation...
   grammar"`_
 
 Page Rendering
----------------------
+--------------
 
 * Create render tree from CSS and visual instructions in HTML
 * Layout (reflow) render tree nodes by giving them exact coordiantes of where
@@ -188,7 +189,9 @@ Page Rendering
 
 Javascript execution...
 -----------------------
-* Depending on whether the script is asynchronous, the HTML rendering will pause until the JS file is fully executed.
+
+* Depending on whether the script is asynchronous, the HTML rendering will pause
+  until the JS file is fully executed.
 
 .. _`Creative Commons Zero`: https://creativecommons.org/publicdomain/zero/1.0/
 .. _`"CSS lexical and syntax grammar"`: http://www.w3.org/TR/CSS2/grammar.html
