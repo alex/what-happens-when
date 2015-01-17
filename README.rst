@@ -252,8 +252,7 @@ HTTP Server Request Handle
 --------------------------
 The HTTPD (HTTP Daemon) server is the one handling the requests/responses on
 the server side.
-The HTTPD server can be one of several servers out there, where the most common
-ones are Apache for Linux, and IIS for windows.
+The most HTTPD servers are Apache for Linux, and IIS for windows.
 
 * The HTTPD (HTTP Daemon) receives the request.
 * The server breaks down the request to the following parameters:
@@ -271,10 +270,8 @@ ones are Apache for Linux, and IIS for windows.
   (some cases can override this, but this is the most common method).
 * The server will parse the file according to the handler, for example -
   let's say that Google is running on PHP.
-   * The server will use the PHP executable to interpret the index file,
-     and catch the output.
-   * The server will return the output, back on the same GET request
-     connection to the customer.
+   * The server will use PHP to interpret the index file, and catch the output.
+   * The server will return the output, on the same request to the client.
 
 HTML parsing...
 ---------------
