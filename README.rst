@@ -77,6 +77,19 @@ This code looks within the 3rd parameter that was passed to ``SendMessage``
 (``wParam``) and, because it is ``VK_RETURN`` knows the user has hit the ENTER
 key.
 
+(On OS X) A ``KeyDown`` NSEvent is sent to the app
+----------------------------------------------
+
+The interrupt signal triggers an interrupt event in the I/O Kit kext keyboard
+driver. The driver translates the signal into a key code which is passed to the
+OS X ``WindowServer`` process. Resultantly, the WindowServer dispatches an event
+to any appropriate (e.g. active or listening) applications through their Mach
+port where it it placed into an event queue. Events can then be read from this
+queue by threads with sufficient privileges calling the ``mach_ipc_dispatch``
+function. This most commonly occurs through, and is handled by, an NSApplication
+main event loop, via an NSEvent of NSEventType 'KeyDown'.
+
+
 Is it a URL or a search term?
 -----------------------------
 
