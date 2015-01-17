@@ -63,9 +63,9 @@ keyboard filters that are installed). This all happens in kernel mode.
 browser's address box. The main Windows "message pump" then calls
 ``SendMessage(hwnd, WM_KEYDOWN, VK_RETURN, lParam)``. ``lParam`` is a bitmask
 that indicates further information about the keypress: repeat count (0 in this
-case), the actual scan code (can be OEM dependent, but generally wouldn't be for
-``VK_RETURN``), whether extended keys (e.g. alt, shift, ctrl) were also pressed
-(they weren't), and some other state.
+case), the actual scan code (can be OEM dependent, but generally wouldn't be
+for ``VK_RETURN``), whether extended keys (e.g. alt, shift, ctrl) were also
+pressed (they weren't), and some other state.
 
 The Windows ``SendMessage`` API is a relatively straightforward function that
 simply calls the main message processing function (called a ``WindowProc``)
@@ -105,8 +105,9 @@ Convert non-ASCII Unicode characters in hostname
 
 * The browser checks the hostname for characters that are not in ``a-z``,
   ``A-Z``, ``0-9``, ``-``, or ``.``.
-* Since the hostname is ``google.com`` there won't be any, but if there were the
-  browser would apply `Punycode`_ encoding to the hostname portion of the URL.
+* Since the hostname is ``google.com`` there won't be any, but if there were
+  the browser would apply `Punycode`_ encoding to the hostname portion of the
+  URL.
 
 DNS lookup...
 -------------
@@ -121,8 +122,8 @@ DNS lookup...
   This is typically the local router or the ISP's caching DNS server.
 * The local DNS server (or local gateway's) MAC address is looked up in the ARP
   cache. If the MAC address is missing, an ARP request packet is sent.
-* Port 53 is opened to send a UDP request to DNS server (if the response size is
-  too large, TCP will be used instead).
+* Port 53 is opened to send a UDP request to DNS server (if the response size
+  is too large, TCP will be used instead).
 * If the local/ISP DNS server does not have it, then a recursive search is
   requested and that flows up the list of DNS servers until the SOA is reached,
   and if found an answer is returned.
@@ -131,8 +132,9 @@ Opening of a socket
 -------------------
 Once the browser receives the IP address of the destination server it takes
 that and the given port number from the URL (the http protocol defaults to port
-80, and https to port 443) and makes a call to the system library function named
-``socket`` and requests a TCP socket stream - ``AF_INET`` and ``SOCK_STREAM``.
+80, and https to port 443) and makes a call to the system library function
+named ``socket`` and requests a TCP socket stream - ``AF_INET`` and
+``SOCK_STREAM``.
 
 This request is passed to the Transport Layer where the extra love that TCP/IP
 requires for ensuring packet delivery and ordering is added and then an IP
@@ -204,11 +206,11 @@ request to the server of the form::
     [other headers]
 
 where ``[other headers]`` refers to a colon-separated series of key-value pairs
-formatted as per the HTTP specification and separated by single new lines. (This
-assumes the web browser being used doesn't have any bugs violating the HTTP
-spec. This also assumes that the web browser is using ``HTTP/1.1``, otherwise it
-may not include the ``Host`` header in the request and the version specified in
-the ``GET`` request will either be ``HTTP/1.0`` or ``HTTP/0.9``.)
+formatted as per the HTTP specification and separated by single new lines.
+(This assumes the web browser being used doesn't have any bugs violating the
+HTTP spec. This also assumes that the web browser is using ``HTTP/1.1``,
+otherwise it may not include the ``Host`` header in the request and the version
+specified in the ``GET`` request will either be ``HTTP/1.0`` or ``HTTP/0.9``.)
 
 After sending the request and headers, the web browser sends a single blank
 newline to the server indicating that the content of the request is done.
@@ -225,9 +227,10 @@ headers sent by the client requested it, keep the connection open to be reused
 for further requests.
 
 If the HTTP headers sent by the web browser included sufficient information for
-the web server to determine if the version of the file cached by the web browser
-has been unmodified since the last retrieval (ie. if the web browser included an
-``ETag`` header), it may have instead responded with a request of the form::
+the web server to determine if the version of the file cached by the web
+browser has been unmodified since the last retrieval (ie. if the web browser
+included an ``ETag`` header), it may have instead responded with a request of
+the form::
 
     304 Not Modified
     [response headers]
@@ -239,11 +242,11 @@ for every resource (image, CSS, favicon.ico, etc) referenced by the HTML page,
 except instead of ``GET / HTTP/1.1`` the request will be
 ``GET /$(URL relative to www.google.com) HTTP/1.1``.
 
-If the HTML referenced a resource on a different domain than ``www.google.com``,
-the web browser will go back to the steps involved in resolving the other
-domain, and follow all steps up to this point for that domain. The ``Host``
-header in the request will be set to the appropriate server name instead of
-``google.com``.
+If the HTML referenced a resource on a different domain than
+``www.google.com``, the web browser will go back to the steps involved in
+resolving the other domain, and follow all steps up to this point for that
+domain. The ``Host`` header in the request will be set to the appropriate
+server name instead of ``google.com``.
 
 HTML parsing...
 ---------------
@@ -289,12 +292,12 @@ Post-rendering and user-induced execution
 -----------------------------------------
 
 After rendering has completed, the browser executes JavaScript code as a result
-of some timing mechanism (such as a Google Doodle animation) or user interaction
-(typing a query into the search box and receiving suggestions). Plugins such as
-Flash or Java may execute as well, although not at this time on the Google
-homepage. Scripts can cause additional network requests to be performed, as well
-as modify the page or its layout, effecting another round of page rendering and
-painting.
+of some timing mechanism (such as a Google Doodle animation) or user
+interaction (typing a query into the search box and receiving suggestions).
+Plugins such as Flash or Java may execute as well, although not at this time on
+the Google homepage. Scripts can cause additional network requests to be
+performed, as well as modify the page or its layout, effecting another round of
+page rendering and painting.
 
 .. _`Creative Commons Zero`: https://creativecommons.org/publicdomain/zero/1.0/
 .. _`"CSS lexical and syntax grammar"`: http://www.w3.org/TR/CSS2/grammar.html
