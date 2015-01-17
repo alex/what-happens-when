@@ -68,8 +68,9 @@ for ``VK_RETURN``), whether extended keys (e.g. alt, shift, ctrl) were also
 pressed (they weren't), and some other state.
 
 The Windows ``SendMessage`` API is a relatively straightforward function that
-simply calls the main message processing function (called a ``WindowProc``)
-assigned to the window handle (``hWnd``).
+adds the message to a queue for the particular window handle (``hWnd``).
+Later, the main message processing function (called a ``WindowProc``) assigned
+to the ``hWnd`` is called in order to process each message in the queue.
 
 The window (``hWnd``) that is active is actually an edit control and the
 ``WindowProc`` in this case has a message handler for ``WM_KEYDOWN`` messages.
