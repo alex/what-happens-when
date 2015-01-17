@@ -1,3 +1,5 @@
+sudo: false
+
 language: python
 install: pip install doc8
 script:
