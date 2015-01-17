@@ -255,6 +255,11 @@ HTML parsing...
   files, etc.)
 * Execute synchronous JavaScript code
 
+Content Delivery Networks
+-------------------------
+
+* If there were any cdn references in the ``<link>`` or ``<script>`` tags the process will begin again at DNS Lookup for these addresses
+
 CSS interpretation...
 ---------------------
 
