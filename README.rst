@@ -79,8 +79,10 @@ Check HSTS list...
 Convert UTF-8 characters in hostname...
 ---------------------------
 
-* Browser checks hostname for characters that are not 'a' - 'z', 'A' - 'Z', '0'-'9', '-' or '.'
-* Since the hostname is google.com, there won't be any, but if there were, the browser would apply Punycode_ decoding to the hostname portion of the URL
+* The browser checks the hostname for characters that are not in ``a-z``,
+  ``A-Z``, ``0-9``, ``-``, or ``.``.
+* Since the hostname is ``google.com`` there won't be any, but if there were the
+  browser would apply `Punycode`_ decoding to the hostname portion of the URL.
 
 DNS lookup...
 -------------
@@ -177,4 +179,4 @@ Javascript execution...
 
 .. _`Creative Commons Zero`: https://creativecommons.org/publicdomain/zero/1.0/
 .. _`"CSS lexical and syntax grammar"`: http://www.w3.org/TR/CSS2/grammar.html
-.. _Punycode: http://en.wikipedia.org/wiki/Punycode
+.. _`Punycode`: https://en.wikipedia.org/wiki/Punycode
