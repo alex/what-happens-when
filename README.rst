@@ -78,16 +78,17 @@ This code looks within the 3rd parameter that was passed to ``SendMessage``
 key.
 
 (On OS X) A ``KeyDown`` NSEvent is sent to the app
-----------------------------------------------
+--------------------------------------------------
 
 The interrupt signal triggers an interrupt event in the I/O Kit kext keyboard
 driver. The driver translates the signal into a key code which is passed to the
-OS X ``WindowServer`` process. Resultantly, the WindowServer dispatches an event
-to any appropriate (e.g. active or listening) applications through their Mach
-port where it it placed into an event queue. Events can then be read from this
-queue by threads with sufficient privileges calling the ``mach_ipc_dispatch``
-function. This most commonly occurs through, and is handled by, an NSApplication
-main event loop, via an NSEvent of NSEventType 'KeyDown'.
+OS X ``WindowServer`` process. Resultantly, the ``WindowServer`` dispatches an
+event to any appropriate (e.g. active or listening) applications through their
+Mach port where it it placed into an event queue. Events can then be read from
+this queue by threads with sufficient privileges calling the
+``mach_ipc_dispatch`` function. This most commonly occurs through, and is
+handled by, an ``NSApplication`` main event loop, via an ``NSEvent`` of
+``NSEventType`` ``KeyDown``.
 
 
 Is it a URL or a search term?
@@ -113,11 +114,11 @@ DNS lookup...
 * Browser checks if the domain is in its cache.
 * If not found, calls ``gethostbyname`` library function (varies by OS) to do
   the lookup.
-* ``gethostbyname`` checks if the hostname can be resolved by looking in the 
+* ``gethostbyname`` checks if the hostname can be resolved by looking in the
   ``/etc/hosts`` file, before trying to resolve the hostname through DNS.
-* If ``gethostbyname`` does not have it cached nor in the ``hosts`` file then a request
-  is made to the known DNS server that was given to the network stack. This is typically the
-  local router or the ISP's caching DNS server.
+* If ``gethostbyname`` does not have it cached nor in the ``hosts`` file then a
+  request is made to the known DNS server that was given to the network stack.
+  This is typically the local router or the ISP's caching DNS server.
 * The local DNS server (or local gateway's) MAC address is looked up in the ARP
   cache. If the MAC address is missing, an ARP request packet is sent.
 * Port 53 is opened to send a UDP request to DNS server (if the response size is
@@ -141,17 +142,16 @@ tables and wrapped in an ethernet frame with the proper gateway address as the
 recipient. At this point the packet is ready to be transmitted, most likely
 through either:
 
- * Ethernet http://en.wikipedia.org/wiki/IEEE_802.3
- * Wifi http://en.wikipedia.org/wiki/IEEE_802.11
- * Cellular data network http://en.wikipedia.org/wiki/Cellular_data_communication_protocol
- 
+* `Ethernet`_
+* `WiFi`_
+* `Cellular data network`_
+
 In all cases the last point at which the packet leaves your computer is a
-digital-to-analog (DAC) converter which fires off electrical 1's and 0's on a wire.
-On the other end of the physical bit transfer is a analog-to-digital converter
-http://en.wikipedia.org/wiki/Analog-to-digital_converter which converts the 
-electrical bits into logic signals to be processed by the next network node
-http://en.wikipedia.org/wiki/Computer_network#Network_nodes where its from
-and to addresses would be analyzed further.
+digital-to-analog (DAC) converter which fires off electrical 1's and 0's on a
+wire. On the other end of the physical bit transfer is a `analog-to-digital
+converter`_  which converts the electrical bits into logic signals to be
+processed by the next `network node`_ where its from and to addresses would be
+analyzed further.
 
 This address lookup and wrapping of datagrams continues until one of two things
 happen, the time-to-live value for a datagram reaches zero at which point the
@@ -191,63 +191,62 @@ TCP packets
 
 HTTP protocol...
 ----------------
-If the web browser used was written by Google, instead of sending an HTTP request to retrieve
-the page, it will send an request to try and negotiate with the server an "upgrade" from HTTP
-to the SPDY protocol.
 
-If the client is using the HTTP protocol and does not support speedy, it sends a request to 
-the server of the form:
+If the web browser used was written by Google, instead of sending an HTTP
+request to retrieve the page, it will send an request to try and negotiate with
+the server an "upgrade" from HTTP to the SPDY protocol.
 
-``
-GET / HTTP/1.1
-Host: google.com
-[other headers]
-``
+If the client is using the HTTP protocol and does not support speedy, it sends a
+request to the server of the form::
 
-where "[other headers]" refers to a colon-separated series of key-value pairs formatted
-as per the HTTP specification and separated by single new lines. (This assumes the web browser
-being used doesn't have any bugs violating the HTTP spec. This also assumes that the web browser
-is using HTTP/1.1, otherwise it may not include the ``Host`` header in the request and the version
-specified in the GET request will either be HTTP/1.0 or HTTP/0.9)
+    GET / HTTP/1.1
+    Host: google.com
+    [other headers]
 
-After sending the request and headers, the web browser sends a single newline to the server indicating
-that the content of the request is done.
+where ``[other headers]`` refers to a colon-separated series of key-value pairs
+formatted as per the HTTP specification and separated by single new lines. (This
+assumes the web browser being used doesn't have any bugs violating the HTTP
+spec. This also assumes that the web browser is using ``HTTP/1.1``, otherwise it
+may not include the ``Host`` header in the request and the version specified in
+the ``GET`` request will either be ``HTTP/1.0`` or ``HTTP/0.9``.)
 
-The server responds with a response code denoting the status of the request and responds with
-a response of the form:
+After sending the request and headers, the web browser sends a single newline to
+the server indicating that the content of the request is done.
 
-``
-200 OK
-[response headers]
-``
+The server responds with a response code denoting the status of the request and
+responds with a response of the form::
 
-Followed by a single newline, and then sends a payload of the HTML content of www.google.com. The server
-may then either close the connection, or if headers sent by the client requested it, keep the connection
-open to be reused for further requests.
+    200 OK
+    [response headers]
 
-If the HTTP headers sent by the web browser included sufficient information for the web server to determine
-if the version of the file cached by the web browser has been unmodified since the last retrieval
-(ie. if the web browser included an ``ETag`` header), it may have instead responded with a request
-of the form:
+Followed by a single newline, and then sends a payload of the HTML content of
+``www.google.com``. The server may then either close the connection, or if
+headers sent by the client requested it, keep the connection open to be reused
+for further requests.
 
-``
-304 Not Modified
-[response headers]
-``
+If the HTTP headers sent by the web browser included sufficient information for
+the web server to determine if the version of the file cached by the web browser
+has been unmodified since the last retrieval (ie. if the web browser included an
+``ETag`` header), it may have instead responded with a request of the form::
 
-and no payload, and the web browser instead retrieves the HTML from it's cache.
+    304 Not Modified
+    [response headers]
 
-After parsing the HTML, the web browser (and server) will repeat this process for every resource
-(image, CSS, favicon.ico, etc) referenced by the HTML page, except instead of ``GET / HTTP/1.1``
-the request will be ``GET /$(URL relative to www.google.com) HTTP/1.1``
+and no payload, and the web browser instead retrieves the HTML from its cache.
 
-If the HTML referenced a resource on a different domain than www.google.com, the web browser will
-go back to the steps involved in resolving the other domain, and follow all steps up to this point
-for that domain. The "Host:" header in the request will be set to the appropriate server name instead
-of "google.com".
+After parsing the HTML, the web browser (and server) will repeat this process
+for every resource (image, CSS, favicon.ico, etc) referenced by the HTML page,
+except instead of ``GET / HTTP/1.1`` the request will be
+``GET /$(URL relative to www.google.com) HTTP/1.1``.
+
+If the HTML referenced a resource on a different domain than ``www.google.com``,
+the web browser will go back to the steps involved in resolving the other
+domain, and follow all steps up to this point for that domain. The ``Host``
+header in the request will be set to the appropriate server name instead of
+``google.com``.
 
 HTML parsing...
------------------
+---------------
 
 * Fetch contents of requested document from network layer in 8kb chunks
 * Parse HTML document
@@ -265,7 +264,7 @@ CSS interpretation...
 Page Rendering
 --------------
 
-* Create a 'Frame Tree' or 'Render Tree' by running Layout (reflow) on the 
+* Create a 'Frame Tree' or 'Render Tree' by running Layout (reflow) on the
   content nodes. This gives each node exact coordinates.
 * Create layers to describe which parts of the page can be animated as a group
   without being re-rasterized. Each frame/render object is assigned to a layer.
@@ -279,7 +278,7 @@ Page Rendering
 * Final layer positions are computed and the composite commands are issued
   via Direct3D/OpenGL. The GPU command buffer(s) are flushed to the GPU for
   asyncrounous rendering and the frame is sent to the window server.
-  
+
 GPU Rendering
 -------------
 
@@ -300,3 +299,8 @@ painting.
 .. _`Creative Commons Zero`: https://creativecommons.org/publicdomain/zero/1.0/
 .. _`"CSS lexical and syntax grammar"`: http://www.w3.org/TR/CSS2/grammar.html
 .. _`Punycode`: https://en.wikipedia.org/wiki/Punycode
+.. _`Ethernet`: http://en.wikipedia.org/wiki/IEEE_802.3
+.. _`WiFi`: https://en.wikipedia.org/wiki/IEEE_802.11
+.. _`Cellular data network`: https://en.wikipedia.org/wiki/Cellular_data_communication_protocol
+.. _`analog-to-digital converter`: https://en.wikipedia.org/wiki/Analog-to-digital_converter
+.. _`network node`: https://en.wikipedia.org/wiki/Computer_network#Network_nodes
