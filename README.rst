@@ -252,7 +252,7 @@ HTTP Server Request Handle
 --------------------------
 The HTTPD (HTTP Daemon) server is the one handling the requests/responses on
 the server side.
-The HTTPD server can be one of many servers out there, where the most common
+The HTTPD server can be one of several servers out there, where the most common
 ones are Apache for Linux, and IIS for windows.
 
 * The HTTPD (HTTP Daemon) receives the request.
@@ -260,21 +260,21 @@ ones are Apache for Linux, and IIS for windows.
    * HTTP Request Method (GET, POST, HEAD, PUT and DELETE), in our case - GET.
    * Domain, in our case - google.com.
    * Requested path/page, in our case - / (as no specific path/page was
-   requested, / is the default path).
+     requested, / is the default path).
 * The server verifies that there is a Virtual Host configured on the server
-that corresponds with google.com.
+  that corresponds with google.com.
 * The server verifies that google.com can accept GET requests.
 * The server verifies that the client is allowed to use this method
-(by IP, authentication, etc.).
+  (by IP, authentication, etc.).
 * The server goes to pull the content that corresponds with the request,
-in our case it will fall back to the index file, as "/" is the main file
-(some cases can override this, but this is the most common method).
+  in our case it will fall back to the index file, as "/" is the main file
+  (some cases can override this, but this is the most common method).
 * The server will parse the file according to the handler, for example -
-let's say that Google are running on PHP.
+  let's say that Google are running on PHP.
    * The server will use the PHP executable to interpret the index file,
-   and catch the output.
+     and catch the output.
    * The server will return the output, back on the same GET request
-   connection to the customer.
+     connection to the customer.
 
 HTML parsing...
 ---------------
