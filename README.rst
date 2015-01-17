@@ -66,7 +66,7 @@ assigned to the window handle (``hWnd``).
 
 The window (``hWnd``) that is active is actually an edit control and the
 ``WindowProc`` in this case has a message handler for ``WM_KEYDOWN`` messages.
-This code looks within the 3nd parameter that was passed to ``SendMessage``
+This code looks within the 3rd parameter that was passed to ``SendMessage``
 (``wParam``) and, because it is ``VK_RETURN`` knows the user has hit the ENTER
 key.
 
