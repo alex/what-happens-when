@@ -270,7 +270,7 @@ ones are Apache for Linux, and IIS for windows.
   in our case it will fall back to the index file, as "/" is the main file
   (some cases can override this, but this is the most common method).
 * The server will parse the file according to the handler, for example -
-  let's say that Google are running on PHP.
+  let's say that Google is running on PHP.
    * The server will use the PHP executable to interpret the index file,
      and catch the output.
    * The server will return the output, back on the same GET request
