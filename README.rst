@@ -164,6 +164,12 @@ TCP packets
 HTTP protocol...
 ----------------
 
+Using the established TCP connection, the browser sends an HTTP "GET" request
+packet for the root web server directory. This request is received
+by the web server which parses the request for the HTTP method and request URI,
+among other things. The web server validates the request, generates
+Google's home page as an HTML document, and sends it back to the browser.
+
 HTML parsing...
 -----------------
 
