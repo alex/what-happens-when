@@ -45,7 +45,7 @@ Interrupt fires...
 
 The HID transport passes the key down event to the ``KBDHID.sys`` driver which
 converts the HID usage into a scancode. In this case the scan code is
-```VK_RETURN`` (``0x0D``). The ```KBDHID.sys`` driver interfaces with the
+``VK_RETURN`` (``0x0D``). The ``KBDHID.sys`` driver interfaces with the
 ``KBDCLASS.sys`` (keyboard class driver). This driver is responsible for
 handling all keybaord and keypad input in a secure manner. It then calls into
 ``Win32K.sys`` (after potentially passing the message through an 3rd party
