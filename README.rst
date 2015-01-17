@@ -252,7 +252,7 @@ HTTP Server Request Handle
 --------------------------
 The HTTPD (HTTP Daemon) server is the one handling the requests/responses on
 the server side.
-The most HTTPD servers are Apache for Linux, and IIS for windows.
+The most common HTTPD servers are Apache for Linux, and IIS for windows.
 
 * The HTTPD (HTTP Daemon) receives the request.
 * The server breaks down the request to the following parameters:
