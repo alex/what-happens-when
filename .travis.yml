@@ -1,0 +1,4 @@
+language: python
+install: pip install doc8
+script:
+    - doc8 README.rst
