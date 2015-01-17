@@ -280,7 +280,7 @@ Page Rendering
   and addon panels.
 * Final layer positions are computed and the composite commands are issued
   via Direct3D/OpenGL. The GPU command buffer(s) are flushed to the GPU for
-  asyncrounous rendering and the frame is sent to the window server.
+  asynchronous rendering and the frame is sent to the window server.
 
 GPU Rendering
 -------------
