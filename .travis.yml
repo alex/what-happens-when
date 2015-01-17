@@ -3,9 +3,9 @@ language: python
 sudo: false
 
 install: 
- - pip install doc8
- - npm install -g write-good
+    - pip install doc8
+    - npm install -g write-good
 
 script:
- - doc8 README.rst
- - write-good README.rst --weasel --so --thereIs --adverb --cliches
+    - doc8 README.rst
+    - write-good README.rst --weasel --so --thereIs --adverb --cliches
