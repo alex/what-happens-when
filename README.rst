@@ -173,8 +173,10 @@ Page Rendering
   they should appear
 * Traverse and "paint" each DOM node
 
-Javascript execution...
+Javascript execution
 -----------------------
+
+* Javascript errors
 
 
 .. _`Creative Commons Zero`: https://creativecommons.org/publicdomain/zero/1.0/
