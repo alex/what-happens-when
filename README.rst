@@ -47,7 +47,7 @@ The HID transport passes the key down event to the ``KBDHID.sys`` driver which
 converts the HID usage into a scancode. In this case the scan code is
 ``VK_RETURN`` (``0x0D``). The ``KBDHID.sys`` driver interfaces with the
 ``KBDCLASS.sys`` (keyboard class driver). This driver is responsible for
-handling all keybaord and keypad input in a secure manner. It then calls into
+handling all keyboard and keypad input in a secure manner. It then calls into
 ``Win32K.sys`` (after potentially passing the message through an 3rd party
 keyboard filters that are installed). This all happens in kernel mode.
 
@@ -134,7 +134,7 @@ This send and receive happens multiple times following the TCP connection flow:
    * As one side sends N data bytes, it increases its SEQ by that number
    * When the other side acknowledges receipt of that packet (or a string of
      packets), it sends an ACK packet with the ACK value equal to the last
-     received seequence from the other
+     received sequence from the other
 * To close the connection:
    * The closer sends a FIN packet
    * The other sides ACKs the FIN packet and sends its own FIN
