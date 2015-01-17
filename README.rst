@@ -182,10 +182,26 @@ CSS interpretation...
 Page Rendering
 --------------
 
-* Create render tree from CSS and visual instructions in HTML
-* Layout (reflow) render tree nodes by giving them exact coordiantes of where
-  they should appear
-* Traverse and "paint" each DOM node
+* Create a 'Frame Tree' or 'Render Tree' by running Layout (reflow) on the 
+  content nodes. This gives each node exact coordinates.
+* Create layers to describe which parts of the page can be animated as a group
+  without being re-rasterized. Each frame/render object is assigned to a layer.
+* Textures are allocated for each layer of the page.
+* The frame/render objects for each layers are traversed and drawing commands
+  are executed for their respective layer. This may be rasterized by the CPU
+  or drawn on the GPU directly using D2D/SkiaGL.
+* The page layers are sent to the compositing process where they are combined
+  with layers for other visible content like the browser chrome, iframes
+  and addon panels.
+* Final layer positions are computed and the composite commands are issued
+  via Direct3D/OpenGL. The GPU command buffer(s) are flushed to the GPU for
+  asyncrounous rendering and the frame is sent to the window server.
+  
+GPU Rendering
+-------------
+
+Window Server
+-------------
 
 Javascript execution...
 -----------------------
