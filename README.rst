@@ -210,7 +210,8 @@ spec. This also assumes that the web browser is using ``HTTP/1.1``, otherwise it
 may not include the ``Host`` header in the request and the version specified in
 the ``GET`` request will either be ``HTTP/1.0`` or ``HTTP/0.9``.)
 
-After sending the request and headers, the web browser sends a single blank newline to the server indicating that the content of the request is done.
+After sending the request and headers, the web browser sends a single blank
+newline to the server indicating that the content of the request is done.
 
 The server responds with a response code denoting the status of the request and
 responds with a response of the form::
