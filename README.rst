@@ -50,7 +50,8 @@ DNS lookup...
   the lookup.
 * If ``gethostbyname`` does not have it cached then a request is made to the
   known DNS server that was given to the network stack. This is typically the
-  local router or the ISP's caching DNS server
+  local router or the ISP's caching DNS server.
+* Port 53 is opened to send UDP request to DNS server(if the response size is too large, TCP will be used instead). 
 * If the local/ISP DNS server does not have it, then a recursive search is
   requested and that flows up the list of DNS servers until the SOA is reached,
   and if found an answer is returned.
