@@ -26,7 +26,7 @@ The keyboard controller then encodes the keycode for transport to the computer.
 This is now almost universally over a Universal Serial Bus (USB) or Bluetooth
 connection, but historically has been over PS/2 or ADB connections.
 
-In the case of the the USB example: the USB circuitry of the keyboard is powered
+In the case of the USB example: the USB circuitry of the keyboard is powered
 by the 5V supply provided over pin 1 from the computer's USB host controller.
 17.78 mA of this current is returned on either the D+ or D- pin (the middle 2)
 of the keyboard's USB connector. Which pin carries the current is rapidly
@@ -84,7 +84,7 @@ The interrupt signal triggers an interrupt event in the I/O Kit kext keyboard
 driver. The driver translates the signal into a key code which is passed to the
 OS X ``WindowServer`` process. Resultantly, the ``WindowServer`` dispatches an
 event to any appropriate (e.g. active or listening) applications through their
-Mach port where it it placed into an event queue. Events can then be read from
+Mach port where it is placed into an event queue. Events can then be read from
 this queue by threads with sufficient privileges calling the
 ``mach_ipc_dispatch`` function. This most commonly occurs through, and is
 handled by, an ``NSApplication`` main event loop, via an ``NSEvent`` of
@@ -135,9 +135,9 @@ that and the given port number from the URL (the http protocol defaults to port
 ``socket`` and requests a TCP socket stream - ``AF_INET`` and ``SOCK_STREAM``.
 
 This request is passed to the Transport Layer where the extra love that TCP/IP
-requires for ensuring packet delivery and ordering is added and then a IP
+requires for ensuring packet delivery and ordering is added and then an IP
 packet is fashioned. The IP packet is then handed off to the physical network
-layer which inspects the target IP address, looks up the subnet in it's route
+layer which inspects the target IP address, looks up the subnet in its route
 tables and wrapped in an ethernet frame with the proper gateway address as the
 recipient. At this point the packet is ready to be transmitted, most likely
 through either:
