@@ -123,7 +123,20 @@ requires for ensuring packet delivery and ordering is added and then a IP
 packet is fashioned. The IP packet is then handed off to the physical network
 layer which inspects the target IP address, looks up the subnet in it's route
 tables and wrapped in an ethernet frame with the proper gateway address as the
-recipient.
+recipient. At this point the packet is ready to be transmitted, most likely
+through either:
+
+ * Ethernet http://en.wikipedia.org/wiki/IEEE_802.3
+ * Wifi http://en.wikipedia.org/wiki/IEEE_802.11
+ * Cellular data network http://en.wikipedia.org/wiki/Cellular_data_communication_protocol
+ 
+In all cases the last point at which the packet leaves your computer is a
+digital-to-analog (DAC) converter which fires off electrical 1's and 0's on a wire.
+On the other end of the physical bit transfer is a analog-to-digital converter
+http://en.wikipedia.org/wiki/Analog-to-digital_converter which converts the 
+electrical bits into logic signals to be processed by the next network node
+http://en.wikipedia.org/wiki/Computer_network#Network_nodes where its from
+and to addresses would be analyzed further.
 
 This address lookup and wrapping of datagrams continues until one of two things
 happen, the time-to-live value for a datagram reaches zero at which point the
