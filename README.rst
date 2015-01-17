@@ -205,7 +205,7 @@ request to the server of the form::
     Host: google.com
     [other headers]
 
-where ``[other headers]`` refers to a colon-separated series of key-value pairs
+where ``[other headers]`` refers to a series of colon-separated key-value pairs
 formatted as per the HTTP specification and separated by single new lines.
 (This assumes the web browser being used doesn't have any bugs violating the
 HTTP spec. This also assumes that the web browser is using ``HTTP/1.1``,
