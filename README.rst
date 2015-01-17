@@ -100,8 +100,10 @@ DNS lookup...
 * Browser checks if the domain is in its cache.
 * If not found, calls ``gethostbyname`` library function (varies by OS) to do
   the lookup.
-* If ``gethostbyname`` does not have it cached then a request is made to the
-  known DNS server that was given to the network stack. This is typically the
+* ``gethostbyname`` checks if the hostname can be resolved by looking in the 
+  ``/etc/hosts`` file, before trying to resolve the hostname through DNS.
+* If ``gethostbyname`` does not have it cached nor in the ``hosts`` file then a request
+  is made to the known DNS server that was given to the network stack. This is typically the
   local router or the ISP's caching DNS server.
 * The local DNS server (or local gateway's) MAC address is looked up in the ARP
   cache. If the MAC address is missing, an ARP request packet is sent.
