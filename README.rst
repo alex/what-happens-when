@@ -210,20 +210,30 @@ and to **authenticate** the server (or sometimes both parties).
 This TLS thing is often done by using an opensource software called **OpenSSL**, browser often uses that so 
 the encryption and authentication process is done at the Application level of the OSI model.
 
-The **Authentication** part works thanks Public Key Infrastructure (PKI), and this allows the Client to make sure
-that he's really talking to Google and not someone else.
+TLS also not only encrypts the packets but **authenticate** the server as well. This allows the Client to make sure
+that he's really talking to Google (for example) and not someone else. It works thanks to a Public Key Infrastructure (PKI).
 
-### Encryption
+###Handshake
 
-* ciphers
+The encryption is done thanks to **symmetric encryption**. Because it is faster than **asymmetric encryption**. 
+It's problematic because symmetric encryption works with only one key (the same key allows encryption _and_ decryption).
+This is why we do a Handshake.
 
-### Authentication
+###Encryption
 
-* Asymetric Encryption
+We use block ciphers like AES, with a mode of operation that allows the block cipher to encrypt several blocks 
+For example AES can only encrypt a block of 128 bits, that's why we need a mode of operation to encrypt messages
+that are longer. With that we can encrypt messages of length exactly a multiple of 128bits. That's why a 
+padding method must be used as well (for example, adding 0s until the length of the message is reaching a multiple of
+128 bits).
+
+###Authentication
+
+* The cryptography used to authenticate the server (and sometimes the Client as well) comes from **asymmetric encryption**.
 * CA
 * root certificates in browser
 
-### TLS
+### TLS protocol
 
 In reality it's more complext han that. The Client sends a ClientHello, the Server sends a ServerHello.
 They then agree on a set of protocols. The Server sends his Certificate (the Client can also do this) and 
