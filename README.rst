@@ -121,8 +121,83 @@ DNS lookup...
 * If ``gethostbyname`` does not have it cached nor in the ``hosts`` file then a
   request is made to the known DNS server that was given to the network stack.
   This is typically the local router or the ISP's caching DNS server.
-* The local DNS server (or local gateway's) MAC address is looked up in the ARP
-  cache. If the MAC address is missing, an ARP request packet is sent.
+
+* The local DNS server is looked up.
+
+* If the DNS server is on the same subnet the ARP cache is checked for an ARP
+  entry for the DNS server. If there is no entry in the ARP cache we do the
+  ``ARP process`` (see below) for the DNS server. If there is an entry in the
+  ARP cache, we get the information: DNS.server.ip.address = dns:mac:address
+
+* If the DNS server is on a different subnet, we check the ARP cache for the
+  default gateway IP. If we do not have an entry in the ARP cache we do the
+  ``ARP process`` (see below) for the default gateway IP. If we have an entry
+  in the ARP cache, we get the information:
+  default.gateway.ip.address = gateway:mac:address
+
+
+ARP process
+-----------
+In order to send an ARP broadcast we need to have a Target IP address we want
+to look up. We also need to know the MAC address of the interface we are going
+to use to send out the ARP broadcast.
+
+* The ARP cache is checked for an ARP entry for our target IP. If it's in the
+  cache, we return the result: Target IP = MAC.
+
+If the entry is not in the ARP cache:
+
+* The route table is looked up, to see if the Target IP address is on any of
+  the subnets on the local route table. If it is, we use the interface
+  associated with that subnet. If it is not, we use the interface that has the
+  subnet of our default gateway.
+
+* The MAC address of the selected network interface is looked up.
+
+* We send an Layer 2 ARP request:
+
+``ARP Request``::
+
+    Sender MAC: interface:mac:address:here
+    Sender IP: interface.ip.goes.here
+    Target MAC: 255.255.255.255 (Broadcast)
+    Target IP: target.ip.goes.here
+
+Depending on what type of hardware we have between us and the router:
+
+Directly connected:
+
+* If we are directly connected to the router the router will respond with an
+  ``ARP Reply`` (see below)
+
+Hub:
+
+* If we are connected to a HUB the HUB will broadcast the ARP request out all
+  other ports of the HUB. If the router is connected on the same "wire" it will
+  respond with an ``ARP Reply`` (see below).
+
+Switch:
+
+* If we are connected to a switch it will check it's local CAM/MAC table to see
+  which port has the MAC address we are looking for. If the switch has no entry
+  for the MAC address it will rebroadcast the ARP request to all other ports.
+
+* If the switch has an entry in the MAC/CAM table it will send the ARP request
+  to the port that has the MAC address we are looking for.
+
+* If the router is on the same "wire" it will respond with an ``ARP Reply``
+  (see below)
+
+``ARP Reply``::
+
+    Sender MAC: target:mac:address:here
+    Sender IP: target.ip.goes.here
+    Target MAC: interface:mac:address:here
+    Target IP: interface.ip.goes.here
+
+Now that we have the IP address of either our DNS server or the default gateway
+we can resume our DNS process:
+
 * Port 53 is opened to send a UDP request to DNS server (if the response size
   is too large, TCP will be used instead).
 * If the local/ISP DNS server does not have it, then a recursive search is
