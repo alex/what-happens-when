@@ -213,11 +213,24 @@ the encryption and authentication process is done at the Application level of th
 TLS also not only encrypts the packets but **authenticate** the server as well. This allows the Client to make sure
 that he's really talking to Google (for example) and not someone else. It works thanks to a Public Key Infrastructure (PKI).
 
+
+###Authentication
+
+* The cryptography used to authenticate the server (and sometimes the Client as well) comes from **asymmetric encryption**.
+* CA
+* root certificates in browser
+
 ###Handshake
 
 The encryption is done thanks to **symmetric encryption**. Because it is faster than **asymmetric encryption**. 
 It's problematic because symmetric encryption works with only one key (the same key allows encryption _and_ decryption).
 This is why we do a Handshake.
+
+To do a Handshake 2 big protocols can be used (depending on what the Client and the Server previously agreed):
+* Diffie-Hellman
+* RSA
+
+We'll just explain RSA because it is often used instead of Diffie-Hellman since it provides **authentication**.
 
 ###Encryption
 
@@ -226,12 +239,6 @@ For example AES can only encrypt a block of 128 bits, that's why we need a mode 
 that are longer. With that we can encrypt messages of length exactly a multiple of 128bits. That's why a 
 padding method must be used as well (for example, adding 0s until the length of the message is reaching a multiple of
 128 bits).
-
-###Authentication
-
-* The cryptography used to authenticate the server (and sometimes the Client as well) comes from **asymmetric encryption**.
-* CA
-* root certificates in browser
 
 ### TLS protocol
 
