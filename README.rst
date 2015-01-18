@@ -200,8 +200,28 @@ This send and receive happens multiple times following the TCP connection flow:
 UDP packets
 ~~~~~~~~~~~
 
-TLS handshake...
-----------------
+TLS handshake
+-------------
+* The client computer sends a ``Client hello`` message to the server with it TLS version,
+  list of cipher algorithms and compression methods available.
+
+* The server replies with a ``Server hello`` message to the client with the TLS version, cipher
+  and compression methods selected + the Server public certificate signed by a CA (Certificate Authority)
+  that also contains a public key.
+
+* The client verifies the server digital certificate and cipher a symetric cryptography key using an asymetric
+  cryptography algorithm, attaching the server public key and an encrypted message for verification purposes.
+
+* The server decrypts the key using its private key and decrypts the verification message with it, then replies
+  with the verification message decrypted and signed with its private key
+
+* The client confirm the server identity, cipher the agreed key and sends a ``finished`` message to the server,
+  attaching the encrypted agreed key.
+
+* The server sends a ``finished`` message to the client, encrypted with the agreed key.
+
+* From now on the TLS session communicates information encrypted with the agreed key
+
 
 TCP packets
 ~~~~~~~~~~~
