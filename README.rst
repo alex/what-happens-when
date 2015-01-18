@@ -251,12 +251,14 @@ server name instead of ``google.com``.
 HTML parsing...
 ---------------
 
-* Fetch contents of requested document from network layer in 8kb chunks
-* Parse HTML document
-* Convert elements to DOM nodes in the content tree
+* Fetch contents of requested document from network layer in 8kb chunks.
+* Parse HTML document (See
+  https://html.spec.whatwg.org/multipage/syntax.html#parsing for more
+  information).
+* Convert elements to DOM nodes in the content tree.
 * Fetch/prefetch external resources linked to the page (CSS, Images, JavaScript
   files, etc.)
-* Execute synchronous JavaScript code
+* Execute synchronous JavaScript code.
 
 CSS interpretation...
 ---------------------
@@ -267,14 +269,30 @@ CSS interpretation...
 Page Rendering
 --------------
 
-* Create a 'Frame Tree' or 'Render Tree' by running Layout (reflow) on the
-  content nodes. This gives each node exact coordinates.
+* Create a 'Frame Tree' or 'Render Tree' by traversing the DOM nodes, and
+  calculating the CSS style values for each node.
+* Calculate the preferred width of each node in the 'Frame Tree' bottom up
+  by summing the preferred width of the child nodes and the node's
+  horizontal margins, borders, and padding.
+* Calculate the actual width of each node top-down by allocating each node's
+  available width to its children.
+* Calculate the height of each node bottom-up by applying text wrapping and
+  summing the child node heights and the node's margins, borders, and padding.
+* Calculate the coordinates of each node using the information calculated
+  above.
+* More complicated steps are taken when elements are ``floated``,
+  positioned ``absolutely`` or ``relatively``, or other complex features
+  are used. See
+  http://dev.w3.org/csswg/css2/ and http://www.w3.org/Style/CSS/current-work
+  for more details.
 * Create layers to describe which parts of the page can be animated as a group
   without being re-rasterized. Each frame/render object is assigned to a layer.
 * Textures are allocated for each layer of the page.
 * The frame/render objects for each layers are traversed and drawing commands
   are executed for their respective layer. This may be rasterized by the CPU
   or drawn on the GPU directly using D2D/SkiaGL.
+* All of the above steps may reuse calculated values from the last time the
+  webpage was rendered, so that incremental changes require less work.
 * The page layers are sent to the compositing process where they are combined
   with layers for other visible content like the browser chrome, iframes
   and addon panels.
