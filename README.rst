@@ -185,11 +185,55 @@ This send and receive happens multiple times following the TCP connection flow:
 UDP packets
 ~~~~~~~~~~~
 
-TLS handshake...
-----------------
+
 
 TCP packets
 ~~~~~~~~~~~
+
+
+
+Security: Encryption/Authentication
+-------------------------------------
+
+If the URL is displaying `https` instead of `http`, this means that in the TCP packets, 
+the **TCP payloads** are **encrypted**.
+This means that if someone could "listen" to the traffic and see the packets in transit, 
+he wouldn't be able to tell what is being requested to the server and what is being sent to the client.
+
+To **encrypt** packets we need a key. And for the Client (the one initiating the connection) and the Server 
+(the one who received the first request) to share a secret key, we first need to do a key exchange.
+This is also called a **handshake**.
+
+First what you need to know is that **TLS** (previously called **SSL**) is a set of rules and guides that both
+the Client and the Server use to take care of this handshake thing and to encrypt/decrypt the TCP packets 
+and to **authenticate** the server (or sometimes both parties).
+This TLS thing is often done by using an opensource software called **OpenSSL**, browser often uses that so 
+the encryption and authentication process is done at the Application level of the OSI model.
+
+The **Authentication** part works thanks Public Key Infrastructure (PKI), and this allows the Client to make sure
+that he's really talking to Google and not someone else.
+
+### Encryption
+
+* ciphers
+
+### Authentication
+
+* Asymetric Encryption
+* CA
+* root certificates in browser
+
+### TLS
+
+In reality it's more complext han that. The Client sends a ClientHello, the Server sends a ServerHello.
+They then agree on a set of protocols. The Server sends his Certificate (the Client can also do this) and 
+the Client verifies the Server's Certificate (this is called Authentication). Then a couple of messages are 
+sent encrypted to see if the encryption process works. There are also other things like session resumption, 
+triple handshakes, perfect forward secrecy...
+
+more info about TLS from Thomas Pornin:  
+* http://security.stackexchange.com/questions/20803/how-does-ssl-tls-work/20847#20847
+* http://security.blogoverflow.com/2012/10/qotw-37-how-does-ssl-work/
 
 HTTP protocol...
 ----------------
