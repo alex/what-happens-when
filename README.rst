@@ -61,7 +61,7 @@ keyboard filters that are installed). This all happens in kernel mode.
 ``Win32K.sys`` figures out what window is the active window through the
 ``GetForegroundWindow()`` API. This API provides the window handle of the
 browser's address box. The main Windows "message pump" then calls
-``SendMessage(hwnd, WM_KEYDOWN, VK_RETURN, lParam)``. ``lParam`` is a bitmask
+``SendMessage(hWnd, WM_KEYDOWN, VK_RETURN, lParam)``. ``lParam`` is a bitmask
 that indicates further information about the keypress: repeat count (0 in this
 case), the actual scan code (can be OEM dependent, but generally wouldn't be
 for ``VK_RETURN``), whether extended keys (e.g. alt, shift, ctrl) were also
