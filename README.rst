@@ -100,9 +100,9 @@ handled by, an ``NSApplication`` main event loop, via an ``NSEvent`` of
 (On GNU/Linux) the Xorg server listen for keycodes
 --------------------------------------------------
 
-When a graphical ``X server`` is used, a re-maping of keycodes to scancodes
+When a graphical ``X server`` is used, a re-mapping of keycodes to scancodes
 is made with ``X server`` specific keymaps and rules.
-When the scancode maping of the key pressed is complete, the ``X server``
+When the scancode mapping of the key pressed is complete, the ``X server``
 sends the character to the ``window manager`` (DWM, metacity, i3, etc), so the
 ``window manager`` in turn sends the character to the focused window.
 The graphical API of the window  that receives the character prints the appropiate
@@ -205,20 +205,20 @@ UDP packets
 TLS handshake...
 ----------------
 * The client computer sends a ``Client hello`` message to the server with it TLS version,
-list of cipher algorithms available and compression methods availabe.
+list of cipher algorithms and compression methods available.
 
 * The server replies with a ``Server hello`` message to the client with the TLS version, cipher
 and compression methods selected + the Server public certificate signed by a CA (Certificate Authority)
 that also contains a public key.
 
-* The client verifies the server digital certificate and cipher a simetric cryptography key using a asimetric
-  cryptography algorithm and the server public key and an encrypted message for verification purposes.
+* The client verifies the server digital certificate and cipher a symetric cryptography key using an asymetric
+  cryptography algorithm, attaching the server public key and an encrypted message for verification purposes.
 
-* The server decrypt the key using its private key and decrypt the verification message with it, then replies
-  with the verification message decypted and signed with it private key
+* The server decrypts the key using its private key and decrypts the verification message with it, then replies
+  with the verification message decrypted and signed with its private key
 
-* The client confirm the server identity and cipher key agreed and sends a ``finished`` message to the server,
-  encrypted with the agreed key.
+* The client confirm the server identity, cipher the agreed key and sends a ``finished`` message to the server,
+  attaching the encrypted agreed key.
 
 * The server sends a ``finished`` message to the client, encrypted with the agreed key.
 
@@ -316,27 +316,6 @@ Page Rendering
 * The page layers are sent to the compositing process where they are combined
   with layers for other visible content like the browser chrome, iframes
   and addon panels.
-* Final layer positions are computed and the composite commands are issued
-  via Direct3D/OpenGL. The GPU command buffer(s) are flushed to the GPU for
-  asynchronous rendering and the frame is sent to the window server.
-
-GPU Rendering
--------------
-
-Window Server
--------------
-
-Post-rendering and user-induced execution
------------------------------------------
-
-After rendering has completed, the browser executes JavaScript code as a result
-of some timing mechanism (such as a Google Doodle animation) or user
-interaction (typing a query into the search box and receiving suggestions).
-Plugins such as Flash or Java may execute as well, although not at this time on
-the Google homepage. Scripts can cause additional network requests to be
-performed, as well as modify the page or its layout, effecting another round of
-page rendering and painting.
-
 .. _`Creative Commons Zero`: https://creativecommons.org/publicdomain/zero/1.0/
 .. _`"CSS lexical and syntax grammar"`: http://www.w3.org/TR/CSS2/grammar.html
 .. _`Punycode`: https://en.wikipedia.org/wiki/Punycode
