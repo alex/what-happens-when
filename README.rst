@@ -204,6 +204,27 @@ UDP packets
 
 TLS handshake...
 ----------------
+* The client computer sends a ``Client hello`` message to the server with it TLS version,
+list of cipher algorithms available and compression methods availabe.
+
+* The server replies with a ``Server hello`` message to the client with the TLS version, cipher
+and compression methods selected + the Server public certificate signed by a CA (Certificate Authority)
+that also contains a public key.
+
+* The client verifies the server digital certificate and cipher a simetric cryptography key using a asimetric
+  cryptography algorithm and the server public key and an encrypted message for verification purposes.
+
+* The server decrypt the key using its private key and decrypt the verification message with it, then replies
+  with the verification message decypted and signed with it private key
+
+* The client confirm the server identity and cipher key agreed and sends a ``finished`` message to the server,
+  encrypted with the agreed key.
+
+* The server sends a ``finished`` message to the client, encrypted with the agreed key.
+
+* From now on the TLS session communicates information encrypted with the agreed key
+
+
 
 TCP packets
 ~~~~~~~~~~~
