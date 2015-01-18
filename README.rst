@@ -37,6 +37,10 @@ interpreted by the computer's Human Interface Device (HID) universal keyboard
 device driver.  The value of the key is then passed into the operating system's
 hardware abstraction layer.
 
+In the case of a digital keyboard, perhaps used by a touch screen device... (I
+don't know, but I'm fascinated, and I hate to leave out mobile devices, which
+are roughly 40% of web traffic)
+
 Interrupt fires...
 ------------------
 
