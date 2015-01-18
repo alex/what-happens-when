@@ -97,6 +97,18 @@ handled by, an ``NSApplication`` main event loop, via an ``NSEvent`` of
 ``NSEventType`` ``KeyDown``.
 
 
+(On GNU/Linux) the Xorg server listen for keycodes
+--------------------------------------------------
+
+When a graphical ``X server`` is used, a re-maping of keycodes to scancodes
+is made with ``X server`` specific keymaps and rules.
+When the scancode maping of the key pressed is complete, the ``X server``
+sends the character to the ``window manager`` (DWM, metacity, i3, etc), so the
+``window manager`` in turn sends the character to the focused window.
+The graphical API of the window  that receives the character prints the appropiate
+font symbol in the appropiate focused field.
+
+
 Is it a URL or a search term?
 -----------------------------
 
