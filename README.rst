@@ -26,19 +26,25 @@ The keyboard controller then encodes the keycode for transport to the computer.
 This is now almost universally over a Universal Serial Bus (USB) or Bluetooth
 connection, but historically has been over PS/2 or ADB connections.
 
-In the case of the USB example: the USB circuitry of the keyboard is powered
+In the case of the USB keyboard: the USB circuitry of the keyboard is powered
 by the 5V supply provided over pin 1 from the computer's USB host controller.
-17.78 mA of this current is returned on either the D+ or D- pin (the middle 2)
-of the keyboard's USB connector. Which pin carries the current is
-toggled between the two creating a high speed bitstream (the rate depending on
-USB 1, 2, or 3) serially encoding the digital value of the enter key.  This
-serial signal is then decoded at the computer's host USB controller, and
+The keycode generated is stored by internal keyboard circuitry memory in a
+register called "endpoint".
+The host USB contoller polls that "endpoint" every ~10ms (minimum value
+declared by the keyboard), so it gets the keycode value stored on it.
+This value goes to the USB SIE (Serial Interface Engine) to be converted in
+one or more USB packets that follows the low level USB protocol.
+Those packets are sent by a diferential electrical signal over D+ and D- pins
+(the middle 2) at a maximum speed of 1.5 Mb/s, as an HID
+(Human Interface Devide) device is always declared to be a "low speed device"
+(USB 2.0 compliance).
+This serial signal is then decoded at the computer's host USB controller, and
 interpreted by the computer's Human Interface Device (HID) universal keyboard
 device driver.  The value of the key is then passed into the operating system's
 hardware abstraction layer.
 
-Interrupt fires...
-------------------
+Interrupt fires [NOT for USB keyboards]
+---------------------------------------
 
 The keyboard sends signals on its interrupt request line (IRQ), which is mapped
 to an ``interrupt vector`` (integer) by the interrupt controller. The CPU uses
@@ -91,6 +97,16 @@ this queue by threads with sufficient privileges calling the
 handled by, an ``NSApplication`` main event loop, via an ``NSEvent`` of
 ``NSEventType`` ``KeyDown``.
 
+(On GNU/Linux) the Xorg server listen for keycodes
+--------------------------------------------------
+
+When a graphical ``X server`` is used, a re-mapping of keycodes to scancodes
+is made with ``X server`` specific keymaps and rules.
+When the scancode mapping of the key pressed is complete, the ``X server``
+sends the character to the ``window manager`` (DWM, metacity, i3, etc), so the
+``window manager`` in turn sends the character to the focused window.
+The graphical API of the window  that receives the character prints the
+appropiate font symbol in the appropiate focused field.
 
 Is it a URL or a search term?
 -----------------------------
@@ -271,8 +287,33 @@ This send and receive happens multiple times following the TCP connection flow:
 UDP packets
 ~~~~~~~~~~~
 
-TLS handshake...
-----------------
+TLS handshake
+-------------
+* The client computer sends a ``Client hello`` message to the server with it
+  TLS version, list of cipher algorithms and compression methods available.
+
+* The server replies with a ``Server hello`` message to the client with the
+  TLS version, cipher and compression methods selected + the Server public
+  certificate signed by a CA (Certificate Authority) that also contains a
+  public key.
+
+* The client verifies the server digital certificate and cipher a symetric
+  cryptography key using an asymetric cryptography algorithm, attaching the
+  server public key and an encrypted message for verification purposes.
+
+* The server decrypts the key using its private key and decrypts the
+  verification message with it, then replies with the verification message
+  decrypted and signed with its private key
+
+* The client confirm the server identity, cipher the agreed key and sends a
+  ``finished`` message to the server, attaching the encrypted agreed key.
+
+* The server sends a ``finished`` message to the client, encrypted with the
+  agreed key.
+
+* From now on the TLS session communicates information encrypted with the
+  agreed key
+
 
 TCP packets
 ~~~~~~~~~~~
