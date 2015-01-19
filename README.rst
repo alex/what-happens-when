@@ -67,7 +67,8 @@ connection, but historically has been over PS/2 or ADB connections.
   the 'click'.
 
 - Then the mobile OS notify the current focused application of a click event in
-one of its GUI elements (which now is the virtual keyboard application buttons)
+  one of its GUI elements (which now is the virtual keyboard application
+  buttons).
 
 - The virtual keyboard can now rises a software interrupt for sending a
   'key pressed' message back to the OS.
