@@ -466,6 +466,15 @@ Page Rendering
 GPU Rendering
 -------------
 
+* During rendering process the graphical computing layers can use general
+  purpose ``CPU`` or the grhapical processor ``GPU`` as well.
+
+* When using ``GPU`` for graphical rendering computations the graphical
+  software layers split the task into multple pieces, so it can take advantage
+  of ``GPU`` massive parallelism for float point calculations requiered for
+  the rendering process.
+
+
 Window Server
 -------------
 
