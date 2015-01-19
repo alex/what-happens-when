@@ -142,33 +142,31 @@ sends the character to the ``window manager`` (DWM, metacity, i3, etc), so the
 The graphical API of the window  that receives the character prints the
 appropiate font symbol in the appropiate focused field.
 
-Is it a URL or a search term?
------------------------------
 
 Parse URL
 ---------
 
-* The browser knows what to do based on the information provided by the URL,
-  where:
+* The browser has now the following information contained in the URL (Uniform
+  Resource Locator):
 
-  *``http://www.google.com``*
+    - ``Protocol``  "http"
+        Use 'Hyper Text Transfer Protocol'
 
-  - ``http://``
-    Tells the browser that it needs to communicate using the 'Hyper Text
-    Trasnfer Protocol' with the target machine.
+    - ``Domain name``  "www.google.com"
+        Connect to host 'www.google.com'
 
-  - ``www``
-    Indicates the target machine for the 'google.com' domain, which for this
-    case 'www' indicates the WEB service.
+    - ``Web service type``  ".com"
+        The domain corresponds to a 'Commercial' web service
 
-  - ``.google``
-    Indicates the domain for google, where the DNS look up takes place to
-    translate it into an IP adress.
-
-  - ``.com``
-    Is the domain suffix for 'Commercial'.
+    - ``Resource``  "/"
+        Retrieve main (index) page
 
 
+Is it a URL or a search term?
+-----------------------------
+
+When no protocol or valid domain name is given the browser proceeds to feed
+the text given in the URL bar to its default web search engine.
 
 
 Check HSTS list...
