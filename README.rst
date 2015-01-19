@@ -41,15 +41,15 @@ connection, but historically has been over PS/2 or ADB connections.
 - The keycode generated is stored by internal keyboard circuitry memory in a
   register called "endpoint".
 
-- The host USB contoller polls that "endpoint" every ~10ms (minimum value
+- The host USB controller polls that "endpoint" every ~10ms (minimum value
   declared by the keyboard), so it gets the keycode value stored on it.
 
 - This value goes to the USB SIE (Serial Interface Engine) to be converted in
   one or more USB packets that follows the low level USB protocol.
 
-- Those packets are sent by a diferential electrical signal over D+ and D- pins
+- Those packets are sent by a differential electrical signal over D+ and D- pins
   (the middle 2) at a maximum speed of 1.5 Mb/s, as an HID
-  (Human Interface Devide) device is always declared to be a "low speed device"
+  (Human Interface Device) device is always declared to be a "low speed device"
   (USB 2.0 compliance).
 
 - This serial signal is then decoded at the computer's host USB controller, and
@@ -146,13 +146,13 @@ Is it a URL or a search term?
 Parse URL
 ---------
 
-* The browser knows what to do based on the iformation provided by the URL,
+* The browser knows what to do based on the information provided by the URL,
   where:
 
   *``http://www.google.com``*
 
   - ``http://``
-    Tells the browser that it needs to communicate using the 'Hiper Text
+    Tells the browser that it needs to communicate using the 'Hyper Text
     Trasnfer Protocol' with the target machine.
 
   - ``www``
@@ -515,11 +515,11 @@ GPU Rendering
 -------------
 
 * During rendering process the graphical computing layers can use general
-  purpose ``CPU`` or the grhapical processor ``GPU`` as well.
+  purpose ``CPU`` or the graphical processor ``GPU`` as well.
 
 * When using ``GPU`` for graphical rendering computations the graphical
-  software layers split the task into multple pieces, so it can take advantage
-  of ``GPU`` massive parallelism for float point calculations requiered for
+  software layers split the task into multiple pieces, so it can take advantage
+  of ``GPU`` massive parallelism for float point calculations required for
   the rendering process.
 
 
