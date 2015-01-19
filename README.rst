@@ -118,8 +118,31 @@ appropiate font symbol in the appropiate focused field.
 Is it a URL or a search term?
 -----------------------------
 
-Parse URL...
-------------
+Parse URL
+---------
+
+* The browser knows what to do based on the iformation provided by the URL,
+  where:
+
+  *``http://www.google.com``*
+
+  - ``http://``
+    Tells the browser that it needs to communicate using the 'Hiper Text
+    Trasnfer Protocol' with the target machine.
+
+  - ``www``
+    Indicates the target machine for the 'google.com' domain, which for this
+    case 'www' indicates the WEB service.
+
+  - ``.google``
+    Indicates the domain for google, where the DNS look up takes place to
+    translate it into an IP adress.
+
+  - ``.com``
+    Is the domain suffix for 'Commercial'.
+
+
+
 
 Check HSTS list...
 ------------------
