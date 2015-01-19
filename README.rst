@@ -33,22 +33,49 @@ The keyboard controller then encodes the keycode for transport to the computer.
 This is now almost universally over a Universal Serial Bus (USB) or Bluetooth
 connection, but historically has been over PS/2 or ADB connections.
 
-In the case of the USB keyboard: the USB circuitry of the keyboard is powered
-by the 5V supply provided over pin 1 from the computer's USB host controller.
-The keycode generated is stored by internal keyboard circuitry memory in a
-register called "endpoint".
-The host USB contoller polls that "endpoint" every ~10ms (minimum value
-declared by the keyboard), so it gets the keycode value stored on it.
-This value goes to the USB SIE (Serial Interface Engine) to be converted in
-one or more USB packets that follows the low level USB protocol.
-Those packets are sent by a diferential electrical signal over D+ and D- pins
-(the middle 2) at a maximum speed of 1.5 Mb/s, as an HID
-(Human Interface Devide) device is always declared to be a "low speed device"
-(USB 2.0 compliance).
-This serial signal is then decoded at the computer's host USB controller, and
-interpreted by the computer's Human Interface Device (HID) universal keyboard
-device driver.  The value of the key is then passed into the operating system's
-hardware abstraction layer.
+*In the case of the USB keyboard:*
+
+- The USB circuitry of the keyboard is powered by the 5V supply provided over
+   pin 1 from the computer's USB host controller.
+
+- The keycode generated is stored by internal keyboard circuitry memory in a
+  register called "endpoint".
+
+- The host USB controller polls that "endpoint" every ~10ms (minimum value
+  declared by the keyboard), so it gets the keycode value stored on it.
+
+- This value goes to the USB SIE (Serial Interface Engine) to be converted in
+  one or more USB packets that follows the low level USB protocol.
+
+- Those packets are sent by a differential electrical signal over D+ and D-
+  pins (the middle 2) at a maximum speed of 1.5 Mb/s, as an HID
+  (Human Interface Device) device is always declared to be a "low speed device"
+  (USB 2.0 compliance).
+
+- This serial signal is then decoded at the computer's host USB controller, and
+  interpreted by the computer's Human Interface Device (HID) universal keyboard
+  device driver.  The value of the key is then passed into the operating
+  system's hardware abstraction layer.
+
+*In the case of Virtual Keyboard (as in touch screen devices):*
+
+- In modern capacitive touch screens when the user puts his finger on the
+  screen a tiny amount of current from the electrostatic field of the
+  conductive layer gets transferred to the finger completing the circuit
+  and creating a voltage dropping at that point on the screen so that the
+  ``screen controller`` raises an interrupt reporting the coordinate of
+  the 'click'.
+
+- Then the mobile OS notifies the current focused application of a click event
+  in one of its GUI elements (which now is the virtual keyboard application
+  buttons).
+
+- The virtual keyboard can now raises a software interrupt for sending a
+  'key pressed' message back to the OS.
+
+- Which in turn notifies the current focused application of a 'key pressed'
+  event.
+
 
 Interrupt fires [NOT for USB keyboards]
 ---------------------------------------
@@ -115,11 +142,26 @@ sends the character to the ``window manager`` (DWM, metacity, i3, etc), so the
 The graphical API of the window  that receives the character prints the
 appropiate font symbol in the appropiate focused field.
 
+
+Parse URL
+---------
+
+* The browser has now the following information contained in the URL (Uniform
+  Resource Locator):
+
+    - ``Protocol``  "http"
+        Use 'Hyper Text Transfer Protocol'
+
+    - ``Resource``  "/"
+        Retrieve main (index) page
+
+
 Is it a URL or a search term?
 -----------------------------
 
-Parse URL...
-------------
+When no protocol or valid domain name is given the browser proceeds to feed
+the text given in the URL bar to its default web search engine.
+
 
 Check HSTS list...
 ------------------
@@ -407,8 +449,8 @@ The most common HTTPD servers are Apache for Linux, and IIS for windows.
 * The server will use PHP to interpret the index file, and catch the output.
 * The server will return the output, on the same request to the client.
 
-HTML parsing...
----------------
+HTML parsing
+------------
 
 * Fetch contents of requested document from network layer in 8kb chunks.
 * Parse HTML document (See
@@ -419,11 +461,15 @@ HTML parsing...
   files, etc.)
 * Execute synchronous JavaScript code.
 
-CSS interpretation...
----------------------
+CSS interpretation
+------------------
 
 * Parse CSS files and ``<style>`` tag contents using `"CSS lexical and syntax
   grammar"`_
+* Each CSS file is parsed into a ``StyleSheet object``, where each object
+  contains CSS rules with selectors and objects corresponding CSS grammar.
+* A CSS parser can be top-down or bottom-up when a specific parser generator
+  is used.
 
 Page Rendering
 --------------
@@ -461,6 +507,15 @@ Page Rendering
 
 GPU Rendering
 -------------
+
+* During rendering process the graphical computing layers can use general
+  purpose ``CPU`` or the graphical processor ``GPU`` as well.
+
+* When using ``GPU`` for graphical rendering computations the graphical
+  software layers split the task into multiple pieces, so it can take advantage
+  of ``GPU`` massive parallelism for float point calculations required for
+  the rendering process.
+
 
 Window Server
 -------------
