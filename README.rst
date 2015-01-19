@@ -152,12 +152,6 @@ Parse URL
     - ``Protocol``  "http"
         Use 'Hyper Text Transfer Protocol'
 
-    - ``Domain name``  "www.google.com"
-        Connect to host 'www.google.com'
-
-    - ``Web service type``  ".com"
-        The domain corresponds to a 'Commercial' web service
-
     - ``Resource``  "/"
         Retrieve main (index) page
 
