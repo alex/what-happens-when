@@ -47,8 +47,8 @@ connection, but historically has been over PS/2 or ADB connections.
 - This value goes to the USB SIE (Serial Interface Engine) to be converted in
   one or more USB packets that follows the low level USB protocol.
 
-- Those packets are sent by a differential electrical signal over D+ and D- pins
-  (the middle 2) at a maximum speed of 1.5 Mb/s, as an HID
+- Those packets are sent by a differential electrical signal over D+ and D-
+  pins (the middle 2) at a maximum speed of 1.5 Mb/s, as an HID
   (Human Interface Device) device is always declared to be a "low speed device"
   (USB 2.0 compliance).
 
