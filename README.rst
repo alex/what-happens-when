@@ -121,8 +121,8 @@ Is it a URL or a search term?
 Parse URL...
 ------------
 
-Check HOSTS list...
--------------------
+Check HSTS list...
+------------------
 
 Convert non-ASCII Unicode characters in hostname
 ------------------------------------------------
