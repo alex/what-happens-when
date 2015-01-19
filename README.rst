@@ -13,6 +13,13 @@ please!
 
 This is all licensed under the terms of the `Creative Commons Zero`_ license.
 
+Table of Contents
+====================
+
+.. contents::
+   :backlinks: none
+   :local:
+
 The "enter" key bottoms out
 ---------------------------
 
