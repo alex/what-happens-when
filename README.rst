@@ -137,12 +137,19 @@ that and the given port number from the URL (the http protocol defaults to port
 named ``socket`` and requests a TCP socket stream - ``AF_INET`` and
 ``SOCK_STREAM``.
 
-This request is passed to the Transport Layer where the extra love that TCP/IP
-requires for ensuring packet delivery and ordering is added and then an IP
-packet is fashioned. The IP packet is then handed off to the physical network
-layer which inspects the target IP address, looks up the subnet in its route
-tables and wrapped in an ethernet frame with the proper gateway address as the
-recipient. At this point the packet is ready to be transmitted through either:
+* This request is first passed to the Transport Layer where a TCP segment is
+  crafted. The destination port is added to the header, and a source port is
+  chosen from within the kernel's dynamic port range (ip_local_port_range in
+  Linux).
+* This segment is sent to the Network Layer, which wraps an additional IP
+  header. The IP address of the destination server as well as that of the
+  current machine is inserted to form a packet.
+* The packet next arrives at the Link Layer. A frame header is added that
+  includes the MAC address of the machine's NIC as well as the MAC address of
+  the gateway (local router). As before, if the kernel does not know the MAC
+  address of the gateway, it must broadcast an ARP query to find it.
+
+At this point the packet is ready to be transmitted through either:
 
 * `Ethernet`_
 * `WiFi`_
@@ -155,9 +162,13 @@ converter`_  which converts the electrical bits into logic signals to be
 processed by the next `network node`_ where its from and to addresses would be
 analyzed further.
 
-This address lookup and wrapping of datagrams continues until one of two things
-happen, the time-to-live value for a datagram reaches zero at which point the
-packet is dropped or it reaches the destination.
+Eventually, the packet will reach the router managing the local subnet. From
+there, it will continue to travel to the AS's border routers, other ASes, and
+finally to the destination server. Each router along the way extracts the
+destination address from the IP header and routes it to the appropriate next
+hop. The TTL field in the IP header is decremented by one for each router that
+passes. The packet will be dropped if the TTL field reaches zero or if the
+current router has no space in its queue (perhaps due to network congestion).
 
 This send and receive happens multiple times following the TCP connection flow:
 
