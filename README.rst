@@ -28,24 +28,33 @@ connection, but historically has been over PS/2 or ADB connections.
 
 In the case of the USB example: the USB circuitry of the keyboard is powered
 by the 5V supply provided over pin 1 from the computer's USB host controller.
-17.78 mA of this current is returned on either the D+ or D- pin (the middle 2)
-of the keyboard's USB connector. Which pin carries the current is
-toggled between the two creating a high speed bitstream (the rate depending on
-USB 1, 2, or 3) serially encoding the digital value of the enter key.  This
-serial signal is then decoded at the computer's host USB controller, and
-interpreted by the computer's Human Interface Device (HID) universal keyboard
-device driver.  The value of the key is then passed into the operating system's
-hardware abstraction layer.
+The USB controller on the host PC periodically polls the keyboard for an
+"interrupt" type USB packet. Because the keyboard has just seen its enter key
+change state, it will construct a standard HID packet, which includes 6 bytes
+for up to 6 concurrent keypresses. The value of "13" will be placed into one
+of these six locations.
+
+The HID packet will then have a checksum added for signal integrity, and will
+be encoded in NRZI format to increase the number of transitions. In addition,
+extra transitions will be "stuffed" to ensure that the receiving computer does
+not lose clock synchronization. The data is then sent out serially between
+start and end codes, using differential signaling on the D+/D- lines, where 3
+volts on D+ and 0 volts on D- represents a "K" state, and the opposite
+represents a "J" state. A transition from J to K or vice versa represents a "0"
+bit, whereas no transition represents a "1" bit.
 
 Interrupt fires...
 ------------------
 
-The keyboard sends signals on its interrupt request line (IRQ), which is mapped
-to an ``interrupt vector`` (integer) by the interrupt controller. The CPU uses
-the ``Interrupt Descriptor Table`` (IDT) to map the interrupt vectors to
-functions (``interrupt handlers``) which are supplied by the kernel. When an
-interrupt arrives, the CPU indexes the IDT with the interrupt vector and runs
-the appropriate handler. Thus, the kernel is entered.
+The USB ``host-controller interface`` (HCI) sends signals on its interrupt
+request line (IRQ), which is mapped to an ``interrupt vector`` (integer) by the
+interrupt controller. The CPU uses the ``Interrupt Descriptor Table`` (IDT)
+to map the interrupt vectors to functions (``interrupt handlers``) which are
+supplied by the kernel. When an interrupt arrives, the CPU indexes the IDT
+with the interrupt vector and runs the appropriate handler. This handler is
+in the kernel of whatever operating system is currently being used, read from
+a memory-mapped IO port on the HCI to determine where the HID message has been
+written to in memory, and will then pass it to the appropriate driver.
 
 (On Windows) A ``WM_KEYDOWN`` message is sent to the app
 --------------------------------------------------------
