@@ -122,7 +122,7 @@ Parse URL...
 ------------
 
 Check HOSTS list...
-------------------
+-------------------
 
 Convert non-ASCII Unicode characters in hostname
 ------------------------------------------------
