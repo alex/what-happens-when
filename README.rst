@@ -61,19 +61,20 @@ connection, but historically has been over PS/2 or ADB connections.
 
 - In modern capacitive touch screens when the user puts his finger on the
   screen a tiny amount of current from the electrostatic field of the
-  conductive layer gets transferred to the finger completing the circuit,
-  creating a voltage dropping at that point on the screen that the
-  ``screen controller`` which rises an interrupt reporting the coordinate of
+  conductive layer gets transferred to the finger completing the circuit
+  and creating a voltage dropping at that point on the screen so that the
+  ``screen controller`` raises an interrupt reporting the coordinate of
   the 'click'.
 
-- Then the mobile OS notify the current focused application of a click event in
-  one of its GUI elements (which now is the virtual keyboard application
+- Then the mobile OS notifies the current focused application of a click event
+  in one of its GUI elements (which now is the virtual keyboard application
   buttons).
 
-- The virtual keyboard can now rises a software interrupt for sending a
+- The virtual keyboard can now raises a software interrupt for sending a
   'key pressed' message back to the OS.
 
-- Which in turn notify the current focused application of a 'key pressed' event
+- Which in turn notifies the current focused application of a 'key pressed'
+  event.
 
 
 Interrupt fires [NOT for USB keyboards]
