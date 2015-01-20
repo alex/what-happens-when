@@ -442,6 +442,10 @@ The most common HTTPD servers are Apache for Linux, and IIS for windows.
 * The server verifies that google.com can accept GET requests.
 * The server verifies that the client is allowed to use this method
   (by IP, authentication, etc.).
+* If the server has a rewrite module installed (like mod_rewrite for Apache or
+  URL Rewrite for IIS), it tries to match the request against one of the
+  configured rules. If a matching rule is found, the server uses that rule to
+  rewrite the request.
 * The server goes to pull the content that corresponds with the request,
   in our case it will fall back to the index file, as "/" is the main file
   (some cases can override this, but this is the most common method).
