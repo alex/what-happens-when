@@ -181,15 +181,18 @@ DNS lookup...
 * Browser checks if the domain is in its cache.
 * If not found, calls ``gethostbyname`` library function (varies by OS) to do
   the lookup.
-* ``gethostbyname`` will try to resolve the lookup against the system cache (nscd, nslcd)
-* If not found, ``gethostbyname`` will obay the configuration of ``/etc/nsswitch.conf``
-  or Windows equivalent (Service Providers in registry) and figure out who is
-  going to query next, assuming the order is files dns.
+* ``gethostbyname`` will try to resolve the lookup against the system
+  cache (nscd, nslcd)
+* If not found, ``gethostbyname`` will obay the configuration of
+  ``/etc/nsswitch.conf`` or Windows equivalent (Service Providers in
+  registry) and figure out who is going to query next, assuming the order is
+  files dns.
 * ``gethostbyname`` checks if the hostname can be resolved by looking in the
   ``/etc/hosts`` file.
 * If not found ``gethostbyname`` does not have it cached nor in the ``hosts``
-  file then a request is made to the known DNS server that was given to the network
-  stack. This is typically the local router or the ISP's caching DNS server.
+  file then a request is made to the known DNS server that was given to the
+  network stack. This is typically the local router or the ISP's caching DNS
+  server.
 
 * The local DNS server is looked up.
 
