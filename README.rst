@@ -132,7 +132,7 @@ handled by, an ``NSApplication`` main event loop, via an ``NSEvent`` of
 ``NSEventType`` ``KeyDown``.
 
 (On GNU/Linux) the Xorg server listens for keycodes
---------------------------------------------------
+---------------------------------------------------
 
 When a graphical ``X server`` is used, a re-mapping of keycodes to scancodes
 is made with ``X server`` specific keymaps and rules.
