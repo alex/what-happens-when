@@ -70,7 +70,7 @@ connection, but historically has been over PS/2 or ADB connections.
   in one of its GUI elements (which now is the virtual keyboard application
   buttons).
 
-- The virtual keyboard can now raises a software interrupt for sending a
+- The virtual keyboard can now raise a software interrupt for sending a
   'key pressed' message back to the OS.
 
 - Which in turn notifies the current focused application of a 'key pressed'
@@ -131,7 +131,7 @@ this queue by threads with sufficient privileges calling the
 handled by, an ``NSApplication`` main event loop, via an ``NSEvent`` of
 ``NSEventType`` ``KeyDown``.
 
-(On GNU/Linux) the Xorg server listen for keycodes
+(On GNU/Linux) the Xorg server listens for keycodes
 --------------------------------------------------
 
 When a graphical ``X server`` is used, a re-mapping of keycodes to scancodes
@@ -140,13 +140,13 @@ When the scancode mapping of the key pressed is complete, the ``X server``
 sends the character to the ``window manager`` (DWM, metacity, i3, etc), so the
 ``window manager`` in turn sends the character to the focused window.
 The graphical API of the window  that receives the character prints the
-appropiate font symbol in the appropiate focused field.
+appropriate font symbol in the appropriate focused field.
 
 
 Parse URL
 ---------
 
-* The browser has now the following information contained in the URL (Uniform
+* The browser now has the following information contained in the URL (Uniform
   Resource Locator):
 
     - ``Protocol``  "http"
@@ -219,7 +219,7 @@ If the entry is not in the ARP cache:
 
 * The MAC address of the selected network interface is looked up.
 
-* We send an Layer 2 ARP request:
+* We send a Layer 2 ARP request:
 
 ``ARP Request``::
 
@@ -321,7 +321,7 @@ This send and receive happens multiple times following the TCP connection flow:
      to indicate it is acknowledging receipt of the first packet
 * Client acknowledges the connection by sending a packet:
    * Increases its own sequence number
-   * Increases the receiver acknowledgement number
+   * Increases the receiver acknowledgment number
    * Sets ACK field
 * Data is transferred as follows:
    * As one side sends N data bytes, it increases its SEQ by that number
@@ -346,8 +346,8 @@ TLS handshake
   certificate signed by a CA (Certificate Authority) that also contains a
   public key.
 
-* The client verifies the server digital certificate and cipher a symetric
-  cryptography key using an asymetric cryptography algorithm, attaching the
+* The client verifies the server digital certificate and cipher a symmetric
+  cryptography key using an asymmetric cryptography algorithm, attaching the
   server public key and an encrypted message for verification purposes.
 
 * The server decrypts the key using its private key and decrypts the
@@ -371,7 +371,7 @@ HTTP protocol...
 ----------------
 
 If the web browser used was written by Google, instead of sending an HTTP
-request to retrieve the page, it will send an request to try and negotiate with
+request to retrieve the page, it will send a request to try and negotiate with
 the server an "upgrade" from HTTP to the SPDY protocol.
 
 If the client is using the HTTP protocol and does not support SPDY, it sends a
@@ -493,7 +493,7 @@ Page Rendering
 * Create layers to describe which parts of the page can be animated as a group
   without being re-rasterized. Each frame/render object is assigned to a layer.
 * Textures are allocated for each layer of the page.
-* The frame/render objects for each layers are traversed and drawing commands
+* The frame/render objects for each layer are traversed and drawing commands
   are executed for their respective layer. This may be rasterized by the CPU
   or drawn on the GPU directly using D2D/SkiaGL.
 * All of the above steps may reuse calculated values from the last time the
@@ -508,7 +508,7 @@ Page Rendering
 GPU Rendering
 -------------
 
-* During rendering process the graphical computing layers can use general
+* During the rendering process the graphical computing layers can use general
   purpose ``CPU`` or the graphical processor ``GPU`` as well.
 
 * When using ``GPU`` for graphical rendering computations the graphical
