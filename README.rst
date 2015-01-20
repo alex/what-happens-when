@@ -2,7 +2,8 @@ What happens when...
 ====================
 
 This repository is an attempt to answer the age old interview question "What
-happens when you type google.com into your browser and press enter?"
+happens when you type google.com into your browser's address box and press
+enter?"
 
 Except instead of the usual story, we're going to try to answer this question
 in as much detail as possible. No skipping out on anything.
@@ -160,7 +161,7 @@ Is it a URL or a search term?
 -----------------------------
 
 When no protocol or valid domain name is given the browser proceeds to feed
-the text given in the URL bar to its default web search engine.
+the text given in the address box to the browser's default web search engine.
 
 
 Check HSTS list...
