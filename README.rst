@@ -297,12 +297,17 @@ At this point the packet is ready to be transmitted through either:
 * `WiFi`_
 * `Cellular data network`_
 
-In all cases the last point at which the packet leaves your computer is a
-digital-to-analog (DAC) converter which fires off electrical 1's and 0's on a
-wire. On the other end of the physical bit transfer is an `analog-to-digital
-converter`_  which converts the electrical bits into logic signals to be
-processed by the next `network node`_ where its from and to addresses would be
-analyzed further.
+For most home or small business Internet connections the packet will pass from
+your computer, possibly through a local network, and then through a modem
+(MOdulator/DEModulator) which converts digital 1's and 0's into an analog
+signal suitable for transmission over telephone, cable, or wireless telephony
+connections. On the other end of the connection is another modem which converts
+the analog singnal back into digital signals to be processed by the next
+`network node`_ where its from and to addresses would be analyzed further.
+
+Most larger businesses and some newer residential connections will have fibre
+or direct Ethernet connections, in which case the data remains digital, and
+is passed directly to the next `network node`_ for processing.
 
 Eventually, the packet will reach the router managing the local subnet. From
 there, it will continue to travel to the AS's border routers, other ASes, and
