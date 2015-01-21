@@ -184,7 +184,7 @@ DNS lookup...
 * If not found, calls ``gethostbyname`` library function (varies by OS) to do
   the lookup.
 * ``gethostbyname`` checks if the hostname can be resolved by looking in the
-  ``/etc/hosts`` file, before trying to resolve the hostname through DNS.
+  ``/etc/hosts`` file (``C:\Windows\system32\drivers\etc\hosts`` on Windows), before trying to resolve the hostname through DNS.
 * If ``gethostbyname`` does not have it cached nor in the ``hosts`` file then a
   request is made to the known DNS server that was given to the network stack.
   This is typically the local router or the ISP's caching DNS server.
