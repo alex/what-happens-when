@@ -183,8 +183,9 @@ DNS lookup...
 * Browser checks if the domain is in its cache.
 * If not found, calls ``gethostbyname`` library function (varies by OS) to do
   the lookup.
-* ``gethostbyname`` checks if the hostname can be resolved by looking in the
-  ``/etc/hosts`` file, before trying to resolve the hostname through DNS.
+* ``gethostbyname`` checks if the hostname can be resolved by reference in the
+  local ``hosts`` file (whose location `varies by OS`_) before trying to
+  resolve the hostname through DNS.
 * If ``gethostbyname`` does not have it cached nor in the ``hosts`` file then a
   request is made to the known DNS server that was given to the network stack.
   This is typically the local router or the ISP's caching DNS server.
@@ -550,3 +551,4 @@ page rendering and painting.
 .. _`Cellular data network`: https://en.wikipedia.org/wiki/Cellular_data_communication_protocol
 .. _`analog-to-digital converter`: https://en.wikipedia.org/wiki/Analog-to-digital_converter
 .. _`network node`: https://en.wikipedia.org/wiki/Computer_network#Network_nodes
+.. _`varies by OS` : https://en.wikipedia.org/wiki/Hosts_%28file%29#Location_in_the_file_system
