@@ -302,8 +302,8 @@ your computer, possibly through a local network, and then through a modem
 (MOdulator/DEModulator) which converts digital 1's and 0's into an analog
 signal suitable for transmission over telephone, cable, or wireless telephony
 connections. On the other end of the connection is another modem which converts
-the analog singnal back into digital signals to be processed by the next
-`network node`_ where its from and to addresses would be analyzed further.
+the analog signal back into digital data to be processed by the next `network
+node`_ where its from and to addresses would be analyzed further.
 
 Most larger businesses and some newer residential connections will have fibre
 or direct Ethernet connections, in which case the data remains digital, and
