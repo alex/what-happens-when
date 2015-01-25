@@ -170,6 +170,22 @@ the text given in the address box to the browser's default web search engine.
 
 Check HSTS list...
 ------------------
+You may know that HSTS is the specification given to HTTP referring to Strict Transport Security. 
+An HSTS enabled server would include a similar header in an HTTPS reply after being pinged by the 
+initial HSTS (or HTTP if unsecure) request:
+``Strict-Transport-Security: max-age=<REQUIRED delta-seconds>; includeSubDomains`` 
+
+includeSubdomains is an optional directive which tells the HSTS host to 
+include all subdomains of the host domain name
+         
+It is dependent on the Google server to send a HSTS header to a HSTS Host that responds with
+a high pre-determined max-age required in order for the domain (and potentially subdomains)to be
+added and verified to a "preload list".The `max-age` acts as a "time-to-live" function that must 
+be compared to the reception of the HSTS Server reply header. If the `max-age` = 0 then the domain
+is denied or removed from the "preload list" this is referred to as a knockout entry.
+
+***PLease correct me if I am mistaken or if you would like a more thorough explanation****
+
 
 Convert non-ASCII Unicode characters in hostname
 ------------------------------------------------
