@@ -14,6 +14,8 @@ please!
 
 This is all licensed under the terms of the `Creative Commons Zero`_ license.
 
+Read this in `简体中文`_ .
+
 Table of Contents
 ====================
 
@@ -552,3 +554,4 @@ page rendering and painting.
 .. _`analog-to-digital converter`: https://en.wikipedia.org/wiki/Analog-to-digital_converter
 .. _`network node`: https://en.wikipedia.org/wiki/Computer_network#Network_nodes
 .. _`varies by OS` : https://en.wikipedia.org/wiki/Hosts_%28file%29#Location_in_the_file_system
+.. _`简体中文`: https://github.com/skyline75489/what-happens-when-zh_CN
