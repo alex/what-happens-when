@@ -14,7 +14,8 @@ please!
 
 This is all licensed under the terms of the `Creative Commons Zero`_ license.
 
-Read this in `简体中文`_ .
+Read this in `简体中文`_ (simplified Chinese). NOTE: this has not been reviewed
+by the alex/what-happens-when maintainers.
 
 Table of Contents
 ====================
