@@ -170,6 +170,18 @@ the text given in the address box to the browser's default web search engine.
 
 Check HSTS list...
 ------------------
+* The browser checks its "preloaded HSTS (HTTP Strict Transport Security)"
+  list. This is a list of websites that have requested to be contacted via
+  HTTPS only.
+* If the website is in the list, the browser sends its request via HTTP instead
+  of HTTPS.  Else, the initial request is sent via HTTP.
+* (Note that a website can still use the HSTS policy *without* being in the
+  HSTS list.  The first HTTP request to the website by a user will receive a
+  response requesting that the user only send HTTPS requests.  However, this
+  single HTTP request could potentially leave the user vulnerable to a
+  `downgrade attack`_, which is why the HSTS list is included in modern web
+  browsers.)
+
 
 Convert non-ASCII Unicode characters in hostname
 ------------------------------------------------
@@ -556,3 +568,4 @@ page rendering and painting.
 .. _`network node`: https://en.wikipedia.org/wiki/Computer_network#Network_nodes
 .. _`varies by OS` : https://en.wikipedia.org/wiki/Hosts_%28file%29#Location_in_the_file_system
 .. _`简体中文`: https://github.com/skyline75489/what-happens-when-zh_CN
+.. _`downgrade attack`: http://en.wikipedia.org/wiki/SSL_stripping
