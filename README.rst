@@ -170,6 +170,18 @@ the text given in the address box to the browser's default web search engine.
 
 Check HSTS list...
 ------------------
+* The browser checks its "preloaded HSTS (HTTP Strict Transport Security)"
+  list. This is a list of websites that have requested to be contacted via
+  HTTPS only.
+* If the website is in the list, the browser sends its request via HTTP instead
+  of HTTPS.  Else, the initial request is sent via HTTP.
+* (Note that a website can still use the HSTS policy *without* being in the
+  HSTS list.  The first HTTP request to the website by a user will receive a
+  response requesting that the user only send HTTPS requests.  However, this
+  single HTTP request could potentially leave the user vulnerable to a
+  `downgrade attack`_, which is why the HSTS list is included in modern web
+  browsers.)
+
 
 Convert non-ASCII Unicode characters in hostname
 ------------------------------------------------
@@ -390,6 +402,7 @@ request to the server of the form::
 
     GET / HTTP/1.1
     Host: google.com
+	Connection: close
     [other headers]
 
 where ``[other headers]`` refers to a series of colon-separated key-value pairs
@@ -398,6 +411,14 @@ formatted as per the HTTP specification and separated by single new lines.
 HTTP spec. This also assumes that the web browser is using ``HTTP/1.1``,
 otherwise it may not include the ``Host`` header in the request and the version
 specified in the ``GET`` request will either be ``HTTP/1.0`` or ``HTTP/0.9``.)
+
+HTTP/1.1 defines the "close" connection option for the sender to signal that
+the connection will be closed after completion of the response. For example,
+
+    Connection: close
+
+HTTP/1.1 applications that do not support persistent connections MUST include
+the "close" connection option in every message. 
 
 After sending the request and headers, the web browser sends a single blank
 newline to the server indicating that the content of the request is done.
@@ -556,3 +577,4 @@ page rendering and painting.
 .. _`network node`: https://en.wikipedia.org/wiki/Computer_network#Network_nodes
 .. _`varies by OS` : https://en.wikipedia.org/wiki/Hosts_%28file%29#Location_in_the_file_system
 .. _`简体中文`: https://github.com/skyline75489/what-happens-when-zh_CN
+.. _`downgrade attack`: http://en.wikipedia.org/wiki/SSL_stripping
