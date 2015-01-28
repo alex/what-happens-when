@@ -479,6 +479,9 @@ The most common HTTPD servers are Apache for Linux, and IIS for windows.
 HTML parsing
 ------------
 
+The rendering engine will start getting the contents of the requested
+document from the networking layer. This will usually be done in 8kB chunks.
+
 The primary job of HTML parser to parse the HTML markup into a parse tree.
 
 The output tree (the "parse tree") is a tree of DOM element and attribute
@@ -520,6 +523,11 @@ in the HTML5 specification
 
 You never get an "Invalid Syntax" error on an HTML page. Browsers fix
 any invalid content and go on.
+
+Fetch/prefetch external resources linked to the page (CSS, Images, JavaScript
+files, etc.)
+
+Execute synchronous JavaScript code.
 
 CSS interpretation
 ------------------
