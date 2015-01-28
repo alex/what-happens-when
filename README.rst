@@ -481,7 +481,11 @@ HTML parsing
 
 The primary job of HTML parser to parse the HTML markup into a parse tree.
 
-The output tree (the "parse tree") is a tree of DOM element and attribute nodes. DOM is short for Document Object Model. It is the object presentation of the HTML document and the interface of HTML elements to the outside world like JavaScript. The root of the tree is the "Document" object. The DOM has an almost one-to-one relation to the markup.
+The output tree (the "parse tree") is a tree of DOM element and attribute
+nodes. DOM is short for Document Object Model. It is the object presentation
+of the HTML document and the interface of HTML elements to the outside world
+like JavaScript. The root of the tree is the "Document" object. The DOM has
+an almost one-to-one relation to the markup.
 
 **The parsing algorithm**
 
@@ -489,22 +493,33 @@ HTML cannot be parsed using the regular top down or bottom up parsers.
 
 The reasons are:
 * The forgiving nature of the language.
-* The fact that browsers have traditional error tolerance to support well known cases of invalid HTML.
-* The parsing process is reentrant. For other languages, the source doesn't change during parsing, but in HTML, dynamic code (such as script elements containing `document.write()` calls) can add extra tokens, so the parsing process actually modifies the input.
+* The fact that browsers have traditional error tolerance to support well
+known cases of invalid HTML.
+* The parsing process is reentrant. For other languages, the source doesn't
+change during parsing, but in HTML, dynamic code (such as script elements
+containing `document.write()` calls) can add extra tokens, so the parsing
+process actually modifies the input.
 
-Unable to use the regular parsing techniques, browsers create custom parsers for parsing HTML. The parsing algorithm is described in detail by the HTML5 specification.
+Unable to use the regular parsing techniques, browsers create custom
+parsers for parsing HTML. The parsing algorithm is described in
+detail by the HTML5 specification.
 
 The algorithm consists of two stages: tokenization and tree construction.
 
 **Actions when the parsing is finished**
 
-At this stage the browser will mark the document as interactive and start parsing scripts that are in "deferred" mode: those that should be executed after the document is parsed. The document state will be then set to "complete" and a "load" event will be fired.
+At this stage the browser will mark the document as interactive and start
+parsing scripts that are in "deferred" mode: those that should be
+executed after the document is parsed. The document state will be then
+set to "complete" and a "load" event will be fired.
 
-You can see the full algorithms for tokenization and tree construction in the HTML5 specification
+You can see the full algorithms for tokenization and tree construction
+in the HTML5 specification
 
 **Browsers' error tolerance**
 
-You never get an "Invalid Syntax" error on an HTML page. Browsers fix any invalid content and go on.
+You never get an "Invalid Syntax" error on an HTML page. Browsers fix
+any invalid content and go on.
 
 CSS interpretation
 ------------------
