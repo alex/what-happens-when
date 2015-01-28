@@ -166,6 +166,8 @@ Is it a URL or a search term?
 
 When no protocol or valid domain name is given the browser proceeds to feed
 the text given in the address box to the browser's default web search engine.
+In many cases the url has a special peice of text appended to it to tell the
+search engine that it came from a particular browser's url bar.
 
 
 Check HSTS list...
