@@ -245,7 +245,7 @@ If the entry is not in the ARP cache:
 
     Sender MAC: interface:mac:address:here
     Sender IP: interface.ip.goes.here
-    Target MAC: 255.255.255.255 (Broadcast)
+    Target MAC: FF:FF:FF:FF:FF:FF (Broadcast)
     Target IP: target.ip.goes.here
 
 Depending on what type of hardware we have between us and the router:
