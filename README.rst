@@ -198,12 +198,12 @@ DNS lookup...
 -------------
 
 * Browser checks if the domain is in its cache.
-* If not found, calls ``gethostbyname`` library function (varies by OS) to do
+* If not found, calls ``getaddrinfo`` library function (or the legacy function ``gethostbyname``, varies by OS/browser) to do
   the lookup.
-* ``gethostbyname`` checks if the hostname can be resolved by reference in the
+* This checks if the hostname can be resolved by reference in the
   local ``hosts`` file (whose location `varies by OS`_) before trying to
   resolve the hostname through DNS.
-* If ``gethostbyname`` does not have it cached nor in the ``hosts`` file then a
+* If does not have it cached nor in the ``hosts`` file then a
   request is made to the known DNS server that was given to the network stack.
   This is typically the local router or the ISP's caching DNS server.
 
