@@ -510,9 +510,10 @@ common user interface elements are:
   current documents
 * Home button that takes you to your home page
 
-** Browser High Level Structure **
+**Browser High Level Structure**
 
 The components of the browsers are
+
 * **The user interface:** this includes the address bar, back/forward button,
   bookmarking menu, etc. Every part of the browser display except the window
   where you see the requested page.
