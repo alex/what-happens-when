@@ -63,7 +63,7 @@ connection, but historically has been over PS/2 or ADB connections.
 
 *In the case of Virtual Keyboard (as in touch screen devices):*
 
-- In modern capacitive touch screens when the user puts his finger on the
+- In modern capacitive touch screens when the user puts their finger on the
   screen a tiny amount of current from the electrostatic field of the
   conductive layer gets transferred to the finger completing the circuit
   and creating a voltage dropping at that point on the screen so that the
@@ -245,7 +245,7 @@ If the entry is not in the ARP cache:
 
     Sender MAC: interface:mac:address:here
     Sender IP: interface.ip.goes.here
-    Target MAC: 255.255.255.255 (Broadcast)
+    Target MAC: FF:FF:FF:FF:FF:FF (Broadcast)
     Target IP: target.ip.goes.here
 
 Depending on what type of hardware we have between us and the router:
@@ -481,14 +481,55 @@ The most common HTTPD servers are Apache for Linux, and IIS for windows.
 HTML parsing
 ------------
 
-* Fetch contents of requested document from network layer in 8kb chunks.
-* Parse HTML document (See
-  https://html.spec.whatwg.org/multipage/syntax.html#parsing for more
-  information).
-* Convert elements to DOM nodes in the content tree.
-* Fetch/prefetch external resources linked to the page (CSS, Images, JavaScript
-  files, etc.)
-* Execute synchronous JavaScript code.
+The rendering engine will start getting the contents of the requested
+document from the networking layer. This will usually be done in 8kB chunks.
+
+The primary job of HTML parser to parse the HTML markup into a parse tree.
+
+The output tree (the "parse tree") is a tree of DOM element and attribute
+nodes. DOM is short for Document Object Model. It is the object presentation
+of the HTML document and the interface of HTML elements to the outside world
+like JavaScript. The root of the tree is the "Document" object. The DOM has
+an almost one-to-one relation to the markup.
+
+**The parsing algorithm**
+
+HTML cannot be parsed using the regular top down or bottom up parsers.
+
+The reasons are:
+* The forgiving nature of the language.
+* The fact that browsers have traditional error tolerance to support well
+known cases of invalid HTML.
+* The parsing process is reentrant. For other languages, the source doesn't
+change during parsing, but in HTML, dynamic code (such as script elements
+containing `document.write()` calls) can add extra tokens, so the parsing
+process actually modifies the input.
+
+Unable to use the regular parsing techniques, browsers create custom
+parsers for parsing HTML. The parsing algorithm is described in
+detail by the HTML5 specification.
+
+The algorithm consists of two stages: tokenization and tree construction.
+
+**Actions when the parsing is finished**
+
+At this stage the browser will mark the document as interactive and start
+parsing scripts that are in "deferred" mode: those that should be
+executed after the document is parsed. The document state will be then
+set to "complete" and a "load" event will be fired.
+
+You can see the full algorithms for tokenization and tree construction
+in the HTML5 specification
+
+**Browsers' error tolerance**
+
+You never get an "Invalid Syntax" error on an HTML page. Browsers fix
+any invalid content and go on.
+
+Fetch/prefetch external resources linked to the page (CSS, Images, JavaScript
+files, etc.)
+
+Execute synchronous JavaScript code.
 
 CSS interpretation
 ------------------
