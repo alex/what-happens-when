@@ -491,7 +491,7 @@ to the browser it undergoes the below process:
 Browser
 -------
 
-The browser functionality is to present the web resource you choose, by
+The browser's functionality is to present the web resource you choose, by
 requesting it from the server and displaying it in the browser window.
 The resource is usually an HTML document, but may also be a PDF,
 image, or some other type of content. The location of the resource is
