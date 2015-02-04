@@ -478,11 +478,11 @@ The most common HTTPD servers are Apache for Linux, and IIS for windows.
 * The server will use PHP to interpret the index file, and catch the output.
 * The server will return the output, on the same request to the client.
 
-Behind the scenes of Browser
+Behind the scenes of the Browser
 ----------------------------------
 
 Once the server supplies the resources (HTML, CSS, JS, Image, etc.,)
-to browser it undergoes the below process
+to the browser it undergoes the below process:
 
 * Parsing - HTML, CSS, JS
 * Rendering - Construct DOM Tree → Render Tree → Layout of Render Tree →
