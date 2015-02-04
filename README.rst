@@ -478,6 +478,65 @@ The most common HTTPD servers are Apache for Linux, and IIS for windows.
 * The server will use PHP to interpret the index file, and catch the output.
 * The server will return the output, on the same request to the client.
 
+Behind the scenes of Browser
+----------------------------------
+
+Once the server supplies the resources (HTML, CSS, JS, Image, etc.,)
+to browser it undergoes the below process
+
+* Parsing - HTML, CSS, JS
+* Rendering - Construct DOM Tree → Render Tree → Layout of Render Tree →
+  Painting the render tree
+
+Browser
+-------
+
+The browser functionality is to present the web resource you choose, by
+requesting it from the server and displaying it in the browser window.
+The resource is usually an HTML document, but may also be a PDF,
+image, or some other type of content. The location of the resource is
+specified by the user using a URI (Uniform Resource Identifier).
+
+The way the browser interprets and displays HTML files is specified
+in the HTML and CSS specifications. These specifications are maintained
+by the W3C (World Wide Web Consortium) organization, which is the
+standards organization for the web.
+
+Browser user interfaces have a lot in common with each other. Among the
+common user interface elements are:
+
+* Address bar for inserting a URI
+* Back and forward buttons
+* Bookmarking options
+* Refresh and stop buttons for refreshing or stopping the loading of
+  current documents
+* Home button that takes you to your home page
+
+**Browser High Level Structure**
+
+The components of the browsers are
+
+* **The user interface:** this includes the address bar, back/forward
+  button, bookmarking menu, etc. Every part of the browser display except
+  the window where you see the requested page.
+* **The browser engine:** marshals actions between the UI and the rendering
+  engine.
+* **The rendering engine:** responsible for displaying requested content.
+  For example if the requested content is HTML, the rendering engine parses
+  HTML and CSS, and displays the parsed content on the screen.
+* **Networking:** for network calls such as HTTP requests, using different
+  implementations for different platform behind a platform-independent
+  interface.
+* **UI backend:** used for drawing basic widgets like combo boxes
+  and windows. This backend exposes a generic interface that is not
+  platform specific.
+  Underneath it uses operating system user interface methods.
+* **JavaScript interpreter.** Used to parse and execute JavaScript code.
+* **Data storage.** This is a persistence layer. The browser may need to
+  save all sorts of data locally, such as cookies. Browsers also support
+  storage mechanisms such as localStorage, IndexedDB, WebSQL and
+  FileSystem.
+
 HTML parsing
 ------------
 
@@ -521,7 +580,7 @@ set to "complete" and a "load" event will be fired.
 You can see the full algorithms for tokenization and tree construction
 in the HTML5 specification
 
-**Browsers' error tolerance**
+**Browsers error tolerance**
 
 You never get an "Invalid Syntax" error on an HTML page. Browsers fix
 any invalid content and go on.
