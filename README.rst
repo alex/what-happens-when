@@ -531,8 +531,8 @@ The components of the browsers are
   and windows. This backend exposes a generic interface that is not
   platform specific.
   Underneath it uses operating system user interface methods.
-* **JavaScript interpreter.** Used to parse and execute JavaScript code.
-* **Data storage.** This is a persistence layer. The browser may need to
+* **JavaScript interpreter:** Used to parse and execute JavaScript code.
+* **Data storage:** This is a persistence layer. The browser may need to
   save all sorts of data locally, such as cookies. Browsers also support
   storage mechanisms such as localStorage, IndexedDB, WebSQL and
   FileSystem.
