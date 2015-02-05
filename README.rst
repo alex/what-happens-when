@@ -505,7 +505,7 @@ standards organization for the web.
 Browser user interfaces have a lot in common with each other. Among the
 common user interface elements are:
 
-* Address bar for inserting a URI
+* An address bar for inserting a URI
 * Back and forward buttons
 * Bookmarking options
 * Refresh and stop buttons for refreshing or stopping the loading of
@@ -526,7 +526,7 @@ The components of the browsers are
   rendering engine parses HTML and CSS, and displays the parsed content on
   the screen.
 * **Networking:** The networking handles network calls such as HTTP requests,
-  using different implementations for different platform behind a
+  using different implementations for different platforms behind a
   platform-independent interface.
 * **UI backend:** The UI backend is used for drawing basic widgets like combo
   boxes and windows. This backend exposes a generic interface that is not
@@ -582,7 +582,7 @@ set to "complete" and a "load" event will be fired.
 You can see the full algorithms for tokenization and tree construction
 in the HTML5 specification
 
-**Browsers error tolerance**
+**Browser's error tolerance**
 
 You never get an "Invalid Syntax" error on an HTML page. Browsers fix
 any invalid content and go on.
