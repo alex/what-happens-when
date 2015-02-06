@@ -420,7 +420,7 @@ the connection will be closed after completion of the response. For example,
     Connection: close
 
 HTTP/1.1 applications that do not support persistent connections MUST include
-the "close" connection option in every message. 
+the "close" connection option in every message.
 
 After sending the request and headers, the web browser sends a single blank
 newline to the server indicating that the content of the request is done.
