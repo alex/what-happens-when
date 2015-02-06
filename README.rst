@@ -404,7 +404,7 @@ request to the server of the form::
 
     GET / HTTP/1.1
     Host: google.com
-	Connection: close
+    Connection: close
     [other headers]
 
 where ``[other headers]`` refers to a series of colon-separated key-value pairs
