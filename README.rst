@@ -604,8 +604,8 @@ Execute synchronous JavaScript code.
 CSS interpretation
 ------------------
 
-* Parse CSS files and ``<style>`` tag contents using `"CSS lexical and syntax
-  grammar"`_
+* Parse CSS files, ``<style>`` tag contents, and ``style`` attribute
+  values using `"CSS lexical and syntax grammar"`_
 * Each CSS file is parsed into a ``StyleSheet object``, where each object
   contains CSS rules with selectors and objects corresponding CSS grammar.
 * A CSS parser can be top-down or bottom-up when a specific parser generator
