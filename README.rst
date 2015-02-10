@@ -564,7 +564,7 @@ an almost one-to-one relation to the markup.
 
 **The parsing algorithm**
 
-HTML cannot be parsed using the regular top down or bottom up parsers.
+HTML cannot be parsed using the regular top-down or bottom-up parsers.
 
 The reasons are:
 * The forgiving nature of the language.
