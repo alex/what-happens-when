@@ -63,10 +63,10 @@ connection, but historically has been over PS/2 or ADB connections.
 
 *In the case of Virtual Keyboard (as in touch screen devices):*
 
-- When the user puts their finger on a modern capacitive touch screen, a 
-  tiny amount of current gets transferred to the finger. This completes the 
-  circuit through the electrostatic field of the conductive layer and 
-  creates a voltage drop at that point on the screen. The 
+- When the user puts their finger on a modern capacitive touch screen, a
+  tiny amount of current gets transferred to the finger. This completes the
+  circuit through the electrostatic field of the conductive layer and
+  creates a voltage drop at that point on the screen. The
   ``screen controller`` then raises an interrupt reporting the coordinate of
   the 'click'.
 
