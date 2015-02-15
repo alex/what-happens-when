@@ -40,7 +40,7 @@ connection, but historically has been over PS/2 or ADB connections.
 *In the case of the USB keyboard:*
 
 - The USB circuitry of the keyboard is powered by the 5V supply provided over
-   pin 1 from the computer's USB host controller.
+  pin 1 from the computer's USB host controller.
 
 - The keycode generated is stored by internal keyboard circuitry memory in a
   register called "endpoint".
@@ -170,8 +170,8 @@ In many cases the url has a special piece of text appended to it to tell the
 search engine that it came from a particular browser's url bar.
 
 
-Check HSTS list...
-------------------
+Check HSTS list
+---------------
 * The browser checks its "preloaded HSTS (HTTP Strict Transport Security)"
   list. This is a list of websites that have requested to be contacted via
   HTTPS only.
@@ -194,8 +194,8 @@ Convert non-ASCII Unicode characters in hostname
   the browser would apply `Punycode`_ encoding to the hostname portion of the
   URL.
 
-DNS lookup...
--------------
+DNS lookup
+----------
 
 * Browser checks if the domain is in its cache.
 * If not found, calls ``gethostbyname`` library function (varies by OS) to do
@@ -292,8 +292,8 @@ we can resume our DNS process:
 Opening of a socket
 -------------------
 Once the browser receives the IP address of the destination server it takes
-that and the given port number from the URL (the http protocol defaults to port
-80, and https to port 443) and makes a call to the system library function
+that and the given port number from the URL (the HTTP protocol defaults to port
+80, and HTTPS to port 443) and makes a call to the system library function
 named ``socket`` and requests a TCP socket stream - ``AF_INET`` and
 ``SOCK_STREAM``.
 
@@ -371,29 +371,29 @@ TLS handshake
   certificate signed by a CA (Certificate Authority) that also contains a
   public key.
 
-* The client verifies the server digital certificate and cipher a symmetric
+* The client verifies the server digital certificate and ciphers a symmetric
   cryptography key using an asymmetric cryptography algorithm, attaching the
   server public key and an encrypted message for verification purposes.
 
 * The server decrypts the key using its private key and decrypts the
   verification message with it, then replies with the verification message
-  decrypted and signed with its private key
+  decrypted and signed with its private key.
 
-* The client confirm the server identity, cipher the agreed key and sends a
+* The client confirms the server identity, ciphers the agreed key and sends a
   ``finished`` message to the server, attaching the encrypted agreed key.
 
 * The server sends a ``finished`` message to the client, encrypted with the
   agreed key.
 
 * From now on the TLS session communicates information encrypted with the
-  agreed key
+  agreed key.
 
 
 TCP packets
 ~~~~~~~~~~~
 
-HTTP protocol...
-----------------
+HTTP protocol
+-------------
 
 If the web browser used was written by Google, instead of sending an HTTP
 request to retrieve the page, it will send a request to try and negotiate with
@@ -439,7 +439,7 @@ for further requests.
 If the HTTP headers sent by the web browser included sufficient information for
 the web server to determine if the version of the file cached by the web
 browser has been unmodified since the last retrieval (ie. if the web browser
-included an ``ETag`` header), it may have instead responded with a request of
+included an ``ETag`` header), it may have instead respond with a request of
 the form::
 
     304 Not Modified
@@ -482,9 +482,9 @@ The most common HTTPD servers are Apache for Linux, and IIS for windows.
 * The server goes to pull the content that corresponds with the request,
   in our case it will fall back to the index file, as "/" is the main file
   (some cases can override this, but this is the most common method).
-* The server will parse the file according to the handler, for example -
-  let's say that Google is running on PHP.
-* The server will use PHP to interpret the index file, and catch the output.
+* The server will parse the file according to the handler. For example, let's
+  say that Google is running on PHP. The server will use PHP to interpret the
+  index file, and catch the output.
 * The server will return the output, on the same request to the client.
 
 Behind the scenes of the Browser
@@ -523,7 +523,7 @@ common user interface elements are:
 
 **Browser High Level Structure**
 
-The components of the browsers are
+The components of the browsers are:
 
 * **User interface:** The user interface includes the address bar,
   back/forward button, bookmarking menu, etc. Every part of the browser
@@ -567,13 +567,14 @@ an almost one-to-one relation to the markup.
 HTML cannot be parsed using the regular top-down or bottom-up parsers.
 
 The reasons are:
+
 * The forgiving nature of the language.
 * The fact that browsers have traditional error tolerance to support well
-known cases of invalid HTML.
+  known cases of invalid HTML.
 * The parsing process is reentrant. For other languages, the source doesn't
-change during parsing, but in HTML, dynamic code (such as script elements
-containing `document.write()` calls) can add extra tokens, so the parsing
-process actually modifies the input.
+  change during parsing, but in HTML, dynamic code (such as script elements
+  containing `document.write()` calls) can add extra tokens, so the parsing
+  process actually modifies the input.
 
 Unable to use the regular parsing techniques, browsers create custom
 parsers for parsing HTML. The parsing algorithm is described in
