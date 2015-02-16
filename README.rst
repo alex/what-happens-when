@@ -358,9 +358,6 @@ This send and receive happens multiple times following the TCP connection flow:
    * The other sides ACKs the FIN packet and sends its own FIN
    * The closer acknowledges the other side's FIN with an ACK
 
-UDP packets
-~~~~~~~~~~~
-
 TLS handshake
 -------------
 * The client computer sends a ``ClientHello`` message to the server with its
@@ -373,26 +370,22 @@ TLS handshake
   the handshake until a symmetric key can be agreed upon.
 
 * The client verifies the server digital certificate against its list of
-  trusted CAs. If trust is can be established based on the CA, the client
+  trusted CAs. If trust can be established based on the CA, the client
   generates a string of pseudo-random bytes and encrypts this with the server's
   public key. These random bytes can be used determine the symmetric key.
 
 * The server decrypts the random bytes using its private key and uses these
   bytes to generate its own copy of the symmetric master key.
 
-* The client sends a ``finished`` message to the server, encrypting a hash of
-  the transmissino up to this point with the symmetric key.
+* The client sends a ``Finished`` message to the server, encrypting a hash of
+  the transmission up to this point with the symmetric key.
 
-* The server decrypts the hash and verifies that the hash matches its own
-  calculation of the hash. If it does, it sends its own ``finished`` message to
+* The server generates its own hash, and then decrypts the client-sent hash
+  to verify that it matches. If it does, it sends its own ``Finished`` message to
   the client, also encrypted with the symmetric key.
 
-* From now on the TLS session communicates information encrypted with the
-  agreed symmetric key.
-
-
-TCP packets
-~~~~~~~~~~~
+* From now on the TLS session transmits the application (HTTP) data encrypted with
+  the agreed symmetric key.
 
 HTTP protocol
 -------------
