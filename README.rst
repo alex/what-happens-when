@@ -367,26 +367,28 @@ TLS handshake
   TLS version, list of cipher algorithms and compression methods available.
 
 * The server replies with a ``Server hello`` message to the client with the
-  TLS version, cipher and compression methods selected + the Server public
-  certificate signed by a CA (Certificate Authority) that also contains a
-  public key.
+  TLS version, selected cipher, selected compression methods and the server's
+  public certificate signed by a CA (Certificate Authority). The certificate
+  contains a public key that will be used by the client to encrypt the rest of
+  the handshake until a symmetric key can be agreed upon.
 
-* The client verifies the server digital certificate and ciphers a symmetric
-  cryptography key using an asymmetric cryptography algorithm, attaching the
-  server public key and an encrypted message for verification purposes.
+* The client verifies the server digital certificate against its list of
+  trusted CAs. If trust is can be established based on the CA, the client
+  generates a string of pseudo-random bytes and encrypts this with the server's
+  public key. These random bytes can be used determine the symmetric key.
 
-* The server decrypts the key using its private key and decrypts the
-  verification message with it, then replies with the verification message
-  decrypted and signed with its private key.
+* The server decrypts the random bytes using its private key and uses these
+  bytes to generate its own copy of the symmetric master key.
 
-* The client confirms the server identity, ciphers the agreed key and sends a
-  ``finished`` message to the server, attaching the encrypted agreed key.
+* The client sends a ``finished`` message to the server, encrypting a hash of
+  the transmissino up to this point with the symmetric key.
 
-* The server sends a ``finished`` message to the client, encrypted with the
-  agreed key.
+* The server decrypts the hash and verifies that the hash matches its own
+  calculation of the hash. If it does, it sends its own ``finished`` message to
+  the client, also encrypted with the symmetric key.
 
 * From now on the TLS session communicates information encrypted with the
-  agreed key.
+  agreed symmetric key.
 
 
 TCP packets
