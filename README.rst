@@ -77,7 +77,8 @@ connection, but historically has been over PS/2 or ADB connections.
 - The virtual keyboard can now raise a software interrupt for sending a
   'key pressed' message back to the OS.
 
-- This interrupt notifies the current focused application of a 'key pressed' event.
+- This interrupt notifies the current focused application of a 'key pressed'
+  event.
 
 
 Interrupt fires [NOT for USB keyboards]
@@ -203,8 +204,8 @@ DNS lookup
   local ``hosts`` file (whose location `varies by OS`_) before trying to
   resolve the hostname through DNS.
 * If ``gethostbyname`` does not have it cached nor can find it in the ``hosts``
-  file then it makes a request to the DNS server configured in the network stack.
-  This is typically the local router or the ISP's caching DNS server.
+  file then it makes a request to the DNS server configured in the network
+  stack. This is typically the local router or the ISP's caching DNS server.
 * If the DNS server is on the same subnet the network library follows the
   ``ARP process`` below for the DNS server.
 * If the DNS server is on a different subnet, the network library follows
@@ -214,18 +215,18 @@ DNS lookup
 ARP process
 -----------
 In order to send an ARP broadcast the network stack lbirary needs the target IP
-address to look up. It also needs to know the MAC address of the interface it will
-use to send out the ARP broadcast.
+address to look up. It also needs to know the MAC address of the interface it
+will use to send out the ARP broadcast.
 
-The ARP cache is first checked for an ARP entry for our target IP. If it is in the
-cache, the library function returns the result: Target IP = MAC.
+The ARP cache is first checked for an ARP entry for our target IP. If it is in
+the cache, the library function returns the result: Target IP = MAC.
 
 If the entry is not in the ARP cache:
 
 * The route table is looked up, to see if the Target IP address is on any of
-  the subnets on the local route table. If it is, the library uses the interface
-  associated with that subnet. If it is not, the library uses the interface that has
-  the subnet of our default gateway.
+  the subnets on the local route table. If it is, the library uses the
+  interface associated with that subnet. If it is not, the library uses the
+  interface that has the subnet of our default gateway.
 
 * The MAC address of the selected network interface is looked up.
 
@@ -242,20 +243,21 @@ Depending on what type of hardware is between the computer and the router:
 
 Directly connected:
 
-* If the computer is directly connected to the router the router responds with an
-  ``ARP Reply`` (see below)
+* If the computer is directly connected to the router the router responds
+  with an ``ARP Reply`` (see below)
 
 Hub:
 
-* If the computer is connected to a hub the hub will broadcast the ARP request out all
-  other ports. If the router is connected on the same "wire" it will respond with an
-  ``ARP Reply`` (see below).
+* If the computer is connected to a hub the hub will broadcast the ARP
+  request out all other ports. If the router is connected on the same "wire"
+  it will respond with an ``ARP Reply`` (see below).
 
 Switch:
 
-* If the computer is connected to a switch the switch will check it's local CAM/MAC table
-  to see which port has the MAC address we are looking for. If the switch has no entry
-  for the MAC address it will rebroadcast the ARP request to all other ports.
+* If the computer is connected to a switch the switch will check it's local
+  CAM/MAC table to see which port has the MAC address we are looking for. If
+  the switch has no entry for the MAC address it will rebroadcast the ARP
+  request to all other ports.
 
 * If the switch has an entry in the MAC/CAM table it will send the ARP request
   to the port that has the MAC address we are looking for.
@@ -371,11 +373,11 @@ TLS handshake
   the transmission up to this point with the symmetric key.
 
 * The server generates its own hash, and then decrypts the client-sent hash
-  to verify that it matches. If it does, it sends its own ``Finished`` message to
-  the client, also encrypted with the symmetric key.
+  to verify that it matches. If it does, it sends its own ``Finished`` message
+  to the client, also encrypted with the symmetric key.
 
-* From now on the TLS session transmits the application (HTTP) data encrypted with
-  the agreed symmetric key.
+* From now on the TLS session transmits the application (HTTP) data encrypted
+  with the agreed symmetric key.
 
 HTTP protocol
 -------------
