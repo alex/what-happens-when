@@ -27,7 +27,7 @@ Table of Contents
 The "enter" key bottoms out
 ---------------------------
 
-To pick a zero point, let's choose the enter key on the keyboard hitting the
+To pick a zero point, let's choose the Enter key on the keyboard hitting the
 bottom of its range. At this point, an electrical circuit specific to the enter
 key is closed (either directly or capacitively). This allows a small amount of
 current to flow into the logic circuitry of the keyboard, which scans the state
@@ -77,8 +77,7 @@ connection, but historically has been over PS/2 or ADB connections.
 - The virtual keyboard can now raise a software interrupt for sending a
   'key pressed' message back to the OS.
 
-- Which in turn notifies the current focused application of a 'key pressed'
-  event.
+- This interrupt notifies the current focused application of a 'key pressed' event.
 
 
 Interrupt fires [NOT for USB keyboards]
@@ -177,7 +176,7 @@ Check HSTS list
   HTTPS only.
 * If the website is in the list, the browser sends its request via HTTPS
   instead of HTTP. Otherwise, the initial request is sent via HTTP.
-* (Note that a website can still use the HSTS policy *without* being in the
+  (Note that a website can still use the HSTS policy *without* being in the
   HSTS list.  The first HTTP request to the website by a user will receive a
   response requesting that the user only send HTTPS requests.  However, this
   single HTTP request could potentially leave the user vulnerable to a
@@ -198,48 +197,39 @@ DNS lookup
 ----------
 
 * Browser checks if the domain is in its cache.
-* If not found, calls ``gethostbyname`` library function (varies by OS) to do
-  the lookup.
+* If not found, the browser calls ``gethostbyname`` library function (varies by
+  OS) to do the lookup.
 * ``gethostbyname`` checks if the hostname can be resolved by reference in the
   local ``hosts`` file (whose location `varies by OS`_) before trying to
   resolve the hostname through DNS.
-* If ``gethostbyname`` does not have it cached nor in the ``hosts`` file then a
-  request is made to the known DNS server that was given to the network stack.
+* If ``gethostbyname`` does not have it cached nor can find it in the ``hosts``
+  file then it makes a request to the DNS server configured in the network stack.
   This is typically the local router or the ISP's caching DNS server.
-
-* The local DNS server is looked up.
-
-* If the DNS server is on the same subnet the ARP cache is checked for an ARP
-  entry for the DNS server. If there is no entry in the ARP cache we do the
-  ``ARP process`` (see below) for the DNS server. If there is an entry in the
-  ARP cache, we get the information: DNS.server.ip.address = dns:mac:address
-
-* If the DNS server is on a different subnet, we check the ARP cache for the
-  default gateway IP. If we do not have an entry in the ARP cache we do the
-  ``ARP process`` (see below) for the default gateway IP. If we have an entry
-  in the ARP cache, we get the information:
-  default.gateway.ip.address = gateway:mac:address
+* If the DNS server is on the same subnet the network library follows the
+  ``ARP process`` below for the DNS server.
+* If the DNS server is on a different subnet, the network library follows
+  the ``ARP process`` below for the default gateway IP.
 
 
 ARP process
 -----------
-In order to send an ARP broadcast we need to have a Target IP address we want
-to look up. We also need to know the MAC address of the interface we are going
-to use to send out the ARP broadcast.
+In order to send an ARP broadcast the network stack lbirary needs the target IP
+address to look up. It also needs to know the MAC address of the interface it will
+use to send out the ARP broadcast.
 
-* The ARP cache is checked for an ARP entry for our target IP. If it's in the
-  cache, we return the result: Target IP = MAC.
+The ARP cache is first checked for an ARP entry for our target IP. If it is in the
+cache, the library function returns the result: Target IP = MAC.
 
 If the entry is not in the ARP cache:
 
 * The route table is looked up, to see if the Target IP address is on any of
-  the subnets on the local route table. If it is, we use the interface
-  associated with that subnet. If it is not, we use the interface that has the
-  subnet of our default gateway.
+  the subnets on the local route table. If it is, the library uses the interface
+  associated with that subnet. If it is not, the library uses the interface that has
+  the subnet of our default gateway.
 
 * The MAC address of the selected network interface is looked up.
 
-* We send a Layer 2 ARP request:
+* The network library send a Layer 2 ARP request:
 
 ``ARP Request``::
 
@@ -248,23 +238,23 @@ If the entry is not in the ARP cache:
     Target MAC: FF:FF:FF:FF:FF:FF (Broadcast)
     Target IP: target.ip.goes.here
 
-Depending on what type of hardware we have between us and the router:
+Depending on what type of hardware is between the computer and the router:
 
 Directly connected:
 
-* If we are directly connected to the router the router will respond with an
+* If the computer is directly connected to the router the router responds with an
   ``ARP Reply`` (see below)
 
 Hub:
 
-* If we are connected to a HUB the HUB will broadcast the ARP request out all
-  other ports of the HUB. If the router is connected on the same "wire" it will
-  respond with an ``ARP Reply`` (see below).
+* If the computer is connected to a hub the hub will broadcast the ARP request out all
+  other ports. If the router is connected on the same "wire" it will respond with an
+  ``ARP Reply`` (see below).
 
 Switch:
 
-* If we are connected to a switch it will check it's local CAM/MAC table to see
-  which port has the MAC address we are looking for. If the switch has no entry
+* If the computer is connected to a switch the switch will check it's local CAM/MAC table
+  to see which port has the MAC address we are looking for. If the switch has no entry
   for the MAC address it will rebroadcast the ARP request to all other ports.
 
 * If the switch has an entry in the MAC/CAM table it will send the ARP request
@@ -280,8 +270,8 @@ Switch:
     Target MAC: interface:mac:address:here
     Target IP: interface.ip.goes.here
 
-Now that we have the IP address of either our DNS server or the default gateway
-we can resume our DNS process:
+Now that the network library has the IP address of either our DNS server or
+the default gateway it can resume its DNS process:
 
 * Port 53 is opened to send a UDP request to DNS server (if the response size
   is too large, TCP will be used instead).
@@ -434,7 +424,7 @@ for further requests.
 If the HTTP headers sent by the web browser included sufficient information for
 the web server to determine if the version of the file cached by the web
 browser has been unmodified since the last retrieval (ie. if the web browser
-included an ``ETag`` header), it may have instead respond with a request of
+included an ``ETag`` header), it may instead respond with a request of
 the form::
 
     304 Not Modified
@@ -442,28 +432,29 @@ the form::
 
 and no payload, and the web browser instead retrieves the HTML from its cache.
 
-After parsing the HTML, the web browser (and server) will repeat this process
+After parsing the HTML, the web browser (and server) repeats this process
 for every resource (image, CSS, favicon.ico, etc) referenced by the HTML page,
 except instead of ``GET / HTTP/1.1`` the request will be
 ``GET /$(URL relative to www.google.com) HTTP/1.1``.
 
 If the HTML referenced a resource on a different domain than
-``www.google.com``, the web browser will go back to the steps involved in
-resolving the other domain, and follow all steps up to this point for that
+``www.google.com``, the web browser goes back to the steps involved in
+resolving the other domain, and follows all steps up to this point for that
 domain. The ``Host`` header in the request will be set to the appropriate
 server name instead of ``google.com``.
 
 HTTP Server Request Handle
 --------------------------
 The HTTPD (HTTP Daemon) server is the one handling the requests/responses on
-the server side.
-The most common HTTPD servers are Apache for Linux, and IIS for windows.
+the server side. The most common HTTPD servers are Apache or nginx for Linux
+and IIS for Windows.
 
 * The HTTPD (HTTP Daemon) receives the request.
 * The server breaks down the request to the following parameters:
-   * HTTP Request Method (GET, POST, HEAD, PUT and DELETE), in our case - GET.
-   * Domain, in our case - google.com.
-   * Requested path/page, in our case - / (as no specific path/page was
+   * HTTP Request Method (either GET, POST, HEAD, PUT and DELETE). In the case
+     of a URL entered directly into the address bar, this will be GET.
+   * Domain, in this case - google.com.
+   * Requested path/page, in this case - / (as no specific path/page was
      requested, / is the default path).
 * The server verifies that there is a Virtual Host configured on the server
   that corresponds with google.com.
@@ -477,15 +468,14 @@ The most common HTTPD servers are Apache for Linux, and IIS for windows.
 * The server goes to pull the content that corresponds with the request,
   in our case it will fall back to the index file, as "/" is the main file
   (some cases can override this, but this is the most common method).
-* The server will parse the file according to the handler. For example, let's
-  say that Google is running on PHP. The server will use PHP to interpret the
-  index file, and catch the output.
-* The server will return the output, on the same request to the client.
+* The server parses the file according to the handler. If Google
+  is running on PHP, the server uses PHP to interpret the index file, and
+  streams the output to the client.
 
 Behind the scenes of the Browser
 ----------------------------------
 
-Once the server supplies the resources (HTML, CSS, JS, Image, etc.,)
+Once the server supplies the resources (HTML, CSS, JS, images, etc.)
 to the browser it undergoes the below process:
 
 * Parsing - HTML, CSS, JS
@@ -546,7 +536,7 @@ The components of the browsers are:
 HTML parsing
 ------------
 
-The rendering engine will start getting the contents of the requested
+The rendering engine starts getting the contents of the requested
 document from the networking layer. This will usually be done in 8kB chunks.
 
 The primary job of HTML parser to parse the HTML markup into a parse tree.
@@ -554,8 +544,9 @@ The primary job of HTML parser to parse the HTML markup into a parse tree.
 The output tree (the "parse tree") is a tree of DOM element and attribute
 nodes. DOM is short for Document Object Model. It is the object presentation
 of the HTML document and the interface of HTML elements to the outside world
-like JavaScript. The root of the tree is the "Document" object. The DOM has
-an almost one-to-one relation to the markup.
+like JavaScript. The root of the tree is the "Document" object. Prior of
+any manipulation via scripting, the DOM has an almost one-to-one relation to
+the markup.
 
 **The parsing algorithm**
 
@@ -571,7 +562,7 @@ The reasons are:
   containing `document.write()` calls) can add extra tokens, so the parsing
   process actually modifies the input.
 
-Unable to use the regular parsing techniques, browsers create custom
+Unable to use the regular parsing techniques, the browser utilizes a custom
 parsers for parsing HTML. The parsing algorithm is described in
 detail by the HTML5 specification.
 
@@ -579,23 +570,16 @@ The algorithm consists of two stages: tokenization and tree construction.
 
 **Actions when the parsing is finished**
 
-At this stage the browser will mark the document as interactive and start
+The browser begins fetching external resources linked to the page (CSS, images,
+JavaScript files, etc.).
+
+At this stage the browser marks the document as interactive and starts
 parsing scripts that are in "deferred" mode: those that should be
-executed after the document is parsed. The document state will be then
-set to "complete" and a "load" event will be fired.
+executed after the document is parsed. The document state is
+set to "complete" and a "load" event is fired.
 
-You can see the full algorithms for tokenization and tree construction
-in the HTML5 specification
-
-**Browser's error tolerance**
-
-You never get an "Invalid Syntax" error on an HTML page. Browsers fix
+Note there is never an "Invalid Syntax" error on an HTML page. Browsers fix
 any invalid content and go on.
-
-Fetch/prefetch external resources linked to the page (CSS, Images, JavaScript
-files, etc.)
-
-Execute synchronous JavaScript code.
 
 CSS interpretation
 ------------------
