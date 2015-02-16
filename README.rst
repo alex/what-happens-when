@@ -363,10 +363,10 @@ UDP packets
 
 TLS handshake
 -------------
-* The client computer sends a ``Client hello`` message to the server with it
+* The client computer sends a ``ClientHello`` message to the server with its
   TLS version, list of cipher algorithms and compression methods available.
 
-* The server replies with a ``Server hello`` message to the client with the
+* The server replies with a ``ServerHello`` message to the client with the
   TLS version, selected cipher, selected compression methods and the server's
   public certificate signed by a CA (Certificate Authority). The certificate
   contains a public key that will be used by the client to encrypt the rest of
