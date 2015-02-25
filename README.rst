@@ -214,7 +214,7 @@ DNS lookup
 
 ARP process
 -----------
-In order to send an ARP broadcast the network stack lbirary needs the target IP
+In order to send an ARP broadcast the network stack library needs the target IP
 address to look up. It also needs to know the MAC address of the interface it
 will use to send out the ARP broadcast.
 
