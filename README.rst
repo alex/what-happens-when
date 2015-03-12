@@ -319,6 +319,25 @@ Most larger businesses and some newer residential connections will have fiber
 or direct Ethernet connections in which case the data remains digital and
 is passed directly to the next `network node`_ for processing.
 
+If the home is connected through a DSL line or cable, there will be an access equipment
+(eg. DSLAM) that aggregates all the residential traffic into a bigger pipe, then route this
+traffic through a transport network to the next BRAS. This traffic then gets routed to the
+closest router that will decide where the next router hop should be.
+
+Depending on the carrier, each carrier can encapsulate the packets differently between
+home and the Google server.
+Starting from home, in the case of DSL, the PPPoA encapsulation (up to the BRAS) could be:
+  IP - PPP - AAL5 - ATM - ADSL
+
+And then, when the packet reaches the transport network, there will be additional encapsulation
+added to tunnel the packet to the other side. Common encapsulation would be PBB, PBB-TE, and MPLS-TP.
+
+These traffic will then be encapsulated in OTN layer (OTUx and ODUx),
+followed by DWDM encapsulation if the fiber uses multiple lambda channel,
+before the packet is sent through the fiber.
+
+These layer of encapsulations are needed to separate the client traffic from one another.
+
 Eventually, the packet will reach the router managing the local subnet. From
 there, it will continue to travel to the AS's border routers, other ASes, and
 finally to the destination server. Each router along the way extracts the
