@@ -653,6 +653,13 @@ the Google homepage. Scripts can cause additional network requests to be
 performed, as well as modify the page or its layout, effecting another round of
 page rendering and painting.
 
+
+Deployment
+----------
+
+Once the page has been iterated on enough, it is [deployed](/revmischa/udo) to ~the cloud~.
+
+
 .. _`Creative Commons Zero`: https://creativecommons.org/publicdomain/zero/1.0/
 .. _`"CSS lexical and syntax grammar"`: http://www.w3.org/TR/CSS2/grammar.html
 .. _`Punycode`: https://en.wikipedia.org/wiki/Punycode
