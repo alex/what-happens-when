@@ -230,7 +230,7 @@ If the entry is not in the ARP cache:
 
 * The MAC address of the selected network interface is looked up.
 
-* The network library send a Layer 2 ARP request:
+* The network library sends a Layer 2 ARP request:
 
 ``ARP Request``::
 
@@ -248,13 +248,13 @@ Directly connected:
 
 Hub:
 
-* If the computer is connected to a hub the hub will broadcast the ARP
-  request out all other ports. If the router is connected on the same "wire"
+* If the computer is connected to a hub, the hub will broadcast the ARP
+  request out all other ports. If the router is connected on the same "wire",
   it will respond with an ``ARP Reply`` (see below).
 
 Switch:
 
-* If the computer is connected to a switch the switch will check it's local
+* If the computer is connected to a switch, the switch will check it's local
   CAM/MAC table to see which port has the MAC address we are looking for. If
   the switch has no entry for the MAC address it will rebroadcast the ARP
   request to all other ports.
@@ -262,7 +262,7 @@ Switch:
 * If the switch has an entry in the MAC/CAM table it will send the ARP request
   to the port that has the MAC address we are looking for.
 
-* If the router is on the same "wire" it will respond with an ``ARP Reply``
+* If the router is on the same "wire", it will respond with an ``ARP Reply``
   (see below)
 
 ``ARP Reply``::
@@ -283,9 +283,9 @@ the default gateway it can resume its DNS process:
 
 Opening of a socket
 -------------------
-Once the browser receives the IP address of the destination server it takes
+Once the browser receives the IP address of the destination server, it takes
 that and the given port number from the URL (the HTTP protocol defaults to port
-80, and HTTPS to port 443) and makes a call to the system library function
+80, and HTTPS to port 443), and makes a call to the system library function
 named ``socket`` and requests a TCP socket stream - ``AF_INET`` and
 ``SOCK_STREAM``.
 
