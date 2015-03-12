@@ -378,6 +378,12 @@ TLS handshake
 
 * From now on the TLS session transmits the application (HTTP) data encrypted
   with the agreed symmetric key.
+  
+* Clients that support TLS `Next Protocol Negotiate`_ extension
+  may modify the ``ClientHello`` message to add the NPN extenssion.
+  Servers supporting NPN will include in the ``ServerHello`` response
+  the NP extenssion along with the list of protocols supported. This allows the client 
+  and the server to pre-negotiate an alternative protocol to HTTP, like `SPDY`_.
 
 HTTP protocol
 -------------
@@ -664,3 +670,5 @@ page rendering and painting.
 .. _`varies by OS` : https://en.wikipedia.org/wiki/Hosts_%28file%29#Location_in_the_file_system
 .. _`简体中文`: https://github.com/skyline75489/what-happens-when-zh_CN
 .. _`downgrade attack`: http://en.wikipedia.org/wiki/SSL_stripping
+.. _`Next Protocol Negotiate`: https://technotes.googlecode.com/git/nextprotoneg.html 
+.. _`SPDY`: http://www.chromium.org/spdy/spdy-protocol
