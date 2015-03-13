@@ -377,7 +377,7 @@ TLS handshake
 * The client verifies the server digital certificate against its list of
   trusted CAs. If trust can be established based on the CA, the client
   generates a string of pseudo-random bytes and encrypts this with the server's
-  public key. These random bytes can be used determine the symmetric key.
+  public key. These random bytes can be used to determine the symmetric key.
 
 * The server decrypts the random bytes using its private key and uses these
   bytes to generate its own copy of the symmetric master key.
