@@ -33,7 +33,7 @@ Depending on your browser's algorithm and if you are in private/incognito mode o
 various suggestions will be presented to you in the dropbox below the URL bar. Some
 browsers like Rockmelt even suggested your Facebook friends. You are going to
 type "google.com" so none of it matters, but a lot of code will run before you get
-there and the suggestions will be refined with each key press.
+there and the suggestions will be refined with each key press. It may even suggest "google.com" before you type it.
 
 The "enter" key bottoms out
 ---------------------------
