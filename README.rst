@@ -30,10 +30,10 @@ The following sections explains all about the physical keyboard and the OS inter
 But, a whole lot happens after that which isn't explained. When you just press "g" the
 browser receives the event and the entire auto-complete machinery kicks into high gear.
 Depending on your browser's algorithm and if you are in private/incognito mode or not
-various suggestions will be presented to you in the dropbox below the URL bar. Some
+various suggestions will be presented to you in the dropbox below the URL bar. Most of these algorithms prioritize results based on search history and bookmarks. Some
 browsers like Rockmelt even suggested your Facebook friends. You are going to
 type "google.com" so none of it matters, but a lot of code will run before you get
-there and the suggestions will be refined with each key press. It may even suggest "google.com" before you type it.
+there and the suggestions will be refined with each key press. It may even suggest "google.com" before you type it. 
 
 The "enter" key bottoms out
 ---------------------------
@@ -157,15 +157,6 @@ sends the character to the ``window manager`` (DWM, metacity, i3, etc), so the
 ``window manager`` in turn sends the character to the focused window.
 The graphical API of the window  that receives the character prints the
 appropriate font symbol in the appropriate focused field.
-
-
-Browser history/bookmark lookup
--------------------------------
-
-Most browsers start making autocompletion suggestions based on the characters
-already entered. So each character that arrives in the address field of the
-browser triggers an algorithm matching bookmarks and browse history items
-and a short suggestion list is rendered either inline or as a dropdown.
 
 Parse URL
 ---------
