@@ -159,6 +159,14 @@ The graphical API of the window  that receives the character prints the
 appropriate font symbol in the appropriate focused field.
 
 
+Browser history/bookmark lookup
+-------------------------------
+
+Most browsers start making autocompletion suggestions based on the characters
+already entered. So each character that arrives in the address field of the
+browser triggers an algorithm matching bookmarks and browse history items
+and a short suggestion list is rendered either inline or as a dropdown.
+
 Parse URL
 ---------
 
@@ -179,7 +187,6 @@ When no protocol or valid domain name is given the browser proceeds to feed
 the text given in the address box to the browser's default web search engine.
 In many cases the url has a special piece of text appended to it to tell the
 search engine that it came from a particular browser's url bar.
-
 
 Check HSTS list
 ---------------
