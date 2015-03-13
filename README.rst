@@ -27,7 +27,7 @@ Table of Contents
 The "g" key is pressed
 ----------------------
 The following sections explains all about the physical keyboard and the OS interrupts.
-But, a whole lot happens before that. When you just press "g" the
+But, a whole lot happens after that which isn't explained. When you just press "g" the
 browser receives the event and the entire auto-complete machinery kicks into high gear.
 Depending on your browser's algorithm and if you are in private/incognito mode or not
 various suggestions will be presented to you in the dropbox below the URL bar. Some
