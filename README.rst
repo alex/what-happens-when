@@ -24,6 +24,21 @@ Table of Contents
    :backlinks: none
    :local:
 
+The "g" key is pressed
+----------------------
+The following sections explains all about the physical keyboard
+and the OS interrupts. But, a whole lot happens after that which
+isn't explained. When you just press "g" the browser receives the
+event and the entire auto-complete machinery kicks into high gear.
+Depending on your browser's algorithm and if you are in
+private/incognito mode or not various suggestions will be presented
+to you in the dropbox below the URL bar. Most of these algorithms
+prioritize results based on search history and bookmarks. Some
+browsers like Rockmelt even suggested your Facebook friends. You are
+going to type "google.com" so none of it matters, but a lot of code
+will run before you get there and the suggestions will be refined
+with each key press. It may even suggest "google.com" before you type it.
+
 The "enter" key bottoms out
 ---------------------------
 
@@ -147,7 +162,6 @@ sends the character to the ``window manager`` (DWM, metacity, i3, etc), so the
 The graphical API of the window  that receives the character prints the
 appropriate font symbol in the appropriate focused field.
 
-
 Parse URL
 ---------
 
@@ -168,7 +182,6 @@ When no protocol or valid domain name is given the browser proceeds to feed
 the text given in the address box to the browser's default web search engine.
 In many cases the url has a special piece of text appended to it to tell the
 search engine that it came from a particular browser's url bar.
-
 
 Check HSTS list
 ---------------
