@@ -340,7 +340,7 @@ closest router that will decide where the next router hop should be.
 Depending on the carrier, each carrier can encapsulate the packets differently between
 home and the Google server.
 Starting from home, in the case of DSL, the PPPoA encapsulation (up to the BRAS) could be:
-  IP - PPP - AAL5 - ATM - ADSL
+IP - PPP - AAL5 - ATM - ADSL
 
 And then, when the packet reaches the transport network, there will be additional encapsulation
 added to tunnel the packet to the other side. Common encapsulation would be PBB, PBB-TE, and MPLS-TP.
