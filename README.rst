@@ -332,10 +332,11 @@ Most larger businesses and some newer residential connections will have fiber
 or direct Ethernet connections in which case the data remains digital and
 is passed directly to the next `network node`_ for processing.
 
-If the home is connected through a DSL line or cable, there will be an access equipment
-(eg. DSLAM) that aggregates all the residential traffic into a bigger pipe, then route this
-traffic through a transport network to the next BRAS. This traffic then gets routed to the
-closest router that will decide where the next router hop should be.
+If the home is connected through a DSL line or cable, there will be an access
+equipment (eg. DSLAM) that aggregates all the residential traffic into a
+bigger pipe, then route this traffic through a transport network to the
+next BRAS. This traffic then gets routed to the closest router that will
+decide where the next router hop should be.
 
 Depending on the carrier, each carrier can encapsulate the packets differently between
 home and the Google server.
