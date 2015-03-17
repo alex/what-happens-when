@@ -339,7 +339,7 @@ next BRAS. This traffic then gets routed to the closest router that will
 decide where the next router hop should be.
 
 Depending on the carrier, each carrier can encapsulate the packets differently
-between home and the Google server. Starting from home, in the case of DSL, 
+between home and the Google server. Starting from home, in the case of DSL,
 the PPPoA encapsulation (up to the BRAS) could be:
 
 IP - PPP - AAL5 - ATM - ADSL
@@ -441,7 +441,7 @@ HTTP/1.1 defines the "close" connection option for the sender to signal that
 the connection will be closed after completion of the response. For example,
 
     Connection: close
-    
+
 HTTP/1.1 applications that do not support persistent connections MUST include
 the "close" connection option in every message.
 
