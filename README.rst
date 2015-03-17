@@ -338,19 +338,22 @@ bigger pipe, then route this traffic through a transport network to the
 next BRAS. This traffic then gets routed to the closest router that will
 decide where the next router hop should be.
 
-Depending on the carrier, each carrier can encapsulate the packets differently between
-home and the Google server.
-Starting from home, in the case of DSL, the PPPoA encapsulation (up to the BRAS) could be:
+Depending on the carrier, each carrier can encapsulate the packets differently
+between home and the Google server. Starting from home, in the case of DSL, 
+the PPPoA encapsulation (up to the BRAS) could be:
+
 IP - PPP - AAL5 - ATM - ADSL
 
-And then, when the packet reaches the transport network, there will be additional encapsulation
-added to tunnel the packet to the other side. Common encapsulation would be PBB, PBB-TE, and MPLS-TP.
+And then, when the packet reaches the transport network, there will be
+additional encapsulation added to tunnel the packet to the other side.
+Common encapsulation would be PBB, PBB-TE, and MPLS-TP.
 
 These traffic will then be encapsulated in OTN layer (OTUx and ODUx),
 followed by DWDM encapsulation if the fiber uses multiple lambda channel,
 before the packet is sent through the fiber.
 
-These layer of encapsulations are needed to separate the client traffic from one another.
+These layer of encapsulations are needed to separate the client traffic from
+one another.
 
 Eventually, the packet will reach the router managing the local subnet. From
 there, it will continue to travel to the AS's border routers, other ASes, and
@@ -438,7 +441,7 @@ HTTP/1.1 defines the "close" connection option for the sender to signal that
 the connection will be closed after completion of the response. For example,
 
     Connection: close
-
+    
 HTTP/1.1 applications that do not support persistent connections MUST include
 the "close" connection option in every message.
 
