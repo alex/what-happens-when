@@ -8,6 +8,4 @@ install:
 
 script:
     - doc8 README.rst
-    - doc8 SOURCES.rst
     - write-good README.rst --so --thereIs --cliches
-    - write-good SOURCES.rst --so --thereIs --cliches
