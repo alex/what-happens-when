@@ -355,7 +355,7 @@ TLS handshake
 * The client computer sends a ``ClientHello`` message to the server with its
   TLS version, list of cipher algorithms, compression methods available and the
   hostname it is attempting to connect (This allows a server to present
-  multiple certificates on the same IP address an it's known as Server Name
+  multiple certificates on the same IP address and it's known as Server Name
   Indication (SNI))
 
 * The server replies with a ``ServerHello`` message to the client with the
