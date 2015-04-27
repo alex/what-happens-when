@@ -578,7 +578,7 @@ The reasons are:
   process actually modifies the input.
 
 Unable to use the regular parsing techniques, the browser utilizes a custom
-parsers for parsing HTML. The parsing algorithm is described in
+parser for parsing HTML. The parsing algorithm is described in
 detail by the HTML5 specification.
 
 The algorithm consists of two stages: tokenization and tree construction.
