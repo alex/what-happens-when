@@ -541,7 +541,7 @@ The components of the browsers are:
   boxes and windows. This backend exposes a generic interface that is not
   platform specific.
   Underneath it uses operating system user interface methods.
-* **JavaScript interpreter:** The JavaScript interpreter is used to parse and
+* **JavaScript engine:** The JavaScript engine is used to parse and
   execute JavaScript code.
 * **Data storage:** The data storage is a persistence layer. The browser may
   need to save all sorts of data locally, such as cookies. Browsers also
@@ -578,7 +578,7 @@ The reasons are:
   process actually modifies the input.
 
 Unable to use the regular parsing techniques, the browser utilizes a custom
-parsers for parsing HTML. The parsing algorithm is described in
+parser for parsing HTML. The parsing algorithm is described in
 detail by the HTML5 specification.
 
 The algorithm consists of two stages: tokenization and tree construction.
