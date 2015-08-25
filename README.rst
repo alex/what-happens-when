@@ -333,14 +333,14 @@ is passed directly to the next `network node`_ for processing.
 
 Eventually, the packet will reach the router managing the local subnet. From
 there, it will continue to travel to the AS's border routers, other ASes, and
-finally to the destination server. AS stands for Autonomous System, that is a 
+finally to the destination server. AS stands for Autonomous System, that is a
 collection of IP addresses and routers under the control of a network operator,
-such as your Internet Service Provider (ISP) and its upstream connectivity providers.
-Each router along the way extracts the destination address from the IP header and
-routes it to the appropriate next hop. The TTL field in the IP header is decremented
-by one for each router that passes. The packet will be dropped if the TTL field
-reaches zero or if the current router has no space in its queue (perhaps due to 
-network congestion).
+such as your Internet Service Provider (ISP) and its upstream connectivity
+providers. Each router along the way extracts the destination address from
+the IP header and routes it to the appropriate next hop. The TTL field in
+the IP header is decremented by one for each router that passes. The packet
+will be dropped if the TTL field reaches zero or if the current router has
+no space in its queue (perhaps due to network congestion).
 
 This send and receive happens multiple times following the TCP connection flow:
 
