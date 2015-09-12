@@ -284,7 +284,7 @@ Switch:
     Target MAC: interface:mac:address:here
     Target IP: interface.ip.goes.here
 
-Now that the network library has the IP address of either our DNS server or
+Now that the network library has the MAC address of either our DNS server or
 the default gateway it can resume its DNS process:
 
 * Port 53 is opened to send a UDP request to DNS server (if the response size
