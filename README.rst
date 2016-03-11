@@ -82,9 +82,9 @@ connection, but historically has been over PS/2 or ADB connections.
   circuit through the electrostatic field of the conductive layer and
   creates a voltage drop at that point on the screen. The
   ``screen controller`` then raises an interrupt reporting the coordinate of
-  the 'click'.
+  the key press.
 
-- Then the mobile OS notifies the current focused application of a click event
+- Then the mobile OS notifies the current focused application of a press event
   in one of its GUI elements (which now is the virtual keyboard application
   buttons).
 
