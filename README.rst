@@ -588,7 +588,9 @@ The algorithm consists of two stages: tokenization and tree construction.
 **Actions when the parsing is finished**
 
 The browser begins fetching external resources linked to the page (CSS, images,
-JavaScript files, etc.).
+JavaScript files, etc.). However, while the browser loads a script any content 
+introduces on in the HTML file below the script is blocked until the download is 
+complete. This is true even for the downloads from other domains.
 
 At this stage the browser marks the document as interactive and starts
 parsing scripts that are in "deferred" mode: those that should be
