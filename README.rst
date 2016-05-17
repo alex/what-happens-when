@@ -170,6 +170,9 @@ Parse URL
     - ``Protocol``  "http"
         Use 'Hyper Text Transfer Protocol'
 
+    - ``Hostname``  "google.com"
+	Talk to the server that is responsible for this DNS name
+
     - ``Resource``  "/"
         Retrieve main (index) page
 
