@@ -234,12 +234,12 @@ into an IP address that will be used by the network stack.
   information. This is usually where the DNS lookup process ends.
 * If no cache information for this hostname is found, the DNS server will use
   recursion to fully resolve the name:
-     * This involves assistance from other DNS servers to help resolve the name.
-       The DNS server will ask the`` root DNS servers`` for the IP address of the
-       other DNS servers if it has not this information in cache.
-     * For the example hostname "drive.google.com", it will ask the top-level
-       ".com" DNS server which will forward to the "google.com" DNS server and so
-       on, until the authoritative DNS server is found.
+   * This involves assistance from other DNS servers to help resolve the name.
+     The DNS server will ask the`` root DNS servers`` for the IP address of the
+	 other DNS servers if it has not this information in cache.
+   * For the example hostname "drive.google.com", it will ask the top-level
+     ".com" DNS server which will forward to the "google.com" DNS server and so
+	 on, until the authoritative DNS server is found.
 
 
 ARP process
