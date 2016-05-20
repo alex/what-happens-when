@@ -407,7 +407,7 @@ request to the server of the form::
     [other headers]
 
 where ``[other headers]`` refers to a series of colon-separated key-value pairs
-formatted as per the HTTP specification and separated by single new lines.
+formatted as per the HTTP specification and separated by single new lines (\r\n).
 (This assumes the web browser being used doesn't have any bugs violating the
 HTTP spec. This also assumes that the web browser is using ``HTTP/1.1``,
 otherwise it may not include the ``Host`` header in the request and the version
