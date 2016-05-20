@@ -224,7 +224,7 @@ The goal of the DNS lookup is to translate the HTTP hostname (human-friendly) in
   ``ARP process`` below for the DNS server.
 * If the DNS server is on a different subnet, the network library follows
   the ``ARP process`` below for the default gateway IP.
-* The DNS server will check the hostname provided to see if it is the ``authoritative server`` for this DNS zone.  If it has been locally configured with a ``zone file``for this DNS zone, it will answer with the IP address corresponding to the hostname provided.
+* The DNS server will check the hostname provided to see if it is the ``authoritative server`` for this DNS zone.  If it has been locally configured with a ``zone file`` for this DNS zone, it will answer with the IP address corresponding to the hostname provided.
 * If it is not the authoritative server, the DNS server will check its ``local cache`` for previous queries for this hostname and answer with this information. This is usually where the DNS lookup process ends.
 * If no cache information for this hostname is found, the DNS server will use recursion to fully resolve the name. 
    * This involves assistance from other DNS servers to help resolve the name. The DNS server will ask the`` root DNS servers`` for the IP address of the other DNS servers if it has not this information in cache. 
