@@ -212,12 +212,17 @@ DNS lookup
 * Browser checks if the domain is in its cache.
 * If not found, the browser calls ``gethostbyname`` library function (varies by
   OS) to do the lookup.
+* On a GNU/Linux system, this consults the GNU Name Service Switch to see the
+  ordering of its next operations. By default it will consult ``files`` and then
+  ``dns``.
 * ``gethostbyname`` checks if the hostname can be resolved by reference in the
   local ``hosts`` file (whose location `varies by OS`_) before trying to
   resolve the hostname through DNS.
 * If ``gethostbyname`` does not have it cached nor can find it in the ``hosts``
   file then it makes a request to the DNS server configured in the network
-  stack. This is typically the local router or the ISP's caching DNS server.
+  stack, such as the ``resolv.conf`` file in a GNU/Linux system.
+  The DNS server configured here is typically the local router, the ISP's
+  caching DNS server or the 8.8.8.8 public DNS on many open source builds.
 * If the DNS server is on the same subnet the network library follows the
   ``ARP process`` below for the DNS server.
 * If the DNS server is on a different subnet, the network library follows
