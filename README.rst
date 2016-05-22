@@ -216,17 +216,17 @@ DNS lookup
   methods in the order defined by the OS.
 * The first place ``gethostbyname`` usually checks is the ``hosts`` file, the
   location of which varies by OS.
-* The next location checked is commonly `DNS`_. The DNS lookup will open a
+* The next location checked is commonly *DNS*. The DNS lookup will open a
   connnection to the DNS servers defined by the OS, the user, or the network
   the computer is connected to. Because ``google.com`` was typed with no
   trailing dot (``google.com.``), the resolver will first try to look up
   ``google.com``, then try appending a variety of suffixes in a process called
-  `DNS devolution`_.
+  *DNS devolution*.
 * If the DNS server is on the same subnet the network library follows the
   ``ARP process`` below for the DNS server.
 * If the DNS server is on a different subnet, the network library follows
   the ``ARP process`` below for the default gateway IP.
-* Failing this, ``gethostbyname`` may attempt a `NetBIOS`_ (or `WINS`_) lookup.
+* Failing this, ``gethostbyname`` may attempt a *NetBIOS* (or WINS) lookup.
 * If all methods have been exhausted, the resolution will fail, which would
   commonly result in a message along the lines of "host not found".
 
