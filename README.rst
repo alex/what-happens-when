@@ -266,7 +266,7 @@ Hub:
 
 Switch:
 
-* If the computer is connected to a switch, the switch will check it's local
+* If the computer is connected to a switch, the switch will check its local
   CAM/MAC table to see which port has the MAC address we are looking for. If
   the switch has no entry for the MAC address it will rebroadcast the ARP
   request to all other ports.
