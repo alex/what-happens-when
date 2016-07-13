@@ -650,7 +650,6 @@ GPU Rendering
   of ``GPU`` massive parallelism for float point calculations required for
   the rendering process.
 
-
 Window Server
 -------------
 
@@ -676,3 +675,48 @@ page rendering and painting.
 .. _`varies by OS` : https://en.wikipedia.org/wiki/Hosts_%28file%29#Location_in_the_file_system
 .. _`简体中文`: https://github.com/skyline75489/what-happens-when-zh_CN
 .. _`downgrade attack`: http://en.wikipedia.org/wiki/SSL_stripping
+
+Turn On a linux Box
+-------------------
+
+There are 6 elements involved on the Boot process of a Linux box:
+
+1. **Bios**
+
+* Perform system integrity checks.
+
+* Search, Load and execute the Boot loader program.
+
+* Scans for devices (Hard Drives, cd-rom, Floppy disk) once it detects the boot loader it loads it to memory.
+
+2. 
+
+* **MBR** (Old way)
+
+  * MBR size is less than 512 bytes, divided in: Primary boot loader 446bytes, Partition table 64 bytes, mbr validation 2 bytes.
+
+* **GPT**
+
+  * The GUID partition table fixes MBR limitations, it allows disks of more than 2TB and almost unlimited partitions.
+
+3. **GRUB**
+
+* If there are multiple kernel's installed the Grub allows you to choose which Kernel to execute.
+
+* Once you choose the Kernel image that you want to boot the GRUB loads and execute it and their initrd images which contains necessary drivers compiled which helps to access drive partitions and other hardware.
+
+4. **Kernel**
+
+* Mount the root file system.
+
+* Execute /sbin/init program.
+
+5. **INIT**
+
+* Looks at the /etc/inittab do decided under which run level to boot.
+
+6. **Runlevel**
+
+* Depending on the runlevel the system will begin to boot all the services under /etc/rc.d/rc*.d/
+
+* Programs that start with an S are used at startup and programs that start with a K are used during shutdown. The number following S & K is used to set the priority of the service.
