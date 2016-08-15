@@ -226,7 +226,7 @@ DNS lookup
 
 ARP process
 -----------
-In order to send an ARP broadcast the network stack library needs the target IP
+In order to send an ARP (Address Resolution Protocol) broadcast the network stack library needs the target IP
 address to look up. It also needs to know the MAC address of the interface it
 will use to send out the ARP broadcast.
 
@@ -242,7 +242,7 @@ If the entry is not in the ARP cache:
 
 * The MAC address of the selected network interface is looked up.
 
-* The network library sends a Layer 2 ARP request:
+* The network library sends a Layer 2 (data link layer of the `OSI model`_) ARP request:
 
 ``ARP Request``::
 
@@ -676,3 +676,4 @@ page rendering and painting.
 .. _`varies by OS` : https://en.wikipedia.org/wiki/Hosts_%28file%29#Location_in_the_file_system
 .. _`简体中文`: https://github.com/skyline75489/what-happens-when-zh_CN
 .. _`downgrade attack`: http://en.wikipedia.org/wiki/SSL_stripping
+.. _`OSI Model`: https://en.wikipedia.org/wiki/OSI_model
