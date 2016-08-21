@@ -210,6 +210,8 @@ DNS lookup
 ----------
 
 * Browser checks if the domain is in its cache.
+  (to see DNS Cache list of Chrome browser, go to chrome://net-internals/#dns
+  in Chrome Browser).
 * If not found, the browser calls ``gethostbyname`` library function (varies by
   OS) to do the lookup.
 * ``gethostbyname`` checks if the hostname can be resolved by reference in the
