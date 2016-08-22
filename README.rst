@@ -301,7 +301,7 @@ Opening of a socket
 Once the browser receives the IP address of the destination server, it takes
 that and the given port number from the URL (the HTTP protocol defaults to port
 80, and HTTPS to port 443), and makes a call to the system library function
-named ``socket`` and requests a TCP socket stream - ``AF_INET`` and
+named ``socket`` and requests a TCP socket stream - ``AF_INET/AF_INET6`` and
 ``SOCK_STREAM``.
 
 * This request is first passed to the Transport Layer where a TCP segment is
