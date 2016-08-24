@@ -161,6 +161,16 @@ sends the character to the ``window manager`` (DWM, metacity, i3, etc), so the
 The graphical API of the window  that receives the character prints the
 appropriate font symbol in the appropriate focused field.
 
+
+Is it a URL or a search term?
+-----------------------------
+
+When no protocol or valid domain name is given the browser proceeds to feed
+the text given in the address box to the browser's default web search engine.
+In many cases the url has a special piece of text appended to it to tell the
+search engine that it came from a particular browser's url bar.
+
+
 Parse URL
 ---------
 
@@ -173,14 +183,6 @@ Parse URL
     - ``Resource``  "/"
         Retrieve main (index) page
 
-
-Is it a URL or a search term?
------------------------------
-
-When no protocol or valid domain name is given the browser proceeds to feed
-the text given in the address box to the browser's default web search engine.
-In many cases the url has a special piece of text appended to it to tell the
-search engine that it came from a particular browser's url bar.
 
 Check HSTS list
 ---------------
