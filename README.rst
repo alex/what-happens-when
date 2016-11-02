@@ -26,12 +26,12 @@ Table of Contents
 
 The "g" key is pressed
 ----------------------
-The following sections explains all about the physical keyboard
+The following sections explain all about the physical keyboard
 and the OS interrupts. But, a whole lot happens after that which
 isn't explained. When you just press "g" the browser receives the
 event and the entire auto-complete machinery kicks into high gear.
 Depending on your browser's algorithm and if you are in
-private/incognito mode or not various suggestions will be presented
+private/incognito mode or not, various suggestions will be presented
 to you in the dropbox below the URL bar. Most of these algorithms
 prioritize results based on search history and bookmarks. You are
 going to type "google.com" so none of it matters, but a lot of code
@@ -65,7 +65,7 @@ connection, but historically has been over PS/2 or ADB connections.
 - This value goes to the USB SIE (Serial Interface Engine) to be converted in
   one or more USB packets that follows the low level USB protocol.
 
-- Those packets are sent by a differential electrical signal over D+ and D-
+- These packets are sent by a differential electrical signal over D+ and D-
   pins (the middle 2) at a maximum speed of 1.5 Mb/s, as an HID
   (Human Interface Device) device is always declared to be a "low speed device"
   (USB 2.0 compliance).
