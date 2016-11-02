@@ -335,7 +335,7 @@ or direct Ethernet connections in which case the data remains digital and
 is passed directly to the next `network node`_ for processing.
 
 Eventually, the packet will reach the router managing the local subnet. From
-there, it will continue to travel to the AS's border routers, other ASes, and
+there, it will continue to travel to the AS(Autonomous system)'s border routers, other ASes, and
 finally to the destination server. Each router along the way extracts the
 destination address from the IP header and routes it to the appropriate next
 hop. The TTL field in the IP header is decremented by one for each router that
