@@ -368,13 +368,13 @@ This send and receive happens multiple times following the TCP connection flow:
 TLS handshake
 -------------
 * The client computer sends a ``ClientHello`` message to the server with its
-  TLS version, list of cipher algorithms and compression methods available.
+  TLS version, list of cipher algorithms and compression methods available. If the client supports HTTP/2, it will be using Application-Layer Protocol Negotiation (ALPN) in which the client sends a list of protocols that it supports as part of the ``ClientHello`` message. This list includes HTTP/2.
 
 * The server replies with a ``ServerHello`` message to the client with the
   TLS version, selected cipher, selected compression methods and the server's
   public certificate signed by a CA (Certificate Authority). The certificate
   contains a public key that will be used by the client to encrypt the rest of
-  the handshake until a symmetric key can be agreed upon.
+  the handshake until a symmetric key can be agreed upon. If the client supports HTTP/2, the server sees that it supports HTTP/2, and indicates in the ``ServerHello`` message that it selected HTTP/2.   
 
 * The client verifies the server digital certificate against its list of
   trusted CAs. If trust can be established based on the CA, the client
@@ -397,14 +397,9 @@ TLS handshake
 HTTP protocol
 -------------
 
-If the web browser used was written by Google, instead of sending an HTTP
-request to retrieve the page, it will send a request to try and negotiate with
-the server an "upgrade" from HTTP to the SPDY protocol.
+At this point, the client and the server agreed on an application protocol to use. It will be one of the HTTP protocols. In any of these protocols, the following requests and responses will occur. Without loss of generality, HTTP/2 will be considered. The client sends a request to the server of the form::
 
-If the client is using the HTTP protocol and does not support SPDY, it sends a
-request to the server of the form::
-
-    GET / HTTP/1.1
+    GET / HTTP/2
     Host: google.com
     Connection: close
     [other headers]
@@ -412,16 +407,16 @@ request to the server of the form::
 where ``[other headers]`` refers to a series of colon-separated key-value pairs
 formatted as per the HTTP specification and separated by single new lines.
 (This assumes the web browser being used doesn't have any bugs violating the
-HTTP spec. This also assumes that the web browser is using ``HTTP/1.1``,
+HTTP spec. This also assumes that the web browser is using ``HTTP/2``,
 otherwise it may not include the ``Host`` header in the request and the version
-specified in the ``GET`` request will either be ``HTTP/1.0`` or ``HTTP/0.9``.)
+specified in the ``GET`` request will either be ``HTTP/1.1``, ``HTTP/1.0`` or ``HTTP/0.9``.)
 
-HTTP/1.1 defines the "close" connection option for the sender to signal that
+HTTP/2 defines the "close" connection option for the sender to signal that
 the connection will be closed after completion of the response. For example,
 
     Connection: close
 
-HTTP/1.1 applications that do not support persistent connections MUST include
+HTTP/2 applications that do not support persistent connections MUST include
 the "close" connection option in every message.
 
 After sending the request and headers, the web browser sends a single blank
@@ -451,8 +446,8 @@ and no payload, and the web browser instead retrieves the HTML from its cache.
 
 After parsing the HTML, the web browser (and server) repeats this process
 for every resource (image, CSS, favicon.ico, etc) referenced by the HTML page,
-except instead of ``GET / HTTP/1.1`` the request will be
-``GET /$(URL relative to www.google.com) HTTP/1.1``.
+except instead of ``GET / HTTP/2`` the request will be
+``GET /$(URL relative to www.google.com) HTTP/2``.
 
 If the HTML referenced a resource on a different domain than
 ``www.google.com``, the web browser goes back to the steps involved in
