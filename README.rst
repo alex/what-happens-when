@@ -26,12 +26,12 @@ Table of Contents
 
 The "g" key is pressed
 ----------------------
-The following sections explains all about the physical keyboard
+The following sections explain all about the physical keyboard
 and the OS interrupts. But, a whole lot happens after that which
 isn't explained. When you just press "g" the browser receives the
 event and the entire auto-complete machinery kicks into high gear.
 Depending on your browser's algorithm and if you are in
-private/incognito mode or not various suggestions will be presented
+private/incognito mode or not, various suggestions will be presented
 to you in the dropbox below the URL bar. Most of these algorithms
 prioritize results based on search history and bookmarks. You are
 going to type "google.com" so none of it matters, but a lot of code
@@ -65,7 +65,7 @@ connection, but historically has been over PS/2 or ADB connections.
 - This value goes to the USB SIE (Serial Interface Engine) to be converted in
   one or more USB packets that follows the low level USB protocol.
 
-- Those packets are sent by a differential electrical signal over D+ and D-
+- These packets are sent by a differential electrical signal over D+ and D-
   pins (the middle 2) at a maximum speed of 1.5 Mb/s, as an HID
   (Human Interface Device) device is always declared to be a "low speed device"
   (USB 2.0 compliance).
@@ -334,7 +334,7 @@ or direct Ethernet connections in which case the data remains digital and
 is passed directly to the next `network node`_ for processing.
 
 Eventually, the packet will reach the router managing the local subnet. From
-there, it will continue to travel to the AS's border routers, other ASes, and
+there, it will continue to travel to the AS(Autonomous system)'s border routers, other ASes, and
 finally to the destination server. Each router along the way extracts the
 destination address from the IP header and routes it to the appropriate next
 hop. The TTL field in the IP header is decremented by one for each router that
@@ -367,7 +367,7 @@ This send and receive happens multiple times following the TCP connection flow:
 TLS handshake
 -------------
 * The client computer sends a ``ClientHello`` message to the server with its
-  TLS version, list of cipher algorithms and compression methods available.
+  TLS (Transport Layer Security) version, list of cipher algorithms and compression methods available.
 
 * The server replies with a ``ServerHello`` message to the client with the
   TLS version, selected cipher, selected compression methods and the server's
@@ -680,3 +680,5 @@ page rendering and painting.
 .. _`简体中文`: https://github.com/skyline75489/what-happens-when-zh_CN
 .. _`downgrade attack`: http://en.wikipedia.org/wiki/SSL_stripping
 .. _`OSI Model`: https://en.wikipedia.org/wiki/OSI_model
+
+This is just another test
