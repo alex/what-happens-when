@@ -334,7 +334,7 @@ or direct Ethernet connections in which case the data remains digital and
 is passed directly to the next `network node`_ for processing.
 
 Eventually, the packet will reach the router managing the local subnet. From
-there, it will continue to travel to the AS's border routers, other ASes, and
+there, it will continue to travel to the AS(Autonomous system)'s border routers, other ASes, and
 finally to the destination server. Each router along the way extracts the
 destination address from the IP header and routes it to the appropriate next
 hop. The TTL field in the IP header is decremented by one for each router that
@@ -367,7 +367,7 @@ This send and receive happens multiple times following the TCP connection flow:
 TLS handshake
 -------------
 * The client computer sends a ``ClientHello`` message to the server with its
-  TLS version, list of cipher algorithms and compression methods available.
+  TLS (Transport Layer Security) version, list of cipher algorithms and compression methods available.
 
 * The server replies with a ``ServerHello`` message to the client with the
   TLS version, selected cipher, selected compression methods and the server's
