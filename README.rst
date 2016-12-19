@@ -334,12 +334,13 @@ or direct Ethernet connections in which case the data remains digital and
 is passed directly to the next `network node`_ for processing.
 
 Eventually, the packet will reach the router managing the local subnet. From
-there, it will continue to travel to the AS's border routers, other ASes, and
-finally to the destination server. Each router along the way extracts the
-destination address from the IP header and routes it to the appropriate next
-hop. The TTL field in the IP header is decremented by one for each router that
-passes. The packet will be dropped if the TTL field reaches zero or if the
-current router has no space in its queue (perhaps due to network congestion).
+there, it will continue to travel to the autonomous system's (AS) border
+routers, other ASes, and finally to the destination server. Each router along
+the way extracts the destination address from the IP header and routes it to
+the appropriate next hop. The time to live (TTL) field in the IP header is
+decremented by one for each router that passes. The packet will be dropped if
+the TTL field reaches zero or if the current router has no space in its queue
+(perhaps due to network congestion).
 
 This send and receive happens multiple times following the TCP connection flow:
 
@@ -367,7 +368,8 @@ This send and receive happens multiple times following the TCP connection flow:
 TLS handshake
 -------------
 * The client computer sends a ``ClientHello`` message to the server with its
-  TLS version, list of cipher algorithms and compression methods available.
+  Transport Layer Security (TLS) version, list of cipher algorithms and
+  compression methods available.
 
 * The server replies with a ``ServerHello`` message to the client with the
   TLS version, selected cipher, selected compression methods and the server's
