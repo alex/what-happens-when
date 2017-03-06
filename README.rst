@@ -185,11 +185,11 @@ Is it a URL or a search term?
 
 Address bar directly identify the search keywords is the function of the new browser, in recent years. The specific implementation of the above steps between 3-4, different browsers are also different. Take chrome as an example:
 
-1. Chrome will first determine whether the first ``: `` exists, if there is jump to step 2, there is no jump to step 4.
+1. Chrome will first determine whether the first ``:`` exists, if there is jump to step 2, there is no jump to step 4.
 2. Determine whether the scheme is valid, [IANA uri-schemes list] (http://www.iana.org/assignments/uri-schemes/uri-schemes.xhtml), if the scheme is valid jump to step 3, the scheme is invalid or none jump to step 4.
 3. If the scheme is valid, to determine whether is it a common protocol, such as ``http``, ``https``, ``ftp``, and several pseudo-protocol like ``data``, ``javascript``, ``about``, ``chrome``, if it's a common protocol, do acccording to the normal handling of the protocol, if not jump to step 4.
 4. Chrome first checks if your input is a standard IPv4 address, deal it as a http request or continued check. Second it checks the last one ``.`` after the string is a generic top-level domain, such as com, edu, us, cn, info, etc., if there is a top-level domain, the browser will automatically add a complete http protocol and ``//`` in url as a normal http request url to continue processing, or as a search keyword processing.
-5. When chrome confirm that the user is typing a search keyword, first read the browser configuration, the user input content assembled to the default search engine search URL `` query_string``, and then go to further search processing.
+5. When chrome confirm that the user is typing a search keyword, first read the browser configuration, the user input content assembled to the default search engine search URL ``query_string``, and then go to further search processing.
 
  Of course, Chrome in your input process, in addition to their own default resolution, below the address bar will give you other options, you can press ``↑`` and ``↓`` to choose the operation you really want.
 
