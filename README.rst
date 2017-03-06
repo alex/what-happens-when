@@ -163,24 +163,36 @@ appropriate font symbol in the appropriate focused field.
 
 Parse URL
 ---------
+The browser parse URL is generally divided into the following steps, different browsers will be slightly different.
 
-* The browser now has the following information contained in the URL (Uniform
-  Resource Locator):
+1. Determine whether the URL is an absolute URL or a relative URL. In most browsers, all the addresses entered manually in the address bar are considered absolute URLs.
+2. When the URL is determined to be an absolute URL, start parsing. A standard absolute URL structure is
+ 
+``scheme://login:password@address:port/path/to/resource?query_string#fragment``
 
-    - ``Protocol``  "http"
-        Use 'Hyper Text Transfer Protocol'
+3. Extract the protocol name: Find the first ``:``, the part of the character on the left is the name of the scheme.
+4. Remove the level tag: If there is ``//``, skip it. in the actual environment, use one, two, three, or none slash all can be parsed.
+5. Extract the authorization part of the url (login information + address + port): in order to find ``/``, ``?``, ``#``, which first appeared in which to intercept, in addition to IE and Safari, semicolon ``;`` also acceptable Separator.
 
-    - ``Resource``  "/"
-        Retrieve main (index) page
-
+* After authorized part of the information extracted, the first search ``@`` symbol, if found, then it is in front of the login information, the colon is in front of the user name, followed by the password
+* the rest is the host address part,first find the ``:``, if found it, the front part of it is the address, followed by the port. If address is four figures between 1-255, it considered as a IPv4 address, if found square brackets [], it's a IPv6 address, if it's a number less than 4294967295, it's also a IPv4 address, which is expressed as decimal. The other letters are considered to be DNS addresses.
+6. Extract the ``/path/to/resource``
+7. Extract the ``query_string``
+8. Extract the ``fragment``
 
 Is it a URL or a search term?
 -----------------------------
 
-When no protocol or valid domain name is given the browser proceeds to feed
-the text given in the address box to the browser's default web search engine.
-In many cases the url has a special piece of text appended to it to tell the
-search engine that it came from a particular browser's url bar.
+Address bar directly identify the search keywords is the function of the new browser, in recent years. The specific implementation of the above steps between 3-4, different browsers are also different. Take chrome as an example:
+
+1. Chrome will first determine whether the first ``: `` exists, if there is jump to step 2, there is no jump to step 4.
+2. Determine whether the scheme is valid, [IANA uri-schemes list] (http://www.iana.org/assignments/uri-schemes/uri-schemes.xhtml), if the scheme is valid jump to step 3, the scheme is invalid or none jump to step 4.
+3. If the scheme is valid, to determine whether is it a common protocol, such as ``http``, ``https``, ``ftp``, and several pseudo-protocol like ``data``, ``javascript``, ``about``, ``chrome``, if it's a common protocol, do acccording to the normal handling of the protocol, if not jump to step 4.
+4. Chrome first checks if your input is a standard IPv4 address, deal it as a http request or continued check. Second it checks the last one ``.`` after the string is a generic top-level domain, such as com, edu, us, cn, info, etc., if there is a top-level domain, the browser will automatically add a complete http protocol and ``//`` in url as a normal http request url to continue processing, or as a search keyword processing.
+5. When chrome confirm that the user is typing a search keyword, first read the browser configuration, the user input content assembled to the default search engine search URL `` query_string``, and then go to further search processing.
+
+ Of course, Chrome in your input process, in addition to their own default resolution, below the address bar will give you other options, you can press ``↑`` and ``↓`` to choose the operation you really want.
+
 
 Convert non-ASCII Unicode characters in hostname
 ------------------------------------------------
