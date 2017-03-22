@@ -289,8 +289,10 @@ Switch:
 Now that the network library has the IP address of either our DNS server or
 the default gateway it can resume its DNS process:
 
-* Port 53 is opened to send a UDP request to DNS server (if the response size
-  is too large, TCP will be used instead).
+* A random port between 0 - 65535 (49152 - 65535 for Windows) is opened to
+  send a UDP request to the DNS server on port 53 (if the response size is
+  too large, TCP will be used instead).
+* The client port is chosen randomly to prevent `DNS cache poisoning`_
 * If the local/ISP DNS server does not have it, then a recursive search is
   requested and that flows up the list of DNS servers until the SOA is reached,
   and if found an answer is returned.
@@ -673,6 +675,7 @@ page rendering and painting.
 .. _`Creative Commons Zero`: https://creativecommons.org/publicdomain/zero/1.0/
 .. _`"CSS lexical and syntax grammar"`: http://www.w3.org/TR/CSS2/grammar.html
 .. _`Punycode`: https://en.wikipedia.org/wiki/Punycode
+.. _`DNS cache poisoning`: https://en.wikipedia.org/wiki/DNS_spoofing
 .. _`Ethernet`: http://en.wikipedia.org/wiki/IEEE_802.3
 .. _`WiFi`: https://en.wikipedia.org/wiki/IEEE_802.11
 .. _`Cellular data network`: https://en.wikipedia.org/wiki/Cellular_data_communication_protocol
