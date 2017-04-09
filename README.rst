@@ -367,26 +367,26 @@ This send and receive happens multiple times following the TCP connection flow:
 
 TCP Windowing
 -------------
-To establish the fastest possible reliable throughput rate, the 
-sender and reciever establish the ideal amount of data to send in 
-each packet by utilizing the TCP Window option/field. The reciever 
-advertizes to the sender how much data it can recieve in each ACK 
-packet which corresponds to the free buffer space for the socket 
+To establish the fastest possible reliable throughput rate, the
+sender and reciever establish the ideal amount of data to send in
+each packet by utilizing the TCP Window option/field. The reciever
+advertizes to the sender how much data it can recieve in each ACK
+packet which corresponds to the free buffer space for the socket
 (SO_RCVBUF) and defaults to 65535 bytes.
 
-The senders upper limit is the recievers advertized window. The 
-sender must not send more unACKed data than this limit or it would 
+The senders upper limit is the recievers advertized window. The
+sender must not send more unACKed data than this limit or it would
 overflow the buffer causing the reciever to discard the packets.
 
-The congestion window is a flow control which dynamically adjusts to 
-the networks capacity and reliability. The congestion window starts 
-a window of two times the max segment size. It's increased by the 
-TCP Slow Start mechanizim upon each ACKed packet by 1. With this 
-algorithim the congestion window effectively doubles for every 
+The congestion window is a flow control which dynamically adjusts to
+the networks capacity and reliability. The congestion window starts
+a window of two times the max segment size. It's increased by the
+TCP Slow Start mechanizim upon each ACKed packet by 1. With this
+algorithim the congestion window effectively doubles for every
 round-trip time.
 
-Upon hitting the slow-start threshold, TCP changes from using the 
-slow-start algorithm to acongestion avoidance algorithm. The window 
+Upon hitting the slow-start threshold, TCP changes from using the
+slow-start algorithm to acongestion avoidance algorithm. The window
 becomes increased by 1 segment for each round-trip-time.
 
 TLS handshake
