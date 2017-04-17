@@ -371,7 +371,7 @@ Packet Fragmentation and MTU Discovery
 
 In order to determine the maximum transmit unit (MTU) that an operating system
 should form packets into before sending them it must check the interface that 
-it will send it through and see what value is saved as the MTU.You can check
+it will send it through to see what value is saved as the MTU. You can check
 what your saved values for each interface are by typing 
 "ip link list | grep mtu" if you are using linux or by 
 "netsh interface ipv4 show subinterfaces" (or ipv6) on windows.
