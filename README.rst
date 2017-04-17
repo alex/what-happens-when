@@ -364,6 +364,36 @@ This send and receive happens multiple times following the TCP connection flow:
    * The closer sends a FIN packet
    * The other sides ACKs the FIN packet and sends its own FIN
    * The closer acknowledges the other side's FIN with an ACK
+   
+   
+Packet Fragmentation and MTU Discovery
+--------------------------------------
+
+In order to determine the maximum transmit unit (MTU) that an operating system
+should form packets into before sending them it must check the interface that 
+it will send it through and see what value is saved as the MTU.You can check
+what your saved values for each interface are by typing 
+"ip link list | grep mtu" if you are using linux or by 
+"netsh interface ipv4 show subinterfaces" (or ipv6) on windows.
+
+Not all devices on the route from a device to another device will have the same
+MTU. If a device in the middle of the path has a MTU that is less than the
+current size of the packet being transmitted then that device must perform
+fragmentation to reduce the size of the packet. Fragmentation is the act of
+spliting a packet into smaller fragments that will fit into the MTU.
+
+However, the sender of the packets can determine whether or not any device on
+the route from the sender to destination will be allowed to fragment a packet.
+The way they can do this is by setting the "Don't Fragment" bit on in the IP
+header. This tells the devices on the path that instead of performing
+fragmentation they should return ICMP type 3 code 4 message that indicates that
+fragmentation was needed but the Don't Fragment flag was set.
+
+When the sender recieves this message they must reduce the MTU of sent packets.
+RFC 1191 expanded the ICMP message to include the MTU of the device that
+required fragmentation. The operating system changes the MTU to this value,
+then resends the packets.
+
 
 TLS handshake
 -------------
