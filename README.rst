@@ -364,7 +364,7 @@ This send and receive happens multiple times following the TCP connection flow:
    * The closer sends a FIN packet
    * The other sides ACKs the FIN packet and sends its own FIN
    * The closer acknowledges the other side's FIN with an ACK
-     
+
 Packet Fragmentation and MTU Discovery
 --------------------------------------
 
