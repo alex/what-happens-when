@@ -388,7 +388,7 @@ header. This tells the devices on the path that instead of performing
 fragmentation they should return ICMP type 3 code 4 message that indicates that
 fragmentation was needed but the Don't Fragment flag was set.
 
-When the sender recieves this message they must reduce the MTU of sent packets.
+When the sender receives this message they must reduce the MTU of sent packets.
 RFC 1191 expanded the ICMP message to include the MTU of the device that
 required fragmentation. The operating system changes the MTU to this value,
 then resends the packets.
