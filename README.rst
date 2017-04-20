@@ -380,6 +380,13 @@ current size of the packet being transmitted then that device must perform
 fragmentation to reduce the size of the packet. Fragmentation is the act of
 spliting a packet into smaller fragments that will fit into the MTU.
 
+However, the sender of the packets can determine whether or not any device on
+the route from the sender to destination will be allowed to fragment a packet.
+The way they can do this is by setting the "Don't Fragment" bit on in the IP
+header. This tells the devices on the path that instead of performing
+fragmentation they should return ICMP type 3 code 4 message that indicates that
+fragmentation was needed but the Don't Fragment flag was set.
+
 When the sender receives this message they must reduce the MTU of sent packets.
 RFC 1191 expanded the ICMP message to include the MTU of the device that
 required fragmentation. The operating system changes the MTU to this value,
