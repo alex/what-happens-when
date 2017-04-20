@@ -368,13 +368,6 @@ This send and receive happens multiple times following the TCP connection flow:
 Packet Fragmentation and MTU Discovery
 --------------------------------------
 
-To determine the maximum transmit unit (MTU) that an operating system
-should form packets into before sending them it must check the interface that
-it will send it through to see what value has been saved as the MTU. You can check
-what your saved values for each interface are by typing
-"ip link list | grep mtu" if you are using linux or by
-"netsh interface ipv4 show subinterfaces" (or ipv6) on windows.
-
 Not all devices on the route from a device to another device will have the same
 MTU. If a device in the middle of the path has a MTU that is less than the
 current size of the packet being transmitted then that device must perform
