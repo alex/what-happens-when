@@ -488,7 +488,7 @@ and IIS for Windows.
   in our case it will fall back to the index file, as "/" is the main file
   (some cases can override this, but this is the most common method).
 * The server parses the file according to the handler. If Google
-  is running on PHP, the server uses PHP to interpret the index file, and
+  is running on PHP (God help us all), the server uses PHP to interpret the index file, and
   streams the output to the client.
 
 Behind the scenes of the Browser
