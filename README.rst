@@ -6,7 +6,7 @@ happens when you type google.com into your browser's address box and press
 enter?"
 
 Except instead of the usual story, we're going to try to answer this question
-in as much detail as possible. No skipping out on anything.
+in as much detail as possible. No skipping out on anything\*.
 
 This is a collaborative process, so dig in and try to help out! There's tons of
 details missing, just waiting for you to add them! So send us a pull request,
@@ -669,6 +669,15 @@ Plugins such as Flash or Java may execute as well, although not at this time on
 the Google homepage. Scripts can cause additional network requests to be
 performed, as well as modify the page or its layout, causing another round of
 page rendering and painting.
+
+---------
+
+\* Well... almost anything. We do need to have some scope here, else we're going to end up talking about quantum mechanics, or how human sight works. To that effect our boundries are:
+
+- the start will be when the user's finger "touches" the first key to type "google.com".
+- the end will be when the homepage of Google is displayed fully on the screen.
+- nothing biological (eg, don't describe how the human nervous system works).
+- nothing subatomic (eg, don't describe how electrons interact with other electrons).
 
 .. _`Creative Commons Zero`: https://creativecommons.org/publicdomain/zero/1.0/
 .. _`"CSS lexical and syntax grammar"`: http://www.w3.org/TR/CSS2/grammar.html
