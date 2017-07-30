@@ -46,7 +46,7 @@ bottom of its range. At this point, an electrical circuit specific to the enter
 key is closed (either directly or capacitively). This allows a small amount of
 current to flow into the logic circuitry of the keyboard, which scans the state
 of each key switch, debounces the electrical noise of the rapid intermittent
-closure of the switch, and converts it to a keycode integer, in this case 13.
+closure of the switch, and converts it to a keycode integer.
 The keyboard controller then encodes the keycode for transport to the computer.
 This is now almost universally over a Universal Serial Bus (USB) or Bluetooth
 connection, but historically has been over PS/2 or ADB connections.
@@ -55,6 +55,10 @@ connection, but historically has been over PS/2 or ADB connections.
 
 - The USB circuitry of the keyboard is powered by the 5V supply provided over
   pin 1 from the computer's USB host controller.
+
+- The keyboard detects that "enter" was pressed and generates a keycode integer,
+  in this case 40.  This code is defined in Table 44 of the `Universal Serial
+  Bus HID Usage Tables`_.
 
 - The keycode generated is stored by internal keyboard circuitry memory in a
   register called "endpoint".
@@ -671,6 +675,7 @@ performed, as well as modify the page or its layout, causing another round of
 page rendering and painting.
 
 .. _`Creative Commons Zero`: https://creativecommons.org/publicdomain/zero/1.0/
+.. _`Universal Serial Bus HID Usage Tables`: http://www.usb.org/developers/hidpage/Hut1_12v2.pdf
 .. _`"CSS lexical and syntax grammar"`: http://www.w3.org/TR/CSS2/grammar.html
 .. _`Punycode`: https://en.wikipedia.org/wiki/Punycode
 .. _`Ethernet`: http://en.wikipedia.org/wiki/IEEE_802.3
