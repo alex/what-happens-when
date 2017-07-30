@@ -672,12 +672,16 @@ page rendering and painting.
 
 ---------
 
-\* Well... almost anything. We do need to have some scope here, else we're going to end up talking about quantum mechanics, or how human sight works. To that effect our boundries are:
+\* Well... almost anything. We do need to have some scope here, else we're going 
+to end up talking about quantum mechanics, or how human sight works. To that 
+effect our boundaries are:
 
-- the start will be when the user's finger "touches" the first key to type "google.com".
+- the start will be when the user's finger touches the first key to type 
+  "google.com".
 - the end will be when the homepage of Google is displayed fully on the screen.
 - nothing biological (eg, don't describe how the human nervous system works).
-- nothing subatomic (eg, don't describe how electrons interact with other electrons).
+- nothing subatomic (eg, don't describe how electrons interact with other 
+  electrons).
 
 .. _`Creative Commons Zero`: https://creativecommons.org/publicdomain/zero/1.0/
 .. _`"CSS lexical and syntax grammar"`: http://www.w3.org/TR/CSS2/grammar.html
