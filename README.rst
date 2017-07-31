@@ -94,7 +94,6 @@ connection, but historically has been over PS/2 or ADB connections.
 - This interrupt notifies the current focused application of a 'key pressed'
   event.
 
-
 Interrupt fires [NOT for USB keyboards]
 ---------------------------------------
 
@@ -136,12 +135,12 @@ This code looks within the 3rd parameter that was passed to ``SendMessage``
 (``wParam``) and, because it is ``VK_RETURN`` knows the user has hit the ENTER
 key.
 
-(On OS X) A ``KeyDown`` NSEvent is sent to the app
+(On macOS) A ``KeyDown`` NSEvent is sent to the app
 --------------------------------------------------
 
-The interrupt signal triggers an interrupt event in the I/O Kit kext keyboard
+The interrupt signal triggers an interrupt event in the IOKit kext keyboard
 driver. The driver translates the signal into a key code which is passed to the
-OS X ``WindowServer`` process. Resultantly, the ``WindowServer`` dispatches an
+macOS ``WindowServer`` process. Resultantly, the ``WindowServer`` dispatches an
 event to any appropriate (e.g. active or listening) applications through their
 Mach port where it is placed into an event queue. Events can then be read from
 this queue by threads with sufficient privileges calling the
@@ -173,7 +172,6 @@ Parse URL
     - ``Resource``  "/"
         Retrieve main (index) page
 
-
 Is it a URL or a search term?
 -----------------------------
 
@@ -193,6 +191,7 @@ Convert non-ASCII Unicode characters in hostname
 
 Check HSTS list
 ---------------
+
 * The browser checks its "preloaded HSTS (HTTP Strict Transport Security)"
   list. This is a list of websites that have requested to be contacted via
   HTTPS only.
@@ -216,13 +215,13 @@ DNS lookup
   local ``hosts`` file (whose location `varies by OS`_) before trying to
   resolve the hostname through DNS.
 * If ``gethostbyname`` does not have it cached nor can find it in the ``hosts``
-  file then it makes a request to the DNS server configured in the network
-  stack. This is typically the local router or the ISP's caching DNS server.
+  file then it makes a request to the DNS server or servers configured in the 
+  network stack. This is typically the local router or the ISP's caching DNS
+  server.
 * If the DNS server is on the same subnet the network library follows the
   ``ARP process`` below for the DNS server.
 * If the DNS server is on a different subnet, the network library follows
   the ``ARP process`` below for the default gateway IP.
-
 
 ARP process
 -----------
@@ -405,10 +404,12 @@ the server an "upgrade" from HTTP to the SPDY protocol.
 If the client is using the HTTP protocol and does not support SPDY, it sends a
 request to the server of the form::
 
-    GET / HTTP/1.1
-    Host: google.com
-    Connection: close
-    [other headers]
+.. code-block::
+
+  GET / HTTP/1.1
+  Host: google.com
+  Connection: close
+  [other headers]
 
 where ``[other headers]`` refers to a series of colon-separated key-value pairs
 formatted as per the HTTP specification and separated by single new lines.
@@ -420,7 +421,9 @@ specified in the ``GET`` request will either be ``HTTP/1.0`` or ``HTTP/0.9``.)
 HTTP/1.1 defines the "close" connection option for the sender to signal that
 the connection will be closed after completion of the response. For example,
 
-    Connection: close
+.. code-block::
+
+  Connection: close
 
 HTTP/1.1 applications that do not support persistent connections MUST include
 the "close" connection option in every message.
@@ -431,8 +434,10 @@ newline to the server indicating that the content of the request is done.
 The server responds with a response code denoting the status of the request and
 responds with a response of the form::
 
-    200 OK
-    [response headers]
+.. code-block::
+
+  200 OK
+  [response headers]
 
 Followed by a single newline, and then sends a payload of the HTML content of
 ``www.google.com``. The server may then either close the connection, or if
@@ -445,8 +450,10 @@ browser has been unmodified since the last retrieval (ie. if the web browser
 included an ``ETag`` header), it may instead respond with a request of
 the form::
 
-    304 Not Modified
-    [response headers]
+.. code-block::
+
+  304 Not Modified
+  [response headers]
 
 and no payload, and the web browser instead retrieves the HTML from its cache.
 
@@ -654,7 +661,6 @@ GPU Rendering
   software layers split the task into multiple pieces, so it can take advantage
   of ``GPU`` massive parallelism for float point calculations required for
   the rendering process.
-
 
 Window Server
 -------------
