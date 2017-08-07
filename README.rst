@@ -39,19 +39,6 @@ will run before you get there and the suggestions will be refined
 with each key press. It may even suggest "google.com" before you type it.
 
 
-The "enter" key bottoms out
----------------------------
-
-To pick a zero point, let's choose the Enter key on the keyboard hitting the
-bottom of its range. At this point, an electrical circuit specific to the enter
-key is closed (either directly or capacitively). This allows a small amount of
-current to flow into the logic circuitry of the keyboard, which scans the state
-of each key switch, debounces the electrical noise of the rapid intermittent
-closure of the switch, and converts it to a key code integer, in this case, 13.
-The keyboard controller then encodes the key code for transport to the computer.
-This is now almost universally over a Universal Serial Bus (USB) or Bluetooth
-connection, but historically has been over PS/2 or ADB connections.
-
 *In the case of the USB keyboard:*
 
 - The USB-keyboard Integrated circuit (``SK5100`` integrated circuit used as a reference) of the keyboard is powered by the 5V supply provided on pin 1 from the computer's USB host controller and grounded on pin4. 
@@ -68,7 +55,13 @@ connection, but historically has been over PS/2 or ADB connections.
 	| 4          | Black        | Ground         |
 	+------------+--------------+----------------+
 
-- The 'G' key is pressed completing a circuit between row pin 7 and column pin 6.
+The 'G' key is pressed completing a circuit between row pin 7 and column pin 6.
+-------------------------------------------------------------------------------
+
+- Electrons begin to flow through the circuit boards conductive traces which corespond to the depressed button.  The electrons then transfer through a solder connection into the
+integrated circuits extrenam pins. the electrons flow to the other end of the pin were they encounter a thermal compression bonded gold filament which is bonded to the pin via a wedge bond.
+the electrons flow over the filament to another thermal compression bond between the filament and a pad of oxide on the scilicon wafer. This time it is bonded in a ball bond configuration.
+
 
 - The keyboard IC encodes the data to a scan code.
 
@@ -111,6 +104,18 @@ connection, but historically has been over PS/2 or ADB connections.
 - This interrupt notifies the currently focused application of a 'key pressed'
   event.
 
+The "enter" key bottoms out
+---------------------------
+
+To pick a zero point, let's choose the Enter key on the keyboard hitting the
+bottom of its range. At this point, an electrical circuit specific to the enter
+key is closed (either directly or capacitively). This allows a small amount of
+current to flow into the logic circuitry of the keyboard, which scans the state
+of each key switch, debounces the electrical noise of the rapid intermittent
+closure of the switch, and converts it to a key code integer, in this case, 13.
+The keyboard controller then encodes the key code for transport to the computer.
+This is now almost universally over a Universal Serial Bus (USB) or Bluetooth
+connection, but historically has been over PS/2 or ADB connections.
 
 Interrupt fires [NOT for USB keyboards]
 ---------------------------------------
