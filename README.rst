@@ -8,14 +8,14 @@ enter?"
 Except instead of the usual story, we're going to try to answer this question
 in as much detail as possible. No skipping out on anything.
 
-This is a collaborative process, so dig in and try to help out! There's tons of
+This is a collaborative process, so dig in and try to help out! There are tons of
 details missing, just waiting for you to add them! So send us a pull request,
 please!
 
 This is all licensed under the terms of the `Creative Commons Zero`_ license.
 
 Read this in `简体中文`_ (simplified Chinese). NOTE: this has not been reviewed
-by the alex/what-happens-when maintainers.
+by the Alex/what-happens-when maintainers.
 
 Table of Contents
 ====================
@@ -32,47 +32,57 @@ isn't explained. When you just press "g" the browser receives the
 event and the entire auto-complete machinery kicks into high gear.
 Depending on your browser's algorithm and if you are in
 private/incognito mode or not various suggestions will be presented
-to you in the dropbox below the URL bar. Most of these algorithms
+to you in the drop box below the URL bar. Most of these algorithms
 prioritize results based on search history and bookmarks. You are
 going to type "google.com" so none of it matters, but a lot of code
 will run before you get there and the suggestions will be refined
 with each key press. It may even suggest "google.com" before you type it.
 
-The "enter" key bottoms out
----------------------------
-
-To pick a zero point, let's choose the Enter key on the keyboard hitting the
-bottom of its range. At this point, an electrical circuit specific to the enter
-key is closed (either directly or capacitively). This allows a small amount of
-current to flow into the logic circuitry of the keyboard, which scans the state
-of each key switch, debounces the electrical noise of the rapid intermittent
-closure of the switch, and converts it to a keycode integer, in this case 13.
-The keyboard controller then encodes the keycode for transport to the computer.
-This is now almost universally over a Universal Serial Bus (USB) or Bluetooth
-connection, but historically has been over PS/2 or ADB connections.
 
 *In the case of the USB keyboard:*
 
-- The USB circuitry of the keyboard is powered by the 5V supply provided over
-  pin 1 from the computer's USB host controller.
+- The USB-keyboard Integrated circuit (``SK5100`` integrated circuit used as a reference) of the keyboard is powered by the 5V supply provided on pin 1 from the computer's USB host controller and grounded on pin4. 
 
-- The keycode generated is stored by internal keyboard circuitry memory in a
+	+------------+--------------+----------------+
+	| Pin Number |  Cable Color | Function       |
+	+------------+--------------+----------------+
+	| 1          | Red          | VBUS (5 volts) |
+	+------------+--------------+----------------+
+	| 2          | White        | D-             |
+	+------------+--------------+----------------+
+	| 3          | Green        | D+             |
+	+------------+--------------+----------------+
+	| 4          | Black        | Ground         |
+	+------------+--------------+----------------+
+
+The 'G' key is pressed completing a circuit between row pin 7 and column pin 6.
+-------------------------------------------------------------------------------
+
+- Electrons begin to flow through the circuit boards conductive traces which corespond to the depressed button.  The electrons then transfer through a solder connection into the
+integrated circuits extrenam pins. the electrons flow to the other end of the pin were they encounter a thermal compression bonded gold filament which is bonded to the pin via a wedge bond.
+the electrons flow over the filament to another thermal compression bond between the filament and a pad of oxide on the scilicon wafer. This time it is bonded in a ball bond configuration.
+
+
+- The keyboard IC encodes the data to a scan code.
+
+- The keyboard IC transmits this scan code to the computers
+
+- The key code generated is stored by internal keyboard circuitry memory in a
   register called "endpoint".
 
 - The host USB controller polls that "endpoint" every ~10ms (minimum value
-  declared by the keyboard), so it gets the keycode value stored on it.
+  declared by the keyboard), so it gets the key code value stored on it.
 
 - This value goes to the USB SIE (Serial Interface Engine) to be converted in
-  one or more USB packets that follows the low level USB protocol.
+  one or more USB packets that follow the low-level USB protocol.
 
 - Those packets are sent by a differential electrical signal over D+ and D-
-  pins (the middle 2) at a maximum speed of 1.5 Mb/s, as an HID
-  (Human Interface Device) device is always declared to be a "low speed device"
+  pins (the middle 2) at a maximum speed of 1.5 Mb/s, as a HID
+  (Human Interface Device) the device is always declared to be a "low-speed device"
   (USB 2.0 compliance).
 
 - This serial signal is then decoded at the computer's host USB controller, and
-  interpreted by the computer's Human Interface Device (HID) universal keyboard
-  device driver.  The value of the key is then passed into the operating
+  interpreted by the computer's Human Interface Device (HID) universal keyboard device driver.  The value of the key is then passed into the operating
   system's hardware abstraction layer.
 
 *In the case of Virtual Keyboard (as in touch screen devices):*
@@ -84,16 +94,28 @@ connection, but historically has been over PS/2 or ADB connections.
   ``screen controller`` then raises an interrupt reporting the coordinate of
   the key press.
 
-- Then the mobile OS notifies the current focused application of a press event
+- Then the mobile OS notifies the currently focused application of a press event
   in one of its GUI elements (which now is the virtual keyboard application
   buttons).
 
 - The virtual keyboard can now raise a software interrupt for sending a
   'key pressed' message back to the OS.
 
-- This interrupt notifies the current focused application of a 'key pressed'
+- This interrupt notifies the currently focused application of a 'key pressed'
   event.
 
+The "enter" key bottoms out
+---------------------------
+
+To pick a zero point, let's choose the Enter key on the keyboard hitting the
+bottom of its range. At this point, an electrical circuit specific to the enter
+key is closed (either directly or capacitively). This allows a small amount of
+current to flow into the logic circuitry of the keyboard, which scans the state
+of each key switch, debounces the electrical noise of the rapid intermittent
+closure of the switch, and converts it to a key code integer, in this case, 13.
+The keyboard controller then encodes the key code for transport to the computer.
+This is now almost universally over a Universal Serial Bus (USB) or Bluetooth
+connection, but historically has been over PS/2 or ADB connections.
 
 Interrupt fires [NOT for USB keyboards]
 ---------------------------------------
@@ -109,7 +131,7 @@ the appropriate handler. Thus, the kernel is entered.
 --------------------------------------------------------
 
 The HID transport passes the key down event to the ``KBDHID.sys`` driver which
-converts the HID usage into a scancode. In this case the scan code is
+converts the HID usage into a scan code. In this case, the scan code is
 ``VK_RETURN`` (``0x0D``). The ``KBDHID.sys`` driver interfaces with the
 ``KBDCLASS.sys`` (keyboard class driver). This driver is responsible for
 handling all keyboard and keypad input in a secure manner. It then calls into
@@ -120,7 +142,7 @@ keyboard filters that are installed). This all happens in kernel mode.
 ``GetForegroundWindow()`` API. This API provides the window handle of the
 browser's address box. The main Windows "message pump" then calls
 ``SendMessage(hWnd, WM_KEYDOWN, VK_RETURN, lParam)``. ``lParam`` is a bitmask
-that indicates further information about the keypress: repeat count (0 in this
+that indicates further information about the key press: repeat count (0 in this
 case), the actual scan code (can be OEM dependent, but generally wouldn't be
 for ``VK_RETURN``), whether extended keys (e.g. alt, shift, ctrl) were also
 pressed (they weren't), and some other state.
@@ -149,17 +171,24 @@ this queue by threads with sufficient privileges calling the
 handled by, an ``NSApplication`` main event loop, via an ``NSEvent`` of
 ``NSEventType`` ``KeyDown``.
 
-(On GNU/Linux) the Xorg server listens for keycodes
----------------------------------------------------
+(On GNU/Linux) the Xorg server listens for key codes
+-----------------------------------------------------
 
 When a graphical ``X server`` is used, ``X`` will use the generic event
-driver ``evdev`` to acquire the keypress. A re-mapping of keycodes to scancodes
+driver ``evdev`` to acquire the key press. A re-mapping of key codes to scan codes
 is made with ``X server`` specific keymaps and rules.
-When the scancode mapping of the key pressed is complete, the ``X server``
-sends the character to the ``window manager`` (DWM, metacity, i3, etc), so the
+When the scan code mapping of the key pressed is complete, the ``X server``
+sends the character to the ``window manager`` (DWM, Metacity, i3, etc), so the
 ``window manager`` in turn sends the character to the focused window.
 The graphical API of the window  that receives the character prints the
 appropriate font symbol in the appropriate focused field.
+
+- See Linux ``Driver``
+
+Scan Codes
+----------
+See scancodes.html
+
 
 Parse URL
 ---------
@@ -178,8 +207,8 @@ Is it a URL or a search term?
 -----------------------------
 
 When no protocol or valid domain name is given the browser proceeds to feed
-the text given in the address box to the browser's default web search engine.
-In many cases the URL has a special piece of text appended to it to tell the
+the text is given in the address box to the browser's default web search engine.
+In many cases, the URL has a special piece of text appended to it to tell the
 search engine that it came from a particular browser's URL bar.
 
 Convert non-ASCII Unicode characters in hostname
@@ -196,7 +225,7 @@ Check HSTS list
 * The browser checks its "preloaded HSTS (HTTP Strict Transport Security)"
   list. This is a list of websites that have requested to be contacted via
   HTTPS only.
-* If the website is in the list, the browser sends its request via HTTPS
+* If the website is on the list, the browser sends its request via HTTPS
   instead of HTTP. Otherwise, the initial request is sent via HTTP.
   (Note that a website can still use the HSTS policy *without* being in the
   HSTS list.  The first HTTP request to the website by a user will receive a
@@ -213,11 +242,9 @@ DNS lookup
 * If not found, the browser calls ``gethostbyname`` library function (varies by
   OS) to do the lookup.
 * ``gethostbyname`` checks if the hostname can be resolved by reference in the
-  local ``hosts`` file (whose location `varies by OS`_) before trying to
-  resolve the hostname through DNS.
+  local ``hosts`` file (whose location `varies by OS`_) before trying to resolve the hostname through DNS.
 * If ``gethostbyname`` does not have it cached nor can find it in the ``hosts``
-  file then it makes a request to the DNS server configured in the network
-  stack. This is typically the local router or the ISP's caching DNS server.
+  file then it makes a request to the DNS server configured in the network stack. This is typically the local router or the ISP's caching DNS server.
 * If the DNS server is on the same subnet the network library follows the
   ``ARP process`` below for the DNS server.
 * If the DNS server is on a different subnet, the network library follows
@@ -237,8 +264,7 @@ the cache, the library function returns the result: Target IP = MAC.
 If the entry is not in the ARP cache:
 
 * The route table is looked up, to see if the Target IP address is on any of
-  the subnets on the local route table. If it is, the library uses the
-  interface associated with that subnet. If it is not, the library uses the
+  the subnets on the local route table. If it is, the library uses the interface associated with that subnet. If it is not, the library uses the
   interface that has the subnet of our default gateway.
 
 * The MAC address of the selected network interface is looked up.
@@ -257,7 +283,7 @@ Depending on what type of hardware is between the computer and the router:
 
 Directly connected:
 
-* If the computer is directly connected to the router the router responds
+* If the computer is directly connected to the router, the router responds
   with an ``ARP Reply`` (see below)
 
 Hub:
@@ -308,11 +334,9 @@ named ``socket`` and requests a TCP socket stream - ``AF_INET/AF_INET6`` and
   chosen from within the kernel's dynamic port range (ip_local_port_range in
   Linux).
 * This segment is sent to the Network Layer, which wraps an additional IP
-  header. The IP address of the destination server as well as that of the
-  current machine is inserted to form a packet.
+  header. The IP address of the destination server, as well as that of the current machine, is inserted to form a packet.
 * The packet next arrives at the Link Layer. A frame header is added that
-  includes the MAC address of the machine's NIC as well as the MAC address of
-  the gateway (local router). As before, if the kernel does not know the MAC
+  includes the MAC address of the machine's NIC as well as the MAC address of the gateway (local router). As before, if the kernel does not know the MAC
   address of the gateway, it must broadcast an ARP query to find it.
 
 At this point the packet is ready to be transmitted through either:
@@ -321,7 +345,7 @@ At this point the packet is ready to be transmitted through either:
 * `WiFi`_
 * `Cellular data network`_
 
-For most home or small business Internet connections the packet will pass from
+For most home or small business Internet connections, the packet will pass from
 your computer, possibly through a local network, and then through a modem
 (MOdulator/DEModulator) which converts digital 1's and 0's into an analog
 signal suitable for transmission over telephone, cable, or wireless telephony
@@ -373,13 +397,10 @@ TLS handshake
 
 * The server replies with a ``ServerHello`` message to the client with the
   TLS version, selected cipher, selected compression methods and the server's
-  public certificate signed by a CA (Certificate Authority). The certificate
-  contains a public key that will be used by the client to encrypt the rest of
-  the handshake until a symmetric key can be agreed upon.
+  public certificate signed by a CA (Certificate Authority). The certificate contains a public key that will be used by the client to encrypt the rest of the handshake until a symmetric key can be agreed upon.
 
 * The client verifies the server digital certificate against its list of
-  trusted CAs. If trust can be established based on the CA, the client
-  generates a string of pseudo-random bytes and encrypts this with the server's
+  trusted CAs. If trust can be established based on the CA, the client generates a string of pseudo-random bytes and encrypts this with the server's
   public key. These random bytes can be used to determine the symmetric key.
 
 * The server decrypts the random bytes using its private key and uses these
@@ -388,7 +409,7 @@ TLS handshake
 * The client sends a ``Finished`` message to the server, encrypting a hash of
   the transmission up to this point with the symmetric key.
 
-* The server generates its own hash, and then decrypts the client-sent hash
+* The server generates its own hash and then decrypts the client-sent hash
   to verify that it matches. If it does, it sends its own ``Finished`` message
   to the client, also encrypted with the symmetric key.
 
@@ -435,20 +456,19 @@ responds with a response of the form::
     [response headers]
 
 Followed by a single newline, and then sends a payload of the HTML content of
-``www.google.com``. The server may then either close the connection, or if
+``www.google.com``. The server may then either close the connection or if
 headers sent by the client requested it, keep the connection open to be reused
 for further requests.
 
 If the HTTP headers sent by the web browser included sufficient information for
-the web server to determine if the version of the file cached by the web
-browser has been unmodified since the last retrieval (ie. if the web browser
+the web server to determine if the version of the file cached by the web browser has been unmodified since the last retrieval (ie. if the web browser
 included an ``ETag`` header), it may instead respond with a request of
 the form::
 
     304 Not Modified
     [response headers]
 
-and no payload, and the web browser instead retrieves the HTML from its cache.
+and no payload and the web browser instead retrieves the HTML from its cache.
 
 After parsing the HTML, the web browser (and server) repeats this process
 for every resource (image, CSS, favicon.ico, etc) referenced by the HTML page,
@@ -463,11 +483,11 @@ server name instead of ``google.com``.
 
 HTTP Server Request Handle
 --------------------------
-The HTTPD (HTTP Daemon) server is the one handling the requests/responses on
-the server side. The most common HTTPD servers are Apache or nginx for Linux
+The HTTPd (HTTP Daemon) server is the one handling the requests/responses on
+the server side. The most common HTTPd servers are Apache or Nginx for Linux
 and IIS for Windows.
 
-* The HTTPD (HTTP Daemon) receives the request.
+* The HTTPd (HTTP Daemon) receives the request.
 * The server breaks down the request to the following parameters:
    * HTTP Request Method (either ``GET``, ``HEAD``, ``POST``, ``PUT``,
      ``DELETE``, ``CONNECT``, ``OPTIONS``, or ``TRACE``). In the case of a URL
@@ -481,11 +501,9 @@ and IIS for Windows.
 * The server verifies that the client is allowed to use this method
   (by IP, authentication, etc.).
 * If the server has a rewrite module installed (like mod_rewrite for Apache or
-  URL Rewrite for IIS), it tries to match the request against one of the
-  configured rules. If a matching rule is found, the server uses that rule to
-  rewrite the request.
+  URL Rewrite for IIS), it tries to match the request against one of the configured rules. If a matching rule is found, the server uses that rule to rewrite the request.
 * The server goes to pull the content that corresponds with the request,
-  in our case it will fall back to the index file, as "/" is the main file
+  in our case, it will fall back to the index file, as "/" is the main file
   (some cases can override this, but this is the most common method).
 * The server parses the file according to the handler. If Google
   is running on PHP, the server uses PHP to interpret the index file, and
@@ -525,19 +543,16 @@ common user interface elements are:
   current documents
 * Home button that takes you to your home page
 
-**Browser High Level Structure**
+**Browser High-Level Structure**
 
 The components of the browsers are:
 
 * **User interface:** The user interface includes the address bar,
-  back/forward button, bookmarking menu, etc. Every part of the browser
-  display except the window where you see the requested page.
+  back/forward button, bookmarking menu, etc. Every part of the browser display except the window where you see the requested page.
 * **Browser engine:** The browser engine marshals actions between the UI
   and the rendering engine.
 * **Rendering engine:** The rendering engine is responsible for displaying
-  requested content. For example if the requested content is HTML, the
-  rendering engine parses HTML and CSS, and displays the parsed content on
-  the screen.
+  requested content. For example, if the requested content is HTML, the rendering engine parses HTML and CSS and displays the parsed content on the screen.
 * **Networking:** The networking handles network calls such as HTTP requests,
   using different implementations for different platforms behind a
   platform-independent interface.
@@ -549,7 +564,7 @@ The components of the browsers are:
   execute JavaScript code.
 * **Data storage:** The data storage is a persistence layer. The browser may
   need to save all sorts of data locally, such as cookies. Browsers also
-  support storage mechanisms such as localStorage, IndexedDB, WebSQL and
+  support storage mechanisms such as local storage, IndexedDB, WebSQL and
   FileSystem.
 
 HTML parsing
@@ -592,7 +607,7 @@ The algorithm consists of two stages: tokenization and tree construction.
 The browser begins fetching external resources linked to the page (CSS, images,
 JavaScript files, etc.).
 
-At this stage the browser marks the document as interactive and starts
+At this stage, the browser marks the document as interactive and starts
 parsing scripts that are in "deferred" mode: those that should be
 executed after the document is parsed. The document state is
 set to "complete" and a "load" event is fired.
@@ -625,8 +640,7 @@ Page Rendering
 * Calculate the coordinates of each node using the information calculated
   above.
 * More complicated steps are taken when elements are ``floated``,
-  positioned ``absolutely`` or ``relatively``, or other complex features
-  are used. See
+  positioned ``absolutely`` or ``relatively``, or other complex features are used. See
   http://dev.w3.org/csswg/css2/ and http://www.w3.org/Style/CSS/current-work
   for more details.
 * Create layers to describe which parts of the page can be animated as a group
@@ -638,8 +652,7 @@ Page Rendering
 * All of the above steps may reuse calculated values from the last time the
   webpage was rendered, so that incremental changes require less work.
 * The page layers are sent to the compositing process where they are combined
-  with layers for other visible content like the browser chrome, iframes
-  and addon panels.
+  with layers for other visible content like the browser chrome, iframes and add-on panels.
 * Final layer positions are computed and the composite commands are issued
   via Direct3D/OpenGL. The GPU command buffer(s) are flushed to the GPU for
   asynchronous rendering and the frame is sent to the window server.
@@ -647,7 +660,7 @@ Page Rendering
 GPU Rendering
 -------------
 
-* During the rendering process the graphical computing layers can use general
+* During the rendering process, the graphical computing layers can use general
   purpose ``CPU`` or the graphical processor ``GPU`` as well.
 
 * When using ``GPU`` for graphical rendering computations the graphical
@@ -682,3 +695,5 @@ page rendering and painting.
 .. _`简体中文`: https://github.com/skyline75489/what-happens-when-zh_CN
 .. _`downgrade attack`: http://en.wikipedia.org/wiki/SSL_stripping
 .. _`OSI Model`: https://en.wikipedia.org/wiki/OSI_model
+.. _`SK5100`: http://sprintek.com/products/sk5100.aspx
+.. _`Driver`: https://github.com/torvalds/linux/blob/master/drivers/input/keyboard/atkbd.c
