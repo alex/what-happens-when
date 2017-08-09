@@ -26,7 +26,7 @@ Table of Contents
 
 The "g" key is pressed
 ----------------------
-The following sections explains all about the physical keyboard
+The following section explains all about the physical keyboard
 and the OS interrupts. But, a whole lot happens after that which
 isn't explained. When you just press "g" the browser receives the
 event and the entire auto-complete machinery kicks into high gear.
@@ -36,7 +36,8 @@ to you in the dropbox below the URL bar. Most of these algorithms
 prioritize results based on search history and bookmarks. You are
 going to type "google.com" so none of it matters, but a lot of code
 will run before you get there and the suggestions will be refined
-with each key press. It may even suggest "google.com" before you type it.
+with each key press. It may even suggest "google.com" before you
+type it.
 
 The "enter" key bottoms out
 ---------------------------
@@ -294,6 +295,55 @@ the default gateway it can resume its DNS process:
 * If the local/ISP DNS server does not have it, then a recursive search is
   requested and that flows up the list of DNS servers until the SOA is reached,
   and if found an answer is returned.
+
+DNS Search for SOA
+------------------
+
+The following section expands upon the reference to the search that "flows up
+the list of DNS servers until the SOA is reached".  When a DNS Server stores a
+domain (e.g. caching or propagation), an SOA record is made.  This is some of
+the information in the SOA:
+
+* **NS:** The primary name server for the domain
+* **Email:** A domain-name (FQDN) for the party responsible for this zone
+* **TTL:** *Time to Live*, time in seconds the record will be cached in servers
+* **Refresh:** time, in seconds, before the zone will be refreshed
+* **Retry:** time, in seconds, before a failed refresh is retried
+* **Negative Cache:** time, in seconds, an unfound record is cached
+
+In the circumstance that there has been no cached SOA records (no propagation)
+for the requested domain or if the TTL has run its course, the search for the
+appropriate IP address begins.
+
+The first DNS Server searched is the **DNS Resolver**.  For most users, their
+DNS resolver is their ISP (*Internet Service Provider*) or they may have a
+faster or public alternative such as Google DNS (8.8.8.8) or OpenDNS
+(208.67.222.222). Google's `NameBench`_ provides analytics on DNS Servers
+available for your computer to use.
+
+If the resolver has no record of the IP address, 1 of the 13 DNS
+`root servers`_ in the world is queried.  The Root Server responds with the
+`.com` TLD (*Top Level Domain*) servers address.  The TLD servers are queried
+until the primary Name Servers for google.com are found. This Name Server is
+the record stored in the Start of Authority data.  To see some information
+from an SOA record, run this command::
+
+    $ host -t soa google.com
+    google.com has SOA record ns1.google.com. dns-admin.google.com. 164707171
+    900 900 1800 60
+
+Additionally, ``$ whois google.com`` displays the Name Servers for google.com::
+
+    ns1.google.com (216.239.32.10)
+    ns2.google.com (216.239.34.10)
+    ns3.google.com (216.239.36.10)
+    ns4.google.com (216.239.38.10)
+
+The Name Server contains the IP of the virtual or physical server for the
+requested domain's web server and website data.  In the case of google.com,
+the IP for the actual search engine is ``216.58.216.36`` (Aug 9, 2017), which
+should not be confused with ``8.8.8.8``, which is the IP of Google's primary
+public DNS.
 
 Opening of a socket
 -------------------
@@ -682,3 +732,5 @@ page rendering and painting.
 .. _`简体中文`: https://github.com/skyline75489/what-happens-when-zh_CN
 .. _`downgrade attack`: http://en.wikipedia.org/wiki/SSL_stripping
 .. _`OSI Model`: https://en.wikipedia.org/wiki/OSI_model
+.. _`NameBench`: https://code.google.com/archive/p/namebench/
+.. _`root servers`: http://www.root-servers.org/
