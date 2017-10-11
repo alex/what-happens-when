@@ -465,7 +465,7 @@ HTTP Server Request Handle
 --------------------------
 The HTTPD (HTTP Daemon) server is the one handling the requests/responses on
 the server side. The most common HTTPD servers are Apache or nginx for Linux
-and IIS for Windows. Google, however, uses a `bespoke one`_.
+and IIS for Windows. Google, however, uses a bespoke one called `Google Web Server`_.
 
 * The HTTPD (HTTP Daemon) receives the request.
 * The server breaks down the request to the following parameters:
@@ -682,4 +682,4 @@ page rendering and painting.
 .. _`简体中文`: https://github.com/skyline75489/what-happens-when-zh_CN
 .. _`downgrade attack`: http://en.wikipedia.org/wiki/SSL_stripping
 .. _`OSI Model`: https://en.wikipedia.org/wiki/OSI_model
-.. _`bespoke one`: https://www.quora.com/Which-web-servers-does-Google-use-in-production-Is-it-Apache-Nginx-or-an-in-house-solution/answer/Chris-Rutherfurd-2
+.. _`Google Web Server`: https://www.quora.com/Which-web-servers-does-Google-use-in-production-Is-it-Apache-Nginx-or-an-in-house-solution/answer/Chris-Rutherfurd-2
