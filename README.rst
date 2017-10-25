@@ -367,7 +367,7 @@ This send and receive happens multiple times following the TCP connection flow:
 
 Packet Fragmentation and MTU Discovery
 --------------------------------------
-To determine the maximum transmit unit (MTU) that an operating system
+To determine the maximum transmission unit (MTU) that an operating system
 should form packets into before sending them it must check the interface that
 it will send it through to see what value has been saved as the MTU. You can
 check what your saved values for each interface are by typing
@@ -378,7 +378,7 @@ Not all devices on the route from a device to another device will have the same
 MTU. If a device in the middle of the path has a MTU that is less than the
 current size of the packet being transmitted then that device must perform
 fragmentation to reduce the size of the packet. Fragmentation is the act of
-spliting a packet into smaller fragments that will fit into the MTU.
+splitting a packet into smaller fragments that will fit into the MTU.
 
 However, the sender of the packets can determine whether or not any device on
 the route from the sender to destination will be allowed to fragment a packet.
