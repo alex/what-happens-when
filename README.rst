@@ -8,7 +8,7 @@ enter?"
 Except instead of the usual story, we're going to try to answer this question
 in as much detail as possible. No skipping out on anything.
 
-This is a collaborative process, so dig in and try to help out! There's tons of
+This is a collaborative process, so dig in and try to help out! There are tons of
 details missing, just waiting for you to add them! So send us a pull request,
 please!
 
@@ -26,7 +26,7 @@ Table of Contents
 
 The "g" key is pressed
 ----------------------
-The following sections explains the physical keyboard actions
+The following sections explain the physical keyboard actions
 and the OS interrupts. When you press the key "g" the browser receives the
 event and the auto-complete functions kick in.
 Depending on your browser's algorithm and if you are in
@@ -63,7 +63,7 @@ connection, but historically has been over PS/2 or ADB connections.
   declared by the keyboard), so it gets the keycode value stored on it.
 
 - This value goes to the USB SIE (Serial Interface Engine) to be converted in
-  one or more USB packets that follows the low level USB protocol.
+  one or more USB packets that follow the low level USB protocol.
 
 - Those packets are sent by a differential electrical signal over D+ and D-
   pins (the middle 2) at a maximum speed of 1.5 Mb/s, as an HID
