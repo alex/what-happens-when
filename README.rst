@@ -484,6 +484,10 @@ and IIS for Windows.
   URL Rewrite for IIS), it tries to match the request against one of the
   configured rules. If a matching rule is found, the server uses that rule to
   rewrite the request.
+* If the server is configured with a load balancer, the request is forwarded
+  according to the configured balance rule. The reverse proxy load balancing
+  is the most common in the request of the proxy server to forward the request
+  to the upstream and downstream back-end server for reducing server pressure.
 * The server goes to pull the content that corresponds with the request,
   in our case it will fall back to the index file, as "/" is the main file
   (some cases can override this, but this is the most common method).
