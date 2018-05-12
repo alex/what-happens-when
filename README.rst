@@ -205,6 +205,19 @@ Check HSTS list
   `downgrade attack`_, which is why the HSTS list is included in modern web
   browsers.)
 
+Check browser cache
+-------------------
+
+ * The browser checks if a copy of the file being requested, initially
+   ``https://www.google.com/``, is in its cache.
+ * There are two kinds of cache entries.
+ ** Entries that do not require validation,
+    because they were served with an ``Expires`` header, can skip ahead to the
+    rendering stage.
+ ** Entries that require validation will, instead, cause the browser to include
+    information during the HTTP request that will allow the server to determine
+    if a new version needs to be downloaded.
+
 DNS lookup
 ----------
 
