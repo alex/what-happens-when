@@ -14,8 +14,9 @@ request, please!
 
 This is all licensed under the terms of the `Creative Commons Zero`_ license.
 
-Read this in `简体中文`_ (simplified Chinese), `日本語`_ (Japanese) and `한국어`_ (Korean). NOTE: these
-have not been reviewed by the alex/what-happens-when maintainers.
+Read this in `简体中文`_ (simplified Chinese), `日本語`_ (Japanese) and `한국어`_
+(Korean). NOTE: these have not been reviewed by the alex/what-happens-when
+maintainers.
 
 Table of Contents
 ====================
