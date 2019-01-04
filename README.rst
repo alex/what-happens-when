@@ -14,7 +14,7 @@ request, please!
 
 This is all licensed under the terms of the `Creative Commons Zero`_ license.
 
-Read this in `简体中文`_ (simplified Chinese) and `한국어`_ (Korean). NOTE: these
+Read this in `简体中文`_ (simplified Chinese), `日本語`_ (Japanese) and `한국어`_ (Korean). NOTE: these
 have not been reviewed by the alex/what-happens-when maintainers.
 
 Table of Contents
@@ -681,5 +681,6 @@ page rendering and painting.
 .. _`varies by OS` : https://en.wikipedia.org/wiki/Hosts_%28file%29#Location_in_the_file_system
 .. _`简体中文`: https://github.com/skyline75489/what-happens-when-zh_CN
 .. _`한국어`: https://github.com/SantonyChoi/what-happens-when-KR
+.. _`日本語`: https://github.com/tettttsuo/what-happens-when-JA
 .. _`downgrade attack`: http://en.wikipedia.org/wiki/SSL_stripping
 .. _`OSI Model`: https://en.wikipedia.org/wiki/OSI_model
