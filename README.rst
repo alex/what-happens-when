@@ -334,6 +334,12 @@ Most larger businesses and some newer residential connections will have fiber
 or direct Ethernet connections in which case the data remains digital and
 is passed directly to the next `network node`_ for processing.
 
+In areas not reached by network providers like a ship at sea or in a desert,
+the packet can be sent via satellite (example using a SCPC/DVBS2 or SCPC/SCPC
+connection to a geostationary satellite or hopefully soon in low earth orbit)
+where the packet is relayed via the orbiting satellite to a ground station which 
+will act as the next `network node`_.
+
 Eventually, the packet will reach the router managing the local subnet. From
 there, it will continue to travel to the autonomous system's (AS) border
 routers, other ASes, and finally to the destination server. Each router along
