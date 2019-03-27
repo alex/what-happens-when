@@ -559,7 +559,7 @@ HTML parsing
 The rendering engine starts getting the contents of the requested
 document from the networking layer. This will usually be done in 8kB chunks.
 
-The primary job of HTML parser to parse the HTML markup into a parse tree.
+The primary job of HTML parser is to parse the HTML markup into a parse tree.
 
 The output tree (the "parse tree") is a tree of DOM element and attribute
 nodes. DOM is short for Document Object Model. It is the object presentation
