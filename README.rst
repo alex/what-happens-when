@@ -8,14 +8,15 @@ enter?"
 Except instead of the usual story, we're going to try to answer this question
 in as much detail as possible. No skipping out on anything.
 
-This is a collaborative process, so dig in and try to help out! There's tons of
-details missing, just waiting for you to add them! So send us a pull request,
-please!
+This is a collaborative process, so dig in and try to help out! There are tons
+of details missing, just waiting for you to add them! So send us a pull
+request, please!
 
 This is all licensed under the terms of the `Creative Commons Zero`_ license.
 
-Read this in `简体中文`_ (simplified Chinese). NOTE: this has not been reviewed
-by the alex/what-happens-when maintainers.
+Read this in `简体中文`_ (simplified Chinese), `日本語`_ (Japanese) and `한국어`_
+(Korean). NOTE: these have not been reviewed by the alex/what-happens-when
+maintainers.
 
 Table of Contents
 ====================
@@ -26,17 +27,17 @@ Table of Contents
 
 The "g" key is pressed
 ----------------------
-The following sections explains all about the physical keyboard
-and the OS interrupts. But, a whole lot happens after that which
-isn't explained. When you just press "g" the browser receives the
-event and the entire auto-complete machinery kicks into high gear.
+The following sections explain the physical keyboard actions
+and the OS interrupts. When you press the key "g" the browser receives the
+event and the auto-complete functions kick in.
 Depending on your browser's algorithm and if you are in
 private/incognito mode or not various suggestions will be presented
-to you in the dropbox below the URL bar. Most of these algorithms
-prioritize results based on search history and bookmarks. You are
-going to type "google.com" so none of it matters, but a lot of code
-will run before you get there and the suggestions will be refined
-with each key press. It may even suggest "google.com" before you type it.
+to you in the dropbox below the URL bar. Most of these algorithms sort
+and prioritize results based on search history, bookmarks, cookies, and
+popular searches from the internet as a whole. As you are typing
+"google.com" many blocks of code run and the suggestions will be refined
+with each key press. It may even suggest "google.com" before you finish typing
+it.
 
 The "enter" key bottoms out
 ---------------------------
@@ -63,7 +64,7 @@ connection, but historically has been over PS/2 or ADB connections.
   declared by the keyboard), so it gets the keycode value stored on it.
 
 - This value goes to the USB SIE (Serial Interface Engine) to be converted in
-  one or more USB packets that follows the low level USB protocol.
+  one or more USB packets that follow the low level USB protocol.
 
 - Those packets are sent by a differential electrical signal over D+ and D-
   pins (the middle 2) at a maximum speed of 1.5 Mb/s, as an HID
@@ -558,7 +559,7 @@ HTML parsing
 The rendering engine starts getting the contents of the requested
 document from the networking layer. This will usually be done in 8kB chunks.
 
-The primary job of HTML parser to parse the HTML markup into a parse tree.
+The primary job of HTML parser is to parse the HTML markup into a parse tree.
 
 The output tree (the "parse tree") is a tree of DOM element and attribute
 nodes. DOM is short for Document Object Model. It is the object presentation
@@ -680,5 +681,7 @@ page rendering and painting.
 .. _`network node`: https://en.wikipedia.org/wiki/Computer_network#Network_nodes
 .. _`varies by OS` : https://en.wikipedia.org/wiki/Hosts_%28file%29#Location_in_the_file_system
 .. _`简体中文`: https://github.com/skyline75489/what-happens-when-zh_CN
+.. _`한국어`: https://github.com/SantonyChoi/what-happens-when-KR
+.. _`日本語`: https://github.com/tettttsuo/what-happens-when-JA
 .. _`downgrade attack`: http://en.wikipedia.org/wiki/SSL_stripping
 .. _`OSI Model`: https://en.wikipedia.org/wiki/OSI_model
