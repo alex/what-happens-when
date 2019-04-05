@@ -656,10 +656,6 @@ GPU Rendering
   of ``GPU`` massive parallelism for float point calculations required for
   the rendering process.
 
-
-Window Server
--------------
-
 Post-rendering and user-induced execution
 -----------------------------------------
 
