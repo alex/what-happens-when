@@ -470,9 +470,9 @@ and IIS for Windows.
 
 * The HTTPD (HTTP Daemon) receives the request.
 * The server breaks down the request to the following parameters:
-   * HTTP Request Method (either ``GET``, ``HEAD``, ``POST``, ``PUT``, ``PATCH``,
-     ``DELETE``, ``CONNECT``, ``OPTIONS``, or ``TRACE``). In the case of a URL
-     entered directly into the address bar, this will be ``GET``.
+   * HTTP Request Method (either ``GET``, ``HEAD``, ``POST``, ``PUT``,
+     ``PATCH``, ``DELETE``, ``CONNECT``, ``OPTIONS``, or ``TRACE``). In the 
+     case of a URL entered directly into the address bar, this will be ``GET``.
    * Domain, in this case - google.com.
    * Requested path/page, in this case - / (as no specific path/page was
      requested, / is the default path).
