@@ -366,6 +366,10 @@ This send and receive happens multiple times following the TCP connection flow:
    * The other sides ACKs the FIN packet and sends its own FIN
    * The closer acknowledges the other side's FIN with an ACK
 
+Load balancer
+-------------
+Since many people can try to access to the same webpage at the same time, multiple servers are used to serve the webpage, so a load balancer is used to distribute the traffic to the servers. With this, the load on each server is less, the single points of failure are decreased, the website is more reliable and scalable, and the security can be increased adding a firewall rule that allows traffic only from the load balancer. However, a good algorithm has to be implemented in order to distribute the traffic to the servers like round Robin, url hash, etc.
+
 TLS handshake
 -------------
 * The client computer sends a ``ClientHello`` message to the server with its
