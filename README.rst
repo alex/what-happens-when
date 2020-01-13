@@ -28,9 +28,18 @@ Table of Contents
 The "g" key is pressed
 ----------------------
 The following sections explain the physical keyboard actions
-and the OS interrupts. When you press the key "g" the browser receives the
-event and the auto-complete functions kick in.
-Depending on your browser's algorithm and if you are in
+and the OS interrupts. Under Linux, each key produces a unique *scancode*.
+The scancode produced by a key ultimately depends on the keyboard hardware.
+Early in the the boot process, the kernel loads a database of keyboard models
+and associated scan codes, as wll as a table of (sensible) translations from
+each scancode to a *keycode*. The active keyboard layout defines a mapping from
+each keycode to a *keysym*, factoring in active modifiers (e.g. `Shift + g`),
+yeilding the final translation from keypress to character. Note, however, that
+under a display server such as X or Wayland, the stages following the initial
+interpretation of the scancode are handled by the display server rather than
+the kernel. This means that mappings defined in the kernel will have no effect.
+When you press the key "g" the browser receives the event and the auto-complete
+functions kick in. Depending on your browser's algorithm and if you are in
 private/incognito mode or not various suggestions will be presented
 to you in the dropdown below the URL bar. Most of these algorithms sort
 and prioritize results based on search history, bookmarks, cookies, and
