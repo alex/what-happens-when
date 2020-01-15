@@ -290,8 +290,9 @@ Switch:
 Now that the network library has the IP address of either our DNS server or
 the default gateway it can resume its DNS process:
 
-* Port 53 is opened to send a UDP request to DNS server (if the response size
-  is too large, TCP will be used instead).
+* The DNS client establishes a socket to UDP port 53 on the DNS server,
+  using a source port above 1023.
+* If the response size is too large, TCP will be used instead.
 * If the local/ISP DNS server does not have it, then a recursive search is
   requested and that flows up the list of DNS servers until the SOA is reached,
   and if found an answer is returned.
