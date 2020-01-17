@@ -31,7 +31,7 @@ The following sections explain the physical keyboard actions
 and the OS interrupts. Under Linux, each key produces a unique *scancode*.
 The scancode produced by a key ultimately depends on the keyboard hardware.
 Early in the the boot process, the kernel loads a database of keyboard models
-and associated scan codes, as well as a table of (sensible) translations from
+and associated scan codes, as well as a table of (sensible) translations, mapping
 each scancode to a *keycode*. The active keyboard layout defines a mapping from
 each keycode to a *keysym*, factoring in active modifiers (e.g. `Shift + g`),
 yeilding the final translation from keypress to character. Note, however, that
