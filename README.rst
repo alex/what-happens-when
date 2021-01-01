@@ -397,6 +397,23 @@ TLS handshake
 * From now on the TLS session transmits the application (HTTP) data encrypted
   with the agreed symmetric key.
 
+If a packet is dropped
+----------------------
+
+Sometimes, due to network congestion or flaky hardware connections, TLS packets
+will be dropped before they get to their final destination. The sender then has
+to decide how to react. The algorithm for this is called `TCP congestion
+control`_. This varies depending on the sender; the most common algorithms are
+`cubic`_ on newer operating systems and `New Reno`_ on almost all others.
+
+* Client chooses a `congestion window`_ based on the `maximum segment size`_
+  (MSS) of the connection.
+* For each packet acknowledged, the window doubles in size until it reaches the
+  'slow-start threshold'. In some implementations, this threshold is adaptive.
+* After reaching the slow start threshold, the window increases additively for
+  each packet acknowledged. If a packet is dropped, the window reduces
+  exponentially until another packet is acknowledged.
+
 HTTP protocol
 -------------
 
@@ -680,6 +697,11 @@ page rendering and painting.
 .. _`Cellular data network`: https://en.wikipedia.org/wiki/Cellular_data_communication_protocol
 .. _`analog-to-digital converter`: https://en.wikipedia.org/wiki/Analog-to-digital_converter
 .. _`network node`: https://en.wikipedia.org/wiki/Computer_network#Network_nodes
+.. _`TCP congestion control`: https://en.wikipedia.org/wiki/TCP_congestion_control
+.. _`cubic`: https://en.wikipedia.org/wiki/CUBIC_TCP
+.. _`New Reno`: https://en.wikipedia.org/wiki/TCP_congestion_control#TCP_New_Reno
+.. _`congestion window`: https://en.wikipedia.org/wiki/TCP_congestion_control#Congestion_window
+.. _`maximum segment size`: https://en.wikipedia.org/wiki/Maximum_segment_size
 .. _`varies by OS` : https://en.wikipedia.org/wiki/Hosts_%28file%29#Location_in_the_file_system
 .. _`简体中文`: https://github.com/skyline75489/what-happens-when-zh_CN
 .. _`한국어`: https://github.com/SantonyChoi/what-happens-when-KR
