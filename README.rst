@@ -370,11 +370,15 @@ This send and receive happens multiple times following the TCP connection flow:
 TLS handshake
 -------------
 
-TLS which is the successor of SSL is a protocol that provides a secure mechanism for authentication using x509 certificates. 
-
-It also provides a two-way encrypted channel between two parties – such as a browser and web server - to establish the details of their connection. 
-A TLS handshake takes place whenever a user navigates to a website over HTTPS and the browser first begins to query the website's origin server and also happens whenever any other communications use HTTPS, including API calls and DNS over HTTPS queries.
-
+TLS which is the successor of SSL is a protocol that provides a secure
+mechanism for authentication using x509 certificates.
+It also provides a two-way encrypted channel between two parties –
+such as a browser and web server - to establish the details of
+their connection.
+A TLS handshake takes place whenever a user navigates to a website over
+HTTPS and the browser first begins to query the website's origin server
+and also happens whenever any other communications use HTTPS, including
+API calls and DNS over HTTPS queries.
 During the course of a TLS handshake, the client and server together will do the following:
 * Specify which version of TLS (TLS 1.0, 1.2, 1.3, etc.) they will use.
 * Decide on which cipher suites they will use.
