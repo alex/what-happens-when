@@ -379,11 +379,14 @@ A TLS handshake takes place whenever a user navigates to a website over
 HTTPS and the browser first begins to query the website's origin server
 and also happens whenever any other communications use HTTPS, including
 API calls and DNS over HTTPS queries.
-During the course of a TLS handshake, the client and server together will do the following:
+During the course of a TLS handshake, the client and server together
+will do the following:
 * Specify which version of TLS (TLS 1.0, 1.2, 1.3, etc.) they will use.
 * Decide on which cipher suites they will use.
-* Authenticate the identity of the server via the server’s public key and the SSL certificate authority’s digital signature.
-* Generate session keys in order to use symmetric encryption after the handshake is complete.
+* Authenticate the identity of the server via the server’s public key
+and the SSL certificate authority’s digital signature.
+* Generate session keys in order to use symmetric encryption after the
+handshake is complete.
 
 And the steps to perform this are the following:
 
