@@ -1,7 +1,7 @@
 What happens when...
 ====================
 
-This repository is an attempt to answer the age old interview question "What
+This repository is an attempt to answer the age old interview questiond "What
 happens when you type google.com into your browser's address box and press
 enter?"
 
@@ -166,13 +166,20 @@ Parse URL
 ---------
 
 * The browser now has the following information contained in the URL (Uniform
-  Resource Locator):
+  Resource Locator), let's understand the URL anatomy:
 
-    - ``Protocol``  "http"
-        Use 'Hyper Text Transfer Protocol'
-
-    - ``Resource``  "/"
-        Retrieve main (index) page
+  * https is the HyperText Transfer Protocol Secure. It is the secure version of HTTP
+  -the protocol over which data is sent between your browser and the website that 
+  you are connected to. The 'S' at the end of HTTPS stands for 'Secure'. It means 
+  all communications between your browser and the website are encrypted. We will
+  detail it later.
+  * www is a subdomain of holbertonschool.com domain name. Subdomains are created to 
+  organize and navigate to different sections of your website. One can create 
+  multiple subdomains or child domains on your main domain.
+  * holbertonschool.com : a domain name is a unique name that identifies a website.
+  A domain name defines which server a website is on.
+  * methodology: a path to file. The URL also tells where the specified resource/file,
+  that is requested, is located on the server.
 
 
 Is it a URL or a search term?
