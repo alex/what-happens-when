@@ -1,7 +1,7 @@
 What happens when...
 ====================
 
-This repository is an attempt to answer the age old interview question "What
+This repository is an attempt to answer the age-old interview question "What
 happens when you type google.com into your browser's address box and press
 enter?"
 
@@ -36,7 +36,7 @@ to you in the dropdown below the URL bar. Most of these algorithms sort
 and prioritize results based on search history, bookmarks, cookies, and
 popular searches from the internet as a whole. As you are typing
 "google.com" many blocks of code run and the suggestions will be refined
-with each key press. It may even suggest "google.com" before you finish typing
+with each keypress. It may even suggest "google.com" before you finish typing
 it.
 
 The "enter" key bottoms out
@@ -64,11 +64,11 @@ connection, but historically has been over PS/2 or ADB connections.
   declared by the keyboard), so it gets the keycode value stored on it.
 
 - This value goes to the USB SIE (Serial Interface Engine) to be converted in
-  one or more USB packets that follow the low level USB protocol.
+  one or more USB packets that follow the low-level USB protocol.
 
 - Those packets are sent by a differential electrical signal over D+ and D-
   pins (the middle 2) at a maximum speed of 1.5 Mb/s, as an HID
-  (Human Interface Device) device is always declared to be a "low speed device"
+  (Human Interface Device) device is always declared to be a "low-speed device"
   (USB 2.0 compliance).
 
 - This serial signal is then decoded at the computer's host USB controller, and
@@ -83,16 +83,16 @@ connection, but historically has been over PS/2 or ADB connections.
   circuit through the electrostatic field of the conductive layer and
   creates a voltage drop at that point on the screen. The
   ``screen controller`` then raises an interrupt reporting the coordinate of
-  the key press.
+  the keypress.
 
-- Then the mobile OS notifies the current focused application of a press event
+- Then the mobile OS notifies the currently focused application of a press event
   in one of its GUI elements (which now is the virtual keyboard application
   buttons).
 
 - The virtual keyboard can now raise a software interrupt for sending a
   'key pressed' message back to the OS.
 
-- This interrupt notifies the current focused application of a 'key pressed'
+- This interrupt notifies the currently focused application of a 'key pressed'
   event.
 
 
@@ -110,7 +110,7 @@ the appropriate handler. Thus, the kernel is entered.
 --------------------------------------------------------
 
 The HID transport passes the key down event to the ``KBDHID.sys`` driver which
-converts the HID usage into a scancode. In this case the scan code is
+converts the HID usage into a scancode. In this case, the scan code is
 ``VK_RETURN`` (``0x0D``). The ``KBDHID.sys`` driver interfaces with the
 ``KBDCLASS.sys`` (keyboard class driver). This driver is responsible for
 handling all keyboard and keypad input in a secure manner. It then calls into
@@ -183,7 +183,7 @@ the text given in the address box to the browser's default web search engine.
 In many cases the URL has a special piece of text appended to it to tell the
 search engine that it came from a particular browser's URL bar.
 
-Convert non-ASCII Unicode characters in hostname
+Convert non-ASCII Unicode characters in the hostname
 ------------------------------------------------
 
 * The browser checks the hostname for characters that are not in ``a-z``,
@@ -229,7 +229,7 @@ ARP process
 -----------
 
 In order to send an ARP (Address Resolution Protocol) broadcast the network
-stack library needs the target IP address to look up. It also needs to know the
+stack library needs the target IP address to lookup. It also needs to know the
 MAC address of the interface it will use to send out the ARP broadcast.
 
 The ARP cache is first checked for an ARP entry for our target IP. If it is in
@@ -258,13 +258,13 @@ Depending on what type of hardware is between the computer and the router:
 
 Directly connected:
 
-* If the computer is directly connected to the router the router responds
+* If the computer is directly connected to the router the router response
   with an ``ARP Reply`` (see below)
 
 Hub:
 
 * If the computer is connected to a hub, the hub will broadcast the ARP
-  request out all other ports. If the router is connected on the same "wire",
+  request out of all other ports. If the router is connected on the same "wire",
   it will respond with an ``ARP Reply`` (see below).
 
 Switch:
@@ -410,7 +410,7 @@ control`_. This varies depending on the sender; the most common algorithms are
   (MSS) of the connection.
 * For each packet acknowledged, the window doubles in size until it reaches the
   'slow-start threshold'. In some implementations, this threshold is adaptive.
-* After reaching the slow start threshold, the window increases additively for
+* After reaching the slow-start threshold, the window increases additively for
   each packet acknowledged. If a packet is dropped, the window reduces
   exponentially until another packet is acknowledged.
 
@@ -430,7 +430,7 @@ request to the server of the form::
     [other headers]
 
 where ``[other headers]`` refers to a series of colon-separated key-value pairs
-formatted as per the HTTP specification and separated by single new lines.
+formatted as per the HTTP specification and separated by single newlines.
 (This assumes the web browser being used doesn't have any bugs violating the
 HTTP spec. This also assumes that the web browser is using ``HTTP/1.1``,
 otherwise it may not include the ``Host`` header in the request and the version
@@ -459,7 +459,7 @@ headers sent by the client requested it, keep the connection open to be reused
 for further requests.
 
 If the HTTP headers sent by the web browser included sufficient information for
-the web server to determine if the version of the file cached by the web
+the webserver to determine if the version of the file cached by the web
 browser has been unmodified since the last retrieval (ie. if the web browser
 included an ``ETag`` header), it may instead respond with a request of
 the form::
@@ -467,7 +467,7 @@ the form::
     304 Not Modified
     [response headers]
 
-and no payload, and the web browser instead retrieves the HTML from its cache.
+and no payload, and the web browser instead retrieve the HTML from its cache.
 
 After parsing the HTML, the web browser (and server) repeats this process
 for every resource (image, CSS, favicon.ico, etc) referenced by the HTML page,
@@ -483,7 +483,7 @@ server name instead of ``google.com``.
 HTTP Server Request Handle
 --------------------------
 The HTTPD (HTTP Daemon) server is the one handling the requests/responses on
-the server side. The most common HTTPD servers are Apache or nginx for Linux
+the server-side. The most common HTTPD servers are Apache or nginx for Linux
 and IIS for Windows.
 
 * The HTTPD (HTTP Daemon) receives the request.
@@ -544,7 +544,7 @@ common user interface elements are:
   current documents
 * Home button that takes you to your home page
 
-**Browser High Level Structure**
+**Browser High-Level Structure**
 
 The components of the browsers are:
 
@@ -562,7 +562,7 @@ The components of the browsers are:
   platform-independent interface.
 * **UI backend:** The UI backend is used for drawing basic widgets like combo
   boxes and windows. This backend exposes a generic interface that is not
-  platform specific.
+  platform-specific.
   Underneath it uses operating system user interface methods.
 * **JavaScript engine:** The JavaScript engine is used to parse and
   execute JavaScript code.
@@ -577,12 +577,12 @@ HTML parsing
 The rendering engine starts getting the contents of the requested
 document from the networking layer. This will usually be done in 8kB chunks.
 
-The primary job of HTML parser is to parse the HTML markup into a parse tree.
+The primary job of the HTML parser is to parse the HTML markup into a parse tree.
 
 The output tree (the "parse tree") is a tree of DOM element and attribute
 nodes. DOM is short for Document Object Model. It is the object presentation
 of the HTML document and the interface of HTML elements to the outside world
-like JavaScript. The root of the tree is the "Document" object. Prior of
+like JavaScript. The root of the tree is the "Document" object. Prior to
 any manipulation via scripting, the DOM has an almost one-to-one relation to
 the markup.
 
@@ -634,7 +634,7 @@ Page Rendering
 
 * Create a 'Frame Tree' or 'Render Tree' by traversing the DOM nodes, and
   calculating the CSS style values for each node.
-* Calculate the preferred width of each node in the 'Frame Tree' bottom up
+* Calculate the preferred width of each node in the 'Frame Tree' bottom-up
   by summing the preferred width of the child nodes and the node's
   horizontal margins, borders, and padding.
 * Calculate the actual width of each node top-down by allocating each node's
@@ -681,7 +681,7 @@ Window Server
 Post-rendering and user-induced execution
 -----------------------------------------
 
-After rendering has completed, the browser executes JavaScript code as a result
+After rendering has been completed, the browser executes JavaScript code as a result
 of some timing mechanism (such as a Google Doodle animation) or user
 interaction (typing a query into the search box and receiving suggestions).
 Plugins such as Flash or Java may execute as well, although not at this time on
