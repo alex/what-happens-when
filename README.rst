@@ -480,6 +480,25 @@ resolving the other domain, and follows all steps up to this point for that
 domain. The ``Host`` header in the request will be set to the appropriate
 server name instead of ``google.com``.
 
+HTTP Request Methods
+--------------------
+The HTTP specification defines a number of "methods" or actions that a user can
+perform on a particular resource. The most common one is "GET", which is also the
+method used almost all the time when a user enters a URL in their browser's
+address bar or clicks on a hyperlink. This method represents downloading data
+from the server without affecting it (although the server may change itself in
+response to GET requests if it chooses to).
+
+The next most popular method is "POST", which is typically used when a user
+clicks on a "submit" button after entering some text into forms or selecting a
+file on their computer. This method represents adding new content to a page
+already stored on a server.
+
+Other methods include "PUT" and "DELETE", which add and remove entire
+resources; "PATCH", which alters an existing resource; and "CONNECT", which
+is used when the browser is telling an HTTP proxy server to forward the
+user's requests rather than making the requests directly.
+
 HTTP Server Request Handle
 --------------------------
 The HTTPD (HTTP Daemon) server is the one handling the requests/responses on
