@@ -162,6 +162,18 @@ sends the character to the ``window manager`` (DWM, metacity, i3, etc), so the
 The graphical API of the window  that receives the character prints the
 appropriate font symbol in the appropriate focused field.
 
+How to customize the prediction
+-------------------------------
+
+When you are typing what you want to find browsers try to guess and
+autocomplete. Browsers let you disable the autocomplete function at all. Also,
+they allow you to customize what do you prefer included in the autocomplete
+algorithm.  So you can enable or disable:
+
+* Browsing history
+* Bookmarks
+* Open tabs
+
 Parse URL
 ---------
 
