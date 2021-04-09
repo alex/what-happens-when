@@ -202,12 +202,37 @@ Check HSTS list
   (Note that a website can still use the HSTS policy *without* being in the
   HSTS list.  The first HTTP request to the website by a user will receive a
   response requesting that the user only send HTTPS requests.  However, this
+
   single HTTP request could potentially leave the user vulnerable to a
   `downgrade attack`_, which is why the HSTS list is included in modern web
   browsers.)
 
 DNS lookup
 ----------
+
+The Domain Name System provides a distributes database which store
+"resource records" under domain names.
+A local host can participate in the process of resolving a domain name
+in a several way, the simplest is shown below:
+
+Host side resolving::
+
+                 Local Host                        |  Foreign
+                                                   |
+    +---------+               +----------+         |  +--------+
+    |         | user queries  |          |queries  |  |        |
+    |  User   |-------------->|          |---------|->|Foreign |
+    | Program |               | Resolver |         |  |  Name  |
+    |         |<--------------|          |<--------|--| Server |
+    |         | user responses|          |responses|  |        |
+    +---------+               +----------+         |  +--------+
+                                |     A            |
+                cache additions |     | references |
+                                V     |            |
+                              +----------+         |
+                              |  cache   |         |
+                              +----------+         |
+
 
 * Browser checks if the domain is in its cache. (to see the DNS Cache in
   Chrome, go to `chrome://net-internals/#dns <chrome://net-internals/#dns>`_).
@@ -223,7 +248,25 @@ DNS lookup
   ``ARP process`` below for the DNS server.
 * If the DNS server is on a different subnet, the network library follows
   the ``ARP process`` below for the default gateway IP.
-
+* In other hand the local host ``Resolver`` start to sends a query to a
+  Recursive DNS nameserver asking to locate the IP address of www.google.com.
+* The Recursive DNS server looking for cached data hoping find the
+  www.google.com.
+* If the IP address of www.google.com is cached then it will send it back to
+  the resolver.
+* If not cached the Recursive DNS servername asking an ``Authoritative`` DNS
+  hierarchy to get the answer.
+* At the top of the server tree are the root domain nameservers, which is
+  trailing ``dot`` at the end of the address (even if we don't type it in).
+* The root domain nameserver knows which authoritative DNS nameserver can
+  handle the queries for the Top Level Domains (TLD) like
+  ``.com``, ``.net`` or ``.ca``.
+* The Recursive nameserver Asks the root domain nameserver for the IP address
+  .com TLD server, since www.google.com is within the .com TLD.
+* Other request sent to .com TLD asking for the IP address and so on until the
+  recursive nameserver get the response of the requested address.
+* The foreign Recursive nameserver send back the response of the equivalent
+  IP address of the www.google.com
 
 ARP process
 -----------
