@@ -219,6 +219,9 @@ DNS lookup
 * If ``gethostbyname`` does not have it cached nor can find it in the ``hosts``
   file then it makes a request to the DNS server configured in the network
   stack. This is typically the local router or the ISP's caching DNS server.
+  It first uses the DNS root nameserver to find the correct TLD nameserver
+  for a specific domain extention. From there, it can find the correct IP
+  address.
 * If the DNS server is on the same subnet the network library follows the
   ``ARP process`` below for the DNS server.
 * If the DNS server is on a different subnet, the network library follows
