@@ -213,9 +213,15 @@ DNS lookup
   Chrome, go to `chrome://net-internals/#dns <chrome://net-internals/#dns>`_).
 * If not found, the browser calls ``gethostbyname`` library function (varies by
   OS) to do the lookup.
-* ``gethostbyname`` checks if the hostname can be resolved by reference in the
-  local ``hosts`` file (whose location `varies by OS`_) before trying to
-  resolve the hostname through DNS.
+* In UNIX-like systems, ``gethostbyname`` looks to the Name Service Switch sources
+  list (typically /etc/nsswitch.conf) to get the order by which various name 
+  resolution services should be queried. In modern Windows systems, the equivalent
+  to nsswitch.conf can be configured in the following Registry subkey:
+  \HKEY_LOCAL_MACHINE\System\CurrentControlSet\Services\TCPIP\ServiceProvider.
+  The standard default for both is to prioritize the local ``hosts`` file over DNS.
+* Given the above query order, ``gethostbyname`` checks if the hostname can be 
+  resolved by reference in the local ``hosts`` file (whose location `varies by OS`_)
+  before trying to resolve the hostname through DNS.
 * If ``gethostbyname`` does not have it cached nor can find it in the ``hosts``
   file then it makes a request to the DNS server configured in the network
   stack. This is typically the local router or the ISP's caching DNS server.
