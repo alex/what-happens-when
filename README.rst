@@ -370,8 +370,8 @@ This send and receive happens multiple times following the TCP connection flow:
 TLS handshake
 -------------
 * The client computer sends a ``ClientHello`` message to the server with its
-  Transport Layer Security (TLS) version, list of cipher algorithms and
-  compression methods available.
+  Transport Layer Security (TLS) version, list of cipher algorithms,
+  compression methods available and ServerName as a part of `SNI`_ extension.
 
 * The server replies with a ``ServerHello`` message to the client with the
   TLS version, selected cipher, selected compression methods and the server's
@@ -708,3 +708,4 @@ page rendering and painting.
 .. _`日本語`: https://github.com/tettttsuo/what-happens-when-JA
 .. _`downgrade attack`: http://en.wikipedia.org/wiki/SSL_stripping
 .. _`OSI Model`: https://en.wikipedia.org/wiki/OSI_model
+.. _`SNI`: https://en.wikipedia.org/wiki/Server_Name_Indication
