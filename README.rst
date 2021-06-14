@@ -270,31 +270,18 @@ If the entry is not in the ARP cache:
     Target MAC: FF:FF:FF:FF:FF:FF (Broadcast)
     Target IP: target.ip.goes.here
 
-Depending on what type of hardware is between the computer and the router:
+Depending on what type of hardware is between the computer and the target IP:
 
 Directly connected:
 
-* If the computer is directly connected to the router the router response
+* If the computer is directly connected to the target IP, the target responds
   with an ``ARP Reply`` (see below)
 
-Hub:
+Hub or Switch:
 
-* If the computer is connected to a hub, the hub will broadcast the ARP
-  request out of all other ports. If the router is connected on the same "wire",
-  it will respond with an ``ARP Reply`` (see below).
-
-Switch:
-
-* If the computer is connected to a switch, the switch will check its local
-  CAM/MAC table to see which port has the MAC address we are looking for. If
-  the switch has no entry for the MAC address it will rebroadcast the ARP
-  request to all other ports.
-
-* If the switch has an entry in the MAC/CAM table it will send the ARP request
-  to the port that has the MAC address we are looking for.
-
-* If the router is on the same "wire", it will respond with an ``ARP Reply``
-  (see below)
+* If the computer is connected to a hub or switch, the switch will broadcast
+  the ARP request out of all other ports. If the target IP is connected, it
+  will respond with an ``ARP Reply`` (see below).
 
 ``ARP Reply``::
 
