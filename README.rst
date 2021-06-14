@@ -85,9 +85,9 @@ connection, but historically has been over PS/2 or ADB connections.
   ``screen controller`` then raises an interrupt reporting the coordinate of
   the keypress.
 
-- Then the mobile OS notifies the currently focused application of a press event
-  in one of its GUI elements (which now is the virtual keyboard application
-  buttons).
+- Then the mobile OS notifies the currently focused application of a press
+  event in one of its GUI elements (which now is the virtual keyboard
+  application buttons).
 
 - The virtual keyboard can now raise a software interrupt for sending a
   'key pressed' message back to the OS.
@@ -187,7 +187,7 @@ In many cases the URL has a special piece of text appended to it to tell the
 search engine that it came from a particular browser's URL bar.
 
 Convert non-ASCII Unicode characters in the hostname
-------------------------------------------------
+----------------------------------------------------
 
 * The browser checks the hostname for unicode alphabetical characters that are
   not in ``a-z``, ``A-Z``, ``0-9``, ``-``, or ``.``, (and, often, ``_``).
@@ -291,7 +291,7 @@ Hub or Switch:
     Target IP: interface.ip.goes.here
 
 DNS lookup resumes
-----------
+------------------
 
 Now that the kernel has the MAC address of the DNS server or gateway, it can
 send IP datagrams to the DNS server.
@@ -380,7 +380,7 @@ This send and receive happens multiple times following the TCP connection flow:
    * The closer acknowledges the other side's FIN with an ACK
 
 TLS handshake (TLS 1.2, with RSA exchange)
--------------
+------------------------------------------
 * The client computer sends a ``ClientHello`` message to the server with its
   Transport Layer Security (TLS) version, list of cipher algorithms and
   compression methods available.
@@ -594,7 +594,8 @@ HTML parsing
 The rendering engine starts getting the contents of the requested
 document from the networking layer. This will usually be done in 8kB chunks.
 
-The primary job of the HTML parser is to parse the HTML markup into a parse tree.
+The primary job of the HTML parser is to parse the HTML markup into a parse
+tree.
 
 The output tree (the "parse tree") is a tree of DOM element and attribute
 nodes. DOM is short for Document Object Model. It is the object presentation
@@ -698,8 +699,8 @@ Window Server
 Post-rendering and user-induced execution
 -----------------------------------------
 
-After rendering has been completed, the browser executes JavaScript code as a result
-of some timing mechanism (such as a Google Doodle animation) or user
+After rendering has been completed, the browser executes JavaScript code as a
+result of some timing mechanism (such as a Google Doodle animation) or user
 interaction (typing a query into the search box and receiving suggestions).
 Plugins such as Flash or Java may execute as well, although not at this time on
 the Google homepage. Scripts can cause additional network requests to be
