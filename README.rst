@@ -379,7 +379,7 @@ This send and receive happens multiple times following the TCP connection flow:
    * The other sides ACKs the FIN packet and sends its own FIN
    * The closer acknowledges the other side's FIN with an ACK
 
-TLS handshake
+TLS handshake (TLS 1.2, with RSA exchange)
 -------------
 * The client computer sends a ``ClientHello`` message to the server with its
   Transport Layer Security (TLS) version, list of cipher algorithms and
@@ -396,11 +396,11 @@ TLS handshake
   generates a string of pseudo-random bytes and encrypts this with the server's
   public key. These random bytes can be used to determine the symmetric key.
 
-* The server decrypts the random bytes using its private key and uses these
-  bytes to generate its own copy of the symmetric master key.
-
 * The client sends a ``Finished`` message to the server, encrypting a hash of
   the transmission up to this point with the symmetric key.
+
+* The server decrypts the random bytes using its private key and uses these
+  bytes to generate its own copy of the symmetric master key.
 
 * The server generates its own hash, and then decrypts the client-sent hash
   to verify that it matches. If it does, it sends its own ``Finished`` message
