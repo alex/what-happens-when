@@ -506,6 +506,11 @@ and IIS for Windows.
    * Domain, in this case - google.com.
    * Requested path/page, in this case - / (as no specific path/page was
      requested, / is the default path).
+* Often, the server that receives the request initially is a load balancer that
+  will use the method, domain, and path along with information it maintains
+  about the number of open connections to a large set of HTTP servers to select
+  a system that is not too busy, and relays the request to that back-end
+  server.
 * The server verifies that there is a Virtual Host configured on the server
   that corresponds with google.com.
 * The server verifies that google.com can accept GET requests.
