@@ -214,18 +214,28 @@ DNS lookup
 
 * Browser checks if the domain is in its cache. (to see the DNS Cache in
   Chrome, go to `chrome://net-internals/#dns <chrome://net-internals/#dns>`_).
-* If not found, the browser calls ``gethostbyname`` library function (varies by
-  OS) to do the lookup.
-* ``gethostbyname`` checks if the hostname can be resolved by reference in the
-  local ``hosts`` file (whose location `varies by OS`_) before trying to
-  resolve the hostname through DNS.
-* If ``gethostbyname`` does not have it cached nor can find it in the ``hosts``
+  If the domain is not found in the cache, the browser will query DNS.
+* Modern desktop browsers frequently include a custom DNS resolver library
+  which honors the OS configuration for DNS servers and locally defined
+  hostnames (the ``hosts`` file), but performs better in threaded code and
+  implementing alternative DNS protocols such as DNS over TLS or DNS over
+  HTTPS.
+* Older browsers which use the POSIX socket interface, along with non-browser
+  web clients, may call ``getaddrinfo`` library function to do the lookup.
+  Other operating systems will provide a similar function by a different name.
+* ``getaddrinfo`` will use the sources listed in ``/etc/nsswitch.conf`` in the
+  order defined there.  Typically, it will check the local ``hosts`` file
+  (whose location `varies by OS`_) before trying to resolve the hostname
+  through DNS, and some systems have a local DNS cache.
+* If ``getaddrinfo`` does not have it cached nor can find it in the ``hosts``
   file then it makes a request to the DNS server configured in the network
   stack. This is typically the local router or the ISP's caching DNS server.
-* If the DNS server is on the same subnet the network library follows the
-  ``ARP process`` below for the DNS server.
-* If the DNS server is on a different subnet, the network library follows
-  the ``ARP process`` below for the default gateway IP.
+* The DNS resolver library will send requests to the DNS servers in the
+  system's configuration in the order they are defined, until it receives a
+  response.
+* The resolver library's connection to the DNS server will initiate the ``ARP
+  process`` described below if the DNS server address is IPv4.  IPv6 uses a
+  slightly more complex neighbor discovery protocol.
 
 
 ARP process
