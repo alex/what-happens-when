@@ -241,19 +241,22 @@ DNS lookup
 ARP process
 -----------
 
-In order to send an ARP (Address Resolution Protocol) broadcast the network
-stack library needs the target IP address to lookup. It also needs to know the
-MAC address of the interface it will use to send out the ARP broadcast.
+In order to send a datagram to an IP address over Ethernet, the network stack
+must determine the MAC address of either the destination system, or a system
+that will route to the next hop in the path to the destination system.  In IPV4
+this discovery process is ARP (Address Resolution Protocol).
 
 The ARP cache is first checked for an ARP entry for our target IP. If it is in
 the cache, the library function returns the result: Target IP = MAC.
 
 If the entry is not in the ARP cache:
 
-* The route table is looked up, to see if the Target IP address is on any of
-  the subnets on the local route table. If it is, the library uses the
-  interface associated with that subnet. If it is not, the library uses the
-  interface that has the subnet of our default gateway.
+* The route table is searched in order from the longest netmask to the shortest
+  to determine which entry in the route table contains the destination IP
+  address.  If the matching route table entry does not have a gateway, then an
+  ARP request for the destination address will be sent on the interface in the
+  entry.  If the matching route table entry does have a gateway, then an ARP
+  request for the gateway's address will be sent on the interface in the entry.
 
 * The MAC address of the selected network interface is looked up.
 
