@@ -171,6 +171,9 @@ Parse URL
     - ``Protocol``  "http"
         Use 'Hyper Text Transfer Protocol'
 
+    - ``Domain``  "google.com"
+        Connect to the server at 'google.com'
+
     - ``Resource``  "/"
         Retrieve main (index) page
 
