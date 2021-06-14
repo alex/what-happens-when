@@ -290,11 +290,16 @@ Hub or Switch:
     Target MAC: interface:mac:address:here
     Target IP: interface.ip.goes.here
 
-Now that the network library has the IP address of either our DNS server or
-the default gateway it can resume its DNS process:
+DNS lookup resumes
+----------
+
+Now that the kernel has the MAC address of the DNS server or gateway, it can
+send IP datagrams to the DNS server.
 
 * The DNS client establishes a socket to UDP port 53 on the DNS server,
   using a source port above 1023.
+* The DNS client sends a request for the IPv4 (A record) address and typically
+  the IPv6 (AAAA record) address.
 * If the response size is too large, TCP will be used instead.
 * If the local/ISP DNS server does not have it, then a recursive search is
   requested and that flows up the list of DNS servers until the SOA is reached,
@@ -302,6 +307,7 @@ the default gateway it can resume its DNS process:
 
 Opening of a socket
 -------------------
+
 Once the browser receives the IP address of the destination server, it takes
 that and the given port number from the URL (the HTTP protocol defaults to port
 80, and HTTPS to port 443), and makes a call to the system library function
