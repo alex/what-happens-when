@@ -189,8 +189,8 @@ search engine that it came from a particular browser's URL bar.
 Convert non-ASCII Unicode characters in the hostname
 ------------------------------------------------
 
-* The browser checks the hostname for characters that are not in ``a-z``,
-  ``A-Z``, ``0-9``, ``-``, or ``.``.
+* The browser checks the hostname for unicode alphabetical characters that are
+  not in ``a-z``, ``A-Z``, ``0-9``, ``-``, or ``.``, (and, often, ``_``).
 * Since the hostname is ``google.com`` there won't be any, but if there were
   the browser would apply `Punycode`_ encoding to the hostname portion of the
   URL.
