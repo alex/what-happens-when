@@ -312,7 +312,8 @@ Once the browser receives the IP address of the destination server, it takes
 that and the given port number from the URL (the HTTP protocol defaults to port
 80, and HTTPS to port 443), and makes a call to the system library function
 named ``socket`` and requests a TCP socket stream - ``AF_INET/AF_INET6`` and
-``SOCK_STREAM``.
+``SOCK_STREAM``.  Once the client socket is created, the application calls
+``connect`` with the socket, along with the HTTP server's address and port.
 
 * This request is first passed to the Transport Layer where a TCP segment is
   crafted. The destination port is added to the header, and a source port is
@@ -323,8 +324,9 @@ named ``socket`` and requests a TCP socket stream - ``AF_INET/AF_INET6`` and
   current machine is inserted to form a packet.
 * The packet next arrives at the Link Layer. A frame header is added that
   includes the MAC address of the machine's NIC as well as the MAC address of
-  the gateway (local router). As before, if the kernel does not know the MAC
-  address of the gateway, it must broadcast an ARP query to find it.
+  the destination or gateway (local router). As before, if the kernel does not
+  know the MAC address of the destination or gateway, it must broadcast an ARP
+  query to find it.
 
 At this point the packet is ready to be transmitted through either:
 
@@ -370,7 +372,8 @@ This send and receive happens multiple times following the TCP connection flow:
    * As one side sends N data bytes, it increases its SEQ by that number
    * When the other side acknowledges receipt of that packet (or a string of
      packets), it sends an ACK packet with the ACK value equal to the last
-     received sequence from the other
+     received sequence from the other + 1.  (The value provided in the ACK
+     is the next sequence number it expects to receive.)
 * To close the connection:
    * The closer sends a FIN packet
    * The other sides ACKs the FIN packet and sends its own FIN
