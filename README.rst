@@ -297,6 +297,15 @@ the default gateway it can resume its DNS process:
   requested and that flows up the list of DNS servers until the SOA is reached,
   and if found an answer is returned.
 
+The DNS Cycle process in a brief and short description
+-------------------------------------
+In the beginning, our client sends an IP packet containing the DNS destination IP on the default DNS port 53 with its MAC address and the senders IP address. the packet travels from the client to either the default DNS IP or to the interface that has the subnet of our default gateway.
+The first stop is the recursive resolver, the so-called “middleman” found between the client and the DNS nameservers that direct the flow of the DNS request. After receiving a DNS query from a client, the resolver checks if it has cached data of the request. if not the request is sent to one of the 13 DNS root nameservers that are known to every recursive resolver.
+The request is given to the root nameserver, containing the domain name, and a response with the top-level domain (TLD) nameserver is given to the recursive resolver.
+TLD nameservers are places that contain information for a specific top-level domain like ‘.com’. a TLD nameserver manages information for all domain names that share the extensions. when the recursive resolver is handed the response, the resolver would send a query to the corresponding TLD nameserver and get a response to an authoritative nameserver containing the IP we want.
+Authoritative nameservers are the final pitstop for the recursive resolvers. They contain groups of IP addresses. the recursive resolver sends another query to the desired authorized nameserver and gets the IP address of the requested domain names’ server if found in the DNS A record, or if the domain has a CNAME record (alias) it will provide the recursive resolver with an alias domain, at which point the recursive resolver will have to perform a whole new DNS lookup to procure a record from an authoritative nameserver (often an A record containing an IP address).
+At the end of the cycle, we have the IP address to the domain name we want and at every level, the recursive resolver and the clients’ browser cache the data found to avoid a full lookup next time the same domain is requested.
+
 Opening of a socket
 -------------------
 Once the browser receives the IP address of the destination server, it takes
