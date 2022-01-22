@@ -39,6 +39,13 @@ popular searches from the internet as a whole. As you are typing
 with each keypress. It may even suggest "google.com" before you finish typing
 it.
 
+The Key is Pressed
+As the key is pressed, a switch closes and current flows into a small chip in the keyboard.
+Each key on the keyboard has an associated number, called a scan code. The number is based on where the key is on the keyboard. This is useful when it comes to keyboards that have different layouts and/or symbols. This scan code is sent into the computer as a binary number.
+A Number is Transmitted to the CPU
+The binary data is transmitted from the keyboard to your computer.
+The route the data takes will depend on how your keyboard is connected to the computer. If it’s attached by a USB cable, it will go to the USB port. If the keyboard is connected by Bluetooth, it will goto the Bluetooth receiver.
+
 The "enter" key bottoms out
 ---------------------------
 
