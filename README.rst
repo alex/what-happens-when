@@ -689,6 +689,10 @@ the Google homepage. Scripts can cause additional network requests to be
 performed, as well as modify the page or its layout, causing another round of
 page rendering and painting.
 
+The Firewall can simply be explained as a network security system that controls the incoming and outgoing network traffic based on a set of predetermined security rules setting a barrier between trusted and untrusted networks. Firewalls can be categorized as network-based systems which can be placed anywhere within a LAN or WAN network where as the host-based systems are directly deployed on the host itself to control network traffic and other computing resources.
+
+The load-balancer’s purpose, as it’s name implies, is to balance and distribute the amount of traffic that users/clients send to the multiple servers (server farms) that the site uses to serve that webpage in order to make processing more efficient and to optimize response time. It uses many types of scheduling algorithms to perform this task, some of them being the Round-Robin, Random choice and Least connections.
+
 .. _`Creative Commons Zero`: https://creativecommons.org/publicdomain/zero/1.0/
 .. _`"CSS lexical and syntax grammar"`: http://www.w3.org/TR/CSS2/grammar.html
 .. _`Punycode`: https://en.wikipedia.org/wiki/Punycode
