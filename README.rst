@@ -510,6 +510,34 @@ and IIS for Windows.
   is running on PHP, the server uses PHP to interpret the index file, and
   streams the output to the client.
 
+The request goes through the firewall
+-----------------------------------------
+
+Once the information is packaged through the HTTP protocol, it reaches the 
+firewall, which is in charge of inspecting the packet, checks through which
+port it arrived, and verifies that the information is secure. If so, the firewall 
+allows the request to pass through load balancer.
+
+Load balancer
+---------------
+It is in charge of distributing the requests between the destination servers, 
+reviewing the traffic of each one and sending them equally between servers,
+ in a few words, this is the one that decides to which web server the request 
+ is going to be directed.
+
+ Web Server
+ ------------
+ Once it exits the load balancer, it goes through the firewall of the server to 
+ which it was directed, it does the corresponding verifications again and allows
+it to enter the web server.
+
+ In the web server, connections are generated with the application server or 
+ the database if the request so requires, to subsequently assemble and package
+ the response expected by the client, this must meet the requirements made by 
+ the client and the requirements security of the protocol used, since it must also
+ go through the firewall on the way back, which will carry out the same checks 
+ before allowing it to reach the client.
+ 
 Behind the scenes of the Browser
 ----------------------------------
 
