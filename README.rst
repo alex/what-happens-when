@@ -25,6 +25,12 @@ Table of Contents
    :backlinks: none
    :local:
 
+Introduction
+----------------------
+In a layman’s language, typing www.google.com or any other url in one’s browser
+is just as if one is actually searching for a file in his local machine using
+the search box in the file explorer. But in this case, one is actually querying the web.
+
 The "g" key is pressed
 ----------------------
 The following sections explain the physical keyboard actions
