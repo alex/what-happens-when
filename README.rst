@@ -708,3 +708,4 @@ page rendering and painting.
 .. _`日本語`: https://github.com/tettttsuo/what-happens-when-JA
 .. _`downgrade attack`: http://en.wikipedia.org/wiki/SSL_stripping
 .. _`OSI Model`: https://en.wikipedia.org/wiki/OSI_model
+https://paulomoragbon750.medium.com/what-happens-when-you-type-holbertonschool-com-url-in-your-browser-and-press-enter-a1710588ef33
