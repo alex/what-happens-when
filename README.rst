@@ -266,6 +266,8 @@ Hub:
 * If the computer is connected to a hub, the hub will broadcast the ARP
   request out of all other ports. If the router is connected on the same "wire",
   it will respond with an ``ARP Reply`` (see below).
+  
+* If we are concerning about security, we can considarate better realize the connection with a Switch
 
 Switch:
 
@@ -292,7 +294,7 @@ the default gateway it can resume its DNS process:
 
 * The DNS client establishes a socket to UDP port 53 on the DNS server,
   using a source port above 1023.
-* If the response size is too large, TCP will be used instead.
+* If the response size is too large, will be used instead.
 * If the local/ISP DNS server does not have it, then a recursive search is
   requested and that flows up the list of DNS servers until the SOA is reached,
   and if found an answer is returned.
@@ -304,6 +306,12 @@ that and the given port number from the URL (the HTTP protocol defaults to port
 80, and HTTPS to port 443), and makes a call to the system library function
 named ``socket`` and requests a TCP socket stream - ``AF_INET/AF_INET6`` and
 ``SOCK_STREAM``.
+
+* In the TCP/IP model, the four layers are:
+  - 4. Application layer: This corresponds, approximately, to layer 7 in the OSI model.
+  - 3. Transport layer: Corresponds to layer 4 in the OSI model.
+  - 2. Internet layer: Corresponds to layer 3 in the OSI model.
+  - 1. Network access layer: Combines the processes of layers 1 and 2 in the OSI model.
 
 * This request is first passed to the Transport Layer where a TCP segment is
   crafted. The destination port is added to the header, and a source port is
