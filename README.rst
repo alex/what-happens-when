@@ -54,7 +54,8 @@ key is closed (either directly or capacitively):
 
 - The electromotive force provided by the keyboard's power source causes
   electrons to flow through this now closed loop, from the formerly lower
-  potential side to the higher - a flow of current.
+  potential side to the higher. This is understood as a *flow of current* from
+  the formerly higher side to the lower.
 
 Also on this closed loop is the logic circuitry of the keyboard. When current
 flows through the logic circuitry corresponding to a specific key switch, the
