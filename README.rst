@@ -44,10 +44,23 @@ The "enter" key bottoms out
 
 To pick a zero point, let's choose the Enter key on the keyboard hitting the
 bottom of its range. At this point, an electrical circuit specific to the enter
-key is closed (either directly or capacitively). This allows a small amount of
-current to flow into the logic circuitry of the keyboard, which scans the state
-of each key switch, debounces the electrical noise of the rapid intermittent
-closure of the switch, and converts it to a keycode integer, in this case 13.
+key is closed (either directly or capacitively):
+
+- The switch closing links a wire at a higher electric potential with a wire of
+  lower electric potential.
+
+- The electric potential through the wire evens out to the same value, spreading
+  through the wire at the speed of light.
+
+- The electromotive force provided by the keyboard's power source causes
+  electrons to flow through this now closed loop, from the formerly lower
+  potential side to the higher - a flow of current.
+
+Also on this closed loop is the logic circuitry of the keyboard. When current
+flows through the logic circuitry corresponding to a specific key switch, the
+circuit debounces the electrical noise of the rapid intermittent closure of
+the switch, and converts it to a keycode integer, in this case 13.
+
 The keyboard controller then encodes the keycode for transport to the computer.
 This is now almost universally over a Universal Serial Bus (USB) or Bluetooth
 connection, but historically has been over PS/2 or ADB connections.
