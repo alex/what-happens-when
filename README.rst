@@ -347,7 +347,7 @@ the TTL field reaches zero or if the current router has no space in its queue
 This send and receive happens multiple times following the TCP connection flow:
 
 * Client chooses an initial sequence number (ISN) and sends the packet to the
-  server with the SYN bit set to indicate it is setting the ISN
+  server with the SYN (synchronize)  bit set to indicate it is setting the ISN
 * Server receives SYN and if it's in an agreeable mood:
    * Server chooses its own initial sequence number
    * Server sets SYN to indicate it is choosing its ISN
