@@ -168,10 +168,10 @@ Parse URL
 * The browser now has the following information contained in the URL (Uniform
   Resource Locator):
 
-    - ``Protocol``  "http"
+    - ``Protocol``  "http/https"
         Use 'Hyper Text Transfer Protocol'
-
-    - ``Resource``  "/"
+    - ``Domain``  "eg. google.com"
+    - ``Optional Resource Path``  "/"
         Retrieve main (index) page
 
 
