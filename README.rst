@@ -520,6 +520,40 @@ to the browser it undergoes the below process:
 * Rendering - Construct DOM Tree → Render Tree → Layout of Render Tree →
   Painting the render tree
 
+Load Balancing and Firewall
+---------------------------
+Being a big name in the tech industry, we expect that https://www.google.com receives a lot of hits (visits)
+every day from all over the world. Every hour actually, given that it has proven to have all the answers to
+user’s queries (not all necessarily correct but you’ll most definitely always get an answer from google).
+So, the question is how does it handle all the traffic?
+-------------------------------------------------------
+Google has multiple physical servers that serve user’s requests. These servers also have multiple web servers,
+application servers and database servers installed on them. 
+Web servers, application servers and Database servers work in coordination to provide timely and reliable responses
+to the user. Given the huge amount of traffic that these servers have to serve, the traffic is distributed among
+these servers through Load balancing.
+Load balancing is a core networking solution used to distribute traffic across multiple servers in a server farm.
+Load balancers improve application availability and responsiveness and prevent server overload. Each load balancer
+sits between client devices and backend servers, receiving and then distributing incoming requests to any available
+server capable of fulfilling them.
+A load balancer acts as the “traffic cop” sitting in front of the servers and routing client requests across all
+servers capable of fulfilling those requests in a manner that maximizes speed and capacity utilization and ensures
+that no one server is overworked, which could degrade performance. If a single server goes down, the load balancer
+redirects traffic to the remaining online servers. When a new server is added to the server group, the load balancer
+automatically starts to send requests to it.
+In this manner, a load balancer performs the following functions:
+  •Distributes client requests or network load efficiently across multiple servers
+  •Ensures high availability and reliability by sending requests only to servers that are online
+  •Provides the flexibility to add or subtract servers as demand dictates
+A load balancer can be hardware or software.
+ 
+The next important aspect of the infrastructure is the web application firewall.
+Simply put a firewall is an application or even appliance that is designed to prevent unauthorized access to the network.
+Typically, a web server exists behind a standard firewall. The firewall blocks traffic to all ports except for
+port 80 (HTTP) and port 443 (HTTPS). When the firewall receives a request on one of these ports, it typically
+uses a port forwarding rule to send the request to a web server. This means that the firewall ensures that
+only HTTP traffic flows through port 80 and only HTTPS traffic flows through port 443.
+
 Browser
 -------
 
