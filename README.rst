@@ -28,7 +28,13 @@ Table of Contents
 The "g" key is pressed
 ----------------------
 The following sections explain the physical keyboard actions
-and the OS interrupts. When you press the key "g" the browser receives the
+and the OS interrupts. These communications occur between your
+keyboard and the computer. When the key is pressed, the keyboard
+sends a signal to the computer which symbol is entered. Then the
+computer now checks which case the keyboard brought, and which action
+to take with it. Whether to display it or use it as a command to perform
+a special task. This happens before the browser comes in.
+When the symbol "g" is recieved, the browser receives the
 event and the auto-complete functions kick in.
 Depending on your browser's algorithm and if you are in
 private/incognito mode or not various suggestions will be presented
