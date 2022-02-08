@@ -182,6 +182,8 @@ When no protocol or valid domain name is given the browser proceeds to feed
 the text given in the address box to the browser's default web search engine.
 In many cases the URL has a special piece of text appended to it to tell the
 search engine that it came from a particular browser's URL bar.
+A proper URL will have the following syntax:
+scheme://host:port/path?query
 
 Convert non-ASCII Unicode characters in the hostname
 ------------------------------------------------
