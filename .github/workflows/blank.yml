@@ -1,0 +1,12 @@
+The Diffe-Hellman exchange is an algorithim that is used in public key cryptography to encrypt data being transferred between two machines. Public key cryptography is a slower form of
+cryptography, and as such is primarily used to encrypt Symmetric AES encryption keys, which are used by machines communicating over networks to secure data.
+The Diffe-Hellman Exchange, or DFE, has four components. A private key for machine A, a private key for machine B, a public number G, and some form of modular arithmetic that is used to further 
+protect the keys. The public number is generally a NONCE, or a Number Used Once. First A will initiate a connection to B, advising B to begin the DFE. A then takes G and multiplies it by
+it's own public key, creating AG. B then takes G and repeats this process, creating BG. A and B then share their new AG and BG number to one another. They then multiply by their own private
+keys once more, such that A multiplies its private key by BG, creating ABG. B will do the same. A and B now have the same ABG, they can use this to decrypt the AES encryption keys from each 
+machine. The DFE is further secured by modular arithmetic, to add even more complexity and difficulty to the task of trying to brute force discover what they ABG key is. More modern forms of 
+public key cryptography will use an Elliptical-Curve instead of standard modular arithmetic. The elliptical curve adds even more complexity, thus allowing for smaller keys which provide far 
+greater security. 
+
+A twist on the DFE which is often used is known as RSA. This is where machine A will actually perform the DFE by itself first, such that only machine B's private key can decrypt the message. It
+will then send the rest of the DFE to machine B. This is meant to lower the threat of a man in the middle attack.
