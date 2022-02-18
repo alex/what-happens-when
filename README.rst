@@ -85,9 +85,9 @@ connection, but historically has been over PS/2 or ADB connections.
   ``screen controller`` then raises an interrupt reporting the coordinate of
   the keypress.
 
-- Then the mobile OS notifies the currently focused application of a press event
-  in one of its GUI elements (which now is the virtual keyboard application
-  buttons).
+- Then the mobile OS notifies the currently focused application of a press
+  event in one of its GUI elements (which now is the virtual keyboard
+  application buttons).
 
 - The virtual keyboard can now raise a software interrupt for sending a
   'key pressed' message back to the OS.
@@ -171,6 +171,9 @@ Parse URL
     - ``Protocol``  "http"
         Use 'Hyper Text Transfer Protocol'
 
+    - ``Domain``  "google.com"
+        Connect to the server at 'google.com'
+
     - ``Resource``  "/"
         Retrieve main (index) page
 
@@ -184,10 +187,10 @@ In many cases the URL has a special piece of text appended to it to tell the
 search engine that it came from a particular browser's URL bar.
 
 Convert non-ASCII Unicode characters in the hostname
-------------------------------------------------
+----------------------------------------------------
 
-* The browser checks the hostname for characters that are not in ``a-z``,
-  ``A-Z``, ``0-9``, ``-``, or ``.``.
+* The browser checks the hostname for unicode alphabetical characters that are
+  not in ``a-z``, ``A-Z``, ``0-9``, ``-``, or ``.``, (and, often, ``_``).
 * Since the hostname is ``google.com`` there won't be any, but if there were
   the browser would apply `Punycode`_ encoding to the hostname portion of the
   URL.
@@ -211,36 +214,49 @@ DNS lookup
 
 * Browser checks if the domain is in its cache. (to see the DNS Cache in
   Chrome, go to `chrome://net-internals/#dns <chrome://net-internals/#dns>`_).
-* If not found, the browser calls ``gethostbyname`` library function (varies by
-  OS) to do the lookup.
-* ``gethostbyname`` checks if the hostname can be resolved by reference in the
-  local ``hosts`` file (whose location `varies by OS`_) before trying to
-  resolve the hostname through DNS.
-* If ``gethostbyname`` does not have it cached nor can find it in the ``hosts``
+  If the domain is not found in the cache, the browser will query DNS.
+* Modern desktop browsers frequently include a custom DNS resolver library
+  which honors the OS configuration for DNS servers and locally defined
+  hostnames (the ``hosts`` file), but performs better in threaded code and
+  implementing alternative DNS protocols such as DNS over TLS or DNS over
+  HTTPS.
+* Older browsers which use the POSIX socket interface, along with non-browser
+  web clients, may call ``getaddrinfo`` library function to do the lookup.
+  Other operating systems will provide a similar function by a different name.
+* ``getaddrinfo`` will use the sources listed in ``/etc/nsswitch.conf`` in the
+  order defined there.  Typically, it will check the local ``hosts`` file
+  (whose location `varies by OS`_) before trying to resolve the hostname
+  through DNS, and some systems have a local DNS cache.
+* If ``getaddrinfo`` does not have it cached nor can find it in the ``hosts``
   file then it makes a request to the DNS server configured in the network
   stack. This is typically the local router or the ISP's caching DNS server.
-* If the DNS server is on the same subnet the network library follows the
-  ``ARP process`` below for the DNS server.
-* If the DNS server is on a different subnet, the network library follows
-  the ``ARP process`` below for the default gateway IP.
+* The DNS resolver library will send requests to the DNS servers in the
+  system's configuration in the order they are defined, until it receives a
+  response.
+* The resolver library's connection to the DNS server will initiate the ``ARP
+  process`` described below if the DNS server address is IPv4.  IPv6 uses a
+  slightly more complex neighbor discovery protocol.
 
 
 ARP process
 -----------
 
-In order to send an ARP (Address Resolution Protocol) broadcast the network
-stack library needs the target IP address to lookup. It also needs to know the
-MAC address of the interface it will use to send out the ARP broadcast.
+In order to send a datagram to an IP address over Ethernet, the network stack
+must determine the MAC address of either the destination system, or a system
+that will route to the next hop in the path to the destination system.  In IPV4
+this discovery process is ARP (Address Resolution Protocol).
 
 The ARP cache is first checked for an ARP entry for our target IP. If it is in
 the cache, the library function returns the result: Target IP = MAC.
 
 If the entry is not in the ARP cache:
 
-* The route table is looked up, to see if the Target IP address is on any of
-  the subnets on the local route table. If it is, the library uses the
-  interface associated with that subnet. If it is not, the library uses the
-  interface that has the subnet of our default gateway.
+* The route table is searched in order from the longest netmask to the shortest
+  to determine which entry in the route table contains the destination IP
+  address.  If the matching route table entry does not have a gateway, then an
+  ARP request for the destination address will be sent on the interface in the
+  entry.  If the matching route table entry does have a gateway, then an ARP
+  request for the gateway's address will be sent on the interface in the entry.
 
 * The MAC address of the selected network interface is looked up.
 
@@ -254,31 +270,18 @@ If the entry is not in the ARP cache:
     Target MAC: FF:FF:FF:FF:FF:FF (Broadcast)
     Target IP: target.ip.goes.here
 
-Depending on what type of hardware is between the computer and the router:
+Depending on what type of hardware is between the computer and the target IP:
 
 Directly connected:
 
-* If the computer is directly connected to the router the router response
+* If the computer is directly connected to the target IP, the target responds
   with an ``ARP Reply`` (see below)
 
-Hub:
+Hub or Switch:
 
-* If the computer is connected to a hub, the hub will broadcast the ARP
-  request out of all other ports. If the router is connected on the same "wire",
-  it will respond with an ``ARP Reply`` (see below).
-
-Switch:
-
-* If the computer is connected to a switch, the switch will check its local
-  CAM/MAC table to see which port has the MAC address we are looking for. If
-  the switch has no entry for the MAC address it will rebroadcast the ARP
-  request to all other ports.
-
-* If the switch has an entry in the MAC/CAM table it will send the ARP request
-  to the port that has the MAC address we are looking for.
-
-* If the router is on the same "wire", it will respond with an ``ARP Reply``
-  (see below)
+* If the computer is connected to a hub or switch, the switch will broadcast
+  the ARP request out of all other ports. If the target IP is connected, it
+  will respond with an ``ARP Reply`` (see below).
 
 ``ARP Reply``::
 
@@ -287,11 +290,16 @@ Switch:
     Target MAC: interface:mac:address:here
     Target IP: interface.ip.goes.here
 
-Now that the network library has the IP address of either our DNS server or
-the default gateway it can resume its DNS process:
+DNS lookup resumes
+------------------
+
+Now that the kernel has the MAC address of the DNS server or gateway, it can
+send IP datagrams to the DNS server.
 
 * The DNS client establishes a socket to UDP port 53 on the DNS server,
   using a source port above 1023.
+* The DNS client sends a request for the IPv4 (A record) address and typically
+  the IPv6 (AAAA record) address.
 * If the response size is too large, TCP will be used instead.
 * If the local/ISP DNS server does not have it, then a recursive search is
   requested and that flows up the list of DNS servers until the SOA is reached,
@@ -299,11 +307,13 @@ the default gateway it can resume its DNS process:
 
 Opening of a socket
 -------------------
+
 Once the browser receives the IP address of the destination server, it takes
 that and the given port number from the URL (the HTTP protocol defaults to port
 80, and HTTPS to port 443), and makes a call to the system library function
 named ``socket`` and requests a TCP socket stream - ``AF_INET/AF_INET6`` and
-``SOCK_STREAM``.
+``SOCK_STREAM``.  Once the client socket is created, the application calls
+``connect`` with the socket, along with the HTTP server's address and port.
 
 * This request is first passed to the Transport Layer where a TCP segment is
   crafted. The destination port is added to the header, and a source port is
@@ -314,8 +324,9 @@ named ``socket`` and requests a TCP socket stream - ``AF_INET/AF_INET6`` and
   current machine is inserted to form a packet.
 * The packet next arrives at the Link Layer. A frame header is added that
   includes the MAC address of the machine's NIC as well as the MAC address of
-  the gateway (local router). As before, if the kernel does not know the MAC
-  address of the gateway, it must broadcast an ARP query to find it.
+  the destination or gateway (local router). As before, if the kernel does not
+  know the MAC address of the destination or gateway, it must broadcast an ARP
+  query to find it.
 
 At this point the packet is ready to be transmitted through either:
 
@@ -361,14 +372,15 @@ This send and receive happens multiple times following the TCP connection flow:
    * As one side sends N data bytes, it increases its SEQ by that number
    * When the other side acknowledges receipt of that packet (or a string of
      packets), it sends an ACK packet with the ACK value equal to the last
-     received sequence from the other
+     received sequence from the other + 1.  (The value provided in the ACK
+     is the next sequence number it expects to receive.)
 * To close the connection:
    * The closer sends a FIN packet
    * The other sides ACKs the FIN packet and sends its own FIN
    * The closer acknowledges the other side's FIN with an ACK
 
-TLS handshake
--------------
+TLS handshake (TLS 1.2, with RSA exchange)
+------------------------------------------
 * The client computer sends a ``ClientHello`` message to the server with its
   Transport Layer Security (TLS) version, list of cipher algorithms and
   compression methods available.
@@ -384,11 +396,11 @@ TLS handshake
   generates a string of pseudo-random bytes and encrypts this with the server's
   public key. These random bytes can be used to determine the symmetric key.
 
-* The server decrypts the random bytes using its private key and uses these
-  bytes to generate its own copy of the symmetric master key.
-
 * The client sends a ``Finished`` message to the server, encrypting a hash of
   the transmission up to this point with the symmetric key.
+
+* The server decrypts the random bytes using its private key and uses these
+  bytes to generate its own copy of the symmetric master key.
 
 * The server generates its own hash, and then decrypts the client-sent hash
   to verify that it matches. If it does, it sends its own ``Finished`` message
@@ -494,6 +506,11 @@ and IIS for Windows.
    * Domain, in this case - google.com.
    * Requested path/page, in this case - / (as no specific path/page was
      requested, / is the default path).
+* Often, the server that receives the request initially is a load balancer that
+  will use the method, domain, and path along with information it maintains
+  about the number of open connections to a large set of HTTP servers to select
+  a system that is not too busy, and relays the request to that back-end
+  server.
 * The server verifies that there is a Virtual Host configured on the server
   that corresponds with google.com.
 * The server verifies that google.com can accept GET requests.
@@ -577,7 +594,8 @@ HTML parsing
 The rendering engine starts getting the contents of the requested
 document from the networking layer. This will usually be done in 8kB chunks.
 
-The primary job of the HTML parser is to parse the HTML markup into a parse tree.
+The primary job of the HTML parser is to parse the HTML markup into a parse
+tree.
 
 The output tree (the "parse tree") is a tree of DOM element and attribute
 nodes. DOM is short for Document Object Model. It is the object presentation
@@ -681,8 +699,8 @@ Window Server
 Post-rendering and user-induced execution
 -----------------------------------------
 
-After rendering has been completed, the browser executes JavaScript code as a result
-of some timing mechanism (such as a Google Doodle animation) or user
+After rendering has been completed, the browser executes JavaScript code as a
+result of some timing mechanism (such as a Google Doodle animation) or user
 interaction (typing a query into the search box and receiving suggestions).
 Plugins such as Flash or Java may execute as well, although not at this time on
 the Google homepage. Scripts can cause additional network requests to be
