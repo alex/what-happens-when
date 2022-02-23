@@ -633,7 +633,7 @@ Page Rendering
 --------------
 
 * Create a 'Frame Tree' or 'Render Tree' by traversing the DOM nodes, and
-  calculating the CSS style values for each node.
+  calculating the CSS style values for each node.(Rendering tree is a concept before 2016. The current code has been refactored to derive LayoutTree. Its function is similar to the rendering tree, but there are still some differences from the previous rendering tree.)
 * Calculate the preferred width of each node in the 'Frame Tree' bottom-up
   by summing the preferred width of the child nodes and the node's
   horizontal margins, borders, and padding.
