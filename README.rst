@@ -269,13 +269,15 @@ Hub:
 
 Switch:
 
-* If the computer is connected to a switch, the switch will check its local
-  CAM/MAC table to see which port has the MAC address we are looking for. If
-  the switch has no entry for the MAC address it will rebroadcast the ARP
-  request to all other ports.
+* If the computer is connected to a switch, the switch will update its CAM/MAC 
+  table with the MAC address of the sender and map it to the port the ARP request
+  came from. Then it will rebroadcast the ARP request to all other ports except the
+  incoming port.
 
-* If the switch has an entry in the MAC/CAM table it will send the ARP request
-  to the port that has the MAC address we are looking for.
+* If the switch has an entry in the MAC/CAM table that corresponds to the port that
+  request came from and the incoming MAC address is different from the existing address,
+  it will add the incoming MAC address (sender's MAC address to the CAM/MAC table, then 
+  it will send the ARP broadcasy to all ports except the port the request came from.
 
 * If the router is on the same "wire", it will respond with an ``ARP Reply``
   (see below)
