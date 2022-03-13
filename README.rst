@@ -335,14 +335,38 @@ Most larger businesses and some newer residential connections will have fiber
 or direct Ethernet connections in which case the data remains digital and
 is passed directly to the next `network node`_ for processing.
 
-Eventually, the packet will reach the router managing the local subnet. From
-there, it will continue to travel to the autonomous system's (AS) border
-routers, other ASes, and finally to the destination server. Each router along
-the way extracts the destination address from the IP header and routes it to
-the appropriate next hop. The time to live (TTL) field in the IP header is
-decremented by one for each router that passes. The packet will be dropped if
-the TTL field reaches zero or if the current router has no space in its queue
-(perhaps due to network congestion).
+Eventually, the packet will reach the router managing the local subnet also
+called gateway. This gateway router can have many VLANs(Virtual LAN) which
+segregates broadcast traffic from different IP subnets. Depending on the IP
+and subnet, incoming data frame will land a physical port where the ethernet
+header (in case of `Ethernet`_ ) will be removed what remains then is a IP
+packet that has the source , destinationip address and ports information.
+Routers maintains a table to route packets from incoming interface to outgoing
+interface, now router reads the IP header of IP packet and does a lookup in
+local routing table (which is build using static routes or using dynamic
+protocols like BGP, OSPF) to find the outgoing interface. Before routing packet
+out of the interface TTL field on IP header is decremented by 1 (used for
+avoiding infinite looping of packets), apart from changing TTL other field
+might also change like if packets are fragmented due to MTU being lower on
+outgoing interface router will send ip packets in chunks and re-write the IP
+headres based on original IP Packet , it also will change checksum fields etc.
+Finaly these packets will again be encapsulated with ethernet frame or whatever
+is the outgoing interface type supports and sent to next `network node`_
+for similar processing.
+
+From there, it will continue to travel to routers in path traversing the
+different autonomous systems (ASN is a unique number assigned to Internet
+service providers to identify themselves in internet and route internet
+traffic. BGP- Border Gateway Protocol is the one that maintains huge routing
+tables in ISP routers and relay the packets to destination) and then finally
+reaching to the destination server where it is handded over to TCP/IP stack on
+server for further processing and delivery to applications.
+Each router along the way extracts the destination address from the IP header
+and routesit to the appropriate next hop. The time to live (TTL) field in the
+IP header is decremented by one for each router that passes. The packet will
+be dropped if the TTL field reaches zero or if the current router has no space
+in its queue/buffers (perhaps due to network congestion) or
+because of erroring links and bad CRC.
 
 This send and receive happens multiple times following the TCP connection flow:
 
