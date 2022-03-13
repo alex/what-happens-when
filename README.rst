@@ -209,8 +209,9 @@ Check HSTS list
 DNS lookup
 ----------
 
-* Browser checks if the domain is in its cache. (to see the DNS Cache in
-  Chrome, go to `chrome://net-internals/#dns <chrome://net-internals/#dns>`_).
+* Browser checks if the domain is in its cache. (To see the DNS Cache in
+  Chrome, go to `chrome://net-internals/#dns <chrome://net-internals/#dns>`_.
+  To see it in Firefox, go to `about:networking#dns <about:networking#dns>`_).
 * If not found, the browser calls ``gethostbyname`` library function (varies by
   OS) to do the lookup.
 * ``gethostbyname`` checks if the hostname can be resolved by reference in the
