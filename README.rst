@@ -28,12 +28,11 @@ Table of Contents
 The "g" key is pressed
 ----------------------
 The following sections explain the physical keyboard actions
-and the OS interrupts. When you press the key "g" the browser receives the
-event and the auto-complete functions kick in.
+and the OS interrupts. When you press the key "g" in the search bar/tab of your web browser, the browser receives the instruction and looks for similar events and the auto-complete functions kick in.
 Depending on your browser's algorithm and if you are in
 private/incognito mode or not various suggestions will be presented
 to you in the dropdown below the URL bar. Most of these algorithms sort
-and prioritize results based on search history, bookmarks, cookies, and
+and prioritize results based on search history, bookmarks, cookies, cache, and
 popular searches from the internet as a whole. As you are typing
 "google.com" many blocks of code run and the suggestions will be refined
 with each keypress. It may even suggest "google.com" before you finish typing
@@ -42,8 +41,8 @@ it.
 The "enter" key bottoms out
 ---------------------------
 
-To pick a zero point, let's choose the Enter key on the keyboard hitting the
-bottom of its range. At this point, an electrical circuit specific to the enter
+To prove this point, let's press the Enter key on the keyboard.
+At this point, an electrical circuit specific to the enter
 key is closed (either directly or capacitively). This allows a small amount of
 current to flow into the logic circuitry of the keyboard, which scans the state
 of each key switch, debounces the electrical noise of the rapid intermittent
