@@ -166,12 +166,13 @@ Parse URL
 
 * The browser now has the following information contained in the URL (Uniform
   Resource Locator):
+* The URL colloquially termed a web address, is a referecne to a web resouces that specifies its location on a computer network and a mechanism for retrieving it. It consists of two main parts:
 
     - ``Protocol``  "http"
-        Use 'Hyper Text Transfer Protocol'
+        Use 'Hyper Text Transfer Protocol': HTTP is an application layer protocol in the Internet protocol suite model for distributed, collaborative, hypermedia information systems. It is the foundation of data communication for World Wide Web (WWW), where hypertext documents include hyperlinks to other resources that the user can easily access, for example by a mouse click or by tapping the screen in a web browser.
 
     - ``Resource``  "/"
-        Retrieve main (index) page
+        Retrieve main (index) page via the root of a web server. Resource consists of a hostname in our case "google.com".
 
 
 Is it a URL or a search term?
