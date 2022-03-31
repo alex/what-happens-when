@@ -28,12 +28,11 @@ Table of Contents
 The "g" key is pressed
 ----------------------
 The following sections explain the physical keyboard actions
-and the OS interrupts. When you press the key "g" the browser receives the
-event and the auto-complete functions kick in.
+and the OS interrupts. When you press the key "g" in the search bar/tab of your web browser, the browser receives the instruction and looks for similar events and the auto-complete functions kick in.
 Depending on your browser's algorithm and if you are in
 private/incognito mode or not various suggestions will be presented
 to you in the dropdown below the URL bar. Most of these algorithms sort
-and prioritize results based on search history, bookmarks, cookies, and
+and prioritize results based on search history, bookmarks, cookies, cache, and
 popular searches from the internet as a whole. As you are typing
 "google.com" many blocks of code run and the suggestions will be refined
 with each keypress. It may even suggest "google.com" before you finish typing
@@ -42,8 +41,8 @@ it.
 The "enter" key bottoms out
 ---------------------------
 
-To pick a zero point, let's choose the Enter key on the keyboard hitting the
-bottom of its range. At this point, an electrical circuit specific to the enter
+To prove this point, let's press the Enter key on the keyboard.
+At this point, an electrical circuit specific to the enter
 key is closed (either directly or capacitively). This allows a small amount of
 current to flow into the logic circuitry of the keyboard, which scans the state
 of each key switch, debounces the electrical noise of the rapid intermittent
@@ -167,18 +166,19 @@ Parse URL
 
 * The browser now has the following information contained in the URL (Uniform
   Resource Locator):
+* The URL colloquially termed a web address, is a referecne to a web resouces that specifies its location on a computer network and a mechanism for retrieving it. It consists of two main parts:
 
     - ``Protocol``  "http"
-        Use 'Hyper Text Transfer Protocol'
+        Use 'Hyper Text Transfer Protocol': HTTP is an application layer protocol in the Internet protocol suite model for distributed, collaborative, hypermedia information systems. It is the foundation of data communication for World Wide Web (WWW), where hypertext documents include hyperlinks to other resources that the user can easily access, for example by a mouse click or by tapping the screen in a web browser.
 
     - ``Resource``  "/"
-        Retrieve main (index) page
+        Retrieve main (index) page via the root of a web server. Resource consists of a hostname in our case "google.com".
 
 
 Is it a URL or a search term?
 -----------------------------
 
-When no protocol or valid domain name is given the browser proceeds to feed
+When no protocol or valid domain name is given, the browser proceeds to feed
 the text given in the address box to the browser's default web search engine.
 In many cases the URL has a special piece of text appended to it to tell the
 search engine that it came from a particular browser's URL bar.
@@ -188,7 +188,7 @@ Convert non-ASCII Unicode characters in the hostname
 
 * The browser checks the hostname for characters that are not in ``a-z``,
   ``A-Z``, ``0-9``, ``-``, or ``.``.
-* Since the hostname is ``google.com`` there won't be any, but if there were
+* Since the hostname is ``google.com`` there won't be any, but if it was
   the browser would apply `Punycode`_ encoding to the hostname portion of the
   URL.
 
@@ -219,7 +219,7 @@ DNS lookup
 * If ``gethostbyname`` does not have it cached nor can find it in the ``hosts``
   file then it makes a request to the DNS server configured in the network
   stack. This is typically the local router or the ISP's caching DNS server.
-* If the DNS server is on the same subnet the network library follows the
+* If the DNS server is on the same subnet, the network library follows the
   ``ARP process`` below for the DNS server.
 * If the DNS server is on a different subnet, the network library follows
   the ``ARP process`` below for the default gateway IP.
@@ -258,7 +258,7 @@ Depending on what type of hardware is between the computer and the router:
 
 Directly connected:
 
-* If the computer is directly connected to the router the router response
+* If the computer is directly connected to the router, the router responds
   with an ``ARP Reply`` (see below)
 
 Hub:
@@ -271,10 +271,10 @@ Switch:
 
 * If the computer is connected to a switch, the switch will check its local
   CAM/MAC table to see which port has the MAC address we are looking for. If
-  the switch has no entry for the MAC address it will rebroadcast the ARP
+  the switch has no entry for the MAC address, it will rebroadcast the ARP
   request to all other ports.
 
-* If the switch has an entry in the MAC/CAM table it will send the ARP request
+* If the switch has an entry in the MAC/CAM table, it will send the ARP request
   to the port that has the MAC address we are looking for.
 
 * If the router is on the same "wire", it will respond with an ``ARP Reply``
