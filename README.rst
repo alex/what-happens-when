@@ -181,8 +181,10 @@ Is it a URL or a search term?
 When no protocol or valid domain name is given the browser proceeds to feed
 the text given in the address box to the browser's default web search engine.
 In many cases the URL has a special piece of text appended to it to tell the
-search engine that it came from a particular browser's URL bar.
+search engine that it came from a particular browser's URL bar. 
+
 Example of URL: https://www.google.com
+
 Example of search term: "cat names"
 
 Convert non-ASCII Unicode characters in the hostname
