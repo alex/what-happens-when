@@ -225,14 +225,12 @@ DNS lookup
   the ``ARP process`` below for the default gateway IP.
 * DNS clients and DNS server both use caching to speed up the domain name lookup process and to ease traffic on the root servers.
 * A cache is a temporary store
-* If a client queries domain server A looking to resolve www.google.com, and in turn domain server A queries domain server B etc then the result will be stored in a    cache on
- the client ( windows only)
- domain server A
- domain server B
+* If a client queries domain server A looking to resolve www.google.com, and in turn domain server A queries domain server B etc then the result will be stored in a     cache on
+* the client ( windows only)
+* domain server A
+* domain server B
 * If another client needs to resolve the same domain name using server A then server A can respond using the cached result.
-* You can check the DNS cache on a Windows machine with the command:
-
-  ipconfig /displaydns
+* You can check the DNS cache on a Windows machine with the command:ipconfig /displaydns
  
 
 
