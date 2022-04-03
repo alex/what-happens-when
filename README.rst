@@ -223,6 +223,19 @@ DNS lookup
   ``ARP process`` below for the DNS server.
 * If the DNS server is on a different subnet, the network library follows
   the ``ARP process`` below for the default gateway IP.
+ * DNS clients and DNS server both use caching to speed up the domain name lookup process and to ease traffic on the root servers.
+* A cache is a temporary store
+* If a client queries domain server A looking to resolve www.google.com, and in turn domain server A queries domain server B etc then the result will be stored in a     cache on
+* the client ( windows only)
+* domain server A
+* domain server B
+* If another client needs to resolve the same domain name using server A then server A can respond using the cached result.
+* You can check the DNS cache on a Windows machine with the command:ipconfig /displaydns
+* There are 4 different types of DNS servers involved when performing a DNS lookup. Each DNS server type has a different role to play and may not all be required under  certain circumstances.
+* Recursive Resolver - This is the DNS server that your computer or device communicates with. This DNS server is typically issued to you automatically by your service provider and is geographically located nearby in order to return results as fast as possible. This server will cache DNS record data in order to speed up future DNS lookup requests.
+* Root Nameserver - The root name server is responsible for returning the IP address of the TLD nameserver. For example, when resolving example.com, the root name server will return the IP address of the TLD name server responsible for .com domain names.
+* TLD Nameserver - The Top Level Domain (TLD) name server is responsible for returning the authoritative name servers for all domains under the TLD it is responsible for. The .com TLD name server will return results for google.com but not example.org.
+* Authoritative Nameserver - This is the DNS server for actually storing the DNS configuration data of a domain name.
 
 
 ARP process
