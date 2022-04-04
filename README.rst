@@ -27,6 +27,7 @@ Table of Contents
 
 The "g" key is pressed
 ----------------------
+![Web_request from a browser](https://github.com/kwamboka1/what-happens-when/blob/master/Web_request.png?raw=true)
 The following sections explain the physical keyboard actions
 and the OS interrupts. When you press the key "g" the browser receives the
 event and the auto-complete functions kick in.
