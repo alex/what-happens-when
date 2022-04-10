@@ -223,7 +223,14 @@ DNS lookup
   ``ARP process`` below for the DNS server.
 * If the DNS server is on a different subnet, the network library follows
   the ``ARP process`` below for the default gateway IP.
-
+* DNS clients and DNS server both use caching to speed up the domain name
+  lookup process and to ease traffic on the root servers.
+* A cache is a temporary store.
+* If a client queries domain server A looking to resolve `www.google.com`_) and
+  in turn domain server A queries domain server B etc then the result will be
+  stored in a cache on the client (windows only).
+* You can check the DNS cache on a Windows machine with the command:
+  ``ipconfig /displaydns``.
 
 ARP process
 -----------
