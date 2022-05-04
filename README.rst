@@ -549,7 +549,7 @@ common user interface elements are:
 The components of the browsers are:
 
 * **User interface:** The user interface includes the address bar,
-  back/forward button, bookmarking menu, etc. Every part of the browser
+  back/forward button, bookmarking menu, etc... Every part of the browser
   display except the window where you see the requested page.
 * **Browser engine:** The browser engine marshals actions between the UI
   and the rendering engine.
