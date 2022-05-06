@@ -469,6 +469,13 @@ the form::
 
 and no payload, and the web browser instead retrieve the HTML from its cache.
 
+Note that the status codes are grouped in five classes:
+* ``1xx``: gives informational responses (ex: 100 Continue)
+* ``2xx``: gives successful responses (ex: 200 OK, 201 Created, 202 Accepted)
+* ``3xx``: gives redirection messages (ex: 304 Not Modified)
+* ``4xx``: gives error responses (ex: 400 Bad Request, 404 Not Found)
+* ``5xx``: gives server error responses (ex: 504 Gateway Timeout)
+
 After parsing the HTML, the web browser (and server) repeats this process
 for every resource (image, CSS, favicon.ico, etc) referenced by the HTML page,
 except instead of ``GET / HTTP/1.1`` the request will be
