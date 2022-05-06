@@ -498,7 +498,7 @@ and IIS for Windows.
   that corresponds with google.com.
 * The server verifies that google.com can accept GET requests.
 * The server verifies that the client is allowed to use this method
-  (by IP, authentication, etc.).
+  (by IP, authentication, authorisation, right end-point, etc.).
 * If the server has a rewrite module installed (like mod_rewrite for Apache or
   URL Rewrite for IIS), it tries to match the request against one of the
   configured rules. If a matching rule is found, the server uses that rule to
