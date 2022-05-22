@@ -540,6 +540,7 @@ common user interface elements are:
 * An address bar for inserting a URI
 * Back and forward buttons
 * Bookmarking options
+* Bookmark bar
 * Refresh and stop buttons for refreshing or stopping the loading of
   current documents
 * Home button that takes you to your home page
