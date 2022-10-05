@@ -182,6 +182,7 @@ When no protocol or valid domain name is given the browser proceeds to feed
 the text given in the address box to the browser's default web search engine.
 In many cases the URL has a special piece of text appended to it to tell the
 search engine that it came from a particular browser's URL bar.
+A domain name is your website name. A domain name is the address where Internet users can access your website. A domain name is used for finding and identifying computers on the Internet
 
 Convert non-ASCII Unicode characters in the hostname
 ------------------------------------------------
@@ -209,6 +210,11 @@ Check HSTS list
 DNS lookup
 ----------
 
+A DNS lookup typically refers to the process of converting easy to remember names called domain names (like www.google.com) into numbers called IP addresses (like 192.168.2.1).
+
+Computers use these numbers to communicate with each other on the Internet, but these numbers would be difficult for humans to remember and can change from time to time when network configuration changes are required.
+
+A great way to think of a DNS lookup is similar to the contact list on your phone, but a special one where it has everybody’s name without them having told you their number, and if they get a new number, your phone automatically updates it. You don’t need to remember each of your contact’s numbers, but searching for their name is quick and easy. When you select their name to make a call, your phone will automatically use their current phone number.
 * Browser checks if the domain is in its cache. (to see the DNS Cache in
   Chrome, go to `chrome://net-internals/#dns <chrome://net-internals/#dns>`_).
 * If not found, the browser calls ``gethostbyname`` library function (varies by
@@ -709,3 +715,5 @@ page rendering and painting.
 .. _`downgrade attack`: http://en.wikipedia.org/wiki/SSL_stripping
 .. _`OSI Model`: https://en.wikipedia.org/wiki/OSI_model
 .. _`Spanish`: https://github.com/gonzaleztroyano/what-happens-when-ES
+.. `domain`: https://www.website.com/beginnerguide/domainnames/8/1/What-is-a-domain-name?.ws&source=SC
+.. `dns lookup`: https://www.whatsmydns.net/dns-lookup
