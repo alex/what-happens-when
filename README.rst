@@ -223,6 +223,50 @@ DNS lookup
   ``ARP process`` below for the DNS server.
 * If the DNS server is on a different subnet, the network library follows
   the ``ARP process`` below for the default gateway IP.
+  
+#310: When is the trailing dot added to the dns lookup?
+  * According to RFC 1034, a presence or absence of a`.` specifies whether
+  a domain name is fully or partially qualified.
+  
+  #"
+    When a user needs to type a domain name, the length of each label is
+omitted and the labels are separated by dots (".").  Since a complete
+domain name ends with the root label, this leads to a printed form which
+ends in a dot.  We use this property to distinguish between:
+
+   - a character string which represents a complete domain name
+     (often called "absolute").  For example, "poneria.ISI.EDU."
+
+   - a character string that represents the starting labels of a
+     domain name which is incomplete, and should be completed by
+     local software using knowledge of the local domain (often
+     called "relative").  For example, "poneria" used in the
+     ISI.EDU domain.
+
+Relative names are either taken relative to a well known origin, or to a
+list of domains used as a search list.  Relative names appear mostly at
+the user interface, where their interpretation varies from
+implementation to implementation, and in master files, where they are
+relative to a single origin domain name.  The most common interpretation
+uses the root "." as either the single origin or as one of the members
+of the search list, so a multi-label relative name is often one where
+the trailing dot has been omitted to save typing.
+  #"
+  
+  
+  * Having a `.` at the end reduces ambiguity and chances of getting
+  unreliable results. It also saves time, as it does away with performing
+  numerous lookups.
+  * When accessing a website, the computer constructs a fully-qualified name
+  from the partiall name provided by applying the DNS user's search list.
+  
+      Fully qualified: www.foo.com.
+                            | 
+      Partially qualified: www.foo.com
+      
+  * Thus the fully-qualified/ absolute name is what is used to locate the domain.
+  * However, browser clients give the `Host` parameter a value that was typed
+  in by the user, instead of what was actually used...
 
 
 ARP process
