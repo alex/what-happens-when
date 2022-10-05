@@ -224,10 +224,11 @@ DNS lookup
 * If the DNS server is on a different subnet, the network library follows
   the ``ARP process`` below for the default gateway IP.
   
-  ## #310: When is the trailing dot added to the dns lookup?
+  ## 310: When is the trailing dot added to the dns lookup?
   * According to RFC 1034, a presence or absence of a`.` specifies whether
   a domain name is fully or partially qualified.
-  <blockquote>
+  
+  "
     When a user needs to type a domain name, the length of each label is
 omitted and the labels are separated by dots (".").  Since a complete
 domain name ends with the root label, this leads to a printed form which
@@ -250,7 +251,7 @@ relative to a single origin domain name.  The most common interpretation
 uses the root "." as either the single origin or as one of the members
 of the search list, so a multi-label relative name is often one where
 the trailing dot has been omitted to save typing.
-  </blockquote>
+  "
   
   * Having a `.` at the end reduces ambiguity and chances of getting
   unreliable results. It also saves time, as it does away with performing
@@ -258,12 +259,12 @@ the trailing dot has been omitted to save typing.
   * When accessing a website, the computer constructs a fully-qualified name
   from the partiall name provided by applying the DNS user's search list.
   
-      <b>Fully qualified</b>: <code>www.foo.com.</code>
+      <b>Fully qualified</b>: www.foo.com.
                                   | 
-      <b>Partially qualified</b>: <code>www.foo.com</code>
+      <b>Partially qualified</b>: www.foo.com
       
   * Thus the fully-qualified/ absolute name is what is used to locate the domain.
-  * However, browser clients give the <code>`Host`</code> parameter a value that was typed
+  * However, browser clients give the `Host` parameter a value that was typed
   in by the user, instead of what was actually used...
 
 
