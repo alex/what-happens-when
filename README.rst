@@ -570,6 +570,12 @@ The components of the browsers are:
   need to save all sorts of data locally, such as cookies. Browsers also
   support storage mechanisms such as localStorage, IndexedDB, WebSQL and
   FileSystem.
+TCP (Transmission Control Protocol)/IP ) (Internet Protocol)
+------------
+This is a suite of communication protocols used to interconnect network devices on the internet, intranet or extranet.
+TCP defines how applications can create channels of communication across a network. It also manages how a message is assembled into smaller packets before they are then transmitted over the internet and reassembled in the right order at the destination address.
+IP defines how to address and route each packet to make sure it matches the right destination. Each gateway computer on the network checks this IP address to determine where to forward the message
+TCP/IP uses the client-server model of communication in which a user or machine (client) i.e the person typing google.com in the browser is provided a service like sending of a webpage (i.e google.com webpage) by another computer (a webserver on a remote location) in the internet.
 
 HTML parsing
 ------------
