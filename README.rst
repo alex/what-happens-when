@@ -686,7 +686,7 @@ of some timing mechanism (such as a Google Doodle animation) or user
 interaction (typing a query into the search box and receiving suggestions).
 Plugins such as Flash or Java may execute as well, although not at this time on
 the Google homepage. Scripts can cause additional network requests to be
-performed which could include querying the database server on the backend to be queried for
+performed which could include querying the Database server on the backend for
 data as requested by the user's interactions with the webpage, as well as modify the page
 or its layout, causing another round of page rendering and painting.
 
