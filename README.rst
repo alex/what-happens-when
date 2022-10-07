@@ -578,6 +578,7 @@ The rendering engine starts getting the contents of the requested
 document from the networking layer. This will usually be done in 8kB chunks.
 
 The primary job of the HTML parser is to parse the HTML markup into a parse tree.
+Parsing means taking the code we write as text (HTML, CSS) and transform it into something that the browser can work with. The parsing will be done by the browser engine.
 
 The output tree (the "parse tree") is a tree of DOM element and attribute
 nodes. DOM is short for Document Object Model. It is the object presentation
@@ -585,6 +586,7 @@ of the HTML document and the interface of HTML elements to the outside world
 like JavaScript. The root of the tree is the "Document" object. Prior to
 any manipulation via scripting, the DOM has an almost one-to-one relation to
 the markup.
+
 
 **The parsing algorithm**
 
