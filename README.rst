@@ -509,7 +509,7 @@ and IIS for Windows.
 * The server parses the file according to the handler. If Google
   is running on PHP, the server uses PHP to interpret the index file, and
   streams the output to the client.
-
+* After the Operating System(OS) has the IP Address and gives it to the browser, it then makes a GET, a sort of HTTP Method to said IP Address. At the point when the solicitation is made the browser again makes the solicitation to the operating system which then, thusly, packs the solicitation in the TCP traffic convention, and it is shipped off the IP Address. On its way, it is actually taken a look at by both the operating system and the server's firewall to guarantee that there is no security infringement. What's more, after getting the solicitation, the server (typically the load balancer guides traffic to all servers for the website) sends a response with the IP Address of the picked server alongside the SSL (Secure Sockets Layer) certificate to start a secure connection (HTTPS). Then the server sends the HTML, CSS, and Javascript files (If any) back to the Operating System which thusly gives it to the browser to decipher it and publish it afterward as a website.
 Behind the scenes of the Browser
 ----------------------------------
 
