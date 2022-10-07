@@ -480,6 +480,12 @@ resolving the other domain, and follows all steps up to this point for that
 domain. The ``Host`` header in the request will be set to the appropriate
 server name instead of ``google.com``.
 
+``https://`` is the scheme. HTTPS stands for Hypertext Transfer Protocol Secure. 
+This scheme advises the browser to establish a connection with the server utilizing Transport Layer Security, or TLS. 
+TLS is an encryption protocol to get communications over the Web. With HTTPS, the information traded between your browser and the server, like passwords or Visa data, is encoded. 
+Sometimes you might also see additionally ``ftp://``, ``mailto://``, or ``record://``. 
+These are different rules that browsers know how to deal with.
+
 HTTP Server Request Handle
 --------------------------
 The HTTPD (HTTP Daemon) server is the one handling the requests/responses on
