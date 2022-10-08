@@ -293,9 +293,15 @@ the default gateway it can resume its DNS process:
 * The DNS client establishes a socket to UDP port 53 on the DNS server,
   using a source port above 1023.
 * If the response size is too large, TCP will be used instead.
-* If the local/ISP DNS server does not have it, then a recursive search is
-  requested and that flows up the list of DNS servers until the SOA is reached,
-  and if found an answer is returned.
+* The first DNS server contacted is called DNS resolver. 
+  If this local/ISP DNS server does not have the domain, then a recursive 
+  search is requested. 
+* First, the request will be to the root server. 
+  If the root server also does not have the requested domain. Next, request 
+  will be made for the TLD(Top level domain) server. 
+* If the answer is still not found, last request will be made to the 
+  SOA/authoritative name server, which will have the domain if it exists and 
+  thus returns it. 
 
 Opening of a socket
 -------------------
