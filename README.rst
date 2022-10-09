@@ -223,7 +223,8 @@ DNS lookup
   ``ARP process`` below for the DNS server.
 * If the DNS server is on a different subnet, the network library follows
   the ``ARP process`` below for the default gateway IP.
-
+* 
+* DNS request A DNS request starts when you try to access a computer on the internet. For example, you type google.com in your browser address bar. The first stop for the DNS request is the local DNS cache
 
 ARP process
 -----------
