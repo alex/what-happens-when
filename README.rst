@@ -608,7 +608,7 @@ The algorithm consists of two stages: tokenization and tree construction.
 
 **Actions when the parsing is finished**
 
-The browser begins fetching external resources linked to the page (CSS, images,
+After the parsing is complete, The browser then begin fetching external resources linked to the page (CSS files, images,
 JavaScript files, etc.).
 
 At this stage the browser marks the document as interactive and starts
