@@ -290,6 +290,7 @@ Switch:
 Now that the network library has the IP address of either our DNS server or
 the default gateway it can resume its DNS process:
 
+* The DNS then keeps a local copy of the IP and Domain for future use.
 * The DNS client establishes a socket to UDP port 53 on the DNS server,
   using a source port above 1023.
 * If the response size is too large, TCP will be used instead.
