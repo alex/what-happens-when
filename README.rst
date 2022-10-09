@@ -689,6 +689,14 @@ the Google homepage. Scripts can cause additional network requests to be
 performed, as well as modify the page or its layout, causing another round of
 page rendering and painting.
 
+Meta data
+----------
+In simple terms, metadata is “data/information about data". 
+Metadata helps us understand the structure, nature, and context of the data.
+Metadata facilitates easy search and retrieval of data. 
+Metadata also helps keep a check on the quality and reliability of data. 
+Metadata is the key to unlocking the value of your data.
+
 .. _`Creative Commons Zero`: https://creativecommons.org/publicdomain/zero/1.0/
 .. _`"CSS lexical and syntax grammar"`: http://www.w3.org/TR/CSS2/grammar.html
 .. _`Punycode`: https://en.wikipedia.org/wiki/Punycode
