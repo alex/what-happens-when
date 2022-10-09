@@ -571,6 +571,14 @@ The components of the browsers are:
   support storage mechanisms such as localStorage, IndexedDB, WebSQL and
   FileSystem.
 
+Load Balancing
+--------------
+
+Just like other big tech companies (Facebook, Twitter, Instagram…), google runs on thousands of servers. This is possible thanks to the load balancer. The goal is to optimize the overall performance of the infrastructure, its yield and its capacity.
+
+A load balancer can be software or hardware. The load balancer can be installed on a server, among the load balancers we can have Nginx, Haproxy… Balancer loads work with on algorithms. The distribution therefore depends on the type of algorithm used. We have several types of algorithm such as round robin (requests are assigned to servers sequentially), least connection (the server with the smallest number of requests receives the next request from the load balancer)…
+
+
 HTML parsing
 ------------
 
