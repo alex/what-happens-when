@@ -1,4 +1,4 @@
-What happens when...
+What happens when you type into google
 ====================
 
 This repository is an attempt to answer the age-old interview question "What
