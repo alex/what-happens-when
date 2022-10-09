@@ -197,6 +197,9 @@ Check HSTS list
 * The browser checks its "preloaded HSTS (HTTP Strict Transport Security)"
   list. This is a list of websites that have requested to be contacted via
   HTTPS only.
+ *HTTPS is HTTP with encryption. The only difference between the two protocols is that HTTPS uses TLS or
+ Transport Layer Security to encrypt normal HTTP requests and responses. As a result, 
+  HTTPS is far more secure than HTTP.
 * If the website is in the list, the browser sends its request via HTTPS
   instead of HTTP. Otherwise, the initial request is sent via HTTP.
   (Note that a website can still use the HSTS policy *without* being in the
