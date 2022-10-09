@@ -485,6 +485,7 @@ HTTP Server Request Handle
 The HTTPD (HTTP Daemon) server is the one handling the requests/responses on
 the server-side. The most common HTTPD servers are Apache or nginx for Linux
 and IIS for Windows.
+Now that the browser is connected to the server, it complies with the HTTP(s) protocol’s requirements for communication. In order to request the contents of the page, the browser first sends an HTTP request to the server. A request line, headers (or request-related metadata), and a body make up an HTTP request. The server can determine what the client (in this case, your browser) wants to do using the information in the request line.
 
 * The HTTPD (HTTP Daemon) receives the request.
 * The server breaks down the request to the following parameters:
