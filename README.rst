@@ -482,9 +482,18 @@ server name instead of ``google.com``.
 
 HTTP Server Request Handle
 --------------------------
-The HTTPD (HTTP Daemon) server is the one handling the requests/responses on
-the server-side. The most common HTTPD servers are Apache or nginx for Linux
-and IIS for Windows.
+The Hypertext Transfer Protocol Daemon (HTTPD), which is also known as the
+Web Server is the one handling the requests/response on the server-side. 
+The web server handles this requests/response based on these two major event 
+handling systems, The Threaded based system and the Event Driven based system.
+
+In short, the Threaded based system works based on the FIFO (First-In-First-Out) 
+principle. This is where an event needs to wait in queue for another event to finish. 
+The events are been treated in a sequential order i.e. It is a dependent system.
+
+On the other hand, the Event based driven system is an independent system, a system
+design to process event through a decoupled architecture. The most common HTTPD 
+servers are Apache or nginx for Linux and IIS for Windows.
 
 * The HTTPD (HTTP Daemon) receives the request.
 * The server breaks down the request to the following parameters:
