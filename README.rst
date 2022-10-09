@@ -183,6 +183,14 @@ the text given in the address box to the browser's default web search engine.
 In many cases the URL has a special piece of text appended to it to tell the
 search engine that it came from a particular browser's URL bar.
 
+Is it a URL or a URN?
+-----------------------------
+
+A Uniform Resource Name (URN) is a Uniform Resource Identifier (URI) 
+that uses the URN scheme, and does not imply availability 
+of the identified resource. Both URNs (names) and URLs (locators) are URIs, 
+and a particular URI may be both a name and a locator at the same time.
+
 Convert non-ASCII Unicode characters in the hostname
 ------------------------------------------------
 
