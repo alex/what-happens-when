@@ -177,6 +177,8 @@ Parse URL
 
 Is it a URL or a search term?
 -----------------------------
+A domain naming system is requested and a query is made that translates the human domain names to the machine readable ip address. 
+This means that there is a demand for data sent from the user computer to a server.
 
 When no protocol or valid domain name is given the browser proceeds to feed
 the text given in the address box to the browser's default web search engine.
