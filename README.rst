@@ -414,6 +414,15 @@ control`_. This varies depending on the sender; the most common algorithms are
   each packet acknowledged. If a packet is dropped, the window reduces
   exponentially until another packet is acknowledged.
 
+Server Firewall
+---------------
+
+If the web server is set up with a multilayer firewalls function like
+packet-scanning firewalls that filters, monitors, and blocks any malicious
+HTTP/S traffic traveling to the web server, and prevents any unauthorized
+data from entering or leaving the network. The firewall will assess which
+packets are safe and can be allowed through.
+
 HTTP protocol
 -------------
 
