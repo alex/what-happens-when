@@ -295,7 +295,16 @@ the default gateway it can resume its DNS process:
 * If the response size is too large, TCP will be used instead.
 * If the local/ISP DNS server does not have it, then a recursive search is
   requested and that flows up the list of DNS servers until the SOA is reached,
-  and if found an answer is returned.
+  and if found an answer is returned. 
+
+TCP/IP  
+-------------------
+Transmission Control Protocol(TCP) is the protocol responsible for the collection 
+and reassembling of these data packets while the Internet Protocol(IP) makes sure 
+the packet are sent to the right destination(address).
+
+* This connections are vital for the transfer of data over the internet.
+
 
 Opening of a socket
 -------------------
