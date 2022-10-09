@@ -5,8 +5,7 @@ This repository is an attempt to answer the age-old interview question "What
 happens when you type google.com into your browser's address box and press
 enter?"
 
-Except instead of the usual story, we're going to try to answer this question
-in as much detail as possible. No skipping out on anything.
+Except instead of the usual story, we're going to try to as much as possible give a detailed answer to this question. No skipping out on anything.
 
 This is a collaborative process, so dig in and try to help out! There are tons
 of details missing, just waiting for you to add them! So send us a pull
@@ -29,14 +28,14 @@ The "g" key is pressed
 ----------------------
 The following sections explain the physical keyboard actions
 and the OS interrupts. When you press the key "g" the browser receives the
-event and the auto-complete functions kick in.
+event and then the auto-complete functions kick in.
 Depending on your browser's algorithm and if you are in
 private/incognito mode or not various suggestions will be presented
-to you in the dropdown below the URL bar. Most of these algorithms sort
+to you in the dropdown menu below the browser's URL bar. Most of these algorithms sort
 and prioritize results based on search history, bookmarks, cookies, and
-popular searches from the internet as a whole. As you are typing
+popular searches from the internet as a whole. As you type in
 "google.com" many blocks of code run and the suggestions will be refined
-with each keypress. It may even suggest "google.com" before you finish typing
+with each key pressed. It most likely will even suggest "google.com" before you finish typing
 it.
 
 The "enter" key bottoms out
