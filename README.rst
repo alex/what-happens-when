@@ -296,6 +296,13 @@ the default gateway it can resume its DNS process:
 * If the local/ISP DNS server does not have it, then a recursive search is
   requested and that flows up the list of DNS servers until the SOA is reached,
   and if found an answer is returned.
+  
+URL Masking
+-----------
+some DNS server offers URL masking. this makes the domain name still appear on the 
+browser address bar instead of the IP address received. Other times they are used
+the real IP or address for security reasons. they are also useful for url shortening
+or hide free web  hosting domain name
 
 Opening of a socket
 -------------------
