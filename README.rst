@@ -677,6 +677,9 @@ GPU Rendering
 
 Window Server
 -------------
+What is the purpose of Window Server?
+Microsoft created the Windows Server operating system family to handle enterprise-level management,
+data storage, applications, and communications. Prior iterations of Windows Server prioritized stability, security, networking, and different file system enhancements.
 
 Post-rendering and user-induced execution
 -----------------------------------------
