@@ -170,7 +170,10 @@ Parse URL
 
     - ``Protocol``  "http"
         Use 'Hyper Text Transfer Protocol'
-
+    
+    - ``Protocol``  "https"
+        Use ' secure Hyper Text Transfer Protocol'
+        
     - ``Resource``  "/"
         Retrieve main (index) page
 
