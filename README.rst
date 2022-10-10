@@ -397,6 +397,11 @@ TLS handshake
 * From now on the TLS session transmits the application (HTTP) data encrypted
   with the agreed symmetric key.
 
+* To certify that the TLS handshake is successful, the browser displays a padlock
+  at the right side of the URL address bar, as can be seen on the address bar on this page.
+  Please note, in some browsers the padlock and/or URL bar may be colored green.
+  It is just a little more evidence to signify a successful encrypted communication.
+
 If a packet is dropped
 ----------------------
 
