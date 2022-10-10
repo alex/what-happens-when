@@ -223,6 +223,7 @@ DNS lookup
   ``ARP process`` below for the DNS server.
 * If the DNS server is on a different subnet, the network library follows
   the ``ARP process`` below for the default gateway IP.
+  There show be a diagramatic representation of how DNS lookup looks
 
 
 ARP process
