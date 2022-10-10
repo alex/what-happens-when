@@ -689,6 +689,84 @@ the Google homepage. Scripts can cause additional network requests to be
 performed, as well as modify the page or its layout, causing another round of
 page rendering and painting.
 
+
+Behind the scenes when you visit a website
+----------------------------------------
+Computers and other devices communicate using IP (Internet Protocol) addresses to identify each 
+other on the internet. An IP address is a string of numbers separated by periods (e.g 100.200.121.44) 
+that acts as a unique identifier for devices on the internet or a local network.  It is the set of rules 
+that governs the format of data sent via the internet. You can think of an IP address as the address 
+to your house in a neighborhood. For a computer to communicate with another, it needs to know the IP 
+address of the other.Also, every website you visit has an IP address associated with it. The IP 
+address of the website is simply the IP address of the computer hosting it in a remote location. 
+So to visit a website, all you need to know is the IP address of the website.But as humans, it is quite 
+hard to remember IP addresses. To solve this problem, a domain name system (DNS) was developed. 
+A domain name system is a software that maps the IP address of a website to its domain name. 
+It’s like a huge database of websites’ IPs and their domain names.
+
+When you type www.google.com in your web browser and press enter, your web browser needs to map this 
+domain name to its IP address. To do this, your web browser checks if it knows anything about the domain 
+name by checking its cache. If it can’t find the domain name in its cache, the browser calls the 
+“gethostbyname” (this function varies by the type of computer/operating system you use) library function 
+of your operating system to do the lookup. This library checks if it has this domain name cached or can 
+be referenced in a file called “hosts”. If the OS can’t find any information about the domain name in its 
+cache and host file, it calls the DNS resolver server.
+
+Resolvers play a key role in converting Web links to IP addresses, acting as a link between your computer and 
+the Internet's DNS infrastructure. A DNS resolver is a local server that stores a central database of DNS 
+nameservers. Typically, a resolver is your Internet Service Provider (ISP). The resolver makes a request to 
+the DNS server and acquires the IP address of www.google.com. It then hands over this IP address to the web 
+browser. After the IP address of the server hosting the website has been acquired, your computer and the 
+server establish a connection to start communicating with each other using the Client-Server model of 
+communication in which a user (client) is provided a service, like sending a webpage, by another computer 
+(server).  This model uses TCP/IP communication protocols to define how data should travel across the internet.
+There are various TCP/IP protocols:
+
+* Hypertext Transfer Protocol (HTTP): this protocol handles the communication between a web server and a web browser
+
+* HTTPS: handles secure communication between a web server and a web browser
+
+Before a connection between your computer and the server can be established, the request for such a connection 
+must pass through a firewall provided by the administrator of the website you are visiting. A firewall is a 
+division between a private network and an outer network, often the internet that manages traffic passing 
+between the two networks. It’s implemented through either hardware or software. Firewalls allow, limit, and 
+block network traffic based on preconfigured rules in the hardware or software, analyzing data packets that 
+request entry to the network. In addition to limiting access to computers and networks, a firewall is also 
+useful for allowing remote access to a private network through secure authentication certificates and logins.
+In other words, it is a form of security measure to prevent unwanted users from visiting a website. If the 
+request by your web browser to establish a connection with the server is approved by the firewall, your web 
+browser uses HTTPS protocol to make that secure connection so it can know how to communicate with the server 
+when it needs to make a request. After a secure connection, say HTTPS, has been established, your web browser 
+now proceeds to send an HTTP request to the server, asking it to send a copy of the website which is composed 
+of HTML files, CSS files, Javascript files, etc. The server (a computer) uses software called “web server” to 
+serve the requested documents by the client using the already established protocol.
+
+A web server includes several parts that control how web users access hosted files. At a minimum, this is an 
+HTTP server. An HTTP server is a software that understands URLs (web addresses) and HTTP (the protocol your 
+browser uses to view webpages). An HTTP server can be accessed through the domain names of the websites it 
+stores, and it delivers the content of these hosted websites to the end user's device.  In essence, whenever 
+a web browser needs a file that is hosted on a web server, the browser requests the file via HTTP. When the 
+request reaches the correct (hardware) web server, the (software) HTTP server accepts the request, finds the 
+requested document, and sends it back to the browser in small chunks called data packets, also through HTTP. 
+The web browser then assembles the small chunks and displays them to the user. If the server doesn't find the 
+requested document, it returns a 404 response instead. A web server is used to serve static files like Html, 
+CSS, and JavaScript. There are various web servers that can be used to serve documents/files from a remote 
+server to a web server. For example, Nginx, and Apache.
+
+When dealing with an enterprise website (e.g www.google.com ) that has a large number of users/traffic, it is 
+common for such websites to have thousands of servers to meet up with that large amount of requests. In order 
+to achieve this, web traffic needs to be distributed to these servers, and that is the role of a load-balancer. 
+A Load balancer will distribute the workload of a system to multiple individual systems, or groups of systems 
+to reduce the amount of load on an individual system, which in turn increases the reliability, efficiency, and 
+availability of an enterprise application or website. Examples of load balancers are HAProxy, Nginx, mod Athena, 
+etc.
+
+If the website contains dynamic contents, and business logic and uses a database, the dynamic files/documents 
+will be stored in the application server. Application servers are servers that host applications or software 
+that delivers a business application through a communication protocol. An application server is different from 
+a web server in the sense that, an application server serves dynamic content and business logic while a web 
+server only serves static documents.
+
 .. _`Creative Commons Zero`: https://creativecommons.org/publicdomain/zero/1.0/
 .. _`"CSS lexical and syntax grammar"`: http://www.w3.org/TR/CSS2/grammar.html
 .. _`Punycode`: https://en.wikipedia.org/wiki/Punycode
