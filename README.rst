@@ -96,6 +96,7 @@ connection, but historically has been over PS/2 or ADB connections.
   event.
 
 
+
 Interrupt fires [NOT for USB keyboards]
 ---------------------------------------
 
