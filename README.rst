@@ -709,3 +709,103 @@ page rendering and painting.
 .. _`downgrade attack`: http://en.wikipedia.org/wiki/SSL_stripping
 .. _`OSI Model`: https://en.wikipedia.org/wiki/OSI_model
 .. _`Spanish`: https://github.com/gonzaleztroyano/what-happens-when-ES
+
+
+0-blog-post
+After I first heard this topic, I thought I understood exactly what was going on, but when I suddenly encountered reality, it prompted me to do some serious research, gain a thorough understanding, and try sharing with you the brilliance that occurs when you enter a URL (Uniform Resource Locator) into a browser.
+
+I’ll briefly describe the following for this subject:
+
+DNS
+TCP/IP
+Firewall
+HTTPS/SSL
+Load-balancer
+Web server
+Application server
+Database
+
+DNS
+
+The term “Domain Name System” (DNS) is used by comparing human-readable domain names (like google.com) with the distinctive ID of the server hosting a website. It is a mechanism that enables you to access to websites.
+
+Imagine the DNS system as the phone directory for the internet. Instead of listing names and phone numbers for individuals, it lists domain names together with the matching identifiers known as IP addresses. A user’s device looks up the IP address and links them to the server’s physical location when they type a domain name like google.com into it.
+
+TCP/IP
+
+One of the key protocols in the Internet protocol family is the connection-oriented Transmission Control Protocol (TCP). It acts as the link between the client and server that must be made in order to send data. Before a connection is made, the server must be watching for client requests for connections by the use of the User Datagram Protocol (UDP), which offers a connectionless datagram service that values speed above dependability, it is an option for applications that do not require dependable data stream delivery. The rules defining the format of data delivered over the internet or a local network are known as “Internet Protocol,” or IP. IP addresses, which carry location information and make devices reachable for communication, are essentially the identifier that permits information to be exchanged between devices on a network.
+
+FIREWALL
+
+A firewall is a type of network security device that keeps track of incoming and outgoing network traffic and makes decisions about which traffic to allow or deny in accordance with a set of security rules. For more than 25 years, firewalls have served as the first line of defense in network security. They create a barrier by separating trustworthy internal secured and controlled networks from shady external networks like the Internet.
+
+Hardware, software, software-as-a-service (SaaS), public cloud, or private cloud can all be used as firewalls (virtual).
+
+HTTPS/SSL
+
+Hypertext Transfer Protocol Secure (HTTPS) is an extension of the Hypertext Transfer Protocol (HTTP). Users of websites may safely send sensitive information like credit card numbers, banking details, and login credentials across the internet thanks to the HTTPS protocol. Because of this, HTTPS is crucial for safeguarding internet activities including remote work, banking, and shopping. However, whether or not websites share critical data with users, HTTPS is gradually replacing HTTP as the de facto protocol for all websites.
+
+LOAD BALANCER
+
+As a reverse proxy, a load balancer distributes network or application traffic among a number of servers by performing application-specific activities and easing the load on servers involved in monitoring and maintaining network sessions and application sessions, load balancers are used to enhance the overall performance of applications by evenly overloading some computation nodes while leaving other compute nodes inactive, load balancing can improve response time.
+
+Types of load balancers includes
+
+F5 BIG-IP Local Traffic Manager (LTM)
+Nginx.
+HAProxy.
+Azure Traffic Manager.
+Microhost.
+Varnish Software.
+AWS Elastic Load Balancing.
+WEB SERVER
+
+A web server is a machine that houses web server software and the files that make up a website (for example, HTML documents, images, CSS stylesheets, and JavaScript files). A web server establishes a connection to the Internet and facilitates the physical data exchange with other web-connected devices.
+
+A busy Internet site may have hundreds of servers processing requests on racks of fast computers. Web servers like Nginx and Apache are examples.
+
+APPLICATION SERVER
+
+A server that hosts apps is known as an application server. Frameworks for creating application servers are known as application server frameworks. Web application development tools and a server environment are both provided by an application server framework.
+Modern platform middleware comes in the form of an application server. It is system software that sits in between the operating system (OS), external resources (such a database management system [DBMS], communications, and Internet services), and user applications on the third side.
+
+DATABASE
+
+A database is a collection of data that has been organized to make it simple to manage and update. Data records or files containing information, such as sales transactions, customer information, financial data, and product information, are often aggregated and stored in computer databases.
+
+Any type of data can be stored, maintained, and accessed using databases. They gather data on individuals, locations, or objects. It is gathered in one location so that it can be seen and examined. You might think of databases as a well-organized collection of data.
+
+Database management systems can be categorized by computer scientists based on the database models that they support. First, relational databases took over as the industry standard in the 1980s. These represent data as rows and columns in a collection of tables, and the vast majority write and query data using SQL. The other gained acceptance Non-relational databases, also known as NoSQL because they employ many query languages, became popular in the 2000s.
+
+Now lets discuss what happens when you type google.com in your browser with respect to the above explained topics.
+
+A URL (Uniform Resource Locator) is what you see when you type https://www.google.com into your web browser. A URL may be broken down into three components with an optional fourth part.
+
+Hostname: The DNS domain name that an A name record uses to associate with an IP address. Specifically, www.google.com
+Port: The port on which the server is waiting for incoming client requests. Port 8080, the TCP default port for HTTP, will be used when a port is not specified, like in the situation mentioned above.
+
+Protocol: The client-server application-level protocol that is used. https in this instance.
+The path and file name make up the fourth optional component. If this is left undefined, the server’s default html file will be shown.
+
+Every time you enter a URL in the browser’s address bar, the browser converts the URL into a request message using the appropriate protocol and sends it to the server.
+
+The browser will convert the URL into the following using https://www.google.com
+
+GET html index HTTPS/1.1 (which is the default html file for the server)
+
+Website: www.google.com
+
+Please accept image/gif, image/jpeg, and */*
+
+Language Accepted: en-US
+
+Accept-Encoding: deflate and gzip
+
+4.0 User-Agent Mozilla — compatibility is shown here
+
+One of the following actions can be taken by the server after receiving the request message:
+
+The requested file is returned to the client after the server analyzes the request and maps it to a file in its document directory.
+The server interprets the client’s request, converts it into a program stored on the server, runs the program, and then sends the program’s results back to the client.
+
+The load balancer will transmit the request onto the chosen server after it has passed through the firewall and reached the load balancer and satisfied the firewall’s requirements.
