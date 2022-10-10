@@ -543,6 +543,7 @@ common user interface elements are:
 * Refresh and stop buttons for refreshing or stopping the loading of
   current documents
 * Home button that takes you to your home page
+* Text-to-speech button
 
 **Browser High-Level Structure**
 
@@ -552,17 +553,19 @@ The components of the browsers are:
   back/forward button, bookmarking menu, etc. Every part of the browser
   display except the window where you see the requested page.
 * **Browser engine:** The browser engine marshals actions between the UI
-  and the rendering engine.
+  and the rendering engine. It enforces the security policy, handles
+  navigation through hyperlinks and implements the DOM data structure
+  exposed to page scripts.
 * **Rendering engine:** The rendering engine is responsible for displaying
   requested content. For example if the requested content is HTML, the
-  rendering engine parses HTML and CSS, and displays the parsed content on
-  the screen.
+  rendering engine parses HTML and CSS, and displays the parsed content
+  such as images on the screen.
 * **Networking:** The networking handles network calls such as HTTP requests,
   using different implementations for different platforms behind a
   platform-independent interface.
 * **UI backend:** The UI backend is used for drawing basic widgets like combo
   boxes and windows. This backend exposes a generic interface that is not
-  platform-specific.
+  platform-specific. This manages application data and layout.
   Underneath it uses operating system user interface methods.
 * **JavaScript engine:** The JavaScript engine is used to parse and
   execute JavaScript code.
