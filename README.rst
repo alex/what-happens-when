@@ -478,7 +478,10 @@ If the HTML referenced a resource on a different domain than
 ``www.google.com``, the web browser goes back to the steps involved in
 resolving the other domain, and follows all steps up to this point for that
 domain. The ``Host`` header in the request will be set to the appropriate
-server name instead of ``google.com``.
+server name instead of ``google.com``. 
+
+HyperText Transfer Protocol Secure (HTTPS) defines different types of requests (eg; GET, POST and PUT) and responses that are secured by a standard security protocol called Secure Sockets Layer (SSL) which encrypts and decrypts the data from the client to the server infrastructure at the load balancer.
+
 
 HTTP Server Request Handle
 --------------------------
