@@ -414,6 +414,14 @@ control`_. This varies depending on the sender; the most common algorithms are
   each packet acknowledged. If a packet is dropped, the window reduces
   exponentially until another packet is acknowledged.
 
+What is SPOF(Single Point Of Failure) And what happens when it Occurs
+---------------------------------------------------------------------
+
+At times, due to the some failures on the server side once one hit Enter the website will not be rendered in his/her Web browser.
+Now this may occur dueto many factors but in the case of a SPOF its When on the server side it happens that one if only one device goes off or it
+is compromised it may lead to a failure of the web services/web servers, not working which may lead to a web page not displaying in the browser of
+the client machine.
+
 HTTP protocol
 -------------
 
@@ -663,6 +671,18 @@ Page Rendering
   via Direct3D/OpenGL. The GPU command buffer(s) are flushed to the GPU for
   asynchronous rendering and the frame is sent to the window server.
 
+  What do the Webserver, Application Server and SQLserver Do behind the scenes
+  ----------------------------------------------------------------------------
+
+  After the request has gone through all the tranfic and the has entered into the 
+  server side of the give data center.
+  On a give port a the web server will be listening for incoming and render the specific service
+  on available on the port, basically the web server renders static content to the client machine
+  usually it handle HTTP requests.
+  As for the application it gives the business logic depending on the requests doing DELETE,UPDATE,
+  CREATE,etc commands on the database stored in the MySQL server.
+  These do work usually to render dynamic contents to the user's browsers
+
 GPU Rendering
 -------------
 
@@ -677,6 +697,8 @@ GPU Rendering
 
 Window Server
 -------------
+ ISS(Internet Information Service) uses .net framework and it what is sometimes used on window servers;
+ is a web server from Microsoft that responds to diffrent responses on the Windows Server.
 
 Post-rendering and user-induced execution
 -----------------------------------------
