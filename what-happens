@@ -1,0 +1,32 @@
+Every day you open up your browser and navigate to your favorite websites — whether it be social media, news, or e-commerce sites. You go to this page by typing in a url or clicking on a link to the page. Have you ever thought about what happens behind the scenes? How does the news get to you when you press enter after typing in the URL? How did the images on this post show up in your browser? How does your Search feed and the Search data show up in your browser securely?
+
+In this post, we’ll look at what happens when you type a URL into your browser and press enter. End to end, the process involves the browser, your computer’s operating system, your internet service provider, the server where you host the site, and services running on that server. It’s important to understand where things can go wrong, where to look for performance issues, and ensure you’re offering a secure experience for your users.
+
+First, we’ll take a look at the relationship between websites, servers, and IP addresses. Then, we’ll go through the steps your browser takes to:
+
+look up the location of the server hosting the website
+
+make the connection to the server
+
+send a request to get the specific page
+
+handle the response from the server and
+
+how it renders the page so you, the viewer, can interact with the website
+
+Websites, servers, IP addresses, oh my!
+
+Websites are collections of files, often HTML, CSS, Javascript, and images, that tell your browser how to display the site, images, and data. They need to be accessible to anyone from anywhere at anytime, so hosting them on your computer at home isn’t be scalable or reliable. A powerful external computer connected to the Internet, called a server, stores these files.
+
+When you point your browser at a URL like
+
+https://www.google.com, your browser has to figure out which server on the Internet is hosting the site. It does this by looking up the domain, google.com, to find the address.
+
+Each device on the Internet — servers, cell phones, your smart refrigerator — all have a unique address called an IP address. An IP address contains four numbered parts:
+
+8.8.8.8
+
+But numbers like this are hard to remember! That’s where domain names come in. google.com is much easier to remember than 8.8.8.8, right? Imagine having to remember all the phone numbers of your contacts without having the Contacts app on your phone. Your Contacts app lets you look up phone numbers by name.
+
+We do the same on the Internet. The domain name system, or DNS, is like the Contacts app on our phone. DNS helps our browser (and us) find servers on the Internet. We can do a DNS lookup to find the IP address of the server based on the domain name, google.com.
+
