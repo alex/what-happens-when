@@ -221,8 +221,11 @@ DNS lookup
   stack. This is typically the local router or the ISP's caching DNS server.
 * If the DNS server is on the same subnet the network library follows the
   ``ARP process`` below for the DNS server.
-* If the DNS server is on a different subnet, the network library follows
-  the ``ARP process`` below for the default gateway IP.
+* If the DNS server is on a different subnet, the network library follows the ``ARP process`` below for the default gateway IP.
+* DNS clients and DNS server both use caching to speed up the domain name lookup process and to ease traffic on the root servers.
+* A cache is a temporary store
+* If a client queries domain server A looking to resolve www.google.com, and in turn domain server A queries domain server B etc then the result will be stored in a cache on
+
 
 
 ARP process
