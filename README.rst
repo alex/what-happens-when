@@ -223,6 +223,26 @@ DNS lookup
   ``ARP process`` below for the DNS server.
 * If the DNS server is on a different subnet, the network library follows
   the ``ARP process`` below for the default gateway IP.
+* The DNS (Domain Name server) is typical of a phonebook on our phones. It is a record that saves the IP address of a server 
+ (google server) to which you want to communicate. Since humans will find it difficult to memorize 32-bit digits of IP4 addresses,
+  it is better saved in our memory as alphabets or alphanumeric strings (for instance, yahoo.com, google.com). 
+  The DNS resolves the domain name (www.google.com to its equivalent IP address 216.58.223.196). 
+  The client/browser checks its cache to see if google.com has ever been queried for its IP address and 
+  if it doesn't find the IP address, it asks the OS (Operating System) for the IP address of google.com in its system hosts file.
+  If it still doesn't find it, then further steps are taken.
+
+  To dive deeper into how DNS works, we will have to mention some terminologies here:
+  Resolver: The ISP DNS record resolver. At this point, it might have never queried google.com before, so it goes to the root server for help.
+  Root server: Top of the DNS hierarchy. There are 13 sets of these root servers strategically placed around the world. 
+  Twelve organizations operate it. Each set of the root server has its IP address.
+
+  The first time it sees a query, it won't know the IP address, but it knows where to redirect the Resolver to fetch the requested IP address, which is the TLD (Top Level Domain server).
+  TLD: This server stores addresses for top-level domain names such as .com, .net, .org, .gov, etc. it manages a top-level domain name; 
+  fortunately, google.com is part of it. But since it is the first time the Resolver is querying the TLD for that IP address, 
+  it is likely it doesn't have it lying around. So it redirects the Resolver to the last level, the Authoritative Name server.
+  Authoritative Name Server: The server has all domain names mappings to IP addresses. The IP address of google will be lying around 
+  somewhere here. The Resolver sends this back to the browser. Behind the scenes, we have something like this on our browser, 
+  https://216.58.223.196:443, which is the same as https://www.google.com:443/.
 
 
 ARP process
@@ -378,6 +398,17 @@ TLS handshake
   public certificate signed by a CA (Certificate Authority). The certificate
   contains a public key that will be used by the client to encrypt the rest of
   the handshake until a symmetric key can be agreed upon.
+
+* Since we are using HTTPS, a secure connection will be created between client and server so that data is not sent as plain text but 
+  rather encrypted and decrypted when necessary.
+  HTTPS: It stands for (Hyper Text Transfer Protocol Secure) It uses either SSL (Secure Sockets Layer) or TLS (Transport Layer Security)
+  to start a secure connection. With SSL the public key encryption is used to secure data. In our case, our computer will ask google.com 
+  to identify itself, google.com will respond by sending it's SSL certificate to our computer, if this certificate is trusted then a 3-way handshake is done between our computer and Google’s server. It looks like this:
+  Client ------SYN-----> Server
+  Client <---ACK/SYN---- Server
+  Client ------ACK-----> Server
+  From henceforth, a secure tunnel is created and encrypted data can be sent to Google’s server. I would like to point out that TLS (Transport Layer Security) is also a successor to SSL and used digital certificate to create secure connection to a webserver.
+
 
 * The client verifies the server digital certificate against its list of
   trusted CAs. If trust can be established based on the CA, the client
