@@ -37,12 +37,12 @@ and prioritize results based on search history, bookmarks, cookies, and
 popular searches from the internet as a whole. As you are typing
 "google.com" many blocks of code run and the suggestions will be refined
 with each keypress. It may even suggest "google.com" before you finish typing
-it.
+it among other suggestions.
 
 The "enter" key bottoms out
 ---------------------------
 
-To pick a zero point, let's choose the Enter key on the keyboard hitting the
+To pick a zero point, let's choose the 'Enter' key on the keyboard hitting the
 bottom of its range. At this point, an electrical circuit specific to the enter
 key is closed (either directly or capacitively). This allows a small amount of
 current to flow into the logic circuitry of the keyboard, which scans the state
