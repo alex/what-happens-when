@@ -570,6 +570,11 @@ The components of the browsers are:
   need to save all sorts of data locally, such as cookies. Browsers also
   support storage mechanisms such as localStorage, IndexedDB, WebSQL and
   FileSystem.
+DNS Request
+A DNS request (also known as a DNS query) is a demand for information sent from a user's computer (DNS client) to a DNS server. In most cases a DNS request is sent, to ask for the IP address associated with a domain name
+DNS translates domain names (i.e google.com) to IP addresses (i.e 192.168.1.1) so that the browser can load internet resources. Wait what?
+Each device connected on the internet has a unique IP address which other machines use to find the device. DNS eliminates the need for humans to memorize IP addresses by instead translating them into human-friendly language like google.com.
+So in our case when you type https://www.google.com in your browser and press Enter the DNS translates the host-name into a computer-friendly IP address such as 192.168.1.1 necessary to locate google.com webpage from the webserver the resource is hosted on.
 
 HTML parsing
 ------------
