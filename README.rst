@@ -99,8 +99,10 @@ connection, but historically has been over PS/2 or ADB connections.
 Interrupt fires [NOT for USB keyboards]
 ---------------------------------------
 
-The keyboard sends signals on its interrupt request line (IRQ), which is mapped
-to an ``interrupt vector`` (integer) by the interrupt controller. The CPU uses
+The keyboard sends signals on its interrupt request line (IRQ). This is sends an interrupt
+through the interrupt pin on the cpu processor. This is asserted through the INTR pin of the processor which
+sends out an interrupt acknowledge back to the interrupt controller of the CPU to clear the Interrupt flag. 
+This interrupt is then mapped to an ``interrupt vector`` (integer) by the interrupt controller. The CPU uses
 the ``Interrupt Descriptor Table`` (IDT) to map the interrupt vectors to
 functions (``interrupt handlers``) which are supplied by the kernel. When an
 interrupt arrives, the CPU indexes the IDT with the interrupt vector and runs
