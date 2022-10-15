@@ -24,6 +24,16 @@ Table of Contents
 .. contents::
    :backlinks: none
    :local:
+What happens when you type google.com in your browser and press enter
+---------------------------------------------------------------------
+Several parts act in common to bring the response page for the request of
+google.com when it is asked in browser. These parts are DNS- which converts
+google.com into machine understandable ip address, TCP/IP- the network over which
+the communication takes place, Firewall- which filters the request if it is permitted
+to receive request from that client, HTTPS/SSL- which secures the communication between
+the client and the server by encrypting their informations, web server and app server- which
+serves the request, process it and provide the respone to the request, Database- where the all
+the datas are stored to be manipulated by the application server.
 
 The "g" key is pressed
 ----------------------
