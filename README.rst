@@ -1,5 +1,7 @@
 What happens when...
 ====================
+This update were done on 10/31/22
+This is a new change
 
 This repository is an attempt to answer the age-old interview question "What
 happens when you type google.com into your browser's address box and press
@@ -674,6 +676,7 @@ GPU Rendering
   of ``GPU`` massive parallelism for float point calculations required for
   the rendering process.
 
+This is an update
 
 Window Server
 -------------
