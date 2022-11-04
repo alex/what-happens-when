@@ -689,6 +689,9 @@ the Google homepage. Scripts can cause additional network requests to be
 performed, as well as modify the page or its layout, causing another round of
 page rendering and painting.
 
+Firewall
+--------
+Firewall essentially serves as a barrier between a private internal network and public internet. It monitors and filters incoming and outgoing network traffic based on established policies. Some firewalls can do packet filtering where small amount of data is analyzed and distributed according to filtering standards. Other firewalls serve as proxy services and does the protection at the application layer.
 .. _`Creative Commons Zero`: https://creativecommons.org/publicdomain/zero/1.0/
 .. _`"CSS lexical and syntax grammar"`: http://www.w3.org/TR/CSS2/grammar.html
 .. _`Punycode`: https://en.wikipedia.org/wiki/Punycode
