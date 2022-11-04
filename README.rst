@@ -516,7 +516,9 @@ Behind the scenes of the Browser
 Once the server supplies the resources (HTML, CSS, JS, images, etc.)
 to the browser it undergoes the below process:
 
-* Parsing - HTML, CSS, JS
+* Parsing - HTML, CSS, JS  ( Parsing means analyzing and converting a program into an internal format that a runtime environment can actually run.
+In other words, parsing means taking the code we write as text (HTML, CSS) and transform it into something that the browser can work with. The parsing will be done by the browser engine (not to be confused with the the Javascript engine of the browser). )
+
 * Rendering - Construct DOM Tree → Render Tree → Layout of Render Tree →
   Painting the render tree
 
