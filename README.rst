@@ -39,6 +39,11 @@ popular searches from the internet as a whole. As you are typing
 with each keypress. It may even suggest "google.com" before you finish typing
 it.
 
+DNS Lookup
+----------
+A DNS lookup, in a general sense, is the process by which a DNS record is returned from a DNS server. This is like looking up a phone number in a phone book - that is why it is referred to as a "lookup". Interconnected computers, servers and smart phones need to know how to translate the email addresses and domain names people use into meaningful numerical addresses. A DNS lookup performs this function.
+The basic idea of DNS is that humans can't easily remember long strings of digits like machines can, but can much more easily remember words. So, when you type in a domain name like www.techopedia.com, the request is forwarded to a DNS server (whether locally or at an ISP), which returns the corresponding IP address. This address is then used by all the computers and routers to channel the request and responses of a user's session. The result is the user sees web pages as expected or has email show up in an in-box. The two types of DNS lookups are forward DNS lookups and reverse DNS lookups.
+
 The "enter" key bottoms out
 ---------------------------
 
