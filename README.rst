@@ -712,4 +712,4 @@ page rendering and painting.
 
 HTTP to HTTPS Redirection
 -----------------------
-Often at time you notice that when you make a request to a site using the HTTP protocal, if the site is have SSL installed, your request are redirected to the HTTPS protected site. This is possible by a simple configuration do on your server, be it a web server, application server or a load balancer, The configuration is responsible in redirecting the request from the port 80/8080 to a more secured port 443 which is a port that allows for secured transmisssion of data.
+Often at time you notice that when you make a request to a site using the HTTP protocal, if the site have SSL installed, your request are redirected to the HTTPS protected site. This is possible by a simple configuration do on your server, be it a web server, application server or a load balancer, The configuration is responsible in redirecting the request from the port 80/8080 to a more secured port 443 which is a port that allows for secured transmisssion of data after which a secured and encypted data is sent back to the user.
