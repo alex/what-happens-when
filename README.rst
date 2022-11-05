@@ -25,17 +25,26 @@ Table of Contents
    :backlinks: none
    :local:
 
+The following sections explain the physical keyboard actions and the OS interrupts.
+
 The "g" key is pressed
 ----------------------
-The following sections explain the physical keyboard actions
-and the OS interrupts. When you press the key "g" the browser receives the
-event and the auto-complete functions kick in.
-Depending on your browser's algorithm and if you are in
-private/incognito mode or not various suggestions will be presented
-to you in the dropdown below the URL bar. Most of these algorithms sort
+When you press the key "g" in the browser, a switch closes and current 
+flows into a small chip in the keyboard. A scan code associated to the key 
+is sent to the CPU as a binary number. The OS then converts the binary number 
+into ASCII or Unicode character depending on the system's keyboard configuration. 
+The operating system then creates an event depending on the resulting character
+and sends the event to the application that was active
+when the key was pressed, which is the browser. The browser receives the event 
+and displays the character on the screen where the auto-complete functions kick in.
+Depending on your browser's algorithm which depend on complex data structures
+like the trie or Burkhand-Keller trees and machine learning models 
+such as deep learning predictions on queries are presented
+to you in the dropdown below the URL bar if you are in 
+private/incognito mode or not. Most of these algorithms sort
 and prioritize results based on search history, bookmarks, cookies, and
 popular searches from the internet as a whole. As you are typing
-"google.com" many blocks of code run and the suggestions will be refined
+"google.com" many blocks of code run and the predictions will be refined
 with each keypress. It may even suggest "google.com" before you finish typing
 it.
 
