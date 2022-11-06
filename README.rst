@@ -629,6 +629,16 @@ CSS interpretation
 * A CSS parser can be top-down or bottom-up when a specific parser generator
   is used.
 
+What happens if a browser encounters CSS it doesn't understand?
+
+* The browser support section of the what is browser support lesson mentioned that browsers do not necessarily implement new CSS features at the same time. In addition, many people are not using the latest version of a browser. Given that CSS is being developed all the time, and is therefore ahead of what browsers can recognize, you might wonder what happens if a browser encounters a CSS selector or declaration it doesn't recognize.
+
+* The answer is that it does nothing, and just moves on to the next bit of CSS!
+
+* If a browser is parsing your rules, and encounters a property or value that it doesn't understand, it ignores it and moves on to the next declaration. It will do this if you have made an error and misspelled a property or value, or if the property or value is just too new and the browser doesn't yet support it.
+
+* Similarly, if a browser encounters a selector that it doesn't understand, it will just ignore the whole rule and move on to the next one.
+
 Page Rendering
 --------------
 
