@@ -208,6 +208,8 @@ Check HSTS list
 
 DNS lookup
 ----------
+DNS Lookup is a browser-based network tool used to find the IP address of a certain domain name. 
+It displays DNS records showing publicly for the domain name being queried.
 
 * Browser checks if the domain is in its cache. (to see the DNS Cache in
   Chrome, go to `chrome://net-internals/#dns <chrome://net-internals/#dns>`_).
@@ -223,7 +225,8 @@ DNS lookup
   ``ARP process`` below for the DNS server.
 * If the DNS server is on a different subnet, the network library follows
   the ``ARP process`` below for the default gateway IP.
-
+  
+![Full Process Image](https://imgur.com/WqvxyM7)
 
 ARP process
 -----------
@@ -688,6 +691,8 @@ Plugins such as Flash or Java may execute as well, although not at this time on
 the Google homepage. Scripts can cause additional network requests to be
 performed, as well as modify the page or its layout, causing another round of
 page rendering and painting.
+
+![Full Process Image](https://imgur.com/dblrqEl)
 
 .. _`Creative Commons Zero`: https://creativecommons.org/publicdomain/zero/1.0/
 .. _`"CSS lexical and syntax grammar"`: http://www.w3.org/TR/CSS2/grammar.html
