@@ -677,6 +677,15 @@ GPU Rendering
 
 Window Server
 -------------
+Web server
+A web server is a software program that serves web pages to web users 
+(browsers). The browser displays the HTML content in phases. 
+First, it will render the bare bone HTML skeleton. 
+Then it will check the HTML tags and send out GET requests for additional
+ elements on the web page, such as images, CSS stylesheets, 
+ JavaScript files, etc. These static files are cached by the browser, 
+ so it doesn’t have to fetch them again the next time you visit the page.
+  In the end, you’ll see google.com appearing on your browser, using the HTTP or HTTPS protocols. Examples include Apache HTTP Server, Microsoft Internet Information Services (IIS), Nginx.
 
 Post-rendering and user-induced execution
 -----------------------------------------
