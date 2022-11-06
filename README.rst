@@ -709,3 +709,12 @@ page rendering and painting.
 .. _`downgrade attack`: http://en.wikipedia.org/wiki/SSL_stripping
 .. _`OSI Model`: https://en.wikipedia.org/wiki/OSI_model
 .. _`Spanish`: https://github.com/gonzaleztroyano/what-happens-when-ES
+
+What happens when you enter a URL into a web browser
+----------------------------------------------------
+* The browser looks up the IP address for the domain name via DNS
+* The browser sends a HTTP request to the server
+* The server sends back a HTTP response
+* The browser begins rendering the HTML
+* The browser sends requests for additional objects embedded in HTML (images, CSS,  JavaScript) and repeats steps 3-5.
+* Once the page is loaded, the browser sends further async requests as needed.
