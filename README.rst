@@ -223,6 +223,8 @@ DNS lookup
   ``ARP process`` below for the DNS server.
 * If the DNS server is on a different subnet, the network library follows
   the ``ARP process`` below for the default gateway IP.
+* Note:
+  DNS is a UDP service listening on port 53 under encryption connection. DNS request are visible to your ISP. Now all DOH (DNS over Https) are disabled by default due to some technology problem
 
 
 ARP process
