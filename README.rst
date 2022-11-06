@@ -525,7 +525,7 @@ Browser
 
 The browser's functionality is to present the web resource you choose, by
 requesting it from the server and displaying it in the browser window.
-The resource is usually an HTML document, but may also be a PDF,
+The resource is usually an HTML document (which may be dynamically generated or statically retrieved from the web server), but may also be a PDF,
 image, or some other type of content. The location of the resource is
 specified by the user using a URI (Uniform Resource Identifier).
 
