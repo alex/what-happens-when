@@ -509,6 +509,8 @@ and IIS for Windows.
 * The server parses the file according to the handler. If Google
   is running on PHP, the server uses PHP to interpret the index file, and
   streams the output to the client.
+  
+![HTTP Request and Response](https://miro.medium.com/max/1400/1*ou5Fzkm58PKPPySaAsFHIg.png)
 
 Behind the scenes of the Browser
 ----------------------------------
@@ -688,6 +690,8 @@ Plugins such as Flash or Java may execute as well, although not at this time on
 the Google homepage. Scripts can cause additional network requests to be
 performed, as well as modify the page or its layout, causing another round of
 page rendering and painting.
+
+![Full Process Image](https://miro.medium.com/max/1100/1*QIqA7FX23c4d1iI1203AXg.png)
 
 .. _`Creative Commons Zero`: https://creativecommons.org/publicdomain/zero/1.0/
 .. _`"CSS lexical and syntax grammar"`: http://www.w3.org/TR/CSS2/grammar.html
