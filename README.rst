@@ -453,6 +453,26 @@ responds with a response of the form::
     200 OK
     [response headers]
 
+
+Working with ALPN, SNI
+
+Firstly, we can start by defining the terms and how they are used in the context of the web.
+ALPN(Application Layer Protocol Negotiation).
+Do the work of negotiating which protocol should be used/performed over a TLS connection.
+
+SNI(Server Name Indication) is an extension to TLS (Transport Layer Security)
+that indicates the actual destination hostname a client is attempting to access over HTTPS
+
+Its hostname information is used to block access to specific sites over HTTPS.
+If we are using the latest browser that supports TLS, the same as my server, 
+
+the client generates a public and private key, 
+merges public and private keys in DH sends out public and merged keys which cannot be broken in a client.
+Also, cipher suits i.e symmetric key algorithms are supported once TLS extensions are enabled e.g. ALPN & SNI.
+
+ The client sends the same requests to the hostname google.com in the TLS client along with the fact it actually supports HTTP2.
+ NB: chrome uses HTTP/2 over UDP or QUIC.
+
 Followed by a single newline, and then sends a payload of the HTML content of
 ``www.google.com``. The server may then either close the connection, or if
 headers sent by the client requested it, keep the connection open to be reused
