@@ -522,6 +522,7 @@ to the browser it undergoes the below process:
 
 Browser
 -------
+The purpose of a web browser is to fetch content from the World Wide Web or from local storage and display it on a user's device. This process begins when the user inputs a Uniform Resource Locator (URL), such as https://en.wikipedia.org/, into the browser. Virtually all URLs are retrieved using the Hypertext Transfer Protocol (HTTP), a set of rules for the transfer of data. If the URL uses the secure mode of HTTP (HTTPS), the connection between the browser and the web server is encrypted for the purposes of communications security and information privacy.
 
 The browser's functionality is to present the web resource you choose, by
 requesting it from the server and displaying it in the browser window.
