@@ -708,4 +708,5 @@ page rendering and painting.
 .. _`日本語`: https://github.com/tettttsuo/what-happens-when-JA
 .. _`downgrade attack`: http://en.wikipedia.org/wiki/SSL_stripping
 .. _`OSI Model`: https://en.wikipedia.org/wiki/OSI_model
-.. _`Spanish`: https://github.com/gonzaleztroyano/what-happens-when-ES
+.. _`Spanish`: https://github.com/gonzaleztroyano/what-happens-when-ES..
+.. _`Loadbalancing`: https://avinetworks.com/what-is-load-balancing/#:~:text=Load%20Balancing%20Definition%3A%20Load%20balancing,applications%20and%20websites%20for%20users.S
