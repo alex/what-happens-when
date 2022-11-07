@@ -208,7 +208,8 @@ Check HSTS list
 
 DNS lookup
 ----------
-
+* The browser also checks the system firewall if outgoing traffic is allowed for that site.
+  This process also happens at several points along the line.
 * Browser checks if the domain is in its cache. (to see the DNS Cache in
   Chrome, go to `chrome://net-internals/#dns <chrome://net-internals/#dns>`_).
 * If not found, the browser calls ``gethostbyname`` library function (varies by
