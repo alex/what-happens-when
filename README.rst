@@ -397,6 +397,8 @@ TLS handshake
 * From now on the TLS session transmits the application (HTTP) data encrypted
   with the agreed symmetric key.
 
+* A database is a colletion of information that is stored and organized so that 
+  it can easily be accessed, updated, and managed.
 If a packet is dropped
 ----------------------
 
