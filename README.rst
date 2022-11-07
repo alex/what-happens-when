@@ -259,13 +259,13 @@ Depending on what type of hardware is between the computer and the router:
 Directly connected:
 
 * If the computer is directly connected to the router the router response
-  with an ``ARP Reply`` (see below)
+  with an ``ARP Reply`` (check more info below)
 
 Hub:
 
 * If the computer is connected to a hub, the hub will broadcast the ARP
   request out of all other ports. If the router is connected on the same "wire",
-  it will respond with an ``ARP Reply`` (see below).
+  it will respond with an ``ARP Reply`` (check more info below).
 
 Switch:
 
@@ -692,6 +692,7 @@ page rendering and painting.
 .. _`Creative Commons Zero`: https://creativecommons.org/publicdomain/zero/1.0/
 .. _`"CSS lexical and syntax grammar"`: http://www.w3.org/TR/CSS2/grammar.html
 .. _`Punycode`: https://en.wikipedia.org/wiki/Punycode
+.. _`Punycode`:https://www.ionos.com/digitalguide/domains/domain-administration/punycode/
 .. _`Ethernet`: http://en.wikipedia.org/wiki/IEEE_802.3
 .. _`WiFi`: https://en.wikipedia.org/wiki/IEEE_802.11
 .. _`Cellular data network`: https://en.wikipedia.org/wiki/Cellular_data_communication_protocol
