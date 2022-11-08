@@ -1,251 +1,229 @@
 What happens when...
 ====================
 
-This repository is an attempt to answer the age-old interview question "What
-happens when you type google.com into your browser's address box and press
+This vault is an endeavor to answer the well-established inquiry question "What
+happens when you type google.com into your program's location box and press
 enter?"
 
-Except instead of the usual story, we're going to try to answer this question
-in as much detail as possible. No skipping out on anything.
 
-This is a collaborative process, so dig in and try to help out! There are tons
-of details missing, just waiting for you to add them! So send us a pull
-request, please!
-
-This is all licensed under the terms of the `Creative Commons Zero`_ license.
-
-Read this in `简体中文`_ (simplified Chinese), `日本語`_ (Japanese), `한국어`_
-(Korean) and `Spanish`_. NOTE: these have not been reviewed by the alex/what-happens-when
-maintainers.
-
-Table of Contents
-====================
-
-.. contents::
-   :backlinks: none
-   :local:
-
-The "g" key is pressed
+The "g" key is hit
 ----------------------
-The following sections explain the physical keyboard actions
-and the OS interrupts. When you press the key "g" the browser receives the
-event and the auto-complete functions kick in.
-Depending on your browser's algorithm and if you are in
-private/incognito mode or not various suggestions will be presented
-to you in the dropdown below the URL bar. Most of these algorithms sort
-and prioritize results based on search history, bookmarks, cookies, and
-popular searches from the internet as a whole. As you are typing
-"google.com" many blocks of code run and the suggestions will be refined
-with each keypress. It may even suggest "google.com" before you finish typing
+The accompanying areas make sense of the actual console activities
+also, the operating system interferes. At the point when you press the key "g" the program gets the
+occasion and the auto-complete capabilities kick in.
+Contingent upon your program's calculation and on the off chance that you are in
+private/undercover mode or not different ideas will be introduced
+to you in the dropdown beneath the URL bar. The majority of these calculations sort
+also, focus on results in light of search history, bookmarks, treats, and
+well-known looks from the web all in all. As you are composing
+"google.com" many blocks of code run and the ideas will be refined
+with each key press. It might try and propose "google.com" before you complete the process of composing
 it.
 
 The "enter" key bottoms out
 ---------------------------
 
-To pick a zero point, let's choose the Enter key on the keyboard hitting the
-bottom of its range. At this point, an electrical circuit specific to the enter
-key is closed (either directly or capacitively). This allows a small amount of
-current to flow into the logic circuitry of the keyboard, which scans the state
-of each key switch, debounces the electrical noise of the rapid intermittent
-closure of the switch, and converts it to a keycode integer, in this case 13.
-The keyboard controller then encodes the keycode for transport to the computer.
-This is now almost universally over a Universal Serial Bus (USB) or Bluetooth
-connection, but historically has been over PS/2 or ADB connections.
+To pick a zero point, we should pick the Enter key on the console stirring things up around town
+lower part of its reach. Right now, an electrical circuit well defined for the enter
+key is shut (either straightforwardly or capacitively). This permits a limited quantity of
+current to stream into the rationale hardware of the console, which filters the state
+of each key switch, debounces the electrical clamor of the fast irregular
+conclusion of the switch, and converts it to a keycode number, for this situation 13.
+The console regulator then, at that point, and encodes the keycode for transport to the PC.
+This is currently generally over an All inclusive Sequential Transport (USB) or Bluetooth
+association, yet generally has been over PS/2 or ADB associations.
 
-*In the case of the USB keyboard:*
+*On account of the USB keyboard:*
 
-- The USB circuitry of the keyboard is powered by the 5V supply provided over
-  pin 1 from the computer's USB host controller.
+- The USB hardware of the console is fueled by the 5V inventory gave over
+  pin 1 from the PC's USB have regulator.
 
-- The keycode generated is stored by internal keyboard circuitry memory in a
+- The keycode created is put away by inward console hardware memory in a
   register called "endpoint".
 
-- The host USB controller polls that "endpoint" every ~10ms (minimum value
-  declared by the keyboard), so it gets the keycode value stored on it.
+- The host USB regulator surveys that "endpoint" each ~10ms (least worth
+  pronounced by the console), so it gets the keycode esteem put away on it.
 
-- This value goes to the USB SIE (Serial Interface Engine) to be converted in
-  one or more USB packets that follow the low-level USB protocol.
+- This worth goes to the USB SIE (Sequential Connection point Motor) to be changed over in
+  at least one USB bundles that follow the low-level USB convention.
 
-- Those packets are sent by a differential electrical signal over D+ and D-
-  pins (the middle 2) at a maximum speed of 1.5 Mb/s, as an HID
-  (Human Interface Device) device is always declared to be a "low-speed device"
-  (USB 2.0 compliance).
+- Those bundles are conveyed by a differential electrical message over D+ and D-
+  pins (the center 2) at a most extreme speed of 1.5 Mb/s, as a Stowed away
+  (Human Connection point Gadget) gadget is constantly pronounced to be a "low-speed gadget"
+  (USB 2.0 consistence).
 
-- This serial signal is then decoded at the computer's host USB controller, and
-  interpreted by the computer's Human Interface Device (HID) universal keyboard
-  device driver.  The value of the key is then passed into the operating
-  system's hardware abstraction layer.
+- This sequential sign is then decoded at the PC's host USB regulator, and
+  deciphered by the PC's Human Point of interaction Gadget (Stowed away) all inclusive console
+  gadget driver. The worth of the key is then passed into the working
+  framework's equipment reflection layer.
 
-*In the case of Virtual Keyboard (as in touch screen devices):*
+*On account of Virtual Console (as in touch screen devices):*
 
-- When the user puts their finger on a modern capacitive touch screen, a
-  tiny amount of current gets transferred to the finger. This completes the
+- At the point when the client places a cutting edge capacitive touch screen, a
+  minuscule measure of current gets moved to the finger. This finishes the
   circuit through the electrostatic field of the conductive layer and
-  creates a voltage drop at that point on the screen. The
-  ``screen controller`` then raises an interrupt reporting the coordinate of
+  makes a voltage drop by then on the screen. The
+  ''screen regulator'' then, at that point, raises a hinder revealing the direction of
   the keypress.
 
-- Then the mobile OS notifies the currently focused application of a press event
-  in one of its GUI elements (which now is the virtual keyboard application
+- Then the versatile operating system informs the at present centered use of a press occasion
+  in one of its GUI components (which presently is the virtual console application
   buttons).
 
-- The virtual keyboard can now raise a software interrupt for sending a
-  'key pressed' message back to the OS.
+- The virtual console can now raise a product hinder for sending a
+  'key squeezed' message back to the operating system.
 
-- This interrupt notifies the currently focused application of a 'key pressed'
-  event.
+- This hinder tells the right now centered utilization of a 'key squeezed'
+  occasion.
 
-
-Interrupt fires [NOT for USB keyboards]
+Hinder fires [NOT for USB keyboards]
 ---------------------------------------
 
-The keyboard sends signals on its interrupt request line (IRQ), which is mapped
-to an ``interrupt vector`` (integer) by the interrupt controller. The CPU uses
-the ``Interrupt Descriptor Table`` (IDT) to map the interrupt vectors to
-functions (``interrupt handlers``) which are supplied by the kernel. When an
-interrupt arrives, the CPU indexes the IDT with the interrupt vector and runs
-the appropriate handler. Thus, the kernel is entered.
+The console conveys messages on its hinder demand line (IRQ), which is planned
+to an ''hinder vector'' (number) by the hinder regulator. The central processor utilizes
+the ''Interfere with Descriptor Table'' (IDT) to plan the intrude on vectors to
+capabilities (''hinder overseers'') which are provided by the piece. When an
+hinder shows up, the computer processor lists the IDT with the intrude on vector and runs
+the fitting overseer. Hence, the part is placed.
 
-(On Windows) A ``WM_KEYDOWN`` message is sent to the app
+(On Windows) A ''WM_KEYDOWN'' message is shipped off the application
 --------------------------------------------------------
 
-The HID transport passes the key down event to the ``KBDHID.sys`` driver which
-converts the HID usage into a scancode. In this case, the scan code is
-``VK_RETURN`` (``0x0D``). The ``KBDHID.sys`` driver interfaces with the
-``KBDCLASS.sys`` (keyboard class driver). This driver is responsible for
-handling all keyboard and keypad input in a secure manner. It then calls into
-``Win32K.sys`` (after potentially passing the message through 3rd party
-keyboard filters that are installed). This all happens in kernel mode.
+The Concealed vehicle passes the critical down occasion to the ''KBDHID.sys'' driver which
+changes over the Concealed utilization into a scancode. For this situation, the output code is
+''VK_RETURN'' (''0x0D''). The ''KBDHID.sys'' driver communicates with the
+''KBDCLASS.sys'' (console class driver). This driver is liable for
+dealing with all console and keypad input in a solid way. It then, at that point, calls into
+''Win32K.sys'' (after possibly going the message through outsider
+console channels that are introduced). This all occurs in part mode.
 
-``Win32K.sys`` figures out what window is the active window through the
-``GetForegroundWindow()`` API. This API provides the window handle of the
-browser's address box. The main Windows "message pump" then calls
-``SendMessage(hWnd, WM_KEYDOWN, VK_RETURN, lParam)``. ``lParam`` is a bitmask
-that indicates further information about the keypress: repeat count (0 in this
-case), the actual scan code (can be OEM dependent, but generally wouldn't be
-for ``VK_RETURN``), whether extended keys (e.g. alt, shift, ctrl) were also
-pressed (they weren't), and some other state.
+''Win32K.sys'' sorts out what window is the dynamic window through the
+''GetForegroundWindow()'' Programming interface. This Programming interface gives the window handle of the
+program's location box. The fundamental Windows "message siphon" then calls
+''SendMessage(hWnd, WM_KEYDOWN, VK_RETURN, lParam)''. ''lParam'' is a bitmask
+that shows additional data about the keypress: rehash count (0 in this
+case), the genuine sweep code (can be OEM subordinate, however by and large wouldn't be
+for ''VK_RETURN''), whether broadened keys (for example alt, shift, ctrl) were too
+squeezed (they weren't), and another state.
 
-The Windows ``SendMessage`` API is a straightforward function that
-adds the message to a queue for the particular window handle (``hWnd``).
-Later, the main message processing function (called a ``WindowProc``) assigned
-to the ``hWnd`` is called in order to process each message in the queue.
+The Windows ''SendMessage'' Programming interface is a direct capability that
+adds the message to a line for the specific window handle (''hWnd'').
+Afterward, the principal message handling capability (called a ''WindowProc'') doled out
+to the ''hWnd'' is brought to deal with each message in the line.
 
-The window (``hWnd``) that is active is actually an edit control and the
-``WindowProc`` in this case has a message handler for ``WM_KEYDOWN`` messages.
-This code looks within the 3rd parameter that was passed to ``SendMessage``
-(``wParam``) and, because it is ``VK_RETURN`` knows the user has hit the ENTER
+The window (''hWnd'') that is dynamic is really an alter control and the
+''WindowProc'' for this situation has a message controller for ''WM_KEYDOWN'' messages.
+This code searches inside the third boundary that was passed to ''SendMessage''
+(''wParam'') and, in light of the fact that it is ''VK_RETURN'' realizes the client has raised a ruckus around town
 key.
 
-(On OS X) A ``KeyDown`` NSEvent is sent to the app
+(On operating system X) A ''KeyDown'' NSEvent is shipped off the application
 --------------------------------------------------
 
-The interrupt signal triggers an interrupt event in the I/O Kit kext keyboard
-driver. The driver translates the signal into a key code which is passed to the
-OS X ``WindowServer`` process. Resultantly, the ``WindowServer`` dispatches an
-event to any appropriate (e.g. active or listening) applications through their
-Mach port where it is placed into an event queue. Events can then be read from
-this queue by threads with sufficient privileges calling the
-``mach_ipc_dispatch`` function. This most commonly occurs through, and is
-handled by, an ``NSApplication`` main event loop, via an ``NSEvent`` of
-``NSEventType`` ``KeyDown``.
+The hinder signal triggers a hinder occasion in the I/O Pack kext console
+driver. The driver makes an interpretation of the sign into a key code which is passed to the
+Operating system X ''WindowServer'' process. Resultantly, the ''WindowServer'' dispatches an
+occasion to any proper (for example dynamic or tuning in) applications through their
+Mach port where it is set into an occasion line. Occasions can then be perused from
+this line by strings with adequate honors calling the
+''mach_ipc_dispatch'' capability. This most normally happens through, and is
+dealt with by, an ''NSApplication'' headliner circle, through an ''NSEvent'' of
+''NSEventType'' ''KeyDown''.
 
-(On GNU/Linux) the Xorg server listens for keycodes
+(On GNU/Linux) the Xorg server tunes in for keycodes
 ---------------------------------------------------
 
-When a graphical ``X server`` is used, ``X`` will use the generic event
-driver ``evdev`` to acquire the keypress. A re-mapping of keycodes to scancodes
-is made with ``X server`` specific keymaps and rules.
-When the scancode mapping of the key pressed is complete, the ``X server``
-sends the character to the ``window manager`` (DWM, metacity, i3, etc), so the
-``window manager`` in turn sends the character to the focused window.
-The graphical API of the window  that receives the character prints the
-appropriate font symbol in the appropriate focused field.
+When a graphical ''X server'' is utilized, ''X'' will utilize the nonexclusive occasion
+driver ''evdev'' to get the keypress. A re-planning of keycodes to scancodes
+is made with ''X server'' explicit keymaps and rules.
+When the scancode planning of the key squeezed is finished, the ''X server''
+sends the person to the ''window director'' (DWM, metacity, i3, and so on), so the
+''window director'' thus sends the person to the engaged window.
+The graphical Programming interface of the window that gets the person prints the
+suitable textual style image in the fitting centered field.
 
 Parse URL
 ---------
 
-* The browser now has the following information contained in the URL (Uniform
-  Resource Locator):
+* The program presently has the accompanying data contained in the URL (Uniform
+  Asset Finder):
 
-    - ``Protocol``  "http"
-        Use 'Hyper Text Transfer Protocol'
+    - ''Convention'' "http"
+        Use 'Hyper Text Move Convention'
 
-    - ``Resource``  "/"
-        Retrieve main (index) page
+    - ''Asset'' "/"
+        Recover primary (record) page
 
-
-Is it a URL or a search term?
+Is it a URL or an inquiry term?
 -----------------------------
 
-When no protocol or valid domain name is given the browser proceeds to feed
-the text given in the address box to the browser's default web search engine.
-In many cases the URL has a special piece of text appended to it to tell the
-search engine that it came from a particular browser's URL bar.
+At the point when no convention or legitimate area name is given the program continues to take care of
+the text given in the location box to the program's default web search tool.
+As a rule the URL has a unique piece of text affixed to it to tell the
+web crawler that it came from a specific program's URL bar.
 
 Convert non-ASCII Unicode characters in the hostname
 ------------------------------------------------
 
-* The browser checks the hostname for characters that are not in ``a-z``,
-  ``A-Z``, ``0-9``, ``-``, or ``.``.
-* Since the hostname is ``google.com`` there won't be any, but if there were
-  the browser would apply `Punycode`_ encoding to the hostname portion of the
+* The program checks the hostname for characters that are not in ''a-z'',
+  ''A-Z'', ''0-9'', ''- '', or ''.''.
+* Since the hostname is ''google.com'' there will not be any, however in the event that there were
+  the program would apply 'Punycode'_ encoding to the hostname part of the
   URL.
 
 Check HSTS list
 ---------------
-* The browser checks its "preloaded HSTS (HTTP Strict Transport Security)"
-  list. This is a list of websites that have requested to be contacted via
-  HTTPS only.
-* If the website is in the list, the browser sends its request via HTTPS
-  instead of HTTP. Otherwise, the initial request is sent via HTTP.
-  (Note that a website can still use the HSTS policy *without* being in the
-  HSTS list.  The first HTTP request to the website by a user will receive a
-  response requesting that the user only send HTTPS requests.  However, this
-  single HTTP request could potentially leave the user vulnerable to a
-  `downgrade attack`_, which is why the HSTS list is included in modern web
-  browsers.)
+* The program really looks at its "preloaded HSTS (HTTP Severe Vehicle Security)"
+  list. This is a rundown of sites that have mentioned to be reached through
+  HTTPS as it were.
+* In the event that the site is in the rundown, the program sends its solicitation through HTTPS
+  rather than HTTP. In any case, the underlying solicitation is sent through HTTP.
+  (Note that a site can in any case utilize the HSTS strategy *without* being in the
+  HSTS list. The main HTTP solicitation to the site by a client will get a
+  reaction mentioning that the client just send HTTPS demands. Be that as it may, this
+  single HTTP solicitation might actually leave the client helpless against a
+  'minimize attack'_, which is the reason the HSTS list is remembered for present day web
+  programs.)
 
 DNS lookup
 ----------
 
-* Browser checks if the domain is in its cache. (to see the DNS Cache in
-  Chrome, go to `chrome://net-internals/#dns <chrome://net-internals/#dns>`_).
-* If not found, the browser calls ``gethostbyname`` library function (varies by
-  OS) to do the lookup.
-* ``gethostbyname`` checks if the hostname can be resolved by reference in the
-  local ``hosts`` file (whose location `varies by OS`_) before trying to
+* Browser  checks assuming the space is in its store. (to see the DNS Reserve in
+  Chrome, go to 'chrome://net-internals/#dns <chrome://net-internals/#dns>'_).
+* In the event that not found, the program calls ''gethostbyname'' library capability (changes by
+  Operating system) to do the query.
+* ''gethostbyname'' checks if the hostname can be settled by reference in the
+  neighborhood ''has'' document (whose area 'shifts by OS'_) prior to attempting to
   resolve the hostname through DNS.
-* If ``gethostbyname`` does not have it cached nor can find it in the ``hosts``
-  file then it makes a request to the DNS server configured in the network
-  stack. This is typically the local router or the ISP's caching DNS server.
-* If the DNS server is on the same subnet the network library follows the
-  ``ARP process`` below for the DNS server.
-* If the DNS server is on a different subnet, the network library follows
-  the ``ARP process`` below for the default gateway IP.
+* On the off chance that ''gethostbyname'' doesn't have it reserved nor can track down it in the ''has''
+  document then it makes a solicitation to the DNS server designed in the organization
+  stack. This is commonly the neighborhood switch or the ISP's storing DNS server.
+* Assuming that the DNS server is on the equivalent subnet the organization library follows the
+  ''ARP process'' beneath for the DNS server.
+* In the event that the DNS server is on an alternate subnet, the organization library follows
+  the ''ARP process'' beneath for the default passage IP.
 
 
 ARP process
 -----------
+To send an ARP (Address Resolution Protocol) broadcast the network
+stack library needs the objective IP address to query. It likewise has to know the
+MAC address of the point of interaction it will use to convey the ARP broadcast.
 
-In order to send an ARP (Address Resolution Protocol) broadcast the network
-stack library needs the target IP address to lookup. It also needs to know the
-MAC address of the interface it will use to send out the ARP broadcast.
+The ARP cache is first checked for an ARP section for our target IP. On the off chance that it is in
+the ca che, the library capability returns the outcome: Target IP = MAC.
 
-The ARP cache is first checked for an ARP entry for our target IP. If it is in
-the cache, the library function returns the result: Target IP = MAC.
+In the event that the passage isn't in the ARP cache:
 
-If the entry is not in the ARP cache:
-
-* The route table is looked up, to see if the Target IP address is on any of
-  the subnets on the local route table. If it is, the library uses the
-  interface associated with that subnet. If it is not, the library uses the
+* The route table is turned upward, to check whether the target IP address is on any of
+  the subnets on the nearby route table. Assuming it is, the library utilizes the
+  interface related with that subnet. In the event that it isn't, the library utilizes the
   interface that has the subnet of our default gateway.
 
-* The MAC address of the selected network interface is looked up.
+* The MAC address of the chosen network connection interface is looked up.
 
-* The network library sends a Layer 2 (data link layer of the `OSI model`_)
-  ARP request:
+* The network library sends a Layer 2 (information interface layer of the 'OSI model.
+  ARP demand:
 
 ``ARP Request``::
 
@@ -494,21 +472,21 @@ and IIS for Windows.
    * Domain, in this case - google.com.
    * Requested path/page, in this case - / (as no specific path/page was
      requested, / is the default path).
-* The server verifies that there is a Virtual Host configured on the server
-  that corresponds with google.com.
-* The server verifies that google.com can accept GET requests.
-* The server verifies that the client is allowed to use this method
-  (by IP, authentication, etc.).
-* If the server has a rewrite module installed (like mod_rewrite for Apache or
-  URL Rewrite for IIS), it tries to match the request against one of the
-  configured rules. If a matching rule is found, the server uses that rule to
-  rewrite the request.
-* The server goes to pull the content that corresponds with the request,
-  in our case it will fall back to the index file, as "/" is the main file
-  (some cases can override this, but this is the most common method).
-* The server parses the file according to the handler. If Google
-  is running on PHP, the server uses PHP to interpret the index file, and
-  streams the output to the client.
+* The server confirms that there is a Virtual Host designed on the server
+  that compares with google.com.
+* The server confirms that google.com can acknowledge GET demands.
+* The server checks that the client is permitted to utilize this technique
+  (by IP, authentication, and so on.).
+* In the event that the server has a rewrite module installed (like mod_rewrite for Apache or
+  URL Rewrite for IIS), it attempts to match the solicitation against one of the
+  arranged rules. Assuming a matching standard is found, the server utilizes that standard to
+  change the solicitation.
+* The server goes to pull the substance that relates with the solicitation,
+  for our situation it will fall back to the list record, as "/" is the principal document
+  (a few cases can supersede this, yet this is the most widely recognized technique).
+* The server parses the file as per the handler. If Google
+  is running on PHP, the server utilizes PHP to decipher the index file, and
+  streams the result to the client.
 
 Behind the scenes of the Browser
 ----------------------------------
@@ -523,156 +501,150 @@ to the browser it undergoes the below process:
 Browser
 -------
 
-The browser's functionality is to present the web resource you choose, by
-requesting it from the server and displaying it in the browser window.
-The resource is usually an HTML document, but may also be a PDF,
-image, or some other type of content. The location of the resource is
-specified by the user using a URI (Uniform Resource Identifier).
+The browser's usefulness is to introduce the web asset you pick, by
+mentioning it from the server and showing it in the browser window.
+The asset is normally a HTML document, however, may likewise be a PDF,
+picture, or another sort of content. The area of the asset is
+determined by the client utilizing a URI (Uniform Resource Identifier).
 
-The way the browser interprets and displays HTML files is specified
-in the HTML and CSS specifications. These specifications are maintained
-by the W3C (World Wide Web Consortium) organization, which is the
-standards organization for the web.
+The manner in which the browser deciphers and shows HTML files  is determined
+in the HTML and CSS details. These particulars are kept up with
+by the W3C (World Wide Web Consortium) association, which is the
+principles association for the web.
 
-Browser user interfaces have a lot in common with each other. Among the
-common user interface elements are:
+Browser UIs share a great deal for all intents and purpose with one another. Among the
+normal UI components are:
 
-* An address bar for inserting a URI
+* A address bar for inserting  a URI
 * Back and forward buttons
-* Bookmarking options
-* Refresh and stop buttons for refreshing or stopping the loading of
+* Bookmarking choices
+* Revive and stop buttons for invigorating or halting the stacking of
   current documents
-* Home button that takes you to your home page
+* Home button that takes you to your landing page
 
 **Browser High-Level Structure**
 
 The components of the browsers are:
 
-* **User interface:** The user interface includes the address bar,
-  back/forward button, bookmarking menu, etc. Every part of the browser
-  display except the window where you see the requested page.
-* **Browser engine:** The browser engine marshals actions between the UI
-  and the rendering engine.
-* **Rendering engine:** The rendering engine is responsible for displaying
-  requested content. For example if the requested content is HTML, the
-  rendering engine parses HTML and CSS, and displays the parsed content on
+* **Client interface:** The UI incorporates the address bar,
+  back/forward button, bookmarking menu, and so forth. All aspects of the browser
+  show aside from the window where you see the mentioned page.
+* **Browser engine:** The program motor marshals activities between the UI
+  what's more, the rendering engine.
+* **Rendering engine:** The rendering motor is answerable for showing
+  mentioned content. For instance in the event that the mentioned content is HTML, the
+  rendering engine parses HTML and CSS, and shows the parsed content on
   the screen.
-* **Networking:** The networking handles network calls such as HTTP requests,
-  using different implementations for different platforms behind a
-  platform-independent interface.
-* **UI backend:** The UI backend is used for drawing basic widgets like combo
-  boxes and windows. This backend exposes a generic interface that is not
-  platform-specific.
-  Underneath it uses operating system user interface methods.
-* **JavaScript engine:** The JavaScript engine is used to parse and
+* **Networking:** The networking handles network calls, for example, HTTP requests,
+  involving various executions for various stages behind a
+  stage free point of interaction.
+* **UI backend:** The UI backend is utilized for drawing essential gadgets like combo
+  boxes and windows. This backend uncovered a nonexclusive connection point that isn't
+  stage explicit.
+  Under it, it utilizes working framework UI techniques.
+* **JavaScript engine:** The JavaScript engine is utilized to parse and
   execute JavaScript code.
-* **Data storage:** The data storage is a persistence layer. The browser may
-  need to save all sorts of data locally, such as cookies. Browsers also
-  support storage mechanisms such as localStorage, IndexedDB, WebSQL and
+* **Data storage:** The information stockpiling is a persistence layer. The browser may
+  need to save a wide range of information locally, like cookies. Browsers too
+  support storage mechanisms like localStorage, IndexedDB, WebSQL and
   FileSystem.
 
 HTML parsing
 ------------
+The rendering engine turns over getting the items in the mentioned
+document from the networking administration layer. This will ordinarily be finished in 8kB lumps.
 
-The rendering engine starts getting the contents of the requested
-document from the networking layer. This will usually be done in 8kB chunks.
+The essential occupation of the HTML parser is to parse the HTML markup into a parse tree.
 
-The primary job of the HTML parser is to parse the HTML markup into a parse tree.
-
-The output tree (the "parse tree") is a tree of DOM element and attribute
-nodes. DOM is short for Document Object Model. It is the object presentation
-of the HTML document and the interface of HTML elements to the outside world
-like JavaScript. The root of the tree is the "Document" object. Prior to
-any manipulation via scripting, the DOM has an almost one-to-one relation to
+The resulting tree (the "parse tree") is a tree of DOM components and attribute
+nodes. DOM is short for  Document Object Model. It is the object show
+of the HTML document and the point of interaction of HTML components to the rest of the world
+like JavaScript. The foundation of the tree is the "Document" object. Preceding
+any manipulation by means of scripting, the DOM has a very nearly coordinated connection to
 the markup.
-
 **The parsing algorithm**
 
-HTML cannot be parsed using the regular top-down or bottom-up parsers.
+HTML can't be parsed utilizing the customary hierarchical or base up parsers.
 
 The reasons are:
 
-* The forgiving nature of the language.
-* The fact that browsers have traditional error tolerance to support well
-  known cases of invalid HTML.
-* The parsing process is reentrant. For other languages, the source doesn't
-  change during parsing, but in HTML, dynamic code (such as script elements
-  containing `document.write()` calls) can add extra tokens, so the parsing
-  process actually modifies the input.
+* The easygoing nature of the language.
+* The way that browsers have conventional mistake resilience to help well
+  known instances of invalid HTML.
+* The parsing process is reentrant. For different dialects, the source doesn't
+  change during parsing, however in HTML, dynamic code (like script components
+  containing 'document.write()' calls) can add additional tokens, so the parsing
+  process really changes the input.
 
-Unable to use the regular parsing techniques, the browser utilizes a custom
-parser for parsing HTML. The parsing algorithm is described in
-detail by the HTML5 specification.
+Incapable to utilize the normal parsing procedures, the browser uses a custom
+parser for parsing HTML. The parsing calculation is depicted in
+detail by the HTML5 determination.
 
-The algorithm consists of two stages: tokenization and tree construction.
-
+The calculation comprises of two phases: tokenization and tree development.
 **Actions when the parsing is finished**
 
-The browser begins fetching external resources linked to the page (CSS, images,
-JavaScript files, etc.).
+The browser starts getting outer assets connected to the page (CSS, pictures,
+JavaScript records, and so forth.).
 
-At this stage the browser marks the document as interactive and starts
-parsing scripts that are in "deferred" mode: those that should be
+At this stage, the browser denotes the document as intuitive and begins
+parsing scripts that are in "deferred" mode: those that ought to be
 executed after the document is parsed. The document state is
-set to "complete" and a "load" event is fired.
+set to "complete" and a "heap" occasion is fired.
 
-Note there is never an "Invalid Syntax" error on an HTML page. Browsers fix
-any invalid content and go on.
+Note there will never be an "Invalid Syntax" mistake on an HTML page. Browsers fix
+any invalid substance and go on.
 
 CSS interpretation
 ------------------
 
-* Parse CSS files, ``<style>`` tag contents, and ``style`` attribute
-  values using `"CSS lexical and syntax grammar"`_
-* Each CSS file is parsed into a ``StyleSheet object``, where each object
-  contains CSS rules with selectors and objects corresponding CSS grammar.
-* A CSS parser can be top-down or bottom-up when a specific parser generator
-  is used.
-
+* Parse CSS documents, ''<style>'' label items, and ''style'' characteristic
+  values utilizing '"CSS lexical and syntax grammar"'_
+* Each CSS document is parsed into a ''StyleSheet object'', where each item
+  contains CSS rules with selectors and items comparing CSS syntax.
+* A CSS parser can be hierarchical or base up when a particular parser generator
+  is utilized.
 Page Rendering
 --------------
 
-* Create a 'Frame Tree' or 'Render Tree' by traversing the DOM nodes, and
-  calculating the CSS style values for each node.
-* Calculate the preferred width of each node in the 'Frame Tree' bottom-up
-  by summing the preferred width of the child nodes and the node's
+* Make a 'Frame Tree' or 'Render Tree' by crossing the DOM hubs, and
+  working out the CSS style values for every node.
+* Work out the favored width of every nodein the 'Frame Tree' bottom-up
+  by adding the favored width of the child nodes and the node's
   horizontal margins, borders, and padding.
-* Calculate the actual width of each node top-down by allocating each node's
-  available width to its children.
-* Calculate the height of each node bottom-up by applying text wrapping and
+* Work out the genuine width of every node hierarchical by assigning every node's
+  accessible width to its children.
+* Work out the the height of each node bottom-up by applying text wrapping and
   summing the child node heights and the node's margins, borders, and padding.
-* Calculate the coordinates of each node using the information calculated
+* Work out the coordinates of every node utilizing the information  determined
   above.
 * More complicated steps are taken when elements are ``floated``,
   positioned ``absolutely`` or ``relatively``, or other complex features
-  are used. See
-  http://dev.w3.org/csswg/css2/ and http://www.w3.org/Style/CSS/current-work
-  for more details.
-* Create layers to describe which parts of the page can be animated as a group
-  without being re-rasterized. Each frame/render object is assigned to a layer.
-* Textures are allocated for each layer of the page.
-* The frame/render objects for each layer are traversed and drawing commands
-  are executed for their respective layer. This may be rasterized by the CPU
-  or drawn on the GPU directly using D2D/SkiaGL.
-* All of the above steps may reuse calculated values from the last time the
-  webpage was rendered, so that incremental changes require less work.
-* The page layers are sent to the compositing process where they are combined
-  with layers for other visible content like the browser chrome, iframes
-  and addon panels.
-* Final layer positions are computed and the composite commands are issued
-  via Direct3D/OpenGL. The GPU command buffer(s) are flushed to the GPU for
-  asynchronous rendering and the frame is sent to the window server.
+  are used.
+* Make layers to portray what parts of the page can be animated collectively
+  without being re-rasterized. Each frame/render object is doled out to a layer.
+* Textures are designated for each layer of the page.
+* The frame/render objects for each layer are navigated and drawing orders
+  are executed for their particular layer. This might be rasterized by the central processing unit
+  or on the other hand drawn on the GPU straightforwardly utilizing D2D/SkiaGL.
+* Every one of the above advances might reuse determined values from the last time the
+  website page was rendered, so gradual changes require less work.
+* The page layers are shipped off the process system where they are consolidated
+  with layers for other apparent substance like the browser chrome, iframes
+  furthermore, addon panels.
+* Last layer positions are computed and the composite orders are given
+  through Direct3D/OpenGL. The GPU order buffer(s) are flushed to the GPU for
+  nonconcurrent rendering and the frame is shipped off the window server.
 
 GPU Rendering
 -------------
 
-* During the rendering process the graphical computing layers can use general
-  purpose ``CPU`` or the graphical processor ``GPU`` as well.
+* During the rendering process the graphical computing layers can utilize general
+  purpose ''CPU'' or the graphical processor ''GPU'' also.
 
-* When using ``GPU`` for graphical rendering computations the graphical
-  software layers split the task into multiple pieces, so it can take advantage
-  of ``GPU`` massive parallelism for float point calculations required for
-  the rendering process.
+* While utilizing ''GPU'' for graphical rendering calculations the graphical
+  software layers split the assignment into numerous pieces, so it can make use
+  of ''GPU'' enormous parallelism for float point computations expected for
+  the rendering system.
 
 
 Window Server
@@ -681,12 +653,12 @@ Window Server
 Post-rendering and user-induced execution
 -----------------------------------------
 
-After rendering has been completed, the browser executes JavaScript code as a result
-of some timing mechanism (such as a Google Doodle animation) or user
-interaction (typing a query into the search box and receiving suggestions).
-Plugins such as Flash or Java may execute as well, although not at this time on
-the Google homepage. Scripts can cause additional network requests to be
-performed, as well as modify the page or its layout, causing another round of
+Subsequent to rendering has been finished, the program executes JavaScript code thus
+of some timing instrument, (for example, a Google Doodle animation) or client
+interaction (composing a question into the inquiry box and getting ideas).
+Plugins, for example, Blaze or Java might execute too, albeit not right now on
+the Google landing page. Scripts can cause extra network solicitations to be
+performed, as well as adjust the page or its design, causing one more round of
 page rendering and painting.
 
 .. _`Creative Commons Zero`: https://creativecommons.org/publicdomain/zero/1.0/
