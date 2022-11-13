@@ -208,6 +208,21 @@ Check HSTS list
 
 DNS lookup
 ----------
+After you've typed the URL into your browser and pressed enter, the browser 
+needs to figure out which server on the Internet to connect to. To do that, 
+it needs to look up the IP address of the server hosting the website using 
+the domain you typed in. It does this using a DNS lookup. You can read more 
+about how DNS works here.Because DNS is complex and has to be blazingly fast, 
+DNS data is cached at different layers between your browser and various places
+across the Internet. Your browser checks its cache, the operating system cache,
+a local network cache at your router, and a DNS server cache on your corporate
+network or at your internet service provider (ISP). If the browser cannot find
+the IP address at any of those cache layers, the DNS server on your corporate
+network or at your ISP does a recursive DNS lookup. A recursive DNS lookup asks
+multiple DNS servers around the Internet, which in turn asks more DNS servers
+for the DNS record until it is found.Once the browser gets the DNS record with
+ the IP address, it's time for it to find the server on the Internet and establish 
+ a connection
 
 * Browser checks if the domain is in its cache. (to see the DNS Cache in
   Chrome, go to `chrome://net-internals/#dns <chrome://net-internals/#dns>`_).
