@@ -516,7 +516,7 @@ Behind the scenes of the Browser
 Once the server supplies the resources (HTML, CSS, JS, images, etc.)
 to the browser it undergoes the below process:
 
-* Parsing - HTML, CSS, JS
+* Parsing - HTML , CSS, JS
 * Rendering - Construct DOM Tree → Render Tree → Layout of Render Tree →
   Painting the render tree
 
@@ -543,6 +543,7 @@ common user interface elements are:
 * Refresh and stop buttons for refreshing or stopping the loading of
   current documents
 * Home button that takes you to your home page
+* Menu button with important tools including the history and inspect tabs.
 
 **Browser High-Level Structure**
 
