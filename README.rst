@@ -194,17 +194,12 @@ Convert non-ASCII Unicode characters in the hostname
 
 Check HSTS list
 ---------------
-* The browser checks its "preloaded HSTS (HTTP Strict Transport Security)"
-  list. This is a list of websites that have requested to be contacted via
-  HTTPS only.
-* If the website is in the list, the browser sends its request via HTTPS
-  instead of HTTP. Otherwise, the initial request is sent via HTTP.
-  (Note that a website can still use the HSTS policy *without* being in the
-  HSTS list.  The first HTTP request to the website by a user will receive a
-  response requesting that the user only send HTTPS requests.  However, this
-  single HTTP request could potentially leave the user vulnerable to a
-  `downgrade attack`_, which is why the HSTS list is included in modern web
-  browsers.)
+* HTTP Strict Transport Security (HSTS) is a security feature that helps protect websites against certain types of attacks by forcing web browsers to communicate with the server using only secure HTTPS connections. When a website has an HSTS policy, the server sends an Strict-Transport-Security header to the client, which tells the client to only communicate with the server using HTTPS for a specified period of time.
+
+* To check whether a domain is on the HSTS list means to check whether it has an HSTS policy and is therefore configured to only allow secure HTTPS connections. This can be done by sending an HTTP request to the domain and checking for the presence of the Strict-Transport-Security header in the response.
+  
+* HSTS policies can be set for individual domains or for all subdomains of a domain. In addition, some modern web browsers maintain a preload list of domains that have HSTS policies, which allows them to enforce HSTS policies for these domains without the need for the server to send the Strict-Transport-Security header. To check whether a domain is on the HSTS preload list means to check whether it has been added to one of these lists by a browser vendor.
+
 
 DNS lookup
 ----------
