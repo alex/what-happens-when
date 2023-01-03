@@ -39,6 +39,12 @@ popular searches from the internet as a whole. As you are typing
 with each keypress. It may even suggest "google.com" before you finish typing
 it.
 
+Once you have completed typing the URL, the browser will then send an OS interrupt to start the loading process of the page. The page that you are requesting is then sent from a server to your device over an internet connection. Depending on your internet connection speed and the size of the page it may take some time for all of this to happen.
+
+Once the page has been received by your device, a series of instructions are run by the browser to parse and render the contents on the screen. This includes loading all images, scripts, stylesheets and other content that is part of a web page. The browser also sends requests to various services and APIs like Google Maps or YouTube in order to render their content as well.
+
+Finally, once all this is done, you can begin interacting with the webpage or application you just opened. For example, if that webpage was Google Maps, you can now search for directions or locations using their search bar or zoom in and out using your mouse or trackpad. All these interactions between you and the webpage take place through OS interrupts again and this is how modern webpages become interactive with you as a user.
+
 The "enter" key bottoms out
 ---------------------------
 
