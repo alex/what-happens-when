@@ -1,0 +1,13 @@
+First, your computer will check its local cache to see if it has a record of the IP address for the website you're trying to access. An IP address is a numerical label assigned to each device connected to a computer network that uses the Internet Protocol for communication.
+
+If the IP address is not in the cache, your computer will send a request to a domain name system (DNS) server to resolve the domain name into an IP address. DNS servers are like phone books for the internet, they match domain names to the IP addresses of the servers hosting those websites.
+
+Once the DNS server has resolved the domain name to an IP address, it will send that information back to your computer.
+
+Your computer will then establish a connection to the server associated with the IP address using the Transmission Control Protocol (TCP).
+
+Once the connection is established, your browser will send an HTTP request to the server, asking it to send over the webpage associated with the domain name you entered.
+
+The server will receive the request and send back an HTTP response, along with the HTML, CSS, and JavaScript that make up the webpage.
+
+Your browser will then use this information to render the webpage on your screen
