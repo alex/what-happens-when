@@ -211,7 +211,7 @@ DNS lookup
 
 * Browser checks if the domain is in its cache. (to see the DNS Cache in
   Chrome, go to `chrome://net-internals/#dns <chrome://net-internals/#dns>`_).
-* If not found or an entry has expired, the browser calls ``gethostbyname``
+* If not found or a domain entry has expired, the browser calls ``gethostbyname``
   library function (varies by OS) to do the lookup.
 * ``gethostbyname`` checks if the hostname can be resolved by reference in the
   local ``hosts`` file (whose location `varies by OS`_) before trying to
