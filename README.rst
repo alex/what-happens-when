@@ -21,7 +21,7 @@ maintainers.
 Table of Contents
 ====================
 
-.. contents::
+... contents::
    :backlinks: none
    :local:
 
