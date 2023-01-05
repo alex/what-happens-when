@@ -593,6 +593,7 @@ HTML cannot be parsed using the regular top-down or bottom-up parsers.
 The reasons are:
 
 * The forgiving nature of the language.
+* It is not a strictly hierarchical language. HTML allows for a great deal of flexibility in terms of the structure of a document, and this can make it difficult for a parser to determine how to correctly interpret and arrange the elements of the document.
 * The fact that browsers have traditional error tolerance to support well
   known cases of invalid HTML.
 * The parsing process is reentrant. For other languages, the source doesn't
