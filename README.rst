@@ -511,7 +511,7 @@ and IIS for Windows.
   streams the output to the client.
 
 Behind the scenes of the Browser
-----------------------------------
+--------------------------------
 
 Once the server supplies the resources (HTML, CSS, JS, images, etc.)
 to the browser it undergoes the below process:
