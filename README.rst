@@ -24,7 +24,27 @@ Table of Contents
 .. contents::
    :backlinks: none
    :local:
+_______________________________
+In a simplified manner before moving to complex details:
 
+what happens when you type “https://www.google.com" into your browser and press enter, in simpler terms:
+
+When you type a website’s address into your browser, your computer needs to know the IP address of the server that the website is stored on. It does this by sending a request to a special server called a DNS server.
+
+Once your computer has the IP address of the server, it connects to it using a protocol called TCP/IP. This protocol makes sure that the data being sent between your computer and the server is transmitted correctly.
+
+Before the data can reach the server, it might need to pass through a firewall. This is a security system that checks incoming and outgoing data to make sure it’s allowed.
+
+The server then sends back a secure version of the website using a protocol called SSL. This protocol encrypts the data being transmitted so that it can’t be intercepted by anyone else.
+
+The data may also pass through a load-balancer, which is a device that distributes incoming traffic among multiple servers to improve performance.
+
+The data finally reaches the web server, which stores the website’s files and processes requests for them. It retrieves the necessary files and sends them back to your computer.
+
+If the website uses any dynamic content, such as a search function, the web server may need to send the request to an application server. This server runs special software to process the request and generate a response.
+
+If the request involves accessing a database, the application server may need to send a request to a database server. This server stores and manages data for the website, and it retrieves the requested data and sends it back to the application server.
+_____________________________________
 The "g" key is pressed
 ----------------------
 The following sections explain the physical keyboard actions
