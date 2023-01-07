@@ -297,6 +297,12 @@ the default gateway it can resume its DNS process:
   requested and that flows up the list of DNS servers until the SOA is reached,
   and if found an answer is returned.
 
+Recursive Search
+----------------
+The recursive search for the IP address is performed between the DNS recursor, Root nameserver, the Top Level Domain (TlD) server, and the Authoritative nameserver. The DNS recursor is responsible for making DNS queries to the other three servers until the IP address is resolved. 
+The Root name server has the information about the top-level domain server such as (.com, .org, .net ...). Hence, it responds with the correct TLD server. Then the DNS recursor makes a query to the TLD server. This server has information about the authoritative name server that holds the IP address. 
+Hence, by now the DNS recursor will have the address of the authoritative server from which the required IP address is to be fetched. Therefore, the DNS recursor makes the final DNS query to the Authoritative server to get the IP and responds to the client.
+
 Opening of a socket
 -------------------
 Once the browser receives the IP address of the destination server, it takes
