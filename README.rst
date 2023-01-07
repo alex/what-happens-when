@@ -168,11 +168,16 @@ Parse URL
 * The browser now has the following information contained in the URL (Uniform
   Resource Locator):
 
-    - ``Protocol``  "http"
-        Use 'Hyper Text Transfer Protocol'
+    - ``Protocol``  "https"
+        Use 'Hyper Text Transfer Protocol Secure'
 
     - ``Resource``  "/"
         Retrieve main (index) page
+
+    - ``Domain name`` "google.com"
+        Domain names have unique IP address used to identify the server.
+        The client searches it's browser cache or OS' for the Ip address attached to the domain name. If it doesn't find it, it's sent to the DNS.
+        If the domain name provided is valid, it sends the client the IP address of the domain name. 
 
 
 Is it a URL or a search term?
