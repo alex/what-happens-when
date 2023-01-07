@@ -296,6 +296,17 @@ the default gateway it can resume its DNS process:
 * If the local/ISP DNS server does not have it, then a recursive search is
   requested and that flows up the list of DNS servers until the SOA is reached,
   and if found an answer is returned.
+  
+DNS Recursive Request
+---------------------
+If your local/ISP DNs server does not have the IP address for google.com, it does the following:
+
+* Your local DNS server sends a request to a root nameserver asking for the IP address of the domain.
+* The root server checks its cache and if it is not there returns the address of a Top Level Domain (TLD) nameserver for the all domains with suffix `.com`.
+* If the IP address is not received instead an address of a TLD server, the local DNS asks the TLD server for the address of the domain.
+* The tld server checks its cache. If it is not there (the record), sends the address of that authoritative server for the domain. The authoritative server has all the information about a domain.
+* If the IP address of the domain was not returned, the local DNS sends another request to the authoritative server. The authoritative then sends the IP address of the domain to the local DNS server if is valid.
+* Your local DNS server forwards the IP address to your device.
 
 Opening of a socket
 -------------------
