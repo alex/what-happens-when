@@ -1,0 +1,26 @@
+The process of rendering a web page involves parsing the HTML and CSS code, constructing a Document Object Model (DOM) of the page, and executing any JavaScript code. The rendered page is then displayed in the browser window. There are sequence of events that happen when we type in www.google.com into any browser’s address bar from a given location, we will cover few main steps here -
+
+Your computer sends a request to the Domain Name System (DNS) server to resolve the domain name “google.com” to an IP address. The DNS server responds with the IP address of the server where the website is hosted.
+Your browser sends a request to the server at the specified IP address, asking for the content of the website. This request is known as an HTTP (Hypertext Transfer Protocol) request, and it is sent over the Internet using the TCP (Transmission Control Protocol).
+The server receives the request and responds by sending the HTML, CSS, and JavaScript files that make up the website to your browser. These files are usually sent as a stream of data over the Internet using HTTP.
+Your browser receives the files and begins the process of rendering the page. This involves parsing the HTML and CSS code to construct a Document Object Model (DOM) of the page, and executing any JavaScript code.
+Once the page has been rendered, it is displayed in the browser window. You can then interact with the page by clicking links, filling out forms, and so on.
+What actually happens…
+When you type https://www.google.com or any URL in your browser and press Enter, a sequence of events is triggered that ultimately leads to the Google homepage being displayed in your browser window.
+
+First, your browser sends a request to a Domain Name System (DNS) server. This server acts like a phone book, converting the website’s domain name (google.com) into an IP address that your computer can understand (e.g., 216.58.217.206). This is the server where the Google website is hosted.
+
+
+Once the IP address has been determined, your browser sends a request to the server at that address, asking it to send over the website’s content. If the server is able to fulfill this request, it sends a response back to your browser, which then begins to download the website’s HTML, CSS, and JavaScript files.
+
+As these files are downloaded, your browser begins to render the website on your screen, pulling in any additional resources (such as images) as needed. When all of the resources have been downloaded and the website is fully rendered, you can begin interacting with it.
+
+It’s important to note that the entire process happens very quickly, usually in a matter of milliseconds. This is why websites feel so fast and responsive to us as users.
+
+
+It’s worth mentioning that the website you are accessing is secured with an SSL/TLS certificate, which is indicated by the “https” at the beginning of the URL. This means that all communication between your browser and the server is encrypted, ensuring that your personal information and data remain secure as you browse the web.
+
+
+The browser displays the fully-rendered Google homepage in the window, allowing you to interact with it and browse the various links and resources available on the page.
+
+It’s worth noting that the process of requesting and displaying a webpage involves more than just the steps outlined above. There are many other technical details that go into making this process possible, including the use of DNS servers to translate domain names into IP addresses and the use of encryption to secure the communication between your browser and the server. However, the basic principle is the same: your browser sends a request for a webpage, and the server sends back the content of that webpage, which the browser then displays for you to see.
