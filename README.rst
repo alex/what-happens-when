@@ -162,8 +162,8 @@ sends the character to the ``window manager`` (DWM, metacity, i3, etc), so the
 The graphical API of the window  that receives the character prints the
 appropriate font symbol in the appropriate focused field.
 
-Parse URL
----------
+Parse URL/Web address
+---------------------
 
 * The browser now has the following information contained in the URL (Uniform
   Resource Locator):
