@@ -509,7 +509,7 @@ and IIS for Windows.
 * The server parses the file according to the handler. If Google
   is running on PHP, the server uses PHP to interpret the index file, and
   streams the output to the client.
-
+  
 Behind the scenes of the Browser
 ----------------------------------
 
