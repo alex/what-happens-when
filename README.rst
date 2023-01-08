@@ -674,6 +674,16 @@ GPU Rendering
   of ``GPU`` massive parallelism for float point calculations required for
   the rendering process.
 
+HTTPS/SSL
+-------------
+When browsing using HTTPS (Hypertext Transfer Protocol Secure), connection to the website is encrypted using SSL (Secure Sockets Layer) or TLS (Transport Layer Security). This means that the data transmitted between your computer and the website is secure and cannot be intercepted by third parties.
+
+You can tell if a website is using HTTPS by looking for the padlock icon in the address bar of your web browser. The word “secure” might be seen. (Depending on the browser).
+
+Using HTTPS is especially important when browsing websites that handle sensitive information, such as online banking or shopping websites. It helps to protect your data from being intercepted and misused by attackers.
+
+In some cases, you may see a warning message if you try to access a website that is not using HTTPS. This may indicate that the connection is not secure and that your data may be at risk. It is a good idea to avoid entering sensitive information on websites that do not use HTTPS.
+
 
 Window Server
 -------------
