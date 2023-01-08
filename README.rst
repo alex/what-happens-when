@@ -417,6 +417,11 @@ control`_. This varies depending on the sender; the most common algorithms are
 HTTP protocol
 -------------
 
+Through the HTTP protocol, resources are exchanged between client devices and servers over the internet.
+Client devices send requests to servers for the resources needed to load a web page; the servers send
+responses back to the client to fulfill the requests.It was designed for communication between web browsers
+and web servers, but it can also be used for other purposes.
+
 If the web browser used was written by Google, instead of sending an HTTP
 request to retrieve the page, it will send a request to try and negotiate with
 the server an "upgrade" from HTTP to the SPDY protocol.
