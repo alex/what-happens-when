@@ -171,6 +171,9 @@ Parse URL
     - ``Protocol``  "http"
         Use 'Hyper Text Transfer Protocol'
 
+    - ``Protocol``  "https"
+        Use 'Hyper Text Transfer Protocol Secure'
+
     - ``Resource``  "/"
         Retrieve main (index) page
 
@@ -479,6 +482,15 @@ If the HTML referenced a resource on a different domain than
 resolving the other domain, and follows all steps up to this point for that
 domain. The ``Host`` header in the request will be set to the appropriate
 server name instead of ``google.com``.
+
+HTTPS protocol
+-------------
+HTTPS protocol is very similar with the HTTP protocol but what differentiates them is
+that HTTPS uses TLS(SSL) to encrypt normal HTTP requests and responses, and
+to digitally sign those requests and responses. HTTPS is HTTP with
+encryption and verification. The only difference between the two protocols
+is that HTTPS uses TLS (SSL) to encrypt normal HTTP requests and responses,
+and to digitally sign those requests and responses.
 
 HTTP Server Request Handle
 --------------------------
