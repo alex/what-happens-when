@@ -698,6 +698,7 @@ page rendering and painting.
 .. _`analog-to-digital converter`: https://en.wikipedia.org/wiki/Analog-to-digital_converter
 .. _`network node`: https://en.wikipedia.org/wiki/Computer_network#Network_nodes
 .. _`TCP congestion control`: https://en.wikipedia.org/wiki/TCP_congestion_control
+.. _`DNS Resolution`: https://www.catchpoint.com/blog/domain-name-to-ip-address
 .. _`cubic`: https://en.wikipedia.org/wiki/CUBIC_TCP
 .. _`New Reno`: https://en.wikipedia.org/wiki/TCP_congestion_control#TCP_New_Reno
 .. _`congestion window`: https://en.wikipedia.org/wiki/TCP_congestion_control#Congestion_window
