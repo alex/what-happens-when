@@ -1,0 +1,17 @@
+When you type "google.com" into your web browser and press Enter, you might not think about all of the behind-the-scenes activity that occurs in order to bring you the search results you're looking for. But there is actually a lot going on when you visit a website, and understanding how it works can give you a better appreciation for the technology that powers the internet.
+
+So, what happens when you type "google.com" into your web browser and press Enter?
+
+First, the browser sends a request to the domain name system (DNS) to resolve the domain name "google.com" into an IP address. The DNS is like a phonebook for the internet, connecting domain names to the numerical IP addresses that computers use to communicate with each other. Without the DNS, you would have to remember the IP address of every website you wanted to visit, which would be impractical and difficult to do.
+
+Once the browser receives the IP address for the domain from the DNS, it sends a request to the web server at that address, asking for the content located at the root (/) of the domain. The web server then retrieves the appropriate content from its file system and sends it back to the browser in the form of an HTTP response.
+
+The HTTP response typically includes the requested content as well as other information, such as the status of the request, the type of content being sent, and any additional headers. The browser receives this response and begins rendering the content on the user's screen.
+
+In the case of a search engine like Google, the content being sent is typically HTML, CSS, and JavaScript, which the browser uses to build the layout and functionality of the search results page. Once the page is fully loaded, the user can interact with it and perform searches by typing in a query and pressing Enter.
+
+While all of this is happening, the browser is also sending additional requests in the background to retrieve any additional resources needed to fully render the page, such as images, fonts, and other media. These requests are sent using the same process described above.
+
+It's important to note that all of this activity occurs over the internet, which is a global network of interconnected computers that use the TCP/IP protocol to communicate with each other. When you visit a website, your computer sends and receives data through this network, using a series of interconnected routers and servers to reach its destination.
+
+So the next time you type "google.com" into your web browser and press Enter, remember all of the behind-the-scenes activity that is happening to bring you the search results you're looking for. Without the DNS, web servers, and the internet, the web as we know it would not be possible.
