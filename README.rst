@@ -291,7 +291,9 @@ Now that the network library has the IP address of either our DNS server or
 the default gateway it can resume its DNS process:
 
 * The DNS client establishes a socket to UDP port 53 on the DNS server,
-  using a source port above 1023.
+  using a source port above 1023. A socket is an endpoint of a two way 
+  communication link between two programs running on the network; In this case,
+  it is the combination of an IP and a port.
 * If the response size is too large, TCP will be used instead.
 * If the local/ISP DNS server does not have it, then a recursive search is
   requested and that flows up the list of DNS servers until the SOA is reached,
