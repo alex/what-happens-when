@@ -1,0 +1,8 @@
+# What happens when you type google.com in your browser and press Enter
+When you type "google.com" into your web browser and press Enter, the following sequence of events occurs:
+1. The browser sends a request to the domain name system (DNS) to resolve the domain name "google.com" into an IP address.
+2. The DNS server looks up the IP address for the domain and returns it to the browser.
+3. The browser sends a request to the web server at the IP address specified, asking for the content located at the root (/) of the domain.
+4. The web server at the specified IP address receives the request and retrieves the appropriate content from its file system.
+5. The web server sends the content back to the browser in the form of an HTTP response.
+6. The browser receives the HTTP response and renders the content on the user's screen.
