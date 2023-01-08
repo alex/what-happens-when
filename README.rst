@@ -106,6 +106,8 @@ functions (``interrupt handlers``) which are supplied by the kernel. When an
 interrupt arrives, the CPU indexes the IDT with the interrupt vector and runs
 the appropriate handler. Thus, the kernel is entered.
 
+So on a computer with a PS/2 keyboard, pressing a key generates an interrupt request (IRQ) that causes the CPU to execute the interrupt handler for the keyboard. This handler processes the key press and sends a message to the active application to inform it of the key press.
+
 (On Windows) A ``WM_KEYDOWN`` message is sent to the app
 --------------------------------------------------------
 
