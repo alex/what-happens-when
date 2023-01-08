@@ -677,6 +677,14 @@ GPU Rendering
 
 Window Server
 -------------
+* A Windows version made specifically for corporate purposes is called Windows Server.
+Windows Server mimics the everyday-use Windows versions, such as Windows 10, 
+in terms of both appearance and terminology.
+* This is intentional as each Windows Server 
+release is matched to a Windows version, and both operating systems utilize the same codebase. 
+For instance, Windows Server 2019 is matched to Windows 10.
+
+Although the two operating systems resemble one another quite a bit, Windows Server was created and designed to particularly address server demands in the commercial world. As an illustration, Windows Server includes the tools required to enable administrators to better govern networks and data storage, as well as administrative capabilities beneficial for access control administration.
 
 Post-rendering and user-induced execution
 -----------------------------------------
