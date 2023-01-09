@@ -616,7 +616,7 @@ parsing scripts that are in "deferred" mode: those that should be
 executed after the document is parsed. The document state is
 set to "complete" and a "load" event is fired.
 
-Note there is never an "Invalid Syntax" error on an HTML page. Browsers fix
+Note there is never an "Invalid Syntax" error on an HTML page it get fixed automatically . Browsers fix
 any invalid content and go on.
 
 CSS interpretation
@@ -627,7 +627,7 @@ CSS interpretation
 * Each CSS file is parsed into a ``StyleSheet object``, where each object
   contains CSS rules with selectors and objects corresponding CSS grammar.
 * A CSS parser can be top-down or bottom-up when a specific parser generator
-  is used.
+  is used for the css styling 
 
 Page Rendering
 --------------
@@ -688,7 +688,7 @@ Plugins such as Flash or Java may execute as well, although not at this time on
 the Google homepage. Scripts can cause additional network requests to be
 performed, as well as modify the page or its layout, causing another round of
 page rendering and painting.
-
+##  MORE RESOURCES CAN BE FOUND HERE 
 .. _`Creative Commons Zero`: https://creativecommons.org/publicdomain/zero/1.0/
 .. _`"CSS lexical and syntax grammar"`: http://www.w3.org/TR/CSS2/grammar.html
 .. _`Punycode`: https://en.wikipedia.org/wiki/Punycode
