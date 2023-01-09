@@ -543,6 +543,8 @@ common user interface elements are:
 * Refresh and stop buttons for refreshing or stopping the loading of
   current documents
 * Home button that takes you to your home page
+* Account settings that shows the person who is logged in the browser.
+* A sharing option that allows the user to share the current page.
 
 **Browser High-Level Structure**
 
