@@ -510,6 +510,18 @@ and IIS for Windows.
   is running on PHP, the server uses PHP to interpret the index file, and
   streams the output to the client.
 
+Firewall
+----------------------------------
+
+Now that our connection to “google.com” has been secured and our request delegated to an available web server, 
+we must pass through that server’s firewall. 
+A firewall wall is a security mechanism which regulates traffic in an out of a server. 
+While SSL is concerned with protecting the content of a communication itself, 
+firewalls make sure the host is only communicated with trusted entities in the first place. 
+It does this by managing the opening and closing of ports, 
+as well as validating the service or client attempting to access an opened port. 
+Luckily, we are an unsuspicious party, and “google.com” firewall grants us access to the web server.
+
 Behind the scenes of the Browser
 ----------------------------------
 
