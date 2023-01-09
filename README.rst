@@ -206,7 +206,7 @@ Check HSTS list
   `downgrade attack`_, which is why the HSTS list is included in modern web
   browsers.)
 
-DNS lookup
+DNS lookup( Domain Name System)
 ----------
 
 * Browser checks if the domain is in its cache. (to see the DNS Cache in
@@ -225,7 +225,7 @@ DNS lookup
   the ``ARP process`` below for the default gateway IP.
 
 
-ARP process
+ARP process(Address Resolution Protocol)
 -----------
 
 In order to send an ARP (Address Resolution Protocol) broadcast the network
