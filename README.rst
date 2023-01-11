@@ -209,6 +209,8 @@ Check HSTS list
 DNS lookup
 ----------
 
+Domain Name System (DNS) is, in simple words, the technology that translates human-adapted, text-based domain names to machine-adapted, numerical-based IP. When you wish to visit google.com, you ought to type in the address as http://209.85.227.104 before you can have access to google, but because of this amazing thing called DNS, you don’t have to memorize dozens of IP addresses you visit frequently. You can compare DNS and caching (cache-ing) to the contacts app on your device. If you need to call your friends, you don’t have to know all of their phone numbers by heart because the app takes care of that; you simply have to know the name of the person you wish to call, as it is saved in the contacts app
+
 * Browser checks if the domain is in its cache. (to see the DNS Cache in
   Chrome, go to `chrome://net-internals/#dns <chrome://net-internals/#dns>`_).
 * If not found, the browser calls ``gethostbyname`` library function (varies by
