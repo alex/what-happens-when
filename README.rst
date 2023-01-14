@@ -414,6 +414,11 @@ control`_. This varies depending on the sender; the most common algorithms are
   each packet acknowledged. If a packet is dropped, the window reduces
   exponentially until another packet is acknowledged.
 
+Firewall
+----------
+
+Any firewalls or security measures in place will be evaluated before allowing your device to communicate with Google's server system, if applicable
+
 HTTP protocol
 -------------
 
