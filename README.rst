@@ -509,6 +509,15 @@ and IIS for Windows.
 * The server parses the file according to the handler. If Google
   is running on PHP, the server uses PHP to interpret the index file, and
   streams the output to the client.
+  
+ Filtering Network Traffic
+-------------------------
+This purpose is served by installation of a firewall. The firewall serves 
+two purposes, it prevents nasty things fron the internet from comming into 
+the intranet, and it also prevents sensitive information from being sent out 
+on to the internet. The firewall is designed to let in only those packets that meet
+it's criteria. port 80 receives packets from the internet to the webserver any attempt 
+on other ports is denied.
 
 Behind the scenes of the Browser
 ----------------------------------
