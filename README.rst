@@ -519,6 +519,11 @@ to the browser it undergoes the below process:
 * Parsing - HTML, CSS, JS
 * Rendering - Construct DOM Tree → Render Tree → Layout of Render Tree →
   Painting the render tree
+  
+The browser goes through each rule set in the CSS, creating a tree of nodes with parent, 
+child, and sibling relationships based on the CSS selectors. 
+As with HTML, the browser needs to convert the received CSS rules into something it can work with. 
+Hence, it repeats the HTML-to-object process, but for the CSS.
 
 Browser
 -------
