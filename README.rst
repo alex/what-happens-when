@@ -709,3 +709,33 @@ page rendering and painting.
 .. _`downgrade attack`: http://en.wikipedia.org/wiki/SSL_stripping
 .. _`OSI Model`: https://en.wikipedia.org/wiki/OSI_model
 .. _`Spanish`: https://github.com/gonzaleztroyano/what-happens-when-ES
+
+Summary of what happens when google in entered in a web browser
+---------------------------------------------------------------
+
+
+When you type "https://www.google.com" into your browser and press enter, a series of complex processes occur behind the scenes to connect you to the Google website.
+
+First, a Domain Name System (DNS) request is made to translate the human-friendly domain name "google.com" into the IP address of the server that hosts the website. This process is known as name resolution and it's done by querying a DNS server. Once the correct IP address is identified, a Transmission Control Protocol/Internet Protocol (TCP/IP) connection is established between your device and the server.
+
+The browser initiates the TCP/IP connection by sending a SYN (Synchronize) packet to the server. The server responds with a SYN-ACK (Synchronize-Acknowledgment) packet, indicating that it's ready to receive data. The browser then sends an ACK (Acknowledgment) packet to complete the three-way handshake process, and the connection is established. This process is known as the "TCP three-way handshake."
+
+Next, a firewall checks to make sure that your request is allowed through. Firewalls are security systems that control incoming and outgoing network traffic based on a set of rules and regulations. They are used to block unauthorized access to a network and to protect it from malicious attacks. The firewall will inspect the packet header and check if it's coming from an authorized IP address and if the destination port is open.
+
+Once your request is cleared by the firewall, it is directed to a load balancer. Load balancers distribute incoming traffic across multiple servers to ensure that no single server is overwhelmed and to improve the overall performance of the website. The load balancer uses different algorithms like round-robin, least connection, IP hash, and so on to distribute the load among servers.
+
+After passing through the load balancer, the request is sent to the web server which is responsible for handling the HTTP request and returning the appropriate HTML, CSS, and JavaScript files that make up the website. The web server will handle the request by parsing the headers, checking for cookies, and other metadata. The web server will also handle the SSL/TLS (Secure Sockets Layer/Transport Layer Security) encryption, that is used to encrypt the traffic between the browser and the server.
+
+The web server then sends the request to the application server, which is responsible for executing any server-side code and querying the database to retrieve any necessary information. The application server will handle the request by executing the code and interacting with the database using APIs or other methods.
+
+Finally, the application server sends the request to the database, which retrieves the requested data and sends it back to the application server. The application server then formats the data and sends it back to the web server, which returns it to the user's browser to be displayed as the Google website.
+
+It's important to note that, in this case, the request is using HTTPS (HTTP Secure) which is a security protocol that encrypts the data being transmitted, adding an extra layer of security to the process. The SSL (Secure Sockets Layer) certificate which is used to encrypt the traffic is also verified by the browser.
+
+In summary, when you type "https://www.google.com" into your browser, your device sends a DNS request to translate the domain name into an IP address, establishes a TCP/IP connection, and passes through a firewall to reach the load balancer, which directs the request to the web server. The web server then sends the request to the application server, which retrieves the necessary data from the database, and sends it back to the web server to be returned to the user's browser. All along the way, the data is encrypted using HTTPS and the SSL certificate is verified to ensure secure communication.
+
+It's also worth noting that the Google website is a highly distributed system, and the server that handles your request may not be the same one that handled your previous request. Google uses a global network of servers to handle requests and to ensure high availability and low latency. This means that your request may be routed through multiple servers before it reaches the final destination.
+
+Additionally, Google uses various caching techniques to speed up the delivery of content. For example, they use Content Delivery Networks (CDNs) to distribute and cache static content such as images and videos in multiple locations around the world. This helps to reduce the load on the main servers and to improve the speed at which the content is delivered to the users.
+
+In conclusion, when you type "https://www.google.com" into your browser and press enter, a complex series of processes occur behind the scenes to connect you to the Google website. These processes include DNS resolution, TCP/IP connection establishment, firewall inspection, load balancing, web server handling, application server processing and database query. These processes are highly optimized and managed in order to ensure a fast, secure, and reliable user experience.
