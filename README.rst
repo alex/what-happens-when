@@ -178,6 +178,15 @@ Parse URL
 Is it a URL or a search term?
 -----------------------------
 
+A URL (Uniform Resource Locator) is the address of a specific webpage or resource 
+on the internet, such as "https://www.example.com". It is used to locate and access that webpage.
+A search term, on the other hand, is the word or phrase that a user types into a search engine, 
+such as Google, in order to find information on a particular topic. For example, a search term 
+could be "best hiking trails in Yosemite National Park."
+In the context of the Google search engine, a user enters a search term into the search bar on 
+the Google homepage and then clicks the search button. Google then uses an algorithm to search 
+its index of webpages and returns a list of results that are relevant to the search term. 
+These results may include a mix of URLs and other types of content, such as images and videos.
 When no protocol or valid domain name is given the browser proceeds to feed
 the text given in the address box to the browser's default web search engine.
 In many cases the URL has a special piece of text appended to it to tell the
