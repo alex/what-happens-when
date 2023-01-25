@@ -29,7 +29,7 @@ The "g" key is pressed
 ----------------------
 The following sections explain the physical keyboard actions
 and the OS interrupts. When you press the key "g" the browser receives the
-event and the auto-complete functions kick in.
+event and the auto-complete functions kick in. If you have not bookmarked the google.com before or it has not been cached by the browser before, you might not see the recommendation or a drop-down suggeston for what you're typing in the browser's search bar.
 Depending on your browser's algorithm and if you are in
 private/incognito mode or not various suggestions will be presented
 to you in the dropdown below the URL bar. Most of these algorithms sort
