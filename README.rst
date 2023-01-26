@@ -164,6 +164,9 @@ appropriate font symbol in the appropriate focused field.
 
 Parse URL
 ---------
+URL stands for Uniform Resource Locator and is used to access a website.
+There are several parts of a URL: the protocol, hostname, port and
+path-and-file-name, and more.
 
 * The browser now has the following information contained in the URL (Uniform
   Resource Locator):
@@ -177,7 +180,6 @@ Parse URL
 
 Is it a URL or a search term?
 -----------------------------
-
 When no protocol or valid domain name is given the browser proceeds to feed
 the text given in the address box to the browser's default web search engine.
 In many cases the URL has a special piece of text appended to it to tell the
