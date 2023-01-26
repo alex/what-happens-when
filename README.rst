@@ -469,6 +469,19 @@ the form::
 
 and no payload, and the web browser instead retrieve the HTML from its cache.
 
+The response-header fields allow the server to pass additional information about the response which cannot be placed in the Status- Line. These header fields give information about the server and about further access to the resource identified by the Request-URI.
+
+* Accept-Ranges
+* Age
+* ETag
+* Location
+* Proxy-Authenticate
+* Retry-After
+* Server
+* Vary
+* WWW-Authenticate
+* WWW-Authenticate
+
 After parsing the HTML, the web browser (and server) repeats this process
 for every resource (image, CSS, favicon.ico, etc) referenced by the HTML page,
 except instead of ``GET / HTTP/1.1`` the request will be
