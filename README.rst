@@ -301,7 +301,7 @@ Opening of a socket
 -------------------
 Once the browser receives the IP address of the destination server, it takes
 that and the given port number from the URL (the HTTP protocol defaults to port
-80, and HTTPS to port 443), and makes a call to the system library function
+80, and HTTPS to defaults to  port 443), and makes a call to the system library function
 named ``socket`` and requests a TCP socket stream - ``AF_INET/AF_INET6`` and
 ``SOCK_STREAM``.
 
@@ -352,15 +352,16 @@ This send and receive happens multiple times following the TCP connection flow:
    * Server chooses its own initial sequence number
    * Server sets SYN to indicate it is choosing its ISN
    * Server copies the (client ISN +1) to its ACK field and adds the ACK flag
-     to indicate it is acknowledging receipt of the first packet
+     to indicate it is acknowledging receipt of the first packet. This is done  in  request     for a connecton to be established.
 * Client acknowledges the connection by sending a packet:
+   * The client sends a final message called an ACK (acknowledge) message
    * Increases its own sequence number
    * Increases the receiver acknowledgment number
    * Sets ACK field
 * Data is transferred as follows:
    * As one side sends N data bytes, it increases its SEQ by that number
    * When the other side acknowledges receipt of that packet (or a string of
-     packets), it sends an ACK packet with the ACK value equal to the last
+     packets), it sends a SYN-ACK packet with the ACK value equal to the last
      received sequence from the other
 * To close the connection:
    * The closer sends a FIN packet
