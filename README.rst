@@ -509,7 +509,15 @@ and IIS for Windows.
 * The server parses the file according to the handler. If Google
   is running on PHP, the server uses PHP to interpret the index file, and
   streams the output to the client.
-
+  
+Differrence Between HTTP and HTTTPS
+----------------------------------
+ HTTPS is Hypertext transfer protocol secure version of HTTP all the packet
+ sent via HTTPS cant be seen or hacked by MITM as the packet are encrypted 
+ using SSL/TLS for encryption and authentication known as asymmetric public key
+ infrastructure. Do not submit password, sensitive information on HTTP website 
+ as it is prone to attack
+ 
 Behind the scenes of the Browser
 ----------------------------------
 
@@ -628,6 +636,17 @@ CSS interpretation
   contains CSS rules with selectors and objects corresponding CSS grammar.
 * A CSS parser can be top-down or bottom-up when a specific parser generator
   is used.
+  
+JavaScript Interpretation
+-------------------------
+ 
+* an interpreter in the browser reads over the JavaScript code,
+  interprets each line, and runs it. More modern browsers(Chrome, 
+  firefox, etc) use a technology known as Just-In-Time (JIT) compilation, 
+  which compiles JavaScript to executable bytecode just as it is about to run.
+* Javascript is always parsed after HTML, CSS cux it can be an heavy files
+  and slow the load time for HTML and CSS files which can be annoying to 
+  the client querying your website
 
 Page Rendering
 --------------
