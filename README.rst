@@ -367,6 +367,27 @@ This send and receive happens multiple times following the TCP connection flow:
    * The other sides ACKs the FIN packet and sends its own FIN
    * The closer acknowledges the other side's FIN with an ACK
 
+Load Balancing
+--------------
+
+* Load balancers are typically used to ensure that the service remains
+  available and responsive even under heavy load. They are typically
+  software or hardware that handle the job of distributing duties or
+  workloads fairly to the actual servers dishing up the request,
+  according to the amount of traffic available and a preset algorithm.
+* load balancing algorithm is the logic that a load balancer uses
+  to distribute network traffic between servers
+  The type of load balancing algorithms that might be used to pick which
+  server gets the request can be:
+  * Dynamic load balancing algorithms. i.e. Least connection, Weighted least
+    connection, Weighted response time, Resource-based.
+  * Static load balancing algorithms. i.e. Round robin,
+    Weighted round robin, IP hash. 
+
+* The TLS termination most likely occurs here too due to recent practices,
+  with part of the advantage being centralized deployment of
+  SSL certificates and optional configuration of encryption to the targets.
+
 TLS handshake
 -------------
 * The client computer sends a ``ClientHello`` message to the server with its
