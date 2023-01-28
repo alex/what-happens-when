@@ -414,6 +414,16 @@ control`_. This varies depending on the sender; the most common algorithms are
   each packet acknowledged. If a packet is dropped, the window reduces
   exponentially until another packet is acknowledged.
 
+load balancer
+-------------
+When the data reaches the server, it is then passed through a load balancer. A load balancer is a device that distributes incoming traffic across multiple servers to ensure that no single server becomes overwhelmed. This helps to ensure that the website remains available and responsive even during times of high traffic.
+software load balancers generally implements a combination of one or more scheduling algorithms.
+* Weighted Scheduling Algorithm - Work is assigned to the server according to the weight assigned to the server. This is used when there is a considerable difference between the capabilities and specification of the servers present in the farm or cluster.
+* Round Robin Scheduling - Requests are served by the server sequentially one after another. After sending the request to the last server, it starts from the first server again
+* Least Connection First Scheduling - Requests are served first to the server which is currently handling least number of persistent connections.
+When is this algorithm used?: When we have a large number of persistent connections in the traffic unevenly distributed between the servers. It is often coupled with Sticky Session or Session aware load balancing.
+
+
 HTTP protocol
 -------------
 
