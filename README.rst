@@ -628,6 +628,7 @@ CSS interpretation
   contains CSS rules with selectors and objects corresponding CSS grammar.
 * A CSS parser can be top-down or bottom-up when a specific parser generator
   is used.
+*  CSS describes how HTML elements should be displayed. 
 
 Page Rendering
 --------------
