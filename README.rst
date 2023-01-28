@@ -4,7 +4,7 @@ What happens when...
 This repository is an attempt to answer the age-old interview question "What
 happens when you type google.com into your browser's address box and press
 enter?"
-
+it has to do with the DNS in conjuction will the IP addresses pointing to the domain server
 Except instead of the usual story, we're going to try to answer this question
 in as much detail as possible. No skipping out on anything.
 
