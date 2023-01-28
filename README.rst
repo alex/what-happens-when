@@ -577,6 +577,8 @@ HTML parsing
 The rendering engine starts getting the contents of the requested
 document from the networking layer. This will usually be done in 8kB chunks.
 
+When a web page is loaded, the browser parses the HTML and XML code and creates a corresponding DOM tree
+
 The primary job of the HTML parser is to parse the HTML markup into a parse tree.
 
 The output tree (the "parse tree") is a tree of DOM element and attribute
