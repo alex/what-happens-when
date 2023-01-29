@@ -18,6 +18,8 @@ Read this in `简体中文`_ (simplified Chinese), `日本語`_ (Japanese), `한
 (Korean) and `Spanish`_. NOTE: these have not been reviewed by the alex/what-happens-when
 maintainers.
 
+![IMG-20230129-WA0004](https://user-images.githubusercontent.com/106776383/215329872-5012c24d-5064-4dfc-9aca-53492c617cbb.jpg)
+
 Table of Contents
 ====================
 
