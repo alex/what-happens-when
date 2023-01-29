@@ -14,8 +14,8 @@ request, please!
 
 This is all licensed under the terms of the `Creative Commons Zero`_ license.
 
-Read this in `简体中文`_ (simplified Chinese), `日本語`_ (Japanese), `한국어`_
-(Korean) and `Spanish`_. NOTE: these have not been reviewed by the alex/what-happens-when
+Read this in `简体中文`_ (simplified Chinese), `日本語`_ (Japanese) and `한국어`_
+(Korean). NOTE: these have not been reviewed by the alex/what-happens-when
 maintainers.
 
 Table of Contents
@@ -28,7 +28,7 @@ Table of Contents
 The "g" key is pressed
 ----------------------
 The following sections explain the physical keyboard actions
-and the OS interrupts. When you press the key "g" the browser receives the
+and the OS interrupts. When you press the key "g" in the address bar of the browser, the browser receives the
 event and the auto-complete functions kick in.
 Depending on your browser's algorithm and if you are in
 private/incognito mode or not various suggestions will be presented
@@ -37,7 +37,8 @@ and prioritize results based on search history, bookmarks, cookies, and
 popular searches from the internet as a whole. As you are typing
 "google.com" many blocks of code run and the suggestions will be refined
 with each keypress. It may even suggest "google.com" before you finish typing
-it.
+it. On modern desktop browsers, you may be presented with a message on the right side of the address bar that
+says, "Press `Tab` to search", which would autocomplete the domain and wait for your search input or query.
 
 The "enter" key bottoms out
 ---------------------------
@@ -708,4 +709,3 @@ page rendering and painting.
 .. _`日本語`: https://github.com/tettttsuo/what-happens-when-JA
 .. _`downgrade attack`: http://en.wikipedia.org/wiki/SSL_stripping
 .. _`OSI Model`: https://en.wikipedia.org/wiki/OSI_model
-.. _`Spanish`: https://github.com/gonzaleztroyano/what-happens-when-ES
