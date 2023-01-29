@@ -246,6 +246,7 @@ If the entry is not in the ARP cache:
 
 * The network library sends a Layer 2 (data link layer of the `OSI model`_)
   ARP request:
+  
 
 ``ARP Request``::
 
@@ -509,6 +510,7 @@ and IIS for Windows.
 * The server parses the file according to the handler. If Google
   is running on PHP, the server uses PHP to interpret the index file, and
   streams the output to the client.
+* The server processes the request, generates a response, and closes the connection if it finds a Connection: Close header.
 
 Behind the scenes of the Browser
 ----------------------------------
@@ -628,6 +630,7 @@ CSS interpretation
   contains CSS rules with selectors and objects corresponding CSS grammar.
 * A CSS parser can be top-down or bottom-up when a specific parser generator
   is used.
+* It can be used to adjust content size, spacing, color and font or add decorative features, such as animations or split content into columns.
 
 Page Rendering
 --------------
@@ -673,6 +676,10 @@ GPU Rendering
   software layers split the task into multiple pieces, so it can take advantage
   of ``GPU`` massive parallelism for float point calculations required for
   the rendering process.
+  
+* GPU rendering uses a graphics card for rendering in place of a CPU, which can 
+  significantly speed up the rendering process as GPUs are primarily designed for 
+  quick image rendering.
 
 
 Window Server
