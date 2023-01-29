@@ -191,6 +191,7 @@ Convert non-ASCII Unicode characters in the hostname
 * Since the hostname is ``google.com`` there won't be any, but if there were
   the browser would apply `Punycode`_ encoding to the hostname portion of the
   URL.
+* Punycode is a way to represent Unicode characters with the limited character set of ASCII used in the domain name system (DNS). This is necessary because the DNS system only supports ASCII characters, and non-ASCII characters in domain names are not allowed. The Punycode encoded version of the hostname is then sent to the DNS server to resolve the IP address. Additionally, it can be noted that the browser handles the Punycode encoding automatically, so the user does not need to be aware of this process.
 
 Check HSTS list
 ---------------
