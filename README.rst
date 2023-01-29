@@ -20,6 +20,10 @@ maintainers.
 
 ![IMG-20230129-WA0004](https://user-images.githubusercontent.com/106776383/215329872-5012c24d-5064-4dfc-9aca-53492c617cbb.jpg)
 
+Every day you open up your browser and navigate to your favorite websites — whether it be social media, news, or e-commerce sites. You go to this page by typing in a url or clicking on a link to the page. Have you ever thought about what happens behind the scenes? How does the news get to you when you press enter after typing in the URL? How did the images on this post show up in your browser? How does your Twitter feed and the tweet data show up in your browser securely?
+
+In this post, we’ll look at what happens when you type a URL into your browser and press enter. End to end, the process involves the browser, your computer’s operating system, your internet service provider, the server where you host the site, and services running on that server. It’s important to understand where things can go wrong, where to look for performance issues, and ensure you’re offering a secure experience for your users.
+
 Table of Contents
 ====================
 
@@ -210,6 +214,8 @@ search engine that it came from a particular browser's URL bar.
 
 ## DNS lookup
 ----------
+
+Because DNS is complex and has to be blazingly fast, DNS data is cached at different layers between your browser and at various places across the Internet. Your browser checks its own cache, the operating system cache, a local network cache at your router, and a DNS server cache on your corporate network or at your internet service provider (ISP). If the browser cannot find the IP address at any of those cache layers, the DNS server on your corporate network or at your ISP does a recursive DNS lookup. A recursive DNS lookup asks multiple DNS servers around the Internet, which in turn ask more DNS servers for the DNS record until it is found.
 
 * Browser checks if the domain is in its cache. (to see the DNS Cache in
   Chrome, go to `chrome://net-internals/#dns <chrome://net-internals/#dns>`_).
