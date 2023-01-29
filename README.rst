@@ -185,7 +185,7 @@ the text given in the address box to the browser's default web search engine.
 In many cases the URL has a special piece of text appended to it to tell the
 search engine that it came from a particular browser's URL bar.
 
-Convert non-ASCII Unicode characters in the hostname
+## Convert non-ASCII Unicode characters in the hostname
 ------------------------------------------------
 
 * The browser checks the hostname for characters that are not in ``a-z``,
@@ -194,7 +194,7 @@ Convert non-ASCII Unicode characters in the hostname
   the browser would apply `Punycode`_ encoding to the hostname portion of the
   URL.
 
-Check HSTS list
+## Check HSTS list
 ---------------
 * The browser checks its "preloaded HSTS (HTTP Strict Transport Security)"
   list. This is a list of websites that have requested to be contacted via
@@ -208,7 +208,7 @@ Check HSTS list
   `downgrade attack`_, which is why the HSTS list is included in modern web
   browsers.)
 
-DNS lookup
+## DNS lookup
 ----------
 
 * Browser checks if the domain is in its cache. (to see the DNS Cache in
@@ -227,7 +227,7 @@ DNS lookup
   the ``ARP process`` below for the default gateway IP.
 
 
-ARP process
+## ARP process
 -----------
 
 In order to send an ARP (Address Resolution Protocol) broadcast the network
@@ -299,7 +299,7 @@ the default gateway it can resume its DNS process:
   requested and that flows up the list of DNS servers until the SOA is reached,
   and if found an answer is returned.
 
-Opening of a socket
+## Opening of a socket
 -------------------
 Once the browser receives the IP address of the destination server, it takes
 that and the given port number from the URL (the HTTP protocol defaults to port
@@ -369,7 +369,7 @@ This send and receive happens multiple times following the TCP connection flow:
    * The other sides ACKs the FIN packet and sends its own FIN
    * The closer acknowledges the other side's FIN with an ACK
 
-TLS handshake
+## TLS handshake
 -------------
 * The client computer sends a ``ClientHello`` message to the server with its
   Transport Layer Security (TLS) version, list of cipher algorithms and
@@ -399,7 +399,7 @@ TLS handshake
 * From now on the TLS session transmits the application (HTTP) data encrypted
   with the agreed symmetric key.
 
-If a packet is dropped
+## If a packet is dropped
 ----------------------
 
 Sometimes, due to network congestion or flaky hardware connections, TLS packets
@@ -416,7 +416,7 @@ control`_. This varies depending on the sender; the most common algorithms are
   each packet acknowledged. If a packet is dropped, the window reduces
   exponentially until another packet is acknowledged.
 
-HTTP protocol
+## HTTP protocol
 -------------
 
 If the web browser used was written by Google, instead of sending an HTTP
@@ -482,7 +482,7 @@ resolving the other domain, and follows all steps up to this point for that
 domain. The ``Host`` header in the request will be set to the appropriate
 server name instead of ``google.com``.
 
-HTTP Server Request Handle
+## HTTP Server Request Handle
 --------------------------
 The HTTPD (HTTP Daemon) server is the one handling the requests/responses on
 the server-side. The most common HTTPD servers are Apache or nginx for Linux
@@ -512,7 +512,7 @@ and IIS for Windows.
   is running on PHP, the server uses PHP to interpret the index file, and
   streams the output to the client.
 
-Behind the scenes of the Browser
+## Behind the scenes of the Browser
 ----------------------------------
 
 Once the server supplies the resources (HTML, CSS, JS, images, etc.)
@@ -522,7 +522,7 @@ to the browser it undergoes the below process:
 * Rendering - Construct DOM Tree → Render Tree → Layout of Render Tree →
   Painting the render tree
 
-Browser
+## Browser
 -------
 
 The browser's functionality is to present the web resource you choose, by
@@ -573,7 +573,7 @@ The components of the browsers are:
   support storage mechanisms such as localStorage, IndexedDB, WebSQL and
   FileSystem.
 
-HTML parsing
+## HTML parsing
 ------------
 
 The rendering engine starts getting the contents of the requested
@@ -621,7 +621,7 @@ set to "complete" and a "load" event is fired.
 Note there is never an "Invalid Syntax" error on an HTML page. Browsers fix
 any invalid content and go on.
 
-CSS interpretation
+## CSS interpretation
 ------------------
 
 * Parse CSS files, ``<style>`` tag contents, and ``style`` attribute
@@ -631,7 +631,7 @@ CSS interpretation
 * A CSS parser can be top-down or bottom-up when a specific parser generator
   is used.
 
-Page Rendering
+## Page Rendering
 --------------
 
 * Create a 'Frame Tree' or 'Render Tree' by traversing the DOM nodes, and
@@ -665,7 +665,7 @@ Page Rendering
   via Direct3D/OpenGL. The GPU command buffer(s) are flushed to the GPU for
   asynchronous rendering and the frame is sent to the window server.
 
-GPU Rendering
+## GPU Rendering
 -------------
 
 * During the rendering process the graphical computing layers can use general
