@@ -266,6 +266,11 @@ Hub:
 * If the computer is connected to a hub, the hub will broadcast the ARP
   request out of all other ports. If the router is connected on the same "wire",
   it will respond with an ``ARP Reply`` (see below).
+  However, the use of hubs is now limited, as they have largely been replaced by
+  switches, which provide improved network performance and increased security.
+  Switches operate at a higher layer of the OSI model and use a more efficient 
+  method of forwarding ARP requests, reducing network traffic and improving network         
+  performance.
 
 Switch:
 
