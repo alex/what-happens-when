@@ -397,6 +397,10 @@ TLS handshake
 * From now on the TLS session transmits the application (HTTP) data encrypted
   with the agreed symmetric key.
 
+* On the browser when a trusted SSL digital certificate is used during HTTPS
+  connection, padlock will be seen in the address bar. Additionally, when 
+  extended validation certificate installed, address bar turns green.
+
 If a packet is dropped
 ----------------------
 
