@@ -458,6 +458,8 @@ Followed by a single newline, and then sends a payload of the HTML content of
 headers sent by the client requested it, keep the connection open to be reused
 for further requests.
 
+The `HTTP status code`_ ``200 OK`` is your ideal status code for normal, everyday, properly functioning page
+
 If the HTTP headers sent by the web browser included sufficient information for
 the webserver to determine if the version of the file cached by the web
 browser has been unmodified since the last retrieval (ie. if the web browser
@@ -484,7 +486,7 @@ HTTP Server Request Handle
 --------------------------
 The HTTPD (HTTP Daemon) server is the one handling the requests/responses on
 the server-side. The most common HTTPD servers are Apache or nginx for Linux
-and IIS for Windows.
+and IIS for Windows and are commonly written in ASP.NET, PHP, Ruby etc).
 
 * The HTTPD (HTTP Daemon) receives the request.
 * The server breaks down the request to the following parameters:
@@ -696,6 +698,7 @@ page rendering and painting.
 .. _`WiFi`: https://en.wikipedia.org/wiki/IEEE_802.11
 .. _`Cellular data network`: https://en.wikipedia.org/wiki/Cellular_data_communication_protocol
 .. _`analog-to-digital converter`: https://en.wikipedia.org/wiki/Analog-to-digital_converter
+.. _`HTTP status code`: https://moz.com/learn/seo/http-status-codes
 .. _`network node`: https://en.wikipedia.org/wiki/Computer_network#Network_nodes
 .. _`TCP congestion control`: https://en.wikipedia.org/wiki/TCP_congestion_control
 .. _`cubic`: https://en.wikipedia.org/wiki/CUBIC_TCP
