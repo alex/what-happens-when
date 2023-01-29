@@ -681,6 +681,16 @@ Window Server
 Post-rendering and user-induced execution
 -----------------------------------------
 
+Post-rendering refers to the process that occurs after the initial rendering of
+a website in the browser. It involves updating the page dynamically in response
+to user actions, such as clicking buttons or scrolling the page.
+
+User-induced execution is the process by which user actions trigger JavaScript code 
+to run, which then updates the page dynamically. For example, when a user clicks a
+button, the JavaScript code associated with that button is executed, and the page
+is updated in real-time without the need for a page refresh. This allows for a more
+dynamic and interactive experience for the user.
+
 After rendering has been completed, the browser executes JavaScript code as a result
 of some timing mechanism (such as a Google Doodle animation) or user
 interaction (typing a query into the search box and receiving suggestions).
