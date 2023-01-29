@@ -674,6 +674,13 @@ GPU Rendering
   of ``GPU`` massive parallelism for float point calculations required for
   the rendering process.
 
+DNS Server
+-------------
+The Domain name System (DNS) is the phonebook of the internet.
+When a user types a domain name such as 'googlr.com' into a web browser, DNS is responsible for finding the correct IP address for that site.
+The browser then use that address to communicate with the origin server or CDN edge servers to access the website information.
+This all happens thanks to DNS servers; machines dedicated to answer DNS queries.
+
 
 Window Server
 -------------
