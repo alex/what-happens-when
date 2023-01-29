@@ -39,6 +39,16 @@ popular searches from the internet as a whole. As you are typing
 with each keypress. It may even suggest "google.com" before you finish typing
 it.
 
+As the key "g" is pressed, a switch closes and current flows into a small chip in the keyboard
+	• A Number is Transmitted to the CPU
+	• The Data is Interpreted by the Operating System
+	• An Event is Created by the OS and Captured by Application Software
+	• The Application Software Displays the Character on the Screen
+
+It sends this image, as a binary representation, back to the CPU, which sends it to the GPU. 
+The GPU translates the binary code into an image and displays it on the monitor.
+
+
 The "enter" key bottoms out
 ---------------------------
 
