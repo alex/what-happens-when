@@ -680,6 +680,14 @@ Window Server
 
 Post-rendering and user-induced execution
 -----------------------------------------
+Post-rendering refers to the process of applying visual effects to a rendered image or 
+animation after it has been generated. This step can enhance the look of the final product by 
+adding shading, reflections, depth of field, and other effects.
+User-induced execution refers to the ability for a user to initiate a process or operation, either directly or indirectly. 
+For example, a user might click a button in a graphical user interface (GUI) to start a program or initiate a specific action. 
+The user's action serves as the trigger to initiate the execution of a process or operation. 
+This type of interaction is used in many software applications and systems to allow users to initiate specific tasks or functions.
+
 
 After rendering has been completed, the browser executes JavaScript code as a result
 of some timing mechanism (such as a Google Doodle animation) or user
