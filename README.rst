@@ -27,17 +27,7 @@ Table of Contents
 
 The "g" key is pressed
 ----------------------
-The following sections explain the physical keyboard actions
-and the OS interrupts. When you press the key "g" the browser receives the
-event and the auto-complete functions kick in.
-Depending on your browser's algorithm and if you are in
-private/incognito mode or not various suggestions will be presented
-to you in the dropdown below the URL bar. Most of these algorithms sort
-and prioritize results based on search history, bookmarks, cookies, and
-popular searches from the internet as a whole. As you are typing
-"google.com" many blocks of code run and the suggestions will be refined
-with each keypress. It may even suggest "google.com" before you finish typing
-it.
+A whole lot of things happen. The key is sensed by a microprocessor in the keyboard. It identifies the key and sends a key code up through a USB serial link to a USB port on the motherboard. A USB controller on the motherboard interrupts the CPU, which identifies the device and reads the key press and puts it into an input queue. The operating system sees the key and sees if there are any application topmost that is accepting keyboard events. Depending on the event setup, the application receives a message, either of a key press or of a lower "key down" event. Then the app decides whether the key code is of a function key or a text character. Then all heck breaks loose. The app has to figure out what font is in use, what font size, how full the current line is, whether to apply spell-checking to the current word, and a dozen other details. Tens of thousands of lines of code get executed to decide what to do with the key press. Actually, it can take millions of operations to adjust the character spacing on the line and do spell and grammar checking. Once the app decides to put the character into the display, more millions of lines of code in the operating system get run to form the character shape, scale it, send it perhaps top a graphical processing unit which then renders the character to the screen display. Every key press you use more computer cycles than ever were used before 1960.
 
 The "enter" key bottoms out
 ---------------------------
