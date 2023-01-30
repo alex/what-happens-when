@@ -413,6 +413,15 @@ control`_. This varies depending on the sender; the most common algorithms are
 * After reaching the slow-start threshold, the window increases additively for
   each packet acknowledged. If a packet is dropped, the window reduces
   exponentially until another packet is acknowledged.
+  
+Load Balancing
+--------------
+
+Inorder to stabilize the service, google uses Google Cloud Load Balancing,
+ which use anycast, a method for sending clients to the closest cluster without relying on DNS geolocation.
+Google’s global load balancer knows where the clients are located and directs packets to the closest web service,
+providing low latency to users while using a single virtual IP (VIP).
+Using a single VIP reduces latency. 
 
 HTTP protocol
 -------------
