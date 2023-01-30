@@ -689,6 +689,10 @@ the Google homepage. Scripts can cause additional network requests to be
 performed, as well as modify the page or its layout, causing another round of
 page rendering and painting.
 
+Database
+----------------------
+If the dynamic content requires data from a database, the application server will communicate with the database to retrieve the necessary information. The database may be MySQL, PostgreSQL, or any other database management system.
+
 .. _`Creative Commons Zero`: https://creativecommons.org/publicdomain/zero/1.0/
 .. _`"CSS lexical and syntax grammar"`: http://www.w3.org/TR/CSS2/grammar.html
 .. _`Punycode`: https://en.wikipedia.org/wiki/Punycode
