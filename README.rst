@@ -414,6 +414,16 @@ control`_. This varies depending on the sender; the most common algorithms are
   each packet acknowledged. If a packet is dropped, the window reduces
   exponentially until another packet is acknowledged.
 
+Load Balancing
+--------------
+
+Google operates a server farm and relies on load balancers to effectively asign IP address based on the clients location.
+Load balancers typically sits in front of a server and routes clients requests across all server capable of fulfilling their request. A load balancer introduces multiple point of failure ensuring performance is not compromised.
+A load balancer performs the following functions:
+* Distributes client requests or network load efficiently across multiple servers
+* Ensures high availability and reliability by sending requests to online servers.
+* Provides the flexibility to add or subtract servers as demand dictates
+
 HTTP protocol
 -------------
 
