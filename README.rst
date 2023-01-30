@@ -619,7 +619,7 @@ set to "complete" and a "load" event is fired.
 Note there is never an "Invalid Syntax" error on an HTML page. Browsers fix
 any invalid content and go on.
 
-CSS interpretation
+CSS interpretation 
 ------------------
 
 * Parse CSS files, ``<style>`` tag contents, and ``style`` attribute
