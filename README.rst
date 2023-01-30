@@ -208,7 +208,7 @@ Check HSTS list
 
 DNS lookup
 ----------
-
+* DNS Lookup is an online tool that will find the IP address and perform a deep DNS lookup of any URL, providing in-depth details on common record types, like A, MX,    NS, SOA, and TXT.
 * Browser checks if the domain is in its cache. (to see the DNS Cache in
   Chrome, go to `chrome://net-internals/#dns <chrome://net-internals/#dns>`_).
 * If not found, the browser calls ``gethostbyname`` library function (varies by
