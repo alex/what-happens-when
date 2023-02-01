@@ -165,7 +165,7 @@ appropriate font symbol in the appropriate focused field.
 Parse URL
 ---------
 
-* The browser now has the following information contained in the URL (Uniform
+* The browser will have the following information contained in the URL (Uniform
   Resource Locator):
 
     - ``Protocol``  "http"
@@ -178,7 +178,7 @@ Parse URL
 Is it a URL or a search term?
 -----------------------------
 
-When no protocol or valid domain name is given the browser proceeds to feed
+When no protocol or valid domain name is given the browser can proceeds to feed
 the text given in the address box to the browser's default web search engine.
 In many cases the URL has a special piece of text appended to it to tell the
 search engine that it came from a particular browser's URL bar.
