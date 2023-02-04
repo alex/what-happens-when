@@ -151,7 +151,7 @@ handled by, an ``NSApplication`` main event loop, via an ``NSEvent`` of
 ``NSEventType`` ``KeyDown``.
 
 (On GNU/Linux) the Xorg server listens for keycodes
----------------------------------------------------
+----------------------------------------------------
 
 When a graphical ``X server`` is used, ``X`` will use the generic event
 driver ``evdev`` to acquire the keypress. A re-mapping of keycodes to scancodes
