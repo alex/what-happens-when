@@ -369,6 +369,14 @@ This send and receive happens multiple times following the TCP connection flow:
 
 TLS handshake
 -------------
+* TCP uses the 3 way handshake model which is a three-step process where the client and the server exchange SYN(synchronize) and ACK(acknowledge) messages to establish a connection.
+
+	I. The client machine sends a SYN packet to the server over the internet, asking if it is open for new connections.
+
+	II. If the server has open ports that can accept and initiate new connections, it’ll respond with an ACKnowledgment of the SYN packet using a SYN/ACK packet.
+
+	III. The client will receive the SYN/ACK packet from the server and will acknowledge it by sending an ACK packet.
+
 * The client computer sends a ``ClientHello`` message to the server with its
   Transport Layer Security (TLS) version, list of cipher algorithms and
   compression methods available.
@@ -396,6 +404,8 @@ TLS handshake
 
 * From now on the TLS session transmits the application (HTTP) data encrypted
   with the agreed symmetric key.
+
+
 
 If a packet is dropped
 ----------------------
