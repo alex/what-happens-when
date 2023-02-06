@@ -232,6 +232,13 @@ In order to send an ARP (Address Resolution Protocol) broadcast the network
 stack library needs the target IP address to lookup. It also needs to know the
 MAC address of the interface it will use to send out the ARP broadcast.
 
+Address Resolution Protocol (ARP) is a networking protocol used to map an 
+IP address to a physical (MAC) address on a local network. ARP is used to 
+convert the IP address of a network host to its corresponding physical 
+address (MAC), which is used to access the host on the physical network. 
+This process is required for data to be sent from one host to another on 
+a local network segment. ARP operates at the Data Link Layer of the OSI Model.
+
 The ARP cache is first checked for an ARP entry for our target IP. If it is in
 the cache, the library function returns the result: Target IP = MAC.
 
