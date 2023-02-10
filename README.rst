@@ -420,7 +420,8 @@ HTTP protocol
 If the web browser used was written by Google, instead of sending an HTTP
 request to retrieve the page, it will send a request to try and negotiate with
 the server an "upgrade" from HTTP to the SPDY protocol.
-
+The HTTP protocol is a stateless protocol, meaning each request is treated as independent from other requests. 
+It operates on a request-response model, where the client (web browser) sends a request to the server and the server sends a response. 
 If the client is using the HTTP protocol and does not support SPDY, it sends a
 request to the server of the form::
 
