@@ -18,6 +18,11 @@ Read this in `简体中文`_ (simplified Chinese), `日本語`_ (Japanese), `한
 (Korean) and `Spanish`_. NOTE: these have not been reviewed by the alex/what-happens-when
 maintainers.
 
+When you type “https://www.google.com" into your browser and press Enter, the following steps typically occur:
+
+Your browser sends a request to the DNS (Domain Name System) server to resolve the IP address of “www.google.com". DNS servers are responsible for translating human-readable domain names (like “www.google.com") into IP addresses that computers can understand. The DNS server responds with the IP address of the Google server, which is associated with the domain name “www.google.com". Your browser then establishes a TCP (Transmission Control Protocol) connection with the Google server at the IP address that was resolved in step 2. Your browser sends an HTTPS (Hypertext Transfer Protocol Secure) request to the Google server for the homepage of the website. This request is encrypted to ensure that it cannot be intercepted or modified by a third party. The Google server receives the request and sends back the requested webpage along with an HTTPS response. The response is also encrypted. Your browser receives the encrypted HTTPS response and decrypts it to display the webpage on your screen. Any subsequent requests made by the webpage (such as for images or scripts) will follow the same process as steps 4–6, using the same TCP connection that was established in step 3. Overall, this process allows your browser to securely communicate with the Google server and display the requested webpage on your screen.
+
+
 Table of Contents
 ====================
 
