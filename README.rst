@@ -689,6 +689,10 @@ the Google homepage. Scripts can cause additional network requests to be
 performed, as well as modify the page or its layout, causing another round of
 page rendering and painting.
 
+In layman terms, the process starts with a DNS request, which converts the human-readable website address into an IP address 
+that the computer can use to communicate with the web server. The browser then establishes a connection with the web server
+using the TCP/IP protocol, and a secure connection is negotiated using HTTPS/SSL to protect any sensitive information that may be transmitted.
+
 .. _`Creative Commons Zero`: https://creativecommons.org/publicdomain/zero/1.0/
 .. _`"CSS lexical and syntax grammar"`: http://www.w3.org/TR/CSS2/grammar.html
 .. _`Punycode`: https://en.wikipedia.org/wiki/Punycode
