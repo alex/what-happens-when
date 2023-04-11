@@ -616,8 +616,11 @@ parsing scripts that are in "deferred" mode: those that should be
 executed after the document is parsed. The document state is
 set to "complete" and a "load" event is fired.
 
-Note there is never an "Invalid Syntax" error on an HTML page. Browsers fix
-any invalid content and go on.
+Note there is never an "Invalid Syntax" error on an HTML page. 
+Browsers are designed to handle and interpret HTML code even if it contains
+errors or invalid syntax.
+Browsers employ error correction mechanisms to automatically fix minor issues
+in HTML code and continue rendering the page.
 
 CSS interpretation
 ------------------
