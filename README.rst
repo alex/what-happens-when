@@ -298,8 +298,8 @@ the default gateway it can resume its DNS process:
   and if found an answer is returned.
   
 Globally, there are 12 independent operators that manage 13 DNS root name servers.
-The operators are:
-   A - VeriSign Global Registry Services
+The operators are:\n
+   A - VeriSign Global Registry Services\n
    B - University of Southern California, Information Sciences Institute
    C - Cogent Communications
    D - University of Maryland
