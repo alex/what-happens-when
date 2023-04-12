@@ -26,18 +26,10 @@ Table of Contents
    :local:
 
 The "g" key is pressed
-----------------------
-The following sections explain the physical keyboard actions
-and the OS interrupts. When you press the key "g" the browser receives the
-event and the auto-complete functions kick in.
-Depending on your browser's algorithm and if you are in
-private/incognito mode or not various suggestions will be presented
-to you in the dropdown below the URL bar. Most of these algorithms sort
-and prioritize results based on search history, bookmarks, cookies, and
-popular searches from the internet as a whole. As you are typing
-"google.com" many blocks of code run and the suggestions will be refined
-with each keypress. It may even suggest "google.com" before you finish typing
-it.
+-----------------------
+When the "g" key is pressed on a keyboard, it sends an electrical signal to the computer, which is then processed by the operating system and the application that is currently running. The letter "g" will be displayed on the screen, either in a text document, in an email, in a search bar, or in any other type of input field where you are typing.
+
+If the keyboard is not functioning properly, or if the computer is experiencing some sort of software or hardware issue, the "g" key may not work as expected. In some cases, the "g" key may produce a different character or no character at all when pressed. If this happens, it may be necessary to troubleshoot the keyboard or computer to determine the cause of the issue.
 
 The "enter" key bottoms out
 ---------------------------
