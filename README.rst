@@ -28,8 +28,11 @@ Table of Contents
 The "g" key is pressed
 ----------------------
 The following sections explain the physical keyboard actions
-and the OS interrupts. When you press the key "g" the browser receives the
-event and the auto-complete functions kick in.
+and the OS interrupts.  When you press the "g" key, the key's signal travels through the wi
+ring in the keyboard to the computer's input/output controller (IOC), which generates an i
+nterrupt request to the operating system. The operating system then sends the interrupt re
+quest to the device driver for the keyboard, which decodes the signal and sends it to the
+browser, the browser receives the event and the auto-complete functions kick in.
 Depending on your browser's algorithm and if you are in
 private/incognito mode or not various suggestions will be presented
 to you in the dropdown below the URL bar. Most of these algorithms sort
