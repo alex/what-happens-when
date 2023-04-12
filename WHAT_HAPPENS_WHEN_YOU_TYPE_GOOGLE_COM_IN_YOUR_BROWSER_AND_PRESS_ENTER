@@ -1,0 +1,39 @@
+When you type “https://www.google.com" in your browser and press enter, a series of events take place behind the scenes that allow you to access Google’s search engine. In this blog post, we will explore the journey of your request, from the moment you hit “enter” until Google’s search results appear on your screen.
+
+DNS request
+
+The first thing your browser does when you hit “enter” is to send a DNS request to your Internet Service Provider’s (ISP) DNS servers. DNS stands for Domain Name System, and its primary function is to translate domain names into IP addresses. In this case, your browser is asking the ISP’s DNS servers to provide the IP address of “www.google.com."
+
+TCP/IP
+
+Once your browser receives the IP address from the DNS servers, it uses the Transmission Control Protocol/Internet Protocol (TCP/IP) to establish a connection with Google’s server. TCP/IP is a suite of communication protocols that governs the transfer of data over the internet. It breaks the data into small packets and sends them across the network to their destination.
+
+Firewall
+
+Before your browser can establish a connection with Google’s server, it must pass through a firewall. A firewall is a security system that monitors and filters incoming and outgoing traffic based on predefined security rules. It ensures that only authorized traffic can pass through to the web server.
+
+HTTPS/SSL
+
+Once the connection is established, your browser sends a request to the server to access Google’s search engine. However, before the server can respond, it needs to ensure that the communication between your browser and the server is secure. It uses Hypertext Transfer Protocol Secure (HTTPS) and Secure Socket Layer (SSL) to encrypt the data transfer. HTTPS and SSL prevent hackers from intercepting and reading sensitive information like passwords, credit card details, and other personal information.
+
+Load-balancer
+
+Google’s servers receive millions of requests every second. To ensure that each request gets processed efficiently, Google uses a load balancer. A load balancer is a device or software that distributes incoming network traffic across multiple servers. It ensures that no single server is overloaded and that all requests get processed.
+
+Web server
+
+Once the load balancer directs the request to a server, the server’s web server software takes over. The web server receives the request, reads the HTTP headers, and determines the requested resource (in this case, Google’s search engine). The web server retrieves the necessary files from the file system and sends them back to your browser as an HTTP response.
+
+Application server
+
+Some websites, like Google, use application servers to handle user requests. Application servers are software frameworks that provide an environment for web applications to run. They can execute code, process data, and interact with databases. In Google’s case, the application server may handle tasks like processing your search query and retrieving the search results from a database.
+
+Database
+
+Finally, your search query gets processed by a database server. A database server is a computer program that provides database services to other programs or computers. It retrieves the requested information from the database and sends it back to the application server, which then sends it to the web server, and ultimately to your browser.
+
+In conclusion, typing “https://www.google.com" in your browser and pressing enter triggers a complex series of events that allow you to access Google’s search engine. From the DNS request to the database server, each component plays a crucial role in ensuring that your search query gets processed efficiently and securely.
+
+I have attached the image below to illustrate how it works.
+
+
