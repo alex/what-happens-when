@@ -208,7 +208,7 @@ Check HSTS list
 
 DNS lookup
 ----------
-
+* When you type in your browser and press Enter, the first thing that happens is your computer sends a request to a DNS server to find out the IP address of the server    that hosts the website. Think of the DNS server like a phone book. It tells your computer the phone number (IP address) of the website you’re trying to reach.
 * Browser checks if the domain is in its cache. (to see the DNS Cache in
   Chrome, go to `chrome://net-internals/#dns <chrome://net-internals/#dns>`_).
 * If not found, the browser calls ``gethostbyname`` library function (varies by
