@@ -296,6 +296,24 @@ the default gateway it can resume its DNS process:
 * If the local/ISP DNS server does not have it, then a recursive search is
   requested and that flows up the list of DNS servers until the SOA is reached,
   and if found an answer is returned.
+  
+Globally, there are 12 independent operators that manage 13 DNS root name servers.
+The operators are:
+   * A - VeriSign Global Registry Services
+   * B - University of Southern California, Information Sciences Institute
+   * C - Cogent Communications
+   * D - University of Maryland
+   * E - NASA Ames Research Center
+   * F -Internet Systems Consortium, Inc.
+   * G - US DoD Network Information Center
+   * H - US Army Research Lab
+   * I - Netnod
+   * J - VeriSign Global Registry Services
+   * K - RIPE NCC
+   * L - ICANN
+   * M - WIDE Project
+The alphabets (a-m) are actually used in the hostname of the servers. For example, the
+hostname of the server ICANN manages - the ICANN Managed Root Server (IMRS) - is 'l.root-servers.net'.
 
 Opening of a socket
 -------------------
