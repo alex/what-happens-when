@@ -1,0 +1,1 @@
+When you enter "google.com" into a web browser, the browser uses TCP/IP to establish a connection with the server that hosts the website. Here's what happens in more detail: The browser sends a request to the server using IP to establish a connection
