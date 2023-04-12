@@ -51,6 +51,13 @@ closure of the switch, and converts it to a keycode integer, in this case 13.
 The keyboard controller then encodes the keycode for transport to the computer.
 This is now almost universally over a Universal Serial Bus (USB) or Bluetooth
 connection, but historically has been over PS/2 or ADB connections.
+PS/2, ADB, USB, and Bluetooth are different types of connectors that have been
+used to connect keyboards to computers over the years. PS/2 and ADB are older
+connector types that were commonly used in desktop computers and Apple
+Macintosh computers, respectively. USB is a newer and more universal connector
+that is now the most common type of connector for computer keyboards.
+Bluetooth is a wireless technology that allows keyboards to connect to
+computers without the need for a physical cable.
 
 *In the case of the USB keyboard:*
 
