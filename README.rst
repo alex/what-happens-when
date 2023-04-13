@@ -491,6 +491,16 @@ and IIS for Windows.
    * HTTP Request Method (either ``GET``, ``HEAD``, ``POST``, ``PUT``,
      ``PATCH``, ``DELETE``, ``CONNECT``, ``OPTIONS``, or ``TRACE``). In the
      case of a URL entered directly into the address bar, this will be ``GET``.
+        - HTTP verbs or methods define the actions that can be performed on a web server or web resource. Here is a brief explanation of each HTTP verb:
+                - GET: This is the most common HTTP verb used to retrieve a resource from the server. It requests a representation of the specified resource.
+                - HEAD: This method is similar to GET, but it returns only the headers of the response, not the body.
+                - POST: This method is used to submit data to be processed by the server. For example, it can be used to submit a form or upload a file.
+                - PUT: This method is used to update an existing resource on the server.
+                - PATCH: This method is similar to PUT, but it is used to update only a part of a resource, not the entire resource.
+                - DELETE: This method is used to delete a specified resource on the server.
+                - CONNECT: This method is used to establish a network connection to a resource.
+                - OPTIONS: This method is used to retrieve information about the communication options available for a resource.
+                - TRACE: This method is used to retrieve a diagnostic trace of the request and response messages exchanged between the client and server.
    * Domain, in this case - google.com.
    * Requested path/page, in this case - / (as no specific path/page was
      requested, / is the default path).
