@@ -27,17 +27,13 @@ Table of Contents
 
 The "g" key is pressed
 ----------------------
-The following sections explain the physical keyboard actions
-and the OS interrupts. When you press the key "g" the browser receives the
-event and the auto-complete functions kick in.
-Depending on your browser's algorithm and if you are in
-private/incognito mode or not various suggestions will be presented
-to you in the dropdown below the URL bar. Most of these algorithms sort
-and prioritize results based on search history, bookmarks, cookies, and
-popular searches from the internet as a whole. As you are typing
-"google.com" many blocks of code run and the suggestions will be refined
-with each keypress. It may even suggest "google.com" before you finish typing
-it.
+When you press the "g" key on your keyboard, it sends a physical signal to the computer's operating system, which generates an interrupt signal to the browser. The browser then receives this signal and initiates an event listener to capture the keystroke. The auto-complete function of the browser is then triggered, which begins to suggest possible matches based on the user's search history, bookmarks, cookies, and popular searches from the internet.
+
+The algorithm used by the browser to prioritize these suggestions can vary based on a number of factors, including the user's browsing history, the browser's settings, and whether the user is in private or incognito mode. As the user types "google.com," the browser's auto-complete function continues to refine its suggestions with each subsequent keystroke, often suggesting "google.com" before the user has even finished typing it.
+
+In addition to the browser's auto-complete function, other blocks of code may be executed in response to the "g" keystroke. For example, if the user has assigned a keyboard shortcut to launch a specific application, this may also be triggered by the "g" key.
+
+Overall, the "g" keystroke represents a complex interplay between physical hardware, software algorithms, and user behavior, all working together to deliver a smooth and efficient browsing experience.
 
 The "enter" key bottoms out
 ---------------------------
