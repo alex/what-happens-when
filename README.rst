@@ -208,6 +208,15 @@ Check HSTS list
 
 DNS lookup
 ----------
+Here are some basic points on DNS lookup:
+•	DNS lookup is performed by your computer or device every time you access a website, send an email, or use any other internet-based service.
+•	DNS lookup is essential for the proper functioning of the internet because it enables users to access resources using domain names instead of memorizing IP addresses.
+•	When you enter a domain name into your web browser or other application, your computer sends a DNS request to a DNS server to resolve the domain name into an IP address.
+•	DNS servers are distributed around the world and maintain databases of domain names and their corresponding IP addresses.
+•	DNS lookup can take a few milliseconds to several seconds depending on various factors, such as the speed of your internet connection, the location of the DNS server, and the complexity of the domain name.
+•	DNS lookup can be affected by various issues, such as network congestion, DNS server failures, or DNS spoofing attacks.
+•	DNS lookup can be optimized by using a reliable DNS server, such as Google DNS or Open DNS, or by configuring your network settings to use a faster DNS server.
+
 
 * Browser checks if the domain is in its cache. (to see the DNS Cache in
   Chrome, go to `chrome://net-internals/#dns <chrome://net-internals/#dns>`_).
