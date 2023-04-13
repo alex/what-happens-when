@@ -395,7 +395,7 @@ TLS handshake
   to the client, also encrypted with the symmetric key.
 
 * From now on the TLS session transmits the application (HTTP) data encrypted
-  with the agreed symmetric key.
+  with the agreed symmetric key .
 
 If a packet is dropped
 ----------------------
