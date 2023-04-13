@@ -367,6 +367,20 @@ This send and receive happens multiple times following the TCP connection flow:
    * The other sides ACKs the FIN packet and sends its own FIN
    * The closer acknowledges the other side's FIN with an ACK
 
+Using the public Internet routing infrastructure, data packets from the client 
+request gets routed through the above path which may lag at times. Instead, another
+way round may be the use of CDN (content delivery network) which will cache
+dynamic and static content closer to the browser.
+
+A CDN is a globally distributed network of caching servers that improve the performance 
+of sites or apps by bringing the content to users. Requests from the browsers get to take 
+advantage of this network that has ultra-low latency and hign availability.
+Here the request is intelligently routed through the most performance location to deliver
+content to browsers
+
+Once the browser finds the server on the internet, it establishes a TCP connection with 
+the server and if HTTPS is being used, a TLS handshake takes place to secure the connection.
+
 TLS handshake
 -------------
 * The client computer sends a ``ClientHello`` message to the server with its
