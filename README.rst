@@ -414,6 +414,11 @@ control`_. This varies depending on the sender; the most common algorithms are
   each packet acknowledged. If a packet is dropped, the window reduces
   exponentially until another packet is acknowledged.
 
+Load Balancer
+-------------
+
+High-traffic websites like Google often use load-balancers, which are servers that distribute incoming requests across multiple servers to ensure efficient handling of traffic. Load-balancers help prevent server overload and ensure smooth functioning of the website.
+
 HTTP protocol
 -------------
 
