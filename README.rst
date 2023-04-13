@@ -219,6 +219,19 @@ DNS lookup
 * If ``gethostbyname`` does not have it cached nor can find it in the ``hosts``
   file then it makes a request to the DNS server configured in the network
   stack. This is typically the local router or the ISP's caching DNS server.
+* The DNS server takes a couple of steps before actually performing the ARP process
+  which involved the following.
+    * first the the reques is sent to the resolver which tries to check its cache To
+      if the address has been visited recently. the resolver is normally the one provided
+      by the ISP.
+    * If the resolver can find the IP address in its cache, then sends a requst to the DNS
+      nameserver which then responds to the resolver with Top Level Domain name eg. .com,
+      .tech, .edu, .org etc.
+    * The resolver uses this response from the DNS nameserver and then sends a request To
+      the TLD nameserver which then responds with the address of the authoritative
+      nameserver
+    * Then the authoritative nameserver that responds with the IP address of the domain 
+      in this case google.com.
 * If the DNS server is on the same subnet the network library follows the
   ``ARP process`` below for the DNS server.
 * If the DNS server is on a different subnet, the network library follows
