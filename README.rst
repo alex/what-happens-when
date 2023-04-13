@@ -210,7 +210,7 @@ DNS lookup
 ----------
 
 * Browser checks if the domain is in its cache. (to see the DNS Cache in
-  Chrome, go to `chrome://net-internals/#dns <chrome://net-internals/#dns>`_).
+  Chrome, go to ``chrome://net-internals/#dns``).
 * If not found, the browser calls ``gethostbyname`` library function (varies by
   OS) to do the lookup.
 * ``gethostbyname`` checks if the hostname can be resolved by reference in the
@@ -362,7 +362,7 @@ This send and receive happens multiple times following the TCP connection flow:
    * When the other side acknowledges receipt of that packet (or a string of
      packets), it sends an ACK packet with the ACK value equal to the last
      received sequence from the other
-* To close the connection:
+* To close the connection after data transmission:
    * The closer sends a FIN packet
    * The other sides ACKs the FIN packet and sends its own FIN
    * The closer acknowledges the other side's FIN with an ACK
