@@ -5,6 +5,7 @@ sudo: false
 install: 
     - pip install doc8
     - npm install -g write-good
+    - npm run serve
 
 script:
     - doc8 README.rst
