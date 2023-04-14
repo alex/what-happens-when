@@ -628,6 +628,8 @@ CSS interpretation
   contains CSS rules with selectors and objects corresponding CSS grammar.
 * A CSS parser can be top-down or bottom-up when a specific parser generator
   is used.
+  
+Google's website uses CSS to control the layout, color, font, and other visual aspects of the page. The CSS code for Google's website is written in a separate file and includes selectors, properties, and values. Selectors are used to target specific HTML elements, such as headings or links, while properties and values are used to define the visual style of those elements. Some common CSS properties used on Google's website include font-size, color, background-color, margin, padding, border, and display. The overall style of Google's website is clean and minimalistic, with a focus on usability and functionality.
 
 Page Rendering
 --------------
