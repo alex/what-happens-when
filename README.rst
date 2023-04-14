@@ -27,6 +27,15 @@ Table of Contents
 
 The "g" key is pressed
 ----------------------
+
+When the G key is pressed, the computer registers the keypress event and sends it to the operating system. The operating system then checks the keyboard layout settings to determine the character that corresponds to the G key.
+
+If the keyboard layout is set to US English, the character "g" is sent to the active application. If the keyboard layout is set to a different language, a different character may be sent.
+
+The active application then processes the keypress event and performs the corresponding action. For example, if the G key is pressed in a text editor, the character "g" will be inserted at the current cursor position.
+
+If the G key is pressed along with one or more modifier keys, such as Ctrl or Shift, the resulting key combination may trigger a different action or shortcut in the active application.
+
 The following sections explain the physical keyboard actions
 and the OS interrupts. When you press the key "g" the browser receives the
 event and the auto-complete functions kick in.
