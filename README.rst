@@ -405,6 +405,10 @@ will be dropped before they get to their final destination. The sender then has
 to decide how to react. The algorithm for this is called `TCP congestion
 control`_. This varies depending on the sender; the most common algorithms are
 `cubic`_ on newer operating systems and `New Reno`_ on almost all others.
+When a TCP sender detects a congestion event (i.e. a packet loss or delay),
+it reduces the transmission rate to prevent further congestion.
+The sender then gradually increases the rate again, monitoring the network
+for congestion events and adjusting the rate accordingly.
 
 * Client chooses a `congestion window`_ based on the `maximum segment size`_
   (MSS) of the connection.
@@ -413,7 +417,7 @@ control`_. This varies depending on the sender; the most common algorithms are
 * After reaching the slow-start threshold, the window increases additively for
   each packet acknowledged. If a packet is dropped, the window reduces
   exponentially until another packet is acknowledged.
-
+  
 HTTP protocol
 -------------
 
