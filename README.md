@@ -1,0 +1,1 @@
+This branch focuses on the set of activities that take place when one types something to searvh in the web browser
