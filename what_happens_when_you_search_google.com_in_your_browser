@@ -1,0 +1,27 @@
+Have you ever wondered what happens when you type a URL into your browser and press Enter? It may seem like a simple task, but there are actually many steps involved in getting your desired webpage to display on your screen. In this blog post, we'll take a closer look at what happens when you type https://www.google.com into your browser.
+
+DNS Request:
+The first thing that happens is a DNS (Domain Name System) request. The DNS is like a phone book for the internet, translating the URL you entered (https://www.google.com) into an IP address that the browser can use to connect to the website's server. The browser sends a request to a DNS resolver, which is usually provided by your Internet Service Provider (ISP) or a third-party service like Google DNS. The DNS resolver then looks up the IP address associated with the domain name and returns it to the browser.
+
+TCP/IP:
+Once the browser has the IP address, it initiates a TCP (Transmission Control Protocol) connection with the server using the IP address and a port number. The TCP protocol ensures that the connection is reliable and that the data is transmitted in the correct order. The browser sends an HTTP (Hypertext Transfer Protocol) request over this TCP connection to the server.
+
+Firewall:
+At this point, the request may be intercepted by a firewall, which is a security measure that monitors incoming and outgoing network traffic. The firewall checks the request against a set of rules to ensure that it is safe to proceed.
+
+HTTPS/SSL:
+If the website is using HTTPS (Hypertext Transfer Protocol Secure), the browser and server establish an SSL (Secure Sockets Layer) or TLS (Transport Layer Security) encrypted connection. This ensures that any data transmitted between the browser and server is secure and cannot be intercepted or tampered with by third parties.
+
+Load-Balancer:
+If the website is large or receives a lot of traffic, it may use a load balancer to distribute the incoming requests across multiple servers. The load balancer ensures that no single server is overwhelmed with traffic and that all requests are handled in a timely manner.
+
+Web Server:
+The HTTP request is then passed on to the web server, which is responsible for serving up the requested content. The web server may retrieve the content from a file on the server's hard drive or generate it dynamically using a scripting language like PHP or Python.
+
+Application Server:
+If the website is more complex and requires additional processing, it may use an application server. The application server is responsible for handling business logic and data processing, and may retrieve data from a database.
+
+Database:
+Finally, if the website requires data to be stored or retrieved, it may use a database. The application server communicates with the database to retrieve or update data as needed.
+
+In conclusion, typing a URL into your browser and pressing Enter may seem like a simple task, but it involves many steps and technologies working together to deliver the desired webpage to your screen. Understanding this process is essential for software engineers and anyone else who works with web technologies.
