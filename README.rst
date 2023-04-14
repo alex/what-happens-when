@@ -526,7 +526,7 @@ Browser
 The browser's functionality is to present the web resource you choose, by
 requesting it from the server and displaying it in the browser window.
 The resource is usually an HTML document, but may also be a PDF,
-image, or some other type of content. The location of the resource is
+image, or some other type of dynamic content. The location of the resource is
 specified by the user using a URI (Uniform Resource Identifier).
 
 The way the browser interprets and displays HTML files is specified
