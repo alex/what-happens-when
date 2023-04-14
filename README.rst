@@ -297,6 +297,11 @@ the default gateway it can resume its DNS process:
   requested and that flows up the list of DNS servers until the SOA is reached,
   and if found an answer is returned.
 
+DNS-based load balancing
+------------------------
+Some sites use multiple servers and the domain name may be mapped to 2 to 3 servers.
+Using Round Robin or any algorithm specified, It returns one of this IP addresses
+
 Opening of a socket
 -------------------
 Once the browser receives the IP address of the destination server, it takes
