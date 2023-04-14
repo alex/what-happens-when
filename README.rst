@@ -568,7 +568,7 @@ The components of the browsers are:
   execute JavaScript code.
 * **Data storage:** The data storage is a persistence layer. The browser may
   need to save all sorts of data locally, such as cookies. Browsers also
-  support storage mechanisms such as localStorage, IndexedDB, WebSQL and
+  support storage mechanisms such as localStorage (json file based), IndexedDB, WebSQL and
   FileSystem.
 
 HTML parsing
