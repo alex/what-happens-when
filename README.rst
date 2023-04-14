@@ -673,7 +673,7 @@ GPU Rendering
   software layers split the task into multiple pieces, so it can take advantage
   of ``GPU`` massive parallelism for float point calculations required for
   the rendering process.
-
+ 
 
 Window Server
 -------------
