@@ -367,8 +367,13 @@ This send and receive happens multiple times following the TCP connection flow:
    * The other sides ACKs the FIN packet and sends its own FIN
    * The closer acknowledges the other side's FIN with an ACK
 
-TLS handshake
+SSL/TLS handshake
 -------------
+* SSL (Secure Sockets Layer) and its successor, TLS (Transport Layer Security), 
+  are protocols for establishing authenticated and encrypted links between networked computers. 
+  Although the SSL protocol was deprecated with the release of TLS 1.0 in 1999, 
+  it is still common to refer to these related technologies as “SSL” or “SSL/TLS.”
+
 * The client computer sends a ``ClientHello`` message to the server with its
   Transport Layer Security (TLS) version, list of cipher algorithms and
   compression methods available.
