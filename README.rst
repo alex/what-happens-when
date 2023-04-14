@@ -178,10 +178,15 @@ Parse URL
 Is it a URL or a search term?
 -----------------------------
 
-When no protocol or valid domain name is given the browser proceeds to feed
-the text given in the address box to the browser's default web search engine.
-In many cases the URL has a special piece of text appended to it to tell the
-search engine that it came from a particular browser's URL bar.
+When browsing the internet, it's important to understand the difference between a URL and a search term. A URL (Uniform Resource Locator) is a web address that identifies a specific webpage or resource on the internet. A search term, on the other hand, is a word or phrase that is used to search for information on the internet.
+
+If you enter a valid URL in the address bar of your browser, the browser will take you directly to that webpage. However, if you enter a search term or an incomplete URL, the browser will typically feed the text to the default search engine, which will then display a list of search results related to the text entered.
+
+It's worth noting that some browsers may have different default search engines or may use different methods to determine whether a text string is a URL or a search term. For example, some browsers may automatically add the "http://" protocol to a text string if it doesn't contain a valid protocol, while others may simply treat all text entered into the address bar as a search term.
+
+To help distinguish between URLs and search terms, some browsers append a special piece of text to the URL to indicate that it came from the browser's address bar. For example, Google Chrome appends the text "sourceid=chrome" to the end of the URL, while Firefox appends "source=navbar".
+
+In summary, when entering text into the address bar of your browser, it's important to be aware of whether you're entering a URL or a search term. Understanding the difference can help you navigate the web more efficiently and avoid unnecessary search results.
 
 Convert non-ASCII Unicode characters in the hostname
 ------------------------------------------------
@@ -208,6 +213,8 @@ Check HSTS list
 
 DNS lookup
 ----------
+
+DNS lookup is a critical process that your browser uses to translate human-readable domain names into IP addresses that machines can understand. When you enter a domain name in your browser, this happens:
 
 * Browser checks if the domain is in its cache. (to see the DNS Cache in
   Chrome, go to `chrome://net-internals/#dns <chrome://net-internals/#dns>`_).
