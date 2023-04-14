@@ -28,8 +28,19 @@ Table of Contents
 The "g" key is pressed
 ----------------------
 The following sections explain the physical keyboard actions
-and the OS interrupts. When you press the key "g" the browser receives the
-event and the auto-complete functions kick in.
+and the OS interrupts. When the 'G' key is pressed, 
+an electric signal unique to the G key’s ascii code is generated. 
+This generated electric signal is then forwarded to the CPU via the keyboard terminal. 
+On getting to the CPU, the electric signal is converted to a block of codes, 
+interpreted and special instructions is sent to the Browser application via the OS of the computer. 
+The CPU also communicates with the screen via the screen cable to 
+display the letter ‘G’ on the exact location where the cursor was.
+The Browser retains the G letter while it waits for the “Enter” button signal to proceed operation.
+But while waiting depending on the browser settings, it might tend to suggest similar words 
+that start with the letter 'G' that you have inputted into your browser in the past.
+This "suggestion behaviour" is known as "auto-complete"
+
+When the auto-complete functions kick in.
 Depending on your browser's algorithm and if you are in
 private/incognito mode or not various suggestions will be presented
 to you in the dropdown below the URL bar. Most of these algorithms sort
