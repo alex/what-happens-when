@@ -527,7 +527,12 @@ The browser's functionality is to present the web resource you choose, by
 requesting it from the server and displaying it in the browser window.
 The resource is usually an HTML document, but may also be a PDF,
 image, or some other type of content. The location of the resource is
-specified by the user using a URI (Uniform Resource Identifier).
+specified by the user using a URI (Uniform Resource Identifier). 
+A Uniform Resource Identifier (URI) is a unique sequence of characters
+that identifies a logical or physical resource used by web technologies.
+The URI generic syntax consists of five components organized hierarchically
+in order of decreasing significance from left to right:
+``URI = scheme ":" ["//" authority] path ["?" query] ["#" fragment]``
 
 The way the browser interprets and displays HTML files is specified
 in the HTML and CSS specifications. These specifications are maintained
