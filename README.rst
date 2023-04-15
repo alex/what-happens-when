@@ -242,7 +242,7 @@ their communications. By performing DNS lookup, you can ensure that you are conn
 the correct website and not falling victim to these types of attacks.
 
 DNS lookup is an essential component of the internet, responsible for translating human-readable 
-domain names into numerical IP addresses. It allows us to navigate the internet easily and safely. 
+domain names into numerical IP addresses. It allows us to also navigate the internet easily and safely. 
 By understanding how DNS lookup works and its importance, we can better appreciate the complex 
 infrastructure that powers the internet.
 
