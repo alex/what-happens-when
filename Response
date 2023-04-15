@@ -1,0 +1,34 @@
+# What Happens When You Type a Website URL in Your Browser? A Simple Explanation
+
+Have you ever wondered what happens when you type a website address like https://www.google.com in your browser and press Enter? Let's break it down into simple steps so you can understand!
+
+- DNS Request
+The first thing that happens is your computer sends a request to a special phonebook called DNS (Domain Name System) to find out the IP address of the website you want to visit. Just like you use a phonebook to find someone's phone number, your computer needs to find the IP address of the website to connect to it.
+
+To find the DNS records, your browser goes through three levels of hierarchy.
+		- Local DNS cache - A local DNS cache is a temporary storage of DNS information on your device or computer, which is used to speed up the DNS resolution process.
+		- Recursive DNS servers - The recursive DNS server first checks its cache to see if it has a record of the IP address associated with the domain name. If it does, it returns the IP address to your device. If it does not have the record, it contacts other DNS servers in the hierarchy to try and resolve the query.
+		- Authoritative DNS servers - An authoritative DNS server is a DNS server that is responsible for providing the final answer to a DNS query for a specific domain name. It is typically operated by the organization or company that owns the domain name.
+
+- TCP/IP
+Once your computer knows the IP address, it uses a TCP/IP (Transmission Control Protocol/Internet Protocol) to connect to the website server. Think of it like a postman delivering a letter to your house. TCP/IP makes sure that the message gets delivered correctly and in the right order.
+
+- FIREWALL
+Before your computer can connect to the server, it goes through a firewall, which is like a security guard. The firewall checks to make sure that your computer is allowed to connect to the website, and blocks any suspicious traffic that might harm your computer.
+
+- HTTPS/SSL
+When your computer connects to the website, it uses a protocol called HTTPS (Hypertext Transfer Protocol Secure) to keep the connection secure. This is important because it prevents other people from seeing your sensitive information like passwords and credit card details. HTTPS uses SSL (Secure Sockets Layer) to encrypt your data so it can't be read by anyone else.
+
+- LOAD-BALANCER
+Once your connection is secure, your request is sent to a load-balancer. A load balancer is like a traffic cop, directing your request to the best server to handle it. This is important because popular websites like Google receive millions of requests per second, and they need many servers to handle all the traffic.
+
+- WEB SERVER
+The server that handles your request is called a web server. The web server receives your request and sends back the webpage you requested. The webpage comprises HTML, CSS, and JavaScript code that your browser interprets and displays as a webpage.
+
+- APPLICATION SERVER
+Sometimes, the web server needs to talk to another server called an application server to get information to display on the webpage. For example, when you search for something on Google, the web server needs to talk to an application server to retrieve the search results.
+
+- DATABASE
+The application server might need to talk to a database to get the information you requested. A database is like a big filing cabinet full of information that the application server can search through to find what you're looking for. For example, when you search for a product on Amazon, the application server needs to talk to a database to find the product information and display it on the webpage.
+
+In summary, when you type a website address like https://www.google.com in your browser and press Enter, your computer sends a request to the DNS to find the IP address, uses TCP/IP to connect to the server, goes through a firewall to stay safe, uses HTTPS/SSL to keep the connection secure, goes through a load-balancer to direct the traffic to the best server, talks to a web server to get the webpage, might talk to an application server to get more information, and might need to talk to a database to find that information. All of these steps happen in a matter of seconds, so you can quickly access the information you need on the internet!
