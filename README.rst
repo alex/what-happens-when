@@ -571,6 +571,12 @@ The components of the browsers are:
   support storage mechanisms such as localStorage, IndexedDB, WebSQL and
   FileSystem.
 
+HTTPS/SSL:
+When you type "https" instead of "http", you are using a secure protocol called
+HTTPS. HTTPS uses SSL/TLS encryption to secure the connection between your
+browser and the webserver. SSL/TLS is a cryptographic protocol 
+that provides privacy and data integrity over the internet
+
 HTML parsing
 ------------
 
