@@ -509,6 +509,19 @@ and IIS for Windows.
 * The server parses the file according to the handler. If Google
   is running on PHP, the server uses PHP to interpret the index file, and
   streams the output to the client.
+  
+Load Balancer and web servers
+-----------------------------
+
+Obviously so many clients will want to access the google's home page by sending an http
+request, resulting to an incresed amount of requests for a web server to 
+process. As the number of requests increases the the number of web servers increases to
+manange and handle so many requests, But how does this request gets to this different servers ?.
+That is where load balancers come in. A load balancer is a device or software that distributes 
+network traffic across multiple servers or computing resources to improve the availability and 
+performance of applications and services. The load balancer acts as a mediator between the client 
+and server, receiving incoming requests from the client and forwarding them to the appropriate server 
+based on predefined rules and algorithms.
 
 Behind the scenes of the Browser
 ----------------------------------
