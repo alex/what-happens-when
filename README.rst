@@ -296,6 +296,41 @@ the default gateway it can resume its DNS process:
 * If the local/ISP DNS server does not have it, then a recursive search is
   requested and that flows up the list of DNS servers until the SOA is reached,
   and if found an answer is returned.
+  
+Security Protection like Firewalls
+----------------------------------
+After ``DNS resolution`` and your computer makes a request to the ``IP`` for the content,
+you want to access. Google.com will likely have extensive security infrastructure
+and measures like a ``firewall`` to protect its network against any security threat or
+cyberattacks. The ``firewall`` comes into play before and after the opening of a ``socket``
+based on the ``firewall`` configuration. The ``firewall`` inspects the network request and
+filters out traffic violating Google.com security policies. Suppose the traffic is
+coming from a malicious IP address; the firewall can block it and prevent such traffic,
+like those associated with malware or phishing attacks, from getting through.
+
+Once the ``socket`` is opened, as explained below, the ``firewall`` will continue to monitor
+the incoming and outgoing traffic, like detecting and blocking intrusive attempts or
+preventing data leakage by blocking outgoing traffic that contains sensitive data.
+Thus, the ``firewall`` can do the following for incoming and outgoing traffics:
+
+* ``Intrusion Detection and Prevention`` monitor the incoming traffic for signs of intrusion
+  attempts or attacks and respond by blocking it or sending an alert to the appropriate
+  security protocol.
+* ``Traffic Analysis`` it will analyze traffic patterns to identify anomalies that might
+  indicate security threats, like sudden surges in traffic from a particular IP address.
+* ``Network Segmentation`` depending on the type of request (static or dynamic content),
+  Google.com may use ``firewalls`` to segment its network into different zones with different
+  security policies. For example, there may be separate zones and firewall policies for
+  web servers, application servers, and databases.
+* ``Load Balancing`` Google.com may put a ``firewall`` in place to protect each server as the load
+  balancer distributes traffic across multiple servers. The firewall will help ensures that
+  the traffic distributed is appropriately balanced. 
+* ``Content Filtering`` the firewall will filter out unwanted, inappropriate, or sensitive content
+  like web pages containing adult or violent content.
+* ``Denial-of-Service (DoS) Protection`` ``firewalls`` and other security measures can be utilized to
+  protect against DoS attacks that might try to overwhelm their server with traffic to disrupt
+  their services.
+ 
 
 Opening of a socket
 -------------------
