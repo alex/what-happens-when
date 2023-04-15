@@ -209,6 +209,13 @@ Check HSTS list
 DNS lookup
 ----------
 
+* This is the first step of the browsing process. The DNS have to translate the
+  domain name into an IP address. The browser sends a `DNS request` to the
+  Internet Service Provider's (ISP) DNS Server, which then looks up the IP
+  address associated with the domain name. Domain names are easy-to-remember
+  words or phrases to represent websites or other resources. Without DNS, folks
+  have to remember IP addresses, which are unique identifiers like `52.144.356.98`.
+  This would be impratical and difficult for most people.
 * Browser checks if the domain is in its cache. (to see the DNS Cache in
   Chrome, go to `chrome://net-internals/#dns <chrome://net-internals/#dns>`_).
 * If not found, the browser calls ``gethostbyname`` library function (varies by
