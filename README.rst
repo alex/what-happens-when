@@ -677,6 +677,9 @@ GPU Rendering
 
 Window Server
 -------------
+Window server are powerful computers used to manage and store data, host 
+applications, and provide various services to other computers and devices 
+on a network.
 
 Post-rendering and user-induced execution
 -----------------------------------------
