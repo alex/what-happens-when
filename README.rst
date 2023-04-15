@@ -674,6 +674,12 @@ GPU Rendering
   of ``GPU`` massive parallelism for float point calculations required for
   the rendering process.
 
+Database
+--------
+
+In some circumstances, the application server might need to get the requested information from a database. The database receives a request from the application server, retrieves the necessary data, and then delivers it back to the application server. The response is then produced by the application server using the data that was retrieved.
+
+
 
 Window Server
 -------------
