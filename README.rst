@@ -623,12 +623,14 @@ CSS interpretation
 ------------------
 
 * Parse CSS files, ``<style>`` tag contents, and ``style`` attribute
-  values using `"CSS lexical and syntax grammar"`_
+  values using `"CSS lexical and syntax grammar"`_the browsers download the HTML and CSS script from the server and start off by parsing HTML tags to DOM nodes in a tree called content tree.
+While the HTML doc being parsed browser rendering engines construct another tree called the Render tree. This tree is of visual elements in the order in which they will be displayed
 * Each CSS file is parsed into a ``StyleSheet object``, where each object
   contains CSS rules with selectors and objects corresponding CSS grammar.
 * A CSS parser can be top-down or bottom-up when a specific parser generator
   is used.
-
+ *^ In this picture, [Block diagram of the workflow](https://i.stack.imgur.com/1iq5o.jpg)
+ 
 Page Rendering
 --------------
 
