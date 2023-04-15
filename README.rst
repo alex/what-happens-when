@@ -1,5 +1,6 @@
 What happens when...
 ====================
+whenever a is type follow by the enter key series of event is happening, from DNS request, TCP/IP, Firewall, HTTPS/SSL, Web Server, Load Balancer, Application Layer and Database respectively. this are the series of event happened whenever any DNS request was made to any server.
 
 This repository is an attempt to answer the age-old interview question "What
 happens when you type google.com into your browser's address box and press
