@@ -680,7 +680,6 @@ Window Server
 
 Post-rendering and user-induced execution
 -----------------------------------------
-
 After rendering has been completed, the browser executes JavaScript code as a result
 of some timing mechanism (such as a Google Doodle animation) or user
 interaction (typing a query into the search box and receiving suggestions).
@@ -688,6 +687,7 @@ Plugins such as Flash or Java may execute as well, although not at this time on
 the Google homepage. Scripts can cause additional network requests to be
 performed, as well as modify the page or its layout, causing another round of
 page rendering and painting.
+
 
 .. _`Creative Commons Zero`: https://creativecommons.org/publicdomain/zero/1.0/
 .. _`"CSS lexical and syntax grammar"`: http://www.w3.org/TR/CSS2/grammar.html
