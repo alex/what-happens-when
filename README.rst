@@ -223,7 +223,10 @@ DNS lookup
   ``ARP process`` below for the DNS server.
 * If the DNS server is on a different subnet, the network library follows
   the ``ARP process`` below for the default gateway IP.
-
+  
+```
+NB: Your browser first needs to translate the domain name "google.com" into an IP address that can be used to locate the web server that hosts the website. To do this, it sends a DNS (Domain Name System) request to a DNS server. This DNS server will respond with the IP address associated with "google.com", which your browser can use to connect to the web server.
+```
 
 ARP process
 -----------
