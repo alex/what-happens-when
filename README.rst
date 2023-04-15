@@ -38,6 +38,11 @@ popular searches from the internet as a whole. As you are typing
 "google.com" many blocks of code run and the suggestions will be refined
 with each keypress. It may even suggest "google.com" before you finish typing
 it.
+Of note is the fact that modern browsers often have privacy features that limit
+the amount of data that is shared with the browser, such as auto-complete and
+suggested URLs. If you have disabled these features, or if you are using a 
+browser that does not support them, you may not see any suggestions or 
+auto-complete options when you type "https://www.g" in the browser.
 
 The "enter" key bottoms out
 ---------------------------
