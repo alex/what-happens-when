@@ -677,6 +677,9 @@ GPU Rendering
 
 Window Server
 -------------
+* Windows Server includes a graphical user interface (GUI) as well as a command-line interface (CLI) for managing and
+  configuring the server. It also supports a range of management tools, such as Microsoft Management Console (MMC) and  
+  PowerShell, which can be used to automate administrative tasks and customize the server environment.
 
 Post-rendering and user-induced execution
 -----------------------------------------
