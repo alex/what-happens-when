@@ -209,20 +209,35 @@ Check HSTS list
 DNS lookup
 ----------
 
-* Browser checks if the domain is in its cache. (to see the DNS Cache in
-  Chrome, go to `chrome://net-internals/#dns <chrome://net-internals/#dns>`_).
-* If not found, the browser calls ``gethostbyname`` library function (varies by
-  OS) to do the lookup.
-* ``gethostbyname`` checks if the hostname can be resolved by reference in the
-  local ``hosts`` file (whose location `varies by OS`_) before trying to
-  resolve the hostname through DNS.
-* If ``gethostbyname`` does not have it cached nor can find it in the ``hosts``
-  file then it makes a request to the DNS server configured in the network
-  stack. This is typically the local router or the ISP's caching DNS server.
-* If the DNS server is on the same subnet the network library follows the
-  ``ARP process`` below for the DNS server.
-* If the DNS server is on a different subnet, the network library follows
-  the ``ARP process`` below for the default gateway IP.
+When a user types a domain name into their browser's address bar, the browser
+first checks if the domain name is already in its cache. This cache is used
+to store the results of previous DNS lookups, so if the domain name is found
+in the cache, the browser can skip the DNS lookup process and use the cached
+information.
+
+If the domain name is not found in the cache, the browser calls the gethostbyname
+function (or its equivalent, depending on the operating system) to perform the
+DNS lookup. This function first checks the local hosts file on the user's computer
+to see if the domain name can be resolved through a local reference before attempting
+to resolve the domain name through DNS. The location of the hosts file can vary
+depending on the operating system.
+
+If the domain name is not found in the cache or the local hosts file, the gethostbyname
+function makes a request to the DNS server configured in the network stack. This DNS
+server is typically either the user's local router or their ISP's caching DNS server.
+
+If the DNS server is on the same subnet as the user's computer, the network library
+follows the ARP (Address Resolution Protocol) process to determine the MAC address of
+the DNS server. ARP is used to map IP addresses to MAC addresses on a local network.
+
+If the DNS server is on a different subnet, the network library follows the ARP process
+for the default gateway IP address instead. The default gateway is the router on the
+user's network that connects their local network to the wider Internet.
+
+Once the MAC address of the DNS server (or default gateway) has been determined, the
+DNS request is sent to the server. The server then responds with the IP address
+associated with the domain name, and this IP address is returned to the browser,
+allowing it to establish a connection to the website.
 
 
 ARP process
