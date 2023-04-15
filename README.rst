@@ -223,8 +223,13 @@ DNS lookup
   ``ARP process`` below for the DNS server.
 * If the DNS server is on a different subnet, the network library follows
   the ``ARP process`` below for the default gateway IP.
-
-
+* DNS resolution is a critical step in establishing a connection between a client and server. 
+  If the DNS server is slow or unresponsive, it can significantly impact the performance of the web application.
+  
+* To improve DNS resolution times, some web browsers and operating systems implement DNS prefetching. 
+  This technique involves resolving DNS queries in the background before they are actually needed, 
+  which can reduce the time needed to load a web page. However, DNS prefetching can also have privacy
+  implications, as it can reveal to the DNS server what websites the user is likely to visit.
 ARP process
 -----------
 
