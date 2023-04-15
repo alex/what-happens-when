@@ -313,21 +313,21 @@ the incoming and outgoing traffic, like detecting and blocking intrusive attempt
 preventing data leakage by blocking outgoing traffic that contains sensitive data.
 Thus, the ``firewall`` can do the following for incoming and outgoing traffics:
 
-* ``Intrusion Detection and Prevention``: monitor the incoming traffic for signs of intrusion
+* ``Intrusion Detection and Prevention`` monitor the incoming traffic for signs of intrusion
   attempts or attacks and respond by blocking it or sending an alert to the appropriate
   security protocol.
-* ``Traffic Analysis``: it will analyze traffic patterns to identify anomalies that might
+* ``Traffic Analysis`` it will analyze traffic patterns to identify anomalies that might
   indicate security threats, like sudden surges in traffic from a particular IP address.
-* ``Network Segmentation``: depending on the type of request (static or dynamic content),
+* ``Network Segmentation`` depending on the type of request (static or dynamic content),
   Google.com may use ``firewalls`` to segment its network into different zones with different
   security policies. For example, there may be separate zones and firewall policies for
   web servers, application servers, and databases.
-* ``Load Balancing``: Google.com may put a ``firewall`` in place to protect each server as the load
+* ``Load Balancing`` Google.com may put a ``firewall`` in place to protect each server as the load
   balancer distributes traffic across multiple servers. The firewall will help ensures that
   the traffic distributed is appropriately balanced. 
-* ``Content Filtering``: the firewall will filter out unwanted, inappropriate, or sensitive content
+* ``Content Filtering`` the firewall will filter out unwanted, inappropriate, or sensitive content
   like web pages containing adult or violent content.
-* ``Denial-of-Service (DoS) Protection``: ``firewalls`` and other security measures can be utilized to
+* ``Denial-of-Service (DoS) Protection`` ``firewalls`` and other security measures can be utilized to
   protect against DoS attacks that might try to overwhelm their server with traffic to disrupt
   their services.
  
