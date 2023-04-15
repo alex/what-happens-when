@@ -590,6 +590,8 @@ the markup.
 
 HTML cannot be parsed using the regular top-down or bottom-up parsers.
 
+What it implies Top-down parsing uses leftmost derivation. Bottom-up parsing uses the rightmost derivation.
+
 The reasons are:
 
 * The forgiving nature of the language.
