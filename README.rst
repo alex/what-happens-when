@@ -208,6 +208,43 @@ Check HSTS list
 
 DNS lookup
 ----------
+Domain Name System (DNS) is the backbone of the internet, responsible for translating 
+human-readable domain names into the numerical IP addresses that computers use to 
+communicate with each other. DNS lookup is the process of finding the IP address 
+associated with a given domain name. In this blog, we will discuss how DNS lookup 
+works and why it's important.
+
+How DNS Lookup Works:
+
+When you enter a domain name into your web browser, your computer sends a request 
+to a DNS resolver to find the IP address associated with that domain name. 
+The resolver then searches its cache for the IP address. If the IP address is not 
+found in the cache, the resolver sends a request to the root DNS server, which 
+provides information on the top-level domain (TLD) server responsible for the domain.
+
+The TLD server then sends a response containing the IP address of the domain's 
+authoritative DNS server. The authoritative DNS server is the server responsible for 
+maintaining the DNS records for the domain.
+
+Once the resolver receives the IP address of the authoritative DNS server, it sends a 
+request to that server for the IP address associated with the domain name. The authoritative 
+DNS server responds with the IP address, which is then returned to your computer.
+
+Why DNS Lookup is Important:
+
+DNS lookup is crucial to the functioning of the internet. Without DNS lookup, you 
+would have to remember the IP addresses of every website you wanted to visit. This would 
+be difficult and impractical, especially given the billions of websites on the internet.
+
+DNS lookup also plays a vital role in internet security. DNS-based attacks, such as DNS 
+spoofing and DNS hijacking, can be used to redirect users to fake websites or intercept 
+their communications. By performing DNS lookup, you can ensure that you are connecting to 
+the correct website and not falling victim to these types of attacks.
+
+DNS lookup is an essential component of the internet, responsible for translating human-readable 
+domain names into numerical IP addresses. It allows us to also navigate the internet easily and safely. 
+By understanding how DNS lookup works and its importance, we can better appreciate the complex 
+infrastructure that powers the internet.
 
 * Browser checks if the domain is in its cache. (to see the DNS Cache in
   Chrome, go to `chrome://net-internals/#dns <chrome://net-internals/#dns>`_).
