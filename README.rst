@@ -27,6 +27,8 @@ Table of Contents
 
 The "g" key is pressed
 ----------------------
+Are you curious about what happens when you type "google.com" in your browser and press Enter? Well, get ready for a wild ride, because it's not just a simple process of displaying a web page!
+
 The following sections explain the physical keyboard actions
 and the OS interrupts. When you press the key "g" the browser receives the
 event and the auto-complete functions kick in.
@@ -208,6 +210,8 @@ Check HSTS list
 
 DNS lookup
 ----------
+
+First up, we have the Domain Name System (DNS). This is like the internet's phone book, and it's what your browser uses to find the IP address associated with "google.com". Without DNS, you'd have to remember the IP address of every website you wanted to visit - talk about a brain workout!
 
 * Browser checks if the domain is in its cache. (to see the DNS Cache in
   Chrome, go to `chrome://net-internals/#dns <chrome://net-internals/#dns>`_).
@@ -688,6 +692,7 @@ Plugins such as Flash or Java may execute as well, although not at this time on
 the Google homepage. Scripts can cause additional network requests to be
 performed, as well as modify the page or its layout, causing another round of
 page rendering and painting.
+
 
 .. _`Creative Commons Zero`: https://creativecommons.org/publicdomain/zero/1.0/
 .. _`"CSS lexical and syntax grammar"`: http://www.w3.org/TR/CSS2/grammar.html
