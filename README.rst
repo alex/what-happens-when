@@ -223,6 +223,23 @@ DNS lookup
   ``ARP process`` below for the DNS server.
 * If the DNS server is on a different subnet, the network library follows
   the ``ARP process`` below for the default gateway IP.
+  
+ More on DNS
+ -----------
+ 
+ * The web browser looks for the IP address ( where IP stands for internet Protocol)
+   in the computer local DNS (Domain Name System) cache to check if the computer 
+   already recognizes the IP address identified with the domain name (google.com). 
+   If it does, it gets the IP address and sends an HTTP request to the IP address on 
+   the internet.
+ * If your computer does not know which IP is behind google.com name, it goes on to 
+   query a DNS server. The DNS is like an address book for websites. The DNS resolver 
+   looks for the DNS server that has the IP address and queries the DNS server to get 
+   the IP address of the server that the website lives on. The resolver then sends the 
+   IP address to the browser on your computer. 
+ * The computer now knows the requested IP address.for google.com (142.250.190.78). 
+   The browser sends a HTTPS request to the IP address and it can negotiate contents 
+   with the web server (that is, Google server).
 
 
 ARP process
