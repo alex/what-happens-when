@@ -205,6 +205,14 @@ Check HSTS list
   single HTTP request could potentially leave the user vulnerable to a
   `downgrade attack`_, which is why the HSTS list is included in modern web
   browsers.)
+  
+Check for internet connectivity
+-------------------------------
+
+The browser checks if the device is online and has an active internet connection. 
+If the device is not online, the browser may display an error message, such as 
+"No internet connection" or "Unable to connect to the internet."If the device is 
+online, the browser proceeds with the request by initiating a DNS lookup
 
 DNS lookup
 ----------
