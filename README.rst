@@ -209,20 +209,20 @@ Check HSTS list
 DNS lookup
 ----------
 
-* Browser checks if the domain is in its cache. (to see the DNS Cache in
-  Chrome, go to `chrome://net-internals/#dns <chrome://net-internals/#dns>`_).
-* If not found, the browser calls ``gethostbyname`` library function (varies by
-  OS) to do the lookup.
-* ``gethostbyname`` checks if the hostname can be resolved by reference in the
-  local ``hosts`` file (whose location `varies by OS`_) before trying to
-  resolve the hostname through DNS.
-* If ``gethostbyname`` does not have it cached nor can find it in the ``hosts``
-  file then it makes a request to the DNS server configured in the network
-  stack. This is typically the local router or the ISP's caching DNS server.
-* If the DNS server is on the same subnet the network library follows the
-  ``ARP process`` below for the DNS server.
-* If the DNS server is on a different subnet, the network library follows
-  the ``ARP process`` below for the default gateway IP.
+DNS (Domain Name System) request is a communication protocol used by computers
+to translate human-readable domain names, such as www.google.com, 
+into IP addresses, which are numerical addresses used by machines to identify
+each other on the internet.
+When a user types a website URL into their web browser or clicks on a link, 
+the browser sends a DNS request to a DNS resolver, which is a server that looks 
+up the IP address associated with the domain name. The resolver then returns 
+the IP address to the browser, allowing it to establish a connection to the 
+website server and retrieve the web page.
+DNS requests are essential to internet communication and are constantly taking 
+place in the background. They enable users to access websites without having to 
+remember the numerical IP address associated with each site, and instead use 
+human-readable domain names.
+
 
 
 ARP process
