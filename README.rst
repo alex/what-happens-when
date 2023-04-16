@@ -373,29 +373,25 @@ TLS handshake
   Transport Layer Security (TLS) version, list of cipher algorithms and
   compression methods available.
 
-* The server replies with a ``ServerHello`` message to the client with the
-  TLS version, selected cipher, selected compression methods and the server's
-  public certificate signed by a CA (Certificate Authority). The certificate
-  contains a public key that will be used by the client to encrypt the rest of
-  the handshake until a symmetric key can be agreed upon.
-
-* The client verifies the server digital certificate against its list of
-  trusted CAs. If trust can be established based on the CA, the client
-  generates a string of pseudo-random bytes and encrypts this with the server's
-  public key. These random bytes can be used to determine the symmetric key.
-
-* The server decrypts the random bytes using its private key and uses these
-  bytes to generate its own copy of the symmetric master key.
-
-* The client sends a ``Finished`` message to the server, encrypting a hash of
-  the transmission up to this point with the symmetric key.
-
-* The server generates its own hash, and then decrypts the client-sent hash
-  to verify that it matches. If it does, it sends its own ``Finished`` message
-  to the client, also encrypted with the symmetric key.
-
-* From now on the TLS session transmits the application (HTTP) data encrypted
-  with the agreed symmetric key.
+* The client sends a ClientHello message to the server, indicating the client's 
+   preferred TLS version, a list of cipher algorithms, and compression methods.
+*  The server responds with a ServerHello message, indicating the selected 
+   TLS version, cipher, and compression methods. The server also sends its public 
+   certificate, which contains a public key that will be used by the client to encrypt 
+   further communication until a symmetric key is agreed upon.
+*  The client verifies the server's digital certificate against its list of trusted CAs.
+*  If the trust can be established based on the CA, the client generates a string of 
+   pseudo-random bytes and encrypts it with the server's public key.
+*  The server decrypts the random bytes using its private key and generates 
+   its copy of the symmetric master key.
+*  The client then sends a Finished message to the server by encrypting a hash 
+   of the transmission up to this point with the symmetric key.
+*  The server generates its own hash and decrypts the client-sent hash to verify 
+   that it matches. If the match is successful, it sends its own Finished message 
+   to the client, also encrypted with the symmetric key.
+*  Once this process is complete, the TLS session transmits the application data 
+   (such as HTTP) encrypted with the agreed symmetric key, providing secure communication 
+   between the client and server.
 
 If a packet is dropped
 ----------------------
