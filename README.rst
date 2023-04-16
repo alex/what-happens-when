@@ -316,7 +316,6 @@ named ``socket`` and requests a TCP socket stream - ``AF_INET/AF_INET6`` and
   includes the MAC address of the machine's NIC as well as the MAC address of
   the gateway (local router). As before, if the kernel does not know the MAC
   address of the gateway, it must broadcast an ARP query to find it.
-
 At this point the packet is ready to be transmitted through either:
 
 * `Ethernet`_
@@ -366,6 +365,14 @@ This send and receive happens multiple times following the TCP connection flow:
    * The closer sends a FIN packet
    * The other sides ACKs the FIN packet and sends its own FIN
    * The closer acknowledges the other side's FIN with an ACK
+
+Firewall
+--------
+Before the client computer and the server establish a SSL/TLS handshake, the request first passes through a firewall which checks that and eliminate the occurence of unwanted or malicious network communication between the browser and the server. Firewalls monitor incoming and outgoing network traffic and filters them based on set of defined security rules. The firewall used determines how the filtering occurs.
+
+* packet filtering firewalls: also known as stateless firewall works by inspecting individual packets in isolation. As such, they are unaware of connection state and can only allow or deny packets based on individual packet header.
+* stateful firewalls: they are able to determine the connection state of packets,which makes them much more flexible than packet filtering firewalls, They work by collecting related packets until the connection state can be determined before any firewall rules are applied to the traffic
+* Application firewalls go one step further by analyzing the data being transmitted, which allows network traffic to be matched against firewall rules that are specific to individual services or applications. These are also known as proxy-based firewalls.
 
 TLS handshake
 -------------
