@@ -689,6 +689,21 @@ the Google homepage. Scripts can cause additional network requests to be
 performed, as well as modify the page or its layout, causing another round of
 page rendering and painting.
 
+Application Server
+__________________
+
+Application server serves requests that require dynamic content.
+It executes code that requires dynamic content and sends the result back to the web server.
+
+Database
+________
+
+If the application server requires data to generate the dynamic content,
+it sends a request to the database. The database retrieves the required data
+and sends it back to the application server. The application server then generate
+the dynamic content and sends it back to the web server, which sends it to the client.
+
+
 .. _`Creative Commons Zero`: https://creativecommons.org/publicdomain/zero/1.0/
 .. _`"CSS lexical and syntax grammar"`: http://www.w3.org/TR/CSS2/grammar.html
 .. _`Punycode`: https://en.wikipedia.org/wiki/Punycode
