@@ -397,6 +397,8 @@ TLS handshake
 * From now on the TLS session transmits the application (HTTP) data encrypted
   with the agreed symmetric key.
 
+* This allows you to view the web page content in a readable format.
+
 If a packet is dropped
 ----------------------
 
