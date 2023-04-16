@@ -205,6 +205,14 @@ Check HSTS list
   single HTTP request could potentially leave the user vulnerable to a
   `downgrade attack`_, which is why the HSTS list is included in modern web
   browsers.)
+  
+Internet connection 
+-------------------
+
+* Before performing a DNS lookup, the computer verifies an internet connection through its network adapter. 
+* It sends a ping to a server, such as a router or public DNS server, and awaits a response. If a response is received, the computer assumes an internet connection and proceeds with the DNS lookup. 
+* Otherwise, it tries to resolve the issue, like inspecting network settings or resetting the adapter.
+* If no internet connection, the process is terminated here with a DNS cannot bef found error.
 
 DNS lookup
 ----------
