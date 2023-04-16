@@ -698,6 +698,7 @@ DNS: Domain Name Server
 SSL: Secure Sockets Layer
 TLS: Transport Layer Security
 HTTPS: Hypertext Transfer Protocol Secure
+
 IANA:  Internet Assigned Numbers Authority
 GPU: Graphics Processing Unit
 
