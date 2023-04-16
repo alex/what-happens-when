@@ -224,6 +224,20 @@ DNS lookup
 * If the DNS server is on a different subnet, the network library follows
   the ``ARP process`` below for the default gateway IP.
 
+When you enter a website's URL in your browser, the first step is resolving the domain name to an IP address using the Domain Name System (DNS). This process is called a DNS lookup, and it is critical to establishing a connection with the website's server.
+
+The DNS lookup process begins when you enter a URL in your browser. The browser sends a request to the DNS resolver, which is typically your Internet Service Provider (ISP). The DNS resolver maintains a cache of recently accessed domain names and their corresponding IP addresses. If the domain name is found in the cache, the IP address is returned immediately, and the lookup process ends.
+
+If the domain name is not found in the cache, the resolver sends a request to the root DNS servers, which are authoritative for the top-level domains like .com, .org, .net, etc. The root servers do not have the IP address of the requested domain name, but they can direct the resolver to the appropriate TLD (top-level domain) server that manages the domain extension of the requested URL.
+
+The TLD server, in turn, refers the resolver to the authoritative DNS server for the requested domain name. This server has the IP address of the website and returns it to the resolver. The resolver caches the IP address for future use and sends it back to the browser.
+
+Once the browser has the IP address, it can establish a connection with the webserver hosting the website. The browser sends a request to the server using the IP address, and the server responds by sending the website's HTML content back to the browser. The browser then interprets the HTML and renders the website on your screen.
+
+It's important to note that the DNS lookup process happens in the background, and it's usually completed within a few milliseconds. However, if the DNS resolver or the authoritative DNS server is slow to respond or if there are network issues, the DNS lookup process can take longer, which delays the loading of the website.
+
+In conclusion, the DNS lookup process is a critical part of accessing websites on the internet. It translates human-readable domain names into IP addresses that computers can use to connect to the webserver hosting the website. Understanding the DNS lookup process can help you diagnose and troubleshoot issues related to accessing websites.
+
 
 ARP process
 -----------
