@@ -224,7 +224,11 @@ DNS lookup
 * If the DNS server is on a different subnet, the network library follows
   the ``ARP process`` below for the default gateway IP.
 
+* The first thing that happens when you type a URL into your browser is a 
+  DNS request is made to resolve the domain name to an IP address.
 
+*Your computer sends a request to the DNS server to get the IP address of
+the website you want to visit.
 ARP process
 -----------
 
