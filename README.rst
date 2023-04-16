@@ -134,7 +134,7 @@ to the ``hWnd`` is called in order to process each message in the queue.
 The window (``hWnd``) that is active is actually an edit control and the
 ``WindowProc`` in this case has a message handler for ``WM_KEYDOWN`` messages.
 This code looks within the 3rd parameter that was passed to ``SendMessage``
-(``wParam``) and, because it is ``VK_RETURN`` knows the user has hit the ENTER
+(``wParam``) and, because it's ``VK_RETURN`` knows the user has hit the ENTER
 key.
 
 (On OS X) A ``KeyDown`` NSEvent is sent to the app
@@ -214,7 +214,7 @@ DNS lookup
 * If not found, the browser calls ``gethostbyname`` library function (varies by
   OS) to do the lookup.
 * ``gethostbyname`` checks if the hostname can be resolved by reference in the
-  local ``hosts`` file (whose location `varies by OS`_) before trying to
+  local ``hosts`` files (whose location `varies by OS`_) before trying to
   resolve the hostname through DNS.
 * If ``gethostbyname`` does not have it cached nor can find it in the ``hosts``
   file then it makes a request to the DNS server configured in the network
