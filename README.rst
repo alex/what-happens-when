@@ -194,6 +194,8 @@ Convert non-ASCII Unicode characters in the hostname
 
 Check HSTS list
 ---------------
+HSTS (HTTP Strict Transport Security) is a security mechanism that forces the client (your browser) to use HTTPS when connecting to a website. When a website is registered with HSTS, it sends a header to the client indicating that HTTPS must be used for future connections. This prevents attacks such as man-in-the-middle (MITM) and SSL stripping.
+
 * The browser checks its "preloaded HSTS (HTTP Strict Transport Security)"
   list. This is a list of websites that have requested to be contacted via
   HTTPS only.
@@ -208,6 +210,7 @@ Check HSTS list
 
 DNS lookup
 ----------
+DNS lookup, also known as a DNS resolution, is the process of translating a human-readable domain name, such as www.google.com, into the IP address associated with that domain name. DNS lookup is an essential part of the internet infrastructure, as it enables users to access websites and other internet resources using human-readable names instead of having to remember the IP addresses associated with those resources.
 
 * Browser checks if the domain is in its cache. (to see the DNS Cache in
   Chrome, go to `chrome://net-internals/#dns <chrome://net-internals/#dns>`_).
@@ -369,6 +372,8 @@ This send and receive happens multiple times following the TCP connection flow:
 
 TLS handshake
 -------------
+During the TLS handshake process, the client (your browser) and the server agree on a set of cryptographic protocols to use for encrypting the data that will be transmitted between them. The TLS handshake process involves several steps:
+
 * The client computer sends a ``ClientHello`` message to the server with its
   Transport Layer Security (TLS) version, list of cipher algorithms and
   compression methods available.
