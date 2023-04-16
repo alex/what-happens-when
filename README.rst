@@ -39,6 +39,17 @@ popular searches from the internet as a whole. As you are typing
 with each keypress. It may even suggest "google.com" before you finish typing
 it.
 
+When the operating system receives the key press event from the hardware, it 
+checks which application currently has focus. The focused application is the 
+one that receives user input. The operating system communicates the key press 
+event to the focused application through a message passing mechanism.
+In Windows, for example, the key press event is translated into a WM_KEYDOWN 
+message, which is then added to the focused application's message queue. 
+The application's main loop, often called the message loop, retrieves and 
+processes messages from this queue. When the application receives the WM_KEYDOWN 
+message, it can take the appropriate action, such as displaying the character 'G' 
+in a text input field.
+
 The "enter" key bottoms out
 ---------------------------
 
