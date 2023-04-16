@@ -396,6 +396,8 @@ TLS handshake
 
 * From now on the TLS session transmits the application (HTTP) data encrypted
   with the agreed symmetric key.
+  
+ * The TCP/IP connection ensures that data is transmitted reliably and in the correct order between the server and the client
 
 If a packet is dropped
 ----------------------
