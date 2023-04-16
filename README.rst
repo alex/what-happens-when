@@ -397,6 +397,8 @@ TLS handshake
 * From now on the TLS session transmits the application (HTTP) data encrypted
   with the agreed symmetric key.
 
+* This allows you to view the web page content in a readable format.
+
 If a packet is dropped
 ----------------------
 
@@ -662,6 +664,7 @@ Page Rendering
 * Final layer positions are computed and the composite commands are issued
   via Direct3D/OpenGL. The GPU command buffer(s) are flushed to the GPU for
   asynchronous rendering and the frame is sent to the window server.
+  
 
 GPU Rendering
 -------------
