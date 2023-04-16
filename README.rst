@@ -94,6 +94,7 @@ connection, but historically has been over PS/2 or ADB connections.
 
 - This interrupt notifies the currently focused application of a 'key pressed'
   event.
+- On websites and other software applications, pressing the enter key button can be used to submit a form or confirm an action
 
 
 Interrupt fires [NOT for USB keyboards]
