@@ -1,0 +1,48 @@
+What happens when you type “https://www.google.com" in your web browser?
+
+Some people make requests on the web browser without knowing how and what happens behind the scenes per se. I will be taking you through the summary of  all  that happens when you type "https://www.google.com" in your web browser. Before we start, note that the www subdomain is used to redirect to the domain.
+
+
+
+
+DNS Request 
+Immediately you type “https://www.google.com” in the browser and you press enter, the browser makes a query request to the DNS (domain name system)  server which is known as the phone book of the internet. The DNS then checks for the IP address of the domain name in its records. 
+It checks the DNS A record which indicates the IP address(of a particular domain and in this case the IP address of google.com). Note that A records only hold IPv4 addresses, If a website has an IPv6 address, it will instead use an "AAAA" record.
+
+After that the browser then uses the address obtained to communicate with the origin server(in this case Google's server) to access the website's information.
+
+
+
+
+TCP/IP
+Transmission Control Protocol/Internet Protocol (TCP/IP) is the language a computer uses to access the internet. It consists of a suite of protocols designed to establish a network of networks to provide a host with access to the internet.
+The TCP handles the messages where they are broken down into smaller units called packets to be transmitted over the network, the packets are then received by the TCP of the recipient and then reassembled to the original message while the IP layer handles the transmission portion where Google in this case sends the message to the unique IP address of the computer that made the request in the first place.
+
+
+
+Firewall
+A Firewall is a network security device that monitors and filters incoming and outgoing network traffic based on an organization's previously established security policies. At its most basic in the case of a request to Google, the firewall sits in between the request sent and the response gotten.
+
+
+HTTPS/SSL
+HTTPS (Hypertext Transfer Protocol Secure) is a secure version of the HTTP protocol that uses the SSL/TLS protocol for encryption and authentication.
+This is to basically make sure messages being transmitted are protected against interception from attackers.
+
+
+
+Load Balancer
+So some of us do wonder how big technology companies like Google, Facebook, etc are able to process a great deal of request as fast as possible, this is achieved with the help of load balancer which can be a software or pieces of hardware(routers, switches etc) as the case may be to help distribute requests across several servers to prevent overloads, slowing down and crashing of severs.
+So when a request is made to Google, the request is routed to a server that is handling little or no request at the moment by the load balancer.
+
+
+
+Web Server and Application Server
+A web server is a common subset of an application server. A web server delivers static web contents (i.e., HTML pages, files, images, and videos) from a website. Web servers handle HTTP requests and responses only.
+An application server exposes business logic to the clients, which generates dynamic content. It is a software framework that transforms data to provide the specialized functionality offered by a business, service, or application. Application servers enhance the interactive parts of a website that can appear differently depending on the context of the request. So basically, an application server focuses on interaction parts of a website.
+
+
+
+Database
+A database is an organized collection of structured information, or data, typically stored electronically in a computer system. A database is usually controlled by a database management system (DBMS). Google as many other software applications also has its own database where it fetches all the data it renders to the client whenever requests are made to it.
+
+
