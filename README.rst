@@ -38,6 +38,10 @@ popular searches from the internet as a whole. As you are typing
 "google.com" many blocks of code run and the suggestions will be refined
 with each keypress. It may even suggest "google.com" before you finish typing
 it.
+If a browser extension or add-on has been installed that is associated with the "g" key,
+pressing the key may trigger a function within that extension. For example, some extensions allow users
+to search for specific keywords or phrases within a webpage by pressing a specific key combination,
+such as "g + s".
 
 The "enter" key bottoms out
 ---------------------------
