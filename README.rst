@@ -35,7 +35,7 @@ private/incognito mode or not various suggestions will be presented
 to you in the dropdown below the URL bar. Most of these algorithms sort
 and prioritize results based on search history, bookmarks, cookies, and
 popular searches from the internet as a whole. As you are typing
-"google.com" many blocks of code run and the suggestions will be refined
+"google.com" many blocks of code run and the hints will be refined
 with each keypress. It may even suggest "google.com" before you finish typing
 it.
 
