@@ -674,6 +674,8 @@ GPU Rendering
   of ``GPU`` massive parallelism for float point calculations required for
   the rendering process.
 
+CONCLUSION
+These are merely some broad strokes of how the web operates, but I hope that this has been of some use to individuals who are curious about the following: “What happens when I type https://www.google.com in the browser and push enter?” I want to offer my sincere gratitude for your visit, and I hope to see you again soon.
 
 Window Server
 -------------
