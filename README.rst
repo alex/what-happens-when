@@ -410,9 +410,17 @@ control`_. This varies depending on the sender; the most common algorithms are
   (MSS) of the connection.
 * For each packet acknowledged, the window doubles in size until it reaches the
   'slow-start threshold'. In some implementations, this threshold is adaptive.
-* After reaching the slow-start threshold, the window increases additively for
-  each packet acknowledged. If a packet is dropped, the window reduces
-  exponentially until another packet is acknowledged.
+* Sure, I'd be happy to provide more details on this topic.
+
+* After the sender reaches the slow-start threshold, which is typically set to a conservative value, it switches to the congestion avoidance phase. In this phase, the sender increases the congestion window size additively for each packet that is acknowledged. The additive increase is typically a fixed value, such as 1 or 2, depending on the implementation.
+
+* If a packet is dropped during the congestion avoidance phase, it indicates that the network is congested and the sender needs to reduce the congestion window size. The sender then enters the congestion recovery phase, during which the congestion window size is reduced exponentially until another packet is acknowledged.
+
+* During the congestion recovery phase, the sender follows a process called 'fast retransmit' and 'fast recovery.' When the sender detects that a packet has been dropped, it assumes that the next packet after the dropped packet has also been dropped and retransmits both packets immediately. This avoids the delay caused by waiting for a timeout to occur. The sender then enters the fast recovery phase, during which it increases the congestion window size additively until it reaches half the size of the congestion window before the packet was dropped.
+
+* Once the sender receives an acknowledgment for the retransmitted packets, it exits the congestion recovery phase and resumes the congestion avoidance phase, increasing the congestion window size additively for each packet that is acknowledged.
+
+* TCP congestion control is an important mechanism for managing network congestion and ensuring reliable data transmission. The specific details of the congestion control algorithm can vary depending on the implementation and the network conditions, but the basic principles remain the same.
 
 HTTP protocol
 -------------
