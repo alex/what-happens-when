@@ -1,0 +1,74 @@
+After you’ve typed the URL into your browser and pressed enter, the browser needs to figure out which server on the Internet to connect to. To do that, it needs to look up the IP address of the server hosting the website using the domain you typed in. It does this using a DNS lookup.
+
+DNS request
+DNS is complex and has to be blazingly fast, DNS data is cached at different layers between your browser and at various places across the Internet. Your browser checks its own cache, the operating system cache, a local network cache at your router, and a DNS server cache on your corporate network or at your internet service provider (ISP). If the browser cannot find the IP address at any of those cache layers, the DNS server on your corporate network or at your ISP does a recursive DNS lookup. A recursive DNS lookup asks multiple DNS servers around the Internet, which in turn ask more DNS servers for the DNS record until it is found.
+
+This process may involve additional steps if the DNS record is not found at any of the nameservers, or if the DNS record has been configured to use a service such as DNS load balancing or content delivery networks (CDN).
+
+Once the browser gets the DNS record with the IP address, it’s time for it to find the server on the Internet and establish a connection.The DNS is the Internet’s version of Google Maps. It routes you to your destination. Your computer or your router knows the address of the DNS server. When you type the URL in a browser for the first time, it sends a request to the DNS server, which responds back with the IP address of the web server hosting, for example, www.google.com. This value is usually then cached or gets added into the list of known hosts, so your browser doesn’t have to do this lookup every time.
+
+TCP/IP
+TCP (Transmission Control Protocol) and IP (Internet Protocol) are two of the main protocols that make up the internet.
+They work together to establish a connection between a client/ your computer and a server and facilitate the transmission of data reliably between them.It breaks the data into packets and reassembles them at the destination, ensuring that no packets are lost or corrupted during transmission.
+Basically using the public Internet routing infrastructure, packets from a client browser request get routed through the router, the ISP, through an internet exchange to switch ISPs or networks, all using transmission control protocol, more commonly known as TCP, to find the server with the IP address to connect to.
+When you enter "google.com" into a web browser, the browser uses TCP/IP to establish a connection with the server that hosts the website.
+Here's what happens in more detail:
+The browser sends a request to the server using IP to establish a connection.
+The server receives the request and sends back a message acknowledging the request to establish a connection. This is the handshake process.
+Once the handshake is complete, the browser can send a request for the web page it wants to access (in this case, the homepage of google.com). This request is sent using TCP, which ensures that the request is transmitted reliably and in the correct order.
+The server receives the request and sends back the HTML code for the homepage of google.com to the browser. This response is also sent using TCP to ensure reliable transmission.
+The browser receives the HTML code and uses it to render the webpage on your screen. Any resources (such as images) that the webpage needs are also requested and received using TCP/IP.
+
+
+Firewall
+A firewall is a piece of hardware or software security system that filters/monitors incoming or outgoing network traffic based on predetermined security rules to keep malware and attackers out.  The firewall checks the incoming request to make sure it is allowed based on its security rules, Firewalls are used to prevent unauthorised users from accessing unauthorised assets and services, ensuring that users only interact with the application through the web portal and do not have access to any other application infrastructure components and Firewalls can also identify and block packets with mismatched IP addresses — packets that say they’re coming from one location but don’t have an IP address that backs up that claim.
+When you type a URL like "google.com" into your browser, the request that your browser makes to Google's server passes through the firewall on its way. The firewall checks the incoming request to make sure it is allowed based on its security rules.
+There are two main types of security rules that a firewall uses to check incoming requests:
+Rules that allow or block traffic based on the source and destination of the request. For example, a firewall may be configured to block all traffic from certain countries or to allow only certain IP addresses to access the network.
+Rules that allow or block traffic based on the type of traffic. For example, a firewall may be configured to block all traffic on certain ports (such as those used by malware) or to allow only certain types of traffic (such as HTTP or HTTPS).
+If the incoming request meets the security rules set by the firewall in front of Google's server, it is allowed through, and the browser is able to access the website.
+However, if the request does not meet the security rules, it is blocked, and the browser is unable to access the website.
+HTTPS/SSL
+HTTPS (Hypertext Transfer Protocol Secure) is a secure version of the HTTP protocol used to transmit data on the internet. It is used to encrypt the data transmitted between your browser and Google's server.
+Once your computer has established a connection to the web server, it needs to ensure that the data transmitted between the two is secure. This is where HTTPS and SSL come in.
+HTTPS, or Hypertext Transfer Protocol Secure, is a protocol that adds an extra layer of encryption to HTTP. It uses SSL (Secure Sockets Layer) or TLS (Transport Layer Security) to encrypt the data transmitted between your computer and the web server. This ensures that no one can intercept or read the data as it travels over the internet.
+SSL/TLS uses a combination of public-key and symmetric-key encryption to secure the data. When you connect to a website using HTTPS, your computer and the web server exchange public keys, which are used to encrypt and decrypt the data. The symmetric key is used to encrypt the data itself, ensuring that only the intended recipient can decrypt it.
+When you enter "google.com" into a web browser, the browser uses HTTPS/SSL to establish a connection with the server that hosts the website.
+Here's what happens in more detail:
+Once you type google.com into your browser, it goes to the DNS server, and finds the real address of the server that the website lives on.
+The browser sends an HTTPS request message to the server, asking it to send a copy of the website to the client. This message, and all other data sent between the client and the server, is sent across your internet connection using TCP/IP. The request is reaching the server IP on port HTTPS 443.
+If the server approves the client’s request, the server sends the client a “200 OK” message, which means “Everything is OK”, and then starts sending the website’s files to the browser as a series of small chunks called data packets.
+The browser assembles the small chunks into a complete web page and displays it to you.
+
+
+Load-balancer
+A load balancer is a device or software that distributes incoming network traffic across multiple servers. It acts as the “traffic cop” sitting in front of your servers and routing client requests across all servers capable of fulfilling those requests in a manner that workload is distributed evenly across all servers, maximises speed and capacity utilisation and ensures that no one server is overworked, which could degrade performance.
+Load-balancers can use a variety of algorithms to determine which server to send the traffic to. These include round-robin, least connections, and IP hash.
+If a single server goes down, the load balancer redirects traffic to the remaining online servers. When a new server is added to the server group, the load balancer automatically starts to send requests to it. 
+In this manner, a load balancer performs the following functions:
+· Distributes client requests or network load efficiently across multiple servers
+· Ensures high availability and reliability by sending requests only to servers that are online
+· Provides the flexibility to add or subtract servers as demand dictates.
+A company like Google, which receives billions of website visitors a day, will need a lot of servers to serve all these users. Therefore, there will be a need for them to set up a load balancer to ensure that some of the servers are not overburdened while others are being underutilised.
+In the case of a browser trying to access google.com, the load balancer would receive the incoming request from the browser and then forward it to one of the servers in the Google server network. The particular server chosen will depend on the type of load balancing algorithm implemented.
+Web server
+A web server stores and delivers the content for a website — such as text, images, video, and application data — to clients that request it. That content is called static content. The most common types of clients are a web browser program or a mobile application, which request data from the website when a user clicks on a link or downloads a document on a page displayed in the browser. 
+This means that when trying to access google.com, Google's server will receive a request from the load balancer. This might mean a physical machine or software. In the case of www.google.com, both work together to make sure that the website is accessible (up and running). At the hardware level, a web server is a machine (or collection of machines) that stores a website’s component files (e.g. HTML documents, images, videos, stylesheets, and JavaScript files) and delivers them to you. This is called hosting. At the software level, a web server, known as the HTTP server, controls how users access these hosted files. It processes and answers incoming requests. When you request www.google.com, the HTTP server checks whether the requested URL matches any existing files, and if found,
+ The web server would then send this response back to the load balancer, which would forward it onto the browser. The browser would then use the HTML, CSS, and JavaScript files to render the web page for the user.
+or sends a “404 Not Found” error.
+Application server
+An application server is a server type that helps to host applications and its fundamental job is to provide its clients with access to what is commonly called business logic, which generates dynamic content; that is, it’s code that transforms data to provide the specialised functionality offered by a business, service, or application. For example, a user account, shopping cart,websites for banks. An application server’s clients are often applications themselves and can include web servers and other application servers. Communication between the application server and its clients might take the form of HTTP messages, but that is not required as it is for communication between web servers and their clients. 
+ Depending on the complexity of the search query, the application server may need to make a request to a database in order to retrieve the necessary data
+Application servers can use a variety of programming languages and frameworks, such as Java EE,.NET, and Ruby on Rails.
+ So in the case of www.google.com, your browser generates a HTTP request. Don’t confuse the browser as part of the application layer. The role of application layers comes in when your browser creates a HTTP request. This HTTP request is part of the application layer.
+
+
+Database
+A database server is a machine running database software dedicated to providing database services. It is a crucial component in the client-server computing environment where it provides business-critical information requested by the client systems. A database server consists of hardware and software that run a database.
+The software side of a database server, or the database instance, is the back-end database application. The application represents a set of memory structures and background processes accessing a set of database files.
+The hardware side of a database server is the server system used for database storage and retrieval. Database workloads require a large storage capacity and high memory density to process data efficiently. These requirements mean that the machine hosting the database is usually a dedicated high-end computer.
+Database servers have several use cases. Some of them are:
+· Dealing with large amounts of data regularly.
+· Managing the recovery and security of the DBMS.
+· Providing concurrent access control.
+· Storing applications and non-database files.
