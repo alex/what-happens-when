@@ -689,6 +689,14 @@ the Google homepage. Scripts can cause additional network requests to be
 performed, as well as modify the page or its layout, causing another round of
 page rendering and painting.
 
+## Display  
+Finally, the fully rendered webpage is displayed in your browser for you to interact with and browse.  
+You can click on links, enter search queries, and interact with any dynamic elements on the page.  
+
+###Conclusion  
+In summary, there are several complex processes that occur when you type *“google.com”* in your browser and press enter. From DNS lookup to rendering and display, each process plays an essential role in delivering the Google homepage to your browser. Understanding how these processes work can help you gain a better appreciation for the complexity and ingenuity of the internet.  
+
+
 .. _`Creative Commons Zero`: https://creativecommons.org/publicdomain/zero/1.0/
 .. _`"CSS lexical and syntax grammar"`: http://www.w3.org/TR/CSS2/grammar.html
 .. _`Punycode`: https://en.wikipedia.org/wiki/Punycode
