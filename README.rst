@@ -516,7 +516,7 @@ Behind the scenes of the Browser
 Once the server supplies the resources (HTML, CSS, JS, images, etc.)
 to the browser it undergoes the below process:
 
-* Parsing - HTML, CSS, JS
+* Parsing - HTML, CSS, JS or any other script (In that order)
 * Rendering - Construct DOM Tree → Render Tree → Layout of Render Tree →
   Painting the render tree
 
