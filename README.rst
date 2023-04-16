@@ -32,14 +32,31 @@ and the OS interrupts. When you press the key "g" the browser receives the
 event and the auto-complete functions kick in.
 Depending on your browser's algorithm and if you are in
 private/incognito mode or not various suggestions will be presented
-to you in the dropdown below the URL bar. Most of these algorithms sort
-and prioritize results based on search history, bookmarks, cookies, and
-popular searches from the internet as a whole. As you are typing
-"google.com" many blocks of code run and the suggestions will be refined
-with each keypress. It may even suggest "google.com" before you finish typing
-it.
+to you in the dropdown below the URL bar. The auto-complete algorithm relies
+on your activities with the browser. It checks for sites you visit frequently,
+bookmarked pages and cookies. After you type "g", first it serves a URL
+auto-suggestion, usually highlighted in blue, with the site you visit most frequently
+on the browser.
+For example: "g" can bring up any of the following depending on your browsing habits
+```
+github.com  with 'ithub.com' highlighted in blue.
+gmail.com   with 'mail.com' highlighted in blue.
+google.com  with 'oogle.com' highlighted in blue.
+```
+If one of these appears as auto-complete, the others will be placed
+in a drop-down list below the URL bar as auto-suggestions. Assuming google.com
+is not auto-completed or auto-suggested right away, with each new key you
+type after "g", the completion and suggestions will change accordingly to narrow down
+the results.
+For example:
+```
+"gi"  might suggest github.com
+"go"  might suggest google.com
+```
+Once 'google.com' appears as the auto-complete suggestion, pressing the Enter key sends
+the request. Alternatively, it can be clicked in the drop-down list.
 
-The "enter" key bottoms out
+The "Enter" key bottoms out
 ---------------------------
 
 To pick a zero point, let's choose the Enter key on the keyboard hitting the
