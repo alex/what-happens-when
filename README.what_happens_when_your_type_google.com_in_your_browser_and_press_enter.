@@ -1,0 +1,17 @@
+The browser sends a request to the Domain Name System (DNS) server to translate the URL "www.google.com" to an IP address.
+
+The DNS server responds with the IP address of the server that hosts Google's website.
+
+The browser establishes a TCP connection with the server at that IP address on port 443 (the default port for HTTPS).
+
+The browser and server perform a "handshake" to establish an encrypted connection using the Transport Layer Security (TLS) protocol.
+
+The browser sends an HTTP request to the server for the specific page or resource that was requested (in this case, the homepage).
+
+The server processes the request and sends an HTTP response back to the browser.
+
+The browser receives the response and renders the webpage for the user to view.
+
+If the user interacts with the webpage (e.g. clicks a link or submits a form), the browser may send additional requests to the server to load new resources or perform actions on the user's behalf.
+
+When the user is finished interacting with the webpage, they may close the browser or navigate to a different URL, which will start the process over again for the new request.
