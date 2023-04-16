@@ -1,0 +1,36 @@
+When you type "https://www.google.com" in your browser and press Enter, 
+a complex chain of events takes place behind the scenes to ensure that you can access the Google search engine. 
+Here is a step-by-step breakdown of what happens:
+
+- Step 1: DNS Request
+The first thing your browser does is send a request to a DNS server to resolve the domain name "google.com" into an IP address. 
+The DNS server responds with the IP address of the load balancer that is responsible for routing the request to the appropriate web server.
+
+- Step 2: TCP/IP Connection
+Once your browser has the IP address of the load balancer, it initiates a TCP/IP connection to the load balancer. 
+TCP/IP is a protocol that breaks the data into packets and sends them over the internet. 
+The load balancer receives the request and forwards it to one of several web servers running the Google search engine.
+
+- Step 3: HTTPS/SSL Handshake
+If you are accessing a website that uses HTTPS, like Google, your browser initiates an HTTPS/SSL handshake with the web server to establish a secure connection. 
+The SSL handshake involves exchanging cryptographic keys to ensure that the data you send and receive is encrypted and can't be intercepted by third parties.
+
+- Step 4: Load Balancer Routing
+The load balancer, which distributes incoming traffic across multiple web servers, 
+checks the request and routes it to the appropriate web server based on a pre-determined set of rules, such as server availability, 
+response times, and geographic location.
+
+- Step 5: Firewall and Web Server
+The web server that receives the request processes it by checking if it is authorized to access the Google search engine. 
+If the request passes the authorization check, the web server sends the request to the application server for further processing. 
+Before that, it may also pass through a firewall which examines the traffic and blocks any suspicious or unauthorized requests.
+
+- Step 6: Application Server and Database
+The application server processes the request and queries the Google search engine's database to retrieve relevant search results. 
+The application server also generates dynamic content and executes scripts to create the final page that is sent back to your browser.
+
+- Step 7: Sending HTTP Response
+The web server then sends an HTTP response to your browser with the requested information, including the search results, in the form of HTML code.
+Your browser receives this response and begins to render the webpage, interpreting the HTML, CSS, and JavaScript code that make up the page.
+
+In conclusion, accessing a website like Google involves a complex set of steps that utilize various technologies, including DNS requests, TCP/IP, HTTPS/SSL, load balancers, firewalls, web servers, application servers, and databases. By understanding how these processes work, you can appreciate the intricate workings of the internet and the si
