@@ -414,6 +414,10 @@ control`_. This varies depending on the sender; the most common algorithms are
   each packet acknowledged. If a packet is dropped, the window reduces
   exponentially until another packet is acknowledged.
 
+Load Balancer
+-------------
+Load balancers enhance your systems' fault tolerance by automatically identifying server problems and rerouting client traffic to working servers. User requests to the application first go to the load balancer. The load balancer then routes each request to the single server in the server farm best suited to handle the request. So when “https://www.google.com” is entered in the browser, the load balancer helps distribute the network to the most available web server.
+
 HTTP protocol
 -------------
 
