@@ -688,6 +688,17 @@ Plugins such as Flash or Java may execute as well, although not at this time on
 the Google homepage. Scripts can cause additional network requests to be
 performed, as well as modify the page or its layout, causing another round of
 page rendering and painting.
+Once the browser receives the JavaScript code from the server, it will execute 
+it based on different triggering events. For example, as you mentioned, some JavaScript code
+may be executed after rendering is completed, while other code may be executed in response to user interaction,
+such as clicking a button or entering text into a form.
+In the case of animations or other timed events, the JavaScript code will use functions like setInterval() or setTimeout()
+to specify when the code should be executed.
+For user interactions, event listeners are typically used to detect and respond to specific user actions.
+
+It is worth noting that different browsers may handle JavaScript execution slightly differently, 
+which can sometimes lead to compatibility issues. As such, it is important to thoroughly test code 
+across different browsers to ensure that it works as expected for all users.
 
 .. _`Creative Commons Zero`: https://creativecommons.org/publicdomain/zero/1.0/
 .. _`"CSS lexical and syntax grammar"`: http://www.w3.org/TR/CSS2/grammar.html
