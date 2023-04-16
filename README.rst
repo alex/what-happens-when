@@ -510,6 +510,35 @@ and IIS for Windows.
   is running on PHP, the server uses PHP to interpret the index file, and
   streams the output to the client.
 
+Application Server
+----------------------------------
+
+An application server is a software framework that provides a runtime environment for web applications to run. It serves as an intermediary between the front-end user interface and the back-end data storage and business logic, allowing web applications to be easily developed, deployed, and managed.
+
+Application servers provide a range of services and features that facilitate the development and deployment of web applications, including:
+
+Transaction management: Application servers provide transaction management services that allow multiple database operations to be performed as a single unit of work. This ensures that data is always consistent and reliable, even in the event of an application failure.
+
+Connection pooling: Connection pooling is a technique used by application servers to improve performance by maintaining a pool of reusable database connections. This allows applications to quickly and efficiently connect to the database, reducing the overhead of creating and tearing down database connections for each request.
+
+Security: Application servers provide a range of security features, including authentication, authorization, and encryption. This ensures that sensitive data is protected from unauthorized access and that the application is secure against common attacks such as cross-site scripting (XSS) and SQL injection.
+
+Resource management: Application servers provide resource management services, including memory management and thread pooling, to ensure that the application runs efficiently and effectively.
+
+Deployment: Application servers provide tools and features for deploying web applications, including support for different deployment scenarios, such as single-server or clustered environments, and support for different application architectures, such as monolithic or microservices.
+
+Scalability: Application servers provide features for scaling web applications, including load balancing and clustering. This allows the application to handle increasing amounts of traffic and ensures that the application remains available and responsive to users.
+
+Some examples of popular application servers include:
+
+Apache Tomcat: Apache Tomcat is a lightweight, open-source application server that is widely used for Java-based web applications.
+
+JBoss: JBoss is an open-source application server that is used for Java-based web applications. It provides a range of features and services for managing and deploying web applications.
+
+IBM WebSphere: IBM WebSphere is a commercial application server that is used for enterprise-level web applications. It provides a range of features for managing large-scale web applications and integrating with other enterprise-level software solutions.
+
+In conclusion, application servers provide a runtime environment for web applications to run and provide a range of services and features to facilitate the development and deployment of web applications. They provide critical services such as transaction management, security, and resource management, and can scale to meet the demands of enterprise-level applications
+
 Behind the scenes of the Browser
 ----------------------------------
 
