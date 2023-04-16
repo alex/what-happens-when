@@ -205,25 +205,34 @@ Check HSTS list
   single HTTP request could potentially leave the user vulnerable to a
   `downgrade attack`_, which is why the HSTS list is included in modern web
   browsers.)
-
 DNS lookup
 ----------
 
-* Browser checks if the domain is in its cache. (to see the DNS Cache in
-  Chrome, go to `chrome://net-internals/#dns <chrome://net-internals/#dns>`_).
-* If not found, the browser calls ``gethostbyname`` library function (varies by
-  OS) to do the lookup.
-* ``gethostbyname`` checks if the hostname can be resolved by reference in the
-  local ``hosts`` file (whose location `varies by OS`_) before trying to
-  resolve the hostname through DNS.
-* If ``gethostbyname`` does not have it cached nor can find it in the ``hosts``
-  file then it makes a request to the DNS server configured in the network
-  stack. This is typically the local router or the ISP's caching DNS server.
-* If the DNS server is on the same subnet the network library follows the
-  ``ARP process`` below for the DNS server.
-* If the DNS server is on a different subnet, the network library follows
-  the ``ARP process`` below for the default gateway IP.
+DNS (Domain Name System) is a hierarchical naming system that allows users to access websites using human-readable domain names instead of remembering the IP (Internet Protocol) addresses of the websites. DNS translates domain names into IP addresses, which computers use to identify each other on the internet. In other words, it serves as a phone book for the internet.
 
+When a user types a domain name into a web browser, the browser sends a request to a DNS resolver to resolve the domain name into its corresponding IP address. The DNS resolver queries a series of DNS servers in a hierarchical manner until it finds the authoritative DNS server for the domain name. The authoritative DNS server returns the IP address for the domain name to the resolver, which in turn returns the IP address to the user's web browser. The web browser can then use the IP address to connect to the web server hosting the requested website.
+
+The DNS system is organized into a hierarchical structure that consists of different types of DNS servers:
+
+Root DNS servers: There are 13 root DNS servers in the world, which serve as the starting point for all DNS queries. They contain information about the top-level domains (.com, .org, .net, etc.).
+
+Top-level domain (TLD) DNS servers: These servers are responsible for managing domain names that end with a specific TLD, such as .com, .org, or .net.
+
+Authoritative DNS servers: These servers are responsible for storing the DNS records for a particular domain name, such as the IP address of the web server hosting the domain name.
+
+Recursive DNS servers: These servers act as intermediaries between the user's web browser and the authoritative DNS servers. They receive the DNS query from the user's web browser and then recursively query other DNS servers until they find the authoritative DNS server for the requested domain name.
+
+DNS records are used to store information about a domain name, such as its IP address, mail server information, and other important details. The most common types of DNS records include:
+
+A record: This record maps a domain name to its corresponding IP address.
+
+MX record: This record specifies the mail server responsible for handling email for a domain name.
+
+CNAME record: This record maps a domain name to another domain name.
+
+NS record: This record specifies the authoritative DNS servers for a domain name.
+
+In summary, DNS is a critical component of the internet that allows users to access websites using human-readable domain names instead of remembering IP addresses. It works by translating domain names into IP addresses and using a hierarchical system of DNS servers to resolve DNS queries. DNS records are used to store information about a domain name, and there are different types of DNS records for different purposes.
 
 ARP process
 -----------
