@@ -1,5 +1,6 @@
 What happens when...
 ====================
+<img src="https://www.datarecovery.institute/wp-content/uploads/2015/02/CTRL-+ENTER.gif">
 
 This repository is an attempt to answer the age-old interview question "What
 happens when you type google.com into your browser's address box and press
