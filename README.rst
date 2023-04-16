@@ -28,8 +28,23 @@ Table of Contents
 The "g" key is pressed
 ----------------------
 The following sections explain the physical keyboard actions
-and the OS interrupts. When you press the key "g" the browser receives the
-event and the auto-complete functions kick in.
+and the OS interrupts. When you press the "g" key on your keyboard,
+the keyboard generates an electrical signal corresponding to it.
+When the key is pressed, an electrical circuit is completed,
+which sends a signal to the computer indicating the "g" key was pressed.
+The keyboard uses switches to detect when a key is pressed, and these switches
+generate the electrical signal that is sent to the computer.
+
+Once the computer receives the signal indicating that the 'G' key was pressed,
+the operating system (such as Windows, macOS, or Linux) is responsible
+for handling the key press. The operating system determines which application
+or program should receive the key press (the browser in this case),
+translates the key press into a character that can be displayed on the screen,
+and processes any special functions associated with the key
+(such as opening a menu or executing a command).
+
+Once the operating system has processed the key press, the browser receives it
+as an event and the auto-complete functions kick in.
 Depending on your browser's algorithm and if you are in
 private/incognito mode or not various suggestions will be presented
 to you in the dropdown below the URL bar. Most of these algorithms sort
