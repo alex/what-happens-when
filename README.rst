@@ -570,6 +570,13 @@ The components of the browsers are:
   need to save all sorts of data locally, such as cookies. Browsers also
   support storage mechanisms such as localStorage, IndexedDB, WebSQL and
   FileSystem.
+* **Plugins/Add-ons:** This layer provides support for browser plugins and
+  add-ons, which extend the browser's functionality by adding new features
+  or capabilities.
+
+These elements work together to give users a smooth surfing experience that
+enables them to access websites, browse the web, and engage with online content.
+      
 
 HTML parsing
 ------------
