@@ -1,4 +1,4 @@
-What happens when...
+What happens when...you type url https://google.com in the browser and press enter
 ====================
 
 This repository is an attempt to answer the age-old interview question "What
