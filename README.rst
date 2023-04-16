@@ -689,6 +689,18 @@ the Google homepage. Scripts can cause additional network requests to be
 performed, as well as modify the page or its layout, causing another round of
 page rendering and painting.
 
+
+ABBREVIATIONS:
+--------------
+
+TCP/IP: Transmission Control Protocol/Internet Protocol
+DNS: Domain Name Server
+SSL: Secure Sockets Layer
+TLS: Transport Layer Security
+HTTPS: Hypertext Transfer Protocol Secure
+IANA:  Internet Assigned Numbers Authority
+GPU: Graphics Processing Unit
+
 .. _`Creative Commons Zero`: https://creativecommons.org/publicdomain/zero/1.0/
 .. _`"CSS lexical and syntax grammar"`: http://www.w3.org/TR/CSS2/grammar.html
 .. _`Punycode`: https://en.wikipedia.org/wiki/Punycode
