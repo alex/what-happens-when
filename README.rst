@@ -366,6 +366,11 @@ This send and receive happens multiple times following the TCP connection flow:
    * The closer sends a FIN packet
    * The other sides ACKs the FIN packet and sends its own FIN
    * The closer acknowledges the other side's FIN with an ACK
+   
+ Load-balancer
+As we mentioned earlier, websites live on servers. For most websites where the traffic is consequent, it would be impossible to be hosted on a single server. Plus, it would create a Single Point of Failure (SPOF), because it would only need one attack on said server to take the whole site down.
+As needs for higher availability and security rises, websites started augmenting the number of servers they have, organising them in clusters, and using load-balancers. A load-balancer is a software program that distributes network requests between several servers, following a load-balancing algorithm. HAproxy is a very famous load-balancer, and example of algorithms that we can use are the round-robin, which distributes the requests alternating between all the servers evenly and consequentially, or the least-connection, which distributes requests depending on the current server loads.
+
 
 TLS handshake
 -------------
