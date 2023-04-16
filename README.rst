@@ -134,7 +134,7 @@ to the ``hWnd`` is called in order to process each message in the queue.
 The window (``hWnd``) that is active is actually an edit control and the
 ``WindowProc`` in this case has a message handler for ``WM_KEYDOWN`` messages.
 This code looks within the 3rd parameter that was passed to ``SendMessage``
-(``wParam``) and, because it is ``VK_RETURN`` knows the user has hit the ENTER
+(``wParam``) and, because it's ``VK_RETURN`` knows the user has hit the ENTER
 key.
 
 (On OS X) A ``KeyDown`` NSEvent is sent to the app
