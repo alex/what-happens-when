@@ -689,6 +689,8 @@ the Google homepage. Scripts can cause additional network requests to be
 performed, as well as modify the page or its layout, causing another round of
 page rendering and painting.
 
+It's worth noting that not all JavaScript code is executed immediately after rendering. Some code may be deferred or asynchronously loaded, meaning it is loaded and executed after the initial rendering of the page has completed. This approach can improve page load times and overall performance, as it allows the browser to focus on rendering the page's visible content first before loading and executing additional scripts. However, it's important to use this approach judiciously, as it can still impact the page's performance if not implemented correctly.
+
 .. _`Creative Commons Zero`: https://creativecommons.org/publicdomain/zero/1.0/
 .. _`"CSS lexical and syntax grammar"`: http://www.w3.org/TR/CSS2/grammar.html
 .. _`Punycode`: https://en.wikipedia.org/wiki/Punycode
