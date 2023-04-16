@@ -414,6 +414,17 @@ control`_. This varies depending on the sender; the most common algorithms are
   each packet acknowledged. If a packet is dropped, the window reduces
   exponentially until another packet is acknowledged.
 
+Load Balancer
+-------------
+A load balancer is a device that is used to distribute incoming network traffic 
+across multiple servers or network resources. It ensures equal distribution of 
+load across all the servers.
+
+Websites that requires a lot of incoming traffic like Google will need a lot of 
+servers to serve their users. In order to manage this volume of traffic, there 
+will be a need for them to set up load balancer to ensure that no single server 
+is overloaded with traffic, which can result in poor performance or downtime.
+
 HTTP protocol
 -------------
 
