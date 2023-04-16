@@ -694,12 +694,17 @@ ABBREVIATIONS:
 --------------
 
 TCP/IP: Transmission Control Protocol/Internet Protocol
+
 DNS: Domain Name Server
+
 SSL: Secure Sockets Layer
+
 TLS: Transport Layer Security
+
 HTTPS: Hypertext Transfer Protocol Secure
 
 IANA:  Internet Assigned Numbers Authority
+
 GPU: Graphics Processing Unit
 
 .. _`Creative Commons Zero`: https://creativecommons.org/publicdomain/zero/1.0/
