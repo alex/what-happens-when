@@ -689,6 +689,28 @@ the Google homepage. Scripts can cause additional network requests to be
 performed, as well as modify the page or its layout, causing another round of
 page rendering and painting.
 
+web servers
+------------------------------
+What happens when you search for a website on any search engine?
+When you type "https://www.google.com" into your browser and press enter, a series of complex processes are initiated, resulting in the display of the Google homepage. Let me give you a brief description of the processes.
+1. DNS Request:
+The first step is to resolve the URL into an IP address using the Domain Name System (DNS). Your browser sends a DNS request to the local DNS resolver to find the IP address connected with the domain name "google.com". If the resolver has the IP address stored, it returns the IP address to the browser; otherwise, it forwards the request to the authoritative DNS server for "google.com".
+2. TCP/IP:
+Once the browser has the IP address, it establishes a Transmission Control Protocol (TCP) connection to the server using the Internet Protocol (IP). This process involves a three-way handshake between the browser and the server to establish a reliable connection.
+3. Firewall:
+Before the connection is established, the firewall checks whether the connection request meets the security policy and rules set by the network administrator. If the connection is allowed, the firewall forwards the request to the server.
+4. HTTPS/SSL:
+If you typed "https" instead of "http", your browser will initiate a Secure Sockets Layer (SSL) or Transport Layer Security (TLS) handshake to establish an encrypted connection between the browser and the server. During this process, the server sends its digital certificate to the browser to verify its authenticity. If the certificate is valid, the browser and server negotiate a shared encryption key to encrypt all further communication.
+5. Load-Balancer:
+The request is then routed to a load-balancer, which distributes the request among multiple web servers. The load balancer determines which server to send the request to based on a set of predefined algorithms, such as round-robin or least connections.
+6. Web Server:
+Once the request reaches the web server, the server retrieves the google webpage from its storage and sends it back to the browser. The server may also perform additional processing, such as server-side scripting or database queries, before returning the page to the browser.
+7. Application Server:
+If the google page requires additional processing, such as retrieving data from a database or executing complex business logic, the request is forwarded to an application server. The application server processes the request and sends the result back to the web server.
+8. Database:
+If the google page requires data from a database, the application server sends a request to the database server to retrieve the data. The database server processes the request and sends the result back to the application server, which then sends the data back to the web server.
+In conclusion, a good understanding of these processes is crucial to troubleshooting and optimizing web performance, and to design secure and scalable web applications.
+.. `web servers`: https://www.linkedin.com/posts/paul-joel-872748127_alxafrica-activity-7051469950175076352-nfEc?utm_source=share&utm_medium=member_desktop
 .. _`Creative Commons Zero`: https://creativecommons.org/publicdomain/zero/1.0/
 .. _`"CSS lexical and syntax grammar"`: http://www.w3.org/TR/CSS2/grammar.html
 .. _`Punycode`: https://en.wikipedia.org/wiki/Punycode
