@@ -1,6 +1,8 @@
 What happens when...
 ====================
 
+![image](https://user-images.githubusercontent.com/105589308/232351199-2f7e1166-03aa-4710-9cbd-2313aacbfd1c.png)
+
 This repository is an attempt to answer the age-old interview question "What
 happens when you type google.com into your browser's address box and press
 enter?"
