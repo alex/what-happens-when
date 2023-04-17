@@ -662,7 +662,8 @@ Page Rendering
 * Final layer positions are computed and the composite commands are issued
   via Direct3D/OpenGL. The GPU command buffer(s) are flushed to the GPU for
   asynchronous rendering and the frame is sent to the window server.
-
+Lastly a database is an organised collection of structured information, or data, typically stored electronically in a computer system.  A database is usually controlled by a database management system (DBMS).The data can then be easily accessed, managed,modified, updated,controlled, and organised.  Most databases use structured query language (SQL) for writing and querying data.
+Kindly like ,post and follow me on LinkedIn, Facebook and other social media sites, 😊.. For more exciting news and topics.
 GPU Rendering
 -------------
 
