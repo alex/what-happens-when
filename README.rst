@@ -414,6 +414,28 @@ control`_. This varies depending on the sender; the most common algorithms are
   each packet acknowledged. If a packet is dropped, the window reduces
   exponentially until another packet is acknowledged.
 
+Firewalls and Intrusion Detection Systems
+--------
+
+  Google uses a combination of software and hardware firewalls to protect its network infrastructure. 
+  These firewalls are designed to analyze incoming and outgoing network traffic and filter out any suspicious or potentially harmful traffic. 
+  Google also uses intrusion detection systems that are designed to monitor network traffic for signs of potential threats or attacks.
+
+  Google's intrusion detection systems use advanced algorithms and machine learning to analyze network traffic and detect potential threats in real-time. 
+  These systems can quickly identify and respond to a wide range of attacks, including distributed denial of service (DDoS) attacks, 
+  malware infections, and other types of cyber threats.
+
+  * when a packet arrives at the firewall, it is inspected.
+
+  * the firewall then Checks the packet's source and destination addresses against a list of
+    rules to determine whether to allow or deny the packet.
+  * the rules 
+  * If the packet is allowed, it is forwarded to the next network node.
+  * If the packet is denied, it is dropped.
+  * If the packet is denied, the firewall may send an error message back to
+    the sender.
+  
+
 HTTP protocol
 -------------
 
