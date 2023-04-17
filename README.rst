@@ -297,8 +297,8 @@ the default gateway it can resume its DNS process:
   requested and that flows up the list of DNS servers until the SOA is reached,
   and if found an answer is returned.
 
-Opening of a socket
--------------------
+Opening a TCP/IP connection
+---------------------------
 Once the browser receives the IP address of the destination server, it takes
 that and the given port number from the URL (the HTTP protocol defaults to port
 80, and HTTPS to port 443), and makes a call to the system library function
@@ -479,6 +479,20 @@ If the HTML referenced a resource on a different domain than
 resolving the other domain, and follows all steps up to this point for that
 domain. The ``Host`` header in the request will be set to the appropriate
 server name instead of ``google.com``.
+
+Load balancing
+--------------
+To ensure high availability of the www.google.com website, Google could be using a load
+balancer which will intercept requests from clients and distributes them among a set of
+replicated web servers which will all serve the content of the same website, www.google.com.
+
+So, in our case the HTTP request would be sent to the load balancer and then the load balancer
+would transmit the request to an available web server among a pool of web server, determined
+through an algorithm, called load balancing algorithm.
+
+Once the load balancer would have transmitted an HTTP request to a web server, that server would
+handle the request and return the response of the www.google.com URL.
+
 
 HTTP Server Request Handle
 --------------------------
