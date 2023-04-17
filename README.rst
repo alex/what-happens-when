@@ -211,6 +211,10 @@ DNS lookup
 
 * Browser checks if the domain is in its cache. (to see the DNS Cache in
   Chrome, go to `chrome://net-internals/#dns <chrome://net-internals/#dns>`_).
+* If there is a recent copy of the DNS records for that domain, it will 
+  use the IP address in the cache to send a request to the server. 
+  This speeds up the process of resolving the domain name to an 
+  IP address because it avoids the need to send a request to the DNS server.
 * If not found, the browser calls ``gethostbyname`` library function (varies by
   OS) to do the lookup.
 * ``gethostbyname`` checks if the hostname can be resolved by reference in the
@@ -219,6 +223,9 @@ DNS lookup
 * If ``gethostbyname`` does not have it cached nor can find it in the ``hosts``
   file then it makes a request to the DNS server configured in the network
   stack. This is typically the local router or the ISP's caching DNS server.
+* Once the IP address has been resolved, it is cached by the local DNS resolver 
+  and the browser so that future requests for the same domain name 
+  can be resolved more quickly.
 * If the DNS server is on the same subnet the network library follows the
   ``ARP process`` below for the DNS server.
 * If the DNS server is on a different subnet, the network library follows
