@@ -673,6 +673,10 @@ GPU Rendering
   software layers split the task into multiple pieces, so it can take advantage
   of ``GPU`` massive parallelism for float point calculations required for
   the rendering process.
+  The traffic warden
+  Most popular websites like google.com have a lot of visitors and multiple web users make requests to google server within a short time frame. Another word for this phenomenon is known as website traffic. In order to manage the server infrastructure, respond to all request on time without overwhelming the infrastructures, Load balancers are used to distribute incoming network traffic across multiple servers to ensure that no single server is overwhelmed with too much traffic. This helps to improve responsiveness and availability.
+  The web server serves
+  The primary function of a web server is to is to store, process and deliver web pages to clients. The server uses the application server to generate and deliver dynamic content with data stored in a database.  Most web servers have databases that are used by the application server to store and retrieve information about the user and other commonly used information that improves browsing experience.
 
 
 Window Server
