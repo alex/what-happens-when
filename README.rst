@@ -223,11 +223,8 @@ DNS lookup
   ``ARP process`` below for the DNS server.
 * If the DNS server is on a different subnet, the network library follows
   the ``ARP process`` below for the default gateway IP.
-
-
-ARP process
------------
-
+* The DNS request first goes through the resolver. The resolver is  usually your internet provider,
+and if it doesn’t find the IP in its cache, it’s going to request the root server. The root server knows where the Top-Level Domain (TLD) server is. In our case, the top-level domain is .com. Other TLD include .net, .us, .org, etc. If the TLD server doesn’t know the IP, it points the resolver to the Authoritative Name Servers for the domain name. Usually, there is more than one name server attached to one domain name. But any of those name servers can give the IP for the domain name they are attached to. Now the resolver has the IP address(for example 216.58.210.142), and can send it back to the browser which will perform its request to the corresponding server
 In order to send an ARP (Address Resolution Protocol) broadcast the network
 stack library needs the target IP address to lookup. It also needs to know the
 MAC address of the interface it will use to send out the ARP broadcast.
