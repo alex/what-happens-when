@@ -396,6 +396,11 @@ TLS handshake
 
 * From now on the TLS session transmits the application (HTTP) data encrypted
   with the agreed symmetric key.
+  
+N/B: The TLS handshake ensures that the client and server agree on a set of cryptographic
+parameters, and that the server's digital certificate is valid and trustworthy.
+This process helps to prevent eavesdropping, tampering, and other forms of attacks
+on the communication channel.
 
 If a packet is dropped
 ----------------------
@@ -618,7 +623,10 @@ set to "complete" and a "load" event is fired.
 
 Note there is never an "Invalid Syntax" error on an HTML page. Browsers fix
 any invalid content and go on.
-
+The HTML algorithm continues to iterate over the input stream until all the
+characters in the HTML document have been processed.
+At each step, it updates a state machine based on the current input character
+and the context of the current parsing context. 
 CSS interpretation
 ------------------
 
