@@ -414,6 +414,15 @@ control`_. This varies depending on the sender; the most common algorithms are
   each packet acknowledged. If a packet is dropped, the window reduces
   exponentially until another packet is acknowledged.
 
+As mentioned above, sometimes due to network congestion or flaky hardware connections, TLS packets can be dropped. However, it is also good to note that several other things can happen depending on the context and which stage the TLS handshake process the packet was dropped. Here is a little overview of what might happen:
+
+* Failure to establish a TLS connection: The TLS handshake is a process that occurs at the beginning of a TLS session between a client and a server. If a TLS packet is dropped during the handshake process, it may cause the handshake to fail, preventing the client and server from establishing a secure connection. In this case, the client and server will not be able to communicate securely, and the connection may be terminated.
+* Incomplete transfer of data: Once a TLS connection is established, data can be transmitted securely between the client and server. If a TLS packet is dropped during this stage, it may cause incomplete transfer of data, leading to errors or incomplete results. This can cause applications to behave unexpectedly or fail to complete their intended tasks.
+* Retransmission of dropped packets: In some cases, when a TLS packet is dropped, the sender may retransmit the packet. This may occur when the receiver sends a TCP acknowledgement requesting that the packet be resent, or when the sender detects that the packet has not been received. Retransmission of dropped packets can result in delays and increased network traffic, leading to degraded performance.
+* Security vulnerabilities: In some cases, dropped TLS packets can be the result of malicious activity, such as an attempt to exploit a vulnerability in the TLS protocol. Attackers may attempt to intercept, modify, or drop TLS packets in order to gain unauthorized access to sensitive information or disrupt network communication. In this case, dropped TLS packets may be a sign of a security breach or attack.
+
+In conclusion, dropped TLS packets can lead tp failed connections, incomplete data transfer and degraded performance. It is important to monitor network traffic and troubleshoot any packet drop issues as quickly as possible to ensure secure and reliable communication. Additionally, it is important to maintain up-to-date TLS implementations and security practices to reduce the risk of malicious attacks.
+
 HTTP protocol
 -------------
 
