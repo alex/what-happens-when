@@ -258,7 +258,7 @@ Depending on what type of hardware is between the computer and the router:
 
 Directly connected:
 
-* If the computer is directly connected to the router the router response
+* If the computer is directly connected to the router, the router responds
   with an ``ARP Reply`` (see below)
 
 Hub:
@@ -288,7 +288,7 @@ Switch:
     Target IP: interface.ip.goes.here
 
 Now that the network library has the IP address of either our DNS server or
-the default gateway it can resume its DNS process:
+the default gateway, it can resume its DNS process:
 
 * The DNS client establishes a socket to UDP port 53 on the DNS server,
   using a source port above 1023.
@@ -367,8 +367,9 @@ This send and receive happens multiple times following the TCP connection flow:
    * The other sides ACKs the FIN packet and sends its own FIN
    * The closer acknowledges the other side's FIN with an ACK
 
-TLS handshake
+TLS/ SSL handshake
 -------------
+   TLS
 * The client computer sends a ``ClientHello`` message to the server with its
   Transport Layer Security (TLS) version, list of cipher algorithms and
   compression methods available.
@@ -413,6 +414,21 @@ control`_. This varies depending on the sender; the most common algorithms are
 * After reaching the slow-start threshold, the window increases additively for
   each packet acknowledged. If a packet is dropped, the window reduces
   exponentially until another packet is acknowledged.
+  
+     SSL
+How do SSL certificates work?
+=============================
+
+SSL works by ensuring that any data transferred between users and websites, or between two systems, remains impossible to read. It uses encryption algorithms to scramble data in transit, which prevents hackers from reading it as it is sent over the connection. This data includes potentially sensitive information such as names, addresses, credit card numbers, or other financial details.
+
+The process works like this:
+
+1.  A browser or server attempts to connect to a website (i.e., a web server) secured with SSL.
+2.  The browser or server requests that the web server identifies itself.
+3.  The web server sends the browser or server a copy of its SSL certificate in response.
+4.  The browser or server checks to see whether it trusts the SSL certificate. If it does, it signals this to the webserver.
+5.  The web server then returns a digitally signed acknowledgment to start an SSL encrypted session.
+6.  Encrypted data is shared between the browser or server and the webserver.
 
 HTTP protocol
 -------------
@@ -709,3 +725,4 @@ page rendering and painting.
 .. _`downgrade attack`: http://en.wikipedia.org/wiki/SSL_stripping
 .. _`OSI Model`: https://en.wikipedia.org/wiki/OSI_model
 .. _`Spanish`: https://github.com/gonzaleztroyano/what-happens-when-ES
+.. _ (https://www.kaspersky.com/resource-center/definitions/what-is-a-ssl-certificate)[](https://www.kaspersky.com/resource-center/definitions/what-is-a-ssl-certificate)
