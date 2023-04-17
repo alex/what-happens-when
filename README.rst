@@ -224,6 +224,18 @@ DNS lookup
 * If the DNS server is on a different subnet, the network library follows
   the ``ARP process`` below for the default gateway IP.
 
+* The DNS lookup process also involves a series of DNS servers that are queried recursively until the domain name is resolved to an IP address. The recursive query starts from the root DNS server, which knows about all the top-level domains (TLDs) such as .com, .org, .net, etc.
+
+* The root server then directs the query to the appropriate TLD DNS server, which further directs the query to the authoritative DNS server responsible for the domain name being requested. The authoritative server responds with the IP address of the requested domain name, which is then returned to the user's browser through the DNS lookup process.
+
+* Another important aspect of DNS lookup is caching. DNS records have a Time To Live (TTL) value that determines how long they can be cached by various DNS servers. Caching helps reduce the load on DNS servers and improve the performance of DNS lookup. However, it can also lead to issues such as stale DNS records and DNS cache poisoning attacks.
+
+* Overall, the DNS lookup process plays a crucial role in translating human-readable domain names into machine-readable IP addresses, enabling the browser to establish a connection with the web server hosting the requested website.
+
+
+
+
+
 
 ARP process
 -----------
