@@ -42,6 +42,7 @@ it.
 The "enter" key bottoms out
 ---------------------------
 
+
 To pick a zero point, let's choose the Enter key on the keyboard hitting the
 bottom of its range. At this point, an electrical circuit specific to the enter
 key is closed (either directly or capacitively). This allows a small amount of
@@ -51,6 +52,8 @@ closure of the switch, and converts it to a keycode integer, in this case 13.
 The keyboard controller then encodes the keycode for transport to the computer.
 This is now almost universally over a Universal Serial Bus (USB) or Bluetooth
 connection, but historically has been over PS/2 or ADB connections.
+
+
 
 *In the case of the USB keyboard:*
 
@@ -99,6 +102,7 @@ connection, but historically has been over PS/2 or ADB connections.
 Interrupt fires [NOT for USB keyboards]
 ---------------------------------------
 
+
 The keyboard sends signals on its interrupt request line (IRQ), which is mapped
 to an ``interrupt vector`` (integer) by the interrupt controller. The CPU uses
 the ``Interrupt Descriptor Table`` (IDT) to map the interrupt vectors to
@@ -107,6 +111,7 @@ interrupt arrives, the CPU indexes the IDT with the interrupt vector and runs
 the appropriate handler. Thus, the kernel is entered.
 
 (On Windows) A ``WM_KEYDOWN`` message is sent to the app
+
 --------------------------------------------------------
 
 The HID transport passes the key down event to the ``KBDHID.sys`` driver which
@@ -153,6 +158,7 @@ handled by, an ``NSApplication`` main event loop, via an ``NSEvent`` of
 (On GNU/Linux) the Xorg server listens for keycodes
 ---------------------------------------------------
 
+
 When a graphical ``X server`` is used, ``X`` will use the generic event
 driver ``evdev`` to acquire the keypress. A re-mapping of keycodes to scancodes
 is made with ``X server`` specific keymaps and rules.
@@ -185,6 +191,7 @@ search engine that it came from a particular browser's URL bar.
 
 Convert non-ASCII Unicode characters in the hostname
 ------------------------------------------------
+
 
 * The browser checks the hostname for characters that are not in ``a-z``,
   ``A-Z``, ``0-9``, ``-``, or ``.``.
@@ -400,6 +407,7 @@ TLS handshake
 If a packet is dropped
 ----------------------
 
+
 Sometimes, due to network congestion or flaky hardware connections, TLS packets
 will be dropped before they get to their final destination. The sender then has
 to decide how to react. The algorithm for this is called `TCP congestion
@@ -464,8 +472,10 @@ browser has been unmodified since the last retrieval (ie. if the web browser
 included an ``ETag`` header), it may instead respond with a request of
 the form::
 
+
     304 Not Modified
     [response headers]
+
 
 and no payload, and the web browser instead retrieve the HTML from its cache.
 
