@@ -19,7 +19,7 @@ Read this in `简体中文`_ (simplified Chinese), `日本語`_ (Japanese), `한
 maintainers.
 
 Table of Contents
-====================
+==================
 
 .. contents::
    :backlinks: none
