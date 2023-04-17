@@ -369,6 +369,7 @@ This send and receive happens multiple times following the TCP connection flow:
 
 TLS handshake
 -------------
+
 * The client computer sends a ``ClientHello`` message to the server with its
   Transport Layer Security (TLS) version, list of cipher algorithms and
   compression methods available.
@@ -482,6 +483,7 @@ server name instead of ``google.com``.
 
 HTTP Server Request Handle
 --------------------------
+
 The HTTPD (HTTP Daemon) server is the one handling the requests/responses on
 the server-side. The most common HTTPD servers are Apache or nginx for Linux
 and IIS for Windows.
