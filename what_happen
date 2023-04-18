@@ -1,0 +1,8 @@
+what happens when you type https://www.google.com in your browser and press Enter.
+                My computer sends a request to the DNS server. Then it sends back the exact IP address of the server which https://www.google.com points to. Then my computer establishes a connection with the server through the IP address. This connection is known as TCP, it was established through the IP. The firewall checks the request if it is allowed before permitting it.
+       After establishing the connection, the browser sends a request for the webpage using an encryption protocol SSL or TLS in order to encrypt the data that will be shared between the computer and the server. The request from the browser will therefore hit the load balancer first which will forward it to a specific server depending on the algorithm used by the load balancer. The server that receives the request then sends a response back to the load balancer which also forwards the response back to the browser. This response will mostly include HTML, CSS, and JavaScript files that make up Google's homepage.
+     The HTML files returned tells the browser how to render the content of the page. The CSS file tells the browser how to style the content while the JavaScript file adds interactivity to the page.
+         If there is a need for some dynamic content such as Google search results, then the web server will make a request to the application server, which in turn may make a request to a database server to get some data and send it back to the web server. The web server will then include these in the response that it sends back to the browser.
+After all, the browser will render the page and display.
+ 
+
