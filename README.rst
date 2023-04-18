@@ -152,15 +152,16 @@ handled by, an ``NSApplication`` main event loop, via an ``NSEvent`` of
 
 (On GNU/Linux) the Xorg server listens for keycodes
 ---------------------------------------------------
+On GNU/Linux, the Xorg server, which is responsible for managing the display and input devices, listens for keycodes when a graphical X server is used. The X server uses the generic event driver called "evdev" to capture the keypress event. The keycodes are then remapped to scancodes using X server-specific keymaps and rules.
 
-When a graphical ``X server`` is used, ``X`` will use the generic event
-driver ``evdev`` to acquire the keypress. A re-mapping of keycodes to scancodes
-is made with ``X server`` specific keymaps and rules.
-When the scancode mapping of the key pressed is complete, the ``X server``
-sends the character to the ``window manager`` (DWM, metacity, i3, etc), so the
-``window manager`` in turn sends the character to the focused window.
-The graphical API of the window  that receives the character prints the
-appropriate font symbol in the appropriate focused field.
+Once the scancode mapping is completed, the X server sends the character corresponding to the key pressed to the window manager, which could be DWM, metacity, i3, or any other window manager in use. The window manager then forwards the character to the focused window, which is the currently active window that is accepting keyboard input.
+
+Finally, the graphical API of the window that receives the character prints the appropriate font symbol in the appropriate focused field. This allows the character to be displayed on the screen in the focused field of the active window, enabling text input in the graphical user interface of the GNU/Linux system.
+
+
+
+
+
 
 Parse URL
 ---------
