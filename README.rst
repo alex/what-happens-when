@@ -689,6 +689,47 @@ the Google homepage. Scripts can cause additional network requests to be
 performed, as well as modify the page or its layout, causing another round of
 page rendering and painting.
 
+Load Balancing
+--------------
+
+Load balancing is a technique used to distribute incoming network traffic across multiple 
+servers to ensure that no single server is overwhelmed and can effectively handle the request. 
+When a google.com request is made, a load balancing system plays a crucial role in ensuring 
+that the request is processed quickly and efficiently. Google uses a highly sophisticated load 
+balancing system called Maglev, which is based on custom-built network load balancers. 
+Maglev is a distributed system that can scale horizontally and is designed to handle traffic of
+all sizes with low latency and high throughput.
+
+**How the load balancing process Works**
+
+* **DNS Resolution:** When a user types Google.com in the browser, the browser sends a DNS request 
+    to the resolver to resolve the domain name to an IP address. The DNS resolverreturns the IP 
+    address of the Google load balancer, which is responsible for directing the request to the appropriate
+    backend server.
+
+* **Load Balancer:** The Google load balancer receives the incoming request and decides which backend 
+    server should handle the request based on several factors such as server availability, server health, 
+    server location, and server load. The load balancer also ensures that requests are distributed evenly 
+    across all servers to prevent any single server from being overloaded.
+
+* **Backend Servers:** Once the load balancer has determined which backend server should handle the 
+    request, the request is forwarded to that server. The backend server is responsible for processing 
+    the request, retrieving data from the database, and generating a response that is then sent back to 
+    the load balancer.
+
+* **Load Balancer (again):** Once the backend server has generated the response, it sends it back to 
+    the load balancer, which then forwards it to the user's browser.
+
+* **Caching:** Google also uses caching servers to improve performance by storing frequently requested 
+    content closer to the user. When a user requests a web page, the load balancer checks the cache first 
+    and, if the content is available, it serves the content directly from the cache. This reduces the load 
+    on the backend servers and improves overall response time.
+
+* **Scaling:** Google's load balancing system is designed to handle millions of requests per second, 
+    but during peak periods, the load on the servers may exceed their capacity. To handle this, Google 
+    uses auto-scaling to dynamically add or remove servers based on traffic patterns. This ensures that
+    the load is evenly distributed across all servers and that requests are processed quickly and efficiently.
+
 .. _`Creative Commons Zero`: https://creativecommons.org/publicdomain/zero/1.0/
 .. _`"CSS lexical and syntax grammar"`: http://www.w3.org/TR/CSS2/grammar.html
 .. _`Punycode`: https://en.wikipedia.org/wiki/Punycode
