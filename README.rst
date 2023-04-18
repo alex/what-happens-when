@@ -673,6 +673,8 @@ GPU Rendering
   software layers split the task into multiple pieces, so it can take advantage
   of ``GPU`` massive parallelism for float point calculations required for
   the rendering process.
+  When you type https://www.google.com in your browser and press enter, aseries of complex processes are trigerred, including DNS resolution, TCP/IP connection , firewall verification, HTTPS/SSL encryption, load balancing, web server processing, application server interaction. and database retrieval. All these steps work together to ensure you can  securely acess Googles website and retrieve the information you are looking for.  
+ 
 
 
 Window Server
