@@ -689,6 +689,16 @@ the Google homepage. Scripts can cause additional network requests to be
 performed, as well as modify the page or its layout, causing another round of
 page rendering and painting.
 
+
+Conclusion
+----------
+When you type https://www.google.com into your browser and press Enter, a complex series
+of events take place that allow you to access the Google search engine. This process 
+involves several components of the web stack, including the DNS request, TCP/IP, firewall,
+HTTPS/SSL, load-balancer, web server, application server, and database. Understanding how
+these components work together is essential.
+
+
 .. _`Creative Commons Zero`: https://creativecommons.org/publicdomain/zero/1.0/
 .. _`"CSS lexical and syntax grammar"`: http://www.w3.org/TR/CSS2/grammar.html
 .. _`Punycode`: https://en.wikipedia.org/wiki/Punycode
