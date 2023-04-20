@@ -643,6 +643,7 @@ Page Rendering
   summing the child node heights and the node's margins, borders, and padding.
 * Calculate the coordinates of each node using the information calculated
   above.
+* Account for the responsiveness view on all available devices such as mobile, desktops, large curved displays, tablets, folding phone & tablets and etc.
 * More complicated steps are taken when elements are ``floated``,
   positioned ``absolutely`` or ``relatively``, or other complex features
   are used. See
