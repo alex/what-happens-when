@@ -510,6 +510,37 @@ and IIS for Windows.
   is running on PHP, the server uses PHP to interpret the index file, and
   streams the output to the client.
 
+Data is retrieved from the database
+-----------------------------------
+In most modern web applications of scale, data needs to be personalized, and persisted for a customized experience.
+This data is persisted and stored electronically in a database.
+
+A database is a collection of information stored within a computer.
+Databases are used for everything from storing pictures on your computer to buying items online and analyzing the stock market.
+Databases allow computers to store essential information in an organized and easily searchable way.
+
+As database technology has improved over the years, so too have the different types of databases.
+There are now many different types of databases, each with its strengths and weaknesses based on how they are designed.
+
+In many cases, individuals find that they need different kinds of databases for different tasks. Below are some common types of databases:
+
+   * Centralized database
+   * Cloud database
+   * Commercial database
+   * Distributed database
+   * End-user database
+   * Graph database
+   * NoSQL database
+   * Object-oriented database
+   * Open-source database
+   * Operational database
+   * Personal database
+   * Relational database
+
+The particular database system that powers Google’s functions and services are not relevant to understanding how they handle requests for their resources.
+After the data for the request is retrieved, and the web page containing this data is generated and formatted, 
+it is sent back to your browser in the form of an HTTP response.
+
 Behind the scenes of the Browser
 ----------------------------------
 
