@@ -529,6 +529,7 @@ The resource is usually an HTML document, but may also be a PDF,
 image, or some other type of content. The location of the resource is
 specified by the user using a URI (Uniform Resource Identifier).
 
+The response includes the HTML, CSS, JavaScript, and other assets needed to render the webpage.
 The way the browser interprets and displays HTML files is specified
 in the HTML and CSS specifications. These specifications are maintained
 by the W3C (World Wide Web Consortium) organization, which is the
