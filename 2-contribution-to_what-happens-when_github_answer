@@ -1,0 +1,19 @@
+What happens when you type www.google.com and press ENTER
+
+When you type www.google.com and press ENTER, the first thing that happens is a DNS request. The Domain Name System (DNS) is responsible for translating the human-readable domain name (in this case, www.google.com) into an IP address that your computer can understand. Your computer sends a request to a DNS server, which looks up the IP address associated with the domain name.
+
+Here are some key concepts that might interest you:
+
+TCP/IP: Once your computer has the IP address for the website you want to visit, it uses the Transmission Control Protocol/Internet Protocol (TCP/IP) to establish a connection with the server hosting the website. TCP/IP is a set of communication protocols that governs how data is transmitted over the internet.
+
+Firewall: Before the connection is established, your computer may also go through a firewall, which is a security system designed to prevent unauthorized access to or from a private network. The firewall checks to make sure that the connection request is legitimate and that it’s not coming from a potentially harmful source.
+
+HTTPS/SSL: Assuming that the connection request is legitimate, the next step is to establish a secure connection using HTTPS/SSL. HTTPS (Hypertext Transfer Protocol Secure) is a secure version of the HTTP protocol used to transmit data over the internet. SSL (Secure Sockets Layer) is a protocol that encrypts data to prevent it from being intercepted by unauthorized parties. Together, HTTPS/SSL ensure that the data being transmitted between your computer and the web server is secure and private.
+
+Load-balancer: Once the secure connection is established, your computer sends a request to the web server hosting the website. If the website is hosted on multiple servers, a load-balancer may be used to distribute the traffic evenly across the servers.
+
+Web server: The web server receives the request from your computer and responds by sending the webpage you requested back to your browser. The web server is responsible for processing requests, managing the website’s files and databases, and generating dynamic content as needed.
+
+Application server: In some cases, the web server may also communicate with an application server, which is responsible for running the website’s applications and executing complex tasks such as database queries.
+
+Database: If the website you’re visiting requires data from a database, the web server or application server may communicate with the database to retrieve the necessary information. The database stores all of the website’s data and is responsible for processing queries and returning the requested information.
