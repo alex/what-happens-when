@@ -151,7 +151,7 @@ handled by, an ``NSApplication`` main event loop, via an ``NSEvent`` of
 ``NSEventType`` ``KeyDown``.
 
 (On GNU/Linux) the Xorg server listens for keycodes
----------------------------------------------------
+-------------------------------------------------------------------
 
 When a graphical ``X server`` is used, ``X`` will use the generic event
 driver ``evdev`` to acquire the keypress. A re-mapping of keycodes to scancodes
@@ -163,7 +163,7 @@ The graphical API of the window  that receives the character prints the
 appropriate font symbol in the appropriate focused field.
 
 Parse URL
----------
+--------------
 
 * The browser now has the following information contained in the URL (Uniform
   Resource Locator):
@@ -176,7 +176,7 @@ Parse URL
 
 
 Is it a URL or a search term?
------------------------------
+----------------------------------
 
 When no protocol or valid domain name is given the browser proceeds to feed
 the text given in the address box to the browser's default web search engine.
@@ -184,7 +184,7 @@ In many cases the URL has a special piece of text appended to it to tell the
 search engine that it came from a particular browser's URL bar.
 
 Convert non-ASCII Unicode characters in the hostname
-------------------------------------------------
+----------------------------------------------------
 
 * The browser checks the hostname for characters that are not in ``a-z``,
   ``A-Z``, ``0-9``, ``-``, or ``.``.
@@ -193,7 +193,7 @@ Convert non-ASCII Unicode characters in the hostname
   URL.
 
 Check HSTS list
----------------
+------------------
 * The browser checks its "preloaded HSTS (HTTP Strict Transport Security)"
   list. This is a list of websites that have requested to be contacted via
   HTTPS only.
