@@ -33,6 +33,11 @@ event and the auto-complete functions kick in.
 Depending on your browser's algorithm and if you are in
 private/incognito mode or not various suggestions will be presented
 to you in the dropdown below the URL bar. Most of these algorithms sort
+and prioritize results based on search history, bookmarks, cookies, and
+popular searches from the internet as a whole. As you are typing
+"google.com" many blocks of code run and the suggestions will be refined
+with each keypress. It may even suggest "google.com" before you finish typing
+it.
 
 Search keyword
 ---------------
@@ -41,11 +46,6 @@ Search keywords play a crucial role in search engine optimization (SEO) because 
 Search engine algorithms use complex algorithms to match user queries with relevant content, and keywords are one of the most important factors that they consider. By researching and incorporating the right keywords into their content, website owners can increase their visibility and relevance to both search engines and users.
 
 However, it's important to note that keyword stuffing or over-optimizing content for keywords can harm a website's SEO. Instead, website owners should focus on creating high-quality, informative content that addresses the needs and interests of their target audience while incorporating relevant keywords in a natural and strategic manner.
-and prioritize results based on search history, bookmarks, cookies, and
-popular searches from the internet as a whole. As you are typing
-"google.com" many blocks of code run and the suggestions will be refined
-with each keypress. It may even suggest "google.com" before you finish typing
-it.
 
 The "enter" key bottoms out
 ---------------------------
