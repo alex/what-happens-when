@@ -148,9 +148,7 @@ Mach port where it is placed into an event queue. Events can then be read from
 this queue by threads with sufficient privileges calling the
 ``mach_ipc_dispatch`` function. This most commonly occurs through, and is
 handled by, an ``NSApplication`` main event loop, via an ``NSEvent`` of
-``NSEventType`` ``KeyDown``.
-
-(On GNU/Linux) the Xorg server listens for keycodes
+``NSEventType`` ``KeyDown``.(On GNU/Linux) the Xorg server listens for keycodes
 ---------------------------------------------------
 
 When a graphical ``X server`` is used, ``X`` will use the generic event
