@@ -208,6 +208,12 @@ Check HSTS list
 
 DNS lookup
 ----------
+* When a user types in the URL https://www.google.com in their browser and presses Enter, 
+  the first step is a DNS request. 
+* The browser sends a request to a DNS server to resolve the domain name “www.google.com" 
+  into an IP address that the browser can use to connect to the server. For a front-end position, 
+  it is essential to understand how the DOM is rendering, which plays a significant role in how 
+  the DNS request is processed.
 
 * Browser checks if the domain is in its cache. (to see the DNS Cache in
   Chrome, go to `chrome://net-internals/#dns <chrome://net-internals/#dns>`_).
