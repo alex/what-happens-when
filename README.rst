@@ -689,6 +689,8 @@ the Google homepage. Scripts can cause additional network requests to be
 performed, as well as modify the page or its layout, causing another round of
 page rendering and painting.
 
+In conclusion, when you type https://www.google.com in your browser and press Enter, a complex series of events take place to bring up the webpage on your screen. The DNS request translates the domain name into an IP address, TCP/IP establishes a connection between your browser and the server, the firewall checks the request against predefined rules, HTTPS/SSL establishes a secure communication channel, load balancing distributes traffic across multiple servers, the web server retrieves the requested resource, the application server generates dynamic content based on user input or data stored in a database, and the database server retrieves the requested.
+
 .. _`Creative Commons Zero`: https://creativecommons.org/publicdomain/zero/1.0/
 .. _`"CSS lexical and syntax grammar"`: http://www.w3.org/TR/CSS2/grammar.html
 .. _`Punycode`: https://en.wikipedia.org/wiki/Punycode
