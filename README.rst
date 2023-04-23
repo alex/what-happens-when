@@ -683,7 +683,7 @@ Essentially, Windows Server is a line of operating systems that Microsoft specif
 
 In almost all cases, normal users don't need to worry about Windows Server. You won't find it on the shelf in stores or accidentally download it from Microsoft when you mean to get the standard version of Windows. But it's still interesting to learn about so you're aware.
 
-  Windows Server Includes Enterprise Management Software
+Windows Server Includes Enterprise Management Software
 
 
 * Active Directory: Active Directory is a user management service that allows a server
