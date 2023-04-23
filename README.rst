@@ -604,7 +604,7 @@ Unable to use the regular parsing techniques, the browser utilizes a custom
 parser for parsing HTML. The parsing algorithm is described in
 detail by the HTML5 specification.
 
-The algorithm consists of two stages: tokenization and tree construction.
+The algorithm consists of two stages namely: tokenization and tree construction.
 
 **Actions when the parsing is finished**
 
