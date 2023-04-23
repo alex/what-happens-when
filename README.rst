@@ -39,6 +39,23 @@ popular searches from the internet as a whole. As you are typing
 with each keypress. It may even suggest "google.com" before you finish typing
 it.
 
+When the "g" key is pressed on a physical keyboard, an electrical circuit is completed, 
+sending a signal to the computer's operating system. The OS then generates an interrupt 
+to notify the active application that a key has been pressed. In this case, if the user 
+is typing in a web browser, the browser will receive the event and perform various tasks.
+
+One of the first things that happens when typing in a web browser is that the browser's 
+auto-complete function is triggered. This function attempts to predict what the user is 
+trying to type based on a variety of factors, such as the user's browsing history, bookmarks, 
+and popular searches. As the user continues to type, the auto-complete function refines its 
+suggestions based on the new input.
+
+In the case of typing "google.com", the auto-complete function may suggest the full URL before 
+the user finishes typing it, based on the user's history and the popularity of the Google search engine.
+
+Overall, when the "g" key is pressed, the browser receives the event and the auto-complete function 
+kicks in, suggesting various options to the user based on their history and other factors.
+
 The "enter" key bottoms out
 ---------------------------
 
