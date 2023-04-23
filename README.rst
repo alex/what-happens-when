@@ -677,6 +677,25 @@ GPU Rendering
 
 Window Server
 -------------
+Windows Server (formerly Windows NT Server) is a group of operating systems (OS) for servers that Microsoft has been developing since July 27, 1993. The first OS that was released for this platform is Windows NT 3.1 Advanced Server. With the release of Windows Server 2003, the brand name was changed to Windows Server.
+
+Essentially, Windows Server is a line of operating systems that Microsoft specifically creates for use on a server. Servers are extremely powerful machines that are designed to run constantly and provide resources for other computers. This means in almost all cases, Windows Server is only used in business settings.
+
+In almost all cases, normal users don't need to worry about Windows Server. You won't find it on the shelf in stores or accidentally download it from Microsoft when you mean to get the standard version of Windows. But it's still interesting to learn about so you're aware.
+
+# Windows Server Includes Enterprise Management Software
+
+*Active Directory: Active Directory is a user management service that allows a server to act as a domain controller. Instead of each user logging into a local computer, the domain controller handles all user account authentication. See our explanation of Windows domains for more on this.
+
+*DHCP: Dynamic Host Configuration Protocol is a protocol that lets a server automatically assign IP addresses to all devices on the network. At home, your router probably handles this. But in a business setting, IT staff can take advantage of the greater DHCP functionality in Windows Server.
+
+*File and Storage: Having a file server for your company is another common use. This allows you to keep important data in a central location and set permissions to control who can access which files.
+
+*Print Services: If a business has dozens of printers across the building, it's a waste of time for IT staff to configure them individually for each new workstation. Setting up a print server allows you to easily map printers to computers and reduce redundant work.
+
+*Windows Update Services: Often, businesses don't want all Windows updates to come through right away. By setting up a server as a Windows Update controller, you can route all workstation updates through that server and configure specific rules for how they should work.
+
+[see more](https://www.makeuseof.com/tag/windows-server-different-windows/)
 
 Post-rendering and user-induced execution
 -----------------------------------------
