@@ -135,30 +135,47 @@ The window (``hWnd``) that is active is actually an edit control and the
 ``WindowProc`` in this case has a message handler for ``WM_KEYDOWN`` messages.
 This code looks within the 3rd parameter that was passed to ``SendMessage``
 (``wParam``) and, because it is ``VK_RETURN`` knows the user has hit the ENTER
-key.
+key
 
-(On OS X) A ``KeyDown`` NSEvent is sent to the app
---------------------------------------------------
+Here's how the DNS lookup process works in more detail:
 
-The interrupt signal triggers an interrupt event in the I/O Kit kext keyboard
-driver. The driver translates the signal into a key code which is passed to the
-OS X ``WindowServer`` process. Resultantly, the ``WindowServer`` dispatches an
-event to any appropriate (e.g. active or listening) applications through their
-Mach port where it is placed into an event queue. Events can then be read from
-this queue by threads with sufficient privileges calling the
-``mach_ipc_dispatch`` function. This most commonly occurs through, and is
-handled by, an ``NSApplication`` main event loop, via an ``NSEvent`` of
-``NSEventType`` ``KeyDown``.(On GNU/Linux) the Xorg server listens for keycodes
----------------------------------------------------
+The browser sends a request to the local DNS resolver, which is usually provided by the internet service provider (ISP).
 
-When a graphical ``X server`` is used, ``X`` will use the generic event
-driver ``evdev`` to acquire the keypress. A re-mapping of keycodes to scancodes
-is made with ``X server`` specific keymaps and rules.
-When the scancode mapping of the key pressed is complete, the ``X server``
-sends the character to the ``window manager`` (DWM, metacity, i3, etc), so the
-``window manager`` in turn sends the character to the focused window.
-The graphical API of the window  that receives the character prints the
-appropriate font symbol in the appropriate focused field.
+The local DNS resolver checks its cache to see if it has a recent copy of the DNS record for the domain. If it does, it sends the IP address back to the browser.
+
+If the local DNS resolver does not have a recent copy of the DNS record, it sends a request to a root nameserver.
+
+The root nameserver responds with the address of a top-level domain (TLD) nameserver, such as .com or .org.
+
+The local DNS resolver sends a request to the TLD nameserver.
+
+The TLD nameserver responds with the address of the authoritative nameserver for the domain.
+
+The local DNS resolver sends a request to the authoritative nameserver.
+
+The authoritative nameserver responds with the IP address for the domain.
+
+The local DNS resolver sends the IP address back to the browser.
+
+The browser sends a request to the server at the IP address to retrieve the webpage.
+
+Once the IP address has been resolved, it is cached by the local DNS resolver and the browser so that future requests for the same domain name can be resolved more quickly
+
+TCP/IP Connection
+
+Once your browser has the IP address, it uses the Transmission Control Protocol/Internet Protocol (TCP/IP) to establish a connection with the server at that IP address. This involves a series of handshakes between your browser and the server to ensure a reliable and secure connection.
+
+Here's what happens in more detail:
+
+The browser sends a request to the server using IP to establish a connection.
+
+The server receives the request and sends back a message acknowledging the request to establish a connection. This is the handshake process.
+
+Once the handshake is complete, the browser can send a request for the webpage it wants to access (in this case, the homepage of google.com). This request is sent using TCP, which ensures that the request is transmitted reliably and in the correct order.
+
+The server receives the request and sends back the HTML code for the homepage of google.com to the browser. This response is also sent using TCP to ensure reliable transmission.
+
+The browser receives the HTML code and uses it to render the webpage on your screen. Any resources (such as images) that the webpage needs are also requested and received using TCP/IP.
 
 Parse URL
 ---------
