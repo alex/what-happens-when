@@ -397,6 +397,8 @@ TLS handshake
 * From now on the TLS session transmits the application (HTTP) data encrypted
   with the agreed symmetric key.
 
+* The TLS handshake is a critical component of establishing a secure communication channel and helps to ensure that sensitive information is transmitted securely and confidentially over the internet.
+
 If a packet is dropped
 ----------------------
 
