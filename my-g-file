@@ -1,0 +1,17 @@
+language: python
+
+import requests
+
+# Make a GET request to the Google homepage
+response = requests.get('https://www.google.com')
+
+# Apply filters to the response to extract information
+title = response.text.split('<title>')[1].split('</title>')[0]
+links = []
+for link in response.text.split('<a '):
+    if 'href="' in link:
+        links.append(link.split('href="')[1].split('"')[0])
+
+# Print the extracted information
+print('Title:', title)
+print('Links:', links)
