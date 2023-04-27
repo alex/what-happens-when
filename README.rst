@@ -223,6 +223,10 @@ DNS lookup
   ``ARP process`` below for the DNS server.
 * If the DNS server is on a different subnet, the network library follows
   the ``ARP process`` below for the default gateway IP.
+* The DNS Server then sends a request to the domain extension TLD, which in turn
+   returns the address of the Authoritative Name DNS server.
+* The DNS server then uses this address, gets to the Authoritative Name server
+and gets the IP address of our domain name.
 
 
 ARP process
