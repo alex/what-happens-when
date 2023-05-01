@@ -366,7 +366,18 @@ This send and receive happens multiple times following the TCP connection flow:
    * The closer sends a FIN packet
    * The other sides ACKs the FIN packet and sends its own FIN
    * The closer acknowledges the other side's FIN with an ACK
+   
+TLS handshake in summary
+------------------------
+The TCP (Transmission Control Protocol) connection between the client (your browser) and the server (e.g., the Google server) involves a three-way handshake, which is a series of steps to establish a reliable communication channel. The three steps are as follows:
 
+* SYN: The client sends a SYN (synchronize) packet to the server, requesting to establish a connection. This packet includes a randomly generated sequence number to ensure data integrity.
+
+* SYN-ACK: The server responds with a SYN-ACK (synchronize-acknowledge) packet, indicating that it received the SYN packet and is willing to establish a connection. This packet includes a randomly generated sequence number and an acknowledgment number that is one greater than the sequence number received in the SYN packet.
+
+* ACK: The client sends an ACK (acknowledge) packet to the server, acknowledging receipt of the SYN-ACK packet. This packet includes the acknowledgment number received in the SYN-ACK packet, plus one.
+
+Once the three-way handshake is completed, the TCP connection is established, and the client and server can start exchanging data using this reliable communication channel. The handshake ensures that both the client and server agree on the initial sequence and acknowledgment numbers and confirms that both are able to receive and send data. If any of the packets are lost or damaged during the handshake, the connection is not established, and the process is repeated until a successful connection is established.
 TLS handshake
 -------------
 * The client computer sends a ``ClientHello`` message to the server with its
@@ -414,6 +425,25 @@ control`_. This varies depending on the sender; the most common algorithms are
   each packet acknowledged. If a packet is dropped, the window reduces
   exponentially until another packet is acknowledged.
 
+SSL Termination in summary
+--------------------------
+ SSL termination can take place at the load balancer. SSL (Secure Sockets Layer) termination is the process of decrypting the SSL/TLS (Transport Layer Security) encrypted traffic at the load balancer, and then forwarding the unencrypted traffic to the backend servers. This can help to offload the resource-intensive task of SSL decryption from the backend servers, improving their performance and scalability.
+
+Here's how SSL termination works at the load balancer:
+
+* The client sends an HTTPS request to the load balancer.
+
+* The load balancer receives the request and decrypts the SSL/TLS traffic using its SSL certificate and private key.
+
+* The load balancer then inspects the unencrypted traffic to determine which backend server should receive the request based on its load balancing algorithm.
+
+* The load balancer then forwards the unencrypted request to the selected backend server.
+
+* The backend server processes the request and sends a response back to the load balancer.
+
+* The load balancer encrypts the response using SSL/TLS and sends it back to the client.
+
+SSL termination at the load balancer can provide several benefits, including improved performance, scalability, and easier management of SSL certificates. However, it also means that the traffic between the load balancer and backend servers is unencrypted, which may pose a security risk. Therefore, it's important to ensure that proper security measures are in place to protect the unencrypted traffic.
 HTTP protocol
 -------------
 
