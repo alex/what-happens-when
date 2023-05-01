@@ -677,6 +677,12 @@ GPU Rendering
 
 Window Server
 -------------
+Windows Server is a version of Windows built and designed to meet business needs. 
+In appearance and naming, Windows Server resembles the versions of Windows designed 
+for everyday use, such as Windows 10. This is by design, as each Windows Server 
+release corresponds to a Windows version, and both operating systems share the same
+ codebase; for example, Windows Server 2019 corresponds to Windows 10. 
+
 
 Post-rendering and user-induced execution
 -----------------------------------------
@@ -709,3 +715,8 @@ page rendering and painting.
 .. _`downgrade attack`: http://en.wikipedia.org/wiki/SSL_stripping
 .. _`OSI Model`: https://en.wikipedia.org/wiki/OSI_model
 .. _`Spanish`: https://github.com/gonzaleztroyano/what-happens-when-ES
+The DNS which is the domain name system, translates human readable domain names to machine readable IP addresses. its the phone book of the internet. 
+The Https appear in the URL when a website is secured by an SSL certificate.
+The firewall security that moitors and filters incoming and outgoing network traffic helps most of the oganization by guiding against hackers
+Load balancer which also reverse proxy and distributes network are been used to increase capacity and reliability of applications.
+This is Olabisi Yetunde Olusola contribution 
