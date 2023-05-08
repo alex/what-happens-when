@@ -223,7 +223,17 @@ DNS lookup
   ``ARP process`` below for the DNS server.
 * If the DNS server is on a different subnet, the network library follows
   the ``ARP process`` below for the default gateway IP.
-
+* DNS caching: The DNS servers often cache DNS responses for a certain period 
+  to improve response times for frequently requested domain names. If a cached 
+  DNS response is still valid, the DNS server returns it to the browser without 
+  needing to contact the authoritative name server.
+* Authoritative name server: If the DNS server cannot find a cached DNS response for the 
+  requested domain name, it contacts the authoritative name server for that domain. 
+  The authoritative name server is responsible for maintaining the IP address for that domain name.
+* Recursive DNS lookup: If the authoritative name server does not have the requested domain name, 
+  it refers the DNS server to another name server that might have the information. This process is
+  called a recursive DNS lookup and continues until the DNS server finds the IP address or determines 
+  that it does not exist.
 
 ARP process
 -----------
