@@ -673,6 +673,7 @@ GPU Rendering
   software layers split the task into multiple pieces, so it can take advantage
   of ``GPU`` massive parallelism for float point calculations required for
   the rendering process.
+* GPU rendering reduces the load from the CPU by acting as a co-processor for doing the graphical calculations alone in order to render images faster. The benefits offered by GPU rendering are better optimization of graphics, real time visualization, faster and better viewport performance and easy scalability.
 
 
 Window Server
@@ -709,3 +710,4 @@ page rendering and painting.
 .. _`downgrade attack`: http://en.wikipedia.org/wiki/SSL_stripping
 .. _`OSI Model`: https://en.wikipedia.org/wiki/OSI_model
 .. _`Spanish`: https://github.com/gonzaleztroyano/what-happens-when-ES
+.. _`GPU`: https://ecomputertips.com/gpu-rendering/#:~:text=GPU%20rendering%20reduces%20the%20load%20from%20the%20CPU,faster%20and%20better%20viewport%20performance%20and%20easy%20scalability.
