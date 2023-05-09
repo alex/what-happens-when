@@ -673,6 +673,26 @@ GPU Rendering
   software layers split the task into multiple pieces, so it can take advantage
   of ``GPU`` massive parallelism for float point calculations required for
   the rendering process.
+  
+  ---------------------------------------
+  ```
+  When a browser initiates a DNS lookup to resolve a domain name, the following steps typically occur:
+
+DNS Cache Check: The browser first checks its local DNS cache to see if it already has the IP address associated with the domain name. This cache helps to speed up subsequent requests to the same domain.
+
+Local Hosts File: If the IP address is not found in the browser's cache, the browser looks for the domain name in the local hosts file on the operating system. The hosts file is a plain text file that maps domain names to IP addresses. If a match is found in the hosts file, the IP address is retrieved.
+
+gethostbyname Function: If the IP address is not found in the local hosts file, the browser calls the gethostbyname library function (or its equivalent based on the operating system). This function is responsible for hostname resolution and communicates with the underlying network stack.
+
+Request to DNS Server: If the gethostbyname function does not have the IP address cached or cannot find it in the hosts file, it makes a request to the DNS server configured in the network stack. The configured DNS server is typically the local router or the ISP's caching DNS server.
+
+ARP Process: If the DNS server is on the same subnet as the browser, the network library follows the Address Resolution Protocol (ARP) process to determine the MAC address of the DNS server. ARP helps in resolving IP addresses to MAC addresses on the local network.
+
+Default Gateway ARP Process: If the DNS server is on a different subnet, the network library follows the ARP process to determine the MAC address of the default gateway IP. The default gateway is the router that forwards network traffic between different networks.
+
+Once the browser obtains the IP address from the DNS server or the hosts file, it can proceed with establishing a TCP/IP connection to the server hosting the requested website. This connection allows for the retrieval of the desired web page content.
+```
+----------------------------------------
 
 
 Window Server
