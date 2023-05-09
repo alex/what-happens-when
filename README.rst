@@ -115,7 +115,7 @@ converts the HID usage into a scancode. In this case, the scan code is
 ``KBDCLASS.sys`` (keyboard class driver). This driver is responsible for
 handling all keyboard and keypad input in a secure manner. It then calls into
 ``Win32K.sys`` (after potentially passing the message through 3rd party
-keyboard filters that are installed). This all happens in kernel mode.
+keyboard filters that are installed). This all happens in <a href="https://en.wikipedia.org/wiki/Kernel_(operating_system)"kernel</a> mode.
 
 ``Win32K.sys`` figures out what window is the active window through the
 ``GetForegroundWindow()`` API. This API provides the window handle of the
