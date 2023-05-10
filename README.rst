@@ -689,6 +689,66 @@ the Google homepage. Scripts can cause additional network requests to be
 performed, as well as modify the page or its layout, causing another round of
 page rendering and painting.
 
+
+What happens when you type ‘google.com’ in your browser and press Enter
+---------------------------------------------------------------------------
+
+You are sitting on the couch sipping your hot cup of coffee in a rather cold weather. And then decided to check out some resources on google. After typing ‘https://www.google.com’ in your browser, you almost immediately see the results of the google home page.
+But wait, how did your browser retrieve this page from the google server? A lot of things happen behind the curtain in that innocent request.
+In this article, I will walk you through the various processes involved when making requests from your browser and retrieving resources.
+You may need to occasionally take a look at the diagram above to better understand the workflow.
+
+Domain Name Server (DNS) Request
+Whenever you type ‘www.google.com’ – or any other domain name into the search bar, your browser first of all does some IP lookup in its cache. The cache is a small database that stores information about the websites you’ve visited. The browser searches this cache for the IP address of the site you’re currently requesting for. If it finds the IP address there, good! It sends a HTTP request to the server having that IP and the server delivers the content.
+But what if your browser can’t find the IP address in its cache? A series of steps are initiated.
+•	The browser sends a request to the DNS server to resolve the domain name to an IP address, this is called DNS Resolution.
+•	If the DNS resolver does not have a copy of that record, it sends a request to a root nameserver. The root nameservers are servers at the root of the DNS hierarchy.
+•	The root nameserver responds with the address of a top-level domain (TLD) nameserver, such a .com or .ng
+•	The DNS resolver then sends a request to the TLD nameserver and the TLD nameserver responds with the address of the authoritative nameserver for that domain.
+•	The DNS resolver sends a request to the authoritative nameserver and the authoritative nameserver responds with the IP address for the domain.
+•	The DNS resolver sends this IP back to the browser.
+•	Finally, the browser sends a request at the IP address to retrieve the page.
+If the DNS record has been configured to use a load balancer or a Content Delivery Network (CDN), further processes will be involved.
+After the lookup, the browser stores the IP records in its cache for easier access next time.
+
+TCP/IP Connection
+Transmission Control Protocol (TCP) and Internet Protocol are required for a reliable connection between the browser and the server. 
+After resolving for the IP address of a server, the web browser sends a connection request to the server. If the server accepts this request, a TCP connection is set. This process is known as a ‘handshake’.
+Once the connection is established, the browser can make requests to retrieve pages. The web server then delivers the requested HTML pages. The  browser receives the HTML code and uses them to render the webpage to your screen.
+
+Firewall
+A firewall is a security system that operates based on some predetermined rules to monitor and control network traffic. It protects against malwares and hackers.
+A firewall may be configured based on these two security rules:
+•	Rules that allow or block traffic based on the type of traffic.
+•	Rules that allow or block traffic based on the source and destination of the request.
+Requests can only be accepted by a web server if the firewall rules are met.
+
+HTTPS/SSL
+HTTPS (HyperText Transfer Protocol Secure) is a secure version of HTTP that is used to send encrypted data between browser and server.
+SSL (Secure Socket Layer) and TLS (Transport Layer Security) are protocols used to encrypt data transmission between browser and server.
+When a browser makes a request to a website without HTTPS/SSL, all data transmission can be monitored and stollen by a third party and hence security is not guaranteed.
+With the HTTPS/SSL server components integrated, all data transmission will be encrypted.
+
+Load-balancer
+A load balancer is a device that acts as a reverse proxy and distributes network traffic across multiple servers. The major purpose of a load balancer is to reduce traffic load on a server and hence improve the efficiency of the web infrastructure.
+When a browser sends a request to a site that uses load balancing, the load balancer distributes the request across a number of servers using a predefined algorithm.
+
+Web server
+A web server is a computer program that is responsible for handling requests for web pages from clients. The web server returns the appropriate response for the requests that a client makes. 
+The web server response typically consists of HTML, CSS and JavaScript files. The browser uses these responses and displays the page to the client.
+
+Application server and databases
+It is important to note that the web server handles static content but the application server handles dynamic content. When you make a purchase on a website for example, a receipt is generated and displayed to you. That was generated ‘on the fly’ by the application server and sent to the web server. 
+The application server may need to make a request to the database in order to generate some pages. When the application generates the necessary page, it sends it back to the web server and the web server forwards the page to the client.
+Rendering the Page
+A web browser processes the HTML, CSS and JavaScript files in order to render the page. This may include images and appropriate positioning of elements on the page.
+There you go. Your request finally gets to your screen.
+
+Conclusion
+Understanding web infrastructure and the work flow of the internet is necessary as a good software developer.
+This blog post is a technical writing task I concluded at ALX Software engineering program.
+
+
 .. _`Creative Commons Zero`: https://creativecommons.org/publicdomain/zero/1.0/
 .. _`"CSS lexical and syntax grammar"`: http://www.w3.org/TR/CSS2/grammar.html
 .. _`Punycode`: https://en.wikipedia.org/wiki/Punycode
