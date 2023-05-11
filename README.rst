@@ -223,7 +223,7 @@ DNS lookup
   ``ARP process`` below for the DNS server.
 * If the DNS server is on a different subnet, the network library follows
   the ``ARP process`` below for the default gateway IP.
-
+* Hence DNS server is responsible for getting the IP address of the website URL
 
 ARP process
 -----------
