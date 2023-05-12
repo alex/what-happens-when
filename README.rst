@@ -689,6 +689,59 @@ the Google homepage. Scripts can cause additional network requests to be
 performed, as well as modify the page or its layout, causing another round of
 page rendering and painting.
 
+.. _load_balancer:
+
+Load Balancer
+=============
+
+When a user enters "www.google.com" in their browser, the request is sent to a load balancer before it reaches the web server. The load balancer is responsible for distributing incoming network traffic across multiple servers to improve the website's overall performance and availability.
+
+The load balancer can use several algorithms to determine which server to send the request to, such as:
+
+- **Round Robin**: the load balancer sends requests to each server in turn.
+- **Least Connections**: the load balancer sends requests to the server with the fewest active connections.
+- **IP Hash**: the load balancer uses the client's IP address to determine which server to send the request to.
+
+Once the load balancer has determined which server to send the request to, it forwards the request to the web server. The web server then handles the request and returns the response to the load balancer, which sends the response back to the client.
+
+Here's an example code using the Python library `boto3` to create an Application Load Balancer (ALB) on Amazon Web Services (AWS):
+
+.. code-block:: python
+
+    import boto3
+    
+    elbv2 = boto3.client('elbv2')
+    
+    response = elbv2.create_load_balancer(
+        Name='my-load-balancer',
+        Subnets=[
+            'subnet-1234abcd',
+            'subnet-5678efgh',
+        ],
+        SecurityGroups=[
+            'sg-1234abcd',
+        ],
+        Scheme='internet-facing',
+        Type='application',
+        IpAddressType='ipv4',
+        Tags=[
+            {
+                'Key': 'my-key',
+                'Value': 'my-value'
+            },
+        ]
+    )
+
+This code creates an ALB with the name "my-load-balancer", which is internet-facing and uses the IPv4 address type. It is associated with two subnets and one security group. The `Tags` parameter allows you to add metadata to the load balancer for better organization.
+
+Here's a diagram showing the structure of a load balancer:
+
+.. image:: https://i.imgur.com/sYzZ6EK.png
+   :alt: Load Balancer Diagram
+   :align: center
+
+This diagram shows a load balancer sitting between the client and multiple web servers. The load balancer receives incoming requests from the client and forwards them to one of the web servers based on the load balancing algorithm used. The web servers handle the requests and return responses to the load balancer, which forwards them back to the client.
+
 .. _`Creative Commons Zero`: https://creativecommons.org/publicdomain/zero/1.0/
 .. _`"CSS lexical and syntax grammar"`: http://www.w3.org/TR/CSS2/grammar.html
 .. _`Punycode`: https://en.wikipedia.org/wiki/Punycode
@@ -709,3 +762,8 @@ page rendering and painting.
 .. _`downgrade attack`: http://en.wikipedia.org/wiki/SSL_stripping
 .. _`OSI Model`: https://en.wikipedia.org/wiki/OSI_model
 .. _`Spanish`: https://github.com/gonzaleztroyano/what-happens-when-ES
+.. _`AWS documentation``: https://docs.aws.amazon.com/elasticloadbalancing/latest/application/introduction.html
+.. _`Introduction to Load Balancing``: https://www.nginx.com/resources/glossary/load-balancing/
+.. _`How Load Balancers Work`: https://www.digitalocean.com/community/tutorials/how-load-balancers-work
+.. _`Load Balancing Algorithms`: https://kemptechnologies.com/load-balancer/load-balancing-algorithms-techniques/
+.. _`Python Boto3 library documentation`: https://boto3.amazonaws.com/v1/documentation/api/latest/index.html
