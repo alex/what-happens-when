@@ -208,6 +208,7 @@ Check HSTS list
 
 DNS lookup
 ----------
+The first step in the process is the DNS lookup. The browser sends a request to a DNS server to resolve the domain name to an IP address. The DNS server then responds with the IP address of the server hosting the website.
 
 * Browser checks if the domain is in its cache. (to see the DNS Cache in
   Chrome, go to `chrome://net-internals/#dns <chrome://net-internals/#dns>`_).
