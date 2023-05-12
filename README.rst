@@ -42,6 +42,7 @@ it.
 The "enter" key bottoms out
 ---------------------------
 
+
 To pick a zero point, let's choose the Enter key on the keyboard hitting the
 bottom of its range. At this point, an electrical circuit specific to the enter
 key is closed (either directly or capacitively). This allows a small amount of
@@ -125,6 +126,7 @@ that indicates further information about the keypress: repeat count (0 in this
 case), the actual scan code (can be OEM dependent, but generally wouldn't be
 for ``VK_RETURN``), whether extended keys (e.g. alt, shift, ctrl) were also
 pressed (they weren't), and some other state.
+
 
 The Windows ``SendMessage`` API is a straightforward function that
 adds the message to a queue for the particular window handle (``hWnd``).
@@ -227,6 +229,7 @@ DNS lookup
 
 ARP process
 -----------
+
 
 In order to send an ARP (Address Resolution Protocol) broadcast the network
 stack library needs the target IP address to lookup. It also needs to know the
