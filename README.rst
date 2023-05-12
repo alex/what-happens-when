@@ -680,7 +680,7 @@ Window Server
 
 Post-rendering and user-induced execution
 -----------------------------------------
-
+furthermore,
 After rendering has been completed, the browser executes JavaScript code as a result
 of some timing mechanism (such as a Google Doodle animation) or user
 interaction (typing a query into the search box and receiving suggestions).
