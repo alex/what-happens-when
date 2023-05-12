@@ -171,6 +171,9 @@ Parse URL
     - ``Protocol``  "http"
         Use 'Hyper Text Transfer Protocol'
 
+    - ``Domain name`` "google.com"
+        Commonly referred to as 'Hostname'
+
     - ``Resource``  "/"
         Retrieve main (index) page
 
