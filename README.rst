@@ -570,6 +570,12 @@ The components of the browsers are:
   need to save all sorts of data locally, such as cookies. Browsers also
   support storage mechanisms such as localStorage, IndexedDB, WebSQL and
   FileSystem.
+* **Other components include:**
+  - Plugins: These are third-party software modules that are designed to extend the functionality of a browser, such as Adobe Flash Player or Java.
+  - Extensions: These are small software programs that add new features or modify existing features of a browser, such as ad-blockers or password managers.
+  - Themes: These are visual styles that change the appearance of a browser, such as color schemes or background images.
+  - Sandbox: This is a security mechanism that isolates web content and prevents it from accessing other parts of the system.
+  - Developer tools: These are built-in tools that allow developers to debug and test web pages, such as the JavaScript console or the network inspector.
 
 HTML parsing
 ------------
