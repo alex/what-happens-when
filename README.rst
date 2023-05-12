@@ -54,17 +54,13 @@ connection, but historically has been over PS/2 or ADB connections.
 
 *In the case of the USB keyboard:*
 
-- The USB circuitry of the keyboard is powered by the 5V supply provided over
-  pin 1 from the computer's USB host controller.
+- When a USB keyboard is connected to a computer, the USB circuitry of the keyboard is powered by the 5V supply provided over pin 1 from the computer's USB host controller. As a key is pressed, the internal keyboard circuitry stores the generated keycode in a register called "endpoint.
 
-- The keycode generated is stored by internal keyboard circuitry memory in a
-  register called "endpoint".
+- The host USB controller polls the "endpoint" every ~10ms (minimum value declared by the keyboard) to retrieve the keycode value stored on it. This value is sent to the USB SIE (Serial Interface Engine) to be converted into one or more USB packets that follow the low-level USB protocol.
 
-- The host USB controller polls that "endpoint" every ~10ms (minimum value
-  declared by the keyboard), so it gets the keycode value stored on it.
+- The packets are sent by a differential electrical signal over D+ and D- pins, which are the middle two pins of the USB connector. The maximum speed of this signal is 1.5 Mb/s, as an HID (Human Interface Device) device is always declared to be a "low-speed device" (USB 2.0 compliance).
 
-- This value goes to the USB SIE (Serial Interface Engine) to be converted in
-  one or more USB packets that follow the low-level USB protocol.
+- The computer's host USB controller decodes the serial signal and interprets it with the computer's Human Interface Device (HID) universal keyboard device driver. The value of the key is then passed into the operating system's hardware abstraction layer.
 
 - Those packets are sent by a differential electrical signal over D+ and D-
   pins (the middle 2) at a maximum speed of 1.5 Mb/s, as an HID
