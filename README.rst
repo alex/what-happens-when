@@ -28,7 +28,7 @@ Table of Contents
 The "g" key is pressed
 ----------------------
 The following sections explain the physical keyboard actions
-and the OS interrupts. When you press the key "g" the browser receives the
+and the OS interrupts. When you press the key "g" or any other key on the keyboard depending on what you are browsing, the browser receives the
 event and the auto-complete functions kick in.
 Depending on your browser's algorithm and if you are in
 private/incognito mode or not various suggestions will be presented
@@ -198,7 +198,7 @@ Check HSTS list
   list. This is a list of websites that have requested to be contacted via
   HTTPS only.
 * If the website is in the list, the browser sends its request via HTTPS
-  instead of HTTP. Otherwise, the initial request is sent via HTTP.
+  instead of HTTP and a padlock icon would be seen on the address bar. Otherwise, the initial request is sent via HTTP.
   (Note that a website can still use the HSTS policy *without* being in the
   HSTS list.  The first HTTP request to the website by a user will receive a
   response requesting that the user only send HTTPS requests.  However, this
@@ -217,7 +217,7 @@ DNS lookup
   local ``hosts`` file (whose location `varies by OS`_) before trying to
   resolve the hostname through DNS.
 * If ``gethostbyname`` does not have it cached nor can find it in the ``hosts``
-  file then it makes a request to the DNS server configured in the network
+  file then it makes a request to the DNS (Domain Name Systems) server configured in the network
   stack. This is typically the local router or the ISP's caching DNS server.
 * If the DNS server is on the same subnet the network library follows the
   ``ARP process`` below for the DNS server.
