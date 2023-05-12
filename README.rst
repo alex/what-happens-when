@@ -2,7 +2,7 @@ What happens when...
 ====================
 
 This repository is an attempt to answer the age-old interview question "What
-happens when you type google.com into your browser's address box and press
+happens when you type www.google.com into your browser's address box and press
 enter?"
 
 Except instead of the usual story, we're going to try to answer this question
@@ -36,7 +36,7 @@ to you in the dropdown below the URL bar. Most of these algorithms sort
 and prioritize results based on search history, bookmarks, cookies, and
 popular searches from the internet as a whole. As you are typing
 "google.com" many blocks of code run and the suggestions will be refined
-with each keypress. It may even suggest "google.com" before you finish typing
+with each keypress. It may even suggest "www.google.com" before you finish typing
 it.
 
 The "enter" key bottoms out
