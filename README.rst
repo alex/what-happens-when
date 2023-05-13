@@ -689,6 +689,28 @@ the Google homepage. Scripts can cause additional network requests to be
 performed, as well as modify the page or its layout, causing another round of
 page rendering and painting.
 
+LOAD BALANCING
+--------------
+Google.com, being one of the largest websites on the internet, utilizes a sophisticated load balancing infrastructure to distribute incoming HTTP requests to its servers. Although the exact details of Google's internal infrastructure are proprietary, I can provide you with a general overview of how load balancing is commonly implemented.
+
+Google's load balancing system likely consists of several components working together to efficiently distribute incoming requests. Here's a high-level explanation of how it might work:
+
+Traffic Distribution: When a user makes a request to google.com, the request first reaches a global load balancer. This load balancer acts as a single entry point for all incoming traffic and is responsible for distributing requests to the appropriate data centers.
+
+* Regional Load Balancers: Google likely has multiple data centers distributed across different regions worldwide. Regional load balancers are responsible for distributing traffic within a specific geographic area. These load balancers consider factors like proximity to the user, server availability, and network conditions to decide which data center should handle the request.
+
+* Server Pool: Within each data center, Google maintains a pool of servers that can handle user requests. These servers are usually grouped into clusters or server farms. They may be organized based on different factors like server capacity, specific services, or specialized tasks.
+
+* Load Balancing Algorithms: Google employs intelligent load balancing algorithms to determine the most appropriate server within a cluster to handle a particular request. These algorithms consider various factors such as server health, current load, and performance metrics to make optimal routing decisions. Google's load balancers may utilize techniques like round-robin, weighted round-robin, least connections, or even more advanced algorithms that factor in real-time data.
+
+* Health Monitoring: Google continuously monitors the health and performance of its servers. Load balancers regularly check the status of individual servers to ensure they are functioning correctly. If a server becomes unavailable or experiences high load, the load balancer can automatically redirect traffic to healthier or less burdened servers.
+
+* Dynamic Scaling: Google's load balancing system is designed to handle fluctuations in traffic. As demand increases, the infrastructure can dynamically scale up by adding more servers to the pool to distribute the load efficiently. Conversely, during periods of low traffic, the system can scale down by removing excess servers to save resources.
+
+* SSL Termination: Google's load balancers may also handle SSL termination, decrypting incoming HTTPS requests and then re-encrypting them before forwarding the traffic to the appropriate servers. This allows the servers to focus on processing application-level requests rather than dealing with SSL overhead.
+
+* By employing a combination of global and regional load balancers, intelligent algorithms, health monitoring, and dynamic scaling, Google's load balancing infrastructure ensures high availability, scalability, and efficient distribution of incoming HTTP requests across its vast network of servers.
+
 .. _`Creative Commons Zero`: https://creativecommons.org/publicdomain/zero/1.0/
 .. _`"CSS lexical and syntax grammar"`: http://www.w3.org/TR/CSS2/grammar.html
 .. _`Punycode`: https://en.wikipedia.org/wiki/Punycode
