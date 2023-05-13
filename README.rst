@@ -223,6 +223,21 @@ DNS lookup
   ``ARP process`` below for the DNS server.
 * If the DNS server is on a different subnet, the network library follows
   the ``ARP process`` below for the default gateway IP.
+  
+DNS Request For Beginners
+-------------------------
+
+DNS, or Domain Name System, is a protocol used by the internet to convert human-readable domain names, such as "google.com", into machine-readable IP addresses, such as "216.58.194.174". This process is called name resolution, and it is essential for your browser to locate and communicate with the web server hosting the website you want to access.
+
+To make it easier to understand, let's compare it to a phone book. Just like a phone book translates a person's name into their phone number, DNS translates a website's domain name into its IP address. Without DNS, we would have to memorize the IP address of every website we want to access, which is not practical.
+
+How the DNS server translates the domain name into an IP address
+When you type a URL into your browser, it sends a request to a DNS resolver, which is responsible for finding the IP address associated with the domain name. The DNS resolver first checks its cache to see if it has recently resolved the domain name. If it has, it returns the IP address immediately. If not, it sends a request to a series of DNS servers, starting from the root server, then the TLD (Top-Level Domain) server, and finally the authoritative DNS server responsible for the domain name.
+
+Think of it like asking for directions. If you're lost and don't know how to get to a specific location, you ask someone for directions. The DNS resolver is like a person who gives you directions to the location you're looking for by going through a series of steps to find the right path.
+
+Why the DNS request is important in accessing the website
+The DNS request is important because it tells your browser where to find the web server hosting the website you want to access. Without it, your browser would not be able to communicate with the web server, and you would not be able to access the website. Think of it like trying to visit a friend's house without knowing their address. You won't be able to get there unless you have the right directions.
 
 
 ARP process
