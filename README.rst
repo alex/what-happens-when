@@ -247,6 +247,13 @@ If the entry is not in the ARP cache:
 * The network library sends a Layer 2 (data link layer of the `OSI model`_)
   ARP request:
 
+* The gateway IP is assigned to a router whose job is connecting different networks,
+  in this case a local network and the internet.
+
+* With the help of a Network Address Table (NAT), the router keeps track of mappings
+  between private IP addresses and corresponding public IPs, sending appropriate 
+  packets to designated nodes.
+
 ``ARP Request``::
 
     Sender MAC: interface:mac:address:here
