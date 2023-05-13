@@ -1,0 +1,9 @@
+Once the DNS request is made, it is forwarded to a web server. The web server plays a crucial role in storing and delivering web pages based on client requests. It acts as a central hub that handles incoming requests and serves the corresponding web content.
+
+However, if the request involves dynamic content, such as personalized information or real-time updates, the web server may not be equipped to handle it directly. In such cases, the web server passes the request to an application server.
+
+The application server is responsible for processing the request and generating the specific content required. It houses the necessary software and applications that can handle complex tasks and dynamically generate web content on the fly. This allows for a more interactive and personalized experience for the user.
+
+By delegating the processing of dynamic requests to the application server, the web server can focus on efficiently delivering static web pages and handling basic web server functions. The collaboration between the web server and the application server ensures that both static and dynamic content can be seamlessly delivered to the client.
+
+In summary, the web server acts as the gateway for handling client requests and delivering web pages. When dynamic content is required, the web server passes the request to the application server, which processes the request and generates the necessary content to provide a dynamic and personalized user experience. This collaboration between the web server and the application server forms a fundamental part of the web infrastructure, allowing websites to handle a wide range of client requests and deliver dynamic content efficiently.
