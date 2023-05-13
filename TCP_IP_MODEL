@@ -1,0 +1,23 @@
+It is expedient that we attempt to explain what happens when we type google.com and click enter in terms of the TCIP/IP model.
+
+The five layers in this model includes
+
+1. Application layer
+
+2. Transport layer
+
+3. Internet layer
+
+4. Data link layer
+
+5. Physical layer
+
+When the user types google.com into their Web browser and presses enter, the user has just begun their communication at the application layer of the TCP/IP model
+
+1. The application layer is where the HTTP and DNS request are processed, the session is also created in this layer
+
+2. The transport layer ensures end to end connectivity between the user's end device and the server. Protocols like UDP (user datagram protocol) and HTTP operate at this level.
+
+3. Internet layer is where the ARP requests and responses takes place, where the communication between the MAC addresses and the IP address of the devices along the path between the user's end device and the server takes place.
+
+4. The data link and physical layer help deliver the request to the physical hardware the actual Google server is located.
