@@ -209,6 +209,8 @@ Check HSTS list
 DNS lookup
 ----------
 
+For the DNS lookup, the browser sends a request to a DNS server to resolve the domain name to an IP address. The DNS server then responds with the IP address of the server hosting the website.
+
 * Browser checks if the domain is in its cache. (to see the DNS Cache in
   Chrome, go to `chrome://net-internals/#dns <chrome://net-internals/#dns>`_).
 * If not found, the browser calls ``gethostbyname`` library function (varies by
