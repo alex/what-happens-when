@@ -584,7 +584,8 @@ nodes. DOM is short for Document Object Model. It is the object presentation
 of the HTML document and the interface of HTML elements to the outside world
 like JavaScript. The root of the tree is the "Document" object. Prior to
 any manipulation via scripting, the DOM has an almost one-to-one relation to
-the markup.
+the markup. 
+When a web page is loaded, the browser reads the HTML code and creates a Document Object Model (DOM) tree, which is a hierarchical representation of the HTML structure. The browser starts parsing the HTML code from the top of the page and reads each element in sequence until the end of the document is reached. During this process, the browser identifies each HTML element, its attributes, and its relationship to other elements in the document.
 
 **The parsing algorithm**
 
