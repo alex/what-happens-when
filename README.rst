@@ -333,7 +333,8 @@ node`_ where the from and to addresses would be analyzed further.
 
 Most larger businesses and some newer residential connections will have fiber
 or direct Ethernet connections in which case the data remains digital and
-is passed directly to the next `network node`_ for processing.
+is passed directly to the next `network node`_ for processing. 
+This usually much faster than normal modem connections.
 
 Eventually, the packet will reach the router managing the local subnet. From
 there, it will continue to travel to the autonomous system's (AS) border
