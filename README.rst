@@ -510,6 +510,15 @@ and IIS for Windows.
   is running on PHP, the server uses PHP to interpret the index file, and
   streams the output to the client.
 
+Key takeaways from the TCP/IP stack
+------------------------------------
+The main purpose of each layer:
+* Application Layer `generates data` to be sent.
+* Transport Layer ensures `service to service delivery` of segment(data plus layer 4 header). It does this by ensuring that this segment arrive on the right port of the destination IP address.
+* Internet Layer exist to facilitate `end to end delivery` of the packet(segment plus layer3 header) from the source to the destination IP address.
+* Network Access Layer is concerned with `hub to hub delivery`. Ensures that the frame(packet plus layer2 header) move from one hub to another and it does this with the aid of the MAC address of source and next hub destination
+* finally, the Physical layer `convert frame to ones and zeros` and is transmitted through the ethernet, cables, or wires
+
 Behind the scenes of the Browser
 ----------------------------------
 
