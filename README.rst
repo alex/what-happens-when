@@ -608,16 +608,19 @@ The algorithm consists of two stages: tokenization and tree construction.
 
 **Actions when the parsing is finished**
 
-The browser begins fetching external resources linked to the page (CSS, images,
-JavaScript files, etc.).
+During the HTML parsing process, the web browser takes note of all external files linked to the HTML file. 
+Once the parsing is complete, the browser fetches the external resources linked to the page, such as CSS, 
+images, and JavaScript files, by sending multiple GET requests for each individual file. 
+This process may be repetitive if the HTML file contains links to other files, such as JavaScript files 
+that require additional JavaScript files to be fetched. 
 
-At this stage the browser marks the document as interactive and starts
-parsing scripts that are in "deferred" mode: those that should be
-executed after the document is parsed. The document state is
-set to "complete" and a "load" event is fired.
+Once all necessary files have been fetched, the browser marks the document as interactive and starts parsing 
+scripts that are in "deferred" mode, meaning they should be executed after the document is parsed. 
+At this stage, the document state is set to "complete" and a "load" event is fired.
 
-Note there is never an "Invalid Syntax" error on an HTML page. Browsers fix
-any invalid content and go on.
+It is worth noting that there is never an "Invalid Syntax" error on an HTML page, as browsers fix any 
+invalid content automatically. However, these fixes may vary slightly across different browsers, though
+the differences are often subtle and hardly noticeable.
 
 CSS interpretation
 ------------------
@@ -626,8 +629,9 @@ CSS interpretation
   values using `"CSS lexical and syntax grammar"`_
 * Each CSS file is parsed into a ``StyleSheet object``, where each object
   contains CSS rules with selectors and objects corresponding CSS grammar.
-* A CSS parser can be top-down or bottom-up when a specific parser generator
-  is used.
+* The CSS parser can be implemented using either a top-down or bottom-up parser generator.
+  However, the parsing process typically yields the same result regardless of the specific 
+  parser   implementation employed.
 
 Page Rendering
 --------------
