@@ -344,7 +344,9 @@ decremented by one for each router that passes. The packet will be dropped if
 the TTL field reaches zero or if the current router has no space in its queue
 (perhaps due to network congestion).
 
-This send and receive happens multiple times following the TCP connection flow:
+This send and receive happens multiple times following the TCP connection flow. This
+process is called the three-way handshake. Once the handshakes are done, data transmission
+is possible:
 
 * Client chooses an initial sequence number (ISN) and sends the packet to the
   server with the SYN bit set to indicate it is setting the ISN
@@ -356,7 +358,7 @@ This send and receive happens multiple times following the TCP connection flow:
 * Client acknowledges the connection by sending a packet:
    * Increases its own sequence number
    * Increases the receiver acknowledgment number
-   * Sets ACK field
+   * Sets ACK field, to indicate that the client has accepted the server's sequence number.
 * Data is transferred as follows:
    * As one side sends N data bytes, it increases its SEQ by that number
    * When the other side acknowledges receipt of that packet (or a string of
