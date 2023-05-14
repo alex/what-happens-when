@@ -78,22 +78,14 @@ connection, but historically has been over PS/2 or ADB connections.
 
 *In the case of Virtual Keyboard (as in touch screen devices):*
 
-- When the user puts their finger on a modern capacitive touch screen, a
-  tiny amount of current gets transferred to the finger. This completes the
-  circuit through the electrostatic field of the conductive layer and
-  creates a voltage drop at that point on the screen. The
-  ``screen controller`` then raises an interrupt reporting the coordinate of
-  the keypress.
+- When a user touches a modern capacitive touch screen, a tiny amount of current is transferred to their finger, completing the circuit through the electrostatic field of the conductive layer and creating a voltage drop at the touch point on the screen. The screen controller then detects this change and raises an interrupt, reporting the coordinates of the touch.
 
-- Then the mobile OS notifies the currently focused application of a press event
-  in one of its GUI elements (which now is the virtual keyboard application
-  buttons).
+- The mobile operating system then notifies the currently focused application of a press event in one of its graphical user interface (GUI) elements, which is now the virtual keyboard application buttons.
 
 - The virtual keyboard can now raise a software interrupt for sending a
   'key pressed' message back to the OS.
 
-- This interrupt notifies the currently focused application of a 'key pressed'
-  event.
+- This interrupt notifies the currently focused application of a 'key pressed' event, which can trigger the appropriate action in the application.
 
 
 Interrupt fires [NOT for USB keyboards]
