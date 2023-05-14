@@ -1,6 +1,6 @@
 language: python
 
-sudo: false
+sudo: True
 
 install: 
     - pip install doc8
