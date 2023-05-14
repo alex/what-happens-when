@@ -468,7 +468,12 @@ the form::
     [response headers]
 
 and no payload, and the web browser instead retrieve the HTML from its cache.
-
+If the client sends a request looking for a resource
+that does not exist it will receive 
+a response in the following form the form :
+   404 Not Found
+   [response headers]
+   
 After parsing the HTML, the web browser (and server) repeats this process
 for every resource (image, CSS, favicon.ico, etc) referenced by the HTML page,
 except instead of ``GET / HTTP/1.1`` the request will be
@@ -532,7 +537,10 @@ specified by the user using a URI (Uniform Resource Identifier).
 The way the browser interprets and displays HTML files is specified
 in the HTML and CSS specifications. These specifications are maintained
 by the W3C (World Wide Web Consortium) organization, which is the
-standards organization for the web.
+standards organization for the web created by Tim Berners-Lee in October 1994. 
+Tim Berners-Lee is the creator of the
+World Wide Web itself and founded the W3C with the aim of developing 
+standards and protocols for the Web, to ensure its evolution and interoperability..
 
 Browser user interfaces have a lot in common with each other. Among the
 common user interface elements are:
