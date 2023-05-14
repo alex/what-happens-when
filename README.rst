@@ -519,6 +519,8 @@ to the browser it undergoes the below process:
 * Parsing - HTML, CSS, JS
 * Rendering - Construct DOM Tree → Render Tree → Layout of Render Tree →
   Painting the render tree
+  
+Parsing and rendering: After the browser receives the HTML, CSS, and other assets from the server, it needs to parse and render the page. This involves constructing a Document Object Model (DOM) tree from the HTML, applying the CSS styles to the elements, and laying out the page. Finally, the browser can render the page to the screen.
 
 Browser
 -------
