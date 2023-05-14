@@ -480,6 +480,25 @@ resolving the other domain, and follows all steps up to this point for that
 domain. The ``Host`` header in the request will be set to the appropriate
 server name instead of ``google.com``.
 
+Firewall
+--------
+A firewall is a software or hardware system that guards a server from malicious and unauthorized access.
+Firewalls filter incoming and outgoing traffic based on predefined rules. For example, a firewall could be set to block all traffic from a specific IP address.
+
+There are different types of firewalls, including network firewalls (such as packet filtering, stateful inspection, and next-generation firewalls), host-based firewalls (such as software firewalls and operating system firewalls), web application firewalls, and cloud-based firewalls.
+
+HTTP/HTTPS requests from clients pass through the firewall before they reach the load balancer, which then sends the requests to the appropriate server.
+
+
+Load Balancer
+-------------
+A load balancer is a device or software that distributes incoming traffic across available servers.
+Websites such as Google, with large numbers of users, use multiple servers to improve speed, availability, scalability, and performance.
+
+The load balancer acts like a traffic warden, directing traffic to servers. To help the load balancer choose a server, it uses algorithms such as round-robin, least connection, IP hash, random, and least response time. 
+
+The load balancer receives requests after they have passed through the firewall and sends them to the appropriate server based on its selection algorithm.
+
 HTTP Server Request Handle
 --------------------------
 The HTTPD (HTTP Daemon) server is the one handling the requests/responses on
