@@ -416,6 +416,13 @@ control`_. This varies depending on the sender; the most common algorithms are
 
 HTTP protocol
 -------------
+What is SPDY?
+SPDY (pronounced SPeeDY) is a networking protocol developed by Google 
+with the purpose of speeding up the delivery of web content. 
+It does this by modifying HTTP traffic which in turn reduces web page latency
+and improves web security. HTTP, while powerful in its day, cannot keep up with 
+the demands of today's digital world, which is the reason SPDY was introduced 
+to help meet those demands.
 
 If the web browser used was written by Google, instead of sending an HTTP
 request to retrieve the page, it will send a request to try and negotiate with
