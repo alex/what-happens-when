@@ -689,6 +689,24 @@ the Google homepage. Scripts can cause additional network requests to be
 performed, as well as modify the page or its layout, causing another round of
 page rendering and painting.
 
+Web Cookies
+-----------
+
+When you type "google.com" into your browser's address bar and hit enter, several things happen behind the scenes to ensure that the website loads properly and is tailored to your preferences. One important aspect of this process is the use of web cookies.
+
+Web cookies, also known as HTTP cookies or browser cookies, are small text files that are stored on your computer by websites that you visit. They are used to remember your preferences, personalize your browsing experience, and follow your behavior on the site. When you visit a website, the server sends a cookie to your browser, which stores it on your computer. The next time you visit the same website, your browser sends the cookie back to the server, which can use the information stored in the cookie to customize your experience.
+
+Here's a simplified overview of how cookies are used when you visit "google.com":
+
+* You type "google.com" into your browser's address bar and hit enter.
+* Your browser sends a request to the Google servers, which may be distributed across multiple servers in different data centers.
+* The Google server responds with a set of cookies that are stored on your computer by your browser. These cookies may contain information such as your search history, language preferences, and login status.
+* When you perform a search on Google, your browser sends the search query along with the cookies that were stored on your computer. 
+* This allows Google to customize your search results based on your previous search history and preferences.
+
+As you navigate through the site, your browser continues to send the cookies back to the server, allowing Google to personalize your experience and follow your behavior on the site.
+
+
 .. _`Creative Commons Zero`: https://creativecommons.org/publicdomain/zero/1.0/
 .. _`"CSS lexical and syntax grammar"`: http://www.w3.org/TR/CSS2/grammar.html
 .. _`Punycode`: https://en.wikipedia.org/wiki/Punycode
