@@ -689,6 +689,9 @@ the Google homepage. Scripts can cause additional network requests to be
 performed, as well as modify the page or its layout, causing another round of
 page rendering and painting.
 
+  **Firewall**
+Fire wall is basically a set of rules set on the client side browser or the server side to help protect the infrastructure from unauthorized or malicious use. When the http request is sent to the google servers, their firewall checks the incoming traffic and the outgoing traffic to ensure protection of the resourses present in the server.
+
 .. _`Creative Commons Zero`: https://creativecommons.org/publicdomain/zero/1.0/
 .. _`"CSS lexical and syntax grammar"`: http://www.w3.org/TR/CSS2/grammar.html
 .. _`Punycode`: https://en.wikipedia.org/wiki/Punycode
