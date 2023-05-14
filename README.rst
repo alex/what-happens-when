@@ -296,6 +296,12 @@ the default gateway it can resume its DNS process:
 * If the local/ISP DNS server does not have it, then a recursive search is
   requested and that flows up the list of DNS servers until the SOA is reached,
   and if found an answer is returned.
+* After reaching the ISP, the request is sent to the root of the domain name.
+  The root knows the top level domain (TLD) authoritative nameservers .
+* There are more than one nameservers that know the ip address of the website
+  and any of them can return the needed IP address (i.e ns[1-5].google.com).
+* Once the IP adress is retrived, the connection can be established through a
+  socket.
 
 Opening of a socket
 -------------------
