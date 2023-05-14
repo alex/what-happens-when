@@ -414,6 +414,18 @@ control`_. This varies depending on the sender; the most common algorithms are
   each packet acknowledged. If a packet is dropped, the window reduces
   exponentially until another packet is acknowledged.
 
+Load Balancer
+-------------
+After the request has been sent out by the client, before it is actually 
+connected to the web servers, it first comes in contact with the load balancers.
+The function of the load balancer is to distribute the workload of a system into 
+multiple individual systems or groups of systems to reduce the amount of load on 
+an individual system, which in turn increases the reliability, efficiency and 
+availability of the application or website.
+
+So with this, the load balancer receiver the request and directs it to the next
+available server to handle it (depending on the algorithm used for load balancing)
+
 HTTP protocol
 -------------
 
