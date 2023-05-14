@@ -432,8 +432,7 @@ request to the server of the form::
 where ``[other headers]`` refers to a series of colon-separated key-value pairs
 formatted as per the HTTP specification and separated by single newlines.
 (This assumes the web browser being used doesn't have any bugs violating the
-HTTP spec. This also assumes that the web browser is using ``HTTP/1.1``,
-otherwise it may not include the ``Host`` header in the request and the version
+HTTP spec. This also assumes that the web browser is using ``HTTP/1.1`` where the number 1.1 indicates the version of http the client is using,otherwise it may not include the ``Host`` header in the request and the version
 specified in the ``GET`` request will either be ``HTTP/1.0`` or ``HTTP/0.9``.)
 
 HTTP/1.1 defines the "close" connection option for the sender to signal that
