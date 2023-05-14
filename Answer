@@ -1,0 +1,32 @@
+DNS request
+
+The Domain Name System (DNS) is a hierarchical and distributed naming system for computers, services, and other resources on the Internet or other Internet Protocol (IP) networks. It associates various pieces of information with domain names assigned to each of the associated entities. Most prominently, it translates readily memorized domain names to the numerical IP addresses needed for locating and identifying computer services and devices with the underlying network protocols. The Domain Name System has been an essential component of the functionality of the Internet since 1985.
+
+
+TCP/IP
+
+The Internet protocol suite provides end-to-end data communication, specifying how data should be packetized, addressed, transmitted, routed, and received. This functionality is organized into four abstraction layers, which classify all related protocols according to each protocol's scope of networking.
+
+Firewall
+
+A firewall is a network security device that monitors and filters incoming and outgoing network traffic based on an organization’s previously established security policies. At its most basic, a firewall is essentially the barrier that sits between a private internal network and the public Internet. A firewall’s main purpose is to allow non-threatening traffic in and keep dangerous traffic out.
+
+HTTPS/SSL
+
+Hypertext Transfer Protocol Secure (HTTPS) is an extension of the Hypertext Transfer Protocol (HTTP). It uses encryption for secure communication over a computer network and is widely used on the Internet.
+
+Load-balancer
+
+In computing, load balancing is the process of distributing a set of tasks over a set of resources, with the aim of making their overall processing more efficient. Load balancing can optimize the response time and avoid unevenly overloading some compute nodes while other compute nodes are left idle.
+
+Webserver
+
+A web server is software and hardware that uses HTTP (Hypertext Transfer Protocol) and other protocols to respond to client requests made over the World Wide Web. The main job of a web server is to display website content by storing, processing, and delivering webpages to users.
+
+Application server
+
+An application server is a server that hosts applications or software that delivers a business application through a communication protocol. An application server framework is a service layer model. It includes software components available to a software developer through an application programming interface.
+
+Database
+
+A database is an organized collection of structured information, or data, typically stored electronically in a computer system. A database is usually controlled by a database management system (DBMS). Together, the data and the DBMS, along with the applications that are associated with them, are referred to as a database system, often shortened to just a database.
