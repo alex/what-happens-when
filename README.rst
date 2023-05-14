@@ -26,6 +26,14 @@ Table of Contents
    :local:
 
 The "g" key is pressed
+When the "g" key is pressed on a keyboard, several things happen at a very fast pace:
+
+The physical key is pressed down, which completes a circuit on the keyboard's circuit board.
+The circuit board sends an electrical signal to the computer, which is interpreted by the keyboard controller chip.
+The keyboard controller chip sends a scan code for the "g" key to the computer's operating system.
+The operating system checks to see if any application has focus (i.e., is currently being used), and if so, sends the scan code to that application.
+The application interprets the scan code and, if programmed to do so, displays the corresponding letter "g" on the screen.
+All of these steps happen in a fraction of a second, and the result is the appearance of the letter "g" on the screen.
 ----------------------
 The following sections explain the physical keyboard actions
 and the OS interrupts. When you press the key "g" the browser receives the
