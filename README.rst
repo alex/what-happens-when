@@ -608,8 +608,10 @@ The algorithm consists of two stages: tokenization and tree construction.
 
 **Actions when the parsing is finished**
 
-The browser begins fetching external resources linked to the page (CSS, images,
-JavaScript files, etc.).
+While parsing the HTML, The browser takes note of all external files linked to the HTML file.
+
+After parsing, the browser begins fetching external resources linked to the page (CSS, images,
+JavaScript files, etc.) by sending multiple GET requests for the individual files. Also note that this process may be repetitive, i.e a HTML file contains a link to a JavaScript file, the browser sends a request for that JavaScript file and the JavaScript file may need other JavaScript files as well and the browser also fetches those until all files needed has been fetched.
 
 At this stage the browser marks the document as interactive and starts
 parsing scripts that are in "deferred" mode: those that should be
@@ -617,7 +619,7 @@ executed after the document is parsed. The document state is
 set to "complete" and a "load" event is fired.
 
 Note there is never an "Invalid Syntax" error on an HTML page. Browsers fix
-any invalid content and go on.
+any invalid content and go on, however these fixes may depend on the particular browser and may slightly vary across different browsers, the difference is mostly subtle and are barely noticeable.
 
 CSS interpretation
 ------------------
@@ -627,7 +629,7 @@ CSS interpretation
 * Each CSS file is parsed into a ``StyleSheet object``, where each object
   contains CSS rules with selectors and objects corresponding CSS grammar.
 * A CSS parser can be top-down or bottom-up when a specific parser generator
-  is used.
+  is used but utlimately the same result is mostly gotten from the parsing regardless of the parser used.
 
 Page Rendering
 --------------
