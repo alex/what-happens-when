@@ -623,7 +623,10 @@ CSS interpretation
 ------------------
 
 * Parse CSS files, ``<style>`` tag contents, and ``style`` attribute
-  values using `"CSS lexical and syntax grammar"`_
+  values using `"CSS lexical and syntax grammar"`_ This process involes
+  tokenizing the CSS code into a series of tokens(keywords,selectors,properties, and values), building a parse tree from those tokens and generating a set of
+  rules from the parse tree which is gotten when the CSS code is parsed to build
+  a CSSOM tree.
 * Each CSS file is parsed into a ``StyleSheet object``, where each object
   contains CSS rules with selectors and objects corresponding CSS grammar.
 * A CSS parser can be top-down or bottom-up when a specific parser generator
