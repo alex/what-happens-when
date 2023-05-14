@@ -631,7 +631,9 @@ CSS interpretation
 
 Page Rendering
 --------------
-
+* The browser checks its cache to see if it already has a copy of the resource (e.g., HTML, CSS, JavaScript, images) 
+  associated with the URL. If it does, and the cache is fresh (i.e., not expired), 
+  it may skip some of the subsequent steps and simply use the cached version.
 * Create a 'Frame Tree' or 'Render Tree' by traversing the DOM nodes, and
   calculating the CSS style values for each node.
 * Calculate the preferred width of each node in the 'Frame Tree' bottom-up
