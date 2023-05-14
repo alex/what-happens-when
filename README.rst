@@ -628,6 +628,11 @@ CSS interpretation
   contains CSS rules with selectors and objects corresponding CSS grammar.
 * A CSS parser can be top-down or bottom-up when a specific parser generator
   is used.
+      * The CSS parsing process involves several steps:
+            - Tokenization: The CSS code is broken down into individual tokens such as selectors, properties, and values.
+            - Parsing: The tokens are processed and organized into a parse tree, which represents the structure of the CSS code and the relationships between the different CSS rules.
+            - Validation: The CSS rules are checked for syntax errors and other issues, such as invalid selectors or properties.
+            - Computation: The browser calculates the final styles for each element on the web page by combining the CSS rules in order of specificity and applying the cascade and inheritance rules.
 
 Page Rendering
 --------------
