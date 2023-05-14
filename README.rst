@@ -38,6 +38,11 @@ popular searches from the internet as a whole. As you are typing
 "google.com" many blocks of code run and the suggestions will be refined
 with each keypress. It may even suggest "google.com" before you finish typing
 it.
+If the user types the letter "g" in the address bar of a browser, some browsers may automatically provide suggestions for websites that the user has visited frequently or websites that match the letter "g." For example, if the user has visited "Google.com" frequently, the browser may suggest "Google.com" as a top suggestion.
+
+If the user types "g" followed by a space or "Enter," the browser may assume that the user is trying to perform a search and will redirect the user to the default search engine's results page, with "g" as the search query.
+
+It's worth noting that the behavior of different browsers may vary, and users can customize their browser's auto-completion and search settings to suit their preferences.
 
 The "enter" key bottoms out
 ---------------------------
