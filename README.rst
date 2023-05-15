@@ -24,6 +24,9 @@ Table of Contents
 .. contents::
    :backlinks: none
    :local:
+   
+What is the HTTP protocol?
+What is HTTP (Hypertext Transfer Protocol)? The Hypertext Transfer Protocol is an application protocol for distributed, collaborative, hypermedia information systems that allows users to communicate data on the World Wide Web.
 
 The "g" key is pressed
 ----------------------
