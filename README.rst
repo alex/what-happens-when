@@ -209,13 +209,18 @@ Check HSTS list
 DNS lookup
 ----------
 
-* Browser checks if the domain is in its cache. (to see the DNS Cache in
-  Chrome, go to `chrome://net-internals/#dns <chrome://net-internals/#dns>`_).
-* If not found, the browser calls ``gethostbyname`` library function (varies by
+* There are three main ways in which DNS lookup(translating domain names to IP addresses) is performed:
+
+ Browser’s cache ~  Browser checks if the domain is in its cache. (to see the DNS Cache in
+ Chrome, go to `chrome://net-internals/#dns <chrome://net-internals/#dns>`_).
+
+ OS host files ~ If not found, the browser calls ``gethostbyname`` library function (varies by
   OS) to do the lookup.
 * ``gethostbyname`` checks if the hostname can be resolved by reference in the
   local ``hosts`` file (whose location `varies by OS`_) before trying to
   resolve the hostname through DNS.
+
+ Internet Service Provider(ISP) ~ Since it is neither in the OS cache nor in the host files the DNS relies on the local ISP to provide the required ip address via recursive checks as stated below;
 * If ``gethostbyname`` does not have it cached nor can find it in the ``hosts``
   file then it makes a request to the DNS server configured in the network
   stack. This is typically the local router or the ISP's caching DNS server.
