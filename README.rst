@@ -209,20 +209,21 @@ Check HSTS list
 DNS lookup
 ----------
 
-* Browser checks if the domain is in its cache. (to see the DNS Cache in
-  Chrome, go to `chrome://net-internals/#dns <chrome://net-internals/#dns>`_).
-* If not found, the browser calls ``gethostbyname`` library function (varies by
-  OS) to do the lookup.
-* ``gethostbyname`` checks if the hostname can be resolved by reference in the
-  local ``hosts`` file (whose location `varies by OS`_) before trying to
-  resolve the hostname through DNS.
-* If ``gethostbyname`` does not have it cached nor can find it in the ``hosts``
-  file then it makes a request to the DNS server configured in the network
-  stack. This is typically the local router or the ISP's caching DNS server.
-* If the DNS server is on the same subnet the network library follows the
-  ``ARP process`` below for the DNS server.
-* If the DNS server is on a different subnet, the network library follows
-  the ``ARP process`` below for the default gateway IP.
+* The browser first checks its cache to see if it already has the domain information. (to 
+  see the DNS Cache in Chrome, 
+  go to `chrome://net-internals/#dns <chrome://net-internals/#dns>`_).
+* If the domain is not in the cache, the browser calls the ``gethostbyname`` library 
+  function, which varies depending on the 
+  `Operating System <https://en.wikipedia.org/wiki/Hosts_%28file%29#Location_in_the_file_system>`_
+* The ``gethostbyname`` function first checks the local hosts file to see if the hostname 
+  can be resolved by reference there.
+* If the hostname is not found in the hosts file, the ``gethostbyname`` function sends a 
+  request to the DNS server configured in the network stack. This is usually the local 
+  router or the ISP's caching DNS server.
+* If the DNS server is on the same subnet as the client, the network library uses the 
+  Address Resolution Protocol (ARP) process to get the MAC address of the DNS server.
+* If the DNS server is on a different subnet, the network library uses the ARP process 
+  to get the MAC address of the default gateway IP.
 
 
 ARP process
