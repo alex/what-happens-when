@@ -39,6 +39,12 @@ popular searches from the internet as a whole. As you are typing
 with each keypress. It may even suggest "google.com" before you finish typing
 it.
 
+Please keep in mind that the behavior of auto-complete functionality can differ depending on the browser and its settings. 
+Different browsers may offer varying levels of auto-complete capabilities, 
+and some may even provide personalized suggestions based on your browsing history. 
+Furthermore, if you have installed browser extensions or plugins, they might alter or improve the default auto-complete behavior. 
+These extensions can bring additional features and modify the browser's response to specific key presses, such as "g."
+
 The "enter" key bottoms out
 ---------------------------
 
