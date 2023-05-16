@@ -173,7 +173,37 @@ Parse URL
 
     - ``Resource``  "/"
         Retrieve main (index) page
-
+        
+Errors or issues that could potentially occur
+---------------------------------------------
+* DNS resolution failure: The browser may fail to resolve the domain name
+  "www.google.com" to an IP address. This could happen due to DNS server
+  issues, misconfigured DNS settings, or network connectivity problems. The 
+  user might see a "DNS lookup failed" or similar error message.
+* SSL/TLS certificate error: If there is an issue with the SSL/TLS certificate 
+  presented by the server, the browser may display a warning or error 
+  message. This can occur if the certificate is expired, self-signed, or not
+  trusted by the browser. The user might see a message like "Your connection
+  is not private" or a certificate warning page.
+* Connection timeout: It is possible that the browser fails to establish a 
+  connection with the server within a specified time limit. This can occur due to 
+  network congestion, server unavailability, or firewall restrictions. The user 
+  might see an error message like "This site can't be reached" or a connection
+  timeout page.
+* HTTP status code errors: Upon successfully establishing a connection, the
+  server may return an HTTP status code indicating an error. For example, a 
+  "404 Not Found" error occurs when the requested resource is not found on 
+  the server. Other status codes like "500 Internal Server Error" or "403
+  Forbidden" could also occur, indicating different server-side issues.
+* Proxy or firewall restrictions: If the user is accessing the internet through a 
+  proxy server or a network with strict firewall rules, it's possible that the
+  request to "https://www.google.com" is blocked or restricted. This can
+  prevent the user from reaching the intended website, resulting in an error 
+  message or a blocked page.
+  
+  NB: It's important to note that the specific errors encountered can vary depending 
+  on factors such as browser configuration, network environment, and server 
+  settings. The error messages displayed by browsers can also differ slightly.
 
 Is it a URL or a search term?
 -----------------------------
