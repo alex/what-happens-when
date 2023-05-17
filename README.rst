@@ -367,6 +367,29 @@ This send and receive happens multiple times following the TCP connection flow:
    * The other sides ACKs the FIN packet and sends its own FIN
    * The closer acknowledges the other side's FIN with an ACK
 
+Secure Sockets Layer (SSL) encryption
+---------------------------------------
+SSL stands for Secure Sockets Layer and, in short, it's the standard
+technology for keeping an internet connection secure and safeguarding
+any sensitive data that is being sent between two systems, preventing
+criminals from reading and modifying any information transferred,
+including potential personal details. The two systems can be a server
+and a client (for example, a shopping website and browser) or server
+(for example, an application with personal identifiable information
+or with payroll information).
+
+It does this by making sure that any data transferred between users and
+sites, or between two systems remain impossible to read. It uses encryption
+algorithms to scramble data in transit, preventing hackers from reading
+it as it is sent over the connection. This information could be anything
+sensitive or personal which can include credit cards numbers and other
+financial information, names and addresses.
+
+TLS (Transport Layer Secuity) is just an updated, more secure, version
+of SSL. ``HTTPS`` (Hyper Text Transfer Protocol Secure) appears in the URL
+when a website is secured by an SSL certificate. This process begins with a
+TLS handshake.
+
 TLS handshake
 -------------
 * The client computer sends a ``ClientHello`` message to the server with its
