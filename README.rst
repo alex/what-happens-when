@@ -522,7 +522,8 @@ to the browser it undergoes the below process:
 
 Browser
 -------
-
+The browser must first determine the IP address of the server that is
+hosting the webpage.
 The browser's functionality is to present the web resource you choose, by
 requesting it from the server and displaying it in the browser window.
 The resource is usually an HTML document, but may also be a PDF,
