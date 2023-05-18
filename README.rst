@@ -1,6 +1,9 @@
 What happens when...
 ====================
 
+Intoduction
+-----------
+
 This repository is an attempt to answer the age-old interview question "What
 happens when you type google.com into your browser's address box and press
 enter?"
@@ -24,6 +27,9 @@ Table of Contents
 .. contents::
    :backlinks: none
    :local:
+
+Key Press Event Handling
+========================
 
 The "g" key is pressed
 ----------------------
@@ -161,6 +167,9 @@ sends the character to the ``window manager`` (DWM, metacity, i3, etc), so the
 ``window manager`` in turn sends the character to the focused window.
 The graphical API of the window  that receives the character prints the
 appropriate font symbol in the appropriate focused field.
+
+URL Parsing and Handling
+========================
 
 Parse URL
 ---------
@@ -414,6 +423,9 @@ control`_. This varies depending on the sender; the most common algorithms are
   each packet acknowledged. If a packet is dropped, the window reduces
   exponentially until another packet is acknowledged.
 
+HTTP Protocol and Server Communication
+======================================
+
 HTTP protocol
 -------------
 
@@ -511,7 +523,7 @@ and IIS for Windows.
   streams the output to the client.
 
 Behind the scenes of the Browser
-----------------------------------
+================================
 
 Once the server supplies the resources (HTML, CSS, JS, images, etc.)
 to the browser it undergoes the below process:
@@ -688,6 +700,10 @@ Plugins such as Flash or Java may execute as well, although not at this time on
 the Google homepage. Scripts can cause additional network requests to be
 performed, as well as modify the page or its layout, causing another round of
 page rendering and painting.
+
+
+Additional Insights into the Webpage Loading Process
+====================================================
 
 .. _`Creative Commons Zero`: https://creativecommons.org/publicdomain/zero/1.0/
 .. _`"CSS lexical and syntax grammar"`: http://www.w3.org/TR/CSS2/grammar.html
