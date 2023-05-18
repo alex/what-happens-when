@@ -414,6 +414,18 @@ control`_. This varies depending on the sender; the most common algorithms are
   each packet acknowledged. If a packet is dropped, the window reduces
   exponentially until another packet is acknowledged.
 
+Packet Routing
+--------------
+Once the packet leaves the local network and enters the broader internet, it undergoes a process known as packet routing. Routers play a crucial role in routing the packet from the source network to the destination network.
+
+When the packet reaches an intermediate router, it examines the destination IP address and uses routing tables to determine the next hop for the packet. The routing tables contain information about network prefixes and the corresponding next hop routers. Based on this information, the router forwards the packet to the next hop along the path.
+
+The routing process continues at each intermediate router until the packet reaches the border router of the destination network. The border router directs the packet to the destination network's internal routers, which eventually deliver it to the destination server.
+
+Throughout this routing process, routers exchange routing information using routing protocols such as Border Gateway Protocol (BGP) to dynamically update their routing tables and ensure efficient packet delivery across the internet.
+
+It's important to note that the routing process occurs at the network layer (Layer 3) of the OSI model, while the previously described steps, such as DNS lookup and socket creation, happen at the application layer (Layer 7) for communication between the browser and the web server.
+
 HTTP protocol
 -------------
 
