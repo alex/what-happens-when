@@ -678,6 +678,17 @@ GPU Rendering
 Window Server
 -------------
 
+In the context of the web browsing process, the Window Server plays an important role in managing the visual elements and user interface of the web browser window. It is responsible for handling tasks related to window management, graphics rendering, and user interactions.
+
+When you type 'google.com' into your browser's address box and press enter, the Window Server receives the request and initiates the process of rendering the web page. It manages the various components of the browser window, such as menus, buttons, and other graphical elements, ensuring that they are displayed correctly and respond to user input.
+
+The Window Server interacts with the underlying operating system to coordinate the display of the web page. It communicates with the graphics hardware, utilizing the capabilities of your computer's GPU (Graphics Processing Unit) to render the visual content of the website. This includes rendering images, text, videos, and other multimedia elements present on the web page.
+
+Additionally, the Window Server handles user interactions, such as clicking on links, scrolling, and inputting text. It captures these events and communicates them to the browser's rendering engine, which then processes the corresponding actions.
+
+In summary, the Window Server is responsible for managing the visual aspects and user interface of the web browser window. It collaborates with the operating system and graphics hardware to render web content accurately and handle user interactions effectively.
+
+
 Post-rendering and user-induced execution
 -----------------------------------------
 
