@@ -50,7 +50,7 @@ of each key switch, debounces the electrical noise of the rapid intermittent
 closure of the switch, and converts it to a keycode integer, in this case 13.
 The keyboard controller then encodes the keycode for transport to the computer.
 This is now almost universally over a Universal Serial Bus (USB) or Bluetooth
-connection, but historically has been over PS/2 or ADB connections.
+connection, but historically has been over PS/2 or ADB with connections.
 
 *In the case of the USB keyboard:*
 
