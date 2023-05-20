@@ -663,6 +663,28 @@ Page Rendering
   via Direct3D/OpenGL. The GPU command buffer(s) are flushed to the GPU for
   asynchronous rendering and the frame is sent to the window server.
 
+you type google.com in your browser and press Enter
+---------------------------------------------------
+
+You have been in an argument, or you just remembered something you learned in the past but do not recall clearly, or you are just doing an assignment, got stuck somewhere, and immediately thought, I can google this, right? So you pull out your phone or open your PC browser and visit the most popular search engine in the world — Google. You type google.com on your URL and press enter. What do you think happens when you press Enter? How does the browser know to find google.com and not some other funny site? Well, you are in luck, as that is what we are talking about today.
+
+After pressing Enter, the browser then looks up the IP address of the domain by creating a Domain Name System(DNS) request to the DNS server. The DNS server is a phone book of the internet. It translates the URL https://google.com to an IP address that machines can quickly identify. Computers only understand numbers, but we humans understand and easily remember words. The DNS server allows us to easily remember characters like ‘abc.com’ instead of recalling an IP address like 120.154.12.11. On the other hand, for machines to access websites, they look for the IP address connected with the given domain name.
+
+Once the browser finds the URL’s IP address, it uses the TCP/IP(a suite of communication protocols used to interconnect network devices on the internet) communication protocols to establish a connection to the server that hosts the website you are visiting.
+
+In most cases and for safety from hackers, a DNS firewall protects the user by blocking traffic from particular websites that may contain malware. Firewalls provide another essential layer of security that prevents attackers from attacking the host servers.
+
+Hypertext Transfer Protocol(HTTP) is a protocol that browsers use to communicate and exchange information with websites. The communication between our device and the website we are trying to visit occurs as HTTP requests and HTTP responses(more on that in another post). The secure version of HTTP is Hypertext Transfer Protocol Secure(HTTPS). A protocol that uses a Secure Sockets Layer(SSL) to encrypt data, making the HTTP connection secure.
+
+Once the request hits the server, especially for large websites with many clients making multiple requests at a time, a load balancer helps distribute the load. A load balancer is a device whose purpose is to distribute load and traffic across several servers to prevent one from being overloaded with requests. The load balancer ensures that a website remains fast, is easier to secure, and makes it easier to scale up websites.
+
+On the server where the site google.com is hosted and contained. Installed are two servers: a web server and an application server. A web server is a computer program that accepts the request for data(HTTP requests) and then sends back(HTTP response) the requested documents if found with a response status code of 200 and 404 if not found. Examples of web servers are Nginx and Apache Tomcat. Application servers expose business logic to the clients, which generates dynamic content. It is a software framework that transforms data to provide the specialized functionality offered by a business, service, or application.
+
+The final part that brings all this to a close is the database. A database is an organized collection of structured information, or data, typically stored electronically in a computer system. Data and information gets stored on the website server for future use. This stored information allows you(the client) to log in again at a later time and even with a different device.
+
+There you have it. There is what happens each time you type a URL in a browser and press Enter. The process is different and customized according to business needs. For instance, large companies may need to configure load balancers to handle the millions of requests every minute. Websites with small numbers of requests do not need load balancers since that means extra costs to run the system.
+
+
 GPU Rendering
 -------------
 
