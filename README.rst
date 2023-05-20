@@ -1,4 +1,4 @@
-<img src="https://raw.githubusercontent.com/iMiebaka/what-happens-when/master/google-on-keyboard-shutterstock_311871731-300x215.jpg" width="50%" height="50%">
+<img align="center" src="https://raw.githubusercontent.com/iMiebaka/what-happens-when/master/google-on-keyboard-shutterstock_311871731-300x215.jpg" width="40%" />
 
 What happens when...
 ====================
