@@ -485,6 +485,9 @@ HTTP Server Request Handle
 The HTTPD (HTTP Daemon) server is the one handling the requests/responses on
 the server-side. The most common HTTPD servers are Apache or nginx for Linux
 and IIS for Windows.
+It works by encrypting and securing the data transmitted between the user's browser
+and the web server. It provides protection against data interception and verifies
+the identity of the website, ensuring a secure and trustworthy browsing experience.
 
 * The HTTPD (HTTP Daemon) receives the request.
 * The server breaks down the request to the following parameters:
