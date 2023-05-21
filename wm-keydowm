@@ -1,0 +1,16 @@
+#Here's how we might use SendMessage for processing WM_KEYDOWN codes in the SYSMETS program:
+
+case WM_KEYDOWN:
+     switch (wParam)
+     {
+     case VK_HOME:
+          SendMessage (hwnd, WM_VSCROLL, SB_TOP, 0) ;
+          break ;
+
+     case VK_END:
+          SendMessage (hwnd, WM_VSCROLL, SB_BOTTOM, 0) ;
+          break ;
+
+     case VK_PRIOR:
+          SendMessage (hwnd, WM_VSCROLL, SB_PAGEUP, 0) ;
+          break ;
