@@ -599,6 +599,8 @@ The reasons are:
   change during parsing, but in HTML, dynamic code (such as script elements
   containing `document.write()` calls) can add extra tokens, so the parsing
   process actually modifies the input.
+* Ambiguity: HTML allows for nested elements and overlapping tags, making 
+   it difficult to determine the correct hierarchical structure. 
 
 Unable to use the regular parsing techniques, the browser utilizes a custom
 parser for parsing HTML. The parsing algorithm is described in
