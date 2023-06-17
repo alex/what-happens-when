@@ -678,6 +678,30 @@ GPU Rendering
 Window Server
 -------------
 
+A web server is a software application that serves web pages and handles requests from web browsers or other client applications. It runs on a computer with network connectivity and is responsible for processing incoming requests, retrieving the requested resources, and sending the response back to the client.
+
+Here is an overview of how a web server works:
+
+Accepting and managing connections: The web server listens for incoming requests on a specific port, usually port 80 for HTTP or port 443 for HTTPS. When a client initiates a connection, the server accepts the connection request and establishes a communication channel.
+
+Parsing the request: Once a connection is established, the server reads the incoming request sent by the client. The request typically includes the HTTP method (such as GET, POST, or PUT), the requested URL or resource, headers, and other optional data.
+
+Handling the request: The server processes the request based on the HTTP method and the requested resource. For example, if it's a GET request for a specific webpage, the server retrieves the corresponding HTML file from its file system or generates the content dynamically.
+
+Retrieving the requested resource: The server locates the requested resource, which can be a static file (e.g., HTML, CSS, JavaScript, images) or a dynamically generated content (e.g., data from a database or application logic). It reads the resource from the file system or invokes the necessary application components to generate the content.
+
+Generating the response: After retrieving the resource, the server constructs an HTTP response message. This includes setting the appropriate response status code (e.g., 200 for a successful request, 404 for a not found error), headers (e.g., Content-Type, Content-Length), and the response body containing the requested resource or any error message.
+
+Sending the response: The server sends the response back to the client over the established connection. It writes the response message into the network socket, which eventually reaches the client.
+
+Closing the connection: Once the response is sent, the server closes the connection to free up system resources and allow the client to initiate new connections if needed. In some cases, the server may keep the connection open for HTTP keep-alive to enable multiple requests to be sent over the same connection.
+
+This process repeats for each incoming request, allowing the web server to handle multiple concurrent connections and serve web pages to multiple clients simultaneously.
+
+Popular web server software includes Apache HTTP Server, Nginx, Microsoft IIS (Internet Information Services), and Node.js (which can act as a web server using frameworks like Express). These servers provide additional features, configurations, and optimizations to improve performance, security, and scalability.
+
+It's important to note that web servers are just one component of the overall web architecture. They work together with web browsers, client-side scripting languages, databases, and other components to deliver web applications and content to users.
+
 Post-rendering and user-induced execution
 -----------------------------------------
 
