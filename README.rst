@@ -688,40 +688,6 @@ Plugins such as Flash or Java may execute as well, although not at this time on
 the Google homepage. Scripts can cause additional network requests to be
 performed, as well as modify the page or its layout, causing another round of
 page rendering and painting.
-
-**Important related terminologies**
-DNS Request:
-
-The very moment you key in “google.com,” your browser sends a DNS request as soon as you hit Enter. The Domain Name System (DNS), which converts human-readable domain names into IP addresses, functions as the phone book for the internet. A DNS server receives the request and responds with the IP address for “google.com.”
-
-TCP/IP:
-
-Your browser creates a Transmission Control Protocol/Internet Protocol (TCP/IP) connection using the IP address. By dividing data into packets, TCP assures reliable data transfer, and IP permits packet routing over the internet.
-
-Firewall:
-
-Firewalls serve as security checks on the path from your browser to Google’s servers. Network traffic is monitored and filtered by firewalls, which let approved requests through while preventing potential threats.
-
-HTTPS/SSL:
-
-The connection employs Secure Sockets Layer (SSL) (or Transport Layer Security (TLS), its successor) to ensure the confidentiality and integrity of the data sent between your browser and Google’s servers. To ensure secure communication, this encryption protocol encrypts the data and confirms the server’s legitimacy.
-
-Load balancer:
-
-Load balancers are necessary because of the volume of traffic that Google processes. To maximize resource usage and enhance response times, these devices divide incoming requests among several servers. Load balancers make sure that the burden is distributed fairly and keep any one server from getting too much at once.
-
-Web server:
-
-Google’s web server takes control after receiving your request. The HTTP request is processed by web servers, like the specialized infrastructure used by Google, and a suitable HTTP response is produced. In this instance, the server gets the HTML file for Google’s home page that was requested.
-
-Database:
-
-A substantial amount of data is stored and retrieved to support Google’s huge array of services. In the background, databases are essential. They manage and store the enormous volumes of data needed to provide personalized content, search results, and other services. The database infrastructure of Google guarantees effective data scalability, storage, and retrieval.
-
-In conclusion, typing “google.com” and pressing the Enter key starts a complicated series of activities. To give you the Google search experience, a number of different systems — including DNS requests, TCP/IP connections, firewalls, HTTPS/SSL encryption, load balancing, web servers, application servers, and databases — work together smoothly. The incredible infrastructure and technology that underpins our online interactions are on display in this journey.
-
-Remember the complex procedure that goes on behind the scenes the next time you run a search or visit any website. It is evidence of the creativity and intelligence of the mechanisms that underpin the internet and permit us to easily explore the digital world.
-
 .. _`Creative Commons Zero`: https://creativecommons.org/publicdomain/zero/1.0/
 .. _`"CSS lexical and syntax grammar"`: http://www.w3.org/TR/CSS2/grammar.html
 .. _`Punycode`: https://en.wikipedia.org/wiki/Punycode
