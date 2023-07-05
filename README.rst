@@ -37,9 +37,8 @@ and prioritize results based on search history, bookmarks, cookies, and
 popular searches from the internet as a whole. As you are typing
 "google.com" many blocks of code run and the suggestions will be refined
 with each keypress. It may even suggest "google.com" before you finish typing
-it.
-
-The "enter" key bottoms out
+it. 
+The "enter" key bottoms out.
 ---------------------------
 
 To pick a zero point, let's choose the Enter key on the keyboard hitting the
