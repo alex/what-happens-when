@@ -688,6 +688,9 @@ Plugins such as Flash or Java may execute as well, although not at this time on
 the Google homepage. Scripts can cause additional network requests to be
 performed, as well as modify the page or its layout, causing another round of
 page rendering and painting.
+Summary
+-------
+When you enter [Google](“https://www.google.com") into your browser and hit Enter, a number of complex processes start to run in the background. The TCP/IP protocol establishes a connection, firewalls prevent unauthorized access, HTTPS/SSL encrypts the data, load balancers distribute requests, web servers deliver web content, application servers handle complex operations, and databases store and retrieve data. The DNS request converts the domain name into an IP address. Understanding this path enables us to appreciate the sophisticated technologies and infrastructure that support the websites we use on a regular basis.
 
 .. _`Creative Commons Zero`: https://creativecommons.org/publicdomain/zero/1.0/
 .. _`"CSS lexical and syntax grammar"`: http://www.w3.org/TR/CSS2/grammar.html
