@@ -397,6 +397,20 @@ TLS handshake
 * From now on the TLS session transmits the application (HTTP) data encrypted
   with the agreed symmetric key.
 
+**Handshake:** The SSL handshake is the initial process where the client and server establish a secure connection. During this phase, the client and server negotiate the cryptographic algorithms they will use for encryption and authentication.
+
+**Certificate exchange:** The server presents its digital certificate to the client. The certificate contains the server's public key and is issued by a trusted Certificate Authority (CA). The client verifies the authenticity and validity of the certificate. If the certificate is trusted, the client proceeds to the next step.
+
+**Key exchange:** The client generates a random session key and encrypts it using the server's public key obtained from the certificate. The encrypted session key is sent to the server, which decrypts it using its private key. Now both the client and server have the same session key, which will be used for symmetric encryption and decryption of data during the session.
+
+**Secure connection:** With the session key established, the client and server can now encrypt and decrypt data using symmetric encryption algorithms. This ensures the confidentiality and integrity of the data transmitted between them.
+
+Throughout the SSL/TLS session, the connection remains secure, and data is protected from eavesdropping and tampering. The SSL protocol also supports server authentication, ensuring that clients can trust the identity of the server they are communicating with.
+
+It's worth noting that SSL certificates need to be periodically renewed and replaced to maintain security, and server administrators should follow best practices for SSL/TLS configuration to ensure the highest level of security.
+
+Overall, SSL plays a crucial role in securing online communication and is widely used to protect sensitive information such as login credentials, personal data, and financial transactions on the internet.
+
 If a packet is dropped
 ----------------------
 
