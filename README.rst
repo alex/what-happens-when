@@ -606,6 +606,14 @@ detail by the HTML5 specification.
 
 The algorithm consists of two stages: tokenization and tree construction.
 
+**Tokenization**
+
+Tokenization is a fundamental process in the HTML parsing algorithm that breaks down the input HTML code into individual tokens. Tokens represent different components of the HTML syntax and structure. The tokenization process involves iterating through the input code character by character and identifying specific patterns to determine the type and attributes of each token. For example, when encountering an opening tag, the tokenization process recognizes it as a start tag token and extracts the tag name and any associated attributes. Similarly, when encountering text content, it generates a text token containing the content.
+
+**Tree construction**
+
+The tree construction stage in the HTML parsing algorithm takes the sequence of tokens generated during tokenization and constructs a parse tree, known as the Document Object Model (DOM). The tree construction process involves interpreting the tokens and establishing the relationships between HTML elements. It creates parent-child relationships, determines the nesting and order of elements, and constructs a hierarchical structure that reflects the HTML document's organization. This stage also handles any errors or inconsistencies encountered during tokenization, attempting to create a valid DOM structure despite malformed or missing tags. The resulting DOM tree serves as an in-memory representation of the HTML document, facilitating further manipulation, rendering, and interaction with the web page.
+
 **Actions when the parsing is finished**
 
 The browser begins fetching external resources linked to the page (CSS, images,
