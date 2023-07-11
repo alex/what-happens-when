@@ -76,7 +76,7 @@ connection, but historically has been over PS/2 or ADB connections.
   device driver.  The value of the key is then passed into the operating
   system's hardware abstraction layer.
 
-*In the case of Virtual Keyboard (as in touch screen devices):*
+*In the case of Virtual Keyboard (as in touch screen devices)*
 
 - When the user puts their finger on a modern capacitive touch screen, a
   tiny amount of current gets transferred to the finger. This completes the
