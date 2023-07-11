@@ -574,50 +574,97 @@ The components of the browsers are:
 HTML parsing
 ------------
 
-The rendering engine starts getting the contents of the requested
-document from the networking layer. This will usually be done in 8kB chunks.
+# What happens when the browser parses HTML?
 
-The primary job of the HTML parser is to parse the HTML markup into a parse tree.
+HTML parsing is the process of converting HTML markup into a parse tree that represents the structure and content of a web page. It is one of the essential steps in rendering web pages, as it determines how the browser will display the page elements and interact with them.
 
-The output tree (the "parse tree") is a tree of DOM element and attribute
-nodes. DOM is short for Document Object Model. It is the object presentation
-of the HTML document and the interface of HTML elements to the outside world
-like JavaScript. The root of the tree is the "Document" object. Prior to
-any manipulation via scripting, the DOM has an almost one-to-one relation to
-the markup.
+In this blog post, we will explore how HTML parsing works, what are the main components and stages of the parsing algorithm, and what are some of the challenges and limitations of HTML parsing.
 
-**The parsing algorithm**
+## HTML markup and parse tree
 
-HTML cannot be parsed using the regular top-down or bottom-up parsers.
+HTML markup is a text-based format that uses tags, attributes, and content to describe the structure and content of a web page. For example, here is a simple HTML document:
 
-The reasons are:
+```html
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My Web Page</title>
+</head>
+<body>
+  <h1>Hello, World!</h1>
+  <p>This is a paragraph.</p>
+</body>
+</html>
+```
 
-* The forgiving nature of the language.
-* The fact that browsers have traditional error tolerance to support well
-  known cases of invalid HTML.
-* The parsing process is reentrant. For other languages, the source doesn't
-  change during parsing, but in HTML, dynamic code (such as script elements
-  containing `document.write()` calls) can add extra tokens, so the parsing
-  process actually modifies the input.
+The browser parses this markup and converts it into a parse tree, which is a tree-like data structure that consists of nodes. Each node represents an element, an attribute, or a piece of text in the document. The root node is the "Document" node, which represents the entire document. The child nodes of the root node are the "html", "head", and "body" elements. The child nodes of the "head" element are the "title" element and its text content. The child nodes of the "body" element are the "h1" and "p" elements and their text contents.
 
-Unable to use the regular parsing techniques, the browser utilizes a custom
-parser for parsing HTML. The parsing algorithm is described in
-detail by the HTML5 specification.
+The parse tree is also known as the Document Object Model (DOM), which is the interface that allows JavaScript and other languages to access and manipulate the elements and attributes of the document.
 
-The algorithm consists of two stages: tokenization and tree construction.
+## The parsing algorithm
 
-**Actions when the parsing is finished**
+The browser cannot parse HTML using regular top-down or bottom-up parsers, because HTML is not a regular language. HTML has some features that make it difficult to parse, such as:
 
-The browser begins fetching external resources linked to the page (CSS, images,
-JavaScript files, etc.).
+- The forgiving nature of the language: HTML allows missing or mismatched tags, unclosed tags, nested tags, etc.
+- The error tolerance of browsers: Browsers have to support well-known cases of invalid HTML and fix them in a consistent way.
+- The reentrant nature of parsing: The parsing process can be interrupted and modified by dynamic code (such as script elements containing document.write() calls) that can add extra tokens to the input.
 
-At this stage the browser marks the document as interactive and starts
-parsing scripts that are in "deferred" mode: those that should be
-executed after the document is parsed. The document state is
-set to "complete" and a "load" event is fired.
+Therefore, browsers use a custom parser for parsing HTML, which follows the algorithm specified by the HTML5 standard. The algorithm consists of two stages: tokenization and tree construction.
 
-Note there is never an "Invalid Syntax" error on an HTML page. Browsers fix
-any invalid content and go on.
+### Tokenization
+
+Tokenization is the process of breaking up the input stream into tokens. Tokens are units of meaning in HTML, such as start tags, end tags, attribute names, attribute values, comments, etc. For example, in this input stream:
+
+```html
+<h1 class="title">My Web Page</h1>
+```
+
+The tokenizer will produce these tokens:
+
+- A start tag token for `<h1>`
+- An attribute name token for `class`
+- An attribute value token for `"title"`
+- A character token for `M`
+- A character token for `y`
+- A character token for ` `
+- A character token for `W`
+- A character token for `e`
+- A character token for `b`
+- A character token for ` `
+- A character token for `P`
+- A character token for `a`
+- A character token for `g`
+- A character token for `e`
+- An end tag token for `</h1>`
+
+The tokenizer uses a state machine to determine what kind of token to produce based on the current character in the input stream. The state machine has different states for different contexts, such as data state, tag open state, tag name state, attribute name state, attribute value state, etc. The state machine transitions from one state to another based on the current character and emits tokens accordingly.
+
+### Tree construction
+
+Tree construction is the process of creating nodes and inserting them into the parse tree based on the tokens produced by the tokenizer. The tree constructor also uses a state machine to determine what kind of node to create and where to insert it based on the current token and the current state of the tree. The state machine has different states for different contexts, such as initial state, before html state, before head state, in head state, after head state, in body state, etc. The state machine transitions from one state to another based on the current token and modifies the tree accordingly.
+
+The tree constructor also maintains a stack of open elements, which is a list of elements that have been started but not yet closed. For example, in this input stream:
+
+```html
+<h1 class="title">My Web Page</h1>
+<p>This is a paragraph.</p>
+```
+
+When the tree constructor encounters the start tag token for `<h1>`, it creates an element node for "h1" and inserts it as a child of the current node (which is the "body" element). It also pushes the "h1" element to the stack of open elements. When it encounters the end tag token for `</h1>`, it pops the "h1" element from the stack of open elements and closes it. When it encounters the start tag token for `<p>`, it creates an element node for "p" and inserts it as a child of the current node (which is still the "body" element). It also pushes the "p" element to the stack of open elements. When it encounters the end tag token for `</p>`, it pops the "p" element from the stack of open elements and closes it.
+
+The stack of open elements helps the tree constructor keep track of the nesting and hierarchy of the elements in the document. It also helps the tree constructor handle errors and fix them. For example, if there is a missing or mismatched end tag, the tree constructor can use the stack of open elements to infer what element should be closed and insert an implied end tag.
+
+## Challenges and limitations of HTML parsing
+
+HTML parsing is not a trivial task, as it involves dealing with complex and dynamic input, error handling and recovery, and performance and security issues. Some of the challenges and limitations of HTML parsing are:
+
+- Performance: HTML parsing is a CPU-intensive task that can affect the loading time and responsiveness of web pages. Browsers have to optimize their parsing algorithms to minimize the overhead and latency of parsing. For example, browsers can use parallelism, caching, prefetching, and incremental rendering techniques to speed up parsing.
+- Security: HTML parsing can expose browsers to various types of attacks, such as cross-site scripting (XSS), code injection, denial-of-service (DoS), etc. Browsers have to implement various security measures to prevent malicious code from executing or compromising the browser. For example, browsers can use sandboxing, content security policy (CSP), same-origin policy (SOP), etc. to protect against attacks.
+- Compatibility: HTML parsing can vary across different browsers, as different browsers may have different implementations or interpretations of the HTML standard. Browsers have to ensure that their parsing algorithms are compatible with each other and with existing web pages. For example, browsers can use feature detection, graceful degradation, progressive enhancement, etc. to ensure compatibility.
+
+## Conclusion
+
+HTML parsing is a vital step in rendering web pages, as it determines how the browser will display and interact with the page elements. HTML parsing involves converting HTML markup into a parse tree using a custom parser that follows the HTML5 specification. The parser consists of two stages: tokenization and tree construction, which use state machines to produce tokens and nodes based on the input stream and the current state of the tree. HTML parsing also faces some challenges and limitations, such as performance, security, and compatibility issues, which require browsers to adopt various optimization and protection techniques.
 
 CSS interpretation
 ------------------
