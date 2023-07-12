@@ -38,6 +38,10 @@ popular searches from the internet as a whole. As you are typing
 "google.com" many blocks of code run and the suggestions will be refined
 with each keypress. It may even suggest "google.com" before you finish typing
 it.
+If you are on a webpage that has a keyboard shortcut set up to respond to the "g" key, pressing it might trigger a specific action on that page
+Pressing it might trigger a specific action on that page.
+Such as scrolling to the top of the page or opening a particular menu.
+
 
 The "enter" key bottoms out
 ---------------------------
