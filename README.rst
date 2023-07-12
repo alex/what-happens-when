@@ -28,16 +28,28 @@ Table of Contents
 The "g" key is pressed
 ----------------------
 The following sections explain the physical keyboard actions
-and the OS interrupts. When you press the key "g" the browser receives the
-event and the auto-complete functions kick in.
-Depending on your browser's algorithm and if you are in
-private/incognito mode or not various suggestions will be presented
-to you in the dropdown below the URL bar. Most of these algorithms sort
-and prioritize results based on search history, bookmarks, cookies, and
-popular searches from the internet as a whole. As you are typing
-"google.com" many blocks of code run and the suggestions will be refined
-with each keypress. It may even suggest "google.com" before you finish typing
-it.
+and the OS interrupts.
+
+* ``Physical Keyboard Input``: When the user presses the "``g``" key on the physical keyboard,
+  the browser receives the corresponding keyboard event.
+
+* ``Auto-Complete Functions``: Upon receiving the key event, the browser's auto-complete functions
+  are invoked. These functions are responsible for providing suggestions and
+  auto-completion options to the user.
+
+* ``Suggestions Generation``: Depending on the browser's algorithm and the user's browsing environment
+  (such as private/incognito mode), various suggestions are generated.
+  These suggestions are typically presented in a dropdown below the URL bar.
+
+* ``Algorithmic Prioritization``: The browser's suggestion algorithm sorts and prioritizes the results
+  based on several factors, including the user's search history, bookmarks, cookies, and popular
+  searches from the internet as a whole. This prioritization ensures that the most
+  relevant suggestions are displayed to the user.
+
+* ``Real-Time Refinement``: As the user continues to type "google.com" or any other input, the browser's
+  code executes multiple blocks in real-time. With each keypress, the suggestions are refined and
+  updated accordingly. In some cases, the algorithm may even predict and suggest "google.com" before
+  the user finishes typing it completely.
 
 The "enter" key bottoms out
 ---------------------------
