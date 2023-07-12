@@ -24,6 +24,10 @@ Table of Contents
 .. contents::
    :backlinks: none
    :local:
+   * Browser caching
+   * Browser extensions
+   * Web security
+   * Web performance
 
 The "g" key is pressed
 ----------------------
@@ -688,6 +692,35 @@ Plugins such as Flash or Java may execute as well, although not at this time on
 the Google homepage. Scripts can cause additional network requests to be
 performed, as well as modify the page or its layout, causing another round of
 page rendering and painting.
+
+Browser caching
+---------------
+
+When you visit a website, your browser will typically cache some of the content, such as 
+the HTML, CSS, and JavaScript files. This means that if you visit the website again later, 
+your browser will not have to download all of the content again. This can improve the loading 
+speed of the website.
+
+Browser extensions
+------------------
+
+Many browsers allow you to install extensions, which are small programs that can add new features 
+or functionality to the browser. For example, there are extensions that can block ads, improve privacy, 
+or change the appearance of the browser.
+
+Web security
+------------
+
+When you visit a website, there are a number of security considerations that need to be taken into account. 
+For example, the website should be using HTTPS to encrypt the traffic between the browser and the server. 
+This helps to protect your personal information from being intercepted by third parties.
+
+Web performance
+---------------
+
+There are a number of factors that can affect the performance of a website, such as the size of the content, 
+the number of images, and the use of JavaScript. It is important to optimize your website for performance 
+so that it loads quickly and smoothly for your users.
 
 .. _`Creative Commons Zero`: https://creativecommons.org/publicdomain/zero/1.0/
 .. _`"CSS lexical and syntax grammar"`: http://www.w3.org/TR/CSS2/grammar.html
