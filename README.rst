@@ -1,4 +1,4 @@
-What happens when...
+-1What happens when...
 ====================
 
 This repository is an attempt to answer the age-old interview question "What
@@ -148,7 +148,18 @@ Mach port where it is placed into an event queue. Events can then be read from
 this queue by threads with sufficient privileges calling the
 ``mach_ipc_dispatch`` function. This most commonly occurs through, and is
 handled by, an ``NSApplication`` main event loop, via an ``NSEvent`` of
-``NSEventType`` ``KeyDown``.
+``NSEventType`` ``KeyDown``. When a ``KeyDown NSEvent`` is sent to the app on OS X, 
+the interrupt signal triggers an interrupt event in the I/O Kit kext keyboard driver.
+The driver translates the signal into a key code which is then passed to the OS X
+WindowServer process. The WindowServer, in turn, dispatches the event to any appropriate
+applications that are active or listening, through their Mach port. The event is placed
+into an event queue, where it can be read by threads with sufficient privileges by
+calling the mach_ipc_dispatch function.
+
+To handle the KeyDown event, the NSApplication main event loop comes into play.
+It handles the event via an NSEvent of NSEventType KeyDown, ensuring that the
+appropriate actions are taken based on the specific key pressed. This process allows
+the OS X system to receive and process keyboard input from the user effectively.
 
 (On GNU/Linux) the Xorg server listens for keycodes
 ---------------------------------------------------
