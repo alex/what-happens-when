@@ -482,17 +482,29 @@ server name instead of ``google.com``.
 
 Load balancing
 --------------
-To ensure high availability of the www.google.com website, Google could be using a load
-balancer which will intercept requests from clients and distributes them among a set of
-replicated web servers which will all serve the content of the same website, www.google.com.
+To ensure high availability of the www.google.com website, Google could be
+using a load balancer which will intercept all requests from clients, acting
+as a front intermediary between clients and a set of replicated web servers
+which all serve the content of the same website, www.google.com.
 
-So, in our case the HTTP request would be sent to the load balancer and then the load balancer
-would transmit the request to an available web server among a pool of web server, determined
-through an algorithm, called load balancing algorithm.
+The load balancer will then forward the request to an available (running  and
+not overloaded) web server, chosen among the pool of web servers by following
+an algorithm: the load balancing algorithm. Finally the chosen web server will
+handle the request and return the response to the client.
 
-Once the load balancer would have transmitted an HTTP request to a web server, that server would
-handle the request and return the response of the www.google.com URL.
+The load balancer used could be a:
+- Software load balancer:
+Usage of a decicated software that can be installed on a standard server or a
+virtual machine.
 
+- Hardware load balancers:
+Usage of a dedicated hardware with preinstalled custom software.
+or A custom appliance.
+
+Also there are many load balancing algorithms, among them :
+- Round robin algorithnm: sequentially loop through all server.
+- Least connections: For each new request forward the request to the
+server with the lowest number of opened connections.
 
 HTTP Server Request Handle
 --------------------------
