@@ -177,7 +177,12 @@ Parse URL
 
 Is it a URL or a search term?
 -----------------------------
-
+A URL (Uniform Resource Locator) is a unique identifier used to locate resources
+on the internet. It is also referred to as a web address. It consists of many
+parts --including;
+* protocol which is the first part of URL that defines how information is accessed
+  The second part is IP Address or domain name and possibly subdomain where
+  resource is located.
 When no protocol or valid domain name is given the browser proceeds to feed
 the text given in the address box to the browser's default web search engine.
 In many cases the URL has a special piece of text appended to it to tell the
