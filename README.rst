@@ -39,6 +39,8 @@ popular searches from the internet as a whole. As you are typing
 with each keypress. It may even suggest "google.com" before you finish typing
 it.
 
+When the "g" key is pressed in a browser, it typically triggers the browser's default behavior of focusing on the search bar or the address bar. This allows the user to quickly start typing their search query or website URL. It's a convenient shortcut to streamline the browsing experience and initiate a search or navigate to a specific webpage.
+
 The "enter" key bottoms out
 ---------------------------
 
