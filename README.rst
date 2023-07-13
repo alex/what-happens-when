@@ -311,14 +311,14 @@ named ``socket`` and requests a TCP socket stream - ``AF_INET/AF_INET6`` and
   Linux).
 * This segment is sent to the Network Layer, which wraps an additional IP
   header. The IP address of the destination server as well as that of the
-  current machine is inserted to form a packet.
+  current machine is insert form a packet.
 * The packet next arrives at the Link Layer. A frame header is added that
   includes the MAC address of the machine's NIC as well as the MAC address of
   the gateway (local router). As before, if the kernel does not know the MAC
   address of the gateway, it must broadcast an ARP query to find it.
-
+add:this is tough
 At this point the packet is ready to be transmitted through either:
-
+ 
 * `Ethernet`_
 * `WiFi`_
 * `Cellular data network`_
