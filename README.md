@@ -1,4 +1,4 @@
-# From Typing “https://www.google.com" to Displaying the Web Page: How does it work? The overview.
+# From Typing “https://www.google.com" to Displaying the Web Page: How does it work? The overview...
 
 <p>A lot happen when you type “https://www.google.com" in your browser and hit the “Enter” button, there are series of processes behind the scenes that retrieves and display the desired web page (google).
 
