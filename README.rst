@@ -1,4 +1,4 @@
-What happens when...
+What happens when type www.google.com
 ====================
 
 This repository is an attempt to answer the age-old interview question "What
