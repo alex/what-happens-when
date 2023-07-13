@@ -367,6 +367,26 @@ This send and receive happens multiple times following the TCP connection flow:
    * The other sides ACKs the FIN packet and sends its own FIN
    * The closer acknowledges the other side's FIN with an ACK
 
+SSL Certificate
+---------------
+The SSL certificate is crucial in creating a secure connection between your browser and the website's server when you type a URL in a browser and press Enter. A step-by-step explanation of the role the SSL certificate plays is provided below:
+
+* Client Sends HTTPS Request: When you type a URL in your browser that begins with "https://" and hitEnter, your browser detects that the website needs a secure connection. Instead of making a standard HTTP request, it starts an HTTPS request.
+
+* Server Responds by Sending SSL Certificate: In response to the browser's request, the server sends its SSL certificate. The certificate includes the public key for the server as well as details likethe domain name, issuing organisation, and validity term.
+
+* Browser Validates SSL Certificate: The browser then runs a number of tests to confirm the validity of the SSL certificate. Using the trusted Certificate Authority's (CA) public key, it checks the digital signature on the certificate. The connection is made by the browser if the certificate is trusted and the signature is valid. If not, a warning or error may be shown to show that the certificate is untrusted.
+
+* Secure Connection Created: After the SSL certificate has been validated, the browser creates a session key at random to create an encrypted secure connection. Using the server's public key from the SSL certificate, it encrypts the session key before sending it to the server.
+
+* The session key is decrypted by the server using its private key, which is kept secret by the server. The server receives the encrypted session key. The same session key is now used to encrypt anddecrypt data during communication between the server and browser.
+
+* Secure Data Transfer: Using the session key, any data transferred between the browser and the server once the secure connection has been created is encrypted. This guarantees that the information iskept private and shielded from outside eavesdropping or alteration.
+
+* The SSL/TLS handshake, which entails the exchange of the SSL certificate, authentication, and creation of an encrypted connection, is now finished. The secure communication between the browser and the server can continue.
+
+* The HTTPS protocol uses the SSL certificate to encrypt the data sent between your browser and the website, guaranteeing its confidentiality. Additionally, it confirms the legitimacy of the website, giving you confidence that you are connected to the legitimate server and not a fake one. During your web browsing session, the SSL certificate is a crucial element in enabling safe and trusted communications.
+
 TLS handshake
 -------------
 * The client computer sends a ``ClientHello`` message to the server with its
