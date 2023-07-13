@@ -39,6 +39,53 @@ popular searches from the internet as a whole. As you are typing
 with each keypress. It may even suggest "google.com" before you finish typing
 it.
 
+what happens when "google.com" is typed into the browser
+--------------------------------------------------------
+Exploring the Journey of a Web Request
+
+*Introduction
+--------------
+Have you ever wondered what happens behind the scenes when you enter a URL like "https://www.google.com" in your browser? In this blog post, we will take a step-by-step journey through the stages involved in processing the request, from DNS resolution to the loading of the webpage.
+
+*DNS Request
+------------
+The browser sends a DNS request to resolve the domain name "www.google.com" to an IP address. A DNS resolver queries authoritative DNS server to obtain the IP address associated with the domain. The resolver receives the IP address, which is cached for future use.
+
+*TCP/IP
+--------
+The browser establishes a TCP/IP connection with the server at the obtained IP address.TCP ensures reliable communication by breaking data into packets and managing their sequencing. IP handles routing the packets across the internet.
+
+*Firewall
+-----------
+The request may pass through a firewall, which acts as a barrier between your computer and the internet. Firewalls examine network traffic, blocking unauthorized or potentially malicious requests while allowing legitimate ones to pass through.
+
+*HTTPS/SSL
+-----------
+Since "https://www.google.com" is specified, a secure connection is established using the HTTPS protocol. HTTPS encrypts the data exchanged between the browser and the server.
+SSL/TLS protocols handle the encryption and decryption of data, ensuring confidentiality and integrity.
+
+*Load Balancer
+---------------
+In large-scale web applications, the request may encounter a load balancer before reaching the web server. Load balancers distribute incoming traffic across multiple servers to optimize performance and prevent overload. Load balancers use various algorithms to decide which server should handle the request.
+
+*Web Server
+-------------
+Once the request reaches the web server, it processes the HTTP(S) request and retrieves the requested resources. The web server constructs an HTTP response containing the requested web page.
+
+*Application Server
+-------------------
+Web servers often interact with application servers to execute dynamic server-side code or retrieve data from databases. Application servers handle complex processing, such as search queries, user authentication, or personalization. The application server generates the necessary data to fulfil the request received from the web server.
+
+*Database
+-----------
+If the application server requires data from a database, it connects to the appropriate database server. The database server retrieves, processes, and provides the requested data to the application server.
+
+*Conclusion
+------------
+The process of loading a webpage involves DNS resolution, TCP/IP communication, firewall checks, HTTPS/SSL encryption, load balancing, web server processing, application server execution, and database interactions. Understanding this journey provides insight into the complexity and collaboration required to deliver web content seamlessly.
+
+
+
 The "enter" key bottoms out
 ---------------------------
 
