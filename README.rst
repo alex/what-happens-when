@@ -1,5 +1,6 @@
 What happens when...
 ====================
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_uTh08cA96VAi7qF41dMp-vKb38FzLFGPQA&usqp=CAU" width="1000" height="300">
 
 This repository is an attempt to answer the age-old interview question "What
 happens when you type google.com into your browser's address box and press
