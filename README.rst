@@ -39,6 +39,82 @@ popular searches from the internet as a whole. As you are typing
 with each keypress. It may even suggest "google.com" before you finish typing
 it.
 
+-   **Physical keyboard action**
+
+    -   When you press the \"g\" key on your keyboard, it physically
+        activates a switch mechanism beneath the keycap.
+
+    -   This mechanism completes an electrical circuit, generating an
+        electrical signal that represents the \"g\" key press.
+
+    -   The keyboard hardware then sends this signal to the computer.
+
+-   **Keyboard driver and interrupt**
+
+    -   The computer\'s operating system has a keyboard driver that
+        handles input from the keyboard hardware.
+
+    -   The keyboard driver listens for hardware interrupts, which are
+        signals from the keyboard hardware indicating that a key has
+        been pressed.
+
+    -   When the keyboard driver detects the interrupt for the \"g\" key
+        press, it generates an interrupt request to the CPU.
+
+-   **CPU interrupt handling**
+
+    -   The CPU receives the interrupt request from the keyboard driver
+        and suspends the currently running process or application to
+        handle the interrupt.
+
+    -   The interrupt handler associated with keyboard input takes
+        control and processes the interrupt.
+
+-   **Event dispatching**
+
+    -   The interrupt handler dispatches the keyboard event to the
+        appropriate application or process, typically the one with the
+        currently focused window or input field.
+
+    -   If a web browser window is in focus, the keyboard event is sent
+        to the browser\'s event handling system.
+
+-   **Browser event handling**
+
+    -   The browser\'s event handling system receives the keyboard event
+        and triggers an event handler specifically designed to handle
+        keyboard input.
+
+    -   In the case of pressing the \"g\" key, the event handler for
+        keyboard input takes over.
+
+-   **Auto-complete and suggestions**
+
+    -   The browser\'s event handler for keyboard input activates
+        auto-complete functionality when the \"g\" key is pressed.
+
+    -   Depending on the browser\'s algorithm, auto-complete suggestions
+        may be presented in a dropdown below the URL bar or search bar.
+
+    -   These suggestions are generated based on various factors such as
+        search history, bookmarks, cookies, and popular searches.
+
+-   **Refinement of suggestions**
+
+    -   As you continue typing \"google.com\" or any other input,
+        additional blocks of code run within the browser to refine and
+        update the auto-complete suggestions.
+
+    -   The suggestions may change and prioritize results based on the
+        evolving input and the underlying algorithm.
+
+It\'s important to note that the specific implementation and behavior
+may vary slightly depending on the operating system, keyboard driver,
+and browser being used. However, the general process of physical
+keyboard actions, OS interrupts, event handling, and suggestion
+generation remains consistent across different systems and browsers.
+
+
 The "enter" key bottoms out
 ---------------------------
 
