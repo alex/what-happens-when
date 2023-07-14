@@ -520,6 +520,17 @@ to the browser it undergoes the below process:
 * Rendering - Construct DOM Tree → Render Tree → Layout of Render Tree →
   Painting the render tree
 
+
+Caching
+-------
+During the process of loading a web page, browsers utilize caching mechanisms to improve performance and reduce network requests. Caching involves storing a copy of the requested resources locally, allowing subsequent visits to the same page to be faster.
+
+When the browser receives a response from the server containing web resources (such as HTML, CSS, JavaScript, images, etc.), it checks if the resources have caching instructions provided by the server. These instructions are included in the response headers, specifically the "Cache-Control" and "Expires" headers.
+
+If the server instructs the browser to cache the resources, the browser stores them locally on the user's machine. The next time the user visits the same page, the browser checks the cache first before making a request to the server. If the resources are still valid based on the caching instructions (e.g., they haven't expired), the browser can load the resources from the cache instead of making a new network request. This significantly reduces the load time and improves the user experience.
+
+Caching plays a crucial role in web performance optimization, as it minimizes the amount of data that needs to be transferred over the network and reduces server load. However, it's important for web developers to set appropriate caching headers to balance freshness and responsiveness of the content.
+
 Browser
 -------
 
