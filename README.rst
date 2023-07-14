@@ -369,6 +369,12 @@ This send and receive happens multiple times following the TCP connection flow:
 
 TLS handshake
 -------------
+The TLS (Transport Layer Security) handshake is a crucial process that occurs
+when establishing a secure connection between a client (e.g., web browser) and a server 
+(e.g., website) over the internet. This handshake ensures the confidentiality, integrity,
+and authenticity of the data transmitted between the two entities. 
+Let's take a closer look at the TLS handshake process:
+
 * The client computer sends a ``ClientHello`` message to the server with its
   Transport Layer Security (TLS) version, list of cipher algorithms and
   compression methods available.
@@ -396,6 +402,13 @@ TLS handshake
 
 * From now on the TLS session transmits the application (HTTP) data encrypted
   with the agreed symmetric key.
+
+Once the TLS handshake is complete, the client and server can securely exchange data using the established session keys. 
+The encryption and decryption algorithms specified in the cipher suite determine the level of 
+security and cryptographic operations used for data protection.
+
+The TLS handshake is a critical component of secure communication over the internet,
+enabling the encryption of sensitive information and ensuring the authenticity of the participating entities.
 
 If a packet is dropped
 ----------------------
