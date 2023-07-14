@@ -592,7 +592,9 @@ HTML cannot be parsed using the regular top-down or bottom-up parsers.
 
 The reasons are:
 
-* The forgiving nature of the language.
+* The forgiving nature of the language.HTML is forgiving because it can handle 
+  syntax errors or missing elements and still attempt to render the content, 
+  providing a more lenient parsing experience compared to strict languages.
 * The fact that browsers have traditional error tolerance to support well
   known cases of invalid HTML.
 * The parsing process is reentrant. For other languages, the source doesn't
