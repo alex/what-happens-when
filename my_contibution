@@ -1,0 +1,11 @@
+Further addition to TLS Handshake
+
+TLS handshake process is complex and involves additional details and steps, such as Support for Different Versions of TLS, Key Exchange Algorithms, and optional features like Client Authentication.
+
+Support for Different Versions of TLS: The TLS handshake process involves negotiation between the client and server to determine the TLS version to be used for the session. TLS has multiple versions such as TLS 1.0, TLS 1.1, TLS 1.2, TLS 1.3, etc. The client and server choose a compatible TLS version that both support and agree upon for secure communication.
+
+Key Exchange Algorithms: During the TLS handshake, the client and server exchange random numbers and a special number called the Pre-Master Secret. These numbers are combined with additional data to create a shared secret, known as the Master Secret. Key exchange algorithms are used to securely generate the Master Secret from the exchanged values. The Master Secret is then used to derive session keys that are used for encryption and hashing during the secure session.
+
+Client authentication (Optional): TLS supports optional client authentication, where the client proves its identity to the server. This is done using public/private key pairs and certificates. In addition to server authentication, the client may also need to authenticate itself to the server, depending on the configuration. This two-way authentication provides mutual trust between the client and server.
+
+These additional details and steps in the TLS handshake process ensure the security and integrity of the communication between the client and server.
