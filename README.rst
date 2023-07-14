@@ -510,6 +510,28 @@ and IIS for Windows.
   is running on PHP, the server uses PHP to interpret the index file, and
   streams the output to the client.
 
+Handling Multiple Requests
+-----------------------------
+Typically, there are numerous requests originating from various browsers
+simultaneously.
+If only one server handles each of these requests, the following may occur:
+* The server may become overburdened and unable to process requests adequately.
+  This may cause a delay in response since the server may take longer to respond
+  to requests.
+* Depending on the server's resources (memory, CPU, bandwidth) limit, the resources
+  may be
+  overstressed, resulting in a server crash.
+* The server's performance may suffer significantly as a result of indefinite timeouts
+  and server problems.
+For the server to be efficient, there must be other servers assisting it.
+This is where a load balancer comes in. A load balancer is either hardware or software
+that utilizes an algorithm to distribute network traffic evenly among several servers,
+ensuring scalability and efficiency. When your browser submits a connection request,
+it is routed to the load balancer, which directs the request to a server that is available
+to respond to your browser request
+Load balancers include HAproxy, Google Cloud Load Balancing, Amazon Elastic Load Balancer,
+Nginx, and others.
+
 Behind the scenes of the Browser
 ----------------------------------
 
