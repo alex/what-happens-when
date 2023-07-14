@@ -709,3 +709,8 @@ page rendering and painting.
 .. _`downgrade attack`: http://en.wikipedia.org/wiki/SSL_stripping
 .. _`OSI Model`: https://en.wikipedia.org/wiki/OSI_model
 .. _`Spanish`: https://github.com/gonzaleztroyano/what-happens-when-ES
+
+
+Application Server:
+In complex web applications, an application server often comes into play. It handles the dynamic aspects of the website, executing business logic, processing user input, and interacting with databases. In Google's case, with its extensive suite of services, an application server may handle tasks like search queries, personalization, and more.
+This is why google is well optimized
