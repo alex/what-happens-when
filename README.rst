@@ -503,9 +503,9 @@ and IIS for Windows.
   URL Rewrite for IIS), it tries to match the request against one of the
   configured rules. If a matching rule is found, the server uses that rule to
   rewrite the request.
-* The server goes to pull the content that corresponds with the request,
-  in our case it will fall back to the index file, as "/" is the main file
-  (some cases can override this, but this is the most common method).
+* The server retrieves the content that corresponds with the request. In this
+  case, it will fall back to the index file as "/" is the default main file
+  (although some cases can override this behavior, it is the most common method).
 * The server parses the file according to the handler. If Google
   is running on PHP, the server uses PHP to interpret the index file, and
   streams the output to the client.
