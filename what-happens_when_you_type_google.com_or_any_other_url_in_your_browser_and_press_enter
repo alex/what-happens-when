@@ -1,0 +1,38 @@
+
+Ever wondered about the intricate processes that occur behind the scenes when you type a website address into your browser and hit Enter? The journey of a web request involves a multitude of components working together seamlessly. In this blog post, we will dive into the details of what happens when you type "google.com" in your browser and press Enter, covering DNS request, TCP/IP, firewalls, HTTPS/SSL, load-balancers, web servers, application servers, and databases.
+
+1. DNS Request:
+
+The process commences with a Domain Name System (DNS) request. Your browser needs to translate the human-readable domain name "google.com" into an IP address. It consults DNS servers to obtain the corresponding IP address. If the IP address is not cached locally, the request is sent to DNS servers to perform the resolution.
+
+2. TCP/IP:
+
+With the IP address acquired, the browser establishes a connection using the Transmission Control Protocol (TCP) and the Internet Protocol (IP). TCP ensures reliable data transmission by breaking it into packets and reassembling them upon arrival at the destination.
+
+3. Firewalls:
+
+Firewalls play a crucial role in network security. Before accessing the web server, your request may encounter a firewall. Firewalls examine incoming and outgoing network traffic, implementing security policies to filter potentially malicious requests and protect against unauthorized access.
+
+4. HTTPS/SSL:
+
+To ensure secure communication, many websites employ Hypertext Transfer Protocol Secure (HTTPS) in conjunction with the Secure Sockets Layer (SSL) or Transport Layer Security (TLS) protocols. This encryption safeguards data transmission, protecting it from interception and manipulation. Your browser and the web server engage in an SSL/TLS handshake, establishing a secure connection.
+
+5. Load-Balancer:
+
+High-traffic websites often employ load-balancers to distribute incoming requests across multiple servers. Load-balancers enhance performance and ensure that no single server becomes overwhelmed. They intelligently distribute requests based on factors such as server availability, response times, and resource utilization.
+
+6. Web Server:
+
+The web server is responsible for handling HTTP requests. Upon receiving your request, the web server processes it, retrieves the requested resources, and generates an HTTP response. It may also execute server-side scripts, such as PHP or Python, to generate dynamic content.
+
+7. Application Server:
+
+In certain cases, the web server forwards requests requiring dynamic processing to an application server. Application servers execute server-side scripts and interact with databases and other resources to generate personalized responses. They enable the execution of complex business logic and facilitate scalability.
+
+8. Database:
+
+Many websites rely on databases to store and retrieve data. The application server communicates with the database to fetch relevant information needed to generate a response. Databases, such as MySQL or PostgreSQL, manage structured data efficiently and enable persistent storage of website content, user data, and more.
+
+Conclusion:
+
+The process of loading a webpage involves a harmonious collaboration among various components. From DNS requests translating domain names into IP addresses to establishing secure connections, passing through firewalls, distributing requests with load-balancers, processing on web and application servers, and interacting with databases, each step contributes to the successful delivery of a web page. Understanding this intricate process provides a glimpse into the impressive technology that powers our browsing experiences and enables the seamless retrieval of information from the internet.
