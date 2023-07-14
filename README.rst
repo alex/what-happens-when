@@ -674,6 +674,11 @@ GPU Rendering
   of ``GPU`` massive parallelism for float point calculations required for
   the rendering process.
 
+* In summary, GPU rendering offers numerous advantages in terms of parallel
+processing capabilities, faster floating-point calculations, and optimized workload
+distribution. By leveraging GPUs, graphical software layers can achieve improved
+rendering performance, enabling real-time rendering applications to deliver high-
+quality and visually captivating experiences.
 
 Window Server
 -------------
