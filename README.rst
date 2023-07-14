@@ -665,6 +665,8 @@ Page Rendering
 
 GPU Rendering
 -------------
+   Graphics Processing Unit in the automatic generation of two-dimensional 
+   or three-dimensional images from a model by means of computer programs
 
 * During the rendering process the graphical computing layers can use general
   purpose ``CPU`` or the graphical processor ``GPU`` as well.
