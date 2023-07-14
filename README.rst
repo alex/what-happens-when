@@ -676,7 +676,7 @@ GPU Rendering
 
 
 Window Server
--------------
+--------------
 
 Post-rendering and user-induced execution
 -----------------------------------------
