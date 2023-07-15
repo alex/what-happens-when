@@ -178,10 +178,10 @@ Parse URL
 Is it a URL or a search term?
 -----------------------------
 
-When no protocol or valid domain name is given the browser proceeds to feed
-the text given in the address box to the browser's default web search engine.
-In many cases the URL has a special piece of text appended to it to tell the
-search engine that it came from a particular browser's URL bar.
+The browser continues to pass the text entered in the address box to
+the browser's default web search engine when no protocol or valid domain
+name is provided.A special piece of text is frequently attached to the URL
+to inform the search engine that it originated from a specific browser's URL bar.
 
 Convert non-ASCII Unicode characters in the hostname
 ------------------------------------------------
@@ -379,10 +379,10 @@ TLS handshake
   contains a public key that will be used by the client to encrypt the rest of
   the handshake until a symmetric key can be agreed upon.
 
-* The client verifies the server digital certificate against its list of
-  trusted CAs. If trust can be established based on the CA, the client
-  generates a string of pseudo-random bytes and encrypts this with the server's
-  public key. These random bytes can be used to determine the symmetric key.
+* The client checks the server's digital certificate against its trusted CA list
+to ensure its validity. The client creates a string of pseudo-random bytes and
+encrypts them with the server's public key if confidence can be established based
+on the CA. The symmetric key can be found by using these random bytes.
 
 * The server decrypts the random bytes using its private key and uses these
   bytes to generate its own copy of the symmetric master key.
