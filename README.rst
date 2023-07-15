@@ -689,6 +689,36 @@ the Google homepage. Scripts can cause additional network requests to be
 performed, as well as modify the page or its layout, causing another round of
 page rendering and painting.
 
+JavaScript execution
+----------------------------------------
+After the rendering engine constructs the Render Tree and calculates the CSS styles, it proceeds to execute any JavaScript code present on the webpage. JavaScript is a programming language that allows dynamic behavior and interactivity on webpages. It is commonly used for tasks such as form validation, data manipulation, DOM manipulation, making AJAX requests, and handling user interactions.
+
+The browser's JavaScript engine is responsible for interpreting and executing the JavaScript code. Different browsers have their own JavaScript engines, such as V8 in Google Chrome, SpiderMonkey in Firefox, and JavaScriptCore in Safari.
+
+Here is a high-level overview of the JavaScript execution process:
+
+a. Parsing: The JavaScript engine parses the JavaScript code to identify its syntax and structure. It breaks down the code into individual statements and expressions.
+
+b. Compilation: The parsed code is then compiled into an intermediate representation or bytecode. This step involves analyzing the code, optimizing it if possible, and preparing it for execution.
+
+c. Execution: The compiled code is executed line by line, following the control flow of the program. Variables are declared and assigned values, functions are defined and invoked, and various operations are performed.
+
+d. Memory management: The JavaScript engine manages memory allocation and deallocation. It creates memory spaces for variables, objects, and functions, and releases them when they are no longer needed. This process includes garbage collection to reclaim memory occupied by unused objects.
+
+During JavaScript execution, several important concepts come into play:
+
+DOM manipulation: JavaScript can access and modify the Document Object Model (DOM), which represents the structure of the HTML document. It allows developers to add, remove, or modify elements, attributes, and content on the webpage dynamically.
+
+Event handling: JavaScript enables the registration and handling of events triggered by user interactions, such as clicks, keypresses, or form submissions. Event handlers are functions that respond to specific events and execute custom logic when triggered.
+
+AJAX requests: JavaScript facilitates asynchronous communication with servers using XMLHttpRequest or Fetch API. This allows the browser to send HTTP requests in the background, retrieve data, and update parts of the webpage without requiring a full page reload.
+
+Third-party libraries and frameworks: JavaScript offers a rich ecosystem of libraries and frameworks that provide additional functionalities and simplify web development. Examples include jQuery, React, Angular, and Vue.js.
+
+It's important to note that JavaScript execution can be computationally intensive, especially for complex web applications. Therefore, developers strive to write efficient and optimized code to ensure smooth user experiences and minimize performance bottlenecks.
+
+By understanding the process of JavaScript execution, developers can leverage the power of the language to create dynamic and interactive web experiences.
+
 .. _`Creative Commons Zero`: https://creativecommons.org/publicdomain/zero/1.0/
 .. _`"CSS lexical and syntax grammar"`: http://www.w3.org/TR/CSS2/grammar.html
 .. _`Punycode`: https://en.wikipedia.org/wiki/Punycode
