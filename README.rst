@@ -520,6 +520,36 @@ to the browser it undergoes the below process:
 * Rendering - Construct DOM Tree → Render Tree → Layout of Render Tree →
   Painting the render tree
 
+* User Interface (UI):
+    The user interface refers to the visual elements and interactive features of the browser that users interact with, including the address bar, navigation buttons, and bookmarks.
+
+* Rendering Engine:
+    The rendering engine is responsible for interpreting and rendering HTML, CSS, and JavaScript code to correctly display web pages. Different browsers use different rendering engines, such as Blink, Gecko, and WebKit.
+
+* Network Stack:
+    The network stack handles network requests and responses, allowing the browser to communicate with web servers using protocols like HTTP or HTTPS.
+
+* HTML Parser:
+    The HTML parser processes the HTML code of a web page and creates a Document Object Model (DOM) tree, representing the structure and content of the web page.
+
+* CSS Engine:
+    The CSS engine processes the CSS code associated with a web page, applying styles to DOM elements to determine how they should be displayed.
+
+* JavaScript Engine:
+    The JavaScript engine executes JavaScript code on web pages, enabling dynamic functionality and interactivity.
+
+* Rendering Pipeline:
+    The rendering pipeline converts processed HTML, CSS, and JavaScript into pixels on the screen, involving steps like layout, painting, and compositing.
+
+* Caching:
+    Browsers often cache static resources like images, CSS files, and scripts locally to speed up subsequent visits to a website.
+
+* Security:
+    Browsers implement various security measures, such as encryption, phishing and malware protection, sandboxing, and warning mechanisms, to ensure user safety while browsing.
+
+* Extensions and Plugins:
+    Browsers support extensions and plugins that enhance functionality or add new features, allowing users to customize their browsing experience.
+
 Browser
 -------
 
