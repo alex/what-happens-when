@@ -367,6 +367,22 @@ This send and receive happens multiple times following the TCP connection flow:
    * The other sides ACKs the FIN packet and sends its own FIN
    * The closer acknowledges the other side's FIN with an ACK
 
+SSL Handshake
+-------------
+Upon receiving the request, the server responds by initiating the SSL handshake process. This process establishes a secure encrypted connection between your browser and the server. The SSL handshake involves the following steps:
+
+* Server Certificate Presentation:
+The server presents its digital certificate to your browser. This certificate contains the server's public key, which is used for encryption and decryption.
+
+* Certificate Verification:
+Your browser verifies the authenticity and validity of the server's certificate. It checks if the certificate is issued by a trusted certificate authority (CA), hasn't expired, and matches the requested domain.
+
+* Key Exchange:
+During the SSL handshake, your browser generates a random symmetric session key. It encrypts this key using the server's public key obtained from the certificate and sends it to the server.
+
+* Establishing the Secure Connection:
+The server decrypts the session key using its private key, which is kept secure and inaccessible to unauthorized parties. Both the browser and the server now possess the same symmetric session key. This key will be used to encrypt and decrypt the data exchanged during the session.
+
 TLS handshake
 -------------
 * The client computer sends a ``ClientHello`` message to the server with its
