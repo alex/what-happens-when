@@ -1,0 +1,18 @@
+Window Server
+-------------
+
+Time frame between request and response
+---------------------------------------
+The time frame between a request and a response can vary depending on the 
+context and the specific systems involved. However, I'll provide a general 
+overview of the typical process for a request and response in a 
+web-based scenario.
+The overall time frame between the request and response comprises several 
+components, including network latency, server processing time, and 
+client-side processing time. It can range from a few milliseconds for simple 
+requests with low network latency to several seconds or more for complex 
+requests or situations with high network congestion.
+
+
+
+Post-rendering and user-induced execution
