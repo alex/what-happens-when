@@ -223,6 +223,15 @@ DNS lookup
   ``ARP process`` below for the DNS server.
 * If the DNS server is on a different subnet, the network library follows
   the ``ARP process`` below for the default gateway IP.
+* The DNS server first queries one of the 13 root nameservers with the given
+  domain name, which will then return the IP address of the appropriate
+  Top-Level Domain (TLD) nameserver.
+* The TLD nameserver that will return the address of the appropriate
+  Authoritative nameserver.
+* The authoritative nameserver’s records are handled by the domain name
+  registrar that assigned the website its domain name as well as other
+  subdomains. This server will finally return the IP address for the
+  requested domain to the DNS server.
 
 
 ARP process
