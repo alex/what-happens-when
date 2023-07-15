@@ -689,6 +689,24 @@ the Google homepage. Scripts can cause additional network requests to be
 performed, as well as modify the page or its layout, causing another round of
 page rendering and painting.
 
+The Journey of a Web Request
+----------------------------
+
+When you type "https://www.google.com" in your browser and press Enter, several steps are set in motion:
+
+1. **DNS Request**: Your browser contacts a DNS server to translate the domain name into an IP address.
+2. **TCP/IP**: A TCP connection is established to ensure reliable data transfer using IP for routing.
+3. **Firewall**: Traffic passes through firewalls for security and filtering.
+4. **HTTPS/SSL**: A secure connection is established with encryption and SSL certificates.
+5. **Load-Balancer**: Requests are distributed across servers to balance traffic load.
+6. **Web Server**: The web server retrieves files and resources for the requested webpage.
+7. **Application Server**: Dynamic aspects of the website are handled, such as executing scripts and interacting with databases.
+8. **Database**: Data is stored and retrieved from databases to manage information.
+
+This process allows the web server to generate the necessary code, which is then sent back to your browser for rendering and displaying the webpage.
+
+For a detailed understanding, read the full blog post [here](insert your Medium or LinkedIn blog post URL here).
+
 .. _`Creative Commons Zero`: https://creativecommons.org/publicdomain/zero/1.0/
 .. _`"CSS lexical and syntax grammar"`: http://www.w3.org/TR/CSS2/grammar.html
 .. _`Punycode`: https://en.wikipedia.org/wiki/Punycode
