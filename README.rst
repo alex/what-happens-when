@@ -111,7 +111,7 @@ the appropriate handler. Thus, the kernel is entered.
 
 The HID transport passes the key down event to the ``KBDHID.sys`` driver which
 converts the HID usage into a scancode. In this case, the scan code is
-``VK_RETURN`` (``0x0D``). The ``KBDHID.sys`` driver interfaces with the
+``VK_RETURN`` (``0x0D``u). The ``KBDHID.sys`` driver interfaces with the
 ``KBDCLASS.sys`` (keyboard class driver). This driver is responsible for
 handling all keyboard and keypad input in a secure manner. It then calls into
 ``Win32K.sys`` (after potentially passing the message through 3rd party
@@ -688,6 +688,10 @@ Plugins such as Flash or Java may execute as well, although not at this time on
 the Google homepage. Scripts can cause additional network requests to be
 performed, as well as modify the page or its layout, causing another round of
 page rendering and painting.
+*How the dns works
+---------------------------------------
+The Internet’s DNS system works much like a phone book by managing the mapping between names and numbers. DNS servers translate requests for names into IP addresses, controlling which server an end user will reach when they type a domain name into their web browser. These requests are called queries.
+
 
 .. _`Creative Commons Zero`: https://creativecommons.org/publicdomain/zero/1.0/
 .. _`"CSS lexical and syntax grammar"`: http://www.w3.org/TR/CSS2/grammar.html
