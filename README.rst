@@ -211,11 +211,19 @@ DNS lookup
 
 * Browser checks if the domain is in its cache. (to see the DNS Cache in
   Chrome, go to `chrome://net-internals/#dns <chrome://net-internals/#dns>`_).
+* If the record is not found in the browser cache, the request is sent to the operating system of the user to check if 
+  there exists a record for the domain name.
 * If not found, the browser calls ``gethostbyname`` library function (varies by
   OS) to do the lookup.
 * ``gethostbyname`` checks if the hostname can be resolved by reference in the
   local ``hosts`` file (whose location `varies by OS`_) before trying to
   resolve the hostname through DNS.
+* The OS-level resolver runs a process called stub resolver (or DNS client) to check if there exists a record for the 
+  domain name in its cache.
+* The stub resolver is a part of the operating system that is responsible for initiating DNS queries on behalf of 
+  applications running on the system. It interacts with the DNS resolver library to perform DNS lookups.
+* If the record does not exist locally, a recursive flag is set on the request, ready to be sent 
+  to a DNS recursive resolver inside the Internet service provider (ISP).
 * If ``gethostbyname`` does not have it cached nor can find it in the ``hosts``
   file then it makes a request to the DNS server configured in the network
   stack. This is typically the local router or the ISP's caching DNS server.
