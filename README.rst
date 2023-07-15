@@ -628,6 +628,7 @@ CSS interpretation
   contains CSS rules with selectors and objects corresponding CSS grammar.
 * A CSS parser can be top-down or bottom-up when a specific parser generator
   is used.
+* CSS interpretation is not limited to the initial rendering. It also handles dy  namic changes to the page, such as when JavaScript modifies the CSS styles or   when user interactions trigger hover effects or animations defined in the CSS   code.
 
 Page Rendering
 --------------
