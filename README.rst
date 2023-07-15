@@ -223,7 +223,7 @@ DNS lookup
   ``ARP process`` below for the DNS server.
 * If the DNS server is on a different subnet, the network library follows
   the ``ARP process`` below for the default gateway IP.
-
+* The web server returns digitally signed acknowledgment to start an SSL encrypted session.
 
 ARP process
 -----------
@@ -587,7 +587,10 @@ any manipulation via scripting, the DOM has an almost one-to-one relation to
 the markup.
 
 **The parsing algorithm**
-
+- The web server processes requests and generate responses typically made up of 
+HTML, CSS, and JavaScript files
+- The web server returns the response to the load balancer for transmission to the browser
+- The browser uses the transmitted files to return the webpage to the user
 HTML cannot be parsed using the regular top-down or bottom-up parsers.
 
 The reasons are:
@@ -632,6 +635,8 @@ CSS interpretation
 Page Rendering
 --------------
 
+- The response message renders status codes which have different meanings where 200 is 
+ success, 301 is page redirection and 404 is page not found
 * Create a 'Frame Tree' or 'Render Tree' by traversing the DOM nodes, and
   calculating the CSS style values for each node.
 * Calculate the preferred width of each node in the 'Frame Tree' bottom-up
