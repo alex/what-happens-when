@@ -678,6 +678,14 @@ GPU Rendering
 Window Server
 -------------
 
+Transmission Control Protocol (TCP)
+----------------------------------
+* This is a communications standard that enables application programs and computing
+  devices to exchange messages over a network.
+
+* It is designed to send data packets across the internet and ensure the successful
+  delivery of data and messages over networks.
+
 Post-rendering and user-induced execution
 -----------------------------------------
 
