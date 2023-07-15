@@ -1,0 +1,39 @@
+Have you ever wondered what happens when you type https://www.google.com in your browser and press Enter? Well, a whole lot happens behind the scene to ensure smooth operations and useful feedbacks. In this blog post, I will be taking you through the processes from when you type it on the browser to when you get some related responses.
+
+STEP 1: DNS REQUEST AND RESOLVER
+
+When you enter the URL (Uniform Resource Locator) www.google.com in your browser which is a human-readable address. The Domain Name System accepts the request and sends it to your local DNS resolver (usually provided by your Internet Service Provider (ISP)). DNS resolver translates it to an IP address or hostname address that computers can use to locate the server hosting the website. If the local DNS resolver has the IP address of the website in its cache, it returns the IP address to your browser. Otherwise, it forwards the request to the root DNS server which directs the request to TLD servers. The TLD server directs the request to the authoritative DNS server for the domain. The authoritative DNS server then responds to the request with the IP address of the server hosting the website. This is because the authoritative DNS server is responsible for maintaining a directory of all the IP addresses associated with the domain.
+
+STEP 2: ESTABLISHMENT OF INTERNET CONNECTION
+
+Once the browser obtains the IP address from the DNS server, it initiates and establishes a Transmission Control Protocol (TCP) / Internet protocol (IP) connection through internet service provider (ISP) with the server hosting Google’s website. While IP ensures smooth routing of data between networks, TCP on the other hand, is responsible for reliable communication between the browser and the server at that IP address. It is important to know that firewall may be encountered during the connection.
+
+STEP 3: FIREWALL
+
+Firewall is a network security device or software that examines incoming and outgoing network traffic and implements security policies to filter potentially malicious requests and protect against unauthorized access. Therefore connection can only be established if your request passes firewall checks.
+
+STEP 4: HTTPS/SSL REQUEST
+
+After establishing network connection between the server and the browser, the request is then transported to the web server using either HTTP (Hypertext Transfer Protocol) or HTTPS ((Hypertext Transfer Protocol Secure). To ensure secure communication, many websites employ Hypertext Transfer Protocol Secure (HTTPS) in conjunction with the Secure Sockets Layer (SSL) or Transport Layer Security (TLS) protocols to encrypt the data sent between the client and server, thereby preventing third parties from intercepting and reading your request. This secured connection is usually displayed on the browser bar as a padlock.
+
+STEP 5: LOAD BALANCER
+
+Big companies like Google with high volume of traffic usually make use of load balancers to ensure even distribution of load across multiple servers using different load balancing algorithm such as weighted round robin, Round robin, least connection, IP hash etc. to ensure that no single server is overloaded. Some of the factors considered by load balancers when assigning loads to different servers are; current server load, server capacity, response time etc. Once the load balancer has determined which server to send the request to, the request is forwarded to a web server.
+
+STEP 6: WEB SERVER
+
+The web server (a software application or program like Apache HTTP Server or Nginx that serves web content over the internet) receives the HTTP/HTTP request and retrieves the requested web page from database or generates it dynamically using a scripting language like PHP or Python.
+
+STEP 7: APPLICATION SERVER
+
+In cases of more complex web application, an application server (a software framework that provides runtime environment for running and managing applications) such as Tomcat, Node.js etc. may likely be involved. They communicate with database, external services and other resources to fetch a response for the request made.
+
+STEPS 8: DATABASE
+
+A database is an organized collection of structured data stored and managed in a computer. Most times, application server interacts with database server. This interaction typically involves a client-server model where the application server acts as the client to retrieve or manipulate data based on the requirement and database server acts as the server. The database stores and manages the data required for the requested by the webpage for application functionality.
+
+STEPS 9: HTTP/HTTPS RESPONSE
+
+Upon complete generation of the response, the web server sends an HTTP/HTTPS response back to the client browser via the TCP/IP connection earlier established. The response may include the requested web page, along with any other resources needed to display it, such as images, style sheets (Cascading Style Sheets, CSS), HTML (Hypertext Markup Language) or JavaScript files.
+
+In summary, I hope you now fully have a glimpse of and appreciate the intricate working of web stack and the technologies that takes place behind the scene from when we type simple domain names like www.google.com and press Enter to when we get response back within a few seconds. From DNS request it establishes TCP/IP connections which pass through firewall (if necessary) then establishes encrypted connection through HTTPS/SSL send client’s request to a load balancer which sends it to one of the webservers. The webserver either generates response and sends back the response to the client via TCP/IP connection or sends the request to an application server first if dynamic content is required. Understanding this journey helps us appreciate the undeniable effect of information technology in ensuring today’s seamless web browsing experiences.
