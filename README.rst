@@ -223,6 +223,8 @@ DNS lookup
   ``ARP process`` below for the DNS server.
 * If the DNS server is on a different subnet, the network library follows
   the ``ARP process`` below for the default gateway IP.
+* Note that it is the DNS job to get the IP address of the domain name inputed
+  in the browser
 
 
 ARP process
