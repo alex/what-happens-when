@@ -38,6 +38,38 @@ popular searches from the internet as a whole. As you are typing
 "google.com" many blocks of code run and the suggestions will be refined
 with each keypress. It may even suggest "google.com" before you finish typing
 it.
+To contribute to what After the "g" key is pressed" event is notified to the 
+currently focused application, 
+the application needs to handle the event and perform the necessary actions.
+This typically involves processing the key code and determining the appropriate behavior 
+based on the context.The application's event handling mechanism receives the "key pressed" event.
+The operating system's input processing subsystem delivers the event to the application.
+The application retrieves the key code from the event.
+The application checks the current context to determine how to handle the key press.
+If the focus is on a text input field, the application may insert the corresponding character or
+perform auto-completion based on the input.
+If the focus is on the browser's address bar, the application recognizes that the user
+intends to navigate to a specific website.
+The application parses the entered URL (in this case, "google.com") and extracts the 
+domain name.
+The application initiates a DNS lookup to resolve the domain name to an IP address.
+The DNS resolver communicates with DNS servers to obtain the IP address associated with
+"google.com."
+Once the IP address is obtained, the application establishes a TCP connection 
+with the server at that IP address.
+The application sends an HTTP request to the server, specifying the desired
+resource (in this case, the homepage of google.com).
+The server processes the request and generates an appropriate HTTP response.
+The response, containing the HTML, CSS, JavaScript, and other resources required 
+to render the webpage, is sent back to the browser.
+The browser receives the response and begins rendering the webpage.
+The browser parses the HTML, fetches additional resources (images, stylesheets, scripts), 
+and executes JavaScript code.
+Finally, the browser displays the rendered webpage to the user.
+With these additions, the bug fix provides a more detailed and complete explanation of what 
+happens after the "key pressed" event is notified to the currently focused application.
+
+
 
 The "enter" key bottoms out
 ---------------------------
