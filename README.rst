@@ -30,27 +30,17 @@ The "g" key is pressed
 The following sections explain the physical keyboard actions
 and the OS interrupts. When you press the key "g" the browser receives the
 event and the auto-complete functions kick in.
-Depending on your browser's algorithm and if you are in
-private/incognito mode or not various suggestions will be presented
-to you in the dropdown below the URL bar. Most of these algorithms sort
-and prioritize results based on search history, bookmarks, cookies, and
-popular searches from the internet as a whole. As you are typing
-"google.com" many blocks of code run and the suggestions will be refined
-with each keypress. It may even suggest "google.com" before you finish typing
-it.
+When you press the "g" key, the browser receives the event, and the auto-complete
+functions kick in. Depending on your browser's algorithm and whether you are in
+private/incognito mode or not, various suggestions will be presented to you in
+the dropdown below the URL bar. The suggestions are refined with each keypress,
+and it may even suggest "google.com" before you finish typing it.
 
 The "enter" key bottoms out
 ---------------------------
 
-To pick a zero point, let's choose the Enter key on the keyboard hitting the
-bottom of its range. At this point, an electrical circuit specific to the enter
-key is closed (either directly or capacitively). This allows a small amount of
-current to flow into the logic circuitry of the keyboard, which scans the state
-of each key switch, debounces the electrical noise of the rapid intermittent
-closure of the switch, and converts it to a keycode integer, in this case 13.
-The keyboard controller then encodes the keycode for transport to the computer.
-This is now almost universally over a Universal Serial Bus (USB) or Bluetooth
-connection, but historically has been over PS/2 or ADB connections.
+When you press the "enter" key, an electrical circuit specific to the enter
+key is closed, allowing a small amount of current to flow into the logic circuitry of the keyboard. The keyboard controller scans the state of each key switch, debounces the electrical noise of the rapid intermittent closure of the switch, and converts it to a keycode integer, in this case, 13 (which represents the "enter" key). The keycode is then transported to the computer over the USB or Bluetooth connection.
 
 *In the case of the USB keyboard:*
 
