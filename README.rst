@@ -674,6 +674,9 @@ GPU Rendering
   of ``GPU`` massive parallelism for float point calculations required for
   the rendering process.
 
+Database
+--------
+When database is needed for data retrieval,it is the application server that queries this database so as to retrieve the needed data which may be images, html files, css files, or javascript files or other files. This database server stores a company's data and allows efficient manipulation and retrieval of data.It sends the required data after processing the query from the application server.
 
 Window Server
 -------------
