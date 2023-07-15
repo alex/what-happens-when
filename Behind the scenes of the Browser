@@ -1,0 +1,15 @@
+Behind the scenes of the Browser
+----------------------------------
+
+Once the server supplies the resources (HTML, CSS, JS, images, etc.)
+to the browser it undergoes the below process:
+
+1. Parsing:
+HTML Parsing: The browser's HTML parser reads the HTML code and generates a Document Object Model (DOM) tree. The DOM tree represents the structure of the HTML document, including elements, attributes, and their relationships.
+CSS Parsing: The browser's CSS parser parses the CSS code and creates a CSS Object Model (CSSOM). The CSSOM represents the styles and rules defined in the CSS code.
+JS Parsing: If there is JavaScript code present, the browser's JavaScript engine parses the JavaScript code and executes it. The JavaScript code can manipulate the DOM and CSSOM, adding interactivity and dynamic behavior to the webpage.
+
+2. Rendering:
+Construct DOM Tree: The browser combines the DOM tree and CSSOM to create a Render Tree. The Render Tree contains only the elements that are visible on the webpage after applying CSS styles.
+Layout of Render Tree: The browser calculates the layout of each element in the Render Tree, determining their size, position, and how they should be displayed on the webpage. This process is called layout or reflow.
+Painting the Render Tree: Finally, the browser iterates through the Render Tree, painting each element on the screen according to its layout information. This involves filling pixels with the appropriate colors, images, and applying visual effects.
