@@ -39,6 +39,26 @@ popular searches from the internet as a whole. As you are typing
 with each keypress. It may even suggest "google.com" before you finish typing
 it.
 
+When the "g" key is pressed on your keyboard, several actions are triggered:
+
+1. Physical Keyboard Actions: The "g" key is physically pressed down, completing a circuit and sending an electrical signal to the computer.
+
+2. Operating System (OS) Interrupts: The OS detects the keyboard input and generates an interrupt signal to inform the browser about the key press event.
+
+3. Browser Event Handling: The browser receives the interrupt signal and processes the event. In this case, the browser recognizes that the "g" key has been pressed.
+
+4. Auto-complete Functions: Once the browser detects the "g" key press, auto-complete functions are triggered. These functions aim to assist you in quickly finding relevant suggestions or completing your input.
+
+5. Suggestion Presentation: Depending on various factors such as your browser's algorithm and whether you are in private/incognito mode or not, the browser presents suggestions in a dropdown below the URL bar.
+
+6. Algorithmic Sorting and Prioritization: The suggestions displayed are sorted and prioritized based on multiple criteria, including your search history, bookmarks, cookies, and popular searches from the internet as a whole.
+
+7. Real-time Refinement: As you continue typing "google.com," the browser continuously processes your input, and with each keypress, it refines the suggestions presented in the dropdown.
+
+8. Preemptive Suggestion: It's possible that the browser's algorithm is efficient enough to suggest "google.com" even before you finish typing it, based on the contextual information and the patterns it recognizes.
+
+In summary, pressing the "g" key initiates a chain of events that involve physical input, OS interrupts, browser event handling, auto-complete functions, suggestion presentation, sorting algorithms, and real-time refinement to provide you with relevant suggestions while typing.
+
 The "enter" key bottoms out
 ---------------------------
 
