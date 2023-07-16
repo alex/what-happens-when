@@ -1,4 +1,4 @@
-What happens when...
+WHAT HAPPENS WHEN...
 ====================
 
 This repository is an attempt to answer the age-old interview question "What
@@ -20,13 +20,13 @@ Table of Contents
    :backlinks: none
    :local:
 
-The "g" key is pressed
+THE "g" KEY IS PRESSED
 ----------------------
 The following sections explain the physical keyboard actions and the OS interrupts. When you press the key "g" the browser receives the event and the auto-complete functions kick in. Depending on your browser's algorithm and if you are in
 private/incognito mode or not various suggestions will be presented to you in the dropdown below the URL bar. Most of these algorithms sort and prioritize results based on search history, bookmarks, cookies, and popular searches from the internet as a whole. As you are typing "google.com" many blocks of code run and the suggestions will be refined with each keypress. It may even suggest "google.com" before you finish typing
 it.
 
-The "enter" key bottoms out
+THE "ENTER" KEY BOTTOMS OUT
 ---------------------------
 
 To pick a zero point, let's choose the Enter key on the keyboard hitting the bottom of its range. At this point, an electrical circuit specific to the enter key is closed (either directly or capacitively). This allows a small amount of current to flow into the logic circuitry of the keyboard, which scans the state of each key switch, debounces the electrical noise of the rapid intermittent closure of the switch, and converts it to a keycode integer, in this case 13. The keyboard controller then encodes the keycode for transport to the computer. This is now almost universally over a Universal Serial Bus (USB) or Bluetooth connection, but historically has been over PS/2 or ADB connections.
@@ -56,12 +56,12 @@ To pick a zero point, let's choose the Enter key on the keyboard hitting the bot
 - This interrupt notifies the currently focused application of a 'key pressed' event.
 
 
-Interrupt fires [NOT for USB keyboards]
+INTERRUPTS FIRES [NOT FOR USB KEYBOARDS]
 ---------------------------------------
 
 The keyboard sends signals on its interrupt request line (IRQ), which is mapped to an ``interrupt vector`` (integer) by the interrupt controller. The CPU uses the ``Interrupt Descriptor Table`` (IDT) to map the interrupt vectors to functions (``interrupt handlers``) which are supplied by the kernel. When an interrupt arrives, the CPU indexes the IDT with the interrupt vector and runs the appropriate handler. Thus, the kernel is entered.
 
-(On Windows) A ``WM_KEYDOWN`` message is sent to the app
+(On Windows) A ``WM_KEYDOWN`` MESSAGE IS SENT TO THE APP
 --------------------------------------------------------
 
 The HID transport passes the key down event to the ``KBDHID.sys`` driver which converts the HID usage into a scancode. In this case, the scan code is ``VK_RETURN`` (``0x0D``). The ``KBDHID.sys`` driver interfaces with the ``KBDCLASS.sys`` (keyboard class driver). This driver is responsible for handling all keyboard and keypad input in a secure manner. It then calls into ``Win32K.sys`` (after potentially passing the message through 3rd party keyboard filters that are installed). This all happens in kernel mode. ``Win32K.sys`` figures out what window is the active window through the ``GetForegroundWindow()`` API. This API provides the window handle of the browser's address box. The main Windows "message pump" then calls ``SendMessage(hWnd, WM_KEYDOWN, VK_RETURN, lParam)``. ``lParam`` is a bitmask that indicates further information about the keypress: repeat count (0 in this case), the actual scan code (can be OEM dependent, but generally wouldn't be for ``VK_RETURN``), whether extended keys (e.g. alt, shift, ctrl) were also pressed (they weren't), and some other state.
@@ -75,12 +75,12 @@ This code looks within the 3rd parameter that was passed to ``SendMessage`` (``w
 The interrupt signal triggers an interrupt event in the I/O Kit kext keyboard driver. The driver translates the signal into a key code which is passed to the OS X ``WindowServer`` process. Resultantly, the ``WindowServer`` dispatches an
 event to any appropriate (e.g. active or listening) applications through their Mach port where it is placed into an event queue. Events can then be read from this queue by threads with sufficient privileges calling the ``mach_ipc_dispatch`` function. This most commonly occurs through, and is handled by, an ``NSApplication`` main event loop, via an ``NSEvent`` of ``NSEventType`` ``KeyDown``.
 
-(On GNU/Linux) the Xorg server listens for keycodes
+(ON GNU/Linux) THE Xorg SERVER LISTENS FOR KEYCODES
 ---------------------------------------------------
 
 When a graphical ``X server`` is used, ``X`` will use the generic event driver ``evdev`` to acquire the keypress. A re-mapping of keycodes to scancodes is made with ``X server`` specific keymaps and rules. When the scancode mapping of the key pressed is complete, the ``X server`` sends the character to the ``window manager`` (DWM, metacity, i3, etc), so the ``window manager`` in turn sends the character to the focused window. The graphical API of the window  that receives the character prints the appropriate font symbol in the appropriate focused field.
 
-Parse URL
+PARSE URL
 ---------
 
 * The browser now has the following information contained in the URL (Uniform Resource Locator):
@@ -90,24 +90,24 @@ Parse URL
     - ``Resource``  "/" Retrieve main (index) page
 
 
-Is it a URL or a search term?
+IS IT A URL OR A SEARCH TERM?
 -----------------------------
 
 When no protocol or valid domain name is given the browser proceeds to feed the text given in the address box to the browser's default web search engine.
 In many cases the URL has a special piece of text appended to it to tell the search engine that it came from a particular browser's URL bar.
 
-Convert non-ASCII Unicode characters in the hostname
+CONVERT NON-ASCII UNICODE CHARACTERS IN THE HOSTNAME
 ------------------------------------------------
 
 * The browser checks the hostname for characters that are not in ``a-z``, ``A-Z``, ``0-9``, ``-``, or ``.``.
 * Since the hostname is ``google.com`` there won't be any, but if there were the browser would apply `Punycode`_ encoding to the hostname portion of the URL.
 
-Check HSTS list
+CHECK HSTS LIST
 ---------------
 * The browser checks its "preloaded HSTS (HTTP Strict Transport Security)" list. This is a list of websites that have requested to be contacted via HTTPS only.
 * If the website is in the list, the browser sends its request via HTTPS instead of HTTP. Otherwise, the initial request is sent via HTTP. (Note that a website can still use the HSTS policy *without* being in the HSTS list.  The first HTTP request to the website by a user will receive a response requesting that the user only send HTTPS requests.  However, this single HTTP request could potentially leave the user vulnerable to a `downgrade attack`_, which is why the HSTS list is included in modern web browsers.)
 
-DNS lookup
+DNS LOOKUP
 ----------
 
 * Browser checks if the domain is in its cache. (to see the DNS Cache in Chrome, go to `chrome://net-internals/#dns <chrome://net-internals/#dns>`_).
@@ -118,7 +118,7 @@ DNS lookup
 * If the DNS server is on a different subnet, the network library follows the ``ARP process`` below for the default gateway IP.
 
 
-ARP process
+ARP PROCESS
 -----------
 
 In order to send an ARP (Address Resolution Protocol) broadcast the network stack library needs the target IP address to lookup. It also needs to know the MAC address of the interface it will use to send out the ARP broadcast.
@@ -175,7 +175,7 @@ the default gateway it can resume its DNS process:
 * If the response size is too large, TCP will be used instead.
 * If the local/ISP DNS server does not have it, then a recursive search is requested and that flows up the list of DNS servers until the SOA is reached, and if found an answer is returned.
 
-Opening of a socket
+OPENING OF A SOCKET
 -------------------
 Once the browser receives the IP address of the destination server, it takes that and the given port number from the URL (the HTTP protocol defaults to port 80, and HTTPS to port 443), and makes a call to the system library function named ``socket`` and requests a TCP socket stream - ``AF_INET/AF_INET6`` and
 ``SOCK_STREAM``.
@@ -226,7 +226,7 @@ This send and receive happens multiple times following the TCP connection flow:
    * The other sides ACKs the FIN packet and sends its own FIN
    * The closer acknowledges the other side's FIN with an ACK
 
-TLS handshake
+TLS HANDSHAKE
 -------------
 * The client computer sends a ``ClientHello`` message to the server with its Transport Layer Security (TLS) version, list of cipher algorithms and compression methods available.
 
@@ -243,7 +243,7 @@ TLS handshake
 
 * From now on the TLS session transmits the application (HTTP) data encrypted with the agreed symmetric key.
 
-If a packet is dropped
+IF A PACKET IS DROPPED
 ----------------------
 
 Sometimes, due to network congestion or flaky hardware connections, TLS packets will be dropped before they get to their final destination. The sender then has to decide how to react. The algorithm for this is called `TCP congestion control`_. This varies depending on the sender; the most common algorithms are `cubic`_ on newer operating systems and `New Reno`_ on almost all others.
@@ -251,7 +251,7 @@ Sometimes, due to network congestion or flaky hardware connections, TLS packets 
 * For each packet acknowledged, the window doubles in size until it reaches the 'slow-start threshold'. In some implementations, this threshold is adaptive.
 * After reaching the slow-start threshold, the window increases additively for each packet acknowledged. If a packet is dropped, the window reduces exponentially until another packet is acknowledged.
 
-HTTP protocol
+HTTP PROTOCOL
 -------------
 
 If the web browser used was written by Google, instead of sending an HTTP request to retrieve the page, it will send a request to try and negotiate with the server an "upgrade" from HTTP to the SPDY protocol.
@@ -302,7 +302,7 @@ After parsing the HTML, the web browser (and server) repeats this process for ev
 If the HTML referenced a resource on a different domain than ``www.google.com``, the web browser goes back to the steps involved in resolving the other domain, and follows all steps up to this point for that domain. The ``Host`` header in the request will be set to the appropriate
 server name instead of ``google.com``.
 
-HTTP Server Request Handle
+HTTP SERVER REQUEST HANDLE
 --------------------------
 The HTTPD (HTTP Daemon) server is the one handling the requests/responses on the server-side. The most common HTTPD servers are Apache or nginx for Linux and IIS for Windows.
 
@@ -320,7 +320,7 @@ The HTTPD (HTTP Daemon) server is the one handling the requests/responses on the
 * The server goes to pull the content that corresponds with the request, in our case it will fall back to the index file, as "/" is the main file (some cases can override this, but this is the most common method).
 * The server parses the file according to the handler. If Google is running on PHP, the server uses PHP to interpret the index file, and streams the output to the client.
 
-Behind the scenes of the Browser
+BEHIND THE SCENES OF THE BROWSER
 ----------------------------------
 
 Once the server supplies the resources (HTML, CSS, JS, images, etc.)
@@ -330,7 +330,7 @@ to the browser it undergoes the below process:
 * Rendering - Construct DOM Tree → Render Tree → Layout of Render Tree →
   Painting the render tree
 
-Browser
+BROWSER
 -------
 
 The browser's functionality is to present the web resource you choose, by requesting it from the server and displaying it in the browser window.
@@ -360,7 +360,7 @@ The components of the browsers are:
 * **Data storage:** The data storage is a persistence layer. The browser may need to save all sorts of data locally, such as cookies. Browsers also support storage mechanisms such as localStorage, IndexedDB, WebSQL and
   FileSystem.
 
-HTML parsing
+HTML PARSING
 ------------
 
 The rendering engine starts getting the contents of the requested document from the networking layer. This will usually be done in 8kB chunks.
@@ -392,14 +392,14 @@ At this stage the browser marks the document as interactive and starts parsing s
 
 Note there is never an "Invalid Syntax" error on an HTML page. Browsers fix any invalid content and go on.
 
-CSS interpretation
+CSS INTERPRETATION
 ------------------
 
 * Parse CSS files, ``<style>`` tag contents, and ``style`` attribute values using `"CSS lexical and syntax grammar"`_
 * Each CSS file is parsed into a ``StyleSheet object``, where each object contains CSS rules with selectors and objects corresponding CSS grammar.
 * A CSS parser can be top-down or bottom-up when a specific parser generator is used.
 
-Page Rendering
+PAGE RENDERING
 --------------
 
 * Create a 'Frame Tree' or 'Render Tree' by traversing the DOM nodes, and calculating the CSS style values for each node.
@@ -417,7 +417,7 @@ Page Rendering
 * The page layers are sent to the compositing process where they are combined with layers for other visible content like the browser chrome, iframes and addon panels.
 * Final layer positions are computed and the composite commands are issued via Direct3D/OpenGL. The GPU command buffer(s) are flushed to the GPU for asynchronous rendering and the frame is sent to the window server.
 
-GPU Rendering
+GPU RENDERING
 -------------
 
 * During the rendering process the graphical computing layers can use general purpose ``CPU`` or the graphical processor ``GPU`` as well.
@@ -425,10 +425,10 @@ GPU Rendering
 * When using ``GPU`` for graphical rendering computations the graphical software layers split the task into multiple pieces, so it can take advantage of ``GPU`` massive parallelism for float point calculations required for the rendering process.
 
 
-Window Server
+WINDOW SERVER
 -------------
 
-Post-rendering and user-induced execution
+Post-rendering and User-induced Execution
 -----------------------------------------
 
 After rendering has been completed, the browser executes JavaScript code as a result of some timing mechanism (such as a Google Doodle animation) or user interaction (typing a query into the search box and receiving suggestions).
