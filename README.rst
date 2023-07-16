@@ -5,8 +5,8 @@ This repository is an attempt to answer the age-old interview question "What
 happens when you type google.com into your browser's address box and press
 enter?"
 
-Except instead of the usual story, we're going to try to answer this question
-in as much detail as possible. No skipping out on anything.
+Instead of the usual story, we'll try to answer this question
+in as much detail as possible. Without skipping out on anything.
 
 This is a collaborative process, so dig in and try to help out! There are tons
 of details missing, just waiting for you to add them! So send us a pull
@@ -47,10 +47,10 @@ bottom of its range. At this point, an electrical circuit specific to the enter
 key is closed (either directly or capacitively). This allows a small amount of
 current to flow into the logic circuitry of the keyboard, which scans the state
 of each key switch, debounces the electrical noise of the rapid intermittent
-closure of the switch, and converts it to a keycode integer, in this case 13.
+closure of the switch, and converts it to a keycode integer, in this case, 13.
 The keyboard controller then encodes the keycode for transport to the computer.
 This is now almost universally over a Universal Serial Bus (USB) or Bluetooth
-connection, but historically has been over PS/2 or ADB connections.
+connection but historically has been over PS/2 or ADB connections.
 
 *In the case of the USB keyboard:*
 
@@ -68,7 +68,7 @@ connection, but historically has been over PS/2 or ADB connections.
 
 - Those packets are sent by a differential electrical signal over D+ and D-
   pins (the middle 2) at a maximum speed of 1.5 Mb/s, as an HID
-  (Human Interface Device) device is always declared to be a "low-speed device"
+  (Human Interface Device) the device is always declared to be a "low-speed device"
   (USB 2.0 compliance).
 
 - This serial signal is then decoded at the computer's host USB controller, and
@@ -180,7 +180,7 @@ Is it a URL or a search term?
 
 When no protocol or valid domain name is given the browser proceeds to feed
 the text given in the address box to the browser's default web search engine.
-In many cases the URL has a special piece of text appended to it to tell the
+In many cases, the URL has a special piece of text appended to it to tell the
 search engine that it came from a particular browser's URL bar.
 
 Convert non-ASCII Unicode characters in the hostname
@@ -507,8 +507,13 @@ and IIS for Windows.
   in our case it will fall back to the index file, as "/" is the main file
   (some cases can override this, but this is the most common method).
 * The server parses the file according to the handler. If Google
-  is running on PHP, the server uses PHP to interpret the index file, and
+  is running on PHP, the server uses PHP to interpret the index file and
   streams the output to the client.
+
+Load Balancer
+-------------
+
+A load balancer happens to be a critical component in networking and distributed systems, it plays a crucial role in optimizing resource utilization and ensuring high availability and scalability of applications or services. Which acts as an intermediary between clients and servers, efficiently distributing incoming network traffic across multiple servers in a server pool. The primary objective of a load balancer is to evenly distribute the workload and prevent any single server from becoming overwhelmed, thereby improving overall system performance and reliability.
 
 Behind the scenes of the Browser
 ----------------------------------
