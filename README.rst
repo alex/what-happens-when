@@ -27,17 +27,17 @@ Table of Contents
 
 The "g" key is pressed
 ----------------------
-The following sections explain the physical keyboard actions
-and the OS interrupts. When you press the key "g" the browser receives the
-event and the auto-complete functions kick in.
-Depending on your browser's algorithm and if you are in
-private/incognito mode or not various suggestions will be presented
-to you in the dropdown below the URL bar. Most of these algorithms sort
-and prioritize results based on search history, bookmarks, cookies, and
-popular searches from the internet as a whole. As you are typing
-"google.com" many blocks of code run and the suggestions will be refined
-with each keypress. It may even suggest "google.com" before you finish typing
-it.
+When the "g" key is pressed on a keyboard, it typically triggers an input event that can be captured by software applications or the operating system. The exact behavior or action associated with the "g" key press can vary depending on the context in which it is pressed. Here are a few possibilities:
+
+Text Entry: If you are typing in a text editor, word processor, web browser, or any application that accepts text input, pressing the "g" key will usually insert the letter "g" at the current cursor position.
+
+Keyboard Shortcuts: In some applications or operating systems, pressing certain combinations of keys, including the "g" key, can trigger predefined actions or keyboard shortcuts. For example, in web browsers like Google Chrome, pressing "Ctrl+g" (or "Cmd+g" on macOS) can perform a "Find Next" action, moving to the next occurrence of a search term on a webpage.
+
+Game Controls: In video games or other interactive applications, the "g" key may be assigned a specific function as part of the game's controls. For example, in a racing game, pressing "g" could activate the vehicle's gear shifting mechanism or perform a specific action within the game world.
+
+Custom Application Behavior: Depending on the specific software or application you are using, pressing the "g" key may have a customized action associated with it. This can be defined by the application developer to perform any desired functionality within the application.
+
+It's important to note that the behavior of the "g" key can vary across different operating systems, applications, and contexts. The above examples are common scenarios, but the actual outcome may depend on the specific software you are using at the time of pressing the "g" key.
 
 The "enter" key bottoms out
 ---------------------------
