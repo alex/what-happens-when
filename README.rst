@@ -27,17 +27,23 @@ Table of Contents
 
 The "g" key is pressed
 ----------------------
-The following sections explain the physical keyboard actions
-and the OS interrupts. When you press the key "g" the browser receives the
-event and the auto-complete functions kick in.
-Depending on your browser's algorithm and if you are in
-private/incognito mode or not various suggestions will be presented
-to you in the dropdown below the URL bar. Most of these algorithms sort
-and prioritize results based on search history, bookmarks, cookies, and
-popular searches from the internet as a whole. As you are typing
-"google.com" many blocks of code run and the suggestions will be refined
-with each keypress. It may even suggest "google.com" before you finish typing
-it.
+In a browser, pressing the "g" key normally launches the search feature.
+Depending on the browser and the precise situation in which the key is struck, this behavior could change.
+For instance, pressing the "g" key when the focus is on the browser's address bar or search bar can start a Google search in many browsers.
+The default setting in browsers like Google Chrome is this.
+It would depend on the exact implementation within a web application or website if you were looking for code-related information on what happens when the "g" key is pushed. To record the key press event and carry out the required action, JavaScript event listeners can be used to modify the behavior.
+Here's an example code snippet using JavaScript to detect and handle the "g" key press event:
+``
+document.addEventListener('keydown', function(event) {
+  if (event.key === 'g') {
+    // Perform desired action when 'g' key is pressed
+    console.log("The 'g' key was pressed!");
+  }
+});
+``
+The keydown event on the document object receives an event listener thanks to this code. 
+Using the event.key property, the event is triggered by determining whether the key that was pushed is "g".
+If it does, the required action—in this case, printing a message to the console—is carried out.
 
 The "enter" key bottoms out
 ---------------------------
