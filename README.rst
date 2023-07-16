@@ -510,6 +510,10 @@ and IIS for Windows.
   is running on PHP, the server uses PHP to interpret the index file, and
   streams the output to the client.
 
+Firewall Protection
+--------------------
+When Firewall is present on your server, it verifies the request you are makin is authorised before granting it.
+
 Behind the scenes of the Browser
 ----------------------------------
 
