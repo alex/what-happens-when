@@ -223,6 +223,8 @@ DNS lookup
   ``ARP process`` below for the DNS server.
 * If the DNS server is on a different subnet, the network library follows
   the ``ARP process`` below for the default gateway IP.
+* To make the lookup process fast, data is cached at different layers:
+  browser cache, OS cache, local network cache, and ISP cache.
 
 
 ARP process
