@@ -1,0 +1,28 @@
+Title: Demystifying the Web: What Happens When You Type "https://www.google.com" in Your Browser and Press Enter?
+
+Introduction:
+The simplicity of typing "https://www.google.com" into your browser and pressing Enter masks a fascinating journey that occurs behind the scenes. From DNS resolution to the final delivery of search results, a complex series of processes takes place to bring you the familiar Google search page. In this blog post, we'll uncover the behind-the-scenes magic and explore each step that happens when you initiate a search in your browser.
+
+1. DNS Resolution:
+As you hit Enter, the first step is DNS resolution. Your browser sends a query to the Domain Name System (DNS) server to translate the human-readable domain name "www.google.com" into its corresponding IP address. The DNS server responds with the IP address, allowing your browser to locate Google's servers on the internet. This process enables easy navigation with memorable domain names, translating them into the numerical addresses necessary for data communication.
+
+2. Establishing a Secure Connection (HTTPS):
+With the IP address, your browser establishes a secure connection using HTTPS (Hypertext Transfer Protocol Secure). HTTPS ensures that the data transmitted between your browser and Google's servers is encrypted and secure. To enable this secure communication, SSL/TLS certificates are used to authenticate the server's identity and establish an encrypted channel.
+
+3. Firewall and Security:
+To ensure security and protect against malicious traffic, the request passes through firewalls and security mechanisms. Firewalls act as gatekeepers, analyzing incoming and outgoing traffic and enforcing security policies to block potentially harmful requests. This ensures that only legitimate requests reach Google's servers, safeguarding against cyber threats.
+
+4. Load Balancing:
+With millions of users accessing Google simultaneously, a load balancer comes into play. The load balancer distributes incoming requests across multiple web servers, optimizing performance and preventing overload on any single server. This load balancing mechanism ensures that users experience fast response times and uninterrupted access to the search service, even during peak traffic.
+
+5. Web Server Handling the Request:
+After load balancing, the request reaches one of Google's web servers. These web servers are designed for high performance, processing a vast number of simultaneous requests. Upon receiving the request, the web server performs various tasks, including fetching and generating the search results page.
+
+6. Application Server and Dynamic Content:
+To handle the dynamic aspects of the search, an application server plays a pivotal role. The application server interacts with databases and other services, executing complex algorithms and business logic to generate the search results page. This step involves processing search queries, understanding user intent, and customizing results based on various factors.
+
+7. Retrieving Data from Databases:
+The application server communicates with Google's sophisticated databases, which house vast amounts of information. The databases store indexed web pages, cached data, and other information relevant to user search queries. The application server retrieves the necessary data from these databases to assemble the search results page.
+
+Conclusion:
+The journey from typing "https://www.google.com" to receiving search results is a remarkable feat of modern technology. Behind the scenes, the web stack collaborates to deliver the information we seek with remarkable speed and precision. Understanding this process offers a glimpse into the intricate world of web development and showcases the innovations that power our online experiences. Next time you search on Google, take a moment to appreciate the intricate mechanisms at work, providing you with instant access to a vast digital universe.
