@@ -205,7 +205,10 @@ Check HSTS list
   single HTTP request could potentially leave the user vulnerable to a
   `downgrade attack`_, which is why the HSTS list is included in modern web
   browsers.)
-
+* To check the HSTS status of a particular domain or to view the HSTS list, 
+  you can refer to the documentation or support resources provided by the 
+  specific web browser you are using. Each browser may have different methods
+  for accessing and managing the HSTS list.
 DNS lookup
 ----------
 
