@@ -689,6 +689,12 @@ the Google homepage. Scripts can cause additional network requests to be
 performed, as well as modify the page or its layout, causing another round of
 page rendering and painting.
 
+HTTPS Encryption:
+-------------------
+* Google.com and many other websites utilize HTTPS (HTTP Secure) to encrypt the communication between the browser and the server.
+* HTTPS ensures the confidentiality and integrity of data transmitted by using SSL/TLS protocols.
+* When making an HTTPS request, the browser initiates a secure handshake with the server, and upon successful verification, an encrypted connection is established.
+
 .. _`Creative Commons Zero`: https://creativecommons.org/publicdomain/zero/1.0/
 .. _`"CSS lexical and syntax grammar"`: http://www.w3.org/TR/CSS2/grammar.html
 .. _`Punycode`: https://en.wikipedia.org/wiki/Punycode
