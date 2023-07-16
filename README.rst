@@ -629,6 +629,17 @@ CSS interpretation
 * A CSS parser can be top-down or bottom-up when a specific parser generator
   is used.
 
+CSS parsing
+-----------
+In the process of accessing "https://www.google.com" in your browser,
+CSS parsing involves the browser interpreting and applying the CSS
+(Cascading Style Sheets) rules associated with the Google homepage.
+This parsing enables the browser to understand how each element on the page
+should be visually styled, defining properties like colors, fonts, margins,
+and positioning. By parsing and applying the CSS, the browser ensures that
+the Google homepage and other websites are presented with the desired visual
+appearance on your screen.
+
 Page Rendering
 --------------
 
