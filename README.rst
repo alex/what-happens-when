@@ -509,6 +509,7 @@ and IIS for Windows.
 * The server parses the file according to the handler. If Google
   is running on PHP, the server uses PHP to interpret the index file, and
   streams the output to the client.
+* The server creates an HTTP response with the requested data or webpage and sends it back to your web browser. The response contains information like the status code (indicating success or failure), the actual data or webpage content, and any additional instructions for the browser.
 
 Behind the scenes of the Browser
 ----------------------------------
