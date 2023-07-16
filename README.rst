@@ -1,4 +1,4 @@
-What happens when...
+mhat happens when...
 ====================
 
 This repository is an attempt to answer the age-old interview question "What
@@ -677,6 +677,8 @@ GPU Rendering
 
 Window Server
 -------------
+
+
 
 Post-rendering and user-induced execution
 -----------------------------------------
