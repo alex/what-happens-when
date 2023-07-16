@@ -1,0 +1,1 @@
+Your computer sends a request to the domain name system (DNS) server which serves as an address book for all domain names. This then sends back the exact IP address of the server which https://www.google.com points to. Knowing this IP, your computer then establishes a connection with the server through the IP address.
