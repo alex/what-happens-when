@@ -39,6 +39,8 @@ popular searches from the internet as a whole. As you are typing
 with each keypress. It may even suggest "google.com" before you finish typing
 it.
 
+The subsequent sections elucidate the physical actions of a keyboard and the corresponding OS interrupts. When the "g" key is pressed, the browser receives the event, and the auto-complete functions are triggered. The suggestions presented in the dropdown below the URL bar depend on your browser's algorithm and whether you are in private/incognito mode. These suggestions are generated based on factors like search history, bookmarks, cookies, and popular internet searches. As you type "google.com," numerous blocks of code execute, continually refining the suggestions with each keypress. The system might even suggest "google.com" before you finish typing it.
+
 The "enter" key bottoms out
 ---------------------------
 
