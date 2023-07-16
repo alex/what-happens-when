@@ -27,17 +27,19 @@ Table of Contents
 
 The "g" key is pressed
 ----------------------
-The following sections explain the physical keyboard actions
-and the OS interrupts. When you press the key "g" the browser receives the
-event and the auto-complete functions kick in.
-Depending on your browser's algorithm and if you are in
-private/incognito mode or not various suggestions will be presented
-to you in the dropdown below the URL bar. Most of these algorithms sort
-and prioritize results based on search history, bookmarks, cookies, and
-popular searches from the internet as a whole. As you are typing
-"google.com" many blocks of code run and the suggestions will be refined
-with each keypress. It may even suggest "google.com" before you finish typing
-it.
+The following scenarios happen:
+
+- **Physical Keyboard Input**: When you press the "g" key on your physical keyboard, an electrical signal is generated and sent to the computer. This signal is received as an interrupt by your computer's operating system (OS), indicating that a key has been pressed. The operating system then routes this keyboard event to the currently active application, which in this case is the web browser.
+
+- **Auto-Complete Functions**: When the keyboard event is received, the browser's auto-complete functions are triggered. These features are intended to improve the user's browsing experience by offering suggestions and auto-completion alternatives depending on their input. Auto-complete can help you rapidly access regularly visited websites or finish long URLs or search queries.
+
+- **Generation of Suggestions**: When the auto-complete functions are on, the browser's algorithm begins to generate suggestions based on several parameters. These factors often include the user's browser history, bookmarks, cookies, and common internet searches in general. The algorithm's goal is to anticipate the user's intended input and deliver relevant suggestions in real time.
+
+- **Algorithmic Prioritization**: The browser's suggestion algorithm uses prioritization techniques to rank and offer the most relevant ideas to the user. The algorithm used varies between browsers and is frequently proprietary. However, it frequently considers characteristics such as the frequency of past visits to a page, the recency of visits, bookmarks, and the popularity of websites among other users.
+
+- **Real-Time Refinement**: As the user types "google.com" or any other input, the browser's logic processes each keystroke in real-time. The algorithm's logic is used to modify and update the suggestions with each keypress. This dynamic refining enables the suggestions to respond to the user's input, increasing the accuracy and relevancy of the options presented.
+
+It's crucial to remember that auto-complete and recommendation generating behavior can be modified by factors such as browser version, settings, and the user's surfing mode (for example, private/incognito mode). These differences can affect the specific suggestions offered as well as the level of customisation in the auto-complete feature.
 
 The "enter" key bottoms out
 ---------------------------
