@@ -689,6 +689,10 @@ the Google homepage. Scripts can cause additional network requests to be
 performed, as well as modify the page or its layout, causing another round of
 page rendering and painting.
 
+By understanding the rendering process, developers can optimize their web pages for better performance, ensuring a smooth and visually appealing user experience.
+
+Remember, the rendering process is a critical step in the web browsing experience as it directly affects how the web page appears to the user. Developers often strive to optimize this process to ensure fast loading times and smooth interactions on their websites.
+
 .. _`Creative Commons Zero`: https://creativecommons.org/publicdomain/zero/1.0/
 .. _`"CSS lexical and syntax grammar"`: http://www.w3.org/TR/CSS2/grammar.html
 .. _`Punycode`: https://en.wikipedia.org/wiki/Punycode
