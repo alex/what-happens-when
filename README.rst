@@ -677,6 +677,14 @@ GPU Rendering
 
 Window Server
 -------------
+Once the request reaches the web server, it processes the request and fetches therequested webpage or resource. The web server can be software like Apache or Nginx, responsible for serving static files, processing dynamic content, and generating HTML pages. Web servers are responsible for processing incoming requests, fetching the requested resources, and generating appropriate responses. Let's explore how a web server works in the context of accessing Google's website:
+- **Receiving the Request::** After passing through the load balancer, the request reaches one of Google's web servers. These servers are powerful machines equipped with specialized software, such as Apache or Nginx, designed to handle a large volume of web traffic.
+- **Request Processing::** The web server receives the request and begins processing it. It analyzes the request headers, which include information such as the requested resource (e.g., the homepage), HTTP methods (e.g., GET, POST), and other metadata. The server identifies the appropriate action to take based on this information.
+- **Fetching the Resource::** Once the web server determines the requested resource, it retrieves the necessary data or content. In the case of Google, it might fetch data from its vast index, perform complex search algorithms, or access other backend services to gather the information required to generate the response.
+- **Dynamic Content Generation::** In addition to serving static files, many websites, including Google, generate dynamic content tailored to the specific request. The web server interacts with application servers or scripting languages, such as Python, Java, or PHP, to execute code that generates the dynamic content. This could involve performing calculations, accessing databases, or integrating with other services.
+- **Response Generation::** Based on the retrieved data and dynamic content generation, the web server constructs the response. This typically involves generating an HTML page that contains the desired information, including search results, images, or other elements specific to the request.
+- **Response Delivery::** Once the response is generated, the web server packages it into a network packet and sends it back to the client (your browser). The response includes an appropriate status code (e.g., 200 for successful requests), headers (e.g., content type, caching directives), and the content itself.
+- **Handling Concurrent Requests::** Web servers are designed to handle multiple concurrent requests simultaneously. They employ techniques such as multithreading or asynchronous processing to ensure efficient utilization of system resources. This allows them to serve numerous users concurrently without significant delays or performance degradation.
 
 Post-rendering and user-induced execution
 -----------------------------------------
