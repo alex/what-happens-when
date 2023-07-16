@@ -367,6 +367,22 @@ This send and receive happens multiple times following the TCP connection flow:
    * The other sides ACKs the FIN packet and sends its own FIN
    * The closer acknowledges the other side's FIN with an ACK
 
+SSL Handshake
+-------------
+Upon receiving the request, the server responds by initiating the SSL handshake process. This process establishes a secure encrypted connection between your browser and the server. The SSL handshake involves the following steps:
+
+* Server Certificate Presentation:
+The server presents its digital certificate to your browser. This certificate contains the server's public key, which is used for encryption and decryption.
+
+* Certificate Verification:
+Your browser verifies the authenticity and validity of the server's certificate. It checks if the certificate is issued by a trusted certificate authority (CA), hasn't expired, and matches the requested domain.
+
+* Key Exchange:
+During the SSL handshake, your browser generates a random symmetric session key. It encrypts this key using the server's public key obtained from the certificate and sends it to the server.
+
+* Establishing the Secure Connection:
+The server decrypts the session key using its private key, which is kept secure and inaccessible to unauthorized parties. Both the browser and the server now possess the same symmetric session key. This key will be used to encrypt and decrypt the data exchanged during the session.
+
 TLS handshake
 -------------
 * The client computer sends a ``ClientHello`` message to the server with its
@@ -688,24 +704,3 @@ Plugins such as Flash or Java may execute as well, although not at this time on
 the Google homepage. Scripts can cause additional network requests to be
 performed, as well as modify the page or its layout, causing another round of
 page rendering and painting.
-
-.. _`Creative Commons Zero`: https://creativecommons.org/publicdomain/zero/1.0/
-.. _`"CSS lexical and syntax grammar"`: http://www.w3.org/TR/CSS2/grammar.html
-.. _`Punycode`: https://en.wikipedia.org/wiki/Punycode
-.. _`Ethernet`: http://en.wikipedia.org/wiki/IEEE_802.3
-.. _`WiFi`: https://en.wikipedia.org/wiki/IEEE_802.11
-.. _`Cellular data network`: https://en.wikipedia.org/wiki/Cellular_data_communication_protocol
-.. _`analog-to-digital converter`: https://en.wikipedia.org/wiki/Analog-to-digital_converter
-.. _`network node`: https://en.wikipedia.org/wiki/Computer_network#Network_nodes
-.. _`TCP congestion control`: https://en.wikipedia.org/wiki/TCP_congestion_control
-.. _`cubic`: https://en.wikipedia.org/wiki/CUBIC_TCP
-.. _`New Reno`: https://en.wikipedia.org/wiki/TCP_congestion_control#TCP_New_Reno
-.. _`congestion window`: https://en.wikipedia.org/wiki/TCP_congestion_control#Congestion_window
-.. _`maximum segment size`: https://en.wikipedia.org/wiki/Maximum_segment_size
-.. _`varies by OS` : https://en.wikipedia.org/wiki/Hosts_%28file%29#Location_in_the_file_system
-.. _`简体中文`: https://github.com/skyline75489/what-happens-when-zh_CN
-.. _`한국어`: https://github.com/SantonyChoi/what-happens-when-KR
-.. _`日本語`: https://github.com/tettttsuo/what-happens-when-JA
-.. _`downgrade attack`: http://en.wikipedia.org/wiki/SSL_stripping
-.. _`OSI Model`: https://en.wikipedia.org/wiki/OSI_model
-.. _`Spanish`: https://github.com/gonzaleztroyano/what-happens-when-ES
