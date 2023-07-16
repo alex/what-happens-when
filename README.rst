@@ -225,7 +225,7 @@ DNS lookup
   the ``ARP process`` below for the default gateway IP.
 
 
-ARP process
+ARP process.
 -----------
 
 In order to send an ARP (Address Resolution Protocol) broadcast the network
