@@ -689,6 +689,28 @@ the Google homepage. Scripts can cause additional network requests to be
 performed, as well as modify the page or its layout, causing another round of
 page rendering and painting.
 
+A short example on Windows PC
+---------------------------------------------------
+
+When you type https://www.google.com and press enter, the browser sends a request to the Domain Name System (DNS) to resolve the hostname. DNS is the system that translates a human-readable host/domain name (www.google.com) into an IP Address (216.58.194.174).
+Once the IP is obtained, the browser initiates a Transmission Control Protocol/Internet Protocol (TCP/IP) connection with the server where the website is hosted. This connection enables reliable data exchange between the computer and the Google server.
+
+Next, the request goes through one or more firewalls to determine whether it is safe to access the requested website. Firewalls act as security barriers that block unauthorized access, malware, and other potential threats.
+
+After the request has been cleared by the firewall, the browser establishes a secure connection using HTTPS/SSL (Hyper Text Transfer Protocol Secure/Secure Sockets Layer). HTTPS/SSL is a cryptographic protocol that ensures the secure transfer of data between the browser and the server. The SSL certificate issued by a trusted authority ensures that the communication between the browser and the server is encrypted and cannot by intercepted by attackers.
+
+Once the secure connection is established, the request is directed towards a load balancer. The load balancer is responsible for distributing incoming traffic across multiple web servers to avoid overloading any single server. This ensures efficient and reliable service delivery to the client.
+
+The request is then routed to a Web Server that handles HTTP requests. The web server processes the request and sends back an HTTP response containing HTML code. In the case of Google, the response would include the search results that the user is looking for.
+
+If required, the request continues to an Application Server, which generates dynamic content and sends the processed data back to the web server. The Web Server combines the static files and the dynamic content and sends back the response to the browser.
+
+Finally, the data or information fetched from the server may also be saved or retrieved from a database. The database manages the client’s data storage. In the case of Google, there are vast amounts of data stored in databases to provide users with accurate search results.
+
+In conclusion, when the user types https://www.google.com and presses enter, a chain of technical processes ensures that the request is resolved, secured, distributed, processed, and served through multiple web and application servers, firewall, database, and SSL encryption. These processes work together seamlessly to deliver efficient and secure website service.
+
+
+
 .. _`Creative Commons Zero`: https://creativecommons.org/publicdomain/zero/1.0/
 .. _`"CSS lexical and syntax grammar"`: http://www.w3.org/TR/CSS2/grammar.html
 .. _`Punycode`: https://en.wikipedia.org/wiki/Punycode
