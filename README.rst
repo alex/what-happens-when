@@ -510,6 +510,17 @@ and IIS for Windows.
   is running on PHP, the server uses PHP to interpret the index file, and
   streams the output to the client.
 
+Firewall protection
+---------------------
+google.com runs behind a firewall. This is a security measure that is implemented on the server where the website is hostes, to monitor incoming and outgoing traffic. It gives permission on What should get the serve.
+In this stage the request sent through the IP address of google.com to make sure it follows all firewall rules defined on the server. Each packet (data) must pass through this firewall. For instance google.com can be restricted from serving webpages to a particular rejoin.
+
+There are two primary types of security policies that a firewall employs to examine incoming requests:
+
+* policies that allow or prohibit traffic based on the origin and destination of the request. For example, a firewall may be programmed to block all traffic from specific countries or to allow only specific IP addresses to access the network.
+
+* policies that allow or prohibit traffic based on the type of traffic. For example, a firewall may be programmed to block all traffic on certain ports (such as those used by malware) or to allow only certain types of traffic (such as HTTP or HTTPS).
+
 Behind the scenes of the Browser
 ----------------------------------
 
