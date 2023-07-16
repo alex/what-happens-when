@@ -1,4 +1,5 @@
-What happens when...
+What happens when when you type google.com into your browser's address box and press
+enter?
 ====================
 
 This repository is an attempt to answer the age-old interview question "What
@@ -223,6 +224,8 @@ DNS lookup
   ``ARP process`` below for the DNS server.
 * If the DNS server is on a different subnet, the network library follows
   the ``ARP process`` below for the default gateway IP.
+* To make the lookup process fast, data is cached at different layers:
+  browser cache, OS cache, local network cache, and ISP cache.
 
 
 ARP process
@@ -509,6 +512,26 @@ and IIS for Windows.
 * The server parses the file according to the handler. If Google
   is running on PHP, the server uses PHP to interpret the index file, and
   streams the output to the client.
+
+Firewall Protection
+---------------------
+Google.com is protected by a firewall, which is a security measure implemented
+ on the server hosting the website. The firewall is responsible for monitoring
+ incoming and outgoing traffic and determining what should be allowed to reach the server.
+
+During this process, when a request is sent to the IP address of google.com, it
+ undergoes scrutiny to ensure compliance with the firewall rules defined on the server. 
+ Every packet (data) must pass through this firewall. For example, google.com can be 
+ restricted from serving webpages to specific regions.
+
+There are two main types of security policies employed by a firewall to analyze incoming requests:
+
+* Policies based on the origin and destination of the request, which determine whether to
+ allow or prohibit traffic. For instance, a firewall may be configured to block traffic from certain countries or restrict access to specific IP addresses.
+
+* Policies based on the type of traffic, which determine whether to allow or prohibit traffic
+ based on its characteristics. For example, a firewall may be set to block traffic on specific 
+ ports commonly used by malware or only permit certain types of traffic such as HTTP or HTTPS.
 
 Behind the scenes of the Browser
 ----------------------------------
