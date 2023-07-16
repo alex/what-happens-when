@@ -593,6 +593,7 @@ HTML cannot be parsed using the regular top-down or bottom-up parsers.
 The reasons are:
 
 * The forgiving nature of the language.
+* Regexps can't handle arbitarly nested expressions (they cannot "count" and make sure that a given number of opening elements are balanced by the same number of closing elements)
 * The fact that browsers have traditional error tolerance to support well
   known cases of invalid HTML.
 * The parsing process is reentrant. For other languages, the source doesn't
