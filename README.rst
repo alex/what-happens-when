@@ -512,7 +512,7 @@ and IIS for Windows.
 
 Firewall Protection
 --------------------
-When Firewall is present on your server, it verifies the request you are makin is authorised before granting it.
+When Firewall is present on your server, it verifies the request you are makin is authorised before granting it. This step is vry important to secure the server.
 
 Behind the scenes of the Browser
 ----------------------------------
