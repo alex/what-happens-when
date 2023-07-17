@@ -709,3 +709,5 @@ page rendering and painting.
 .. _`downgrade attack`: http://en.wikipedia.org/wiki/SSL_stripping
 .. _`OSI Model`: https://en.wikipedia.org/wiki/OSI_model
 .. _`Spanish`: https://github.com/gonzaleztroyano/what-happens-when-ES
+
+In the case that a dynamic content such as search result, previous searches is needed, the web server makes a request to the application server, the application server makes a request to the database server for some data and sends it back to the web server. This is then included in the response sent back to the browser.
