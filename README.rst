@@ -689,6 +689,56 @@ the Google homepage. Scripts can cause additional network requests to be
 performed, as well as modify the page or its layout, causing another round of
 page rendering and painting.
 
+Content negotiation
+-----------------------------------------
+
+ When sending an HTTP request to a server, the browser may include an "Accept" header indicating the preferred content type (e.g., HTML, XML, JSON). The server can use this information to determine the appropriate response format to send back to the browser.
+
+ Caching
+-----------------------------------------
+ 
+ Browsers often cache resources such as images, CSS files, and JavaScript files to improve performance. When requesting a resource, the browser checks its cache first before making a new request to the server. If the resource is present in the cache and hasn't expired, the browser can retrieve it directly from the cache, reducing network latency.
+
+Content-Encoding
+-----------------------------------------
+
+The browser may include an "Accept-Encoding" header in the HTTP request, specifying the compression algorithms it supports. The server can then compress the response using one of the supported algorithms (e.g., gzip) before sending it back to the browser. The browser will then decompress the response before rendering it.
+
+Redirects
+-----------------------------------------
+
+If a server responds with a redirect status code (e.g., 301 or 302), indicating that the requested resource has been moved to a new location, the browser automatically follows the redirect by sending a new request to the new URL specified in the response.
+
+Same-Origin Policy
+-----------------------------------------
+
+Browsers enforce the Same-Origin Policy to protect users from cross-site scripting attacks. This policy restricts scripts running in one origin (e.g., a website) from accessing resources from a different origin (e.g., another website) unless explicitly allowed through mechanisms like Cross-Origin Resource Sharing (CORS).
+
+Security checks
+-----------------------------------------
+
+Browsers perform security checks when accessing secure resources. They verify that the SSL/TLS certificate presented by the server is valid and trusted. If the certificate is invalid or expired, the browser may display a warning to the user.
+
+User agent string
+-----------------------------------------
+
+Browsers include a user agent string in the HTTP request header, which provides information about the browser version and the operating system. This allows servers to customize the response based on the browser's capabilities or limitations.
+
+Third-party cookies and tracking
+-----------------------------------------
+
+Browsers handle third-party cookies, which are set by domains other than the one currently being visited, differently based on user privacy settings. Some browsers block third-party cookies by default or provide options to limit cross-site tracking.
+
+Browser extensions and add-ons
+-----------------------------------------
+
+Browsers support extensions and add-ons that can enhance functionality, provide additional features, or modify the browser's behavior. These extensions are developed using specific browser APIs and can interact with webpages, modify requests, or add custom functionality.
+
+Browser history and navigation
+-----------------------------------------
+
+Browsers keep track of visited URLs in the browsing history, allowing users to revisit previously accessed pages. They also provide navigation features such as back and forward buttons to move through the browsing history.
+
 .. _`Creative Commons Zero`: https://creativecommons.org/publicdomain/zero/1.0/
 .. _`"CSS lexical and syntax grammar"`: http://www.w3.org/TR/CSS2/grammar.html
 .. _`Punycode`: https://en.wikipedia.org/wiki/Punycode
