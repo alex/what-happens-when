@@ -39,7 +39,10 @@ popular searches from the internet as a whole. As you are typing
 with each keypress. It may even suggest "google.com" before you finish typing
 it.
 
-Overall, the process involves a combination of hardware signals, operating system interrupts, and browser event handling. The browser's auto-complete function leverages various algorithms to provide suggestions based on your input and browsing history, allowing for a more efficient and user-friendly browsing experience.
+Overall, the process involves a combination of hardware signals, 
+operating system interrupts, and browser event handling. The browser's 
+auto-complete function leverages various algorithms to provide suggestions 
+based on your input and browsing history, allowing for a more efficient and user-friendly browsing experience.
 
 The "enter" key bottoms out
 ---------------------------
@@ -58,12 +61,15 @@ connection, but historically has been over PS/2 or ADB connections.
 
 - The USB circuitry of the keyboard is powered by the 5V supply provided over
   pin 1 from the computer's USB host controller.
+  This ensures the keyboard has the necessary power to function.
 
 - The keycode generated is stored by internal keyboard circuitry memory in a
   register called "endpoint".
+  This register acts as __temporary storage__ for the keycode, it is __NOT permanent__.
 
 - The host USB controller polls that "endpoint" every ~10ms (minimum value
   declared by the keyboard), so it gets the keycode value stored on it.
+  This polling ensures that the host controller stays up-to-date with the state of the keyboard
 
 - This value goes to the USB SIE (Serial Interface Engine) to be converted in
   one or more USB packets that follow the low-level USB protocol.
@@ -75,8 +81,14 @@ connection, but historically has been over PS/2 or ADB connections.
 
 - This serial signal is then decoded at the computer's host USB controller, and
   interpreted by the computer's Human Interface Device (HID) universal keyboard
-  device driver.  The value of the key is then passed into the operating
+  device driver.
+
+- This driver understands the USB protocol and is responsible for translating 
+  the keycode into a recognizable input for the operating system.
+
+- The value of the key is then passed into the operating
   system's hardware abstraction layer.
+  where it can be processed by the relevant applications or system functions.
 
 *In the case of Virtual Keyboard (as in touch screen devices):*
 
@@ -92,21 +104,64 @@ connection, but historically has been over PS/2 or ADB connections.
   buttons).
 
 - The virtual keyboard can now raise a software interrupt for sending a
-  'key pressed' message back to the OS.
+  'key pressed' message back to the OS,
+  indicating that a specific area on the virtual keyboard has been pressed.
 
-- This interrupt notifies the currently focused application of a 'key pressed'
-  event.
+- This software interrupt notifies the currently focused application of a 'key pressed'
+  event.The application can then handle the event accordingly, such as updating 
+  the text input or triggering specific actions associated with the pressed key.
+
+- These processes highlight how the "Enter" keypress is handled differently 
+  between a physical USB keyboard and a virtual keyboard on touch screen devices. 
+  Understanding these mechanisms allows developers and users to appreciate 
+  the underlying technology and how it translates physical interactions into digital inputs.
+
 
 
 Interrupt fires [NOT for USB keyboards]
 ---------------------------------------
 
-The keyboard sends signals on its interrupt request line (IRQ), which is mapped
-to an ``interrupt vector`` (integer) by the interrupt controller. The CPU uses
-the ``Interrupt Descriptor Table`` (IDT) to map the interrupt vectors to
+The keyboard sends signals on its interrupt request line (IRQ), 
+the IRQ is a hardware line used to indicate that a device requires attention from the CPU. 
+Which is mapped to an ``interrupt vector`` (integer) by the interrupt controller.
+It maps this specific IRQ to a unique interrupt vector.
+An interrupt vector is an integer value associated with a specific IRQ. 
+It serves as an identifier for a particular interrupt event.
+The interrupt controller, upon receiving the IRQ signal, 
+maps it to the corresponding interrupt vector. 
+This mapping allows the system to identify the type of interrupt that occurred.
+
+The CPU uses the ``Interrupt Descriptor Table`` (IDT) to map the interrupt vectors to
 functions (``interrupt handlers``) which are supplied by the kernel. When an
 interrupt arrives, the CPU indexes the IDT with the interrupt vector and runs
-the appropriate handler. Thus, the kernel is entered.
+the appropriate interrupt handler. 
+
+__An interrupt handler__, also known as an __interrupt service routine (ISR)__, 
+is a function provided by the kernel to handle specific types of interrupts.
+Each interrupt vector in the IDT corresponds to a unique interrupt handler function. 
+These functions are responsible for executing the necessary actions to handle
+the specific interrupt event.
+
+Upon determining the appropriate interrupt handler from the IDT, 
+the CPU enters the kernel execution context to run the selected 
+interrupt handler function.
+The interrupt handler performs the required tasks associated with the interrupt event. 
+This may involve updating system state, handling hardware-specific operations, 
+or invoking relevant system services.
+
+By following this process, the system can promptly respond to various 
+interrupt events, such as those triggered by hardware devices. 
+The interrupt mechanism allows for efficient handling of time-sensitive events, 
+ensuring the operating system can respond promptly and appropriately.
+
+Thus, the kernel is entered.
+
+It's important to note that the explanation provided in this response 
+is not specific to USB keyboards but rather describes the 
+general flow of interrupts in a system. 
+The details mentioned here apply to various types of interrupts 
+and the overall interrupt handling process.
+
 
 (On Windows) A ``WM_KEYDOWN`` message is sent to the app
 --------------------------------------------------------
