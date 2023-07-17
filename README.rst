@@ -38,6 +38,9 @@ popular searches from the internet as a whole. As you are typing
 "google.com" many blocks of code run and the suggestions will be refined
 with each keypress. It may even suggest "google.com" before you finish typing
 it.
+Sorting and Prioritization: The autocomplete algorithm sorts and prioritizes the suggestions based on multiple criteria.
+These criteria often include the frequency of previous visits to specific websites,
+the recency of visits, and the relevance to the entered text.
 
 The "enter" key bottoms out
 ---------------------------
