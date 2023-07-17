@@ -39,6 +39,8 @@ popular searches from the internet as a whole. As you are typing
 with each keypress. It may even suggest "google.com" before you finish typing
 it.
 
+Overall, the process involves a combination of hardware signals, operating system interrupts, and browser event handling. The browser's auto-complete function leverages various algorithms to provide suggestions based on your input and browsing history, allowing for a more efficient and user-friendly browsing experience.
+
 The "enter" key bottoms out
 ---------------------------
 
