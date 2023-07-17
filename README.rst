@@ -570,6 +570,18 @@ The components of the browsers are:
   need to save all sorts of data locally, such as cookies. Browsers also
   support storage mechanisms such as localStorage, IndexedDB, WebSQL and
   FileSystem.
+* **Browser Extensions/Add-ons: Browsers often support extensions or add-ons,
+  which are additional software modules that users can install to extend the
+  functionality of the browser. These can provide features like ad-blocking,
+  password management, or developer tools.
+* **Cache: Browsers utilize a cache to store previously visited web pages, 
+  images, and other resources. Caching enables faster loading times by
+  retrieving content from the local cache instead of re-downloading it 
+  from the server.
+* **Security Components: Web browsers incorporate various security components 
+  to protect users from threats and ensure a safe browsing experience. These 
+  may include mechanisms for blocking malicious websites, protecting against 
+  cross-site scripting (XSS) attacks, and implementing secure protocols like HTTPS.
 
 HTML parsing
 ------------
@@ -599,6 +611,8 @@ The reasons are:
   change during parsing, but in HTML, dynamic code (such as script elements
   containing `document.write()` calls) can add extra tokens, so the parsing
   process actually modifies the input.
+* Compatibility with Legacy HTML: HTML has evolved over time, and there
+  are various versions and implementations in use.
 
 Unable to use the regular parsing techniques, the browser utilizes a custom
 parser for parsing HTML. The parsing algorithm is described in
