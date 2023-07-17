@@ -689,6 +689,29 @@ the Google homepage. Scripts can cause additional network requests to be
 performed, as well as modify the page or its layout, causing another round of
 page rendering and painting.
 
+Establishing a TCP Connection
+------------------------------
+Once the browser has obtained the IP address of the server hosting the website
+(in this case, google.com), it needs to establish a TCP (Transmission Control
+Protocol) connection with that server.
+The TCP connection allows for reliable and ordered communication
+between the browser and the server.
+To establish the TCP connection, the browser initiates a three-way handshake with the server.
+First, it sends a TCP packet with the SYN (synchronize) flag set to the server's
+IP address and the specific port associated with HTTP (usually port 80 for HTTP
+or port 443 for HTTPS).
+This packet signifies the start of the connection establishment process.
+The server responds by sending a TCP packet with the
+SYN-ACK (synchronize-acknowledge) flags set, indicating that it acknowledges
+the browser's request and is willing to establish a connection.
+The server also generates a random sequence number for the connection.
+Finally, the browser sends an ACK (acknowledge) packet back to the server,
+confirming the establishment of the connection. At this point,
+both the browser and the server have completed the three-way handshake,
+and a TCP connection is established between them.
+Once the TCP connection is established, the browser can proceed to send an
+HTTP request to the server, requesting the content of the webpage associated with the URL.
+
 .. _`Creative Commons Zero`: https://creativecommons.org/publicdomain/zero/1.0/
 .. _`"CSS lexical and syntax grammar"`: http://www.w3.org/TR/CSS2/grammar.html
 .. _`Punycode`: https://en.wikipedia.org/wiki/Punycode
