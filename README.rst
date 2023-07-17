@@ -462,7 +462,7 @@ If the HTTP headers sent by the web browser included sufficient information for
 the webserver to determine if the version of the file cached by the web
 browser has been unmodified since the last retrieval (ie. if the web browser
 included an ``ETag`` header), it may instead respond with a request of
-the form::
+the form.::
 
     304 Not Modified
     [response headers]
@@ -709,3 +709,5 @@ page rendering and painting.
 .. _`downgrade attack`: http://en.wikipedia.org/wiki/SSL_stripping
 .. _`OSI Model`: https://en.wikipedia.org/wiki/OSI_model
 .. _`Spanish`: https://github.com/gonzaleztroyano/what-happens-when-ES
+
+#sfosu003@gmail.com
