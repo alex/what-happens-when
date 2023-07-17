@@ -674,6 +674,9 @@ GPU Rendering
   of ``GPU`` massive parallelism for float point calculations required for
   the rendering process.
 
+* Using GPU rendering is important in order to support modern web technologies, such WebGL (Web Graphics Library),
+  HTML5 canvas-based applications as well as CSS animations which make the user experience of web pages look more
+  personalized and to resemble native applications.
 
 Window Server
 -------------
