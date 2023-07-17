@@ -2,7 +2,7 @@ What happens when...
 ====================
 
 This repository is an attempt to answer the age-old interview question "What
-happens when you type google.com into your browser's address box and press
+happens when you type "google.com" into your browser's address box and press
 enter?"
 
 Except instead of the usual story, we're going to try to answer this question
@@ -149,6 +149,10 @@ this queue by threads with sufficient privileges calling the
 ``mach_ipc_dispatch`` function. This most commonly occurs through, and is
 handled by, an ``NSApplication`` main event loop, via an ``NSEvent`` of
 ``NSEventType`` ``KeyDown``.
+When an NSApplication receives a KeyDown event from the event queue, it checks
+if the event is targeted for the currently active application window or any other
+listening application. If the event is relevant to the application, it is dispatched
+to the appropriate NSResponder object, such as a view or a view controller.
 
 (On GNU/Linux) the Xorg server listens for keycodes
 ---------------------------------------------------
