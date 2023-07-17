@@ -224,6 +224,21 @@ DNS lookup
 * If the DNS server is on a different subnet, the network library follows
   the ``ARP process`` below for the default gateway IP.
 
+DNS Caching and TTL (Time to Live)
+
+After the browser performs a DNS lookup to retrieve the IP address of the
+requested domain, it can store this information in its DNS cache. However, it's
+important to consider the concept of TTL (Time to Live) when dealing with DNS caching.
+
+TTL is a value specified by the domain owner in the DNS record, indicating the
+duration for which the DNS information should be considered valid. When the browser
+performs a DNS lookup, it checks if the domain's IP address is already present in its
+cache and, if so, whether the TTL value has expired.
+
+If the TTL has not expired, the browser can use the cached IP address without making
+another DNS request. This helps reduce the DNS lookup time and improves overall performance.
+However, if the TTL has expired, indicating that the cached IP address may no longer be valid,
+the browser needs to perform a fresh DNS lookup to obtain the updated IP address.
 
 ARP process
 -----------
