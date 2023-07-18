@@ -1,6 +1,9 @@
 What happens when...
 ====================
 
+This Readme file was changed by Eric Pisco Hakizimana for the contribution task on the project
+0x11-what_happens_when_your_type_google_com_in_your_browser_and_press_enter
+
 This repository is an attempt to answer the age-old interview question "What
 happens when you type google.com into your browser's address box and press
 enter?"
