@@ -182,6 +182,7 @@ When no protocol or valid domain name is given the browser proceeds to feed
 the text given in the address box to the browser's default web search engine.
 In many cases the URL has a special piece of text appended to it to tell the
 search engine that it came from a particular browser's URL bar.
+When a browser encounters an input without a protocol or valid domain name in the address box, it follows a default behavior of feeding the text to its default web search engine. To ensure the search engine recognizes the source as originating from a specific browser's URL bar, a special piece of text is often appended to the URL. This mechanism allows users to conveniently initiate web searches directly from the address bar, leveraging the search engine's capabilities to retrieve relevant information based on the provided text.
 
 Convert non-ASCII Unicode characters in the hostname
 ------------------------------------------------
@@ -231,6 +232,8 @@ ARP process
 In order to send an ARP (Address Resolution Protocol) broadcast the network
 stack library needs the target IP address to lookup. It also needs to know the
 MAC address of the interface it will use to send out the ARP broadcast.
+
+These essential details enable the network stack library to construct and send the ARP broadcast packet effectively, facilitating the resolution of IP addresses to MAC addresses within the local network environment.
 
 The ARP cache is first checked for an ARP entry for our target IP. If it is in
 the cache, the library function returns the result: Target IP = MAC.
@@ -312,10 +315,7 @@ named ``socket`` and requests a TCP socket stream - ``AF_INET/AF_INET6`` and
 * This segment is sent to the Network Layer, which wraps an additional IP
   header. The IP address of the destination server as well as that of the
   current machine is inserted to form a packet.
-* The packet next arrives at the Link Layer. A frame header is added that
-  includes the MAC address of the machine's NIC as well as the MAC address of
-  the gateway (local router). As before, if the kernel does not know the MAC
-  address of the gateway, it must broadcast an ARP query to find it.
+  Once the packet reaches the Link Layer, a frame header is appended, containing both the MAC address of the machine's Network Interface Card (NIC) and the MAC address of the local router (gateway). This frame header facilitates the transmission of the packet across the network by specifying the source and destination MAC addresses. In the event that the kernel does not possess the MAC address of the gateway, it is required to initiate an ARP query, which involves broadcasting a special ARP message to obtain the MAC address of the gateway. This essential step allows the packet to be properly routed through the network, ensuring seamless communication between the machine and the external network.
 
 At this point the packet is ready to be transmitted through either:
 
@@ -523,11 +523,7 @@ to the browser it undergoes the below process:
 Browser
 -------
 
-The browser's functionality is to present the web resource you choose, by
-requesting it from the server and displaying it in the browser window.
-The resource is usually an HTML document, but may also be a PDF,
-image, or some other type of content. The location of the resource is
-specified by the user using a URI (Uniform Resource Identifier).
+The primary role of a browser is to retrieve the desired web resource selected by the user from a server and present it within the browser window. This process involves sending a request to the server for the specified resource, which can be an HTML document, a PDF file, an image, or any other form of content. The user indicates the location of the resource using a Uniform Resource Identifier (URI), allowing the browser to accurately locate and retrieve the requested content for display.
 
 The way the browser interprets and displays HTML files is specified
 in the HTML and CSS specifications. These specifications are maintained
