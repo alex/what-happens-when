@@ -209,7 +209,7 @@ Check HSTS list
 DNS lookup
 ----------
 
-* To begin with, the browser must establish the  IP address of the domain name "www.goog  le.com"
+* To begin with, the browser must establish the  IP address of the domain name "www.google.com"
 * Browser checks if the domain is in its cache. (to see the DNS Cache in
   Chrome, go to `chrome://net-internals/#dns <chrome://net-internals/#dns>`_).
 * If not found, the browser calls ``gethostbyname`` library function (varies by
