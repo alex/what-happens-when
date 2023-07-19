@@ -689,6 +689,17 @@ the Google homepage. Scripts can cause additional network requests to be
 performed, as well as modify the page or its layout, causing another round of
 page rendering and painting.
 
+Conclusion: The process of loading a webpage involves a series of intricate steps,
+starting from DNS resolution to handling database requests.
+Understanding the various components of the web stack helps us
+appreciate the complexities involved in delivering the
+content we see in our browsers.
+From ensuring secure connections with HTTPS/SSL to efficiently
+distributing traffic with load balancers,
+each element plays a crucial role in providing a seamless web experience.
+By unraveling this journey,
+we gain a deeper understanding of the underlying mechanisms that power the web.
+
 .. _`Creative Commons Zero`: https://creativecommons.org/publicdomain/zero/1.0/
 .. _`"CSS lexical and syntax grammar"`: http://www.w3.org/TR/CSS2/grammar.html
 .. _`Punycode`: https://en.wikipedia.org/wiki/Punycode
