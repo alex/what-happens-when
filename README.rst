@@ -406,7 +406,7 @@ to decide how to react. The algorithm for this is called `TCP congestion
 control`_. This varies depending on the sender; the most common algorithms are
 `cubic`_ on newer operating systems and `New Reno`_ on almost all others.
 
-* Client chooses a `congestion window`_ based on the `maximum segment size`_
+* Client then chooses a `congestion window`_ based on the `maximum segment size`_
   (MSS) of the connection.
 * For each packet acknowledged, the window doubles in size until it reaches the
   'slow-start threshold'. In some implementations, this threshold is adaptive.
