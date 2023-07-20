@@ -28,14 +28,14 @@ Table of Contents
 The "g" key is pressed
 ----------------------
 The following sections explain the physical keyboard actions
-and the OS interrupts. When you press the key "g" the browser receives the
+and the OS interrupts. When you press the key "g", the browser receives the
 event and the auto-complete functions kick in.
 Depending on your browser's algorithm and if you are in
-private/incognito mode or not various suggestions will be presented
+private/incognito mode or not, various suggestions will be presented
 to you in the dropdown below the URL bar. Most of these algorithms sort
 and prioritize results based on search history, bookmarks, cookies, and
 popular searches from the internet as a whole. As you are typing
-"google.com" many blocks of code run and the suggestions will be refined
+"google.com", many blocks of code run and the suggestions will be refined
 with each keypress. It may even suggest "google.com" before you finish typing
 it.
 
