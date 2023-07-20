@@ -520,6 +520,10 @@ to the browser it undergoes the below process:
 * Rendering - Construct DOM Tree → Render Tree → Layout of Render Tree →
   Painting the render tree
 
+The TCP/IP Connection
+----------------------
+Once the DNS client attains the IP for the domain it proceeds to initiate a connection to it using a process called TCP 3-way handshake (where both the client and the server synchronize a.k.a SYN and acknowledge a.k.a ACK each other). Where the client chooses an initial sequence number, set in the first SYN packet. The server also chooses its own initial sequence number increments the client’s SYN number sets it the SYN/ACK packet and waits for the client to ACK by incrementing its SYN number
+
 Browser
 -------
 
