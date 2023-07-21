@@ -5,7 +5,7 @@ This repository is an attempt to answer the age-old interview question "What
 happens when you type google.com into your browser's address box and press
 enter?"
 
-Except instead of the usual story, we're going to try to answer this question
+Except instead of the usual  story, we're going to try to answer this question
 in as much detail as possible. No skipping out on anything.
 
 This is a collaborative process, so dig in and try to help out! There are tons
@@ -15,7 +15,7 @@ request, please!
 This is all licensed under the terms of the `Creative Commons Zero`_ license.
 
 Read this in `简体中文`_ (simplified Chinese), `日本語`_ (Japanese), `한국어`_
-(Korean) and `Spanish`_. NOTE: these have not been reviewed by the alex/what-happens-when
+(Korean) and `Spanish`_. a swahili verion is also coming soon. NOTE: these have not been reviewed by the alex/what-happens-when
 maintainers.
 
 Table of Contents
@@ -189,7 +189,7 @@ Convert non-ASCII Unicode characters in the hostname
 * The browser checks the hostname for characters that are not in ``a-z``,
   ``A-Z``, ``0-9``, ``-``, or ``.``.
 * Since the hostname is ``google.com`` there won't be any, but if there were
-  the browser would apply `Punycode`_ encoding to the hostname portion of the
+  the browser would apply `Punycode`_ (representation of unicode in ASCII, used for domain names) encoding to the hostname portion of the
   URL.
 
 Check HSTS list
