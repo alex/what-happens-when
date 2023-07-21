@@ -223,7 +223,46 @@ DNS lookup
   ``ARP process`` below for the DNS server.
 * If the DNS server is on a different subnet, the network library follows
   the ``ARP process`` below for the default gateway IP.
+So how does DNS resolution really happen? Let us suppose an example of 
+typing www.google.com. 
+The first concept to understand is caching. Whenever we access a particular 
+resource over the internet our computer stores the address of the resource 
+locally in a DNS cache. When we type a url on our browser, the browser 
+invokes the recursive resolver (DNS recursor) which in turn checks the DNS 
+cache for the address of the url passed. The DNS recursor acts as a 
+middleman between a client and a DNS nameserver.
 
+The DNS recursor will either respond to the client with cached data or send 
+a request to the root nameserver followed by another request to an authoritative 
+nameserver. If the address is in the cache the DNS recursor returns the 
+IP address of the resource. It also checks if there is a host table file. 
+If the file exists, it scans through it to confirm if there is a static mapping 
+for the url passed and uses that information to resolve the url. In the event 
+the address is not cached, the DNS recursor generates a iterative query and 
+sends it to a root nameserver.
+
+The root nameserver does not resolve the passed url into an IP address but rather 
+responds with the address of a TLD nameserver for the requested domain extension 
+i.e., .com in our case. 
+There are thirteen root nameservers globally managed by Internet Corporation for 
+Assigned Names and Numbers (ICANN). A TLD nameserver maintains information for all domain 
+names that share a common domain extension The TLD, upon receiving the iterative 
+request from the DNS recursor, will respond with the address of an authoritative 
+nameserver for the specific domain requested i.e., google.com in our case. 
+These TLD nameservers are managed by the Internet Assigned Numbers Authority (IANA) 
+and can be classified into Generic TLDs (non-country specific e.g. .com, .org, etc.) 
+and Country Code TLDs (.co.ke).
+
+The DNS recursor then sends an iterative request to the authoritative nameserver
+which resolves the url into an IP address of the requested resource. This address 
+is recorded in the server as a DNS A record. If the domain has an alias there will 
+be a CNAME record. The authoritative nameserver will provide the DNS recursor with 
+the alias domain prompting the DNS recursor to repeat the entire resolution process 
+with the given alias domain.
+
+During this process, the DNS recursor will cache all the information received 
+from the authoritative nameserver so that when the same domain is requested again 
+in future the DNS lookup process can be avoided.
 
 ARP process
 -----------
