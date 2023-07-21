@@ -689,6 +689,12 @@ the Google homepage. Scripts can cause additional network requests to be
 performed, as well as modify the page or its layout, causing another round of
 page rendering and painting.
 
+Network Requests
+----------------
+* Fetching Dynamic Content - JavaScript code may initiate further network requests to fetch additional data from APIs or servers. These requests can retrieve data in JSON or XML format, which is then processed and dynamically updated on the web page.
+
+* Background Requests - Some websites use background AJAX requests to periodically update specific sections of the page without requiring user interaction. This technique is often used for live notifications, real-time data updates, or polling for new content.
+
 .. _`Creative Commons Zero`: https://creativecommons.org/publicdomain/zero/1.0/
 .. _`"CSS lexical and syntax grammar"`: http://www.w3.org/TR/CSS2/grammar.html
 .. _`Punycode`: https://en.wikipedia.org/wiki/Punycode
