@@ -380,8 +380,15 @@ TLS handshake
   the handshake until a symmetric key can be agreed upon.
 
 * The client verifies the server digital certificate against its list of
-  trusted CAs. If trust can be established based on the CA, the client
-  generates a string of pseudo-random bytes and encrypts this with the server's
+  trusted CAs. In many cases however, the certificate is not just one but a chain 
+  which includes intermediate CAs between the server's certificate and the root CA. 
+  These intermediate CAs play a crucial role in establishing a seamless chain of trust, 
+  effectively bridging the gap between the root CA and the server's certificate.
+  
+* As a result, the client needs to traverse the certificate chain, validating each
+  certificate starting from the server's certificate and progressing up the chain
+  until reaching the root CA certificate. If trust can be established based on the CA, 
+  the client generates a string of pseudo-random bytes and encrypts this with the server's
   public key. These random bytes can be used to determine the symmetric key.
 
 * The server decrypts the random bytes using its private key and uses these
