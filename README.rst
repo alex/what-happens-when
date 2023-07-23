@@ -709,3 +709,7 @@ page rendering and painting.
 .. _`downgrade attack`: http://en.wikipedia.org/wiki/SSL_stripping
 .. _`OSI Model`: https://en.wikipedia.org/wiki/OSI_model
 .. _`Spanish`: https://github.com/gonzaleztroyano/what-happens-when-ES
+
+A summary of what happens
+-----------------------------------------
+On entering a URL, `https://www.google.com` in this case on your browser, first the browsers sends a DNS request to find the IP address corresponding to `www.google.com`.  On receiving the IP address, the browser initiates a TCP connection to Google's web server. And before the connection is  established, The Google's firewalls inspect and allow or deny the connection based on its predefined rules. If the connection is allowed, It is then secured by HTTPS (Hypertext Transfer Protocol Secure) which will encrypt data exchange between the browser and google web server. `Google.com` has several  web servers worldwide being a high-traffic website, it uses a load  balancer to effectively distribute traffic across them. When a web server receives the encrypted request, decrypts it and process it. To process a dynamic content the the web server engages the application servers who interacts with the database to generates the content and sent it back to the web server. The web server generates the response - a webpage which is made up of  HTML, CSS, JavaScript, and assets, and send to the browser. Upon receiving the response, the browser renders the webpage.
