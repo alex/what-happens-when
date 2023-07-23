@@ -689,6 +689,29 @@ the Google homepage. Scripts can cause additional network requests to be
 performed, as well as modify the page or its layout, causing another round of
 page rendering and painting.
 
+Load Balancing
+______________
+
+Load balancing refers to efficiently distributing incoming network traffic across
+a group of backend servers, also known as a server farm or server pool.
+
+Modern high-traffic websites like google serve hundreds of thousands, if not
+millions, of concurrent requests from users or clients and return the correct text,
+images, video, or application data, all in a fast and reliable manner.
+
+The google load balancer might perform the following functions in responding to a request:
+* Distributes client requests or network load efficiently across multiple servers
+* Ensures high availability and reliability by sending requests only to servers
+  that are online
+* Provides the flexibility to add or subtract servers as demand dictates
+
+The load balancing algoritm might be might be one of these:
+* Round Robin – Requests are distributed across the group of servers sequentially.
+* Least Connections – A new request is sent to the server with the fewest
+  current connections to clients. The relative computing capacity of each server
+  is factored into determining which one has the least connections.
+* Least Time – Sends requests to the server selected by a formula that
+  combines the fastest response time and fewest active connections.
 .. _`Creative Commons Zero`: https://creativecommons.org/publicdomain/zero/1.0/
 .. _`"CSS lexical and syntax grammar"`: http://www.w3.org/TR/CSS2/grammar.html
 .. _`Punycode`: https://en.wikipedia.org/wiki/Punycode
