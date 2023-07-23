@@ -1,0 +1,28 @@
+Behind the scenes, a remarkable sequence of events unfolds to deliver the website you requested.
+
+Step 1: Resolving the Domain Name
+When you type "https://www.google.com" into your browser's address bar, the first thing your browser needs to do is convert the human-readable domain name ("www.google.com") into an IP address. This process, known as DNS (Domain Name System) resolution, involves a series of queries to DNS servers to find the IP address associated with the domain.
+
+Step 2: Initiating a TCP Connection
+Once the IP address is obtained, your browser establishes a TCP (Transmission Control Protocol) connection with the server hosting the website. TCP ensures reliable communication by breaking down the data into packets and ensuring their orderly transmission.
+
+Step 3: Performing the TLS Handshake
+In the case of URLs starting with "https://" (as opposed to "http://"), an additional step called the TLS (Transport Layer Security) handshake takes place. The browser and the server exchange encryption keys to establish a secure connection. This ensures that the data transmitted between your browser and the server is encrypted and protected from eavesdropping or tampering.
+
+Step 4: Making the HTTP Request
+Once the TCP connection is established (or the TLS handshake is completed), your browser sends an HTTP (Hypertext Transfer Protocol) request to the server. This request contains various details, such as the specific webpage you want to access (in this case, the homepage of Google), any additional parameters, and headers providing information about the browser and the desired content format.
+
+Step 5: Processing the Request on the Server
+The server receives the HTTP request and processes it accordingly. It retrieves the requested webpage and any associated resources (such as images, scripts, or stylesheets) from its storage. The server may also execute dynamic code or interact with databases to generate personalized or real-time content.
+
+Step 6: Sending the HTTP Response
+After processing the request, the server generates an HTTP response. This response contains the requested webpage's content, along with metadata such as the response status code (indicating success or failure), headers providing additional information, and sometimes cookies for session management or tracking.
+
+Step 7: Receiving and Rendering the Webpage
+Upon receiving the HTTP response, your browser interprets the received HTML (Hypertext Markup Language) to render the webpage on your screen. It parses the HTML structure, fetches external resources referenced within the HTML (such as images or stylesheets), and combines everything to display the webpage as intended.
+
+Step 8: Executing Scripts and Interactivity
+In modern web applications, JavaScript plays a crucial role in providing interactivity and dynamic functionality. Once the webpage is rendered, your browser executes any JavaScript code embedded within the page, enabling features like animations, form validations, or asynchronous data fetching.
+
+Conclusion:
+From the moment you enter a URL like "https://www.google.com" into your browser and hit Enter, a complex sequence of steps unfolds behind the scenes. The journey involves DNS resolution, establishing TCP connections, performing TLS handshakes for secure communication, making HTTP requests, processing responses on the server, rendering webpages, and executing JavaScript code. Understanding this process sheds light on the remarkable technologies and protocols that enable the seamless delivery of web content
