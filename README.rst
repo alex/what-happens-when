@@ -41,7 +41,7 @@ it.
 
 The "enter" key bottoms out
 ---------------------------
-
+when you press the "g" key on your keyboard, the keyboard sends a signal to the computer, which is then interpreted by the operating system and converted into the corresponding ASCII value. This ASCII value is then used to display the character "g" on the screen or used by applications for the intended purpose.
 To pick a zero point, let's choose the Enter key on the keyboard hitting the
 bottom of its range. At this point, an electrical circuit specific to the enter
 key is closed (either directly or capacitively). This allows a small amount of
