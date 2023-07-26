@@ -619,6 +619,33 @@ set to "complete" and a "load" event is fired.
 Note there is never an "Invalid Syntax" error on an HTML page. Browsers fix
 any invalid content and go on.
 
+**Improving HTML parsing performance and error handling**
+
+HTML parsing plays a crucial role in converting HTML markup into a parse tree,
+which is then used to render web content. However, there are opportunities to
+improve the parsing process in terms of performance and error handling.
+Some possible areas for improvement are:
+
+* Optimizing parsing algorithms: Explore ways to optimize the parsing algorithms
+  to improve parsing speed and efficiency. This can involve analyzing the current
+  parsing algorithm used by browsers and identifying areas for optimization or
+  proposing new parsing algorithms that can handle complex HTML structures more
+  efficiently.
+  `HPar paper <https://www.researchgate.net/publication/262168861_HPar_A_practical_parallel_parser_for_HTML--taming_HTML_complexities_for_parallel_parsing>`_
+* Enhancing error handling: HTML is a forgiving language, and browsers often handle
+  invalid HTML gracefully. However, there is room for improvement in error handling
+  to provide more informative error messages or suggestions for fixing common HTML
+  syntax errors. Contributions could focus on enhancing error detection, reporting,
+  and recovery mechanisms during the parsing process.
+* Standard compliance and edge cases: Ensure the HTML parsing process adheres to the
+  latest HTML specifications and standards set by the W3C. Consider edge cases and
+  corner scenarios that might not be well-covered by existing parsing algorithms and
+  propose improvements to handle them more effectively.
+* Error tolerance and compatibility: Explore ways to balance error tolerance and
+  compatibility with legacy websites. This includes addressing common quirks and
+  non-standard HTML practices that still exist on the web to ensure accurate
+  rendering while maintaining compatibility with existing content.
+
 CSS interpretation
 ------------------
 
