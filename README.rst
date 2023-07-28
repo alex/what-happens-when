@@ -543,6 +543,9 @@ common user interface elements are:
 * Refresh and stop buttons for refreshing or stopping the loading of
   current documents
 * Home button that takes you to your home page
+* Users can adjust zoom level of a webpage to make text and images bigger or smaller.
+* The menu button provides access to additional browser features and settings not visible in the main interface.
+* Browsers allow users to extend functionality through browser extensions or add-ons, enhancing the browsing experience with additional features.
 
 **Browser High-Level Structure**
 
