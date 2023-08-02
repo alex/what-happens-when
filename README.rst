@@ -414,6 +414,9 @@ control`_. This varies depending on the sender; the most common algorithms are
   each packet acknowledged. If a packet is dropped, the window reduces
   exponentially until another packet is acknowledged.
 
+The firewall,
+a software or hardware device that blocks unauthorised access to or from private networks. It acts as a barrier between secured internal network and most vulnerable network, e.g. the internet. The decision to whether to allow the traffic or not is based on a custom set of security rules, such as restrictions on the IP address of the request, the number and frequency of the requests made, or the type of content being requested. A load balancer acts as firewall. However you can install seperate firewalls for extra security and protection and to avoid SPOF (single point of failure).
+
 HTTP protocol
 -------------
 
