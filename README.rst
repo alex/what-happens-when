@@ -675,6 +675,22 @@ GPU Rendering
   the rendering process.
 
 
+Importance of the various technologies and protocols in enabling the smooth and secure access of websites on the internet
+-------------------------------------------------------------------------------------------------------------------------
+
+The DNS system is critical for translating domain names 
+into IP addresses and allowing clients to access websites 
+using easy-to-remember names rather than numerical 
+addresses. The TCP/IP protocol is the foundation of the internet 
+and allows computers to communicate with each other by 
+sending packets of data over a network.
+HTTPS and SSL/TLS are essential for ensuring the security 
+of the communication between clients and servers, protecting 
+against eavesdropping and tampering and ensuring that sensitive information 
+is kept private. Load balancers are crucial for distributing 
+the load among multiple servers and ensuring that websites 
+remain responsive and available even under heavy traffic.
+
 Window Server
 -------------
 
