@@ -675,6 +675,22 @@ GPU Rendering
   the rendering process.
 
 
+LOAD BALANCING
+--------------
+In many cases, a website is hosted on multiple servers to handle the large volume of traffic it receives. 
+This is especially true for websites that are popular or receive a lot of traffic, such as Google, Facebook, and Amazon.
+To ensure that the traffic is distributed evenly among the servers and that the website remains available and responsive, 
+the servers are typically grouped together behind a load balancer. 
+A load balancer is a device that sits between the client (such as a web browser) and the servers, and 
+it distributes incoming traffic among the servers based on various rules and algorithms.
+The main purpose of a load balancer is to improve the performance and availability of a website by distributing the traffic among multiple servers. 
+This helps to prevent any single server from becoming overloaded, which can cause the website to slow down or become unavailable.
+Load balancers also provide other benefits, such as improved security, increased scalability, and easier maintenance. 
+For example, a load balancer can hide the IP addresses of the servers from the client, which can help to protect the servers from malicious attacks. 
+It can also be easily scaled up or down to accommodate changes in traffic levels, and it can be used to perform maintenance on the servers without affecting the availability of the website.
+Overall, load balancers are an essential component of modern web infrastructure and play a key role in ensuring the 
+performance and availability of websites on the internet.
+
 Window Server
 -------------
 
