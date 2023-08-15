@@ -38,6 +38,7 @@ popular searches from the internet as a whole. As you are typing
 "google.com" many blocks of code run and the suggestions will be refined
 with each keypress. It may even suggest "google.com" before you finish typing
 it.
+https://medium.com/@rickfabulous201/surely-many-of-us-have-wondered-what-happens-when-we-type-any-url-into-a-browser-and-hit-enter-987559be7dfa
 
 The "enter" key bottoms out
 ---------------------------
