@@ -39,7 +39,7 @@ popular searches from the internet as a whole. As you are typing
 with each keypress. It may even suggest "google.com" before you finish typing
 it.
 
-https://blog.driiis.com/the-journey-of-a-web-request-from-typing-httpswwwgooglecom-to-loading-the-page
+Link to a detailed explanation :- https://blog.driiis.com/the-journey-of-a-web-request-from-typing-httpswwwgooglecom-to-loading-the-page
 
 The "enter" key bottoms out
 ---------------------------
