@@ -689,6 +689,30 @@ the Google homepage. Scripts can cause additional network requests to be
 performed, as well as modify the page or its layout, causing another round of
 page rendering and painting.
 
+Application server and Database server 
+--------------------------------------
+
+* In some cases our request would need to involve the Application and database servers
+
+* The Application server is responsible for providing dynamic content to users. For 
+  example when you login or provide some information to a website and there is information 
+  provided to you based on your location or your preferences or based on the information 
+  you provided, that's the application server at work. For short the application server permits 
+  users to interact with their content. Databases are like storage. Let's take a database to be 
+  like a well organised store where we store our goods in an orderly manner.
+  Databases are used to store all types of information depending on what we are creating the database for. 
+  There are different types of database but this is not what we are talking about right?
+
+* Now how do the webserver, application server and database server work together to provide us with information?
+
+* Once the web server sends the information to the browser and the information is displayed on the screen 
+  if the user needs to interact with the website or the page, maybe by  submitting a form, then the web server 
+  would send a request to the application server. If the request needs information from the database then the 
+  application serverwould send a request to the database server so as to get the information required 
+  from its database. The database server would then forward the response acquired to the application server 
+  which would then process this response then display the response on your screen.
+
+
 .. _`Creative Commons Zero`: https://creativecommons.org/publicdomain/zero/1.0/
 .. _`"CSS lexical and syntax grammar"`: http://www.w3.org/TR/CSS2/grammar.html
 .. _`Punycode`: https://en.wikipedia.org/wiki/Punycode
