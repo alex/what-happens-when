@@ -1,0 +1,39 @@
+You may not think about it much, but when you type a URL like "https://www.google.com" into your browser's address bar and hit Enter,
+a complex chain of events unfolds behind the scenes to ensure you reach your desired destination on the web. In this blog post, we'll
+take a step-by-step journey through the process to understand what happens when you initiate this seemingly simple action.
+
+1. DNS Request:
+As soon as you hit Enter, your browser sends a request to a DNS (Domain Name System) server to resolve "www.google.com" into
+an IP address. Think of DNS as the internet's phone book, translating human-friendly domain names into machine-readable IP addresses.
+
+2. TCP/IP:
+With the IP address in hand, your browser uses the TCP/IP (Transmission Control Protocol/Internet Protocol) suite to establish a connection
+with the server hosting the Google website. This suite ensures reliable data transmission between your computer and the remote server.
+
+3. Firewall:
+Before any data exchange can occur, your request may pass through a firewall, a security system that filters incoming and outgoing network traffic.
+It checks for suspicious activity and can block or allow the request based on predefined rules.
+
+4. HTTPS/SSL:
+If Google uses HTTPS (Hypertext Transfer Protocol Secure), which it does, your browser and the server engage in an SSL (Secure Sockets Layer) handshake.
+This process encrypts the data exchanged between your computer and Google's servers, ensuring that your interactions are secure and private.
+
+5. Load-Balancer:
+Many large websites like Google employ load balancers to distribute incoming requests across multiple servers. This helps balance the traffic load, ensuring that
+no single server gets overwhelmed. Load balancers enhance website reliability and performance.
+
+6. Web Server:
+Once your request reaches Google's server farm, it's directed to one of many web servers. These servers store and deliver web pages, serving as the initial contact
+point between your browser and the Google infrastructure.
+
+7. Application Server:
+Behind the web servers, you'll find application servers. These servers handle more complex tasks, such as processing search queries, managing user accounts, and providing
+personalized content.
+
+8. Database:
+To fetch the requested web page or search results, the application server may need to access a database. Google relies on vast databases to store its index of web pages and
+user data, which the application server queries and retrieves information from.
+
+In summary, when you type "https://www.google.com" into your browser and press Enter, your request undergoes a journey involving DNS resolution, TCP/IP communication, firewall checks,
+HTTPS encryption, load balancing, web server interaction, application server processing, and database retrieval. All these steps work seamlessly together to provide you with a fast,
+secure, and reliable web browsing experience. The next time you access a website, take a moment to appreciate the intricate dance of technology happening behind the scenes.
