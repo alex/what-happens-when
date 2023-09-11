@@ -224,6 +224,17 @@ DNS lookup
 * If the DNS server is on a different subnet, the network library follows
   the ``ARP process`` below for the default gateway IP.
 
+### DNS lookup process:
+* The browser sends a request to the local DNS resolver, which is provided by the internet service provider (ISP).
+* The local DNS resolver checks its cache to see if it has a recent copy of the DNS record for the domain. If it does, it sends the IP address back to the browser.
+* If the local DNS resolver does not have a recent copy of the DNS record, it sends a request to a root nameserver.
+* The root nameserver responds with the address of a top-level domain (TLD) nameserver, such as .com or .org.
+* The local DNS resolver sends a request to the TLD nameserver.
+* The TLD nameserver responds with the address of the nameserver for the domain.
+* The local DNS resolver sends a request to the nameserver.
+* The nameserver responds with the IP address for the domain.
+* The local DNS resolver sends the IP address back to the browser.
+* The browser sends a request to the server at the IP address to retrieve the webpage.
 
 ARP process
 -----------
