@@ -685,9 +685,12 @@ After rendering has been completed, the browser executes JavaScript code as a re
 of some timing mechanism (such as a Google Doodle animation) or user
 interaction (typing a query into the search box and receiving suggestions).
 Plugins such as Flash or Java may execute as well, although not at this time on
-the Google homepage. Scripts can cause additional network requests to be
-performed, as well as modify the page or its layout, causing another round of
-page rendering and painting.
+the Google homepage.
+
+Scripts can cause additional network requests to be performed, this can include fetching information from servers or interacting with APIs to update content or retrieve search results, as well as modify the page or its layout, causing another round of page rendering and painting.
+
+By allowing post-rendering execution and user-induced interactions, the webpage goes beyond being a static webpage.
+It becomes a dynamic platform, responding to user inputs and providing real-time suggestions and updates to enhance the overall user experience.
 
 .. _`Creative Commons Zero`: https://creativecommons.org/publicdomain/zero/1.0/
 .. _`"CSS lexical and syntax grammar"`: http://www.w3.org/TR/CSS2/grammar.html
