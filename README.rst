@@ -297,6 +297,23 @@ the default gateway it can resume its DNS process:
   requested and that flows up the list of DNS servers until the SOA is reached,
   and if found an answer is returned.
 
+The current issue at hand is that the server IP address for "https://www.google.
+com" is still unknown.
+The browser goes to the DNS server, and finds the real address of the server tha
+t the website lives on (www.google.com)
+Then the browser sends an HTTP request message to the server, asking it to send
+a copy of the website to the clients' web browser. This message, and all other d
+ata sent between the client and the server, is sent across your internet connect
+ion using TCP/IP.
+If the server approves the client's request, the server then sends the client a
+"200 OK" message, which means "Yes you can look at the website", and then starts
+sending the website's files to the browser as a series of small chunks as known as data packets.
+The browser assembles the small chunks into a complete web page and displays it
+to you saying "Here is the website you requested :)".
+https://medium.com/@mjkelvin38/what-happens-when-you-type-https-www-google-com-in-your-browser-and-press-enter-159b10ab72e0
+this will give a more indept understanding of it
+
+
 Opening of a socket
 -------------------
 Once the browser receives the IP address of the destination server, it takes
