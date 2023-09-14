@@ -297,6 +297,16 @@ the default gateway it can resume its DNS process:
   requested and that flows up the list of DNS servers until the SOA is reached,
   and if found an answer is returned.
 
+The current issue at hand is that the server IP address for "https://www.google.com" is still unknown. 
+In order to resolve this, the resolver server, typically provided by your Internet Service Provider (ISP), 
+needs to be able to locate the root servers. If the resolver is unable to identify the IP address, 
+it will seek guidance from the root server to determine the location of the .COM Top-Level Domain (TLD) server. 
+Once this information is obtained, the resolver stores it to avoid further inquiries to the root server. 
+The resolver then contacts the .COM TLD server to obtain the authoritative name servers for "https://www.google.com" 
+if the IP address is still unknown. This information is also stored by the resolver. 
+The authoritative name server is responsible for handling requests of this nature. 
+Finally, the resolver retrieves the IP address, saves it, and provides this information to the operating system.
+
 Opening of a socket
 -------------------
 Once the browser receives the IP address of the destination server, it takes
