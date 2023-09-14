@@ -213,6 +213,16 @@ DNS lookup
   Chrome, go to `chrome://net-internals/#dns <chrome://net-internals/#dns>`_).
 * If not found, the browser calls ``gethostbyname`` library function (varies by
   OS) to do the lookup.
+  Caching at Google's Servers (CDN and Proxy Caches):
+
+Google may use caching mechanisms on its servers to store commonly accessed resources. Content Delivery Networks (CDNs) and proxy caches, if employed, play a significant role here.
+These caches store copies of Google's web pages, images, and other assets, serving them to users around the world. 
+Cached content can be distributed geographically, closer to end-users for faster access.
+When you request a resource, such as the Google homepage, Google's servers may check their cache first. 
+If the resource is in the cache and is still valid, it can be served directly from the cache, reducing server load and response time.
+Browser Cache:
+As your browser receives HTML, CSS, JavaScript, and other assets from Google's servers, it stores them in its local cache.
+Subsequent visits to "www.google.com" can benefit from this local cache. The browser checks if cached resources are still valid based on various mechanisms like ETags and Cache-Control headers.
 * ``gethostbyname`` checks if the hostname can be resolved by reference in the
   local ``hosts`` file (whose location `varies by OS`_) before trying to
   resolve the hostname through DNS.
