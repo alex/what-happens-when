@@ -605,6 +605,36 @@ parser for parsing HTML. The parsing algorithm is described in
 detail by the HTML5 specification.
 
 The algorithm consists of two stages: tokenization and tree construction.
+**Tokenization:**
+    Before a browser can begin to understand the structure and content of
+    an HTML document, it first needs to break down the raw text
+    into meaningful chunks, known as tokens.
+    - What are Tokens? - Tokens are essentially the vocabulary of HTML.
+    Just like how words are the building blocks of sentences in language,
+    tokens are the building blocks of an HTML document.
+    Examples of tokens include start tags (<div>), end tags (</div>),
+    attribute names, attribute values, and text.
+    - The Tokenizing Process - As the browser reads through the HTML text,
+    it identifies these tokens one by one. Every time it encounters a '<', it
+    anticipates a tag token. When it sees an '=', it expects an attribute value to follow.
+    This is a continuous process, with the browser constantly seeking out
+    and categorizing the next token until it has processed the entire document.
+
+  **Tree Construction:** Once the browser has a list of tokens, it begins the process
+    of translating this list into a structure that represents the document's hierarchy
+    and relationships, called the Document Object Model (DOM) tree.
+
+    - Creating Nodes - Each token translates into a node in the DOM tree.
+    For instance, a token representing the start tag <p> becomes a paragraph node.
+    - Maintaining Relationships - As the browser processes the tokens,
+    it uses them to define relationships. If it encounters a <div> token
+    followed by a <p> token before seeing a </div>, it knows the
+    paragraph is a child of the div. It nests the nodes accordingly in the tree.
+    - Handling Malformed HTML - Real-world HTML isn't always perfectly formed.
+    Browsers often encounter missing end tags, mismatched tags, or other inconsistencies.
+    Tree construction is designed to be forgiving. When the browser encounters malformed HTML,
+    it makes educated guesses to correct the structure. This ensures the content is displayed as intended,
+    even if there are minor coding errors.
 
 **Actions when the parsing is finished**
 
