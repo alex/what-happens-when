@@ -208,6 +208,32 @@ Check HSTS list
 
 DNS lookup
 ----------
+Here's an overview of the DNS lookup process and its various steps:
+
+* User Input: The DNS lookup process begins when a user enters a URL (Uniform Resource Locator) or a domain name into a web browser's address bar. For example, let's use the URL "www.example.com."
+
+* Local Cache Check: The first place the browser looks is in its local cache. DNS resolutions are often cached locally on the user's device to save time and resources. If the requested domain's IP address is found in the cache, the browser can use it directly without making further requests. If the cache is empty or the cached entry has expired, the browser proceeds to the next step.
+
+* Hosts File Check: If the IP address is not in the cache, the browser checks the host's file on the local computer. The hosts file is a manual mapping of domain names to IP addresses, and it can override DNS lookups. If there's an entry for the requested domain in the hosts file, the browser uses that IP address. If not, the browser proceeds to DNS resolution.
+
+* DNS Query: When the browser doesn't find the IP address in its cache or the hosts file, it sends a DNS query to a DNS resolver (typically provided by the Internet Service Provider or ISP).
+
+* Recursive Query: The DNS resolver may have cached DNS records, so it first checks its cache. If the IP address is found in the resolver's cache and is still valid, it sends this response back to the browser. If not, it proceeds with the DNS resolution process.
+
+* Root Servers: If the DNS resolver doesn't have the necessary information in its cache, it contacts one of the 13 root DNS servers scattered around the world. These root servers have information about the top-level domains (TLDs) like .com, .org, .net, and so on.
+
+* TLD Servers: Based on the TLD of the domain name (e.g., ".com" in "www.example.com"), the root server directs the DNS resolver to the appropriate TLD server. The TLD server holds information about which authoritative name server to contact for the specific domain.
+
+* Authoritative Name Server: The TLD server directs the DNS resolver to the authoritative name server for the domain in question. This authoritative name server is responsible for storing the DNS records for that domain.
+
+* DNS Record Retrieval: The DNS resolver queries the authoritative name server for the IP address associated with the requested domain name.
+
+* Response: The authoritative name server responds to the DNS resolver with the IP address.
+
+* Cache Update: The DNS resolver caches the obtained DNS record for a certain period (known as the Time to Live or TTL). This caching helps reduce the load on the DNS infrastructure and speeds up future DNS lookups for the same domain.
+
+* Final Response: The DNS resolver provides the IP address back to the user's browser, which can then use this IP address to establish a connection with the web server hosting the desired website.
+
 
 * Browser checks if the domain is in its cache. (to see the DNS Cache in
   Chrome, go to `chrome://net-internals/#dns <chrome://net-internals/#dns>`_).
