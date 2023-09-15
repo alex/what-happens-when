@@ -1,8 +1,9 @@
+---
 language: python
 
 sudo: false
 
-install: 
+install:
     - pip install doc8
     - npm install -g write-good
 
