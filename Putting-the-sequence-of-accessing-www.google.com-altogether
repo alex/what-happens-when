@@ -1,0 +1,7 @@
+Putting it all together,these are the sequence of actions that allows you to access to www.google.com 
+1) Type the URL in your browser. 
+2) Browser fetches the IP address of the server associated with the domain name. 
+3) Browser establishes a connection with that specific server. 
+4) Browser requests the necessary files from the server. 
+5) The server then analyzes the request and sends back the files as a response.
+6) Finally, the browser renders the content on the screen for you to view and interact with. 
