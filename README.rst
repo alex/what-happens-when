@@ -544,32 +544,53 @@ common user interface elements are:
   current documents
 * Home button that takes you to your home page
 
-**Browser High-Level Structure**
+Browser High-Level Structure
+===========================
 
-The components of the browsers are:
+A web browser is a complex software application composed of various components that work together seamlessly to provide users with a smooth browsing experience. Here's an improved breakdown of the high-level structure of a web browser:
 
-* **User interface:** The user interface includes the address bar,
-  back/forward button, bookmarking menu, etc. Every part of the browser
-  display except the window where you see the requested page.
-* **Browser engine:** The browser engine marshals actions between the UI
-  and the rendering engine.
-* **Rendering engine:** The rendering engine is responsible for displaying
-  requested content. For example if the requested content is HTML, the
-  rendering engine parses HTML and CSS, and displays the parsed content on
-  the screen.
-* **Networking:** The networking handles network calls such as HTTP requests,
-  using different implementations for different platforms behind a
-  platform-independent interface.
-* **UI backend:** The UI backend is used for drawing basic widgets like combo
-  boxes and windows. This backend exposes a generic interface that is not
-  platform-specific.
-  Underneath it uses operating system user interface methods.
-* **JavaScript engine:** The JavaScript engine is used to parse and
-  execute JavaScript code.
-* **Data storage:** The data storage is a persistence layer. The browser may
-  need to save all sorts of data locally, such as cookies. Browsers also
-  support storage mechanisms such as localStorage, IndexedDB, WebSQL and
-  FileSystem.
+*User Interface (UI)*
+---------------------
+- The user interface is what you see and interact with when you open a browser.
+- It includes the address bar where you enter URLs, navigation buttons (back/forward), bookmarks, tabs, and various menus.
+- Essentially, it's the part of the browser that allows you to control and navigate through web content.
+
+*Browser Engine*
+--------------
+- The browser engine acts as a bridge between the user interface and the rendering engine.
+- It processes user input from the UI and communicates with the rendering engine to display the requested content.
+
+*Rendering Engine*
+----------------
+- This core component is responsible for rendering web content on your screen.
+- It parses HTML, CSS, and other web technologies to visually represent websites.
+- For example, if a web page is written in HTML and CSS, the rendering engine interprets these instructions and displays the page as you see it.
+
+*Networking*
+----------
+- The networking component handles all network-related tasks, such as making HTTP requests to fetch web resources.
+- It uses platform-specific implementations but presents a consistent interface to the browser's components.
+- This ensures that web pages load efficiently regardless of the underlying operating system.
+
+*UI Backend*
+----------
+- The UI backend handles the rendering of basic user interface elements, such as buttons and windows.
+- It provides a platform-agnostic interface for creating these elements, utilizing OS-specific methods underneath.
+- This abstraction allows the browser to maintain a consistent look and feel across different platforms.
+
+*JavaScript Engine*
+-----------------
+- The JavaScript engine is responsible for parsing and executing JavaScript code found on web pages.
+- It plays a crucial role in making web applications interactive and dynamic.
+- Modern browsers often include highly optimized JavaScript engines to enhance performance.
+
+*Data Storage*
+------------
+- Data storage is the persistence layer of the browser, responsible for storing various types of data locally.
+- It manages data such as cookies, which are essential for session management and user tracking.
+- Browsers also support more advanced storage mechanisms like localStorage, IndexedDB, WebSQL, and FileSystem, enabling web applications to store data for offline use or enhanced functionality.
+
+Understanding the interplay of these components within a web browser is essential for developers and enthusiasts alike. It showcases the intricate architecture that powers our everyday web interactions, from searching the web to running complex web applications.
 
 HTML parsing
 ------------
