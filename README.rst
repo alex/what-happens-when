@@ -709,3 +709,27 @@ page rendering and painting.
 .. _`downgrade attack`: http://en.wikipedia.org/wiki/SSL_stripping
 .. _`OSI Model`: https://en.wikipedia.org/wiki/OSI_model
 .. _`Spanish`: https://github.com/gonzaleztroyano/what-happens-when-ES
+
+DOM Manipulation
+----------------
+JavaScript code running in the browser can manipulate the Document Object Model (DOM) to dynamically change the content and structure of the webpage.
+
+AJAX Requests (if applicable)
+-----------------------------
+If the webpage uses asynchronous JavaScript and XML (AJAX) to fetch additional data from the server after the initial page load, the browser may send additional HTTP requests to retrieve this data.
+
+Cookies
+-------
+The browser may send any relevant cookies associated with the domain to the web server. Cookies can contain session information, user preferences, or tracking data.
+
+Local Storage and Session Storage
+---------------------------------
+Modern web applications can utilize local storage and session storage to store data locally in the browser, which can be accessed and manipulated using JavaScript.
+
+Caching
+-------
+The browser may cache certain resources like images, stylesheets, and scripts to reduce the need for re-downloading them in future visits to the same website.
+
+Content Security Policy (CSP) Evaluation
+----------------------------------------
+The browser evaluates any Content Security Policy directives specified by the web server to determine which external resources are allowed to be loaded and executed.
