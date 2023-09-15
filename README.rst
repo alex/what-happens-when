@@ -206,6 +206,26 @@ Check HSTS list
   `downgrade attack`_, which is why the HSTS list is included in modern web
   browsers.)
 
+DNS Resolution
+--------------
+* ``DNS Resolver``: The DNS resolver is typically provided by the Internet Service
+  Provider (ISP) or a public DNS resolver like Google's (8.8.8.8). The resolver
+  receives the DNS query from the user's browser.
+
+* ``Recursive Query``: The DNS resolver performs a recursive DNS query. This means
+  that if the resolver doesn't have the IP address for `www.google.com` cached,
+  it will follow the DNS resolution process by querying the root DNS servers,
+  top-level domain (TLD) servers, and authoritative DNS servers until it obtains the IP address.
+
+* ``Root DNS Servers``: The DNS resolver sends a query to the root DNS servers, asking for the
+  authoritative DNS server for the ".com" TLD.
+
+* ``TLD DNS Servers``: The root DNS servers respond with the IP address of the authoritative DNS
+  server for the ".com" TLD. The resolver then queries the ".com" TLD DNS server.
+
+* ``Authoritative DNS Server``: The ".com" TLD DNS server responds with the IP address of the
+  authoritative DNS server for `google.com.`
+
 DNS lookup
 ----------
 
