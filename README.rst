@@ -38,7 +38,10 @@ popular searches from the internet as a whole. As you are typing
 "google.com" many blocks of code run and the suggestions will be refined
 with each keypress. It may even suggest "google.com" before you finish typing
 it.
-
+When you press the "g" key, your browser's auto-complete feature takes action.
+It suggests relevant URLs and search queries based on factors like your browsing history,
+bookmarks, and real-time internet trends. As you type, the suggestions continually improve,
+ensuring a smoother and more efficient browsing experience.
 The "enter" key bottoms out
 ---------------------------
 
