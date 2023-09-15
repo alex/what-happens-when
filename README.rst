@@ -38,6 +38,16 @@ popular searches from the internet as a whole. As you are typing
 "google.com" many blocks of code run and the suggestions will be refined
 with each keypress. It may even suggest "google.com" before you finish typing
 it.
+In certain applications, pressing the "g" key might trigger specific actions or shortcuts.
+For example: In web browsers, pressing "g" might be a shortcut for opening a "Go to" or search
+feature. In some software development environments, "g" could be used as a shortcut 
+to bring up a Git-related command or function.
+Depending on the keyboard layout and settings, pressing the "g" key might produce different
+characters (e.g., "g" with an accent) in languages that use variations of the Latin alphabet.
+In summary, pressing the "g" key results in the input of the letter "g" in most cases.
+However, its behavior can be context-dependent, and in certain applications,
+it may trigger specific actions or functions. The precise outcome of pressing the
+"g" key will vary based on the software and settings in use at the time.
 
 The "enter" key bottoms out
 ---------------------------
