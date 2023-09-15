@@ -92,10 +92,6 @@ connection, but historically has been over PS/2 or ADB connections.
 - The virtual keyboard can now raise a software interrupt for sending a
   'key pressed' message back to the OS.
 
-- This interrupt notifies the currently focused application of a 'key pressed'
-  event.
-
-
 Interrupt fires [NOT for USB keyboards]
 ---------------------------------------
 
@@ -143,12 +139,18 @@ key.
 The interrupt signal triggers an interrupt event in the I/O Kit kext keyboard
 driver. The driver translates the signal into a key code which is passed to the
 OS X ``WindowServer`` process. Resultantly, the ``WindowServer`` dispatches an
-event to any appropriate (e.g. active or listening) applications through their
-Mach port where it is placed into an event queue. Events can then be read from
-this queue by threads with sufficient privileges calling the
-``mach_ipc_dispatch`` function. This most commonly occurs through, and is
-handled by, an ``NSApplication`` main event loop, via an ``NSEvent`` of
-``NSEventType`` ``KeyDown``.
+event to any appropriate one.
+
+	•	When using the GPU for graphical rendering computations, the graphical software layers split the task into multiple pieces, allowing them to take full advantage of the GPU’s massive parallelism. This parallelism is crucial for efficiently performing the floating-point calculations required for the rendering process.
+	•	Modern browsers make use of hardware acceleration, which leverages the capabilities of the GPU to offload rendering tasks from the CPU. This significantly improves the rendering performance and allows for smoother animations, transitions, and overall responsiveness.
+	•	GPU rendering involves sending graphical commands and data to the GPU, where they are processed and rendered on the screen. The rendering pipeline typically includes steps like vertex processing, rasterization, pixel shading, and more, depending on the complexity of the graphics.
+	•	GPU rendering also involves rendering different layers separately. For example, the webpage content, browser UI, and any additional elements like video players or plugins may each have their own rendering layers. These layers are then composited together to create the final frame displayed on the screen.
+	•	The use of GPU acceleration allows browsers to achieve hardware-accelerated 2D and 3D graphics, which is particularly important for rendering complex web pages and handling multimedia content like videos and interactive applications.
+	•	As web pages become more interactive and feature-rich, the efficient use of GPU resources becomes increasingly important to ensure a smooth and responsive user experience.
+	•	It’s worth noting that the specific implementation details of GPU rendering can vary depending on the browser and platform. Different browsers may use different graphics APIs (e.g., Direct3D, OpenGL, Vulkan) to interface with the GPU.
+	•	Additionally, GPU rendering can be influenced by various factors, including the GPU’s capabilities, driver quality, and the level of hardware acceleration supported by the operating system.
+
+In summary, GPU rendering is a critical component of modern web browsers, allowing them to efficiently render complex web content and deliver a smooth user experience, especially for multimedia-rich websites and applications. This rendering process involves splitting tasks into parallel operations and leveraging the power of the GPU to accelerate graphics rendering.
 
 (On GNU/Linux) the Xorg server listens for keycodes
 ---------------------------------------------------
