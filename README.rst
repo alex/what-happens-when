@@ -510,6 +510,13 @@ and IIS for Windows.
   is running on PHP, the server uses PHP to interpret the index file, and
   streams the output to the client.
 
+HTTPS prtocol
+-------------
+The HTTPS (Hypertext Transfer Protocol Secure) is a secure version of HTTP that it encrypts the data exchanged between your browser and web servers.
+During the initial connection, the process of the SSL/TLS handshake occurs to establish a secure connection and exchange encryption keys.
+Once the secure connection is established, data sent and received is encrypted, protecting it from eavesdropping.
+
+
 Behind the scenes of the Browser
 ----------------------------------
 
