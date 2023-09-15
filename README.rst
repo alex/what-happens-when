@@ -576,6 +576,7 @@ HTML parsing
 
 The rendering engine starts getting the contents of the requested
 document from the networking layer. This will usually be done in 8kB chunks.
+The input to the HTML parsing process consists of a stream of Unicode characters, which is passed through a tokenization stage followed by a tree construction stage.
 
 The primary job of the HTML parser is to parse the HTML markup into a parse tree.
 
