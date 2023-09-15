@@ -95,6 +95,25 @@ connection, but historically has been over PS/2 or ADB connections.
 - This interrupt notifies the currently focused application of a 'key pressed'
   event.
 
+*In the case of the Bluetooth Keyboard:*
+
+- For any keypress on a Bluetooth keyboard, a specific electrical
+  circuit under that key is closed. This keypress is detected by a matrix of
+  circuits or switches beneath the keys.
+
+- The Bluetooth keyboard has a microcontroller that constantly scans the state
+  of the electrical circuits beneath the keys.
+
+- When a "enter" key is pressed, the microcontroller generates a unique keycode
+  for that key. The generated keycode is then encoded into a data packet.
+
+- The data packet is transmitted via Bluetooth radio waves to transmit
+  data between the keyboard and the Bluetooth receiver in the computer.
+  
+- The Bluetooth receiver continuously scans for incoming data packets.
+  Once detected, it triggers an interrupt signal to the
+  CPU to inform it that new data has arrived.
+
 
 Interrupt fires [NOT for USB keyboards]
 ---------------------------------------
