@@ -663,17 +663,30 @@ Page Rendering
   via Direct3D/OpenGL. The GPU command buffer(s) are flushed to the GPU for
   asynchronous rendering and the frame is sent to the window server.
 
-GPU Rendering
--------------
+GPU Rendering: Harnessing Parallelism for Enhanced Performance
+--------------------------------------------------------------
+During the rendering process of a webpage, there are choices in terms of
+which processing unit to utilize, primarily the general-purpose CPU or the
+specialized Graphics Processing Unit (GPU). The decision to employ the GPU
+can significantly impact rendering speed and efficiency.
 
-* During the rendering process the graphical computing layers can use general
-  purpose ``CPU`` or the graphical processor ``GPU`` as well.
+When the GPU is chosen for graphical rendering computations, a remarkable
+advantage is unlocked – the GPU's massive parallelism. Unlike CPUs, which
+are adept at handling sequential tasks, GPUs excel in performing a multitude
+of tasks concurrently. This parallel architecture is particularly well-suited
+for the float-point calculations required during rendering.
 
-* When using ``GPU`` for graphical rendering computations the graphical
-  software layers split the task into multiple pieces, so it can take advantage
-  of ``GPU`` massive parallelism for float point calculations required for
-  the rendering process.
+To fully leverage the power of the GPU, graphical software layers
+intelligently dissect the rendering task into numerous smaller pieces.
+These pieces are distributed across the GPU's extensive array of cores,
+each capable of executing tasks independently.
 
+This approach enables the GPU to perform an extensive number of float-point
+calculations simultaneously. These calculations encompass critical rendering
+aspects such as color calculations, texture mapping, lighting effects, and
+more. The sheer parallelism of the GPU allows for a substantial acceleration
+in rendering speed, resulting in a smoother and more responsive web browsing
+experience.
 
 Window Server
 -------------
