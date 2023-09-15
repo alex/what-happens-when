@@ -228,6 +228,13 @@ DNS lookup
 ARP process
 -----------
 
+NOTE: The ARP (Address Resolution Protocol) process is a fundamental networking
+protocol used to map an IP address (Layer 3) to its corresponding physical
+MAC (Media Access Control) address (Layer 2) on a local network. ARP is essential
+for devices on a local network to communicate with each other, as it enables them
+to determine how to reach a destination device based on its IP address.
+
+
 In order to send an ARP (Address Resolution Protocol) broadcast the network
 stack library needs the target IP address to lookup. It also needs to know the
 MAC address of the interface it will use to send out the ARP broadcast.
