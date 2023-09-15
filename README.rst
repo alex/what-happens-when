@@ -38,6 +38,11 @@ popular searches from the internet as a whole. As you are typing
 "google.com" many blocks of code run and the suggestions will be refined
 with each keypress. It may even suggest "google.com" before you finish typing
 it.
+Key Event Propagation: The initial keypress triggers an event propagation sequence within the operating system.
+
+Event Handling by Browser: The browser, as an integral part of the OS, handles this keypress event.
+
+Auto-Complete Activation: The browser's auto-complete functionality is activated in response to the "g" keypress event.
 
 The "enter" key bottoms out
 ---------------------------
@@ -205,6 +210,7 @@ Check HSTS list
   single HTTP request could potentially leave the user vulnerable to a
   `downgrade attack`_, which is why the HSTS list is included in modern web
   browsers.)
+  HSTS Header: When a website adopts the HSTS policy, it sends an HSTS header in response to the user's initial HTTP request. This header instructs the user's browser to communicate with the website only through HTTPS for a specified period, typically a specified number of seconds.
 
 DNS lookup
 ----------
@@ -223,6 +229,7 @@ DNS lookup
   ``ARP process`` below for the DNS server.
 * If the DNS server is on a different subnet, the network library follows
   the ``ARP process`` below for the default gateway IP.
+* DNS Server Resolution: Once the MAC address of the DNS server or default gatew  ay is obtained, the browser sends its DNS request to the DNS  server. The DNS s  erver then performs the actual DNS resolution by mapping the domain name to it's associated IP address and sends the resp  onse back to the browser.
 
 
 ARP process
@@ -401,18 +408,18 @@ If a packet is dropped
 ----------------------
 
 Sometimes, due to network congestion or flaky hardware connections, TLS packets
-will be dropped before they get to their final destination. The sender then has
-to decide how to react. The algorithm for this is called `TCP congestion
-control`_. This varies depending on the sender; the most common algorithms are
+will be dropped before they get to their final destination. When this occurs,Thesender then has to decide how to react. The algorithm for this is called `TCP congestion control`_. This varies depending on the sender; the most common algorithms are
 `cubic`_ on newer operating systems and `New Reno`_ on almost all others.
 
 * Client chooses a `congestion window`_ based on the `maximum segment size`_
-  (MSS) of the connection.
+  (MSS) of the connection. This window size determines the maximum number of unacknowledged packets that can be in transit at any given time.
 * For each packet acknowledged, the window doubles in size until it reaches the
   'slow-start threshold'. In some implementations, this threshold is adaptive.
 * After reaching the slow-start threshold, the window increases additively for
   each packet acknowledged. If a packet is dropped, the window reduces
   exponentially until another packet is acknowledged.
+* Packet Drop Detection: When a packet is dropped, it is not acknowledged by the receiver within a reasonable timeframe. This can occur due to network congestion, router buffer overflows, or other issues.
+* Fast Recovery: Some congestion control algorithms, like New Reno, implement a "fast recovery" mechanism. Instead of reverting to the slow-start phase, they try to recover more quickly by increasing the congestion window size linearly, aiming to regain lost throughput efficiently.
 
 HTTP protocol
 -------------
