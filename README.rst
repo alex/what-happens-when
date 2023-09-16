@@ -689,6 +689,12 @@ the Google homepage. Scripts can cause additional network requests to be
 performed, as well as modify the page or its layout, causing another round of
 page rendering and painting.
 
+After a web page is initially displayed, the magic continues. 
+JavaScript, driven by timers or your interactions, sparks animations,
+real-time updates, and dynamic content loading. Plugins like Flash or Java may
+also play their part, while layout changes trigger another round of page rendering. 
+It's web wizardry in action!
+
 .. _`Creative Commons Zero`: https://creativecommons.org/publicdomain/zero/1.0/
 .. _`"CSS lexical and syntax grammar"`: http://www.w3.org/TR/CSS2/grammar.html
 .. _`Punycode`: https://en.wikipedia.org/wiki/Punycode
