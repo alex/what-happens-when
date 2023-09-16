@@ -629,6 +629,58 @@ CSS interpretation
 * A CSS parser can be top-down or bottom-up when a specific parser generator
   is used.
 
+  **Elaborating CSS interpretation**
+
+  **Parsing CSS Files, <style> Tag Contents, and Style Attribute Values:**
+  * When a web page is loaded in a browser, it contains references to one or
+    more CSS files, inline styles within <style> tags, and style attributes
+    within HTML elements.
+  * The browser needs to understand and apply these styles to render the page
+    correctly.
+
+  **CSS Lexical and Syntax Grammar:**
+  * CSS is written using a specific set of rules and syntax defined by the CSS
+    specification. This syntax is described by the CSS lexical and syntax grammar.
+  * The grammar outlines how CSS rules are structured, including selectors,
+    properties, and values.
+
+  **Creating a StyleSheet Object:**
+  * Once the CSS content is retrieved (from external files, <style> tags, or style attributes),
+    it needs to be processed and structured in a way that the browser can understand and apply it.
+  * Each CSS file is parsed into a StyleSheet object. This object serves as a data structure
+    that contains all the CSS rules present in that file.
+
+  **CSS Rules with Selectors:**
+  * Within a StyleSheet object, there are CSS rules. Each rule consists of a selector
+    and a block of style declarations.
+  * The selector specifies which HTML elements the rule applies to, and the declarations
+    define the styles that should be applied to those elements.
+
+  **Corresponding CSS Grammar:**
+  * The objects within the StyleSheet align with the defined CSS grammar rules.
+    This means that the structure of the StyleSheet object
+    mirrors the structure defined in the CSS grammar.
+  * This alignment allows for easy traversal and manipulation of the styles
+    within the browser's rendering engine.
+
+  **Top-Down or Bottom-Up Parsing:**
+  * When parsing CSS, you can use different approaches.
+    These approaches are influenced by the choice of parser generator,
+    a tool used to generate parsers from a formal grammar.
+  * **Top-Down Parsing** starts with the highest level of the syntax tree
+    (e.g., the document root) and works its way down to the individual tokens.
+    It's akin to starting from the top of a tree and moving downwards along the branches.
+  * **Bottom-Up Parsing** starts with the individual tokens and builds up the syntax tree from there.
+    It's like building a tree from the leaves up to the trunk.
+  * The choice of parsing method can impact factors like performance,
+    error handling, and ease of implementation.
+
+In summary, CSS interpretation involves taking CSS content from various sources,
+applying the CSS grammar rules to create structured objects,
+and then using these objects to apply styles to the corresponding HTML elements during rendering.
+The choice of parsing method depends on the tools and techniques
+employed in the development of the browser's rendering engine.
+
 Page Rendering
 --------------
 
