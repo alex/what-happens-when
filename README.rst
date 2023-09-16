@@ -183,6 +183,11 @@ the text given in the address box to the browser's default web search engine.
 In many cases the URL has a special piece of text appended to it to tell the
 search engine that it came from a particular browser's URL bar.
 
+when an invalid domain name is given or an invalid protocol is provided most browsers uses:
+* Intelligent Error Handling:
+
+ Implement intelligent error handling that can recognize common mistakes, such as misspelled domain names or missing protocols (e.g., "htt://example.com").
+ Offer suggestions for potential corrections. For example, if a user types "ww.example.com," the browser could suggest "Did you mean www.example.com?"
 Convert non-ASCII Unicode characters in the hostname
 ------------------------------------------------
 
