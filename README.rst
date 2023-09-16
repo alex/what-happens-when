@@ -183,6 +183,49 @@ the text given in the address box to the browser's default web search engine.
 In many cases the URL has a special piece of text appended to it to tell the
 search engine that it came from a particular browser's URL bar.
 
+
+How Does the URL Work?
+-----------------------------
+
+The Uniform Resource Locator, or URL, functions similarly to a street address, 
+with each part of the URL acting as a separate section of the address and
+providing various pieces of information. 
+
+The URL is one of the pillars of the web, along with hypertext and HTTP.
+By using it, browsers can retrieve any publicly published piece of 
+resource on the web.
+
+URLs are simply the addresses of unique resources on the Web.
+Theoretically, every URL points to a unique resource.
+
+A resource can be an HTML page, a CSS document, an image, etc. However, there
+are some exceptions, the most common of which is a URL pointing to a resource 
+that no longer exists. 
+
+Due to the URL representing a resource and its associated URL being handled by
+the web server, the owner of the web server must carefully manage that 
+resource and its URL.
+
+Using the Google Search Option
+----------------------------------
+The goal of search engines like Google is to make it simple for internet users to 
+locate what they’re looking for by typing a URL or using search engines like Google. 
+A search engine’s principal function is to index websites and web pages in order to 
+better chart users’ search queries and track and enlist new information.
+
+Google and other search engines have advanced to the point that they can index fresh 
+stuff on the fly and accurately display content, URLs, video thumbnails, digital 
+brochures, images, news headlines, and so on. I have attached a screenshot for you 
+to look over.
+
+These are particularly useful in terms of ease of use and user-friendliness. Previously, 
+users had to spend a significant amount of time on search engines before locating the 
+locations of the websites they were seeking for.
+
+With Google’s optimized algorithm, the Google search engine can now track and identify 
+content and serve the content according to the user’s preferences.
+
+
 Convert non-ASCII Unicode characters in the hostname
 ------------------------------------------------
 
