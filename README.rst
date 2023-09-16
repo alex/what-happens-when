@@ -681,13 +681,30 @@ Window Server
 Post-rendering and user-induced execution
 -----------------------------------------
 
-After rendering has been completed, the browser executes JavaScript code as a result
-of some timing mechanism (such as a Google Doodle animation) or user
-interaction (typing a query into the search box and receiving suggestions).
-Plugins such as Flash or Java may execute as well, although not at this time on
-the Google homepage. Scripts can cause additional network requests to be
-performed, as well as modify the page or its layout, causing another round of
-page rendering and painting.
+After the initial rendering of a web page, the browser may execute
+JavaScript code, plugins, or other resources as a result of user
+interaction or timing mechanisms. Here are some details on each of these:
+
+* **JavaScript Execution:** JavaScript can cause additional network requests
+  to be performed, as well as modify the page or its layout, causing another
+  round of page rendering and painting.
+
+* **Plugin Execution:** While plugins like Flash or Java may not be commonly
+  used today, it's worth mentioning that some websites may still rely on them
+  for certain functionalities. However, modern browsers have started to phase
+  out support for these plugins due to security and performance concerns.
+
+* **User-Induced Execution:** When a user interacts with the page, such as by
+  clicking a link or submitting a form, the browser may send a request to the
+  server to retrieve new content. This content may be in the form of HTML,
+  CSS, JavaScript, or other resources, which the browser will then render
+  and execute as necessary.
+
+* **Post-Rendering Optimization:** After the initial rendering of the page, the
+  browser may perform additional optimizations to improve performance. For
+  example, it may prefetch resources that are likely to be needed in the near
+  future, or it may delay the loading of certain resources until they are
+  needed.
 
 .. _`Creative Commons Zero`: https://creativecommons.org/publicdomain/zero/1.0/
 .. _`"CSS lexical and syntax grammar"`: http://www.w3.org/TR/CSS2/grammar.html
