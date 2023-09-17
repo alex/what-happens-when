@@ -168,8 +168,11 @@ Parse URL
 * The browser now has the following information contained in the URL (Uniform
   Resource Locator):
 
-    - ``Protocol``  "http"
-        Use 'Hyper Text Transfer Protocol'
+    - ``Protocol``  "http/https"
+        Use 'Hyper Text Transfer Protocol(Secure)'
+
+    - ``hostname``  'google.com'
+        Contain both the root domain name "google" and top level domain(tld) ".com"
 
     - ``Resource``  "/"
         Retrieve main (index) page
