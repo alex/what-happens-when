@@ -548,28 +548,41 @@ common user interface elements are:
 
 The components of the browsers are:
 
-* **User interface:** The user interface includes the address bar,
-  back/forward button, bookmarking menu, etc. Every part of the browser
-  display except the window where you see the requested page.
-* **Browser engine:** The browser engine marshals actions between the UI
-  and the rendering engine.
-* **Rendering engine:** The rendering engine is responsible for displaying
-  requested content. For example if the requested content is HTML, the
-  rendering engine parses HTML and CSS, and displays the parsed content on
-  the screen.
-* **Networking:** The networking handles network calls such as HTTP requests,
-  using different implementations for different platforms behind a
-  platform-independent interface.
-* **UI backend:** The UI backend is used for drawing basic widgets like combo
-  boxes and windows. This backend exposes a generic interface that is not
-  platform-specific.
-  Underneath it uses operating system user interface methods.
-* **JavaScript engine:** The JavaScript engine is used to parse and
-  execute JavaScript code.
-* **Data storage:** The data storage is a persistence layer. The browser may
-  need to save all sorts of data locally, such as cookies. Browsers also
-  support storage mechanisms such as localStorage, IndexedDB, WebSQL and
-  FileSystem.
+* **User Interface (UI):** The user interface is a critical aspect of browsers
+ as it serves as the user's gateway to interact with the web. It includes elements
+ like the address bar for inputting URLs, navigation buttons for moving backward and forward,
+ a bookmarking menu for saving favorite websites, and more. Essentially, the UI encompasses
+ everything visible in the browser window except for the actual web content being viewed.
+
+* **Browser Engine:** The browser engine plays a pivotal role in managing communication
+ between the user interface and the rendering engine. It acts as a mediator, interpreting
+ user commands and passing them to the rendering engine for execution. This orchestration
+ is essential for a smooth browsing experience.
+
+* **Rendering Engine:** The rendering engine is the core of the browser responsible for 
+displaying web content. When a user requests a web page, the rendering engine parses the 
+HTML and CSS files associated with it. It then processes this parsed data to render the page
+ as intended, ensuring proper layout, formatting, and interactivity. It's important to note 
+that different browsers may have different rendering engines.
+
+* **Networking:** Networking is the component responsible for handling all network-related 
+activities. This includes making HTTP requests to fetch web resources, communicating with servers,
+ and handling responses. Browsers utilize various implementations for networking, adapting to
+ different platforms while providing a uniform interface for developers.
+
+* **UI Backend:** The UI backend handles the rendering of basic user interface elements,
+ such as buttons, dropdowns, and windows. It's worth mentioning that the UI backend offers
+ a generic interface that is not tied to any specific operating system. Instead, it leverages
+ OS-specific methods to ensure cross-platform compatibility.
+
+* **JavaScript Engine:** Modern web browsing heavily relies on JavaScript for enhancing interactivity 
+and functionality. The JavaScript engine within the browser is responsible for parsing and executing 
+JavaScript code present on web pages. This engine ensures that web applications and scripts run seamlessly.
+
+* **Data Storage:** Data storage is crucial for maintaining user-related information and web data.
+ Browsers employ a persistence layer for tasks like storing cookies, which are essential for user authentication
+ and tracking. Additionally, browsers support various storage mechanisms like localStorage, IndexedDB,
+ WebSQL, and FileSystem, enabling web applications to store data locally for better performance and offline functionality.
 
 HTML parsing
 ------------
