@@ -543,6 +543,7 @@ common user interface elements are:
 * Refresh and stop buttons for refreshing or stopping the loading of
   current documents
 * Home button that takes you to your home page
+* Button to share
 
 **Browser High-Level Structure**
 
@@ -709,3 +710,4 @@ page rendering and painting.
 .. _`downgrade attack`: http://en.wikipedia.org/wiki/SSL_stripping
 .. _`OSI Model`: https://en.wikipedia.org/wiki/OSI_model
 .. _`Spanish`: https://github.com/gonzaleztroyano/what-happens-when-ES
+
