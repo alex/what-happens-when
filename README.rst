@@ -519,6 +519,10 @@ to the browser it undergoes the below process:
 * Parsing - HTML, CSS, JS
 * Rendering - Construct DOM Tree → Render Tree → Layout of Render Tree →
   Painting the render tree
+* Parsing -HTML, CSS, JS
+  HTML Parsing: The browser parses the HTML content received from the server. It builds the Document Object Model (DOM) by analyzing the HTML structure. Any erros in the HTML are identified during the process
+  CSS Parsing: The browser parses the CSS files associated with the page to create the CSS Object Model (CSSOM). It computes the styles for each element in the DOm.
+  JSS Parsing: Javascript code is parsed, and any syntax errors are detected. Functions and variables are registered, but code execution is deferred until later stages
 
 Browser
 -------
