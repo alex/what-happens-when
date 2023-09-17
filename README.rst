@@ -206,6 +206,15 @@ Check HSTS list
   `downgrade attack`_, which is why the HSTS list is included in modern web
   browsers.)
 
+DNS records
+-----------
+A DNS record is a data entry that maps a domain name to an IP address or other information. DNS records are stored in a DNS server and are used to resolve domain names to their corresponding resources on the Internet. There are many types of DNS records, but some of the main ones are:
+
+* A record: This is the most common type of DNS record. It maps a domain name to an IPv4 address, which is a 32-bit number that identifies a device on the Internet. For example, the A record for google.com points to 142.250.72.238.
+* AAAA record: This is similar to an A record, but it maps a domain name to an IPv6 address, which is a 128-bit number that identifies a device on the Internet. IPv6 addresses are more recent and can support more devices than IPv4 addresses. For example, the AAAA record for google.com points to 2607:f8b0:4006:80a::200e.
+* CNAME record: This is also known as a canonical name record. It maps a domain name to another domain name, which can be useful for creating aliases or redirecting traffic. For example, the CNAME record for www.google.com points to google.com, which means that both domain names will lead to the same website.
+* MX record: This stands for mail exchange record. It specifies the mail server that handles the email for a domain name. For example, the MX record for google.com points to aspmx.l.google.com, which means that any email sent to someone@google.com will be delivered to the mail server at aspmx.l.google.com.
+
 DNS lookup
 ----------
 
