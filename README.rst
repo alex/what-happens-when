@@ -400,20 +400,21 @@ TLS handshake
 If a packet is dropped
 ----------------------
 
-Sometimes, due to network congestion or flaky hardware connections, TLS packets
-will be dropped before they get to their final destination. The sender then has
-to decide how to react. The algorithm for this is called `TCP congestion
-control`_. This varies depending on the sender; the most common algorithms are
-`cubic`_ on newer operating systems and `New Reno`_ on almost all others.
+Sometimes, due to network congestion or flaky hardware connections, TLS packets will be dropped before they get to their final destination. This means that the packet does not reach its intended destination. The sender then has to decide how to react. The algorithm for this is called `TCP congestion control`_. This varies depending on the sender; the most common algorithms are `cubic`_ on newer operating systems and `New Reno`_ on almost all others.
 
-* Client chooses a `congestion window`_ based on the `maximum segment size`_
-  (MSS) of the connection.
-* For each packet acknowledged, the window doubles in size until it reaches the
-  'slow-start threshold'. In some implementations, this threshold is adaptive.
-* After reaching the slow-start threshold, the window increases additively for
-  each packet acknowledged. If a packet is dropped, the window reduces
-  exponentially until another packet is acknowledged.
+**Role of the Congestion window**
+* Client chooses a `congestion window`_ based on the `maximum segment size`_ (MSS) of the connection. This window dictates the maximum amount of data that can be in transit at any given time.
 
+**Window Size Adjustment**
+* For each packet acknowledged, the window doubles in size until it reaches the 'slow-start threshold'. In some implementations, this threshold is adaptive based on network conditions.
+
+**Post Slow-Start Threshold**
+* After reaching the slow-start threshold, the window increases at a slower, additive rate for each packet acknowledged. This helps prevent overwhelming the network and causing further packet loss.
+
+**Handling Packets Drops**
+* If a packet is dropped after reaching the slow-start threshold, the window reduces exponentially until another packet is acknowledged. This reduction in window size helps alleviate network congestion by slowing down the rate of packet transmission.
+
+This process allows TCP(Transmission Control Protocol) to effectively manage network congestion and ensure reliable data transmission over networks, striking a balance between maximizing throughput(amount of data successfully transmitted) and minimizing packet loss.
 HTTP protocol
 -------------
 
