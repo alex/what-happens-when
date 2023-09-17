@@ -230,7 +230,8 @@ ARP process
 
 In order to send an ARP (Address Resolution Protocol) broadcast the network
 stack library needs the target IP address to lookup. It also needs to know the
-MAC address of the interface it will use to send out the ARP broadcast.
+physical machine address otherwise known as Media Access Control (MAC)
+address of the interface it will use to send out the ARP broadcast.
 
 The ARP cache is first checked for an ARP entry for our target IP. If it is in
 the cache, the library function returns the result: Target IP = MAC.
@@ -419,7 +420,11 @@ HTTP protocol
 
 If the web browser used was written by Google, instead of sending an HTTP
 request to retrieve the page, it will send a request to try and negotiate with
-the server an "upgrade" from HTTP to the SPDY protocol.
+the server an "upgrade" from HTTP to the SPDY protocol. This is because
+google developed the SPDY protocol to improve the speed and efficiency
+of web browsing. Using SPDY instead of HTTP reduces the amount of data
+that are transfered between the server and the client resulting in fast page 
+load time and better user experience.
 
 If the client is using the HTTP protocol and does not support SPDY, it sends a
 request to the server of the form::
