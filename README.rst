@@ -606,6 +606,13 @@ detail by the HTML5 specification.
 
 The algorithm consists of two stages: tokenization and tree construction.
 
+* Tokenization. The raw HTML text is passed through a lexer(tokenizer) which
+  breaks it into individual tokens. Tokens are chunks of text that represent
+  elements, attributes, and text content.
+* Tree construction. During parsing, the parser constructs a tree like structure
+  called DOM tree or parse tree. This tree represents the hierarchical structure
+  of the HTML document. Each node in the tree corresponds to an HTML element.
+
 **Actions when the parsing is finished**
 
 The browser begins fetching external resources linked to the page (CSS, images,
