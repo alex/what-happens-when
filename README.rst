@@ -194,17 +194,11 @@ Convert non-ASCII Unicode characters in the hostname
 
 Check HSTS list
 ---------------
-* The browser checks its "preloaded HSTS (HTTP Strict Transport Security)"
-  list. This is a list of websites that have requested to be contacted via
-  HTTPS only.
-* If the website is in the list, the browser sends its request via HTTPS
-  instead of HTTP. Otherwise, the initial request is sent via HTTP.
-  (Note that a website can still use the HSTS policy *without* being in the
-  HSTS list.  The first HTTP request to the website by a user will receive a
-  response requesting that the user only send HTTPS requests.  However, this
-  single HTTP request could potentially leave the user vulnerable to a
-  `downgrade attack`_, which is why the HSTS list is included in modern web
-  browsers.)
+The browser, as a security measure, checks its "preloaded HSTS (HTTP Strict Transport Security) list." It comprises a list of websites that have requested to be contacted via HTTPS only. If "google.com" is found on this list, it signifies that the website strictly enforces secure connections.
+
+* **Website in the HSTS List:** If "google.com" is discovered in the HSTS list, the browser takes immediate action. It modifies the original HTTP request into an HTTPS request. This transition ensures that all data exchanged between the user's browser and "google.com" is encrypted, enhancing the overall security of the connection.
+
+* **Website Not in the HSTS List:** If "google.com" is not present in the preloaded HSTS list, the browser, by default, initiates the connection using HTTP. However, it's essential to clarify that modern web browsers are designed to support HSTS policies even for websites not included in the preloaded list. In this scenario, the first connection is indeed made via HTTP to the website. However, the website responds with an HSTS header, instructing the browser to send subsequent requests using HTTPS exclusively. This header ensures that future interactions with the website are secure. Nevertheless, it's worth noting that this initial HTTP request could potentially leave the user vulnerable to a `downgrade attack`_, which is why the preloaded HSTS list exists in modern web browsers as an additional layer of security.
 
 DNS lookup
 ----------
