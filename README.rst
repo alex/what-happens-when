@@ -587,24 +587,43 @@ any manipulation via scripting, the DOM has an almost one-to-one relation to
 the markup.
 
 **The parsing algorithm**
-
-HTML cannot be parsed using the regular top-down or bottom-up parsers.
+HTML, the language that underpins the web, presents unique challenges when it
+comes to parsing. Unlike many other programming languages, HTML is forgiving
+and has a history of accommodating common errors gracefully. Browsers have evolved
+to handle these complexities, and their parsing algorithms reflect this adaptability.
+This means that HTML cannot be parsed using the regular top-down or bottom-up parsers.
 
 The reasons are:
 
-* The forgiving nature of the language.
-* The fact that browsers have traditional error tolerance to support well
-  known cases of invalid HTML.
-* The parsing process is reentrant. For other languages, the source doesn't
-  change during parsing, but in HTML, dynamic code (such as script elements
-  containing `document.write()` calls) can add extra tokens, so the parsing
-  process actually modifies the input.
+* The forgiving nature of the language: HTML is known for its forgiving nature. Even if
+you forget to close a tag or make other common syntax mistakes, browsers often do their
+best to render the page as intended. This leniency is a double-edged sword, as it can
+lead to unexpected rendering results.
 
-Unable to use the regular parsing techniques, the browser utilizes a custom
-parser for parsing HTML. The parsing algorithm is described in
-detail by the HTML5 specification.
+* Error Tolerance:Browsers are designed with a degree of error tolerance. They aim to
+support well-known cases of invalid HTML to ensure that web pages remain accessible
+and functional even when they don't strictly adhere to standards.
+
+* The parsing process is reentrant: HTML is unique in that the parsing process
+can be reentrant. In most languages, the source code remains static during parsing.
+In HTML, however, dynamic code, such as JavaScript within `<script>` elements containing
+`document.write()` calls, can alter the page's structure by adding extra tokens. This dynamic
+ nature of HTML parsing adds an extra layer of complexity.
+
+Given these challenges, web browsers employ custom parsing algorithms tailored specifically
+for HTML. The parsing algorithm is meticulously defined in the HTML5 specification, which
+serves as the authoritative guide for web developers and browser vendors.
 
 The algorithm consists of two stages: tokenization and tree construction.
+* Tokenization: This initial stage involves breaking down the input HTML source code into
+individual tokens. Tokens represent different elements, attributes, and content within the
+HTML document. The tokenization process identifies the structure and content of the document
+while handling any errors or discrepancies gracefully.
+
+* Tree Construction: Once the tokens are generated, the browser proceeds to construct the
+Document Object Model (DOM) tree. The DOM tree represents the hierarchical structure of the
+HTML document, with each node corresponding to an element or piece of content. During tree construction,
+the browser takes into account the relationships between elements, parent-child associations, and attributes.
 
 **Actions when the parsing is finished**
 
