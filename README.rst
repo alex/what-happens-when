@@ -25,32 +25,14 @@ Table of Contents
    :backlinks: none
    :local:
 
-The "g" key is pressed
+The letter "g" is pressed
 ----------------------
-The following sections explain the physical keyboard actions
-and the OS interrupts. When you press the key "g" the browser receives the
-event and the auto-complete functions kick in.
-Depending on your browser's algorithm and if you are in
-private/incognito mode or not various suggestions will be presented
-to you in the dropdown below the URL bar. Most of these algorithms sort
-and prioritize results based on search history, bookmarks, cookies, and
-popular searches from the internet as a whole. As you are typing
-"google.com" many blocks of code run and the suggestions will be refined
-with each keypress. It may even suggest "google.com" before you finish typing
-it.
+This explains the outcome of a user’s interaction with a keyboard and the OS interrupts. When you've pressed the key "g" on a keyboard (i.e the first letter in "google.com"), the browser receives the event and the auto-complete functions kicks in. Depending on your browser's algorithm and if you are in private/incognito mode, various suggestions will be presented as a dropdown list below the URL bar. Most of these algorithms sort and prioritize results based on search history, bookmarks, cookies, censored queries (influenced by location, governments restrictions, explicit content filters…) as well as trending and popular searches from the internet as a whole. As you are typing "google.com" many blocks of code run and the suggestions will be refined with each keypress for a more accurate hint. It may even suggest "google.com" before you finish typing it.
 
-The "enter" key bottoms out
+The "enter" is pressed
 ---------------------------
 
-To pick a zero point, let's choose the Enter key on the keyboard hitting the
-bottom of its range. At this point, an electrical circuit specific to the enter
-key is closed (either directly or capacitively). This allows a small amount of
-current to flow into the logic circuitry of the keyboard, which scans the state
-of each key switch, debounces the electrical noise of the rapid intermittent
-closure of the switch, and converts it to a keycode integer, in this case 13.
-The keyboard controller then encodes the keycode for transport to the computer.
-This is now almost universally over a Universal Serial Bus (USB) or Bluetooth
-connection, but historically has been over PS/2 or ADB connections.
+To pick a zero point, let's choose the Enter key on the keyboard hitting the bottom of its range. At this point, an electrical circuit specific to the enter key is closed (either directly or capacitively). This allows a small amount of current to flow into the logic circuitry of the keyboard, which scans the state of each key switch, debounces the electrical noise of the rapid intermittent closure of the switch, and converts it to a keycode integer (of which in this case is 13). The keyboard controller then encodes the keycode for transport to the computer. This is now almost entirely over a Universal Serial Bus (USB) or Bluetooth connection, but historically has been over PS/2 or ADB connections.
 
 *In the case of the USB keyboard:*
 
@@ -79,13 +61,12 @@ connection, but historically has been over PS/2 or ADB connections.
 *In the case of Virtual Keyboard (as in touch screen devices):*
 
 - When the user puts their finger on a modern capacitive touch screen, a
-  tiny amount of current gets transferred to the finger. This completes the
-  circuit through the electrostatic field of the conductive layer and
+  a tiny amount of electric current gets transferred to the finger. This completes the circuit through the electrostatic field of the conductive layer and
   creates a voltage drop at that point on the screen. The
   ``screen controller`` then raises an interrupt reporting the coordinate of
   the keypress.
 
-- Then the mobile OS notifies the currently focused application of a press event
+- The mobile OS then notifies the currently focused application of a press event
   in one of its GUI elements (which now is the virtual keyboard application
   buttons).
 
@@ -159,7 +140,7 @@ is made with ``X server`` specific keymaps and rules.
 When the scancode mapping of the key pressed is complete, the ``X server``
 sends the character to the ``window manager`` (DWM, metacity, i3, etc), so the
 ``window manager`` in turn sends the character to the focused window.
-The graphical API of the window  that receives the character prints the
+The graphical API of the window that receives the character prints the
 appropriate font symbol in the appropriate focused field.
 
 Parse URL
@@ -201,7 +182,7 @@ Check HSTS list
   instead of HTTP. Otherwise, the initial request is sent via HTTP.
   (Note that a website can still use the HSTS policy *without* being in the
   HSTS list.  The first HTTP request to the website by a user will receive a
-  response requesting that the user only send HTTPS requests.  However, this
+  response requesting that the user only send HTTPS requests. However, this
   single HTTP request could potentially leave the user vulnerable to a
   `downgrade attack`_, which is why the HSTS list is included in modern web
   browsers.)
@@ -688,6 +669,8 @@ Plugins such as Flash or Java may execute as well, although not at this time on
 the Google homepage. Scripts can cause additional network requests to be
 performed, as well as modify the page or its layout, causing another round of
 page rendering and painting.
+
+*P.S: An approach to making the search engine’s response seamless is the utilization of distributed computing. Such that a vast array of servers all contribute to presenting a your request, rather than having a dedicated server handle all the computing.
 
 .. _`Creative Commons Zero`: https://creativecommons.org/publicdomain/zero/1.0/
 .. _`"CSS lexical and syntax grammar"`: http://www.w3.org/TR/CSS2/grammar.html
