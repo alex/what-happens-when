@@ -183,6 +183,16 @@ the text given in the address box to the browser's default web search engine.
 In many cases the URL has a special piece of text appended to it to tell the
 search engine that it came from a particular browser's URL bar.
 
+When a user enters text in a web browser's address bar, the browser must determine whether the input should be treated as a URL or a search term. 
+Here's how this process typically works:
+URL Detection: Browsers attempt to detect if the input provided in the address bar resembles a valid URL. 
+They check for the presence of specific elements like a protocol (e.g., "http://" or "https://") and a valid domain name (e.g., "www.example.com").
+If these elements are present, the browser interprets the input as a URL.
+Search Term Inference: If the input doesn't contain a valid protocol or domain name, the browser assumes that the user intends to perform a web search. 
+In this case, the browser proceeds to feed the text to its default web search engine. The search engine then tries to provide relevant search results based on the entered text.
+Appending Special Text (Optional): In many cases, browsers append a special piece of text to the input before sending it to the search engine. 
+This additional text can serve various purposes, including indicating that the search originated from a particular browser's address bar. It helps the search engine gather analytics and improve the user experience.
+
 Convert non-ASCII Unicode characters in the hostname
 ------------------------------------------------
 
