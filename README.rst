@@ -543,6 +543,9 @@ common user interface elements are:
 * Refresh and stop buttons for refreshing or stopping the loading of
   current documents
 * Home button that takes you to your home page
+* Search button to search what has been typed
+* Settings button to take you to the settings of the browser
+* Clear button to clear all that has been typed
 
 **Browser High-Level Structure**
 
