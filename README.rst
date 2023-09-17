@@ -517,8 +517,21 @@ Once the server supplies the resources (HTML, CSS, JS, images, etc.)
 to the browser it undergoes the below process:
 
 * Parsing - HTML, CSS, JS
-* Rendering - Construct DOM Tree → Render Tree → Layout of Render Tree →
-  Painting the render tree
+- *HTML Parsing:* The browser starts by parsing the HTML content it received from the server. Parsing involves breaking down the HTML code into a structured format called the Document Object Model (DOM). The DOM represents the hierarchical structure of the HTML document, where each HTML element becomes a node in the DOM tree. This tree structure is used to represent the content and structure of the webpage.
+
+- *CSS Parsing:* While parsing the HTML, if the browser encounters external CSS files or inline styles, it also parses them. The CSS parsing process involves converting the CSS code into a format known as the CSS Object Model (CSSOM). Like the DOM for HTML, the CSSOM represents the style information for the webpage.
+
+**Rendering:**
+
+- *Construct DOM Tree:* After parsing the HTML and CSS, the browser constructs a DOM tree. This tree consists of nodes representing HTML elements and their relationships, such as parent-child relationships (e.g., the `<head>` element is a parent of the `<title>` element).
+
+- *Render Tree:* Simultaneously, the browser combines information from both the DOM and the CSSOM to create another tree called the Render Tree. The Render Tree is a subset of the DOM tree, including only elements that are going to be visible on the webpage. It excludes elements that are hidden through CSS rules.
+
+- *Layout of Render Tree:* Once the Render Tree is constructed, the browser calculates the layout of each element in the Render Tree. This process is called layout or reflow. It determines the exact position and size of each visible element on the webpage based on factors like CSS box model, positioning properties, and any dynamic changes caused by JavaScript. The result is a layout tree that specifies the dimensions and positions of all visible elements.
+
+- *Painting the Render Tree:* Finally, the browser paints the elements on the screen according to the layout tree. This step involves drawing each element onto the screen, taking into account its position, size, and visual styles (e.g., colors, borders, and backgrounds). The browser uses the graphics hardware to efficiently render these elements, resulting in the visual representation of the webpage on the user's screen.
+
+This entire process happens quickly and continuously as the user interacts with the webpage. For example, if the user scrolls down a long webpage or triggers an animation, the browser may need to recalculate and repaint parts of the page to reflect the changes accurately. This continuous rendering process ensures that web content is displayed correctly and responsively to user actions.
 
 Browser
 -------
