@@ -480,6 +480,8 @@ resolving the other domain, and follows all steps up to this point for that
 domain. The ``Host`` header in the request will be set to the appropriate
 server name instead of ``google.com``.
 
+In recent developments, HTTP/3 has gained prominence as a more efficient protocol compared to HTTP/1.1 and HTTP/2. It uses the QUIC transport protocol to reduce latency and improve performance. When supported, HTTP/3 can enhance the browsing experience by speeding up the loading of web pages.
+
 HTTP Server Request Handle
 --------------------------
 The HTTPD (HTTP Daemon) server is the one handling the requests/responses on
