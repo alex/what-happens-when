@@ -38,6 +38,7 @@ popular searches from the internet as a whole. As you are typing
 "google.com" many blocks of code run and the suggestions will be refined
 with each keypress. It may even suggest "google.com" before you finish typing
 it.
+The suggestions theirselves are a question to be answered, how the browser or the search engine knows what am I about to write, simply using autocomplete predictions that reflect real searches, that have been done on Google. To determine what predictions to show, the systems look for common queries that match what someone starts to enter into the search box but also consider: The language of the query and also the location a query is coming from.
 
 The "enter" key bottoms out
 ---------------------------
