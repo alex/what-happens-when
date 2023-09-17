@@ -38,6 +38,15 @@ popular searches from the internet as a whole. As you are typing
 "google.com" many blocks of code run and the suggestions will be refined
 with each keypress. It may even suggest "google.com" before you finish typing
 it.
+Browsers often store user data, such as previously entered form data, username
+s, passwords, and frequently visited URLs. This data is typically saved in the 
+browser's cache or local storage. by using Matching algorithms As the user 
+continues to type, the browser compares the entered text with the stored data to 
+find potential matches. Various matching algorithms are used, such as prefix 
+matching or fuzzy matching, to determine relevant suggestions. If the browser 
+finds matching data, it displays suggestions in a drop-down list or a pop-up box 
+near the input field. These suggestions may include previously entered text,
+saved form data, or commonly used phrases.
 
 The "enter" key bottoms out
 ---------------------------
