@@ -408,7 +408,7 @@ Sometimes, due to network congestion or flaky hardware connections, TLS packets 
 **Window Size Adjustment**
 * For each packet acknowledged, the window doubles in size until it reaches the 'slow-start threshold'. In some implementations, this threshold is adaptive based on network conditions.
 
-**Post Slow-Start Threshhold**
+**Post Slow-Start Threshold**
 * After reaching the slow-start threshold, the window increases at a slower, additive rate for each packet acknowledged. This helps prevent overwhelming the network and causing further packet loss.
 
 **Handling Packets Drops**
