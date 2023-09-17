@@ -206,6 +206,8 @@ Check HSTS list
   `downgrade attack`_, which is why the HSTS list is included in modern web
   browsers.)
 
+* HSTS is a critical security mechanism that helps protect users from various types of attacks, particularly those that involve the interception of unencrypted HTTP traffic. It enforces the use of secure HTTPS connections between the user's browser and the website.
+
 DNS lookup
 ----------
 
