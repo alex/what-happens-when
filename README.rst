@@ -534,6 +534,8 @@ in the HTML and CSS specifications. These specifications are maintained
 by the W3C (World Wide Web Consortium) organization, which is the
 standards organization for the web.
 
+Understanding this journey sheds light on the remarkable technology that powers our daily web interactions.
+
 Browser user interfaces have a lot in common with each other. Among the
 common user interface elements are:
 
