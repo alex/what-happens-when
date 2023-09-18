@@ -164,6 +164,15 @@ appropriate font symbol in the appropriate focused field.
 
 Parse URL
 ---------
+Parsing means to analyze (a string or text) into logical syntactic components.
+
+URL parsing is a function of traffic management and load-balancing products that
+scan URLs to determine how to forward traffic across different links or into different
+servers. A URL includes a protocol identifier (http, for Web traffic) and a resource 
+name, such as www.microsoft.com. The first component could be used to direct traffic to 
+Web servers (as opposed to FTP or other servers). The resource is the added dimension that 
+gives URL parsing an advantage over products that evaluate only layer 4 
+information (IP address and port).
 
 * The browser now has the following information contained in the URL (Uniform
   Resource Locator):
