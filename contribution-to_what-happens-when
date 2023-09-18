@@ -1,0 +1,55 @@
+When you type google.com into your browser's address bar and press Enter, several key web stack concepts come into play in the flow process. A complex series of actions take place, involving various components of the web stack .Here's a step-by-step explanation of what happens:
+
+    DNS (Domain Name System):
+
+    Your browser first needs to translate the human-readable domain name, “google.com” into an IP address, which is required to locate the web server that hosts Google’s website.
+    The browser sends a DNS request to a DNS resolver, typically provided by an Internet Service Provider (ISP) or a third-party DNS service like Google DNS.
+
+2. TCP/IP (Transmission Control Protocol/Internet Protocol):
+
+    With the IP address of google.com is obtained from DNS, the browser uses TCP/IP to establish a connection to Google’s web server.
+    TCP (Transmission Control Protocol) is responsible for reliable data transmission. It breaks data into packets and ensures that they are sent and received in the correct order.
+    IP (Internet Protocol) is responsible for routing packets of data so they reach the correct destination across the internet.
+
+3. Firewall:
+
+    A firewall, either on your computer or within your network, may inspect outgoing and incoming traffic. It can block or allow requests based on predefined rules.
+    In this case, the firewall may allow your browser to make an outbound connection to Google’s web server.
+
+4. HTTPS/SSL (Hypertext Transfer Protocol Secure/Secure Sockets Layer):
+
+    When the browser initiates a connection to a web server, it defaults to using port 80 for HTTP (Hypertext Transfer Protocol) or port 443 for HTTPS (HTTP Secure).
+    For secure communication (HTTPS), the browser and the web server engage in an SSL/TLS handshake. This handshake typically takes place on port 443.
+    Google’s website uses HTTPS to encrypt the data exchanged between the browser and their web server, ensuring the confidentiality and integrity of the data.
+    The browser requests an SSL/TLS handshake with the web server to establish a secure connection.
+
+5. Load-Balancer:
+
+    Large websites like Google employ load balancers to distribute incoming user requests efficiently across multiple web servers.
+    Load balancers can use various algorithms to make routing decisions, such as round-robin, least connections, or IP hash.
+    These decisions are based on factors like server health, response times, and server capacity to ensure optimal resource utilization.
+    The load balancer often performs health checks on servers, directing traffic away from servers that are overloaded or experiencing issues.
+
+6. Web Server:
+
+After passing through the load balancer, your request reaches one of Google’s web servers.
+
+    The web server (or multiple web servers) at Google’s end receives your request for google.com.
+    It processes the request and generates the appropriate response, which typically includes fetching static contents like HTML, CSS, JavaScript, and other resources required to render the webpage.
+
+7. Application Server:
+
+    In many cases, especially for dynamic websites, an application server may be involved. This server runs server-side scripts or applications, such as PHP, Python, or Java, to generate dynamic content.
+    The Google’s application server might handle running server-side code for search functionality or user account management, authentication, search queries, or other interactive features.
+
+8. Database:
+
+    For websites that rely on databases to store and retrieve information, a database server is used to manage the data.
+    Google may access various databases to retrieve search results, user preferences, or other relevant information to display on the webpage.
+
+9. Response and Rendering:
+
+    After processing the request and gathering all necessary data, the web server and application server (if applicable) create an HTML response.
+    The browser receives this response and renders the webpage, displaying it to the user on the screen.
+
+In summary, when you type google.com in your browser and press Enter, the request goes through several layers of technology and infrastructure, including DNS resolution, TCP/IP communication, firewall checks, secure encryption, load balancing, web and application servers, and database interactions, before you see the Google homepage on your browser. Each of these components plays a crucial role in delivering a seamless web browsing experience.
