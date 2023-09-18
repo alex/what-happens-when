@@ -510,6 +510,33 @@ and IIS for Windows.
   is running on PHP, the server uses PHP to interpret the index file, and
   streams the output to the client.
 
+## Parallelism and Asynchronous Requests
+Modern web browsers are designed to provide a smooth and responsive browsing
+experience. To achieve this, they employ techniques such as parallelism and 
+support for asynchronous requests. These mechanisms significantly contribute
+to the performance and speed of web page loading.
+### Parallelism
+When you enter a URL in your browser's address bar and press Enter, the 
+browser initiates multiple parallel requests to fetch various resources 
+required to render the web page. These resources can include HTML, CSS, 
+JavaScript files, images, and more. By initiating these requests in parallel, 
+browsers can reduce page load times.
+Key points regarding parallelism include:
+- **Domain Sharding**: Browsers may employ a technique called domain sharding,
+where they open multiple connections to a single domain
+- **Resource Prioritization**: Browsers prioritize the loading of critical
+  reources to ensure that users see meaningful content as quickly as possible.
+  ### Asynchronous Requests
+  They allow web pages to load and interact with external resources without
+  blocking the main user interface. Key points include:
+- **XMLHttpRequest (XHR)**: XHR is a JavaScript object that enables making 
+  HTTP requests from a web page without reloading the entire page
+- **Fetch API**: The Fetch API is a modern replacement for XHR,
+  It returns promises, making it easier to work with asynchronous code.
+- **Service Workers**: Service workers are scripts that run in the background
+  and enable features such as push notifications, background synchronization,
+  and caching, which enhance the offline capabilities of web applications.
+
 Behind the scenes of the Browser
 ----------------------------------
 
