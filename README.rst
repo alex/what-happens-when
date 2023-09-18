@@ -517,50 +517,51 @@ Imagine a popular website like Google, which receives an immense number of
 requests every second. Handling this enormous traffic efficiently is a
 remarkable feat achieved through the following steps:
 
-* **Load Balancing:** Load balancing is like having a team of traffic cops
-  directing cars at a busy intersection. In the context of web servers, load
-  balancers distribute incoming requests across multiple server instances.
-  This ensures that no single server gets overwhelmed, leading to faster
-  response times and improved reliability.
+* **Load Balancing:**
+  Load balancing is like having a team of traffic cops directing cars at a busy
+  intersection. In the context of web servers, load balancers distribute
+  incoming requests across multiple server instances. This ensures that no
+  single server gets overwhelmed, leading to faster response times and improved
+  reliability.
 
-* Redundancy and Scalability:
+* **Redundancy and Scalability:**
   Websites like Google have a multitude of servers running in data centers
   around the world. These servers are not only redundant (meaning there are
   backups in case one fails) but also scalable. When traffic spikes, additional
   servers can be added dynamically to handle the load. This scalability ensures
   consistent performance even during traffic peaks.
 
-* Content Delivery Networks (CDNs):
+* **Content Delivery Networks (CDNs):**
   CDNs are like having regional distribution centers for popular products. They
   cache and distribute website content (images, scripts, etc.) to servers
   strategically placed around the world. When a user makes a request, the
   content is served from the nearest CDN server, reducing latency and improving
   load times.
 
-* Caching:
+* **Caching:**
   Caching is akin to storing commonly used items on your desk for quick access.
   Web servers often cache frequently accessed data and store it in memory. This
   allows them to serve requests for that data much faster than if they had to
   fetch it from storage or a database each time.
 
-* Content Optimization:
+* **Content Optimization:**
   Websites optimize their content for fast delivery. This includes compressing
   images, minifying code, and using content delivery techniques like HTTP/2 and
   HTTP/3. These optimizations reduce the amount of data that needs to be
   transferred, speeding up page load times.
 
-* Content Preloading:
+* **Content Preloading:**
   Advanced techniques like predictive preloading anticipate what a user might
   click on next and start loading those pages in the background. This minimizes
   perceived load times and creates a smoother browsing experience.
 
-* Distributed Databases:
+* **Distributed Databases:**
   Large websites often employ distributed databases that can handle massive
   amounts of data and queries in parallel. This ensures that database requests
   are processed swiftly, even when multiple users are accessing the same
   information simultaneously.
 
-* Serverless Computing:
+* **Serverless Computing:**
   Some websites use serverless computing platforms, which automatically
   allocate resources as needed. This approach eliminates the need to manage
   traditional server infrastructure and ensures that computing resources are
