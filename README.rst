@@ -678,6 +678,20 @@ GPU Rendering
 Window Server
 -------------
 
+After the rendering process and user-induced execution, the browser executes JavaScript code 
+as a result of some timing mechanism (such as a Google Doodle animation) or user interaction
+(typing a query into the search box and receiving suggestions). Plugins such as Flash or Java
+may execute as well, although not at this time on the Google homepage. Scripts can cause additional 
+network requests to be performed, as well as modify the page or its layout, causing another round of 
+page rendering and painting. The Window Server is responsible for handling the final steps of rendering
+and compositing the page. It receives the page layers, including layers for other visible content 
+like browser chrome, iframes, and addon panels. The Window Server computes the final positions of the 
+layers and issues composite commands via Direct3D/OpenGL. The GPU command buffer(s) are flushed to the
+GPU for asynchronous rendering, and the frame is ultimately sent to the window server, resulting in the 
+final display of the web page to the user. The graphical computing layers can utilize both the CPU and 
+the GPU for rendering computations, optimizing performance by leveraging the GPU's massive parallelism
+for floating-point calculations required in the rendering process.
+
 Post-rendering and user-induced execution
 -----------------------------------------
 
