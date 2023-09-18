@@ -687,7 +687,7 @@ interaction (typing a query into the search box and receiving suggestions).
 Plugins such as Flash or Java may execute as well, although not at this time on
 the Google homepage. Scripts can cause additional network requests to be
 performed, as well as modify the page or its layout, causing another round of
-page rendering and painting.
+page rendering and painting.In summary, post-rendering and user-induced execution involve the dynamic aspect of web pages. JavaScript, in particular, plays a central role in making web pages interactive and responsive to user input. This phase of web page interaction is essential for providing a seamless and engaging user experience, as it enables real-time updates, user-driven actions, and the execution of various scripts and plugins. Understanding this aspect is vital for web developers and front-end engineers, as it allows them to create rich and interactive web applications.
 
 .. _`Creative Commons Zero`: https://creativecommons.org/publicdomain/zero/1.0/
 .. _`"CSS lexical and syntax grammar"`: http://www.w3.org/TR/CSS2/grammar.html
