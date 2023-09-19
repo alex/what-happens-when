@@ -643,6 +643,9 @@ Page Rendering
   summing the child node heights and the node's margins, borders, and padding.
 * Calculate the coordinates of each node using the information calculated
   above.
+* Optimize rendering performance by identifying and applying incremental
+  changes that reuse calculated values from the last rendering,
+  reducing the computational workload.
 * More complicated steps are taken when elements are ``floated``,
   positioned ``absolutely`` or ``relatively``, or other complex features
   are used. See
