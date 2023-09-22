@@ -206,6 +206,12 @@ Check HSTS list
   `downgrade attack`_, which is why the HSTS list is included in modern web
   browsers.)
 
+IP Addresses
+----------
+* For you to be able to understand what follows, we first need to know what IP addresses are all about. They would be your good friends to understand everything. IPs can be complex but don’t worry as we will make it very simple to digest. You see computers are just like our homes with mailing addresses. Just like your home, every computer has a specific address known as the IP address which is the home address with which you can contact it.
+
+* Computers talk to each other over the internet using these unique IP addresses and voila that’s it, very simple, you enter the computer’s IP and you can contact it. Now that you are an expert at IP Addresses, let’s find out what happens with your URL.
+
 DNS lookup
 ----------
 
