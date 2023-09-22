@@ -579,7 +579,7 @@ document from the networking layer. This will usually be done in 8kB chunks.
 
 The primary job of the HTML parser is to parse the HTML markup into a parse tree.
 
-The output tree (the "parse tree") is a tree of DOM element and attribute
+The output tree (the "parse tree") is a tree of DOM elements and attribute
 nodes. DOM is short for Document Object Model. It is the object presentation
 of the HTML document and the interface of HTML elements to the outside world
 like JavaScript. The root of the tree is the "Document" object. Prior to
@@ -600,6 +600,13 @@ The reasons are:
   containing `document.write()` calls) can add extra tokens, so the parsing
   process actually modifies the input.
 
+To dive deeper into the parsing algorithm, it's essential to understand how
+the HTML specification defines the parsing rules. The HTML specification
+provides detailed guidelines on how browsers should handle different HTML
+structures and how to recover from errors gracefully. This specification is
+crucial for browser developers to ensure consistent parsing behavior across
+other web pages.
+
 Unable to use the regular parsing techniques, the browser utilizes a custom
 parser for parsing HTML. The parsing algorithm is described in
 detail by the HTML5 specification.
@@ -611,12 +618,12 @@ The algorithm consists of two stages: tokenization and tree construction.
 The browser begins fetching external resources linked to the page (CSS, images,
 JavaScript files, etc.).
 
-At this stage the browser marks the document as interactive and starts
-parsing scripts that are in "deferred" mode: those that should be
+At this stage, the browser marks the document as interactive and starts
+parsing scripts in "deferred" mode: those that should be
 executed after the document is parsed. The document state is
 set to "complete" and a "load" event is fired.
 
-Note there is never an "Invalid Syntax" error on an HTML page. Browsers fix
+Note that an "Invalid Syntax" error is never on an HTML page. Browsers fix
 any invalid content and go on.
 
 CSS interpretation
@@ -662,6 +669,42 @@ Page Rendering
 * Final layer positions are computed and the composite commands are issued
   via Direct3D/OpenGL. The GPU command buffer(s) are flushed to the GPU for
   asynchronous rendering and the frame is sent to the window server.
+
+**Optimizing Rendering Performance**
+Efficient rendering is crucial for delivering a smooth user experience.
+Browsers employ several techniques to optimize rendering performance:
+
+* **caching**: Browsers cache previously rendered elements and pages to avoid
+  redundant rendering. Cached content can be quickly retrieved when revisiting
+  a page.
+
+* **Incremental Rendering**: To reduce perceived loading times. Browsers may
+  employ incremental rendering. They render and display portions of a page as
+  they become available, allowing users to view content sooner.
+
+* **Lazy Loading**: Browsers delay the loading and rendering of off-screen
+  images and elements until they come into the user's viewport. This minimizes
+  unnecessary rendering and conserves resources.
+
+* **Hardware Accelaration**: Modern browsers levarage hardware acceleration,
+  offloading rendering tasks to the GPU for faster and smoother graphics
+  rendering. This is especially beneficial for animations and complex visuals.
+
+* **Compositing**: Browsers use compositing to effieciently combine and render
+  differenet layers of a webpage, optimizing performance and reducing
+  flickering.
+
+* **Optimized CSS and JavaScript Handling**: Browsers optimizes the execution
+  of CSS and JavaScript code to minimize rendering bottlenecks. This includes
+  asynchromous loading, script parsing, and CSS rule prioritization.
+
+* **Responsive Design**: Web developers utilize responsive design techniques
+  to ensure that web pages adapt well to various screen sizes and devices,
+  reducing the need for excessive rendering adjustments.
+
+These optimization techniques collectively contribute to a seemless and
+responsive browsing experience, where web content is rendered quickly and
+efficiently.
 
 GPU Rendering
 -------------
