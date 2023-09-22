@@ -579,7 +579,7 @@ document from the networking layer. This will usually be done in 8kB chunks.
 
 The primary job of the HTML parser is to parse the HTML markup into a parse tree.
 
-The output tree (the "parse tree") is a tree of DOM element and attribute
+The output tree (the "parse tree") is a tree of DOM elements and attribute
 nodes. DOM is short for Document Object Model. It is the object presentation
 of the HTML document and the interface of HTML elements to the outside world
 like JavaScript. The root of the tree is the "Document" object. Prior to
@@ -600,12 +600,12 @@ The reasons are:
   containing `document.write()` calls) can add extra tokens, so the parsing
   process actually modifies the input.
 
-To dive deeper into the parsing algorithm, It's essential to understand how
+To dive deeper into the parsing algorithm, it's essential to understand how
 the HTML specification defines the parsing rules. The HTML specification
 provides detailed guidelines on how browsers should handle different HTML
 structures and how to recover from errors gracefully. This specification is
-crucial for browsers developers to ensure consistent parsing behavior across
-different web pages.
+crucial for browser developers to ensure consistent parsing behavior across
+other web pages.
 
 Unable to use the regular parsing techniques, the browser utilizes a custom
 parser for parsing HTML. The parsing algorithm is described in
@@ -618,12 +618,12 @@ The algorithm consists of two stages: tokenization and tree construction.
 The browser begins fetching external resources linked to the page (CSS, images,
 JavaScript files, etc.).
 
-At this stage the browser marks the document as interactive and starts
-parsing scripts that are in "deferred" mode: those that should be
+At this stage, the browser marks the document as interactive and starts
+parsing scripts in "deferred" mode: those that should be
 executed after the document is parsed. The document state is
 set to "complete" and a "load" event is fired.
 
-Note there is never an "Invalid Syntax" error on an HTML page. Browsers fix
+Note that an "Invalid Syntax" error is never on an HTML page. Browsers fix
 any invalid content and go on.
 
 CSS interpretation
