@@ -1,4 +1,24 @@
 What happens when...
+
+When you type "https://www.google.com" in your browser and press Enter:
+
+DNS Resolution: Your browser sends a request to a DNS server to translate the domain name "www.google.com" into an IP address.
+
+TCP/IP Connection: It establishes a TCP/IP connection to the server using the obtained IP address.
+
+HTTPS/SSL Handshake: If it's an HTTPS (secure) connection, your browser and the server perform an SSL handshake to encrypt data transmission.
+
+Load Balancing: In the case of high-traffic sites like Google, load balancers distribute your request among multiple servers for improved performance.
+
+Web Server: The request reaches the web server, which processes it and sends back a response.
+
+Application Server: For dynamic content, an application server may further process the request, interacting with databases or other resources.
+
+Database (Optional): If needed, the application server queries a database for data.
+
+Response: Finally, the response (HTML, CSS, JavaScript, etc.) is sent back to your browser, which renders and displays the Google homepage.
+
+
 ====================
 
 This repository is an attempt to answer the age-old interview question "What
