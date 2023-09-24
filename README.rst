@@ -689,6 +689,11 @@ the Google homepage. Scripts can cause additional network requests to be
 performed, as well as modify the page or its layout, causing another round of
 page rendering and painting.
 
+Summary
+----------
+
+The Internet is a global network of computers. Computers and other devices communicate using IP addresses to identify each other on the internet. This communication is powered by the TCP/IP protocol suite. The Domain Name System (DNS), was establish to help translate these IP addresses to domain name. When you try to visit https://www.google.com from your browser, what you are simply doing is trying to communicate with another computer over the internet that houses a web server responsible for responding to requests for https://www.google.com. A Web server is just an application that responds to http requests. In this case, your web browser sends an http request for a web page, and a Web server sitting on a computer somewhere over the Internet is responsible for responding to that request. How this computer is located amongst millions of computers on the Internet with just a domain name is the work of the Domain Name System (DNS). With your domain name, you send a DNS request and the IP address of the computer that host the domain name is returned.
+
 .. _`Creative Commons Zero`: https://creativecommons.org/publicdomain/zero/1.0/
 .. _`"CSS lexical and syntax grammar"`: http://www.w3.org/TR/CSS2/grammar.html
 .. _`Punycode`: https://en.wikipedia.org/wiki/Punycode
