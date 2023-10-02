@@ -696,6 +696,7 @@ page rendering and painting.
 .. _`WiFi`: https://en.wikipedia.org/wiki/IEEE_802.11
 .. _`Cellular data network`: https://en.wikipedia.org/wiki/Cellular_data_communication_protocol
 .. _`analog-to-digital converter`: https://en.wikipedia.org/wiki/Analog-to-digital_converter
+.. _`HTTP parsing`: https://www.w3.org/TR/2011/WD-html5-20110525/parsing.html
 .. _`network node`: https://en.wikipedia.org/wiki/Computer_network#Network_nodes
 .. _`TCP congestion control`: https://en.wikipedia.org/wiki/TCP_congestion_control
 .. _`cubic`: https://en.wikipedia.org/wiki/CUBIC_TCP
