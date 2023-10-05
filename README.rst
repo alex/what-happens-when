@@ -677,6 +677,11 @@ GPU Rendering
 
 Window Server
 -------------
+What is Windows Server?
+---------------------
+Windows Server is a version of Windows built and designed to meet business needs. In appearance and naming, Windows Server resembles the versions of Windows designed for everyday use, such as Windows 10. This is by design, as each Windows Server release corresponds to a Windows version, and both operating systems share the same codebase; for example, Windows Server 2019 corresponds to Windows 10.
+
+However, while the two operating systems strongly resemble each other, Windows Server is built and designed to meet business, and specifically server, needs. For example, Windows Server features tools needed to allow administrators to better control networks and data storage, as well as having administrative functions useful for access control management.
 
 Post-rendering and user-induced execution
 -----------------------------------------
