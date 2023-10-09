@@ -480,6 +480,28 @@ resolving the other domain, and follows all steps up to this point for that
 domain. The ``Host`` header in the request will be set to the appropriate
 server name instead of ``google.com``.
 
+HTTP Response Codes:
+--------------------
+HTTP response codes indicate the outcome of an HTTP request made by a client (such as a web browser) to a server. These codes provide information about the status of the request and guide the client on how to proceed. Here are some common HTTP response codes and their meanings:
+
+200 OK: This response code indicates that the request was successful, and the server has provided the requested resource.
+
+301 Moved Permanently: The requested resource has been permanently moved to a different URL. The client should use the new URL for future requests.
+
+404 Not Found: The server could not find the requested resource. This is a common response when a URL is mistyped or the resource has been removed.
+
+500 Internal Server Error: An unexpected error occurred on the server while processing the request. This is a generic error message when the server encounters an issue.
+
+302 Found (or 303 See Other): The requested resource has been temporarily moved to a different URL. The client should follow the redirection to the new URL.
+
+401 Unauthorized: The client must provide authentication credentials to access the requested resource. This is typically used for password-protected content.
+
+403 Forbidden: The server understood the request, but it refuses to fulfill it. The client does not have permission to access the resource.
+
+304 Not Modified: This response indicates that the client's cached version of the resource is still valid, and there is no need to download it again.
+
+Understanding these response codes is crucial when working with HTTP requests and responses. They help diagnose issues, handle redirections, and ensure proper communication between clients and servers.
+
 HTTP Server Request Handle
 --------------------------
 The HTTPD (HTTP Daemon) server is the one handling the requests/responses on
