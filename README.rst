@@ -417,6 +417,10 @@ control`_. This varies depending on the sender; the most common algorithms are
 HTTP protocol
 -------------
 
+What is HTTP ?
+
+The Hypertext Transfer Protocol (HTTP) is the foundation of the World Wide Web, and is used to load webpages using hypertext links. HTTP is an application layer protocol designed to transfer information between networked devices and runs on top of other layers of the network protocol stack. A typical flow over HTTP involves a client machine making a request to a server, which then sends a response message.
+
 If the web browser used was written by Google, instead of sending an HTTP
 request to retrieve the page, it will send a request to try and negotiate with
 the server an "upgrade" from HTTP to the SPDY protocol.
