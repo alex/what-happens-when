@@ -689,6 +689,51 @@ the Google homepage. Scripts can cause additional network requests to be
 performed, as well as modify the page or its layout, causing another round of
 page rendering and painting.
 
+Client-Side Storage Options
+---------------------------
+
+In web development, client-side storage plays a crucial role in managing data
+within a user's browser. There are two primary methods: Cookies and Local Storage.
+Each serves specific purposes and has distinct characteristics.
+
+Cookies
+-------
+
+* Definition: Cookies are small pieces of data stored in a user's browser.
+  They are sent as headers in HTTP requests and responses and are used for various purposes,
+  including session management, personalization, and tracking.
+
+* Key Characteristics:
+    Size Limit: About 4KB per cookie, and a domain can store up to 50 cookies.
+    Lifetime: Can have an expiration date set by the server, or be session cookies that expire
+    when the browser is closed.
+    Security: Can be secure (transmitted over HTTPS) or non-secure.
+    Accessibility: Can be accessed and set both server-side and client-side using JavaScript.
+    Sent with Every Request: Sent with every HTTP request to the associated domain.
+
+* Common Use Cases:
+    Session Management
+    Authentication
+    Tracking and Analytics
+
+Local Storage
+-------------
+
+* Definition: Local Storage is a more modern storage option introduced with HTML5.
+  It provides a way to store key-value pairs in a user's browser.
+
+* Key Characteristics:
+    Size Limit: Allows for significantly larger data storage, typically around 5-10MB per domain.
+    Lifetime: Data persists even when the browser is closed, considered a form of "persistent" storage.
+    Security: More secure than cookies in terms of data integrity, but not intended for sensitive data.
+    Accessibility: Accessed and manipulated exclusively through JavaScript.
+    Not Sent with Requests: Data is not sent with HTTP requests, which can improve performance.
+
+* Common Use Cases:
+    Client-Side Caching
+    Storing User Preferences
+    Offline Web Apps
+
 .. _`Creative Commons Zero`: https://creativecommons.org/publicdomain/zero/1.0/
 .. _`"CSS lexical and syntax grammar"`: http://www.w3.org/TR/CSS2/grammar.html
 .. _`Punycode`: https://en.wikipedia.org/wiki/Punycode
