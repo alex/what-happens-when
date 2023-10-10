@@ -39,6 +39,7 @@ popular searches from the internet as a whole. As you are typing
 with each keypress. It may even suggest "google.com" before you finish typing
 it.
 
+
 The "enter" key bottoms out
 ---------------------------
 
