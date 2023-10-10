@@ -52,7 +52,7 @@ The keyboard controller then encodes the keycode for transport to the computer.
 This is now almost universally over a Universal Serial Bus (USB) or Bluetooth
 connection, but historically has been over PS/2 or ADB connections.
 
-*In the case of the USB keyboard:*
+*When using a usb keyboard:*
 
 - The USB circuitry of the keyboard is powered by the 5V supply provided over
   pin 1 from the computer's USB host controller.
@@ -76,7 +76,7 @@ connection, but historically has been over PS/2 or ADB connections.
   device driver.  The value of the key is then passed into the operating
   system's hardware abstraction layer.
 
-*In the case of Virtual Keyboard (as in touch screen devices):*
+*On the on-screen keyboard,  (on touch screen devices):*
 
 - When the user puts their finger on a modern capacitive touch screen, a
   tiny amount of current gets transferred to the finger. This completes the
@@ -165,7 +165,7 @@ appropriate font symbol in the appropriate focused field.
 Parse URL
 ---------
 
-* The browser now has the following information contained in the URL (Uniform
+* The browser has access to the following information in the URL: (Uniform
   Resource Locator):
 
     - ``Protocol``  "http"
