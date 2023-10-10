@@ -397,6 +397,8 @@ TLS handshake
 * From now on the TLS session transmits the application (HTTP) data encrypted
   with the agreed symmetric key.
 
+* This agreement is based on public key private key methdology.
+
 If a packet is dropped
 ----------------------
 
