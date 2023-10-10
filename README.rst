@@ -5,7 +5,7 @@ This repository is an attempt to answer the age-old interview question "What
 happens when you type google.com into your browser's address box and press
 enter?"
 
-Except instead of the usual story, we're going to try to answer this question
+Instead of the usual story, we're going to try to answer this question
 in as much detail as possible. No skipping out on anything.
 
 This is a collaborative process, so dig in and try to help out! There are tons
@@ -510,11 +510,19 @@ and IIS for Windows.
   is running on PHP, the server uses PHP to interpret the index file, and
   streams the output to the client.
 
+Firewall
+---------
+
+Before your request reaches its destination, it passes through firewalls. 
+Firewalls are network security systems that monitor incoming and outgoing network traffic.
+They assess whether to allow or block specific traffic based on predefined security rules.
+This helps protect your system from potentially harmful or unauthorized access.
+
 Behind the scenes of the Browser
 ----------------------------------
 
 Once the server supplies the resources (HTML, CSS, JS, images, etc.)
-to the browser it undergoes the below process:
+to the browser, it undergoes the below process:
 
 * Parsing - HTML, CSS, JS
 * Rendering - Construct DOM Tree → Render Tree → Layout of Render Tree →
@@ -554,7 +562,7 @@ The components of the browsers are:
 * **Browser engine:** The browser engine marshals actions between the UI
   and the rendering engine.
 * **Rendering engine:** The rendering engine is responsible for displaying
-  requested content. For example if the requested content is HTML, the
+  requested content. For example, if the requested content is HTML, the
   rendering engine parses HTML and CSS, and displays the parsed content on
   the screen.
 * **Networking:** The networking handles network calls such as HTTP requests,
