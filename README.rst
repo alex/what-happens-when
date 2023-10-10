@@ -38,10 +38,7 @@ popular searches from the internet as a whole. As you are typing
 "google.com" many blocks of code run and the suggestions will be refined
 with each keypress. It may even suggest "google.com" before you finish typing
 it.
-pressing the "g" key depends on the specific software being used
-pressing "g" also depend on keyboard shortcuts or customizations that have been configured.
-for example :
-If you are typing in a text editor, pressing the "g" key will result in the letter "g" being inserted into the document at the  cursor position.
+
 
 The "enter" key bottoms out
 ---------------------------
