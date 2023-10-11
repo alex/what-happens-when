@@ -712,12 +712,12 @@ OSI (Open Systems Interconnection) Model Perspective
    * It uses DNS (Domain Name System) to resolve the domain name into an IP address.
    * The browser sends this request to the remote web server. The request goes through all the previously mentioned layers in reverse order.
 8. User Layer (End-User) and Web Server:
-   - This is not part of the OSI model, but it represents you, the end-user and the Web Server.
+        - This is not part of the OSI model, but it represents you, the end-user and the Web Server.
         - At the destination server, the request is processed by the web server software.
-   - The server generates a response, which includes the HTML, CSS, and other assets needed to render the web page.
+        - The server generates a response, which includes the HTML, CSS, and other assets needed to render the web page.
         * This response travels back through the OSI layers, following a similar process but in reverse order.
         * The data is finally rendered in your browser, and you see the web page on your screen.
-   * You see the requested webpage displayed in your browser after it receives and processes the server's response.
+        * You see the requested webpage displayed in your browser after it receives and processes the server's response.
 
 In Summary:
 -------------
