@@ -674,6 +674,44 @@ GPU Rendering
   of ``GPU`` massive parallelism for float point calculations required for
   the rendering process.
 
+Continued Communication
+-----------------------
+
+When you load a web page, the communication between your browser and the web server doesn't stop at the initial request and response. It's an ongoing dialog, essential for interactive and dynamic web experiences. Here's a closer look at this phase:
+
+Client-Side Interactivity:
+
+Once the web page is loaded, the browser enters a state where it's ready to respond to user interactions. Users can click on links, buttons, and interactive elements, submit forms, or perform various actions on the page. These actions trigger new requests to the web server.
+
+Additional HTTP Requests:
+
+When a user clicks a link or submits a form, the browser generates new HTTP requests. These requests can be of various types, such as:
+
+GET Requests: These are used to request resources like web pages, images, or scripts. Clicking on a link often results in a GET request for a new page.
+
+POST Requests: When you submit a form, it usually generates a POST request to send data to the server. This data might include form input values or other user-generated content.
+
+AJAX Requests: Modern web applications often use Asynchronous JavaScript and XML (AJAX) to send and receive data without reloading the entire page. These requests are typically made with JavaScript and can update parts of a page without a full refresh.
+
+Server-Side Processing:
+
+When the server receives these additional requests, it processes them as it did with the initial request. It may retrieve or update data, perform computations, and generate responses. The responses can be in various formats, such as HTML, JSON, or XML, depending on the purpose of the request.
+
+Dynamic Content Updates:
+
+The new data received from the server is then used to update the web page dynamically. JavaScript plays a crucial role in processing the server's responses and altering the content and presentation on the user's screen. This dynamic updating allows for interactive features, real-time data, and responsive user interfaces.
+
+Web Sockets and Real-Time Communication:
+
+In some cases, especially for applications that require real-time updates (e.g., chat applications, online gaming, stock market tickers), web sockets are used. Web sockets enable bidirectional, full-duplex communication between the browser and the server. This technology allows the server to push updates to the client instantly, eliminating the need for the client to keep polling the server for changes.
+
+State Management:
+
+To maintain consistency and user state throughout these interactions, web applications often use cookies, session data, and other client-side and server-side techniques. This helps remember user preferences, login status, and other context-specific information.
+
+Security Measures:
+
+Continued communication also involves considerations for security, as ongoing interactions can open up vulnerabilities. This is where measures like Cross-Site Request Forgery (CSRF) protection, Cross-Origin Resource Sharing (CORS), and secure authentication and authorization mechanisms come into play.
 
 Window Server
 -------------
