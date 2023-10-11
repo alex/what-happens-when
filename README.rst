@@ -1,210 +1,121 @@
-What happens when...
-====================
+# What Happens When You Type "google.com" and Press Enter?
 
-This repository is an attempt to answer the age-old interview question "What
-happens when you type google.com into your browser's address box and press
-enter?"
+This repository aims to provide a detailed answer to the classic interview question: "What happens when you type 'google.com' into your browser's address bar and press Enter?"
 
-Except instead of the usual story, we're going to try to answer this question
-in as much detail as possible. No skipping out on anything.
+But unlike the usual brief explanations, we want to dive deep into every step of the process, leaving no stone unturned. This project thrives on collaboration, and we encourage you to get involved! There are numerous missing details waiting for your contributions. Feel free to submit a pull request with your insights.
 
-This is a collaborative process, so dig in and try to help out! There are tons
-of details missing, just waiting for you to add them! So send us a pull
-request, please!
+## Licensing
 
-This is all licensed under the terms of the `Creative Commons Zero`_ license.
+All content in this repository is available under the terms of the [Creative Commons Zero](https://creativecommons.org/publicdomain/zero/1.0/) license.
 
-Read this in `简体中文`_ (simplified Chinese), `日本語`_ (Japanese), `한국어`_
-(Korean) and `Spanish`_. NOTE: these have not been reviewed by the alex/what-happens-when
-maintainers.
+## Multilingual Support
 
-Table of Contents
-====================
+Read this document in other languages:
+- [简体中文 (Simplified Chinese)](./README.zh_CN.md)
+- [日本語 (Japanese)](./README.ja.md)
+- [한국어 (Korean)](./README.ko.md)
+- [Spanish](./README.es.md)
 
-.. contents::
-   :backlinks: none
-   :local:
+**Note**: Translations into these languages have not been reviewed by the maintainers of this repository.
 
-The "g" key is pressed
-----------------------
-The following sections explain the physical keyboard actions
-and the OS interrupts. When you press the key "g" the browser receives the
-event and the auto-complete functions kick in.
-Depending on your browser's algorithm and if you are in
-private/incognito mode or not various suggestions will be presented
-to you in the dropdown below the URL bar. Most of these algorithms sort
-and prioritize results based on search history, bookmarks, cookies, and
-popular searches from the internet as a whole. As you are typing
-"google.com" many blocks of code run and the suggestions will be refined
-with each keypress. It may even suggest "google.com" before you finish typing
-it.
+## Table of Contents
 
-The "enter" key bottoms out
----------------------------
+1. [The "g" key is pressed](#the-g-key-is-pressed)
+2. [The "enter" key bottoms out](#the-enter-key-bottoms-out)
+3. [Interrupt fires (Not for USB keyboards)](#interrupt-fires-not-for-usb-keyboards)
+4. [On Windows: A WM_KEYDOWN message is sent to the app](#on-windows-a-wm_keydown-message-is-sent-to-the-app)
+5. [On OS X: A KeyDown NSEvent is sent to the app](#on-os-x-a-keydown-nsevent-is-sent-to-the-app)
+6. [On GNU/Linux: the Xorg server listens for keycodes](#on-gnu-linux-the-xorg-server-listens-for-keycodes)
+7. [Parse URL](#parse-url)
+8. [Is it a URL or a search term?](#is-it-a-url-or-a-search-term)
+9. [Convert non-ASCII Unicode characters in the hostname](#convert-non-ascii-unicode-characters-in-the-hostname)
+10. [Check HSTS list](#check-hsts-list)
+11. [DNS lookup](#dns-lookup)
+12. [ARP process](#arp-process)
+13. [Opening of a socket](#opening-of-a-socket)
+14. [TLS handshake](#tls-handshake)
+15. [If a packet is dropped](#if-a-packet-is-dropped)
+16. [HTTP protocol](#http-protocol)
+17. [HTTP Server Request Handle](#http-server-request-handle)
+18. [Behind the Scenes of the Browser](#behind-the-scenes-of-the-browser)
+19. [Browser](#browser)
+20. [HTML parsing](#html-parsing)
+21. [CSS interpretation](#css-interpretation)
+22. [Page Rendering](#page-rendering)
+23. [GPU Rendering](#gpu-rendering)
+24. [Window Server](#window-server)
+25. [Post-rendering and user-induced execution](#post-rendering-and-user-induced-execution)
 
-To pick a zero point, let's choose the Enter key on the keyboard hitting the
-bottom of its range. At this point, an electrical circuit specific to the enter
-key is closed (either directly or capacitively). This allows a small amount of
-current to flow into the logic circuitry of the keyboard, which scans the state
-of each key switch, debounces the electrical noise of the rapid intermittent
-closure of the switch, and converts it to a keycode integer, in this case 13.
-The keyboard controller then encodes the keycode for transport to the computer.
-This is now almost universally over a Universal Serial Bus (USB) or Bluetooth
-connection, but historically has been over PS/2 or ADB connections.
+## The "g" key is pressed
 
-*In the case of the USB keyboard:*
+When you press the "g" key on your keyboard, the browser receives the event, and the auto-complete functions kick in. Depending on your browser's algorithm and whether you are in private/incognito mode or not, various suggestions will be presented in the dropdown below the URL bar. These suggestions are sorted and prioritized based on search history, bookmarks, cookies, and popular internet searches. As you type "google.com," many blocks of code run, and the suggestions refine with each keypress. It may even suggest "google.com" before you finish typing it.
 
-- The USB circuitry of the keyboard is powered by the 5V supply provided over
-  pin 1 from the computer's USB host controller.
+## The "enter" key bottoms out
 
-- The keycode generated is stored by internal keyboard circuitry memory in a
-  register called "endpoint".
+To pinpoint the moment when you press the Enter key on the keyboard, hitting the bottom of its range, an electrical circuit specific to the Enter key is closed, either directly or capacitively. This closure allows a small current to flow into the keyboard's logic circuitry. The keyboard scans the state of each key switch, debounces the electrical noise from the rapid intermittent switch closure, and converts it into a keycode integer, typically 13. The keyboard controller then encodes the keycode for transport to the computer. This is now almost universally over a Universal Serial Bus (USB) or Bluetooth connection, although historically, it was over PS/2 or ADB connections.
 
-- The host USB controller polls that "endpoint" every ~10ms (minimum value
-  declared by the keyboard), so it gets the keycode value stored on it.
+**For USB keyboards:**
 
-- This value goes to the USB SIE (Serial Interface Engine) to be converted in
-  one or more USB packets that follow the low-level USB protocol.
+- The USB circuitry of the keyboard is powered by the 5V supply from the computer's USB host controller (pin 1).
+- The generated keycode is stored in the keyboard's internal circuitry memory in a register called "endpoint."
+- The host USB controller polls the "endpoint" every ~10ms (minimum value declared by the keyboard), retrieving the keycode value.
+- This value is sent to the USB Serial Interface Engine (SIE) to be converted into one or more USB packets following the low-level USB protocol.
+- These packets are transmitted via a differential electrical signal over D+ and D- pins (the middle two) at a maximum speed of 1.5 Mb/s, as an HID (Human Interface Device) is always declared a "low-speed device" (USB 2.0 compliance).
+- The computer's host USB controller decodes this serial signal and interprets it via the Human Interface Device (HID) universal keyboard device driver. The key's value is then passed to the operating system's hardware abstraction layer.
 
-- Those packets are sent by a differential electrical signal over D+ and D-
-  pins (the middle 2) at a maximum speed of 1.5 Mb/s, as an HID
-  (Human Interface Device) device is always declared to be a "low-speed device"
-  (USB 2.0 compliance).
+**For Virtual Keyboard (as in touchscreen devices):**
 
-- This serial signal is then decoded at the computer's host USB controller, and
-  interpreted by the computer's Human Interface Device (HID) universal keyboard
-  device driver.  The value of the key is then passed into the operating
-  system's hardware abstraction layer.
-
-*In the case of Virtual Keyboard (as in touch screen devices):*
-
-- When the user puts their finger on a modern capacitive touch screen, a
-  tiny amount of current gets transferred to the finger. This completes the
-  circuit through the electrostatic field of the conductive layer and
-  creates a voltage drop at that point on the screen. The
-  ``screen controller`` then raises an interrupt reporting the coordinate of
-  the keypress.
-
-- Then the mobile OS notifies the currently focused application of a press event
-  in one of its GUI elements (which now is the virtual keyboard application
-  buttons).
-
-- The virtual keyboard can now raise a software interrupt for sending a
-  'key pressed' message back to the OS.
-
-- This interrupt notifies the currently focused application of a 'key pressed'
-  event.
+- When a user touches a modern capacitive touchscreen, a small current is transferred to the user's finger, completing a circuit through the electrostatic field of the conductive layer. This creates a voltage drop at the point of contact on the screen.
+- The screen controller generates an interrupt, reporting the coordinates of the keypress.
+- The mobile OS notifies the currently focused application of a press event in one of its GUI elements, which is now the virtual keyboard application buttons.
+- The virtual keyboard can then raise a software interrupt to send a 'key pressed' message back to the OS.
+- This interrupt informs the currently focused application of a 'key pressed' event.
 
 
-Interrupt fires [NOT for USB keyboards]
----------------------------------------
 
-The keyboard sends signals on its interrupt request line (IRQ), which is mapped
-to an ``interrupt vector`` (integer) by the interrupt controller. The CPU uses
-the ``Interrupt Descriptor Table`` (IDT) to map the interrupt vectors to
-functions (``interrupt handlers``) which are supplied by the kernel. When an
-interrupt arrives, the CPU indexes the IDT with the interrupt vector and runs
-the appropriate handler. Thus, the kernel is entered.
+## Handling Interrupts (Excluding USB Keyboards)
 
-(On Windows) A ``WM_KEYDOWN`` message is sent to the app
---------------------------------------------------------
+When a key is pressed on the keyboard, it sends signals via its interrupt request line (IRQ). These signals are then translated into an "interrupt vector," represented as an integer, by the interrupt controller. The CPU relies on the "Interrupt Descriptor Table" (IDT) to map these interrupt vectors to specific functions known as "interrupt handlers," which are provided by the kernel. When an interrupt is generated, the CPU looks up the corresponding handler in the IDT and executes it. As a result, the kernel is actively engaged in processing the interrupt.
 
-The HID transport passes the key down event to the ``KBDHID.sys`` driver which
-converts the HID usage into a scancode. In this case, the scan code is
-``VK_RETURN`` (``0x0D``). The ``KBDHID.sys`` driver interfaces with the
-``KBDCLASS.sys`` (keyboard class driver). This driver is responsible for
-handling all keyboard and keypad input in a secure manner. It then calls into
-``Win32K.sys`` (after potentially passing the message through 3rd party
-keyboard filters that are installed). This all happens in kernel mode.
+### On Windows: A "WM_KEYDOWN" Message to the Application
 
-``Win32K.sys`` figures out what window is the active window through the
-``GetForegroundWindow()`` API. This API provides the window handle of the
-browser's address box. The main Windows "message pump" then calls
-``SendMessage(hWnd, WM_KEYDOWN, VK_RETURN, lParam)``. ``lParam`` is a bitmask
-that indicates further information about the keypress: repeat count (0 in this
-case), the actual scan code (can be OEM dependent, but generally wouldn't be
-for ``VK_RETURN``), whether extended keys (e.g. alt, shift, ctrl) were also
-pressed (they weren't), and some other state.
+In the Windows environment, the HID transport system passes the key-down event to the "KBDHID.sys" driver, which interprets the HID usage as a scancode. In the case of the Enter key, the scancode is "VK_RETURN" (hexadecimal 0x0D). "KBDHID.sys" interfaces with the "KBDCLASS.sys" (keyboard class driver), responsible for securely handling keyboard and keypad input. Following this, it communicates with "Win32K.sys" (often after the message passes through any third-party keyboard filters that may be installed). This entire process occurs in kernel mode.
 
-The Windows ``SendMessage`` API is a straightforward function that
-adds the message to a queue for the particular window handle (``hWnd``).
-Later, the main message processing function (called a ``WindowProc``) assigned
-to the ``hWnd`` is called in order to process each message in the queue.
+"Win32K.sys" identifies the active window using the "GetForegroundWindow()" API, which provides the window handle for the browser's address bar. Subsequently, the main Windows "message pump" initiates the "SendMessage(hWnd, WM_KEYDOWN, VK_RETURN, lParam)" function call. The "lParam" parameter serves as a bitmask, conveying additional information about the keypress, such as the repeat count (which is 0 in this case), the specific scan code (typically not OEM-dependent for "VK_RETURN"), and the presence of extended keys like Alt, Shift, or Ctrl (none of which were pressed).
 
-The window (``hWnd``) that is active is actually an edit control and the
-``WindowProc`` in this case has a message handler for ``WM_KEYDOWN`` messages.
-This code looks within the 3rd parameter that was passed to ``SendMessage``
-(``wParam``) and, because it is ``VK_RETURN`` knows the user has hit the ENTER
-key.
+The Windows "SendMessage" API adds the message to a queue associated with the window handle ("hWnd"). Later, a designated message processing function, known as "WindowProc" and assigned to "hWnd," processes each message within the queue. In this context, the active window is an edit control, and the "WindowProc" has a message handler for "WM_KEYDOWN" messages, enabling it to recognize that the user has pressed the Enter key.
 
-(On OS X) A ``KeyDown`` NSEvent is sent to the app
---------------------------------------------------
+### On macOS: A "KeyDown" NSEvent to the Application
 
-The interrupt signal triggers an interrupt event in the I/O Kit kext keyboard
-driver. The driver translates the signal into a key code which is passed to the
-OS X ``WindowServer`` process. Resultantly, the ``WindowServer`` dispatches an
-event to any appropriate (e.g. active or listening) applications through their
-Mach port where it is placed into an event queue. Events can then be read from
-this queue by threads with sufficient privileges calling the
-``mach_ipc_dispatch`` function. This most commonly occurs through, and is
-handled by, an ``NSApplication`` main event loop, via an ``NSEvent`` of
-``NSEventType`` ``KeyDown``.
-
-(On GNU/Linux) the Xorg server listens for keycodes
----------------------------------------------------
-
-When a graphical ``X server`` is used, ``X`` will use the generic event
-driver ``evdev`` to acquire the keypress. A re-mapping of keycodes to scancodes
-is made with ``X server`` specific keymaps and rules.
-When the scancode mapping of the key pressed is complete, the ``X server``
-sends the character to the ``window manager`` (DWM, metacity, i3, etc), so the
-``window manager`` in turn sends the character to the focused window.
-The graphical API of the window  that receives the character prints the
-appropriate font symbol in the appropriate focused field.
-
-Parse URL
----------
-
-* The browser now has the following information contained in the URL (Uniform
-  Resource Locator):
-
-    - ``Protocol``  "http"
-        Use 'Hyper Text Transfer Protocol'
-
-    - ``Resource``  "/"
-        Retrieve main (index) page
+On macOS, when a key is pressed, it triggers an interrupt event within the I/O Kit kernel extension (kext) for the keyboard driver. The driver translates this event into a key code, which is then forwarded to the macOS "WindowServer" process. The "WindowServer" subsequently dispatches an event to any relevant applications, such as those that are active or listening, via their Mach ports. These events are placed into an event queue, which threads with sufficient privileges can read using the "mach_ipc_dispatch" function. This process is primarily managed by the "NSApplication" main event loop and results in an "NSEvent" of type "KeyDown" being sent to the application for further processing.
 
 
-Is it a URL or a search term?
------------------------------
+## On GNU/Linux: Handling Keycodes in the Xorg Server
 
-When no protocol or valid domain name is given the browser proceeds to feed
-the text given in the address box to the browser's default web search engine.
-In many cases the URL has a special piece of text appended to it to tell the
-search engine that it came from a particular browser's URL bar.
+In a graphical GNU/Linux environment using the X Window System (X), the X server employs the generic event driver "evdev" to capture keypress events. Keycodes are initially mapped to scancodes using X server-specific keymaps and rules. Once the scancode mapping is complete, the X server transmits the character to the window manager (e.g., DWM, Metacity, i3). Subsequently, the window manager forwards the character to the currently focused application or window. The graphical application or window that receives the character interprets it, often displaying the corresponding font symbol in the designated area.
 
-Convert non-ASCII Unicode characters in the hostname
-------------------------------------------------
+## Parsing the URL
 
-* The browser checks the hostname for characters that are not in ``a-z``,
-  ``A-Z``, ``0-9``, ``-``, or ``.``.
-* Since the hostname is ``google.com`` there won't be any, but if there were
-  the browser would apply `Punycode`_ encoding to the hostname portion of the
-  URL.
+When the browser receives a URL (Uniform Resource Locator), it extracts the following information:
 
-Check HSTS list
----------------
-* The browser checks its "preloaded HSTS (HTTP Strict Transport Security)"
-  list. This is a list of websites that have requested to be contacted via
-  HTTPS only.
-* If the website is in the list, the browser sends its request via HTTPS
-  instead of HTTP. Otherwise, the initial request is sent via HTTP.
-  (Note that a website can still use the HSTS policy *without* being in the
-  HSTS list.  The first HTTP request to the website by a user will receive a
-  response requesting that the user only send HTTPS requests.  However, this
-  single HTTP request could potentially leave the user vulnerable to a
-  `downgrade attack`_, which is why the HSTS list is included in modern web
-  browsers.)
+- **Protocol:** "http"
+  This indicates the use of the Hyper Text Transfer Protocol.
+
+- **Resource:** "/"
+  It requests the main (index) page.
+
+## Determining URL or Search Term
+
+If the entered text in the address bar lacks a valid protocol or domain name, the browser assumes it's a search term. In such cases, the browser queries its default web search engine. To inform the search engine of the source, some browsers append a special text to the URL.
+
+## Handling Non-ASCII Unicode Characters in the Hostname
+
+The browser examines the hostname portion of the URL to identify characters that fall outside the range of "a-z," "A-Z," "0-9," "-", or ".". In the case of "google.com," no such characters exist. However, if any non-ASCII characters were present, the browser would apply Punycode encoding to that portion of the URL.
+
+## Checking the HSTS List
+
+The browser performs a check against its "preloaded HSTS (HTTP Strict Transport Security)" list. This list contains websites that have requested exclusive communication via HTTPS. If the website is found in this list, the browser sends its request via HTTPS instead of HTTP. In cases where the website isn't preloaded but uses HSTS, the initial HTTP request from a user triggers a response instructing the user to send only HTTPS requests. It's worth noting that a single initial HTTP request can expose users to potential downgrade attacks, which is why modern web browsers maintain the HSTS list.
+
 
 DNS lookup
 ----------
