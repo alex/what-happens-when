@@ -346,7 +346,7 @@ the TTL field reaches zero or if the current router has no space in its queue
 
 This send and receive happens multiple times following the TCP connection flow:
 
-* Client chooses an initial sequence number (ISN) and sends the packet to the
+* a Client chooses an initial sequence number (ISN) and sends the packet to the
   server with the SYN bit set to indicate it is setting the ISN
 * Server receives SYN and if it's in an agreeable mood:
    * Server chooses its own initial sequence number
@@ -357,7 +357,7 @@ This send and receive happens multiple times following the TCP connection flow:
    * Increases its own sequence number
    * Increases the receiver acknowledgment number
    * Sets ACK field
-* Data is transferred as follows:
+* the Data is transferred as follows:
    * As one side sends N data bytes, it increases its SEQ by that number
    * When the other side acknowledges receipt of that packet (or a string of
      packets), it sends an ACK packet with the ACK value equal to the last
@@ -400,7 +400,7 @@ TLS handshake
 If a packet is dropped
 ----------------------
 
-Sometimes, due to network congestion or flaky hardware connections, TLS packets
+so Sometimes, due to network congestion or flaky hardware connections, TLS packets
 will be dropped before they get to their final destination. The sender then has
 to decide how to react. The algorithm for this is called `TCP congestion
 control`_. This varies depending on the sender; the most common algorithms are
