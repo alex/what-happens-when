@@ -689,6 +689,20 @@ the Google homepage. Scripts can cause additional network requests to be
 performed, as well as modify the page or its layout, causing another round of
 page rendering and painting.
 
+# TL;DR
+A quick rundown of the process what happens when you type `https://www.google.com` in your browser and press `Enter`:
+
+* The browser receives the URL https://www.google.com and parses it into its protocol (https), hostname (www.google.com), port (implicity, 443), and location (implicity, root /).
+* The browser checks if the hostname has already been resolved in its own or the OS’s cache. If so, the corresponding IP is retrieved right there and then.
+* Otherwise, the hostname is resolved through the Domain Name System.
+* The browser completes a TLS handshake with the load balancer specified at the resolved IP. This communication occurs over TCP/IP.
+* Having established an encrypted connection method, the browser sends the load balancer a GET request for the file located at the root of www.google.com.
+* The GET request is passed through a firewall on the load balancer.
+* The load balancer distributes the GET request to the next available host server, as determined by its configured load balancing algorithm.
+* The GET request is passed through a firewall on the host server.
+* The host server retrieves the file located at its root directory and returns its content, served dynamically by the application and database servers.
+* The browser receives the HTTP response message containing the file content and renders the HTML page to the user.
+
 .. _`Creative Commons Zero`: https://creativecommons.org/publicdomain/zero/1.0/
 .. _`"CSS lexical and syntax grammar"`: http://www.w3.org/TR/CSS2/grammar.html
 .. _`Punycode`: https://en.wikipedia.org/wiki/Punycode
