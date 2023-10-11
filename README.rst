@@ -506,6 +506,12 @@ and IIS for Windows.
 * The server goes to pull the content that corresponds with the request,
   in our case it will fall back to the index file, as "/" is the main file
   (some cases can override this, but this is the most common method).
+* Google leverages a complex network of application servers and databases to
+  generate dynamic content that forms the landing page. The app servers
+  execute code to provide real-time responses to search queries, personalized
+  recommendations, and other interactive features. These servers interact with
+  databases to retrieve user-specific data and preferences, including search
+  history, location, and personalization settings.
 * The server parses the file according to the handler. If Google
   is running on PHP, the server uses PHP to interpret the index file, and
   streams the output to the client.
