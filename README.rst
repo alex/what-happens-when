@@ -677,40 +677,42 @@ GPU Rendering
 OSI (Open Systems Interconnection) Model Perspective
 -------------
 1. Physical Layer (Layer 1):
-   * In the physical layer, your computer initiates an electrical signal through the network hardware.
-   * The electrical or optical signals represent the physical transmission of data over hardware components like cables, switches, and routers.
-   * This signal is transmitted through physical mediums like Ethernet cables or wireless signals, and it eventually reaches your local network router.
+        * In the physical layer, your computer initiates an electrical signal through the network hardware.
+        * The electrical or optical signals represent the physical transmission of data over hardware components like cables, switches, and routers.
+        * This signal is transmitted through physical mediums like Ethernet cables or wireless signals, and it eventually reaches your local network router.
 2. Data Link Layer (Layer 2):
-   * In the data link layer, your local router processes the incoming signal.
-   * This layer is responsible for establishing and maintaining links between directly connected nodes.
-   * It deals with issues like MAC (Media Access Control) addresses and local network protocols.
-   * Your computer forms a link with the local network and prepares the data for transmission to the next hop.
-   * It checks for any errors in transmission and identifies the source and destination MAC (Media Access Control) addresses within your local network.
+        * In the data link layer, your local router processes the incoming signal.
+        * This layer is responsible for establishing and maintaining links between directly connected nodes.
+        * It deals with issues like MAC (Media Access Control) addresses and local network protocols.
+        * Your computer forms a link with the local network and prepares the data for transmission to the next hop.
+        * It checks for any errors in transmission and identifies the source and destination MAC (Media Access Control) addresses within your local network.
 3. Network Layer (Layer 3):
-   * In the network layer, your local router determines the most efficient path to reach the destination server based on its IP address.
-   * The network layer handles routing and logical addressing, usually in the form of IP addresses.
-   * It creates a packet containing your data along with source and destination IP addresses and forwards it to your Internet Service Provider (ISP).
-   * When you enter a URL, your computer queries DNS (Domain Name System) servers to resolve the domain name to an IP address. The network layer then routes the data to the destination network.
+        * In the network layer, your local router determines the most efficient path to reach the destination server based on its IP address.
+        * The network layer handles routing and logical addressing, usually in the form of IP addresses.
+        * It creates a packet containing your data along with source and destination IP addresses and forwards it to your Internet Service Provider (ISP).
+        * When you enter a URL, your computer queries DNS (Domain Name System) servers to resolve the domain name to an IP address. The network layer then routes the data to the destination network.
 4. Transport Layer (Layer 4):
-   * The transport layer is responsible for end-to-end communication and data segmentation.
-   * In the transport layer, your ISP receives the packet and uses protocols like TCP (Transmission Control Protocol) or UDP (User Datagram Protocol) to establish a connection with the destination server.
-   * When you press Enter, your computer uses the HTTP (Hypertext Transfer Protocol) or HTTPS (HTTP Secure) protocol to communicate with the destination server. The transport layer ensures data is divided into packets and reliably delivered to the next layer.
+        * The transport layer is responsible for end-to-end communication and data segmentation.
+        * In the transport layer, your ISP receives the packet and uses protocols like TCP (Transmission Control Protocol) or UDP (User Datagram Protocol) to establish a connection with the destination server.
+        * When you press Enter, your computer uses the HTTP (Hypertext Transfer Protocol) or HTTPS (HTTP Secure) protocol to communicate with the destination server. The transport layer ensures data is divided into packets and reliably delivered to the next layer.
 5. Session Layer (Layer 5):
-   * In the session layer, if a TCP connection is established, a session is created. This layer manages the session between your computer and the destination server.
-   * The session layer establishes, maintains, and terminates connections between devices.
-   * It manages the session and synchronization.
-   * Your browser and the web server establish a session through a process known as a "three-way handshake" for TCP (Transmission Control Protocol).
+        * In the session layer, if a TCP connection is established, a session is created. This layer manages the session between your computer and the destination server.
+        * The session layer establishes, maintains, and terminates connections between devices.
+        * It manages the session and synchronization.
+        * Your browser and the web server establish a session through a process known as a "three-way handshake" for TCP (Transmission Control Protocol).
 6. Presentation Layer (Layer 6):
-   * In the presentation layer, any data formatting or compression needed is applied. However, this layer isn't heavily involved in typical web requests.
-   * The presentation layer translates, encrypts, and compresses data as needed.
-   * In this context, it may handle tasks like data compression and encryption for secure websites (HTTPS).
+        * In the presentation layer, any data formatting or compression needed is applied. However, this layer isn't heavily involved in typical web requests.
+        * The presentation layer translates, encrypts, and compresses data as needed.
+        * In this context, it may handle tasks like data compression and encryption for secure websites (HTTPS).
 7. Application Layer (Layer 7):
-   * Finally, the application layer is where the web browser comes into play. It sends an HTTP request to the web server specified in the URL. The server processes this request, retrieves the web page's content, and sends it back to the browser as an HTTP response. It achieves this in the following way;
-   * Your web browser (e.g., Chrome, Firefox) processes your URL input.
-   * It checks if the URL is complete (including the protocol, domain name, and path) and if the protocol is HTTP or HTTPS.
-   * If the URL is complete and correct, your browser generates an HTTP request message, including the domain name and path.
-   * It uses DNS (Domain Name System) to resolve the domain name into an IP address.
-   * The browser sends this request to the remote web server. The request goes through all the previously mentioned layers in reverse order.
+        * Finally, the application layer is where the web browser comes into play.
+        * It sends an HTTP request to the web server specified in the URL.
+        * The server processes this request, retrieves the web page's content, and sends it back to the browser as an HTTP response. It achieves this in the following way;
+        * Your web browser (e.g., Chrome, Firefox) processes your URL input.
+        * It checks if the URL is complete (including the protocol, domain name, and path) and if the protocol is HTTP or HTTPS.
+        * If the URL is complete and correct, your browser generates an HTTP request message, including the domain name and path.
+        * It uses DNS (Domain Name System) to resolve the domain name into an IP address.
+        * The browser sends this request to the remote web server. The request goes through all the previously mentioned layers in reverse order.
 8. User Layer (End-User) and Web Server:
         - This is not part of the OSI model, but it represents you, the end-user and the Web Server.
         - At the destination server, the request is processed by the web server software.
