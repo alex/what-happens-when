@@ -672,7 +672,7 @@ GPU Rendering
 * When using ``GPU`` for graphical rendering computations the graphical
   software layers split the task into multiple pieces, so it can take advantage
   of ``GPU`` massive parallelism for float point calculations required for
-  the rendering process.
+  the rendering process. These processors are built with thousands of cores that can perform multiple calculations simultaneously.
 
 
 Window Server
