@@ -196,7 +196,7 @@ Check HSTS list
 ---------------
 * The browser checks its "preloaded HSTS (HTTP Strict Transport Security)"
   list. This is a list of websites that have requested to be contacted via
-  HTTPS only.
+  'HTTPS_' only.
 * If the website is in the list, the browser sends its request via HTTPS
   instead of HTTP. Otherwise, the initial request is sent via HTTP.
   (Note that a website can still use the HSTS policy *without* being in the
@@ -543,6 +543,7 @@ common user interface elements are:
 * Refresh and stop buttons for refreshing or stopping the loading of
   current documents
 * Home button that takes you to your home page
+* Security measures to warn users of harmful links and redirects
 
 **Browser High-Level Structure**
 
@@ -709,3 +710,4 @@ page rendering and painting.
 .. _`downgrade attack`: http://en.wikipedia.org/wiki/SSL_stripping
 .. _`OSI Model`: https://en.wikipedia.org/wiki/OSI_model
 .. _`Spanish`: https://github.com/gonzaleztroyano/what-happens-when-ES
+.. __'HTTPS':https://cdn.hashnode.com/res/hashnode/image/upload/v1697112758631/7a24bf83-21d1-4840-8718-03f5edf32fac.png?auto=compress,format&format=webp
