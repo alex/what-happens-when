@@ -674,6 +674,13 @@ GPU Rendering
   of ``GPU`` massive parallelism for float point calculations required for
   the rendering process.
 
+* During the rendering process, the graphical computing layers have the option to
+  utilize the power of the Graphics Processing Unit (GPU) in addition to the Central
+  Processing Unit (CPU). This allows for more efficient and accelerated graphical computations.
+
+* When GPU Rendering is employed, the graphical software layers divide the rendering task into
+  multiple smaller pieces. This enables the system to leverage the massive parallelism offered by
+  the GPU, which excels in performing floating-point calculations required for the rendering process.
 
 Window Server
 -------------
