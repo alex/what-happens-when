@@ -689,6 +689,26 @@ the Google homepage. Scripts can cause additional network requests to be
 performed, as well as modify the page or its layout, causing another round of
 page rendering and painting.
 
+JavaScript Execution
+---------------------
+Once the main content is rendered, the browser looks for JavaScript code in the HTML or external script files linked to the page. JavaScript can be executed in response to various triggers:
+
+User Interaction: 
+-----------------
+This includes actions like clicking a button, typing in a search box, or moving the mouse. User interactions trigger JavaScript events and functions, enabling dynamic behavior on the page. For example, when you start typing a search query, JavaScript may fetch and display suggestions in real time.
+
+Timing Mechanisms:
+------------------
+JavaScript can be scheduled to run at specific times or intervals. For instance, a Google Doodle animation or a countdown timer might be triggered by a predefined schedule. This can create dynamic effects and interactions on the page.
+
+Plugin Execution: 
+-----------------
+Some plugins can execute their own code and render their content, such as embedded videos or interactive applications.
+
+Network Requests and Page Modifications: 
+----------------------------------------
+JavaScript executed during this stage can trigger additional network requests. For example, it can fetch data from a server to update the page without requiring a full page reload. It can also modify the page's DOM, which may lead to another round of page rendering and painting. This process can create dynamic updates on the page without the need for a complete reload, resulting in a more seamless user experience.
+
 .. _`Creative Commons Zero`: https://creativecommons.org/publicdomain/zero/1.0/
 .. _`"CSS lexical and syntax grammar"`: http://www.w3.org/TR/CSS2/grammar.html
 .. _`Punycode`: https://en.wikipedia.org/wiki/Punycode
