@@ -689,6 +689,10 @@ the Google homepage. Scripts can cause additional network requests to be
 performed, as well as modify the page or its layout, causing another round of
 page rendering and painting.
 
+Browser Security
+----------------
+Browsers prioritize user safety through various security measures. These include HTTPS encryption for secure data transmission, the same-origin policy to prevent cross-site attacks, and Content Security Policy (CSP) to mitigate threats like XSS. Additionally, cookies and session management keep users authenticated and safe from phishing. Regular browser updates and security headers, like HSTS, further enhance security. Understanding these measures is essential for both users and web developers.
+
 .. _`Creative Commons Zero`: https://creativecommons.org/publicdomain/zero/1.0/
 .. _`"CSS lexical and syntax grammar"`: http://www.w3.org/TR/CSS2/grammar.html
 .. _`Punycode`: https://en.wikipedia.org/wiki/Punycode
