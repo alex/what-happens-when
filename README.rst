@@ -632,6 +632,8 @@ CSS interpretation
 Page Rendering
 --------------
 
+One of the most important parts of a web browser is the process of rendering the DOM tree, which means converting the DOM tree into visual elements. This process requires not only mathematical equations and plotting but also adheres to standard rules to ensure consistent results across different browsers.
+We refer to the software component responsible for rendering the DOM as a rendering engine. Most browsers have their own rendering engine, and some of them may share the same engine.
 * Create a 'Frame Tree' or 'Render Tree' by traversing the DOM nodes, and
   calculating the CSS style values for each node.
 * Calculate the preferred width of each node in the 'Frame Tree' bottom-up
