@@ -592,13 +592,33 @@ HTML cannot be parsed using the regular top-down or bottom-up parsers.
 
 The reasons are:
 
-* The forgiving nature of the language.
-* The fact that browsers have traditional error tolerance to support well
-  known cases of invalid HTML.
-* The parsing process is reentrant. For other languages, the source doesn't
-  change during parsing, but in HTML, dynamic code (such as script elements
-  containing `document.write()` calls) can add extra tokens, so the parsing
-  process actually modifies the input.
+* Loose Structure: HTML is forgiving of syntax errors and allows for loose structure, 
+  making it challenging to define a strict grammar. Tags can be nested improperly or 
+  left unclosed without causing catastrophic failures.
+* Tag Omission: HTML allows certain tags to be omitted, and browsers often infer their 
+  presence. For instance, closing tags for certain elements might be optional, 
+  making it harder to establish a clear hierarchy.
+* Tag Soup: HTML documents are often referred to as "tag soup" due to the lenient 
+  parsing rules. This makes it difficult to create a deterministic parsing process 
+  because the document structure can be messy and inconsistent.
+* Quirks Mode: Browsers have different rendering modes, such as "quirks mode," which 
+  emulates the rendering behavior of older browsers. This further complicates parsing, 
+  as the same HTML might be interpreted differently depending on the context.
+* Script Execution: Scripts embedded within HTML, such as JavaScript, can dynamically
+  modify the document structure. Traditional parsers might struggle to predict and 
+  accommodate these changes.
+* Inline Styles: HTML allows for inline styles and event handlers, which can be applied 
+  dynamically. Parsing HTML with dynamically changing styles requires a more sophisticated approach.
+* Browser Compatibility: Browsers have historically been lenient in interpreting HTML 
+  to ensure compatibility with poorly written or older web pages. This leniency creates 
+  challenges for parsers that need to work across various documents and browser versions.
+* Custom Elements: HTML supports custom elements, and their behavior can be defined by 
+  JavaScript. This dynamic behavior makes it challenging to create a parser that accurately 
+  predicts the document structure.
+* Document Object Model (DOM) Manipulation: JavaScript can manipulate the DOM dynamically, 
+  altering the structure of the HTML document. Predicting these changes during parsing is difficult.
+* HTML5 Features: HTML5 introduces new features and semantic elements that might not be 
+  recognized by older parsers. Parsing HTML5 requires support for these new constructs.
 
 Unable to use the regular parsing techniques, the browser utilizes a custom
 parser for parsing HTML. The parsing algorithm is described in
