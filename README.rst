@@ -367,6 +367,13 @@ This send and receive happens multiple times following the TCP connection flow:
    * The other sides ACKs the FIN packet and sends its own FIN
    * The closer acknowledges the other side's FIN with an ACK
 
+Firewall inspection
+-------------------
+
+The server firewall acts as a network bodyguard, inspecting inbound and 
+outbound traffic to and from servers. It can either allow or block traffic 
+based on a set of predefined security rules.
+
 TLS handshake
 -------------
 * The client computer sends a ``ClientHello`` message to the server with its
@@ -396,6 +403,48 @@ TLS handshake
 
 * From now on the TLS session transmits the application (HTTP) data encrypted
   with the agreed symmetric key.
+
+Load distribution
+-----------------
+
+The next stop is the load balancer. This crucial software component is used 
+to evenly distribute incoming network traffic across multiple servers, 
+employing algorithms to ensure efficient resource utilization, improve 
+response times, and enhance system reliability.
+Common load-balancing algorithms include:
+* Round-robin: a simple technique that evenly distributes incoming network
+  or server traffic across a group of available resources in a circular
+  manner, giving each resource an equal opportunity to serve requests.
+
+* Least connections: assigns incoming network or server traffic to the
+  resource with the fewest active connections, thus distributing the load in
+  a way that minimizes congestion on heavily loaded resources and optimizes
+  resource utilization.
+
+* IP hashing: distributes network or server traffic based on the source IP
+  address of incoming requests. Each unique source IP address is consistently
+  mapped to a specific server or resource, which helps ensure that all 
+  requests from the same source IP are directed to the same destination.
+
+The choice of algorithm depends on the specific requirements and
+characteristics of the applications and services they support.
+
+Web or application servers
+--------------------------
+
+The load balancer also plays a pivotal role in directing requests to either
+a web server or an application server, depending on the type of request.
+
+* Web Servers: Web servers are primarily responsible for serving static
+  content and managing client connections. When a user accesses a website
+  or web application, their browser sends a request to the web server.
+  The web server processes this request and returns HTML pages, images, CSS,
+  JavaScript, and other static assets.
+
+* Application Servers: Application servers, on the other hand, are responsible
+  for executing application logic, processing dynamic content, and interacting
+  with databases to process and manipulate data. They handle more complex 
+  tasks beyond serving static content.
 
 If a packet is dropped
 ----------------------
