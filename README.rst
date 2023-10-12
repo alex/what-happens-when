@@ -675,7 +675,7 @@ GPU Rendering
   the rendering process.
 
 
-# Window Server
+Window Server
 -------------
 
 Post-rendering and user-induced execution
