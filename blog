@@ -1,0 +1,7 @@
+When you enter "https://www.google.com" in your browser and press Enter:
+
+Your browser sends a request to the domain "www.google.com" through the internet.
+The request is received by Google's server.
+Google's server processes the request and sends back the requested webpage data.
+Your browser receives the data and interprets it to display the Google homepage.
+This process involves communication between your browser and Google's server using the HTTPS protocol for secure data transmission. The result is the familiar Google search page appearing on your browser.
