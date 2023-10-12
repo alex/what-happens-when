@@ -535,6 +535,8 @@ by the W3C (World Wide Web Consortium) organization, which is the
 standards organization for the web.
 
 Browser user interfaces have a lot in common with each other. Among the
+
+
 common user interface elements are:
 
 * An address bar for inserting a URI
@@ -688,6 +690,13 @@ Plugins such as Flash or Java may execute as well, although not at this time on
 the Google homepage. Scripts can cause additional network requests to be
 performed, as well as modify the page or its layout, causing another round of
 page rendering and painting.
+
+Load Balancer
+-------------
+The load balancer’s job is to delegate client requests evenly across the web servers at this IP address.
+This is critical behavior for any website with moderate to high traffic.
+ The load balancer makes sure that each of these web server instances receive an even number of requests, 
+as one web server would be immediately overwhelmed by the traffic a site like Facebook receives.
 
 .. _`Creative Commons Zero`: https://creativecommons.org/publicdomain/zero/1.0/
 .. _`"CSS lexical and syntax grammar"`: http://www.w3.org/TR/CSS2/grammar.html
