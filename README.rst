@@ -38,7 +38,39 @@ popular searches from the internet as a whole. As you are typing
 "google.com" many blocks of code run and the suggestions will be refined
 with each keypress. It may even suggest "google.com" before you finish typing
 it.
+Physical Keyboard Action:
 
+When you press a key on your keyboard, it physically activates a specific electrical circuit for that key.
+OS Interrupts:
+
+The operating system (OS) is constantly monitoring the keyboard for keypresses.
+When you press the "g" key, the OS generates an interrupt to inform the browser that a key has been pressed.
+Browser Event Handling:
+
+The browser, in response to the OS interrupt, generates a keyboard event for the "g" keypress.
+Auto-Complete Functions:
+
+Upon receiving the keyboard event, the browser activates its auto-complete functions.
+These functions are designed to assist you in quickly accessing websites and resources you frequently visit.
+Suggestion Algorithms:
+
+The browser's auto-complete functions rely on complex suggestion algorithms.
+Depending on your browsing mode (normal or private/incognito) and your specific browser, the suggestions may vary.
+Data Sources for Suggestions:
+
+These algorithms gather data from various sources, including:
+Your browsing history: Sites you've visited recently or frequently.
+Bookmarks: Pages you've saved for easy access.
+Cookies: Small pieces of data stored by websites you've interacted with.
+Popular Internet Searches: Aggregate data on commonly searched terms.
+Real-Time Suggestion Refinement:
+
+As you type "google.com," multiple code blocks execute in real-time.
+With each keypress, the suggestion algorithms refine their results.
+The browser's goal is to provide you with the most relevant suggestions based on your input.
+Instant Suggestions:
+
+The auto-complete functions are so advanced that they may suggest "google.com" even before you finish typing it.
 The "enter" key bottoms out
 ---------------------------
 
