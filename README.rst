@@ -223,52 +223,6 @@ DNS lookup
   ``ARP process`` below for the DNS server.
 * If the DNS server is on a different subnet, the network library follows
   the ``ARP process`` below for the default gateway IP.
-  How DNS Lookup Works:
-
-Initial Request: When a user enters a domain name in a web browser's address bar or uses an online application,
-an initial DNS lookup is triggered to resolve the domain to an IP address.
-
-Query Sent to DNS Server: The request for the IP address of the domain is sent as a DNS query to a designated DNS server.
-This DNS server is usually provided by the Internet Service Provider (ISP) or configured by the network administrator.
-
-DNS Cache Check: The DNS lookup process begins by checking the browser's DNS cache.
-Browsers store DNS records for websites that users have previously visited.
-If the IP address for the requested domain is found in the cache,
-this cached information is used to access the website,
-saving time and reducing the need for further DNS queries.
-
-Local Hosts File: If the domain's IP address is not found in the browser's cache,
-the browser may check the local hosts file on the user's device. This file can be configured to map specific domain names to IP addresses. If a mapping is found in the hosts file, it's used for the DNS resolution.
-
-gethostbyname Library Function: If the IP address is not found in the cache or hosts file,
-the browser calls the operating system's gethostbyname library function (the name may vary depending on the operating system) to perform the DNS lookup.
-
-DNS Query to External Server: The gethostbyname function attempts to resolve the domain through the DNS server configured in the device's network settings.
-This DNS server is often provided by the local router or the ISP's caching DNS server.
-
-ARP Process for DNS Server: If the DNS server is on the same local network (subnet),
-the network library follows the Address Resolution Protocol (ARP) process to discover the physical MAC address of the DNS server.
-ARP resolves the IP address of the DNS server to its MAC address,
-enabling communication at the data link layer.
-
-ARP Process for Default Gateway: In cases where the DNS server is located on a different subnet,
-the network library follows a similar ARP process to determine the MAC address of the default gateway's router.
-The default gateway is responsible for routing traffic between different subnets, including DNS requests.
-
-DNS Server Response: Once the DNS server receives the request,
-it looks up the IP address associated with the requested domain in its database.
-If a match is found, the DNS server responds with the IP address.
-
-Accessing the Website: The browser receives the IP address from the DNS server.
-It can now use this IP address to establish a connection with the web server hosting the requested website.
-Once the connection is established, the website's content is loaded and displayed in the browser.
-
-Importance of DNS Lookup:
-
-DNS Lookup simplifies the browsing experience for users by allowing them to use human-readable domain names instead of numerical IP addresses.
-It is a fundamental process in enabling the Internet to function,
-as it translates user-friendly domain names into machine-readable IP addresses,
-ensuring that websites and online services are reachable.
 
 
 ARP process
