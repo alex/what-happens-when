@@ -414,6 +414,16 @@ control`_. This varies depending on the sender; the most common algorithms are
   each packet acknowledged. If a packet is dropped, the window reduces
   exponentially until another packet is acknowledged.
 
+Firewall protocol
+-----------------
+When a request is sent from a device on a network, such as a computer or a mobile device, the firewall plays a role in the following steps:
+* The firewall receives the request packet as it traverses the network. It examines the packet's header information, including source and destination IP addresses, port numbers, and protocol type.
+* The firewall compares the characteristics of the request packet against its predefined set of rules. The rules can be based on various criteria, such as the source and destination IP addresses, port numbers, or specific protocols.
+* If the request packet matches a rule, the firewall determines the corresponding action defined by that rule. The action can be to allow the packet to pass through, block it, or subject it to additional security checks.
+* If the request packet is part of an established or related connection, the firewall may use stateful inspection to allow the packet based on the remembered connection state. Stateful inspection helps prevent unauthorized traffic from bypassing the firewall by allowing only legitimate packets that belong to existing connections.
+* The firewall enforces the determined action for the request packet. If the action is to allow the packet, it is forwarded to its intended destination. If the action is to block the packet, the firewall discards it, effectively preventing it from reaching the destination.
+* The firewall may generate logs that record information about the request packet, such as its source and destination, timestamp, and the action taken. These logs can be useful for monitoring network activity, analyzing security incidents, and generating reports.
+
 HTTP protocol
 -------------
 
@@ -674,6 +684,32 @@ GPU Rendering
   of ``GPU`` massive parallelism for float point calculations required for
   the rendering process.
 
+Database
+--------
+A database is a structured collection of data that is organized and stored in a way that allows for efficient data retrieval and management. Think of it as a well-organized library, where information is stored in an orderly fashion, making it easy to find, update, and manage.
+
+Types of Database
+-----------------
+
+* Relational Databases: These use tables to store data, with each table consisting of rows and columns. They are great for structured data and are commonly used for business applications.
+
+* NoSQL Databases: These databases are more flexible and can handle unstructured or semi-structured data. They are well-suited for applications like social media, real-time analytics, and content management systems.
+
+* In-Memory Databases: Data is stored in the computer's main memory (RAM) for ultra-fast access. They are ideal for applications requiring high-speed data processing.
+
+* Document Stores: These databases are used for storing, retrieving, and managing document-oriented information, making them suitable for content management and e-commerce platforms.
+
+Databases store a wide range of data, including text, numbers, images, videos, and more. They help manage data integrity, ensuring that it remains accurate and consistent.
+
+Databases use a query language (e.g., SQL for relational databases) to retrieve data. Users can request specific information, and the database returns the results promptly.
+
+Databases use indexing to speed up data retrieval. It's like an index at the back of a book, helping you find specific information quickly.
+
+Databases are designed to maintain data integrity, following ACID principles: Atomicity (transactions are all-or-nothing), Consistency (data remains valid), Isolation (transactions don't interfere with each other), and Durability (once data is committed, it remains).
+
+Databases implement various security measures to protect data from unauthorized access and ensure privacy. Users and applications can be granted different levels of access based on their roles and needs.
+
+Databases regularly create backups of data to safeguard against data loss due to errors or disasters. This is akin to making copies of important documents.
 
 Window Server
 -------------
