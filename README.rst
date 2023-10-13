@@ -675,8 +675,67 @@ GPU Rendering
   the rendering process.
 
 
+
+Load Balancer
+---------------
+
+Google, like many large-scale websites, relies on load balancers to manage its immense traffic. When you type 
+"https://www.google.com" into your browser, the request doesn't go directly to a single web server. Instead,
+ it typically reaches a load balancer first. Load balancers are critical components that distribute incoming 
+ network traffic across multiple web servers to ensure efficient utilization of resources and improved response times.
+These load balancers use various algorithms to determine which server should handle a particular request,
+ ensuring that the load is distributed evenly. This redundancy enhances the website's availability and 
+ responsiveness, ensuring that Google is available to users around the clock.
+
+Web Server
+------------
+
+Once the request passes through the load balancer, it reaches one of Google's web servers. Web servers play a
+ pivotal role in the request-handling process. They're responsible for processing HTTP requests from clients 
+ (your web browser) and serving web pages. In Google's case, there are multiple web servers working in tandemto handle incoming requests efficiently.
+The web server processes the request, retrieves the necessary resources, and generates an HTML page.
+ In Google's case, this HTML page might be the familiar search results page, news articles, or any other 
+ web content that you request.
+
+Application Server
+-------------------
+
+Going deeper into Google's infrastructure, we encounter application servers. These servers handle more 
+complex operations beyond serving static web pages. They execute various tasks such as executing businesslogic, accessing databases, and managing user authentication.
+When you search for something on Google, it's the application servers that come into play. They process your
+search query, retrieve relevant data from databases, and format the results dynamically based on your query.
+Application servers are at the heart of making Google's search engine function effectively.
+
+Database
+--------
+
+Databases are the hidden powerhouses behind Google's search engine. They store and manage vast amounts of data,
+from indexed web pages to user data, search histories, and much more. Databases are where Google stores the
+information it needs to provide you with search results in a fraction of a second.
+When you perform a search on Google, the application server communicates with databases to fetch relevant
+results from their massive indexes. This operation involves complex queries and data retrieval processes 
+that are performed with utmost efficiency.
+Together, the load balancer, web servers, application servers, and databases form a robust and highly
+efficient infrastructure that enables Google to respond to your search queries with lightning speed and
+deliver relevant results from its vast data repositories.
+
 Window Server
 -------------
+
+After the rendering process and the completion of the client-side tasks, the browser communicates with the Window Server. 
+The Window Server is responsible for the graphical user interface (GUI) aspects of the operating system, especially 
+the display and manipulation of windows, which include those of the web browser.
+The Window Server takes the final layer positions created during the rendering phase and combines them with layers 
+from other visible content. This may include the browser's user interface elements, iframe windows, and any add-on panels.
+The Window Server computes the final positions of the layers and issues composite commands using graphics APIs like 
+Direct3D or OpenGL. These commands are then sent to the GPU for asynchronous rendering. The frame is finally dispatched to 
+the window manager for display.
+In essence, the Window Server is the component responsible for managing the visual representation of windows, including 
+your web browser window, on your computer screen. It plays a crucial role in ensuring that the graphical user interface 
+elements, such as buttons, menus, and other visual components, appear as intended and respond to user interactions.
+The operation of the Window Server is a fundamental part of the user experience when interacting with web browsers,
+ applications, and the entire graphical environment of your operating system.
+
 
 Post-rendering and user-induced execution
 -----------------------------------------
