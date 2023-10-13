@@ -39,6 +39,17 @@ popular searches from the internet as a whole. As you are typing
 with each keypress. It may even suggest "google.com" before you finish typing
 it.
 
+Edit:..
+When the 'g' key is pressed in the browser, several things happen:
+- The browser sends a GET request to the specified URL.
+- The DNS resolver looks up the IP address associated with the domain name.
+- The browser establishes a TCP connection with the server.
+- The server receives the request and processes it.
+- The server may perform various backend operations, such as querying a database or running server-side scripts.
+- The server generates a response containing the requested data or HTML content.
+- The response is sent back to the browser over the established TCP connection.
+- The browser receives the response and starts rendering the HTML content.
+
 The "enter" key bottoms out
 ---------------------------
 
