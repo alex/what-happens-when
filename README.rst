@@ -510,6 +510,43 @@ and IIS for Windows.
   is running on PHP, the server uses PHP to interpret the index file, and
   streams the output to the client.
 
+The workings of ssl in the context of visiting a website like google
+----------------------------------------------------------------------
+
+when you open web browser and type "https://www.google.com" into the address bar.
+The "https" indicates that you want to connect securely to Google's website using SSL/TLS.
+
+The SSL/TLS Handshake:
+* Your browser initiates a secure connection by sending a "ClientHello" message to Google's 
+  server. This message includes a list of encryption methods it supports and a random number.
+* Google's server responds with a "ServerHello" message, selecting an encryption method from
+  your list and sending its own random number.
+* Google's server also sends its digital certificate. This certificate contains its public 
+  key and is signed by a trusted Certificate Authority (CA). The certificate ensures the 
+  authenticity of Google's server.
+* Your browser verifies the certificate's authenticity by checking it against its 
+  list of trusted CAs.
+* Your browser generates a "pre-master secret" and encrypts it using Google's public key,
+  then sends it to Google.
+* Both your browser and Google now have the same "pre-master secret" and can generate a 
+  unique session key without sending it over the network.
+
+Secure Data Exchange:
+
+* With the session key established, your browser and Google use it to encrypt and decrypt
+  data transmitted between them. This session key ensures that the data remains private 
+  and secure.
+* Even if someone intercepts the data, they cannot understand it without the session key.
+* SSL/TLS also provides data integrity. Any data transmitted between your browser and 
+  Google cannot be altered or tampered with during transmission. If any data is modified, 
+  your browser will detect it, and the connection is terminated.
+* As you access Google's secure site, your web browser displays a padlock icon 
+  in the address bar to indicate that you have a secure connection.
+* The URL typically starts with "https://" instead of "http://"
+  Once the SSL/TLS connection is established, you can browse Google.com securely. 
+  Any searches, login credentials, or personal data you enter are encrypted and secure during transmission.
+
+
 Behind the scenes of the Browser
 ----------------------------------
 
