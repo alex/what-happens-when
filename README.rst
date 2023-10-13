@@ -689,6 +689,32 @@ the Google homepage. Scripts can cause additional network requests to be
 performed, as well as modify the page or its layout, causing another round of
 page rendering and painting.
 
+Execution of JavaScript Code:
+-----------------------------
+
+Once the rendering of the web page is complete, the browser starts executing the JavaScript code associated with that page. This JavaScript code can come from various sources, including the web page's source code and external scripts referenced in the HTML.
+JavaScript execution is driven by different triggers, such as event listeners (e.g., the user clicks a button, hovers over an element) and timeouts (e.g., setTimeout or setInterval functions). These triggers can be initiated by user interactions or timers, resulting in the execution of specific JavaScript functions.
+JavaScript is a versatile programming language, and it can manipulate the Document Object Model (DOM) to modify the page's structure and content dynamically. This means that JavaScript can create, delete, or modify elements on the page, leading to a need for re-rendering.
+
+Interaction with Plugins:
+-------------------------
+
+Some websites may include plugins like Flash or Java applets. These plugins are separate pieces of software that can execute within the web browser. They often handle multimedia content, interactive applications, or other specialized tasks.
+When a webpage contains plugins, the browser interacts with these plugins to ensure they function correctly. For example, a Flash game or video player may be initiated by user interaction, and the browser manages the communication between the web page and the plugin.
+
+Network Requests and AJAX:
+--------------------------
+
+JavaScript code can trigger additional network requests, often using techniques like Asynchronous JavaScript and XML (AJAX). These requests are made to retrieve data from the server without requiring a full page reload. AJAX is frequently used for features like loading new content dynamically or updating parts of a page.
+These network requests can include fetching data from the web server, making API calls, or sending form data. The response data may be in various formats like JSON, XML, or HTML, which JavaScript processes and uses to update the page.
+
+Dynamic Page Modifications:
+--------------------------
+
+JavaScript's ability to dynamically change a page's content or layout can lead to further rendering tasks. When JavaScript alters the DOM structure, it can trigger a reflow and repaint process.
+A reflow is the browser's recalculating of the layout of the page. This happens when changes are made to elements' dimensions, positions, or styles.
+Repaint occurs when the browser updates the pixels on the screen to reflect any changes in visual appearance. It's typically less resource-intensive than a full reflow.
+
 .. _`Creative Commons Zero`: https://creativecommons.org/publicdomain/zero/1.0/
 .. _`"CSS lexical and syntax grammar"`: http://www.w3.org/TR/CSS2/grammar.html
 .. _`Punycode`: https://en.wikipedia.org/wiki/Punycode
@@ -702,7 +728,7 @@ page rendering and painting.
 .. _`New Reno`: https://en.wikipedia.org/wiki/TCP_congestion_control#TCP_New_Reno
 .. _`congestion window`: https://en.wikipedia.org/wiki/TCP_congestion_control#Congestion_window
 .. _`maximum segment size`: https://en.wikipedia.org/wiki/Maximum_segment_size
-.. _`varies by OS` : https://en.wikipedia.org/wiki/Hosts_%28file%29#Location_in_the_file_system
+.. _` varies by OS`: https://en.wikipedia.org/wiki/Hosts_%28file%29#Location_in_the_file_system
 .. _`简体中文`: https://github.com/skyline75489/what-happens-when-zh_CN
 .. _`한국어`: https://github.com/SantonyChoi/what-happens-when-KR
 .. _`日本語`: https://github.com/tettttsuo/what-happens-when-JA
