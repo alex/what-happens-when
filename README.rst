@@ -677,6 +677,56 @@ GPU Rendering
 
 Window Server
 -------------
+Load Balancer
+---------------
+
+Google, like many large-scale websites, relies on load balancers to manage its immense traffic. When you type 
+"https://www.google.com" into your browser, the request doesn't go directly to a single web server. Instead,
+ it typically reaches a load balancer first. Load balancers are critical components that distribute incoming 
+ network traffic across multiple web servers to ensure efficient utilization of resources and improved response
+  times.
+
+These load balancers use various algorithms to determine which server should handle a particular request,
+ ensuring that the load is distributed evenly. This redundancy enhances the website's availability and 
+ responsiveness, ensuring that Google is available to users around the clock.
+
+Web Server
+------------
+Once the request passes through the load balancer, it reaches one of Google's web servers. Web servers play a
+ pivotal role in the request-handling process. They're responsible for processing HTTP requests from clients 
+ (your web browser) and serving web pages. In Google's case, there are multiple web servers working in tandem
+  to handle incoming requests efficiently.
+
+The web server processes the request, retrieves the necessary resources, and generates an HTML page.
+ In Google's case, this HTML page might be the familiar search results page, news articles, or any other 
+ web content that you request.
+
+Application Server
+-------------------
+
+Going deeper into Google's infrastructure, we encounter application servers. These servers handle more 
+complex operations beyond serving static web pages. They execute various tasks such as executing business
+ logic, accessing databases, and managing user authentication.
+
+When you search for something on Google, it's the application servers that come into play. They process your
+ search query, retrieve relevant data from databases, and format the results dynamically based on your query.
+  Application servers are at the heart of making Google's search engine function effectively.
+
+Database
+--------
+
+Databases are the hidden powerhouses behind Google's search engine. They store and manage vast amounts of data,
+ from indexed web pages to user data, search histories, and much more. Databases are where Google stores the
+  information it needs to provide you with search results in a fraction of a second.
+
+When you perform a search on Google, the application server communicates with databases to fetch relevant
+ results from their massive indexes. This operation involves complex queries and data retrieval processes 
+ that are performed with utmost efficiency.
+
+Together, the load balancer, web servers, application servers, and databases form a robust and highly
+ efficient infrastructure that enables Google to respond to your search queries with lightning speed and
+  deliver relevant results from its vast data repositories.
+
 
 Post-rendering and user-induced execution
 -----------------------------------------
