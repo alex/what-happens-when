@@ -242,7 +242,7 @@ If the entry is not in the ARP cache:
   interface associated with that subnet. If it is not, the library uses the
   interface that has the subnet of our default gateway.
 
-* The MAC address of the selected network interface is looked up. MAC address is used for local network communication.
+* The MAC(Media Access Control) address of the selected network interface is looked up.
 
 * The network library sends a Layer 2 (data link layer of the `OSI model`_)
   ARP request:
