@@ -674,6 +674,9 @@ GPU Rendering
   of ``GPU`` massive parallelism for float point calculations required for
   the rendering process.
 
+* By distributing the workload across the GPU's numerous cores, the rendering
+  process can be significantly expedited, resulting in accelerated graphical
+  performance and improved overall user experience.
 
 Window Server
 -------------
