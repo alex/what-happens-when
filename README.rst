@@ -421,6 +421,9 @@ If the web browser used was written by Google, instead of sending an HTTP
 request to retrieve the page, it will send a request to try and negotiate with
 the server an "upgrade" from HTTP to the SPDY protocol.
 
+HTTPS/SSL: This is a secured encryption protocol that secures data transferred between 
+the browser server and google server in an encrypted format using the SSl(secure sockets layer). 
+
 If the client is using the HTTP protocol and does not support SPDY, it sends a
 request to the server of the form::
 
@@ -688,6 +691,9 @@ Plugins such as Flash or Java may execute as well, although not at this time on
 the Google homepage. Scripts can cause additional network requests to be
 performed, as well as modify the page or its layout, causing another round of
 page rendering and painting.
+
+Database: Google's servers access the database to fetch relevant information,
+such as search results, personalized recommendations, and other dynamic content.
 
 .. _`Creative Commons Zero`: https://creativecommons.org/publicdomain/zero/1.0/
 .. _`"CSS lexical and syntax grammar"`: http://www.w3.org/TR/CSS2/grammar.html
