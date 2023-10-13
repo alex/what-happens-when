@@ -209,20 +209,43 @@ Check HSTS list
 DNS lookup
 ----------
 
-* Browser checks if the domain is in its cache. (to see the DNS Cache in
-  Chrome, go to `chrome://net-internals/#dns <chrome://net-internals/#dns>`_).
-* If not found, the browser calls ``gethostbyname`` library function (varies by
-  OS) to do the lookup.
-* ``gethostbyname`` checks if the hostname can be resolved by reference in the
-  local ``hosts`` file (whose location `varies by OS`_) before trying to
-  resolve the hostname through DNS.
-* If ``gethostbyname`` does not have it cached nor can find it in the ``hosts``
-  file then it makes a request to the DNS server configured in the network
-  stack. This is typically the local router or the ISP's caching DNS server.
-* If the DNS server is on the same subnet the network library follows the
-  ``ARP process`` below for the DNS server.
-* If the DNS server is on a different subnet, the network library follows
-  the ``ARP process`` below for the default gateway IP.
+DNS (Domain Name System) lookup is a fundamental process that enables your web browser and other networked applications to convert human-readable domain names (like www.example.com) into IP addresses (like 192.168.1.1) that are required for communication over the internet. Here's a detailed explanation of each step in the DNS lookup process:
+
+1. **Browser DNS Cache Check**:
+   - When you enter a URL in your web browser, the first thing it does is check its local DNS cache to see if it already knows the IP address associated with the domain. This cache stores previously resolved domain names and their corresponding IP addresses.
+   - To view the DNS cache in Google Chrome, you can go to `chrome://net-internals/#dns`.
+
+2. **gethostbyname Library Function**:
+   - If the domain is not found in the browser's cache, the browser uses a library function called `gethostbyname` to initiate the DNS lookup.
+   - The actual library function used may vary depending on the operating system.
+
+3. **Hosts File Lookup**:
+   - Before attempting to resolve the domain through DNS, the `gethostbyname` function checks if the hostname can be resolved by looking in the local system's "hosts" file. The location of the hosts file can vary by operating system.
+   - The hosts file is a simple text file that maps hostnames to IP addresses and can be used to override DNS entries.
+
+4. **DNS Server Request**:
+   - If the domain is not found in the browser's cache, the hosts file, or any other local sources, `gethostbyname` proceeds to make a request to the DNS server. This DNS server is typically configured in the network stack, and it can be the local router or the ISP's caching DNS server.
+
+5. **ARP Process for DNS Server** (Same Subnet):
+   - If the DNS server is on the same local network or subnet as your computer, the network library follows the Address Resolution Protocol (ARP) process to discover the MAC address of the DNS server.
+   - ARP is used to map an IP address to a physical MAC address for devices on the local network. It helps in the actual routing of data packets within the local network.
+
+6. **ARP Process for Default Gateway IP** (Different Subnet):
+   - If the DNS server is on a different subnet, the network library follows the ARP process for the default gateway's IP address.
+   - The default gateway is the router that connects your local network to the broader internet. In this case, ARP is used to determine the MAC address of the router.
+
+7. **DNS Server Resolution**:
+   - Once the MAC address is determined, the network library sends the DNS query to the DNS server, which is now equipped with the information it needs to resolve the domain name.
+   - The DNS server then looks up the IP address associated with the requested domain in its own DNS cache. If it doesn't find it, it will recursively or iteratively query other authoritative DNS servers to obtain the IP address.
+   - The authoritative DNS server for the domain has a complete record of the IP address associated with the domain.
+
+8. **Response to Browser**:
+   - The DNS server responds with the IP address, and this information is passed back to the browser or application that initiated the lookup.
+
+9. **Browser's DNS Cache Update**:
+   - The resolved DNS information is now stored in the browser's DNS cache for future use, reducing the need for repeated DNS lookups for the same domain.
+
+The DNS lookup process is critical for enabling users to access websites and services on the internet by simplifying the use of human-readable domain names instead of complex IP addresses. This entire process happens in the background, allowing users to interact with the internet in a user-friendly manner.
 
 
 ARP process
