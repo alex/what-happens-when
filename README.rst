@@ -523,26 +523,20 @@ to the browser it undergoes the below process:
 Browser
 -------
 
-The browser's functionality is to present the web resource you choose, by
-requesting it from the server and displaying it in the browser window.
-The resource is usually an HTML document, but may also be a PDF,
-image, or some other type of content. The location of the resource is
-specified by the user using a URI (Uniform Resource Identifier).
+Browsers function by requesting web resources from servers and rendering them in the browser window.
+Typically, the resource is an HTML document, though it can be a PDF, image, or other content types, 
+with its location determined by a user-specified URI (Uniform Resource Identifier).
 
-The way the browser interprets and displays HTML files is specified
-in the HTML and CSS specifications. These specifications are maintained
-by the W3C (World Wide Web Consortium) organization, which is the
-standards organization for the web.
+The interpretation and display of HTML files adhere to standards outlined in HTML and CSS specifications.
+These standards are overseen by the W3C (World Wide Web Consortium),
+the primary web standards organization.
 
-Browser user interfaces have a lot in common with each other. Among the
-common user interface elements are:
-
-* An address bar for inserting a URI
-* Back and forward buttons
-* Bookmarking options
-* Refresh and stop buttons for refreshing or stopping the loading of
-  current documents
-* Home button that takes you to your home page
+Browser interfaces share common elements, such as 
+* an address bar for URI input
+* back and forward navigation buttons
+* bookmarking features, refresh
+* stop buttons for managing document loading, and 
+* a home button for quick access to your homepage.
 
 **Browser High-Level Structure**
 
