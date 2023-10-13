@@ -396,6 +396,8 @@ TLS handshake
 
 * From now on the TLS session transmits the application (HTTP) data encrypted
   with the agreed symmetric key.
+        `summery`
+        TLS handshake is a process of establishing a secure connection between a client and server. It involves exchanging messages to agree on a symmetric key that will be used to encrypt data transmission. The client sends a ClientHello message with TLS version, cipher algorithms and compression methods available. The server replies with a ServerHello message with selected cipher, compression methods and its public certificate signed by a CA. The client verifies the server's certificate against its trusted CAs and generates random bytes to determine the symmetric key. The server decrypts the random bytes and generates its own copy of the symmetric key. The client and server exchange Finished messages encrypted with the symmetric key to verify the transmission hash. After this, the TLS session encrypts application data using the agreed symmetric key.
 
 If a packet is dropped
 ----------------------
@@ -692,8 +694,8 @@ page rendering and painting.
 .. _`Creative Commons Zero`: https://creativecommons.org/publicdomain/zero/1.0/
 .. _`"CSS lexical and syntax grammar"`: http://www.w3.org/TR/CSS2/grammar.html
 .. _`Punycode`: https://en.wikipedia.org/wiki/Punycode
-.. _`Ethernet`: http://en.wikipedia.org/wiki/IEEE_802.3
-.. _`WiFi`: https://en.wikipedia.org/wiki/IEEE_802.11
+.. _`Ethernet`: https://en.wikipedia.org/wiki/Ethernet
+.. _`WiFi`: https://en.wikipedia.org/wiki/Wi-Fi
 .. _`Cellular data network`: https://en.wikipedia.org/wiki/Cellular_data_communication_protocol
 .. _`analog-to-digital converter`: https://en.wikipedia.org/wiki/Analog-to-digital_converter
 .. _`network node`: https://en.wikipedia.org/wiki/Computer_network#Network_nodes
