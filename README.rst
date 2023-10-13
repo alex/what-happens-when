@@ -372,7 +372,8 @@ TLS handshake
 * The client computer sends a ``ClientHello`` message to the server with its
   Transport Layer Security (TLS) version, list of cipher algorithms and
   compression methods available.
-
+* Cipher Suite Negotiation: In the ClientHello message, the client not only sends a list of supported cipher algorithms but also their preferred order. The server, when selecting a cipher suite, should choose the first one that both the client and server support. This ensures the strongest encryption method supported by both parties is used.
+* Ephemeral Key Exchange: While you mentioned the server's certificate for key exchange, there's also support for ephemeral key exchange methods, like Diffie-Hellman (DH) or Elliptic Curve Diffie-Hellman (ECDH). These methods allow the client and server to generate a shared secret without transmitting the secret key over the network.
 * The server replies with a ``ServerHello`` message to the client with the
   TLS version, selected cipher, selected compression methods and the server's
   public certificate signed by a CA (Certificate Authority). The certificate
