@@ -191,6 +191,8 @@ Convert non-ASCII Unicode characters in the hostname
 * Since the hostname is ``google.com`` there won't be any, but if there were
   the browser would apply `Punycode`_ encoding to the hostname portion of the
   URL.
+* For example, consider a URL with the hostname ``例子.com``, which contains Chinese characters.
+  The browser converts it into Punycode as ``xn--fsq.com``.
 
 Check HSTS list
 ---------------
