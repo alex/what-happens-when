@@ -209,21 +209,15 @@ Check HSTS list
 DNS lookup
 ----------
 
-* Browser checks if the domain is in its cache. (to see the DNS Cache in
-  Chrome, go to `chrome://net-internals/#dns <chrome://net-internals/#dns>`_).
-* If not found, the browser calls ``gethostbyname`` library function (varies by
-  OS) to do the lookup.
-* ``gethostbyname`` checks if the hostname can be resolved by reference in the
-  local ``hosts`` file (whose location `varies by OS`_) before trying to
-  resolve the hostname through DNS.
-* If ``gethostbyname`` does not have it cached nor can find it in the ``hosts``
-  file then it makes a request to the DNS server configured in the network
-  stack. This is typically the local router or the ISP's caching DNS server.
-* If the DNS server is on the same subnet the network library follows the
-  ``ARP process`` below for the DNS server.
-* If the DNS server is on a different subnet, the network library follows
-  the ``ARP process`` below for the default gateway IP.
-
+* Browser DNS Cache: Initially, the browser checks its own DNS cache to see if it has previously resolved the domain. This cache helps improve browsing speed by storing previously resolved domain-to-IP mappings.
+* Operating System DNS Cache: The operating system also maintains its DNS cache, which it consults alongside the browser cache. Cached DNS records have a Time to Live (TTL) associated with them, specifying how long the information remains valid.
+* Local Hosts File: Before initiating a DNS request, the system checks if the hostname can be resolved via entries in the local hosts file, which users can manually configure. This file acts as a local mapping of hostnames to IP addresses.
+* DNS Server Query: If the domain is not found in the browser cache, the operating system cache, or the local hosts file, the system initiates a DNS query. It contacts the DNS server configured in the network stack, typically the local router or the ISP's caching DNS server.
+* ARP Process for Local DNS Server: If the DNS server is on the same subnet, the system follows the ARP (Address Resolution Protocol) process to determine the MAC address of the DNS server, enabling communication at the data link layer. This step is essential for local network communication efficiency.
+* ARP Process for Default Gateway IP: If the DNS server is on a different subnet, the system follows the ARP process for the default gateway IP. The default gateway is the router responsible for routing traffic between the local network and external networks.
+* Recursive DNS Resolution: When the DNS server receives the query, it might perform recursive DNS resolution. This involves traversing the DNS hierarchy, starting with root DNS servers, to resolve the domain step by step. Intermediate caching DNS servers can be involved in this process.
+* Authoritative DNS Server: If the DNS server doesn't have the requested DNS record cached, it eventually queries the authoritative DNS server responsible for the specific domain. The authoritative server provides the accurate IP address for the requested domain.
+* Fallback DNS Servers: In case of DNS server unresponsiveness, systems often have a list of backup DNS servers to attempt, ensuring reliable DNS resolution even in the event of primary server failure.
 
 ARP process
 -----------
