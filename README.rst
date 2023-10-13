@@ -675,8 +675,7 @@ GPU Rendering
   the rendering process.
 
 
-Window Server
--------------
+
 Load Balancer
 ---------------
 
@@ -719,6 +718,23 @@ that are performed with utmost efficiency.
 Together, the load balancer, web servers, application servers, and databases form a robust and highly
 efficient infrastructure that enables Google to respond to your search queries with lightning speed and
 deliver relevant results from its vast data repositories.
+
+Window Server
+-------------
+
+After the rendering process and the completion of the client-side tasks, the browser communicates with the Window Server. 
+The Window Server is responsible for the graphical user interface (GUI) aspects of the operating system, especially 
+the display and manipulation of windows, which include those of the web browser.
+The Window Server takes the final layer positions created during the rendering phase and combines them with layers 
+from other visible content. This may include the browser's user interface elements, iframe windows, and any add-on panels.
+The Window Server computes the final positions of the layers and issues composite commands using graphics APIs like 
+Direct3D or OpenGL. These commands are then sent to the GPU for asynchronous rendering. The frame is finally dispatched to 
+the window manager for display.
+In essence, the Window Server is the component responsible for managing the visual representation of windows, including 
+your web browser window, on your computer screen. It plays a crucial role in ensuring that the graphical user interface 
+elements, such as buttons, menus, and other visual components, appear as intended and respond to user interactions.
+The operation of the Window Server is a fundamental part of the user experience when interacting with web browsers,
+ applications, and the entire graphical environment of your operating system.
 
 
 Post-rendering and user-induced execution
