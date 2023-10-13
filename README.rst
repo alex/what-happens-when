@@ -224,6 +224,26 @@ DNS lookup
 * If the DNS server is on a different subnet, the network library follows
   the ``ARP process`` below for the default gateway IP.
 
+What happens If the DNS server is on a different subnet ?
+
+the network library follows
+  the ``ARP process`` below for the default gateway IP.
+* If the DNS server is unable to find the hostname's IP in the cache, then it
+  sends a request to the resolver, a server setup specifically for retrieving
+  any hostname's IP.
+* When the resolver is engaged, it first checks its own cache, but if it can't
+  find an entry, it communicates with the TLD (Top-Level-Domain), likely a
+  com zone server. Com is a top-level domain we see a lot of.
+* The TLD has information about the name servers of specific hostnames.
+  Knowing the hostname the resolver is trying to identify, it can find
+  name server IP's along with their hostnames.
+* The resolver uses the IP's to request from name servers, the IP info
+  it is looking for for its specific hostname. Depending on the name
+  server and what zone it handles, it should find the IP of the host.
+* Once the resolver has found the IP in question it returns to the DNS
+  server which returns to the browser. Throughout, the servers are
+  caching the hostname and its IP according to TTL (Time-to-live)
+  limitations.
 
 ARP process
 -----------
