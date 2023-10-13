@@ -38,6 +38,9 @@ popular searches from the internet as a whole. As you are typing
 "google.com" many blocks of code run and the suggestions will be refined
 with each keypress. It may even suggest "google.com" before you finish typing
 it.
+Furthermore, as you continue typing "google.com," the browser may display additional information or options related to the search term. For example, it might show quick links to specific sections of the Google website or display relevant search results directly in the dropdown.
+The purpose of these enhancements is to streamline the user's browsing experience and provide quick access to frequently visited websites or relevant information.
+
 
 The "enter" key bottoms out
 ---------------------------
