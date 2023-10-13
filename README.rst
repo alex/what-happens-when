@@ -705,7 +705,7 @@ Going deeper into Google's infrastructure, we encounter application servers. The
 complex operations beyond serving static web pages. They execute various tasks such as executing businesslogic, accessing databases, and managing user authentication.
 When you search for something on Google, it's the application servers that come into play. They process your
 search query, retrieve relevant data from databases, and format the results dynamically based on your query.
- Application servers are at the heart of making Google's search engine function effectively.
+Application servers are at the heart of making Google's search engine function effectively.
 
 Database
 --------
