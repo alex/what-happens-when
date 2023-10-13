@@ -367,6 +367,14 @@ This send and receive happens multiple times following the TCP connection flow:
    * The other sides ACKs the FIN packet and sends its own FIN
    * The closer acknowledges the other side's FIN with an ACK
 
+Load-Balancer
+-------------
+Websites as popular as Google often have multiple servers to handle the
+high volume of incoming requests. Load balancers distribute incoming traffic
+across these servers to ensure optimal performance, preventing any one server
+from being overwhelmed. This load balancing is essential for maintaining
+responsiveness and availability.
+
 TLS handshake
 -------------
 * The client computer sends a ``ClientHello`` message to the server with its
