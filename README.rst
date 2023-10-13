@@ -397,6 +397,35 @@ TLS handshake
 * From now on the TLS session transmits the application (HTTP) data encrypted
   with the agreed symmetric key.
 
+Traffic through a Firewall
+--------------------------
+
+A firewall is a network security device or software that acts as a barrier or filter between your computer and the internet. Its primary purpose is to control incoming and outgoing network traffic based on a set of predetermined security rules. Here's a more detailed explanation of what happens when traffic goes through a firewall during a web request:
+
+* Packet Inspection:
+Firewalls operate at the packet level, examining the data packets that flow in and out of your computer or network. When you enter a URL in your browser and press Enter, your computer initiates a request to the web server of the site you want to visit. This request is broken down into multiple data packets for transmission. The firewall inspects these packets.
+
+* Rule-Based Filtering:
+Firewalls use a set of predefined rules to determine whether a packet should be allowed to pass or should be blocked. These rules can be based on a variety of criteria, including the source and destination IP addresses, ports, and the type of traffic (e.g., HTTP or HTTPS).
+
+* Stateful Inspection:
+Many modern firewalls use stateful inspection, which means they not only look at individual packets but also track the state of active connections. This allows the firewall to make more intelligent decisions. For example, it can ensure that a response packet coming back from the web server is part of an established connection initiated by your browser.
+
+* Application Layer Filtering:
+Some firewalls are capable of deep packet inspection at the application layer. This means they can analyze the actual content of the data packets to detect and block specific types of malicious content or protocols. For example, a firewall might block certain types of malware or malicious scripts in web pages.
+
+* Proxying:
+In some cases, firewalls act as a proxy, sitting between your computer and the internet. When you send a request to a website, the firewall forwards the request on your behalf. This allows the firewall to inspect and filter the response data from the web server, which can provide an additional layer of security.
+
+* Logging and Monitoring:
+Firewalls often keep logs of network traffic. These logs can be valuable for network administrators to monitor for security threats, track usage, and troubleshoot issues. They can also provide an audit trail in the event of a security incident.
+
+* Security Policy Enforcement:
+The firewall enforces security policies that are defined by network administrators. These policies dictate what is allowed and what is not. For example, an organization might have a policy that only allows outgoing web traffic on specific ports and only to certain trusted websites.
+
+* Intrusion Detection and Prevention:
+Many modern firewalls incorporate intrusion detection and prevention systems (IDPS). These systems can actively identify and block known attack patterns and anomalies in network traffic, providing an additional layer of security.
+
 If a packet is dropped
 ----------------------
 
