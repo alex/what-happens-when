@@ -223,6 +223,12 @@ DNS lookup
   ``ARP process`` below for the DNS server.
 * If the DNS server is on a different subnet, the network library follows
   the ``ARP process`` below for the default gateway IP.
+* then the DNS resolver checks its cache for the IP address
+  corresponding to the domain name. If not found, a Root server steps in,
+  redirecting the DNS resolver to the TLD server,
+  which holds the vital information about the requested website.
+  Finally, an authoritative name server provides the actual IP address
+  of the website the client is trying to access.
 
 
 ARP process
