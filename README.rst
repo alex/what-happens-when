@@ -1,4 +1,4 @@
-What happens when...
+What happens when you type google.com in your browser and press Enter
 ====================
 
 This repository is an attempt to answer the age-old interview question "What
@@ -209,20 +209,23 @@ Check HSTS list
 DNS lookup
 ----------
 
-* Browser checks if the domain is in its cache. (to see the DNS Cache in
+This is a critical step so let us take a closer look at how it unfolds:
+
+Anytime you use the browser to access any website, the browser stores information concerning that domain name in its cache. The cache is a repository of previously resoled domain names and their IP address.
+* So first the browser checks if it has a recent copy ofnthe domain in its cache. (to see the DNS Cache in
   Chrome, go to `chrome://net-internals/#dns <chrome://net-internals/#dns>`_).
 * If not found, the browser calls ``gethostbyname`` library function (varies by
   OS) to do the lookup.
 * ``gethostbyname`` checks if the hostname can be resolved by reference in the
-  local ``hosts`` file (whose location `varies by OS`_) before trying to
-  resolve the hostname through DNS.
+  local ``hosts`` file (whose location `varies by OS`_) before trying to resolve the hostname through DNS.
+The hosts file allows local configuration of hostname to IP address mappings.
 * If ``gethostbyname`` does not have it cached nor can find it in the ``hosts``
   file then it makes a request to the DNS server configured in the network
   stack. This is typically the local router or the ISP's caching DNS server.
-* If the DNS server is on the same subnet the network library follows the
-  ``ARP process`` below for the DNS server.
-* If the DNS server is on a different subnet, the network library follows
-  the ``ARP process`` below for the default gateway IP.
+* The behaviour of the browser now depends on the location of the DNS server:
+ a. If the DNS server is on the same subnet the network library follows the Address Resolution Protocol process
+  ``ARP process`` to discover the MAC address of the DNS server. The ARP process is crucial for local network communication.
+* If the DNS server is on a different subnet, the network library follows a similar ``ARP process``, but this time it's directed at the default gateway's IP address. The default gateway plays a key role in routing traffic between different subnets.
 
 
 ARP process
