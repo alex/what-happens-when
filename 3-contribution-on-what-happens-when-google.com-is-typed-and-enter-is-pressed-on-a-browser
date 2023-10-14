@@ -1,0 +1,27 @@
+**What happens when you type https://www.google.com and press Enter?**
+
+When you type https://www.google.com in your browser and press Enter, a complex series of events takes place behind the scenes to deliver the Google homepage to your screen. This process involves a number of different technologies, including:
+
+* **DNS request:** The first thing that happens is that your browser sends a DNS request to a DNS server. DNS servers are responsible for translating domain names (like google.com) into IP addresses (like 142.250.190.1). Once your browser has the IP address of the Google server, it can establish a connection to it.
+* **TCP/IP:** TCP/IP is a suite of protocols that governs how data is transmitted over the internet. TCP/IP breaks down data into packets and sends them over the internet, where they are reassembled at the receiving end.
+* **Firewall:** A firewall is a security device that monitors and controls incoming and outgoing network traffic. Firewalls can be used to block malicious traffic and protect your computer from attack.
+* **HTTPS/SSL:** HTTPS is a secure version of the HTTP protocol. It uses SSL/TLS encryption to protect the data that is transmitted between your browser and the Google server.
+* **Load-balancer:** A load-balancer is a device that distributes traffic across multiple servers. This helps to improve performance and reliability.
+* **Web server:** A web server is a software application that stores and delivers web pages to clients.
+* **Application server:** An application server is a software application that runs web applications.
+* **Database:** A database is a collection of data that is organized in a way that makes it easy to access and manage.
+
+Here is a more detailed explanation of each step:
+
+1. **DNS request:** When you type https://www.google.com in your browser and press Enter, your browser sends a DNS request to a DNS server. The DNS server looks up the IP address for google.com and returns it to your browser.
+2. **TCP/IP:** Your browser then establishes a TCP/IP connection with the Google server. This involves sending a series of packets back and forth to establish a handshake between the two devices.
+3. **Firewall:** The firewall on the Google server checks the incoming connection to make sure that it is legitimate. If the connection is allowed, the firewall forwards it to the web server.
+4. **HTTPS/SSL:** The web server then initiates an HTTPS handshake with your browser. This involves exchanging certificates and establishing a secure connection.
+5. **Load-balancer:** The load-balancer distributes the traffic from your browser to one of the available Google web servers.
+6. **Web server:** The web server retrieves the Google homepage from the database and sends it to your browser.
+7. **Application server:** The application server may also be involved in processing the request and generating the response.
+8. **Database:** The database stores the Google homepage and other web pages that are served by the web server.
+
+Once your browser has received the Google homepage, it renders it on the screen. This process involves downloading the HTML, CSS, and JavaScript files that make up the homepage and displaying them in the browser window.
+
+The entire process of loading the Google homepage typically takes less than a second. However, there are a number of factors that can affect the loading time, such as the speed of your internet connection, the distance between your computer and the Google server, and the amount of traffic on the Google network
