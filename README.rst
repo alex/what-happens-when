@@ -543,6 +543,9 @@ common user interface elements are:
 * Refresh and stop buttons for refreshing or stopping the loading of
   current documents
 * Home button that takes you to your home page
+* Downloads: Users can monitor and manage their downloaded files through this interface.
+* Settings/Options Menu: This menu provides access to various browser settings and preferences, including privacy, security, and advanced options.
+* Zoom Controls: Zoom in and out options allow users to adjust the size of the web page 
 
 **Browser High-Level Structure**
 
