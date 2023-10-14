@@ -178,7 +178,7 @@ Parse URL
 Is it a URL or a search term?
 -----------------------------
 
-When no protocol or valid domain name is given the browser proceeds to feed
+When no protocol or valid domain name is given, the browser proceeds to feed
 the text given in the address box to the browser's default web search engine.
 In many cases the URL has a special piece of text appended to it to tell the
 search engine that it came from a particular browser's URL bar.
@@ -188,7 +188,7 @@ Convert non-ASCII Unicode characters in the hostname
 
 * The browser checks the hostname for characters that are not in ``a-z``,
   ``A-Z``, ``0-9``, ``-``, or ``.``.
-* Since the hostname is ``google.com`` there won't be any, but if there were
+* Since the hostname is ``google.com`` there won't be any, but if there were,
   the browser would apply `Punycode`_ encoding to the hostname portion of the
   URL.
 
@@ -215,14 +215,14 @@ DNS lookup
   OS) to do the lookup.
 * ``gethostbyname`` checks if the hostname can be resolved by reference in the
   local ``hosts`` file (whose location `varies by OS`_) before trying to
-  resolve the hostname through DNS.
+  resolve the hostname through Domain Name System (DNS).
 * If ``gethostbyname`` does not have it cached nor can find it in the ``hosts``
   file then it makes a request to the DNS server configured in the network
   stack. This is typically the local router or the ISP's caching DNS server.
 * If the DNS server is on the same subnet the network library follows the
   ``ARP process`` below for the DNS server.
 * If the DNS server is on a different subnet, the network library follows
-  the ``ARP process`` below for the default gateway IP.
+  the ``ARP process`` below for the default gateway IP (Internet Protocol).
 
 
 ARP process
@@ -417,7 +417,7 @@ control`_. This varies depending on the sender; the most common algorithms are
 HTTP protocol
 -------------
 
-If the web browser used was written by Google, instead of sending an HTTP
+If the web browser used was written by Google, instead of sending an HyperText Transfer Protocol (HTTP)
 request to retrieve the page, it will send a request to try and negotiate with
 the server an "upgrade" from HTTP to the SPDY protocol.
 
@@ -471,7 +471,7 @@ and no payload, and the web browser instead retrieve the HTML from its cache.
 
 After parsing the HTML, the web browser (and server) repeats this process
 for every resource (image, CSS, favicon.ico, etc) referenced by the HTML page,
-except instead of ``GET / HTTP/1.1`` the request will be
+except instead of ``GET / HTTP/1.1`` the request will be:
 ``GET /$(URL relative to www.google.com) HTTP/1.1``.
 
 If the HTML referenced a resource on a different domain than
@@ -490,7 +490,7 @@ and IIS for Windows.
 * The server breaks down the request to the following parameters:
    * HTTP Request Method (either ``GET``, ``HEAD``, ``POST``, ``PUT``,
      ``PATCH``, ``DELETE``, ``CONNECT``, ``OPTIONS``, or ``TRACE``). In the
-     case of a URL entered directly into the address bar, this will be ``GET``.
+     case of a URL entered directly into the address bar, this will be: ``GET``.
    * Domain, in this case - google.com.
    * Requested path/page, in this case - / (as no specific path/page was
      requested, / is the default path).
@@ -514,11 +514,11 @@ Behind the scenes of the Browser
 ----------------------------------
 
 Once the server supplies the resources (HTML, CSS, JS, images, etc.)
-to the browser it undergoes the below process:
+to the browser, it undergoes the below process:
 
-* Parsing - HTML, CSS, JS
+* Parsing - HTML, CSS, JS.
 * Rendering - Construct DOM Tree → Render Tree → Layout of Render Tree →
-  Painting the render tree
+  Painting the render tree.
 
 Browser
 -------
@@ -577,7 +577,7 @@ HTML parsing
 The rendering engine starts getting the contents of the requested
 document from the networking layer. This will usually be done in 8kB chunks.
 
-The primary job of the HTML parser is to parse the HTML markup into a parse tree.
+The primary job of the HyperText Markup Language (HTML) parser is to parse the HTML markup into a parse tree.
 
 The output tree (the "parse tree") is a tree of DOM element and attribute
 nodes. DOM is short for Document Object Model. It is the object presentation
