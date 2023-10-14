@@ -1,0 +1,11 @@
+what happens when type www.google.com and hit enter.
+    DNS request: The browser sends a DNS request to a DNS server to resolve the domain name of the “google” website to its IP address.
+    TCP/IP: The browser establishes a TCP/IP connection with the Google web server at the resolved IP address.
+    Firewall: The firewall inspects the TCP/IP connection to determine whether it is allowed.
+    HTTPS/SSL: The browser and Google web server negotiate an HTTPS/SSL connection, if available.
+    Load balancer: The load balancer distributes the request to one of the available Google web servers.
+    Web server: The Google web server retrieves the requested content from its storage system (database) and sends it back to the browser.
+    Application server: If the requested content is dynamic, the application server generates the content and sends it back to the web server.
+    Database: The web server may query the database to retrieve additional information, such as user preferences or product data.
+    Browser: The browser receives the content and renders it to display the website to the user.
+
