@@ -1,4 +1,4 @@
-What happens when...
+wwWhat happens when...
 ====================
 
 This repository is an attempt to answer the age-old interview question "What
@@ -224,6 +224,21 @@ DNS lookup
 * If the DNS server is on a different subnet, the network library follows
   the ``ARP process`` below for the default gateway IP.
 
+There are four main types of DNS servers:
+
+Recursive resolvers: These servers are responsible for answering all DNS queries, 
+regardless of whether they have the answer cached or not. If the recursive resolver does not have the answer,
+it will query other DNS servers until it finds it.
+Authoritative servers: These servers contain the authoritative answers for a specific domain name. For example, 
+the authoritative servers for google.com would contain the IP address for that domain name.
+Root servers: There are only 13 root servers in the world, and they are responsible for maintaining the list of top-level domains (TLDs),
+such as .com, .net, and .org.
+Top-level domain (TLD) servers: These servers contain the authoritative answers for all domain names within a specific TLD. 
+For example, the TLD servers for .com would contain the IP addresses for all .com domain names.
+
+When a browser needs to resolve a domain name, it first queries a recursive resolver. 
+The recursive resolver will then query the authoritative servers for the domain name, if necessary. 
+If the recursive resolver cannot find the answer, it will query the root servers and then the TLD servers.
 
 ARP process
 -----------
