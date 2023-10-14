@@ -335,14 +335,75 @@ Most larger businesses and some newer residential connections will have fiber
 or direct Ethernet connections in which case the data remains digital and
 is passed directly to the next `network node`_ for processing.
 
-Eventually, the packet will reach the router managing the local subnet. From
-there, it will continue to travel to the autonomous system's (AS) border
-routers, other ASes, and finally to the destination server. Each router along
-the way extracts the destination address from the IP header and routes it to
-the appropriate next hop. The time to live (TTL) field in the IP header is
-decremented by one for each router that passes. The packet will be dropped if
-the TTL field reaches zero or if the current router has no space in its queue
-(perhaps due to network congestion).
+Networking and Routing:
+-----------------------
+
+* When you press "Enter" in your browser after typing a URL like 
+ "https://www.google.com," your request begins a journey through a complex 
+ network of routers, switches, and infrastructure before it reaches the 
+ destination server. Here's an overview of the networking routing process:
+
+* Local Routing:
+
+ * The first step is routing within your local network. Your device checks if 
+   it already knows the MAC (Media Access Control) address of the gateway 
+   (usually your router) that will forward the traffic. If it doesn't, it 
+   performs an ARP (Address Resolution Protocol) request to discover the 
+   gateway's MAC address.
+
+* Gateway to Internet:
+
+ * Once your device knows the gateway's MAC address, it encapsulates the IP 
+   packet within an Ethernet frame and sends it to the gateway. The router at 
+   your home or local network examines the destination IP address (in this 
+   case, the DNS server's IP) and consults its routing table to determine the 
+   next hop. If the DNS server is within your local network, the router 
+   forwards the packet directly to the DNS server. If not, it routes it to 
+   an upstream router, such as your Internet Service Provider's (ISP) router.
+
+* ISP Routing:
+
+ * At this point, your request enters your ISP's network. Your ISP's router 
+   uses its routing table to determine how to reach the destination server. 
+   If the destination server is in a different geographic region, your 
+   traffic might be handed off to multiple ISPs, which are connected via 
+   internet exchange points (IXPs).
+
+* Internet Backbone Routing:
+
+ * Your request traverses the core of the internet, traveling through various 
+   routers and switches. These devices use BGP (Border Gateway Protocol) to 
+   route traffic between autonomous systems (ASes). ASes are large networks 
+   operated by organizations, ISPs, or data centers. They exchange routing 
+   information to determine the best path for your data.
+
+* Data Center Routing:
+
+ * Your traffic may pass through multiple data centers, especially if you're 
+   accessing a popular website like Google. Each data center might have its 
+   own routing decisions to make.
+
+* Destination Server:
+
+ * Finally, your request reaches the destination server at Google's data center. 
+   Google's servers process your request and generate a response.
+
+* Response Path:
+
+ * The response from the server follows a similar path in reverse, traveling 
+   back through the internet's infrastructure, ISP networks, and your local 
+   network, until it reaches your device.
+
+It's important to note that routing decisions are made based on factors like 
+IP prefixes, BGP routing policies, and network topology. The Border Gateway 
+Protocol (BGP) plays a significant role in determining how your data is routed
+through the internet.
+
+Each router along the way extracts the destination address from the IP header 
+and routes it to the appropriate next hop. The time to live (TTL) field in the 
+IP header is decremented by one for each router that passes. The packet will be
+dropped if the TTL field reaches zero or if the current router has no space in 
+its queue (perhaps due to network congestion).
 
 This send and receive happens multiple times following the TCP connection flow:
 
