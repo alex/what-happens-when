@@ -27,17 +27,28 @@ Table of Contents
 
 The "g" key is pressed
 ----------------------
-The following sections explain the physical keyboard actions
-and the OS interrupts. When you press the key "g" the browser receives the
-event and the auto-complete functions kick in.
-Depending on your browser's algorithm and if you are in
-private/incognito mode or not various suggestions will be presented
-to you in the dropdown below the URL bar. Most of these algorithms sort
-and prioritize results based on search history, bookmarks, cookies, and
-popular searches from the internet as a whole. As you are typing
-"google.com" many blocks of code run and the suggestions will be refined
-with each keypress. It may even suggest "google.com" before you finish typing
-it.
+The "g" key is pressed
+
+Okay, so you've just hit that "g" key. Ever wonder what goes on behind the scenes? Well, buckle up!
+Imagine your keyboard as a mini theater. When you press "g," it's like a tiny actor hitting the stage—lights, camera, action! But instead of applause, it sends an electrical signal through a series of backstage circuits.
+
+Now, here's where it gets techy: this signal travels through your keyboard, dances through USB cables (or the magic of touchscreens), and lands on the lap of your computer. It's like a secret handshake that opens the door to a whole digital universe.
+
+Enter the Digital World
+
+As your "g" signal knocks on the computer's door, it sets off a chain reaction. The computer goes, "Ah, 'g' is in the building!" It's like telling the computer, "Hey, something's happening!"
+And then, bam! An interrupt (like a digital "Excuse me!") happens. The computer is now wide awake, ready to deal with your "g."
+
+The Dance of the Operating System
+
+In Windows, it's like your "g" message is translated into a formal letter (WM_KEYDOWN). This letter then politely informs the browser, "Hey, someone just pressed 'g.'"
+On macOS, it's more like a cool party invitation (KeyDown NSEvent). The message hits the OS X "WindowServer," and it's like, "Yo, apps, someone's throwing a 'g' party!"
+And for Linux users, it's a bit of code choreography. The "X server" takes the lead, mapping the keypress and passing the moves to the window manager. It's like a well-coordinated dance routine.
+
+What's Next?
+
+So, there you have it. A simple "g" press is transformed into a digital symphony, triggering a series of moves in the computer ballet. All in microseconds!
+Isn't it fascinating how a single key can set off this whole tech extravaganza?
 
 The "enter" key bottoms out
 ---------------------------
