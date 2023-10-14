@@ -209,24 +209,45 @@ Check HSTS list
 DNS lookup
 ----------
 
-* Browser checks if the domain is in its cache. (to see the DNS Cache in
-  Chrome, go to `chrome://net-internals/#dns <chrome://net-internals/#dns>`_).
+DNS (Domain Name System) lookup is the process of translating human-friendly
+domain names (like www.example.com) into IP addresses that computers can use to
+identify and communicate with each other over the internet.
+
+Here are the steps involved in a DNS lookup:
+
+* When you enter a website's URL in your web browser's address bar or click
+  on a link, your computer needs to know the IP address of the server hosting
+  that website. It initiates the DNS lookup process by sending a DNS query to
+  a DNS resolver.
+
+* The computer checks its local DNS cache first. This cache contains recently resolved
+  domain names and their corresponding IP addresses. If the domain name is found in the
+  cache and it's not expired, the IP address is returned without further queries.
+  (to see the DNS Cache in Chrome, go to `chrome://net-internals/#dns <chrome://net-internals/#dns>`_).
+
 * If not found, the browser calls ``gethostbyname`` library function (varies by
   OS) to do the lookup.
+
 * ``gethostbyname`` checks if the hostname can be resolved by reference in the
   local ``hosts`` file (whose location `varies by OS`_) before trying to
   resolve the hostname through DNS.
+
 * If ``gethostbyname`` does not have it cached nor can find it in the ``hosts``
   file then it makes a request to the DNS server configured in the network
   stack. This is typically the local router or the ISP's caching DNS server.
+
 * If the DNS server is on the same subnet the network library follows the
   ``ARP process`` below for the DNS server.
+
 * If the DNS server is on a different subnet, the network library follows
   the ``ARP process`` below for the default gateway IP.
 
 
 ARP process
 -----------
+ARP (Address Resolution Protocol) is a network protocol used to map an IP address
+to the corresponding physical MAC (Media Access Control) address on a local network.
+It's essential for communication between devices on the same subnet.
 
 In order to send an ARP (Address Resolution Protocol) broadcast the network
 stack library needs the target IP address to lookup. It also needs to know the
@@ -369,6 +390,12 @@ This send and receive happens multiple times following the TCP connection flow:
 
 TLS handshake
 -------------
+
+The TLS (Transport Layer Security) handshake is a crucial part of establishing
+a secure, encrypted connection between a client (such as a web browser) and a
+server (typically a web server). It ensures data confidentiality and integrity
+during data transmission. The TLS handshake process involves several steps:
+
 * The client computer sends a ``ClientHello`` message to the server with its
   Transport Layer Security (TLS) version, list of cipher algorithms and
   compression methods available.
@@ -522,12 +549,12 @@ to the browser it undergoes the below process:
 
 Browser
 -------
-
-The browser's functionality is to present the web resource you choose, by
-requesting it from the server and displaying it in the browser window.
-The resource is usually an HTML document, but may also be a PDF,
-image, or some other type of content. The location of the resource is
-specified by the user using a URI (Uniform Resource Identifier).
+A `web browser` is an application used by users mostly for accessing the
+web and the Internet. The browser's functionality is to present the web
+resource you choose, by requesting it from the server and displaying it
+in the browser window. The resource is usually an HTML document, but may
+also be a PDF, image, or some other type of content. The location of the
+resource is specified by the user using a URI (Uniform Resource Identifier).
 
 The way the browser interprets and displays HTML files is specified
 in the HTML and CSS specifications. These specifications are maintained
