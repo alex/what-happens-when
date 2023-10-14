@@ -413,6 +413,16 @@ control`_. This varies depending on the sender; the most common algorithms are
 * After reaching the slow-start threshold, the window increases additively for
   each packet acknowledged. If a packet is dropped, the window reduces
   exponentially until another packet is acknowledged.
+* During the additive increase phase, the windows size increases by a fixed value
+  for every acknowledged packet, which provides a more measured approach to congestion
+  control.
+* When a packet is dropped along the way, it's seen as a sign of network congestion.
+  In response, the client's congestion window size is significantly reduced in a 
+  controlled manner. This reduction is often don exponentially to prevent overloading
+  the network.
+* Additionally, the dropped packet is retransmitted. Retransmission ensures that 
+  the data is ultimately delivered, maintaining data reliability. The retransmitted
+  packet will then be subject to the congestion control mechanisms once more.
 
 HTTP protocol
 -------------
