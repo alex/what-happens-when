@@ -396,6 +396,7 @@ TLS handshake
 
 * From now on the TLS session transmits the application (HTTP) data encrypted
   with the agreed symmetric key.
+* At this point the server listens to incoming request on port 443
 
 If a packet is dropped
 ----------------------
