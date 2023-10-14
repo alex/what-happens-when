@@ -506,9 +506,20 @@ and IIS for Windows.
 * The server goes to pull the content that corresponds with the request,
   in our case it will fall back to the index file, as "/" is the main file
   (some cases can override this, but this is the most common method).
-* The server parses the file according to the handler. If Google
-  is running on PHP, the server uses PHP to interpret the index file, and
-  streams the output to the client.
+* The server parses the file according to the handler. If Google is running on PHP, the server uses PHP to interpret the index file, and streams the output to the client.
+
+
+SPDY Protocol: Enhancing Web Performance
+----------------------------------------
+
+In some cases, the web browser may attempt to negotiate an "upgrade" from HTTP to the SPDY protocol with the server. SPDY is designed to improve web performance and reduce page load times. Here's a brief overview:
+
+**Request for SPDY Upgrade:** If the client's browser supports SPDY, it sends a request to the server to upgrade the connection.
+
+**SPDY vs. HTTP:** SPDY optimizes the transfer of web content by multiplexing multiple streams over a single connection, prioritizing resources, and compressing headers. This leads to faster and more efficient data transfer.
+
+**Relation to HTTP/1.1:** SPDY is closely related to HTTP/1.1, and many features of SPDY have been incorporated into HTTP/2.0, the next evolution of the HTTP protocol. HTTP/2.0 continues the trend of improving web performance through features like header compression and multiplexing.
+
 
 Behind the scenes of the Browser
 ----------------------------------
