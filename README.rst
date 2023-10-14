@@ -27,7 +27,7 @@ Table of Contents
 
 The "g" key is pressed
 ----------------------
-The following sections explain the physical keyboard actions
+The following section explains the physical keyboard actions
 and the OS interrupts. When you press the key "g" the browser receives the
 event and the auto-complete functions kick in.
 Depending on your browser's algorithm and if you are in
@@ -168,7 +168,7 @@ Parse URL
 * The browser now has the following information contained in the URL (Uniform
   Resource Locator):
 
-    - ``Protocol``  "http"
+    - ``Protocol``  "http" or "https"
         Use 'Hyper Text Transfer Protocol'
 
     - ``Resource``  "/"
