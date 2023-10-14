@@ -1,9 +1,9 @@
 What happens when...
 ====================
 
-This repository is an attempt to answer the age-old interview question "What
-happens when you type google.com into your browser's address box and press
-enter?"
+The repository you mentioned, "what-happens-when," is a collaborative effort to answer, 
+the question "What happens when you type google.com into your browser's  
+address box and press enter?"
 
 Except instead of the usual story, we're going to try to answer this question
 in as much detail as possible. No skipping out on anything.
