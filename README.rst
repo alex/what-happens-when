@@ -663,6 +663,38 @@ Page Rendering
   via Direct3D/OpenGL. The GPU command buffer(s) are flushed to the GPU for
   asynchronous rendering and the frame is sent to the window server.
 
+Painting the Elements on the Screen
+-----------------------------------
+
+#### a. Rendering Layers
+
+- **Layer Organization**: To optimize rendering performance, the browser categorizes elements into layers. Layers are like transparent sheets stacked on top of each other, each containing a subset of the webpage's content. These layers are constructed based on the layout of the page and the visual properties of the elements. The purpose of creating layers is to determine which parts of the page can be painted together.
+
+- **Parallel Rendering**: Grouping elements into layers allows the browser to take advantage of parallel processing capabilities, particularly those of the Graphics Processing Unit (GPU). By rendering different layers in parallel, the browser can significantly improve performance. For example, background layers can be painted while foreground layers are still being processed.
+
+#### b. Creating Textures
+
+- **Texture Allocation**: Once the layers are identified, the browser allocates textures for each layer. Textures are essentially images representing the content within a layer. These textures contain the visual information that will be displayed on the screen.
+
+- **CPU and GPU Usage**: The allocation of textures can vary depending on the hardware and configurations. In some cases, the Central Processing Unit (CPU) is responsible for creating these textures, while in others, the task is offloaded to the Graphics Processing Unit (GPU). The choice between CPU and GPU depends on factors like hardware capabilities, browser settings, and the availability of hardware acceleration.
+
+#### c. Executing Rendering Commands
+
+- **Drawing Commands**: Each layer has a set of rendering commands associated with it. These commands provide detailed instructions on how to draw and render the content within that layer. Drawing commands include details on elements' positions, sizes, and visual properties.
+
+- **CPU or GPU Processing**: The CPU or GPU processes these commands based on the chosen rendering strategy. Modern browsers often prefer GPU processing due to its ability to handle parallel tasks efficiently.
+
+#### d. Flushing to the Screen
+
+- **Final Rendering**: After executing the rendering commands, the final rendered frame is generated. This frame represents the visual content of the web page.
+
+- **GPU Command Buffer**: The GPU command buffer, which holds the commands for drawing the content, is flushed. Flushing involves sending these commands to the GPU for execution.
+
+- **Displaying on the Screen**: The flushed frame is then displayed on the user's screen. This is what the user sees as the webpage's visual output.
+
+- **Dynamic Updates**: Any user interactions or changes to the webpage that occur subsequently will trigger this process again. For example, scrolling, animations, or JavaScript-driven updates will result in the browser repainting specific areas or layers as needed.
+
+
 GPU Rendering
 -------------
 
@@ -709,3 +741,4 @@ page rendering and painting.
 .. _`downgrade attack`: http://en.wikipedia.org/wiki/SSL_stripping
 .. _`OSI Model`: https://en.wikipedia.org/wiki/OSI_model
 .. _`Spanish`: https://github.com/gonzaleztroyano/what-happens-when-ES
+
