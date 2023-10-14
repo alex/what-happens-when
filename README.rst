@@ -517,7 +517,7 @@ Once the server supplies the resources (HTML, CSS, JS, images, etc.)
 to the browser it undergoes the below process:
 
 * Parsing - HTML, CSS, JS
-* Rendering - Construct DOM Tree → Render Tree → Layout of Render Tree →
+* Rendering - Construct DOM/CSSOM Tree → Render Tree → Layout of Render Tree →
   Painting the render tree
 
 Browser
