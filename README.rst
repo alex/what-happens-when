@@ -551,8 +551,7 @@ The components of the browsers are:
 * **User interface:** The user interface includes the address bar,
   back/forward button, bookmarking menu, etc. Every part of the browser
   display except the window where you see the requested page.
-* **Browser engine:** The browser engine marshals actions between the UI
-  and the rendering engine.
+* **Browser engine:** The browser enginer is responsible for managing communication between the user interface and the rendering engine, the browser engine ensures a coordinated and responsive user experience.
 * **Rendering engine:** The rendering engine is responsible for displaying
   requested content. For example if the requested content is HTML, the
   rendering engine parses HTML and CSS, and displays the parsed content on
