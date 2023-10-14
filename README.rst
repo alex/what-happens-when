@@ -209,21 +209,25 @@ Check HSTS list
 DNS lookup
 ----------
 
-* Browser checks if the domain is in its cache. (to see the DNS Cache in
-  Chrome, go to `chrome://net-internals/#dns <chrome://net-internals/#dns>`_).
-* If not found, the browser calls ``gethostbyname`` library function (varies by
-  OS) to do the lookup.
-* ``gethostbyname`` checks if the hostname can be resolved by reference in the
-  local ``hosts`` file (whose location `varies by OS`_) before trying to
-  resolve the hostname through DNS.
-* If ``gethostbyname`` does not have it cached nor can find it in the ``hosts``
-  file then it makes a request to the DNS server configured in the network
-  stack. This is typically the local router or the ISP's caching DNS server.
-* If the DNS server is on the same subnet the network library follows the
-  ``ARP process`` below for the DNS server.
-* If the DNS server is on a different subnet, the network library follows
-  the ``ARP process`` below for the default gateway IP.
+The Domain Name System (DNS) is an essential component of internet infrastructure that often goes unnoticed in our daily online interactions. It plays a crucial role in translating human-readable domain names into IP addresses, allowing our browsers to locate and connect to websites across the globe. In this section, we'll delve into the intricacies of a DNS lookup, exploring the steps involved in resolving a domain name to its corresponding IP address.
 
+* Checking the Browser Cache:
+When you type a website's URL into your browser's address bar, the first thing it does is check its DNS cache. The cache stores previously resolved domain names and their corresponding IP addresses. This cache can be accessed in Google Chrome by navigating to chrome://net-internals/#dns. If the domain is found in the cache, the browser can skip the time-consuming process of DNS resolution, making your web surfing experience faster and more efficient.
+
+* Using the gethostbyname Library Function:
+If the domain name is not found in the browser's cache, it turns to the underlying operating system to perform the DNS lookup. To do this, it employs a library function, gethostbyname. The specific library function used varies depending on the operating system in use. The purpose of this function is to resolve the domain name to an IP address.
+
+* Local Hosts File Lookup:
+Before attempting to resolve the domain through DNS, the gethostbyname function checks if the hostname can be resolved by reference in the local hosts file. This file is an operating system-specific text file that contains manual mappings of hostnames to IP addresses. If a match is found here, it is used, sparing the need to involve the DNS system. The location of the hosts file varies across different operating systems.
+
+* Requesting DNS Resolution:
+If neither the cache nor the local hosts file contain the required information, the gethostbyname function sends a request to the DNS server configured in the network stack. This DNS server is typically either the local router or the Internet Service Provider's (ISP) caching DNS server.
+
+* Local DNS Server and ARP Process:
+If the DNS server is on the same subnet as the client device, the network library follows the ARP (Address Resolution Protocol) process for the DNS server. ARP is responsible for mapping IP addresses to physical MAC addresses on a local network. This process ensures that the client can communicate with the DNS server effectively. This optimization is particularly useful in scenarios where the DNS server is physically close and can respond quickly.
+
+* Cross-Subnet DNS Server Resolution:
+In cases where the DNS server is on a different subnet, the network library follows a similar ARP process, but this time for the default gateway's IP address. The default gateway acts as an intermediary between the local network and external networks, including the internet. Once the ARP resolution is complete, the client can route its DNS requests through the gateway to the DNS server on the remote subnet.
 
 ARP process
 -----------
