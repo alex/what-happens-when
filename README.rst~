@@ -224,13 +224,6 @@ DNS lookup
 * If the DNS server is on a different subnet, the network library follows
   the ``ARP process`` below for the default gateway IP.
 
-A higher level version of DNS lookup will look like this:
-1. Our computer checks to see if it already knows the IP address of the domain we provided, If it does, it uses it. It can often get the domain locally from our hosts file, a local file that maps IP addresses to English(English? really…) names. It can also get the domain from local caches that our operating system or browser keeps. If it cannot find it at this level, …
-2. At this second stage, our computer hands things over to the resolver server(managed by our ISP) and checks the ISP(internet service providers) server cache to see if they know the IP address of the domain. If they know, all is cool and the response is sent to the computer. If at this level things are not resolved…
-3. The resolver sends a request to the root servers. Root servers are kind of like the dig bosses that sit on all domains, the dudes that are the backbone of the DNS system. They house/know where TLDs (Top-level domains) can be found.
-In an address like https://www.google.com, the .com part is the TLD that houses the Google domain. In case a domain was not found and the resolver sent us to our root, the root now sends us to the TLD server that our domain corresponds to, in the case of Google, the ‘.com’ TLD server. It could be ‘.net’, ‘.org’, ‘.sweet’ etc
-4. Once we arrive at our specific TLd from the root server, the TLD server then looks at our domain( the …google… part) and takes us to the authoritative nameserver. The authoritative nameserver is the dude who says, based on this address, this is where this computer is and hands us our IP.
-5. The final step is every step going backward and our computer knowing the exact IP address to connect to and get those cool cat videos. Voila, DNS resolved.
 
 ARP process
 -----------
