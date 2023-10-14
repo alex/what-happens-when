@@ -85,8 +85,8 @@ connection, but historically has been over PS/2 or ADB connections.
   ``screen controller`` then raises an interrupt reporting the coordinate of
   the keypress.
 
-- Then the mobile OS notifies the currently focused application of a press event
-  in one of its GUI elements (which now is the virtual keyboard application
+- Then the mobile OS (Operating System) notifies the currently focused application of a press event
+  in one of its GUI (Graphical User Interface) elements (which now is the virtual keyboard application
   buttons).
 
 - The virtual keyboard can now raise a software interrupt for sending a
@@ -206,7 +206,7 @@ Check HSTS list
   `downgrade attack`_, which is why the HSTS list is included in modern web
   browsers.)
 
-DNS lookup
+Domain Name System (DNS) lookup
 ----------
 
 * Browser checks if the domain is in its cache. (to see the DNS Cache in
@@ -230,7 +230,7 @@ ARP process
 
 In order to send an ARP (Address Resolution Protocol) broadcast the network
 stack library needs the target IP address to lookup. It also needs to know the
-MAC address of the interface it will use to send out the ARP broadcast.
+MAC (Media Access Control) address of the interface it will use to send out the ARP broadcast.
 
 The ARP cache is first checked for an ARP entry for our target IP. If it is in
 the cache, the library function returns the result: Target IP = MAC.
@@ -290,11 +290,11 @@ Switch:
 Now that the network library has the IP address of either our DNS server or
 the default gateway it can resume its DNS process:
 
-* The DNS client establishes a socket to UDP port 53 on the DNS server,
+* The DNS client establishes a socket to UDP (User Datagram Protocol) port 53 on the DNS server,
   using a source port above 1023.
 * If the response size is too large, TCP will be used instead.
 * If the local/ISP DNS server does not have it, then a recursive search is
-  requested and that flows up the list of DNS servers until the SOA is reached,
+  requested and that flows up the list of DNS servers until the SOA (Start Of Authority) is reached,
   and if found an answer is returned.
 
 Opening of a socket
@@ -323,7 +323,7 @@ At this point the packet is ready to be transmitted through either:
 * `WiFi`_
 * `Cellular data network`_
 
-For most home or small business Internet connections the packet will pass from
+For most home or small business Internet connections, the packet will pass from
 your computer, possibly through a local network, and then through a modem
 (MOdulator/DEModulator) which converts digital 1's and 0's into an analog
 signal suitable for transmission over telephone, cable, or wireless telephony
@@ -347,24 +347,24 @@ the TTL field reaches zero or if the current router has no space in its queue
 This send and receive happens multiple times following the TCP connection flow:
 
 * Client chooses an initial sequence number (ISN) and sends the packet to the
-  server with the SYN bit set to indicate it is setting the ISN
+  server with the SYN (Synchronize) bit set to indicate it is setting the ISN
 * Server receives SYN and if it's in an agreeable mood:
-   * Server chooses its own initial sequence number
+   * Server chooses its initial sequence number
    * Server sets SYN to indicate it is choosing its ISN
-   * Server copies the (client ISN +1) to its ACK field and adds the ACK flag
+   * Server copies the (client ISN +1) to its ACK (Acknowledge) field and adds the ACK flag
      to indicate it is acknowledging receipt of the first packet
 * Client acknowledges the connection by sending a packet:
    * Increases its own sequence number
-   * Increases the receiver acknowledgment number
+   * Increases the receiver acknowledgement number
    * Sets ACK field
 * Data is transferred as follows:
-   * As one side sends N data bytes, it increases its SEQ by that number
+   * As one side sends N data bytes, it increases its SEQ (Sequence number) by that number
    * When the other side acknowledges receipt of that packet (or a string of
      packets), it sends an ACK packet with the ACK value equal to the last
      received sequence from the other
 * To close the connection:
-   * The closer sends a FIN packet
-   * The other sides ACKs the FIN packet and sends its own FIN
+   * The closer sends a FIN (Finish) packet
+   * The other side ACKs the FIN packet and sends its own FIN
    * The closer acknowledges the other side's FIN with an ACK
 
 TLS handshake
@@ -437,7 +437,7 @@ otherwise it may not include the ``Host`` header in the request and the version
 specified in the ``GET`` request will either be ``HTTP/1.0`` or ``HTTP/0.9``.)
 
 HTTP/1.1 defines the "close" connection option for the sender to signal that
-the connection will be closed after completion of the response. For example,
+the connection will be closed after the completion of the response. For example,
 
     Connection: close
 
@@ -454,7 +454,7 @@ responds with a response of the form::
     [response headers]
 
 Followed by a single newline, and then sends a payload of the HTML content of
-``www.google.com``. The server may then either close the connection, or if
+``www.google.com``. The server may then either close the connection or if
 headers sent by the client requested it, keep the connection open to be reused
 for further requests.
 
@@ -467,7 +467,7 @@ the form::
     304 Not Modified
     [response headers]
 
-and no payload, and the web browser instead retrieve the HTML from its cache.
+and no payload, and the web browser instead retrieves the HTML from its cache.
 
 After parsing the HTML, the web browser (and server) repeats this process
 for every resource (image, CSS, favicon.ico, etc) referenced by the HTML page,
@@ -507,14 +507,14 @@ and IIS for Windows.
   in our case it will fall back to the index file, as "/" is the main file
   (some cases can override this, but this is the most common method).
 * The server parses the file according to the handler. If Google
-  is running on PHP, the server uses PHP to interpret the index file, and
+  is running on PHP, the server uses PHP to interpret the index file and
   streams the output to the client.
 
 Behind the scenes of the Browser
 ----------------------------------
 
 Once the server supplies the resources (HTML, CSS, JS, images, etc.)
-to the browser it undergoes the below process:
+to the browser, it undergoes the below process:
 
 * Parsing - HTML, CSS, JS
 * Rendering - Construct DOM Tree → Render Tree → Layout of Render Tree →
@@ -554,7 +554,7 @@ The components of the browsers are:
 * **Browser engine:** The browser engine marshals actions between the UI
   and the rendering engine.
 * **Rendering engine:** The rendering engine is responsible for displaying
-  requested content. For example if the requested content is HTML, the
+  requested content. For example, if the requested content is HTML, the
   rendering engine parses HTML and CSS, and displays the parsed content on
   the screen.
 * **Networking:** The networking handles network calls such as HTTP requests,
@@ -579,7 +579,7 @@ document from the networking layer. This will usually be done in 8kB chunks.
 
 The primary job of the HTML parser is to parse the HTML markup into a parse tree.
 
-The output tree (the "parse tree") is a tree of DOM element and attribute
+The output tree (the "parse tree") is a tree of DOM elements and attribute
 nodes. DOM is short for Document Object Model. It is the object presentation
 of the HTML document and the interface of HTML elements to the outside world
 like JavaScript. The root of the tree is the "Document" object. Prior to
@@ -611,7 +611,7 @@ The algorithm consists of two stages: tokenization and tree construction.
 The browser begins fetching external resources linked to the page (CSS, images,
 JavaScript files, etc.).
 
-At this stage the browser marks the document as interactive and starts
+At this stage, the browser marks the document as interactive and starts
 parsing scripts that are in "deferred" mode: those that should be
 executed after the document is parsed. The document state is
 set to "complete" and a "load" event is fired.
