@@ -673,7 +673,7 @@ GPU Rendering
   software layers split the task into multiple pieces, so it can take advantage
   of ``GPU`` massive parallelism for float point calculations required for
   the rendering process.
-
+* After the final layer positions are computed and the composite commands are issued, the rendered web page is displayed to the user on their browser window. The browser continues to listen for user interactions and events, such as clicks, scrolls, or keyboard inputs, which trigger corresponding actions within the browser. These actions could include navigating to another page, submitting forms, or initiating downloads. Additionally, modern browsers often run various security checks in the background, ensuring that the user's browsing experience remains safe and protected against malicious activities. Overall, this intricate process seamlessly unfolds within a fraction of a second, allowing users to access the vast world of information on the internet with ease and speed.
 
 Window Server
 -------------
