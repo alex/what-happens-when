@@ -223,7 +223,30 @@ DNS lookup
   ``ARP process`` below for the DNS server.
 * If the DNS server is on a different subnet, the network library follows
   the ``ARP process`` below for the default gateway IP.
+Here are the dns lookup processes
+Local DNS Cache:
+Your device’s operating system may check its local DNS cache to see if it already knows the IP address associated with the requested domain. If it finds a match, it can skip the rest of the lookup process and use the cached result.
 
+Operating System Resolver:
+If the domain’s IP address is not found in the local cache, your device’s operating system (e.g., Windows, macOS, or Linux) will initiate the DNS resolution process.
+Recursive DNS Server:
+Your operating system sends a DNS query to a recursive DNS server. Recursive DNS servers are typically provided by your internet service provider (ISP) or a third-party service like Google Public DNS or OpenDNS.
+Root DNS Servers:
+If the recursive DNS server does not have the IP address for the requested domain in its cache, it begins the DNS lookup process by querying the root DNS servers. There are 13 root DNS servers distributed around the world. The recursive server asks them for information about the top-level domain (TLD) in the requested domain name, such as “.com.”
+TLD DNS Servers:
+The root DNS servers respond with the IP addresses of the authoritative DNS servers responsible for the specific TLD. For example, if the domain is “example.com,” the root servers provide the IP addresses of the “.com” TLD DNS servers.
+Authoritative DNS Servers:
+The recursive DNS server contacts the TLD DNS servers, which then provide the IP addresses of the authoritative DNS servers for the second-level domain (“example.com”). These authoritative DNS servers have the specific information for the domain.
+Query to Authoritative DNS Server:
+The recursive DNS server sends a query to the authoritative DNS server for the requested domain (e.g., “example.com”).
+Response from Authoritative DNS Server:
+The Authoritative DNS server responds with the IP address associated with the requested domain.
+Cache Update:
+The recursive DNS server caches this IP address to expedite future lookups.
+Return to Operating System:
+The recursive DNS server sends the IP address back to the operating system resolver.
+Application Request Fulfillment:
+The operating system provides the IP address to the application (e.g., your web browser), which can then establish a connection to the web server hosting the website
 
 ARP process
 -----------
