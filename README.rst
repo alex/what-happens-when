@@ -191,6 +191,8 @@ Convert non-ASCII Unicode characters in the hostname
 * Since the hostname is ``google.com`` there won't be any, but if there were
   the browser would apply `Punycode`_ encoding to the hostname portion of the
   URL.
+* For example Punycode encoding enables websites with non-Latin characters in
+  their domain names to function smoothly in standard web browsers.
 
 Check HSTS list
 ---------------
