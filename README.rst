@@ -367,6 +367,26 @@ This send and receive happens multiple times following the TCP connection flow:
    * The other sides ACKs the FIN packet and sends its own FIN
    * The closer acknowledges the other side's FIN with an ACK
 
+User-Agent and Headers
+-------------
+When a browser sends a request to a server, it includes additional information in the form of headers.
+One crucial header is the User-Agent, which provides details about the browser and device making the request.
+
+User-Agent Example:
+
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36
+
+In this example, the User-Agent string indicates that the browser is Google Chrome version 91 running on Windows 10 (64-bit).
+
+Other Headers:
+Apart from the User-Agent, there are other headers sent with an HTTP request, such as:
+
+Cookies: Contains information stored on the user's device, often used for session management.
+Accept-Language: Informs the server about the preferred language of the user.
+Referer: Indicates the URL of the page that referred the user to the current page.
+
+Understanding and utilizing these headers can help websites customize content based on user preferences and maintain session information.
+
 TLS handshake
 -------------
 * The client computer sends a ``ClientHello`` message to the server with its
