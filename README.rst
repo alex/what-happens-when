@@ -1,5 +1,5 @@
-What happens when.....
-======================
+What happens when...
+====================
 
 This repository is an attempt to answer the age-old interview question "What
 happens when you type google.com into your browser's address box and press
@@ -17,6 +17,51 @@ This is all licensed under the terms of the `Creative Commons Zero`_ license.
 Read this in `简体中文`_ (simplified Chinese), `日本語`_ (Japanese), `한국어`_
 (Korean) and `Spanish`_. NOTE: these have not been reviewed by the alex/what-happens-when
 maintainers.
+
+The detailed explanation you provided covers a comprehensive view of what happens when you type "google.com" into your browser's address bar and press enter. Here's a summary of the key steps involved:
+
+Keyboard Input: The process starts with the user typing "google.com" into the browser's address bar. The browser's auto-complete functions may provide suggestions as you type.
+
+Enter Key Pressed: When the "Enter" key is pressed, an electrical circuit is closed, which generates a keycode for the key press. This keycode is sent to the computer's operating system via USB or other connections.
+
+OS Interrupt (Windows): On Windows, an interrupt is triggered, and a WM_KEYDOWN message is sent to the application.
+
+OS Interrupt (macOS): On macOS, an NSEvent is sent to the app, which processes the key press event.
+
+OS Interrupt (Linux): On Linux, the Xorg server listens for keycodes, processes them, and forwards the information to the active window or application.
+
+Parse URL: The browser parses the URL, extracts the protocol (http), the resource ("/"), and checks if it's a URL or a search term.
+
+Convert Non-ASCII Characters: Non-ASCII Unicode characters in the hostname (if present) are converted using Punycode encoding.
+
+Check HSTS List: The browser checks its HSTS list to determine whether to use HTTPS for the request.
+
+DNS Lookup: The browser checks its DNS cache, and if the domain isn't found, it performs a DNS lookup by sending a request to the DNS server.
+
+ARP Process: If needed, an ARP process is performed to resolve the IP address of the DNS server or default gateway.
+
+Opening of a Socket: The browser requests a socket connection to the destination server, specifying the IP address and port number.
+
+TLS Handshake: If the website uses HTTPS, a TLS handshake is initiated to establish a secure connection between the client and the server.
+
+HTTP Protocol: The browser sends an HTTP request to the server, requesting the page content.
+
+HTTP Server Request Handling: The server handles the request, processes the URL and headers, and generates a response. This may involve server-side scripting and database queries.
+
+HTML Parsing: The browser parses the HTML content, constructs a Document Object Model (DOM), and renders the page.
+
+CSS Interpretation: CSS files are parsed, and the styles are applied to the DOM elements to render the page with the correct styles.
+
+Page Rendering: The browser constructs a render tree, calculates the layout, and renders the page. Complex rendering steps are involved when elements are floated, absolutely or relatively positioned, etc.
+
+GPU Rendering: Depending on the available hardware and software, GPU rendering may be used to accelerate graphics rendering for better performance.
+
+Window Server: The rendered page layers are sent to the window server for compositing and display.
+
+Post-rendering and User-Induced Execution: After rendering, the browser executes JavaScript code, plugins may run, and additional network requests can be made. The page may be modified, and another round of rendering may occur.
+
+This comprehensive process ensures that when you type "google.com" and press enter, your browser fetches and displays the Google homepage. It involves a complex interplay of hardware, software, and network components to make this happen seamlessly.
+
 
 Table of Contents
 ====================
@@ -709,3 +754,5 @@ page rendering and painting.
 .. _`downgrade attack`: http://en.wikipedia.org/wiki/SSL_stripping
 .. _`OSI Model`: https://en.wikipedia.org/wiki/OSI_model
 .. _`Spanish`: https://github.com/gonzaleztroyano/what-happens-when-ES
+
+
