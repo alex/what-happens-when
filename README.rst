@@ -209,20 +209,31 @@ Check HSTS list
 DNS lookup
 ----------
 
-* Browser checks if the domain is in its cache. (to see the DNS Cache in
-  Chrome, go to `chrome://net-internals/#dns <chrome://net-internals/#dns>`_).
-* If not found, the browser calls ``gethostbyname`` library function (varies by
-  OS) to do the lookup.
-* ``gethostbyname`` checks if the hostname can be resolved by reference in the
-  local ``hosts`` file (whose location `varies by OS`_) before trying to
-  resolve the hostname through DNS.
-* If ``gethostbyname`` does not have it cached nor can find it in the ``hosts``
-  file then it makes a request to the DNS server configured in the network
-  stack. This is typically the local router or the ISP's caching DNS server.
-* If the DNS server is on the same subnet the network library follows the
-  ``ARP process`` below for the DNS server.
-* If the DNS server is on a different subnet, the network library follows
-  the ``ARP process`` below for the default gateway IP.
+# DNS Lookup Process
+
+This section outlines the process of DNS (Domain Name System) lookup that occurs when you type a URL in your web browser and press Enter. DNS is a fundamental part of how the internet functions, translating human-readable domain names into machine-readable IP addresses.
+
+## Browser DNS Resolution
+
+*DNS Cache Check**: The web browser first checks its local DNS cache to see if the requested domain is already stored. Cached entries include domain-to-IP mappings with associated Time to Live (TTL) values.
+
+*`gethostbyname` Function**: If the domain is not found in the cache or the cache entry's TTL has expired, 
+the browser uses the `gethostbyname` function, a system-level call that queries the local DNS resolver to find 
+the IP address associated with the hostname.
+
+*Local `hosts` File**: The browser also checks the local `hosts` file on the operating system. 
+This file allows manual configurations of hostname-to-IP mappings and can be useful for local testing or custom IP resolutions.
+
+*DNS Server Request**: When neither the cache nor the `hosts` file has the required DNS entry, the `gethostbyname` function sends a request to the DNS server. This DNS server is typically configured in the network settings, often managed by the Internet Service Provider (ISP).
+
+**DNS Server Location**:
+   *Same Subnet**: If the DNS server is on the same local network subnet as the browser, the network library uses ARP (Address Resolution Protocol) to discover the MAC address of the DNS server. Once the MAC address is known, the browser sends DNS queries directly to the server.
+   *Different Subnet**: If the DNS server is on a different network subnet, the network library follows the ARP process to determine the MAC address of the default gateway. The browser then sends DNS queries to the gateway, which forwards them to the DNS server.
+
+This multistep process ensures that the browser can resolve domain names to IP addresses, enabling users to access websites on the internet. DNS is a critical component of the web stack, making web browsing user-friendly by handling the translation from human-readable domain names to machine-readable IP addresses.
+
+For in-depth technical details and specific commands for DNS resolution, you can explore the source code and documentation of your browser's network stack.
+
 
 
 ARP process
