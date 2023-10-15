@@ -1,0 +1,178 @@
+Understanding the Web Stack: From URL to Web Page
+Victor Mayowa
+Victor Mayowa
+
+6 min read
+·
+1 hour ago
+
+Listen
+
+
+Share
+
+
+More
+
+
+UML diagram to show flow of process
+Tool: PlantUml
+Introduction
+When you type https://www.google.com into your browser and hit Enter, a complex chain of events is set into motion, ultimately leading to the familiar Google search page appearing on your screen. In this blog post, we’ll break down the process step by step, providing insights into the inner workings of the web stack.
+
+DNS Request
+The journey begins with a Domain Name System (DNS) request. The browser needs to find out the IP address associated with www.google.com. It sends a DNS query to a DNS resolver, which acts as a phonebook for the internet. The resolver looks up the IP address and returns it to the browser.
+
+This DNS request is crucial as it translates human-readable domain names into IP addresses, allowing browsers to locate web servers. DNS is distributed worldwide, and multiple DNS resolvers work in tandem to efficiently handle these requests. It's worth noting that DNS requests can be cached at various levels, optimizing future lookups for frequently visited websites.
+
+Practical Example
+import socket
+
+# Resolve domain name to IP address
+ip_address = socket.gethostbyname(’www.google.com’)
+print(f’IP Address for www.google.com: {ip_address}’)
+Explanation: In the first step, we use Python’s socket module to perform a DNS request. This converts the human-readable domain name "www.google.com" into an IP address, which is needed to establish a connection.
+
+TCP/IP
+Armed with the IP address, the browser initiates a Transmission Control Protocol (TCP) connection. This is the foundation of internet communication. It ensures reliable and ordered delivery of data packets between the client (your browser) and the server (Google's servers).
+
+TCP/IP enables the establishment of a connection-oriented session, allowing data to be transmitted reliably between devices on a network. It breaks down large pieces of data into smaller packets, which are reassembled at the destination. This protocol suite is essential for the seamless flow of information across the internet.
+
+Practical Example
+import socket
+
+# Create a TCP/IP socket
+client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+server_address = ('www.google.com', 80)
+
+# Connect the socket to the server's address
+client_socket.connect(server_address)
+
+Explanation: With the IP address obtained from the DNS request, we create a TCP/IP socket. This socket is like a communication channel that allows our client to talk to the server. We specify the server’s address (www.google.com) and the port (80) commonly used for HTTP.
+
+Firewall
+As the connection is established, it must pass through firewalls, which act as security barriers. Firewalls are a critical component in network security, filtering incoming and outgoing traffic based on predefined rules. They protect against unauthorized access and potentially malicious activities.
+
+Firewalls can be implemented at various levels, including network-level firewalls (which operate at the IP address and port level) and application-level firewalls (which monitor specific applications or services). Their role is to ensure that only legitimate and safe traffic is allowed to pass through, enhancing the security of the network.
+
+Practical Example
+Explanation: Firewalls are crucial for network security. This code adds a rule to a hypothetical firewall, blocking all incoming traffic from a specific IP address (192.168.1.100). Firewalls act as gatekeepers, allowing or denying network traffic based on predefined rules.
+
+HTTPS/SSL
+In today’s internet landscape, security is paramount. To protect sensitive information exchanged between your browser and the server, a secure connection is established using Hypertext Transfer Protocol Secure (HTTPS) and Secure Sockets Layer (SSL) or its successor, Transport Layer Security (TLS).
+
+HTTPS encrypts the data being transmitted, making it significantly harder for unauthorized parties to intercept or manipulate the information. SSL/TLS certificates validate the authenticity of the server, assuring you that you are indeed communicating with the intended website.
+
+This encryption is vital, especially when handling sensitive data such as passwords or financial information. It provides users with confidence that their interactions with the website are secure and private.
+
+Practical Example
+import ssl
+import urllib.request
+
+# Create an SSL context
+context = ssl.create_default_context()
+
+# Make an HTTPS request
+with urllib.request.urlopen('https://www.google.com', context=context) as response:
+    html = response.read()
+
+Explanation: When accessing secure websites (HTTPS), encryption is used to protect data. Here, we create an SSL context to establish a secure connection. The urllib.request.urlopen function makes an HTTPS request to www.google.com, using the SSL context to ensure secure communication.
+
+Load-Balancer
+For large-scale websites like Google, distributing incoming traffic efficiently across multiple servers is essential. This is where load balancers come into play. Load balancers act as traffic managers, ensuring that each server in the cluster receives an equitable share of requests.
+
+Load balancing enhances the website's availability, performance, and reliability. If one server becomes overwhelmed or experiences an issue, the load balancer redirects traffic to healthy servers, minimizing downtime and optimizing user experience.
+
+Practical Example
+Explanation: Load balancers distribute incoming requests across multiple servers to ensure optimal performance and reliability. In this code, we’re using the requests library to send a GET request to a hypothetical load balancer at http://load-balancer.com.
+
+Web Server
+Once the request reaches the server, a web server processes it. Web servers are software applications responsible for handling HTTP requests. They retrieve the requested web page or resource and send it back to the client’s browser.
+
+Popular web servers include Apache, Nginx, and Microsoft Internet Information Services (IIS). They are configured to understand various file types and generate appropriate responses. For example, they can serve static files like HTML, CSS, and JavaScript, as well as dynamically generated content from databases or application servers.
+
+Practical Example
+from http.server import SimpleHTTPRequestHandler, HTTPServer
+
+# Define the server's address
+server_address = ('', 8000)
+
+# Create a simple HTTP server
+httpd = HTTPServer(server_address, SimpleHTTPRequestHandler)
+
+# Start the server
+httpd.serve_forever()
+
+Explanation: We’re setting up a basic web server using Python’s built-in http.server module. This server listens on port 8000, and when a request is received, it responds with the content of the requested file or directory.
+
+Application Server
+In many cases, web servers need assistance to generate dynamic content. This is where application servers come in. Application servers run the backend code of web applications, processing requests, interacting with databases, and performing computations.
+
+Frameworks like Django (Python), Ruby on Rails (Ruby), and Node.js (JavaScript) are commonly used to build web applications. The application server executes the code, generates HTML pages, and sends them back to the web server for delivery to the client.
+
+Practical Example
+from flask import Flask
+
+app = Flask(__name__)
+
+@app.route('/')
+def hello_world():
+    return 'Hello, World!'
+
+if __name__ == '__main__':
+    app.run(debug=True)
+Explanation: Application servers handle the logic and functionality of web applications. In this example, we’re using the Flask framework to create a simple web application. When a user accesses the root URL, it returns the text "Hello, World!"
+
+Database
+For applications that rely on persistent data storage, databases are crucial. They store, organize, and manage data, making it accessible for retrieval and manipulation. Common types of databases include relational databases like MySQL and PostgreSQL, as well as NoSQL databases like MongoDB.
+
+Application servers interact with databases to perform tasks such as user authentication, retrieving product information, or storing user-generated content. They use Structured Query Language (SQL) or other query languages to communicate with the database.
+
+Practical Example
+import sqlite3
+
+# Connect to the database (or create if it doesn't exist)
+conn = sqlite3.connect('example.db')
+
+# Create a cursor object to execute SQL queries
+cursor = conn.cursor()
+
+# Execute a query to create a table
+cursor.execute('''CREATE TABLE users (id INTEGER PRIMARY KEY, name TEXT)''')
+
+# Insert data into the table
+cursor.execute("INSERT INTO users (name) VALUES ('John Doe')")
+
+# Commit the changes
+conn.commit()
+
+# Close the connection
+conn.close()
+
+Explanation: Databases are essential for storing and retrieving data. In this example, we’re using SQLite, a lightweight database engine. We create a connection to a database file (or create it if it doesn’t exist), create a table, insert data, commit the changes, and finally close the connection.
+
+Conclusion
+In summary, when you type "https://www.google.com" into your browser, you initiate a complex process involving DNS, TCP/IP, firewalls, HTTPS/SSL, load balancers, web servers, application servers, and databases. Each component plays a crucial role in delivering the web page to your browser, ensuring a secure, efficient, and reliable experience.
+
+About the Author:
+Victor Mayowa
+Data Scientist || Public Health Physician
+
+Connect with me on LinkedIn: (LinkedIn)https://www.linkedin.com/in/victor-mayowa-054a98200
+
+Acknowledgments:
+I would like to express my gratitude to Olayinka Adeleye for their valuable insights and feedback in my journey into the tech space.
+
+Full Stack Developer
+Webstack
+
+
+
+
+Victor Mayowa
+Edit profile
+Written by Victor Mayowa
+1 Follower
+Medical Doctor || Data Scientist || Advocate for AI in Public Health
+
+
