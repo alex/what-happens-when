@@ -1,0 +1,23 @@
+Address Resolution Protocol (ARP):
+
+DNS resolution is a crucial step in the process of translating human-readable domain names, like "www.google.com," into IP addresses that computers and servers can use to communicate. While the DNS lookup process typically involves querying DNS servers, there's another important aspect to consider, which is the Address Resolution Protocol (ARP).
+1. DNS Lookup:
+Before diving into ARP, it's essential to understand how DNS lookup works. When you type a URL into your browser and press Enter, the following steps take place:
+
+The browser checks if the domain is in its cache. This cache contains previously resolved domain-to-IP mappings, allowing for faster subsequent visits to the same site.
+If the domain is not found in the cache, the browser initiates a DNS lookup.
+The gethostbyname library function (the specific library may vary by OS) is called to perform the DNS lookup.
+This function first checks if the hostname can be resolved by reference in the local hosts file, whose location varies by OS. The hosts file can contain manual mappings of hostnames to IP addresses.
+If the hostname is not found in the local hosts file, the DNS lookup process proceeds further.
+2. ARP Process:
+
+ARP, or Address Resolution Protocol, comes into play when the DNS server is on the same subnet as the client's network. In this scenario, the network library follows the ARP process to resolve the DNS server's MAC (Media Access Control) address.
+
+ARP is essential for mapping IP addresses to MAC addresses, as data packets are sent across a local network. ARP operates at the data link layer of the OSI model and helps determine the hardware address associated with a given IP address.
+
+When the DNS server is on a different subnet, the network library follows a similar ARP process, but for the default gateway IP address. The default gateway serves as the router responsible for forwarding packets between different subnets.
+
+During the ARP process, the client's network stack sends an ARP request packet to determine the MAC address associated with the destination IP address (either the DNS server or the default gateway). This request is broadcast on the local network, and the device with the matching IP address responds with its MAC address.
+
+Once the client has obtained the MAC address, it can construct Ethernet frames to send data packets to the intended destination.
+Understanding ARP in the DNS resolution process is vital because it ensures that data packets are correctly routed and delivered to the appropriate destination, whether that's a DNS server or a router serving as the gateway to other subnets.
