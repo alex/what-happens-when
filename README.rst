@@ -39,62 +39,77 @@ popular searches from the internet as a whole. As you are typing
 with each keypress. It may even suggest "google.com" before you finish typing
 it.
 
-The "enter" key bottoms out
----------------------------
+The Journey of a Keystroke: Unraveling the Magic Behind "Enter"
+---------------------------------------------------------------
 
-To pick a zero point, let's choose the Enter key on the keyboard hitting the
-bottom of its range. At this point, an electrical circuit specific to the enter
-key is closed (either directly or capacitively). This allows a small amount of
-current to flow into the logic circuitry of the keyboard, which scans the state
-of each key switch, debounces the electrical noise of the rapid intermittent
-closure of the switch, and converts it to a keycode integer, in this case 13.
-The keyboard controller then encodes the keycode for transport to the computer.
-This is now almost universally over a Universal Serial Bus (USB) or Bluetooth
-connection, but historically has been over PS/2 or ADB connections.
 
-*In the case of the USB keyboard:*
+**The Initial Spark**
 
-- The USB circuitry of the keyboard is powered by the 5V supply provided over
-  pin 1 from the computer's USB host controller.
+The "Enter" key, seemingly a simple component of our keyboards, initiates a
+series of intricate processes when pressed. Let's delve into the underlying
+mechanisms that come into play upon hitting the "Enter" key.
 
-- The keycode generated is stored by internal keyboard circuitry memory in a
-  register called "endpoint".
+**The Wired Keyboard Tale**
 
-- The host USB controller polls that "endpoint" every ~10ms (minimum value
-  declared by the keyboard), so it gets the keycode value stored on it.
+When dealing with a traditional wired keyboard:
 
-- This value goes to the USB SIE (Serial Interface Engine) to be converted in
-  one or more USB packets that follow the low-level USB protocol.
+- The Electrical Ripples: As you press down, the "Enter" key closes an electrical
+circuit, signaling a minuscule current flow into the keyboard's logic circuitry.
 
-- Those packets are sent by a differential electrical signal over D+ and D-
-  pins (the middle 2) at a maximum speed of 1.5 Mb/s, as an HID
-  (Human Interface Device) device is always declared to be a "low-speed device"
-  (USB 2.0 compliance).
+- Decoding the Keystroke: The keyboard scrutinizes the state of each key switch,
+smoothing out the electrical noise caused by rapid intermittent closures,
+eventually assigning a specific numerical code to the "Enter" key, typically 13.
 
-- This serial signal is then decoded at the computer's host USB controller, and
-  interpreted by the computer's Human Interface Device (HID) universal keyboard
-  device driver.  The value of the key is then passed into the operating
-  system's hardware abstraction layer.
+- Embarking on the USB Journey: Subsequently, the keyboard controller encodes the
+keycode, typically transmitted via Universal Serial Bus (USB) or Bluetooth
+connectivity in modern setups. Earlier connections involved PS/2 or ADB interfaces.
 
-*In the case of Virtual Keyboard (as in touch screen devices):*
+**Dissecting the USB Expedition**
 
-- When the user puts their finger on a modern capacitive touch screen, a
-  tiny amount of current gets transferred to the finger. This completes the
-  circuit through the electrostatic field of the conductive layer and
-  creates a voltage drop at that point on the screen. The
-  ``screen controller`` then raises an interrupt reporting the coordinate of
-  the keypress.
+Delving further into the USB transmission specifics:
 
-- Then the mobile OS notifies the currently focused application of a press event
-  in one of its GUI elements (which now is the virtual keyboard application
-  buttons).
+- The Power Source: Within the USB circuitry, the keyboard draws power
+from the host computer's 5V supply through designated pins.
+Memory Imprints: The generated keycode finds its temporary abode
+within the internal memory of the keyboard circuitry, residing in a
+register known as the "endpoint."
 
-- The virtual keyboard can now raise a software interrupt for sending a
-  'key pressed' message back to the OS.
+- The Polling Ritual: The host USB controller diligently polls this "endpoint" at
+regular intervals, typically every ~10ms, to retrieve the stored keycode value.
 
-- This interrupt notifies the currently focused application of a 'key pressed'
-  event.
+- The Transformative Journey: This value undergoes conversion within the USB Serial
+Interface Engine, materializing into one or more USB packets adhering to the
+USB protocol's intricate dance.
 
+- Transmission Medium: These packets embark on their journey, propelled by a differential
+electrical signal coursing through designated D+ and D- pins, adhering to the standardized
+USB 2.0 compliance regulations.
+
+- The Digital Rebirth: At the receiving end, the computer's host USB controller decodes 
+he serial signal, allowing the HID universal keyboard device driver to interpret the
+keystroke value. The operating system's hardware abstraction layer seamlessly incorporates
+this data, ready for the next command.
+
+**The Virtual Realm: Touch Screens and Beyond**
+
+In the case of virtual keyboards, such as those on touch screens:
+
+- Capacitive Sensing: A touch on the screen triggers a transfer of minute current,
+completing an intricate circuit within the electrostatic field of the conductive layer,
+culminating in a specific voltage drop at the point of touch.
+
+- The OS Alert: The screen controller promptly notifies the operating system of the
+touch event's precise coordinates.
+
+- Navigating the OS Landscape: The OS then relays this information to the relevant
+application, signaling a "key pressed" event within the virtual keyboard's domain.
+
+- The Final Act: The application generates a software interrupt, paving the way for
+the OS to pass on the "key pressed" event to the focused application, allowing for
+seamless interaction within the digital ecosystem.
+
+The journey of the humble "Enter" key, from a physical action to a digital event,
+reflects the intricate integration of hardware and software in the realm of modern computing.
 
 Interrupt fires [NOT for USB keyboards]
 ---------------------------------------
