@@ -513,12 +513,20 @@ and IIS for Windows.
 Behind the scenes of the Browser
 ----------------------------------
 
-Once the server supplies the resources (HTML, CSS, JS, images, etc.)
-to the browser it undergoes the below process:
+Once the server supplies the resources (HTML, CSS, JS, images, etc.) to the browser, it undergoes the below process:
 
-* Parsing - HTML, CSS, JS
-* Rendering - Construct DOM Tree → Render Tree → Layout of Render Tree →
-  Painting the render tree
+Parsing - HTML, CSS, JS
+
+- **HTML Parsing:** The browser dissects the HTML code with meticulous precision, scrutinizing each tag and attribute, to understand the structure and content of the web page.
+- **CSS Parsing:** Simultaneously, the browser delves into the CSS, deciphering the styles and layouts prescribed for the elements, envisioning the page's visual presentation.
+- **JavaScript Parsing:** If JavaScript is in play, it's analyzed with a discerning eye, unraveling its logic and functionality.
+
+Rendering
+
+- **Constructing the DOM Tree:** The browser embarks on assembling the Document Object Model (DOM) tree, meticulously crafting a digital representation of the page's structure and content, with each element having its place and purpose.
+- **Building the Render Tree:** In tandem, a Render Tree takes shape, capturing not just the structure but also the styling and layout cues, reflecting how each element should appear on the screen.
+- **Layout of the Render Tree:** A meticulous choreography unfolds as the browser calculates the precise layout of each element, ensuring they harmonize and find their rightful positions on the virtual stage.
+- **Painting the Render Tree:** In the grand finale, the browser wields its brush to paint each element on the screen, infusing color, texture, and life into the web page, bringing it to life for your eyes to behold.
 
 Browser
 -------
