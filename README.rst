@@ -106,6 +106,15 @@ functions (``interrupt handlers``) which are supplied by the kernel. When an
 interrupt arrives, the CPU indexes the IDT with the interrupt vector and runs
 the appropriate handler. Thus, the kernel is entered.
 
+It's important to note that while this process holds for most traditional keyboards,
+USB keyboards typically follow a different communication protocol and do not rely 
+on this interrupt-based mechanism. USB keyboards utilize a more complex data exchange
+process involving USB host controllers and device drivers, which differs from 
+the direct IRQ handling described above.
+This distinction is particularly relevant in modern computing environments 
+where USB peripherals are prevalent.
+
+
 (On Windows) A ``WM_KEYDOWN`` message is sent to the app
 --------------------------------------------------------
 
