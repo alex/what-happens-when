@@ -223,6 +223,20 @@ DNS lookup
   ``ARP process`` below for the DNS server.
 * If the DNS server is on a different subnet, the network library follows
   the ``ARP process`` below for the default gateway IP.
+  DNS Request:
+
+>- When you type a URL, such as “https://www.google.com," your browser needs
+to know the IP address of the destination server.
+>- Your browser sends a DNS query to a DNS server.
+>- This server could be provided by your Internet Service Provider (ISP) 
+>- or a public DNS service like Google’s 8.8.8.8.
+>- The DNS server looks up the IP address associated with “www.google.com"
+>- in its database and returns it to your browser.
+>- If the IP is not in its cache, it may perform a recursive search 
+>- through the DNS hierarchy until it finds the IP address.
+
+>- . More about DNS and how it works , in the link How DNS works. What connects websites to IP addresses?
+>- whit more interesting photos and simplified terms and motion gifs
 
 
 ARP process
