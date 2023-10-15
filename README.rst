@@ -369,19 +369,27 @@ This send and receive happens multiple times following the TCP connection flow:
 
 TLS handshake
 -------------
-* The client computer sends a ``ClientHello`` message to the server with its
-  Transport Layer Security (TLS) version, list of cipher algorithms and
-  compression methods available.
+* The client computer sends a ``ClientHello`` message to the server.
+  ClientHello contains:
+      * Supported TLS versions (e.g., TLS 1.2, TLS 1.3).
+      * A list of supported cipher suites.
+      * A list of supported compression methods.
+      * A random number, ClientRandom.
+      * Session ID for session resumption (if applicable).
+      * Extensions (e.g., Server Name Indication (SNI) to indicate which host it's trying to connect to on shared servers).
 
-* The server replies with a ``ServerHello`` message to the client with the
-  TLS version, selected cipher, selected compression methods and the server's
-  public certificate signed by a CA (Certificate Authority). The certificate
-  contains a public key that will be used by the client to encrypt the rest of
-  the handshake until a symmetric key can be agreed upon.
+* The server replies with a ``ServerHello`` message to the client. 
+  ServerHello contains:
+      * The chosen TLS version from the list provided by the client.
+      * The chosen cipher suite from the list provided by the client.
+      * The chosen compression method.
+      * A random number, ServerRandom.
+      * Extensions.
+   The server also sends its digital certificate in the Certificate message. This certificate contains the server's public key and is       signed by a CA (Certificate Authority).
 
 * The client verifies the server digital certificate against its list of
   trusted CAs. If trust can be established based on the CA, the client
-  generates a string of pseudo-random bytes and encrypts this with the server's
+  generates a string of pseudo-random bytes (Pre-Master Secret) and encrypts this with the server's
   public key. These random bytes can be used to determine the symmetric key.
 
 * The server decrypts the random bytes using its private key and uses these
@@ -396,6 +404,8 @@ TLS handshake
 
 * From now on the TLS session transmits the application (HTTP) data encrypted
   with the agreed symmetric key.
+
+* If the TLS handshake does not complete successfully, the secure connection cannot be established. Both the client and the server will    terminate the attempt to create a connection. This could be cause by several reasons including: Certificate Verification Failure,        Unsupported TLS Version, Man-in-the-Middle Attack Detection, Invalid Client Certificates etc.
 
 If a packet is dropped
 ----------------------
