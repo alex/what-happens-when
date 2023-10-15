@@ -370,21 +370,21 @@ This send and receive happens multiple times following the TCP connection flow:
 TLS handshake
 -------------
 * The client computer sends a ``ClientHello`` message to the server.
-  ClientHello contains:
-      * Supported TLS versions (e.g., TLS 1.2, TLS 1.3).
-      * A list of supported cipher suites.
-      * A list of supported compression methods.
-      * A random number, ClientRandom.
-      * Session ID for session resumption (if applicable).
-      * Extensions (e.g., Server Name Indication (SNI) to indicate which host it's trying to connect to on shared servers).
+ClientHello contains:
+   * Supported TLS versions (e.g., TLS 1.2, TLS 1.3).
+   * A list of supported cipher suites.
+   * A list of supported compression methods.
+   * A random number, ClientRandom.
+   * Session ID for session resumption (if applicable).
+   * Extensions (e.g., Server Name Indication (SNI) to indicate which host it's trying to connect to on shared servers).
 
-* The server replies with a ``ServerHello`` message to the client. 
-  ServerHello contains:
-      * The chosen TLS version from the list provided by the client.
-      * The chosen cipher suite from the list provided by the client.
-      * The chosen compression method.
-      * A random number, ServerRandom.
-      * Extensions.
+* The server replies with a ``ServerHello`` message to the client.
+ServerHello contains:
+   * The chosen TLS version from the list provided by the client.
+   * The chosen cipher suite from the list provided by the client.
+   * The chosen compression method.
+   * A random number, ServerRandom.
+   * Extensions.
    The server also sends its digital certificate in the Certificate message. This certificate contains the server's public key and is       signed by a CA (Certificate Authority).
 
 * The client verifies the server digital certificate against its list of
