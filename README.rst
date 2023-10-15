@@ -24,6 +24,7 @@ Table of Contents
 .. contents::
    :backlinks: none
    :local:
+   :load-balancer:
 
 The "g" key is pressed
 ----------------------
