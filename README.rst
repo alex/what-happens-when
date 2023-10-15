@@ -709,3 +709,22 @@ page rendering and painting.
 .. _`downgrade attack`: http://en.wikipedia.org/wiki/SSL_stripping
 .. _`OSI Model`: https://en.wikipedia.org/wiki/OSI_model
 .. _`Spanish`: https://github.com/gonzaleztroyano/what-happens-when-ES
+what happens when you type “google.com” in your browser:
+
+DNS Request:
+When you type “google.com” in your browser, it initiates a DNS (Domain Name System) request to a DNS server to resolve the human-readable domain name “google.com” into an IP address. The DNS server returns the IP address associated with “google.com.”
+TCP/IP:
+With the IP address obtained, your browser establishes a TCP (Transmission Control Protocol) connection using the underlying Internet Protocol (IP). TCP ensures reliable communication between your browser and the web server.
+Firewall:
+The TCP connection passes through any firewalls, which may be in place to protect the network. Firewalls can filter and control incoming and outgoing network traffic based on a set of security rules.
+HTTPS/SSL:
+In most modern cases, the connection between your browser and the web server is secured using HTTPS (Hypertext Transfer Protocol Secure). HTTPS employs SSL/TLS (Secure Sockets Layer/Transport Layer Security) encryption to protect the data exchanged between your browser and the server, ensuring privacy and security.
+Load-Balancer:
+Google employs load balancers to distribute incoming network traffic across multiple web servers. This ensures efficient distribution of requests and prevents overloading of any single server. Load balancing is crucial for large-scale websites like Google.
+Web Server:
+After the load balancer, your request is directed to one of Google’s web servers. These servers host the webpages and handle HTTP requests. The web server processes your request and generates an HTTP response, typically in the form of an HTML page.
+Application Server:
+In the case of more complex web applications, an application server may be involved. It handles the business logic and dynamic content generation. Google’s search engine is an example of a service that likely involves application servers for complex processing.
+Database:
+For services like Google, databases store vast amounts of information. When you perform a search, the application server may need to query the database to retrieve relevant results. Databases store and manage this structured data.
+In summary, the process of typing “google.com” in your browser involves a series of steps, starting with DNS resolution, passing through TCP/IP connections, security with HTTPS/SSL, load balancing, and finally, interaction with web servers, application servers, and databases. This intricate system allows you to access and interact with web services seamlessly.
