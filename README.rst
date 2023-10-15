@@ -14,7 +14,7 @@ request, please!
 
 This is all licensed under the terms of the `Creative Commons Zero`_ license.
 
-Read this in `简体中文`_ (simplified Chinese), `日本語`_ (Japanese), `한국어`_
+Read this in `ç®€ä½“ä¸­æ–‡`_ (simplified Chinese), `æ—¥æœ¬èªž`_ (Japanese), `í•œêµ­ì–´`_
 (Korean) and `Spanish`_. NOTE: these have not been reviewed by the alex/what-happens-when
 maintainers.
 
@@ -517,7 +517,7 @@ Once the server supplies the resources (HTML, CSS, JS, images, etc.)
 to the browser it undergoes the below process:
 
 * Parsing - HTML, CSS, JS
-* Rendering - Construct DOM Tree → Render Tree → Layout of Render Tree →
+* Rendering - Construct DOM Tree â†’ Render Tree â†’ Layout of Render Tree â†’
   Painting the render tree
 
 Browser
@@ -689,6 +689,9 @@ the Google homepage. Scripts can cause additional network requests to be
 performed, as well as modify the page or its layout, causing another round of
 page rendering and painting.
 
+ADDED THE LINK TO A SCHEMATIC REPRESENTATION.
+https://miro.medium.com/v2/resize:fit:909/1*QMj5fwotw_cOvXKDpJhbCA.jpeg
+
 .. _`Creative Commons Zero`: https://creativecommons.org/publicdomain/zero/1.0/
 .. _`"CSS lexical and syntax grammar"`: http://www.w3.org/TR/CSS2/grammar.html
 .. _`Punycode`: https://en.wikipedia.org/wiki/Punycode
@@ -703,9 +706,12 @@ page rendering and painting.
 .. _`congestion window`: https://en.wikipedia.org/wiki/TCP_congestion_control#Congestion_window
 .. _`maximum segment size`: https://en.wikipedia.org/wiki/Maximum_segment_size
 .. _`varies by OS` : https://en.wikipedia.org/wiki/Hosts_%28file%29#Location_in_the_file_system
-.. _`简体中文`: https://github.com/skyline75489/what-happens-when-zh_CN
-.. _`한국어`: https://github.com/SantonyChoi/what-happens-when-KR
-.. _`日本語`: https://github.com/tettttsuo/what-happens-when-JA
+.. _`ç®€ä½“ä¸­æ–‡`: https://github.com/skyline75489/what-happens-when-zh_CN
+.. _`í•œêµ­ì–´`: https://github.com/SantonyChoi/what-happens-when-KR
+.. _`æ—¥æœ¬èªž`: https://github.com/tettttsuo/what-happens-when-JA
 .. _`downgrade attack`: http://en.wikipedia.org/wiki/SSL_stripping
 .. _`OSI Model`: https://en.wikipedia.org/wiki/OSI_model
 .. _`Spanish`: https://github.com/gonzaleztroyano/what-happens-when-ES
+q
+€ýa:q
+
