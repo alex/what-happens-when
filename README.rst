@@ -18,6 +18,13 @@ Read this in `简体中文`_ (simplified Chinese), `日本語`_ (Japanese), `한
 (Korean) and `Spanish`_. NOTE: these have not been reviewed by the alex/what-happens-when
 maintainers.
 
+Screenshot
+----------
+
+.. image:: https://i.imgur.com/oI0ZXfD.jpg
+   :alt: Alt text for the image
+
+
 Table of Contents
 ====================
 
