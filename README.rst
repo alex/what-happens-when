@@ -369,35 +369,64 @@ This send and receive happens multiple times following the TCP connection flow:
 
 TLS handshake
 -------------
-* The client computer sends a ``ClientHello`` message to the server with its
-  Transport Layer Security (TLS) version, list of cipher algorithms and
-  compression methods available.
+The TLS (Transport Layer Security) handshake is a crucial component of establishing a 
+secure encrypted connection between a client (such as a web browser) and a server (such as a website). It ensures that 
+the communication between the two parties is private, authenticated, and 
+tamper-proof. The TLS handshake involves the following steps:
 
-* The server replies with a ``ServerHello`` message to the client with the
-  TLS version, selected cipher, selected compression methods and the server's
-  public certificate signed by a CA (Certificate Authority). The certificate
-  contains a public key that will be used by the client to encrypt the rest of
-  the handshake until a symmetric key can be agreed upon.
 
-* The client verifies the server digital certificate against its list of
-  trusted CAs. If trust can be established based on the CA, the client
-  generates a string of pseudo-random bytes and encrypts this with the server's
-  public key. These random bytes can be used to determine the symmetric key.
+1. Client Hello:
+The TLS handshake begins with the client sending a 
+"Client Hello" message to the server. This message includes information 
+such as the TLS version supported by the client, a random number 
+(known as the client random), and a 
+list of supported cipher suites (encryption algorithms).
 
-* The server decrypts the random bytes using its private key and uses these
-  bytes to generate its own copy of the symmetric master key.
+2. Server Hello:
+Upon receiving the "Client Hello" message, the server responds with a "Server Hello" 
+message. This message contains the TLS version selected for the connection, a server random number, and the chosen cipher suite 
+from the client's list that both the client and server support.
 
-* The client sends a ``Finished`` message to the server, encrypting a hash of
-  the transmission up to this point with the symmetric key.
+3. Certificate Exchange:
+The server sends its digital certificate to the client. 
+The certificate contains the server's public key, which is 
+used for encryption, as well as information about the server's 
+identity, such as its domain name. The client verifies the authenticity 
+of the certificate by checking its digital signature and ensuring it is 
+issued by a trusted certificate authority (CA).
 
-* The server generates its own hash, and then decrypts the client-sent hash
-  to verify that it matches. If it does, it sends its own ``Finished`` message
-  to the client, also encrypted with the symmetric key.
+4. Client Key Exchange:
+The client generates a random symmetric encryption key known as the 
+"pre-master secret." It encrypts this key using the server's public
+ key obtained from the certificate and sends it to the server. This 
+ step ensures that only the server, possessing the corresponding private
+  key, can decrypt the pre-master secret.
 
-* From now on the TLS session transmits the application (HTTP) data encrypted
-  with the agreed symmetric key.
+5. Server Key Exchange (optional):
+In some cases, the server may send additional information or 
+parameters to the client, depending on the chosen cipher suite. 
+This step is optional and may not be present in every TLS handshake.
 
-If a packet is dropped
+6. Session Key Generation:
+Both the client and server independently derive the session keys 
+(encryption keys) and the session initialization vector (IV) from the client random, server random, 
+and pre-master secret. These session keys are used for symmetric 
+encryption and decryption of the actual data transmitted during 
+the TLS session.
+
+7. Cipher Suite Confirmation:
+The client sends a message to the server, indicating that it has successfully derived the 
+session keys and is ready to start encrypted communication.
+
+8. Encrypted Data Exchange:
+From this point onward, the client and server exchange encrypted data using 
+the agreed-upon cipher suite and session keys. The data is encrypted and decrypted using 
+symmetric encryption algorithms, providing confidentiality 
+and integrity to the transmitted information.
+
+
+
+
 ----------------------
 
 Sometimes, due to network congestion or flaky hardware connections, TLS packets
