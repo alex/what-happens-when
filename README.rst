@@ -27,17 +27,21 @@ Table of Contents
 
 The "g" key is pressed
 ----------------------
-The following sections explain the physical keyboard actions
-and the OS interrupts. When you press the key "g" the browser receives the
-event and the auto-complete functions kick in.
-Depending on your browser's algorithm and if you are in
-private/incognito mode or not various suggestions will be presented
-to you in the dropdown below the URL bar. Most of these algorithms sort
-and prioritize results based on search history, bookmarks, cookies, and
-popular searches from the internet as a whole. As you are typing
-"google.com" many blocks of code run and the suggestions will be refined
-with each keypress. It may even suggest "google.com" before you finish typing
-it.
+When you press the "g" key on your keyboard, a series of events are triggered:
+
+1. **Physical Keyboard Actions**: The physical action of pressing the key sends an electrical signal to the keyboard's circuit board. The circuit board then sends a signal to your computer's operating system (OS) indicating that the "g" key has been pressed.
+
+2. **Operating System Interrupts**: The OS interrupts its current processes to handle this new input. It identifies the keypress event and passes this information along to any programs that need to know about it.
+
+3. **Browser Receives Event**: If your browser is currently active, it receives this keypress event from the OS. The browser then triggers its auto-complete functions.
+
+4. **Auto-complete Functions**: Depending on your browser's specific algorithm and whether you're in private/incognito mode, various suggestions will be presented in a dropdown below the URL bar. These suggestions are generated based on several factors:
+- **Search History**: The pages you've visited in the past.
+- **Bookmarks**: The pages you've saved for quick access.
+- **Cookies**: Small pieces of data stored on your computer by websites you've visited.
+- **Popular Searches**: Commonly searched terms from users across the internet
+5. **Typing 'google.com'**: As you continue typing "google.com", many blocks of code are executed with each keypress to refine these suggestions. Depending on your past behavior and popular searches, it may even suggest "google.com" before you finish typing it.
+
 
 The "enter" key bottoms out
 ---------------------------
