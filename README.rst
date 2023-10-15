@@ -619,6 +619,13 @@ set to "complete" and a "load" event is fired.
 Note there is never an "Invalid Syntax" error on an HTML page. Browsers fix
 any invalid content and go on.
 
+Function of HTML
+----------------
+HTML, or Hypertext Markup Language, is the standard markup language for 
+creating web pages and web applications. It is used to define the structure 
+and content of a web page.
+
+
 CSS interpretation
 ------------------
 
