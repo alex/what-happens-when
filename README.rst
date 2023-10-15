@@ -97,7 +97,7 @@ connection, but historically has been over PS/2 or ADB connections.
 
 
 Interrupt fires [NOT for USB keyboards]
----------------------------------------
+----------------------------------------
 
 The keyboard sends signals on its interrupt request line (IRQ), which is mapped
 to an ``interrupt vector`` (integer) by the interrupt controller. The CPU uses
@@ -107,7 +107,7 @@ interrupt arrives, the CPU indexes the IDT with the interrupt vector and runs
 the appropriate handler. Thus, the kernel is entered.
 
 (On Windows) A ``WM_KEYDOWN`` message is sent to the app
---------------------------------------------------------
+----------------------------------------------------------------------------
 
 The HID transport passes the key down event to the ``KBDHID.sys`` driver which
 converts the HID usage into a scancode. In this case, the scan code is
@@ -226,7 +226,7 @@ DNS lookup
 
 
 ARP process
------------
+-------------------------------------------------------------------------
 
 In order to send an ARP (Address Resolution Protocol) broadcast the network
 stack library needs the target IP address to lookup. It also needs to know the
@@ -511,7 +511,7 @@ and IIS for Windows.
   streams the output to the client.
 
 Behind the scenes of the Browser
-----------------------------------
+----------------------------------------------------------------------
 
 Once the server supplies the resources (HTML, CSS, JS, images, etc.)
 to the browser it undergoes the below process:
@@ -676,10 +676,10 @@ GPU Rendering
 
 
 Window Server
--------------
+-----------------------------------------------------------------------------
 
 Post-rendering and user-induced execution
------------------------------------------
+---------------------------------------------------------------------------------
 
 After rendering has been completed, the browser executes JavaScript code as a result
 of some timing mechanism (such as a Google Doodle animation) or user
