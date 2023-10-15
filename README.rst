@@ -689,6 +689,48 @@ the Google homepage. Scripts can cause additional network requests to be
 performed, as well as modify the page or its layout, causing another round of
 page rendering and painting.
 
+
+
+When you type https://www.google.com in your browser and press Enter, the following happens:
+
+DNS request
+
+Your browser first sends a request to the Domain Name System (DNS) to resolve the domain name www.google.com to an IP address. The DNS is a distributed database that maps domain names to IP addresses. This allows browsers to access websites by name, instead of having to remember their IP addresses.
+
+TCP/IP
+
+Once the browser has the IP address of the Google server, it establishes a TCP/IP connection. TCP/IP is a suite of protocols that allows computers to communicate over a network. It ensures that data is transmitted reliably and in the correct order.
+
+Firewall
+
+Before the connection is established, your firewall may check to see if it is allowed. A firewall is a security system that monitors and controls incoming and outgoing network traffic. It can be used to block unauthorized access to your computer.
+
+HTTPS/SSL
+
+Once the TCP/IP connection is established, the browser negotiates an HTTPS/SSL connection with the Google server. HTTPS/SSL is a protocol that encrypts all data transmitted between the browser and the server. This helps to protect your data from eavesdropping and tampering.
+
+Load balancer
+
+The Google server may be behind a load balancer. A load balancer distributes traffic across multiple servers, which improves performance and reliability.
+
+Web server
+
+The web server receives the request from the browser and generates the HTML code for the Google homepage. The HTML code is the markup language that is used to create web pages.
+
+Application server
+
+The web server may communicate with an application server to generate the HTML code. An application server is a software platform that hosts and runs web applications.
+
+Database
+
+The application server may query a database to retrieve data for the Google homepage. A database is a collection of organized data that can be accessed and manipulated by computer programs.
+
+Response
+
+The web server sends the HTML code for the Google homepage to the browser. The browser then renders the HTML code to display the Google homepage.
+
+This entire process happens very quickly, typically in a matter of milliseconds.
+
 .. _`Creative Commons Zero`: https://creativecommons.org/publicdomain/zero/1.0/
 .. _`"CSS lexical and syntax grammar"`: http://www.w3.org/TR/CSS2/grammar.html
 .. _`Punycode`: https://en.wikipedia.org/wiki/Punycode
