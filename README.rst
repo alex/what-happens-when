@@ -628,6 +628,11 @@ CSS interpretation
   contains CSS rules with selectors and objects corresponding CSS grammar.
 * A CSS parser can be top-down or bottom-up when a specific parser generator
   is used.
+* Different web browsers may interpret CSS slightly differently, leading to
+  inconsistencies in how a web page looks across different browsers. To address
+  this, developers often use CSS prefixes (such as -webkit- or -moz-) for
+  experimental or browser-specific properties to ensure compatibility with
+  different browsers.  
 
 Page Rendering
 --------------
