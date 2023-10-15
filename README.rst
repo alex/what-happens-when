@@ -677,6 +677,20 @@ GPU Rendering
 
 Window Server
 -------------
+When we talk about a server, we're basically talking about a really powerful 
+computer that's specially set up to serve information or perform certain 
+tasks for other computers.
+
+In this case, the Windows Server would be responsible for handling tasks 
+like managing files, running applications, and handling network requests. 
+It's like the engine that powers the web server and application server 
+we discussed earlier.
+
+So, when you type "https://www.google.com", the Windows Server
+ (if Google is using Windows as their operating system) would be working 
+behind the scenes to make sure everything runs smoothly and you get the 
+Google webpage you wanted. Think of it as the backstage crew making 
+sure the show goes on!
 
 Post-rendering and user-induced execution
 -----------------------------------------
