@@ -227,6 +227,9 @@ DNS lookup
 
 ARP process
 -----------
+################### Added This ###########################
+The devices of the network peel the header of the data link layer from the Protocol Data Unit (PDU) called frame and transfer the packet to the network layer (layer 3 of OSI) where the network ID of the packet is validated with the destination IP’s network ID of the packet and if it’s equal then it responds to the source with the MAC address of the destination, else the packet reaches the gateway of the network and broadcasts packet to the destination it is connected with and validates their network ID.
+################### End ###########################
 
 In order to send an ARP (Address Resolution Protocol) broadcast the network
 stack library needs the target IP address to lookup. It also needs to know the
