@@ -663,6 +663,34 @@ Page Rendering
   via Direct3D/OpenGL. The GPU command buffer(s) are flushed to the GPU for
   asynchronous rendering and the frame is sent to the window server.
 
+Displaying the rendered page
+----------------------------
+
+The display is responsible for displaying the rendered page to the user. The display is a monitor or other device that is capable of displaying images.
+
+* The display receives the rendered page from the GPU and displays it to the user. It may also perform additional tasks, such as scaling the image to fit the screen and performing color correction.
+
+* The display creates the rendered page graphics and colors on the software and hardware level by using a process called rasterization. Rasterization is the process of converting vector graphics into pixel images.
+
+* On the software level, the rasterization process is typically performed by the GPU. The GPU takes the vector graphics and breaks them down into a set of triangles. The GPU then renders each triangle to the screen using a process called fragment shading.
+
+* Fragment shading is the process of calculating the color of each pixel in the triangle. The GPU does this by taking into account the lighting, materials, and textures that are applied to the triangle.
+
+* Once the GPU has calculated the color of each pixel in the triangle, it writes the colors to the display's framebuffer. The framebuffer is a memory buffer that stores the colors of all the pixels on the screen.
+
+* On the hardware level, the display uses the colors in the framebuffer to create the rendered page graphics and colors. The display does this by scanning through the framebuffer and displaying each pixel on the screen.
+
+* The display uses a variety of techniques to display the pixels on the screen. One common technique is to use a liquid crystal display (LCD) panel. LCD panels are made up of a grid of liquid crystal cells. Each cell contains a liquid crystal that can be rotated to change the amount of light that passes through it.
+
+* When the display is rendering a pixel, it applies a voltage to the liquid crystal cell in the corresponding location in the framebuffer. The voltage causes the liquid crystal to rotate, which changes the amount of light that passes through it. The display then displays the pixel on the screen based on the amount of light that passes through the liquid crystal cell.
+
+* Another common technique for displaying pixels on the screen is to use a cathode ray tube (CRT) monitor. CRT monitors work by shooting a beam of electrons at a phosphor-coated screen. The electrons cause the phosphor to glow, which creates the pixel on the screen.
+
+* To ensure that the rendered page graphics and colors are accurate and consistent. One common technique is to use a color management system (CMS). A CMS is a software system that helps to ensure that colors are displayed consistently across different devices. The CMS takes into account the characteristics of the display, such as its color gamut and white point, when calculating the colors of the pixels on the screen. This helps to ensure that the rendered page graphics and colors are displayed accurately and consistently across different displays.
+
+By understanding the software and hardware involved in the rasterization process, we can use this knowledge to optimize our web pages for performance and display accuracy.
+
+
 GPU Rendering
 -------------
 
