@@ -206,7 +206,30 @@ Check HSTS list
   `downgrade attack`_, which is why the HSTS list is included in modern web
   browsers.)
 
-DNS lookup
+  Cookies and Their Role
+  ----------------------
+
+  When a browser interacts with a website,it often stores small pieces of data known as cookies on the user's device.
+  These cookies serve various purposes, including tracking user sessions,
+  storing user preferences, and enabling features like shopping carts.
+
+  Cookies are typically sent by the server in the HTTP response headers and are then stored on the user's device.
+  Subsequently, when the user makes further requests to the same website,
+  these cookies are included in the HTTP request headers.
+
+  For example, a shopping website may use cookies to keep track of the items in a user's cart.
+  When the user adds items to the cart, the website stores this information in a cookie.
+  Later, when the user returns to the site or proceeds to checkout,
+  the stored cookie data is sent back to the server, ensuring that the items remain in the cart.
+
+  It's important to note that cookies are often associated with privacy concerns.
+  Some users may choose to disable cookies or use browser extensions to manage their cookie preferences.
+
+  Cookies, along with other technologies, play a significant role in shaping the user experience on the web.
+  They enable websites to remember user actions and preferences,
+  making interactions more convenient and personalized.
+
+  DNS lookup
 ----------
 
 * Browser checks if the domain is in its cache. (to see the DNS Cache in
