@@ -509,6 +509,17 @@ and IIS for Windows.
 * The server parses the file according to the handler. If Google
   is running on PHP, the server uses PHP to interpret the index file, and
   streams the output to the client.
+HTTPS protocol
+_______________
+If the server is configured to listen to HTTPS request and is cetified (it has an SSL certificate)
+before the client begins the transmission of request, and SSL handshake occurs first.
+During this hand shake, the server sends a copy of its SSL certificate to the client.
+This certificate contains a public key which is used for the encryption and decryption of data packets.
+The server has a corresponding private key which it also uses for encryption and decryption.
+After the handshake, normal HTTPS request and response can begin, but this time it is secure as the
+data sent by the client is encrypted using public key. The response sent to the client is also encrypted
+using private key. Any data encrypted with a private key could only be decrypted by its corresponding
+public key and vice-versa
 
 Behind the scenes of the Browser
 ----------------------------------
