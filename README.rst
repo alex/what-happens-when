@@ -677,6 +677,25 @@ GPU Rendering
 
 Window Server
 -------------
+- **Server Roles and Features**: Windows Server supports a wide range of server roles and features to enable specific functionalities such as Active Directory Domain Services (AD DS), DNS, DHCP, and more.
+
+- **Active Directory**: Windows Server includes Active Directory, a centralized directory service for managing users, groups, and resources on a network.
+
+- **Security**: Windows Server provides various security features and mechanisms to protect against unauthorized access, data breaches, and other security threats.
+
+- **Networking**: Windows Server offers networking capabilities for routing, remote access, VPN services, network policy, and more.
+
+- **Storage Solutions**: Windows Server provides storage solutions such as Storage Spaces and Storage Replica for flexible storage management and replication.
+
+- **Virtualization**: Windows Server supports Hyper-V for creating and managing virtual machines, optimizing resource utilization.
+
+- **Web and Application Services**: Windows Server supports hosting websites, web applications, and services using Internet Information Services (IIS) and .NET Framework.
+
+- **Remote Desktop Services**: Windows Server offers Remote Desktop Services for remote access to applications and desktops.
+
+- **Cloud Integration**: Windows Server is integrated with Microsoft Azure for hybrid cloud deployments and integration with cloud services.
+
+- **Monitoring and Management**: Windows Server includes tools for monitoring system performance, managing server configurations, event logging, and diagnostics.
 
 Post-rendering and user-induced execution
 -----------------------------------------
