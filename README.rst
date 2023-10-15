@@ -709,3 +709,15 @@ page rendering and painting.
 .. _`downgrade attack`: http://en.wikipedia.org/wiki/SSL_stripping
 .. _`OSI Model`: https://en.wikipedia.org/wiki/OSI_model
 .. _`Spanish`: https://github.com/gonzaleztroyano/what-happens-when-ES
+
+VI- The Web Server
+
+After a long trip our request finally gets to the selected web server (e.g., Apache, Nginx) this later will ensure the delivery of the site’s content to the requesting user. As hardware, a web server is a computer that stores web server software and other files related to a website, such as HTML documents, images and JavaScript files. When a the browser needs a file that’s hosted on a web server, the browser will request the file by HTTP. When the request is received by the web server, the HTTP server will accept the request, find the content and send it back to the browser through HTTP.
+
+VI- The Application Server
+
+As we mentioned the The Web Server will deliver static content such as Html and CSS files and if he needs other then these static files he sends a request to The Application Server which supports dynamic content generation, application logic, and integration with various resources. It provides a runtime environment where you can run application code and interact with other software components, like messaging systems and databases. It uses business logic to transform data more meaningfully then give it back to the web server.
+
+VII- The Database
+
+All dynamic information of google will be living in what we call a Database which is an organized collection of structured information, or data, typically stored electronically in a computer system. A database is usually controlled by a database management system (DBMS). Together, the data and the DBMS, along with the applications that are associated with them, are referred to as a database system, often shortened to just database.
