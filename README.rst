@@ -663,6 +663,19 @@ Page Rendering
   via Direct3D/OpenGL. The GPU command buffer(s) are flushed to the GPU for
   asynchronous rendering and the frame is sent to the window server.
 
+Rendering Optimization Strategies
+---------------------------------
+* Speculative Parsing: Browsers employ techniques to predict and pre-parse resources,
+  reducing latency when resources are needed.
+* Parallelization: Tasks like layout, painting, and script execution are parallelized
+  to make better use of multi-core CPUs.
+* Lazy Loading: Images and scripts are loaded on-demand, enhancing page load times.
+* Smart Resource Loading: Browsers prioritize critical resources, ensuring faster
+  rendering of above-the-fold content.
+* Network Optimization: Techniques like HTTP/2 and resource compression help minimize
+  network latency.
+* Caching: Browsers cache resources locally to minimize redundant downloads.
+
 GPU Rendering
 -------------
 
