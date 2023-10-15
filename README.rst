@@ -397,6 +397,12 @@ TLS handshake
 * From now on the TLS session transmits the application (HTTP) data encrypted
   with the agreed symmetric key.
 
+* Once this handshake is complete and both sides have successfully verified
+  the identity of the other party and established a symmetric key,
+  the communication between the client and server proceed using the symmetric key
+  for encryption and decryption. This ensures the confidentiality and
+  integrity of the data transmitted between them.
+
 If a packet is dropped
 ----------------------
 
