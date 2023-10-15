@@ -510,6 +510,28 @@ and IIS for Windows.
   is running on PHP, the server uses PHP to interpret the index file, and
   streams the output to the client.
 
+The HTTP server request handling process:
+----------------------------------------
+1. The HTTP server (e.g., Apache, nginx, or IIS) receives the request from the client.
+2. The server analyzes the request and extracts the following parameters:
+   - HTTP Request Method: This indicates the type of request, such as "GET," "POST," or others.
+     In the case of entering a URL directly into the address bar, it will be a "GET" request.
+   - Domain: In this case, the domain is "google.com."
+   - Requested path/page: Since no specific path/page was requested, the default path is "/".
+3. The server checks if there is a configured Virtual Host that corresponds to "google.com."
+4. The server verifies that "google.com" is capable of accepting "GET" requests.
+5. The server checks if the client is authorized to use the requested method,
+   which can be determined by IP, authentication, or other means.
+6. If the server has a rewrite module installed (e.g., mod_rewrite for Apache or URL Rewrite for IIS),
+   it attempts to match the request against configured rewrite rules.
+   If a matching rule is found, the server uses it to rewrite the request.
+7. The server retrieves the content associated with the request. In this case,
+   it will typically fall back to the index file, as "/" is commonly the main file.
+   However, there are cases where this behavior can be overridden.
+8. The server parses the file according to the designated handler. For example,
+   if Google is running on PHP, the server will use PHP to interpret
+   the index file and stream the output back to the client.
+
 Behind the scenes of the Browser
 ----------------------------------
 
