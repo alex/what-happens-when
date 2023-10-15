@@ -709,3 +709,35 @@ page rendering and painting.
 .. _`downgrade attack`: http://en.wikipedia.org/wiki/SSL_stripping
 .. _`OSI Model`: https://en.wikipedia.org/wiki/OSI_model
 .. _`Spanish`: https://github.com/gonzaleztroyano/what-happens-when-ES
+
+Compile a C Program
+-------------------
+A C program is compiled when its human-readable source code is converted into computer code
+that can be executed by a machine. There are other steps in this procedure, which I'll list below:
+
+Preprocessing: The C preprocessor handles tasks including deleting comments, enlarging macros,
+and adding header files prior to the compilation process starting. Declarations and definitions
+required by the program are contained in header files. The intermediate code produced by the preprocessor
+is referred to as the "translation unit."
+
+Compilation: The preprocessed translation unit is given into the C compiler (sometimes referred to as clang
+for Clang or gcc for GNU C Compiler). Syntax mistakes and semantic problems in the source code are checked
+for by the compiler. The compiler produces assembly code or an intermediate representation of the program if
+there are no errors.
+
+Assembly: Although it is not immediately executable, the produced assembly code, also known as the intermediate
+representation, is platform-specific. It is a simplified version of the program that the hardware of the computer
+can comprehend. The CPU of the machine is instructed by this assembly code.
+
+Linking: C programs sometimes consist of several source files. Separate compilations of these files result in
+object files. These object files are fed through the linker, also known as ld, which resolves references and symbols
+before linking them together. Any library files that are required are also linked in. An executable file is the outcome of this.
+
+Executable File: An executable file is the linker's output. The computer's CPU can immediately execute the machine
+code found in this file. It also contains the essential details of how the program should be loaded into memory and
+arranged in memory when it runs.
+
+Loading and Execution: The operating system loads the compiled program into memory when you run it. The program's environment,
+including initializing variables and system resources, is likewise set up by the loader. The program can be interacted with either
+a graphical user interface or the command line once it has been loaded into memory and is ready to run.
+
