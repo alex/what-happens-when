@@ -689,6 +689,16 @@ the Google homepage. Scripts can cause additional network requests to be
 performed, as well as modify the page or its layout, causing another round of
 page rendering and painting.
 
+JavaScript plays a pivotal role at this stage, allowing web developers to create dynamic and interactive web experiences.
+These scripts can not only execute code but also initiate additional network requests.
+These requests may be necessary to retrieve more data or resources from web servers, like fetching search results, images, or additional information.
+
+Moreover, JavaScript can dynamically modify the content and layout of the page.
+For instance, as you start typing a query in a search box, JavaScript may dynamically update the suggestions dropdown in real-time.
+These changes to the webpage's content or layout typically trigger another cycle of page rendering and painting, 
+ensuring that the user sees the most up-to-date and interactive version of the web page.
+This dynamic and iterative process is what enables modern web applications to deliver seamless and responsive user experiences.
+
 .. _`Creative Commons Zero`: https://creativecommons.org/publicdomain/zero/1.0/
 .. _`"CSS lexical and syntax grammar"`: http://www.w3.org/TR/CSS2/grammar.html
 .. _`Punycode`: https://en.wikipedia.org/wiki/Punycode
