@@ -16,7 +16,7 @@ This is all licensed under the terms of the `Creative Commons Zero`_ license.
 
 Read this in `简体中文`_ (simplified Chinese), `日本語`_ (Japanese), `한국어`_
 (Korean) and `Spanish`_. NOTE: these have not been reviewed by the alex/what-happens-when
-maintainers.
+maintainers, so it's important that you take care in reading any information here.
 
 Table of Contents
 ====================
