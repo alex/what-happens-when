@@ -510,6 +510,25 @@ and IIS for Windows.
   is running on PHP, the server uses PHP to interpret the index file, and
   streams the output to the client.
 
+Firewall
+--------------------------
+But there is another option after the request has been made by the browser to server,
+it may be blocked by firewall as soon as it will be checked by the server's firewall to
+make sure this incoming request allowed based on its security rules.
+
+There are two main types of security rules that a firewall uses to check incoming requests:
+1. Rules that allow or block traffic based on the source and destination of the request.
+For example, a firewall may be configured to block all traffic from certain countries or
+to allow only certain IP addresses to access the network.
+2. Rules that allow or block traffic based on the type of traffic.
+For example, a firewall may be configured to block all traffic on certain ports
+(such as those used by malware) or to allow only certain types of traffic (such as HTTP or HTTPS).
+
+If the incoming request meets the security rules set by the firewall in front of Google's server,
+it is allowed through, and the browser is able to access the website.
+However, if the request does not meet the security rules, it is blocked,
+and the browser is unable to access the website.
+
 Behind the scenes of the Browser
 ----------------------------------
 
