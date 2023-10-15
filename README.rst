@@ -38,6 +38,7 @@ popular searches from the internet as a whole. As you are typing
 "google.com" many blocks of code run and the suggestions will be refined
 with each keypress. It may even suggest "google.com" before you finish typing
 it.
+When the key g is pressed the operating system registers the keypress event and send it to the web browser.
 
 The "enter" key bottoms out
 ---------------------------
@@ -182,6 +183,9 @@ When no protocol or valid domain name is given the browser proceeds to feed
 the text given in the address box to the browser's default web search engine.
 In many cases the URL has a special piece of text appended to it to tell the
 search engine that it came from a particular browser's URL bar.
+If the text or the input doesn't ressemnle a valid URL the browser automatically append a default protocol.
+if the input ressembles a valid domain, so it will try to load the webpage.
+
 
 Convert non-ASCII Unicode characters in the hostname
 ------------------------------------------------
@@ -223,6 +227,7 @@ DNS lookup
   ``ARP process`` below for the DNS server.
 * If the DNS server is on a different subnet, the network library follows
   the ``ARP process`` below for the default gateway IP.
+* Involves multiple Layers of DNS servers to translate domain name into IP addresses.
 
 
 ARP process
@@ -709,3 +714,5 @@ page rendering and painting.
 .. _`downgrade attack`: http://en.wikipedia.org/wiki/SSL_stripping
 .. _`OSI Model`: https://en.wikipedia.org/wiki/OSI_model
 .. _`Spanish`: https://github.com/gonzaleztroyano/what-happens-when-ES
+
+- The important thing to understand is that there is a lot of components and numerous technologies taking places behind the scenes to delover the web content in our screen.
