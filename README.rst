@@ -367,6 +367,11 @@ This send and receive happens multiple times following the TCP connection flow:
    * The other sides ACKs the FIN packet and sends its own FIN
    * The closer acknowledges the other side's FIN with an ACK
 
+Firewall
+--------
+
+Firewalls are essential security components in the realm of computer networks. They act as protective barriers, intercepting and monitoring incoming and outgoing traffic to prevent unauthorized access and protect against various cyber threats. Firewalls use predefined rules to filter data packets, making decisions based on factors like IP addresses, ports, and protocols. This level of control is crucial for safeguarding network integrity and data confidentiality, as it helps in keeping malicious entities at bay and ensures that only legitimate traffic can pass through.
+
 TLS handshake
 -------------
 * The client computer sends a ``ClientHello`` message to the server with its
