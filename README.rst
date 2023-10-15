@@ -537,12 +537,18 @@ standards organization for the web.
 Browser user interfaces have a lot in common with each other. Among the
 common user interface elements are:
 
-* An address bar for inserting a URI
-* Back and forward buttons
-* Bookmarking options
+* Address Bar (URL Bar) where you can enter the web address of the website you want to visit
+* Back and forward buttons to navigate backward and forward through your browsing history
+* Bookmark/Favorites Bar to save and organize your favorite websites for quick access
 * Refresh and stop buttons for refreshing or stopping the loading of
   current documents
 * Home button that takes you to your home page
+* Search Bar for performing web searches
+* Tabs to enable you have multiple web pages open within the same browser window
+* Security Indicators like padlock icons in the address bar to indicate secure (HTTPS) or insecure connections
+* Settings/Menu Button that opens a menu with various browser options, including settings, extensions, etc
+* Developer Tools used by web developers for debugging and inspecting web pages
+* Password Manager for managing and auto-filling passwords
 
 **Browser High-Level Structure**
 
