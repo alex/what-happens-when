@@ -663,6 +663,20 @@ Page Rendering
   via Direct3D/OpenGL. The GPU command buffer(s) are flushed to the GPU for
   asynchronous rendering and the frame is sent to the window server.
 
+Page Layout
+-----------
+* Layout begins immediately the render tree has been constructed.
+* The layout stage determines where and how the elements are positioned on the
+  page, notably the width and height of each element, and their position in
+  relation to one another.
+* The width of the layout viewport is determined by the viewport meta tag, which
+  influences the layout. In its absence, the browser uses a default viewport,
+  which is 960px on full-screen browsers.
+* Layout performance will be impacted by the DOM. The greater the number of
+  nodes, the longer layout will take.
+* All subsequent layout will occur when the render tree is modified.
+
+
 GPU Rendering
 -------------
 
