@@ -297,6 +297,10 @@ the default gateway it can resume its DNS process:
   requested and that flows up the list of DNS servers until the SOA is reached,
   and if found an answer is returned.
 
+
+Firewall: Protecting the Network:
+Before the connection is established, a firewall verifies that the connection is not forbidden. Firewalls play a crucial role in monitoring and controlling incoming and outgoing network traffic, safeguarding the network from potential threats.
+
 Opening of a socket
 -------------------
 Once the browser receives the IP address of the destination server, it takes
@@ -509,6 +513,12 @@ and IIS for Windows.
 * The server parses the file according to the handler. If Google
   is running on PHP, the server uses PHP to interpret the index file, and
   streams the output to the client.
+
+Load Balancer: Handling Traffic Efficiently:
+
+In the case of popular websites like Google, a load balancer comes into play. It distributes incoming requests across multiple servers to optimize performance and ensure high availability. The load balancer acts as an intermediary between the client (your browser) and the web server.
+
+
 
 Behind the scenes of the Browser
 ----------------------------------
