@@ -14,10 +14,6 @@ request, please!
 
 This is all licensed under the terms of the `Creative Commons Zero`_ license.
 
-Read this in `简体中文`_ (simplified Chinese), `日本語`_ (Japanese), `한국어`_
-(Korean) and `Spanish`_. NOTE: these have not been reviewed by the alex/what-happens-when
-maintainers.
-
 Table of Contents
 ====================
 
@@ -99,12 +95,7 @@ connection, but historically has been over PS/2 or ADB connections.
 Interrupt fires [NOT for USB keyboards]
 ---------------------------------------
 
-The keyboard sends signals on its interrupt request line (IRQ), which is mapped
-to an ``interrupt vector`` (integer) by the interrupt controller. The CPU uses
-the ``Interrupt Descriptor Table`` (IDT) to map the interrupt vectors to
-functions (``interrupt handlers``) which are supplied by the kernel. When an
-interrupt arrives, the CPU indexes the IDT with the interrupt vector and runs
-the appropriate handler. Thus, the kernel is entered.
+The CPU employs the "Interrupt Descriptor Table" (IDT) to map these interrupt vectors to corresponding functions, also known as "interrupt handlers," provided by the kernel. When an interrupt event occurs, the CPU references the IDT using the interrupt vector and proceeds to execute the corresponding handler, effectively entering the kerne
 
 (On Windows) A ``WM_KEYDOWN`` message is sent to the app
 --------------------------------------------------------
