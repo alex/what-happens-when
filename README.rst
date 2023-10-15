@@ -373,6 +373,11 @@ TLS handshake
   Transport Layer Security (TLS) version, list of cipher algorithms and
   compression methods available.
 
+* Before your request reaches the web server, it may pass through a firewall.
+  Firewalls are network security devices that filter incoming and outgoing network traffic to
+  protect against unauthorized access and malicious activities.
+  They ensure that only legitimate traffic is allowed through.
+
 * The server replies with a ``ServerHello`` message to the client with the
   TLS version, selected cipher, selected compression methods and the server's
   public certificate signed by a CA (Certificate Authority). The certificate
