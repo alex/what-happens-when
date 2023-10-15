@@ -510,6 +510,16 @@ and IIS for Windows.
   is running on PHP, the server uses PHP to interpret the index file, and
   streams the output to the client.
 
+Cookies
+-------
+Cookies are an extra byte of information shared between the client and the server
+ or peers in a case of peer-to-peer network infrastructure.
+They are extra headers added to the HTTPS request. It can be used to track user's activities online,
+such as the regular kind of sites visited or thr payment options used most times.
+
+Thua a website that makes use of cookies can customize user experience
+by suggesting contents that the use loves. This is mostly used by online shops.
+
 Behind the scenes of the Browser
 ----------------------------------
 
