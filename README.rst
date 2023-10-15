@@ -678,6 +678,9 @@ GPU Rendering
 Window Server
 -------------
 
+http protocol
+-------------
+
 Post-rendering and user-induced execution
 -----------------------------------------
 
