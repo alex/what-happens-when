@@ -296,6 +296,12 @@ the default gateway it can resume its DNS process:
 * If the local/ISP DNS server does not have it, then a recursive search is
   requested and that flows up the list of DNS servers until the SOA is reached,
   and if found an answer is returned.
+* The recursive search is done by the resolver (mostly ISP) starting from root
+  root server, which leads to .com TLD (top level domain) which inturn leads
+  to the authoritative name server (which is recorded at TLD when the domain
+  name is registered for the first time). Finally the authoritative name
+  server will return the ip address. Except the name server, all (resolver,
+  root and TLD) has a cache system inplace.
 
 Opening of a socket
 -------------------
