@@ -369,6 +369,7 @@ This send and receive happens multiple times following the TCP connection flow:
 
 TLS handshake
 -------------
+SSL (Secure Sockets Layer) and its successor TLS (Transport Layer Security) are protocols that provide security for data transmission over the internet.
 * The client computer sends a ``ClientHello`` message to the server with its
   Transport Layer Security (TLS) version, list of cipher algorithms and
   compression methods available.
