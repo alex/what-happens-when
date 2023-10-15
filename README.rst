@@ -709,3 +709,24 @@ page rendering and painting.
 .. _`downgrade attack`: http://en.wikipedia.org/wiki/SSL_stripping
 .. _`OSI Model`: https://en.wikipedia.org/wiki/OSI_model
 .. _`Spanish`: https://github.com/gonzaleztroyano/what-happens-when-ES
+
+
+Visualizing as a story of sending a letter to a friend
+------------------------------------------------------
+
+Visiting a Website: A Journey Similar to Visiting a Friend
+Imagine wanting to send a letter to a friend. You know their name, but you don't know their address. So, you look it up in your address book. This is similar to what happens when you type a URL into your browser. Your computer doesn't know where "www.google.com" is, so it consults a DNS server, which acts like an address book for the internet. The DNS server translates the URL into an IP address, which is like the physical address of your friend's house.
+
+Once you have your friend's address, you write a letter, seal it, and put it in the mailbox. This is similar to your computer initiating a TCP/IP connection. TCP/IP are protocols, like rules of the road, that ensure information isn't blindly sent between two IP addresses. It's like you ensuring your letter is properly addressed, stamped, and ready for the mail truck to pick up.
+
+Just as you would take precautions to protect a letter containing sensitive information, the internet also takes measures to protect sensitive data. HTTPS/SSL act as a protective layer for your data. This is akin to you putting your sensitive letter into a locked box and mailing the entire box. You know your friend has a key to open the box, and you've used a fragile paper that would destroy the letter if someone tried to force the box open.
+
+The journey of your letter doesn't end at your mailbox. It's picked up by a mail truck and taken to a sorting facility. This facility acts like a load balancer, distributing mail to various routes to ensure no single route is overwhelmed. Similarly, a load balancer distributes network traffic across multiple servers to ensure no single server becomes overwhelmed with requests .
+
+Once the mail truck delivers your letter to your friend's house, it has reached the equivalent of the web server. The web server responds to requests with the appropriate content. In the case of your letter, your friend would receive it and read its contents.
+
+In some cases, your friend might need to consult other sources to fully understand your letter. For instance, they might need to check a calendar or look something up. This is similar to how a web server may communicate with an application server, which runs the logic of a web application, interacting with databases, and processing the underlying logic of web pages.
+
+Finally, just like your friend would store your letter in a drawer or a box for future reference, the application server may interact with a database to retrieve or update data. This database is like a storage system for data that can be accessed when needed.
+
+In conclusion, visiting a website is a complex journey, much like visiting a friend. It involves multiple steps and interactions, each crucial to successfully delivering the content you see on your screen. Understanding this process can provide a deeper appreciation of how the web works.
