@@ -38,7 +38,7 @@ popular searches from the internet as a whole. As you are typing
 "google.com" many blocks of code run and the suggestions will be refined
 with each keypress. It may even suggest "google.com" before you finish typing
 it.
-
+The browser's ability to provide quick and relevant suggestions is a result of real-time search algorithms and history tracking.
 The "enter" key bottoms out
 ---------------------------
 
@@ -51,6 +51,8 @@ closure of the switch, and converts it to a keycode integer, in this case 13.
 The keyboard controller then encodes the keycode for transport to the computer.
 This is now almost universally over a Universal Serial Bus (USB) or Bluetooth
 connection, but historically has been over PS/2 or ADB connections.
+
+When the "enter" key bottoms out, it triggers the submission of your input. The browser creates an HTTP request based on the URL or search term you've entered. In most cases, it will attempt to convert your input into a URL if it's not already in that format. The browser then sends this request to the server for processing. If the browser recognizes the input as a URL, it directly navigates to the corresponding web page. If it's a search term, it sends the query to your default search engine for relevant results.
 
 *In the case of the USB keyboard:*
 
@@ -106,6 +108,9 @@ functions (``interrupt handlers``) which are supplied by the kernel. When an
 interrupt arrives, the CPU indexes the IDT with the interrupt vector and runs
 the appropriate handler. Thus, the kernel is entered.
 
+Because USB Keyboards use a different communication protocol, this specific behavior of interrupt may not apply same way as the older hardware interfaces like PS/2.
+
+
 (On Windows) A ``WM_KEYDOWN`` message is sent to the app
 --------------------------------------------------------
 
@@ -137,6 +142,8 @@ This code looks within the 3rd parameter that was passed to ``SendMessage``
 (``wParam``) and, because it is ``VK_RETURN`` knows the user has hit the ENTER
 key.
 
+(On Windows) A WM_KEYDOWN message is sent to the app when a key is pressed. In the Windows operating system, when a key is pressed, a message called WM_KEYDOWN is sent to the application that has the input focus. This message contains information about the key pressed, allowing the application to respond accordingly. For example, in a web browser, this message would be sent to handle the keyboard input.
+
 (On OS X) A ``KeyDown`` NSEvent is sent to the app
 --------------------------------------------------
 
@@ -150,6 +157,8 @@ this queue by threads with sufficient privileges calling the
 handled by, an ``NSApplication`` main event loop, via an ``NSEvent`` of
 ``NSEventType`` ``KeyDown``.
 
+A KeyDown NSEvent is sent to the app. On macOS (previously known as OS X), when a key is pressed, a KeyDown NSEvent is generated and sent to the active application. Now KeyDown NSEvent handles the process and acts on the user's input like a web browser.
+
 (On GNU/Linux) the Xorg server listens for keycodes
 ---------------------------------------------------
 
@@ -162,6 +171,8 @@ sends the character to the ``window manager`` (DWM, metacity, i3, etc), so the
 The graphical API of the window  that receives the character prints the
 appropriate font symbol in the appropriate focused field.
 
+Also, keypresses generates a keycode using the Xorg which then translates the
+keycodes into symbols or actions. With this in place, web server can then interpret the key symbols to process the user's input data.
 Parse URL
 ---------
 
@@ -174,7 +185,7 @@ Parse URL
     - ``Resource``  "/"
         Retrieve main (index) page
 
-
+To help differenciate between direct URL requests and queries, as the 'enter' key is pressed, the browser parses the input to determine whether it's a URL or a search term. If it's recognized as a URL, the browser proceeds to construct an HTTP request with the specified URL. If it's a search term, the browser typically sends the query to a search engine by appending it to the search engine's URL with a specific parameter.
 Is it a URL or a search term?
 -----------------------------
 
@@ -191,6 +202,7 @@ Convert non-ASCII Unicode characters in the hostname
 * Since the hostname is ``google.com`` there won't be any, but if there were
   the browser would apply `Punycode`_ encoding to the hostname portion of the
   URL.
+  To ensure that the URL is valid and can be used to request resources from a server then, there is need to Convert non ASCII Unicode characters in the hostname. If the hostname (usually part of the URL) contains non-ASCII Unicode characters, the browser applies Punycode encoding to make it conform to standard URL encoding rules.
 
 Check HSTS list
 ---------------
@@ -205,7 +217,7 @@ Check HSTS list
   single HTTP request could potentially leave the user vulnerable to a
   `downgrade attack`_, which is why the HSTS list is included in modern web
   browsers.)
-
+In this section, HSTS is a security feature that enforces the use of HTTPS for websites that have requested it. This feature helps protect users by preventing them from inadvertently connecting to an insecure version of a site that should be accessed securely.
 DNS lookup
 ----------
 
@@ -223,7 +235,7 @@ DNS lookup
   ``ARP process`` below for the DNS server.
 * If the DNS server is on a different subnet, the network library follows
   the ``ARP process`` below for the default gateway IP.
-
+In addition to this, the browser initiates a series of actions to determine the IP address of the destination server and establish the network path to reach it. This involves DNS resolution, which maps the domain name to an IP address
 
 ARP process
 -----------
@@ -246,6 +258,8 @@ If the entry is not in the ARP cache:
 
 * The network library sends a Layer 2 (data link layer of the `OSI model`_)
   ARP request:
+
+  These processes are essential for establishing network connectivity and ensuring that the browser can reach the destination server.
 
 ``ARP Request``::
 
@@ -299,6 +313,7 @@ the default gateway it can resume its DNS process:
 
 Opening of a socket
 -------------------
+The "Opening of a socket" step involves creating a network socket, which is a software endpoint for network communication. The browser opens a socket to the IP address of the destination server and a specific port (usually port 80 for HTTP or 443 for HTTPS) to establish a connection.
 Once the browser receives the IP address of the destination server, it takes
 that and the given port number from the URL (the HTTP protocol defaults to port
 80, and HTTPS to port 443), and makes a call to the system library function
@@ -397,6 +412,8 @@ TLS handshake
 * From now on the TLS session transmits the application (HTTP) data encrypted
   with the agreed symmetric key.
 
+Since the goal here is to establish a secure channel for data transmission between the browser and the server, ensuring the confidentiality and integrity of the data, the browser initiates a secure connection with the server. This involves a series of steps, including negotiation of encryption methods and exchange of encryption keys
+
 If a packet is dropped
 ----------------------
 
@@ -413,6 +430,7 @@ control`_. This varies depending on the sender; the most common algorithms are
 * After reaching the slow-start threshold, the window increases additively for
   each packet acknowledged. If a packet is dropped, the window reduces
   exponentially until another packet is acknowledged.
+  Also, if a packet is dropped, the browser employs TCP congestion control algorithms to adapt to network conditions
 
 HTTP protocol
 -------------
@@ -510,6 +528,8 @@ and IIS for Windows.
   is running on PHP, the server uses PHP to interpret the index file, and
   streams the output to the client.
 
+The "HTTP protocol" and "HTTP Server Request Handle" explained how the browser communicates with the web server using the HTTP protocol. It involves sending HTTP requests to the server and receiving responses. The server handles these requests, processes them, and returns the requested resources, such as HTML pages, CSS files, and more.
+
 Behind the scenes of the Browser
 ----------------------------------
 
@@ -519,6 +539,8 @@ to the browser it undergoes the below process:
 * Parsing - HTML, CSS, JS
 * Rendering - Construct DOM Tree → Render Tree → Layout of Render Tree →
   Painting the render tree
+  
+This section provides an overview of the various components and processes that make up a web browser. It explains how the browser interprets and renders web content, processes user input, and interacts with web servers.
 
 Browser
 -------
@@ -570,6 +592,7 @@ The components of the browsers are:
   need to save all sorts of data locally, such as cookies. Browsers also
   support storage mechanisms such as localStorage, IndexedDB, WebSQL and
   FileSystem.
+This ultimately explained how components of the web browser work together to provide a seamless browsing experience.
 
 HTML parsing
 ------------
@@ -678,6 +701,54 @@ GPU Rendering
 Window Server
 -------------
 
+The work of "Window Server" varies depending on the context. In operating systems like macOS, it's responsible for graphical user interface management, while in web development, the concept is related to how web browsers handle multiple tabs or windows. Both play critical roles in managing graphical elements and interactions for users.
+This can be extensively explained as follows:
+
+User Input:
+
+You start by typing "https://www.google.com" into the address bar. Each keypress generates events in the graphical user interface (GUI).
+These events include keyboard events, such as keydown and keyup, as well as mouse events like mouse movements and clicks.
+The Window Server is responsible for capturing and processing these events.
+Event Handling:
+
+The Window Server dispatches these input events to the appropriate applications or processes, which in this case is the web browser.
+The browser, which is managed by the Window Server, listens for these events and responds accordingly.
+Browser Rendering:
+
+The browser processes your input and begins the process of loading the web page.
+It initiates a network request to retrieve the web page content from "https://www.google.com."
+Page Rendering:
+
+Once the web page content is received, the browser parses the HTML, CSS, and JavaScript to create a Document Object Model (DOM) representing the structure of the web page.
+The browser interacts with the Window Server to determine the layout of the web page and to allocate space for rendering.
+Compositing:
+
+Compositing involves creating layers for different elements of the web page, such as images, text, and user interface controls.
+The Window Server is responsible for compositing these layers into a final image that is displayed on the screen. It manages the order of these layers and ensures that elements are displayed correctly, considering z-order and overlapping.
+Rendering and Layout:
+
+The Window Server works closely with the browser's rendering engine to ensure that the web page content is rendered accurately on the screen.
+It handles tasks such as rendering text, images, and interactive elements like buttons and input fields.
+Graphics Hardware Utilization:
+
+To optimize performance, modern Window Servers leverage the capabilities of graphics hardware. This involves utilizing the GPU (Graphics Processing Unit) for rendering, which significantly enhances graphics performance and responsiveness.
+Display on the Screen:
+
+The Window Server is responsible for taking the final composite of the web page and displaying it on the computer screen. It ensures that the web page appears correctly, taking into account factors like screen resolution and color depth.
+Window Management:
+
+During this process, the Window Server also handles the management of the browser's window. It positions the browser window, handles resizing, and manages user interactions with the window frame (minimize, maximize, close buttons, etc.).
+User Interaction:
+
+As you type the URL, click links, or interact with the web page, the Window Server captures these inputs, sends them to the browser, and updates the display accordingly. For example, when you click a link on the Google homepage, the browser responds, and the Window Server ensures that the updated content is displayed on the screen.
+Security and Isolation:
+
+The Window Server enforces security measures to prevent one application or tab from interfering with others. For instance, it prevents one tab from accessing the content of another tab due to the same-origin policy.
+Memory and Resource Management:
+
+The Window Server manages the allocation of system resources, such as memory, to ensure that the browser and other applications run smoothly without overloading the system.
+
+
 Post-rendering and user-induced execution
 -----------------------------------------
 
@@ -688,6 +759,7 @@ Plugins such as Flash or Java may execute as well, although not at this time on
 the Google homepage. Scripts can cause additional network requests to be
 performed, as well as modify the page or its layout, causing another round of
 page rendering and painting.
+The "Post-rendering and user-induced execution" section delves into what happens after the page is rendered. It covers the execution of JavaScript code, handling user interactions, and making additional network requests based on user actions, such as clicking links or submitting forms.
 
 .. _`Creative Commons Zero`: https://creativecommons.org/publicdomain/zero/1.0/
 .. _`"CSS lexical and syntax grammar"`: http://www.w3.org/TR/CSS2/grammar.html
