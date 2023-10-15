@@ -709,3 +709,52 @@ page rendering and painting.
 .. _`downgrade attack`: http://en.wikipedia.org/wiki/SSL_stripping
 .. _`OSI Model`: https://en.wikipedia.org/wiki/OSI_model
 .. _`Spanish`: https://github.com/gonzaleztroyano/what-happens-when-ES
+
+what happen when u type google into your web browser
+
+When you type “google.com” into your web browser’s address bar and press Enter, several essential components and processes come into play to retrieve and display the webpage.
+
+DNS Request:
+Your computer sends a request to DNS (DOMAIN NAME SYSTEM) server.
+The DNS server sends back the IP address of the server which https://www.google.com points to.
+2. TCP/IP:
+
+Once your browser has the IP address :
+
+Your browser establishes a connection with the server through the IP address. The type of this connection is known as Transmission Control Protocol (TCP) and your computer is able to establish this connection through the Internet Protocol (IP).
+3. Firewall:
+
+The request to “google.com” may pass through your computer’s local firewall, as well as various network firewalls, which are designed to protect against unauthorized access and network threats. These firewalls inspect and filter incoming and outgoing traffic.
+4. HTTPS/SSL:
+
+Your browser will attempt to establish a secure connection using HTTPS (Hypertext Transfer Protocol Secure). This involves a secure handshake with the web server to encrypt the data exchanged between your browser and the server, ensuring privacy and data integrity.
+SSL (Secure Sockets Layer)/TLS (Transport Layer Security)certificates are used to verify the website’s authenticity.
+5. Load Balancer:
+
+Large websites like Google typically employ load balancers to distribute incoming traffic evenly among multiple web servers. Load balancers improve the site’s availability, performance, and reliability. They determine which server to route your request to.
+The request from your browser will therefore hit the load balancer first which will forward it to a specific server depending on the algorithm used by the load balancer.
+6. Web Server:
+
+Your request reaches a web server, which hosts the web pages and processes HTTP requests.
+
+The server that receives the request then sends a response back to the load balancer.
+Load balncer will also forwards the response back to your browser.
+This response will mostly include HTML, CSS, and JavaScript files that makes up Google’s homepage :
+— — > HTML FILES: tells the browser how to render the content of the page web.
+— — → CSS FILES: tells the browser how to style the content.
+— — → JAVASCRIPT FILES: adds interactivity to the page web.
+7. Application Server:
+
+In the case of more complex websites or web applications, an application server might be involved. It handles dynamic content generation and interacts with databases and other services to provide the requested functionality.
+
+8. Database:
+
+To retrieve specific information, such as search results or user account data, the application server may query a database. Google, for example, relies on massive databases to provide search results and other personalized content.
+
+9. The requested web page is then assembled and sent back through the same chain of components: the application server, web server, load balancer (if applicable), and finally to your browser.
+
+Your browser then renders the page for you to view.
+
+This entire process happens in a fraction of a second, allowing you to access websites like Google almost instantaneously. Each component plays a crucial role in ensuring a secure, fast, and reliable web browsing experience.
+
+
