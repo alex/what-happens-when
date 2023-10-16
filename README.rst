@@ -619,6 +619,10 @@ set to "complete" and a "load" event is fired.
 Note there is never an "Invalid Syntax" error on an HTML page. Browsers fix
 any invalid content and go on.
 
+###Cookies
+
+Browsers also handle cookies, which are small pieces of data that websites store on a user's computer. Cookies are used to remember user preferences, login sessions, and other information, making the browsing experience more personalized. 
+
 CSS interpretation
 ------------------
 
