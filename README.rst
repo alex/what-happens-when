@@ -619,15 +619,53 @@ set to "complete" and a "load" event is fired.
 Note there is never an "Invalid Syntax" error on an HTML page. Browsers fix
 any invalid content and go on.
 
-CSS interpretation
+CSS Interpretation
 ------------------
 
-* Parse CSS files, ``<style>`` tag contents, and ``style`` attribute
-  values using `"CSS lexical and syntax grammar"`_
-* Each CSS file is parsed into a ``StyleSheet object``, where each object
-  contains CSS rules with selectors and objects corresponding CSS grammar.
-* A CSS parser can be top-down or bottom-up when a specific parser generator
-  is used.
+CSS, or **Cascading Style Sheets**, is a style sheet language used for describing the look and formatting of a document written in HTML or XML. It's one of the cornerstones of web development and is used to add styles to web pages.
+
+## How Browsers Interpret CSS
+
+When a browser loads a web page, it also loads the CSS associated with that page. Here's how it interprets the CSS:
+
+1. **Parsing**: The browser parses the CSS file from top to bottom. It reads the selectors, properties, and values, and creates a `Document Object Model (DOM)` tree.
+
+2. **Matching**: The browser matches the selectors in the CSS file with the elements in the HTML file. If there's a match, it applies the corresponding styles to those elements.
+
+3. **Rendering**: After all styles have been applied, the browser renders the page on the screen according to these styles.
+
+Here's an example of a simple CSS rule:
+
+```css
+body {
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+}
+```
+
+In this example, `body` is the selector, `background-color` and `font-family` are properties, and `#f0f0f0` and `Arial, sans-serif` are their corresponding values.
+
+## Specificity
+
+One important concept in CSS interpretation is specificity. If there are conflicting style rules, the browser will give priority based on specificity. Here's how it's calculated:
+
+- Inline styles have the highest specificity.
+- ID selectors have higher specificity than class selectors.
+- Class selectors have higher specificity than element selectors.
+
+For example:
+
+```css
+#content h1 {
+    color: blue;
+}
+
+h1 {
+    color: red;
+}
+```
+
+In this case, even though `color: red;` comes after `color: blue;`, the color of `h1` inside `#content` will be blue because ID selectors have higher specificity.
 
 Page Rendering
 --------------
