@@ -629,6 +629,24 @@ CSS interpretation
 * A CSS parser can be top-down or bottom-up when a specific parser generator
   is used.
 
+
+JavaScript Execution
+-----------------
+After parsing the HTML and CSS, the browser will resolve all of the javascript code that is referenced on the webpage, and it will prepare the code for execution.
+
+The browser will do this in the following steps:
+* Identify all the ``<script>`` tags on the webpage.
+* Load all the external Javascript files that are referenced in the ``<script>`` tags.
+* Parse the Javascript code in the ``<script>`` tags and external Javascript files.
+* Compile the javascript code into machine code. This is down with a process called `"just-in-time (JIT) compilation."`_ 
+* Execute the machine code from top to bottom.
+
+However, there are a few things that can affect the order in which Javascript code is executed:
+
+* Async and deffered scripts: Scripts with the ``async`` or ``defer`` attributes are loaded and executed asynchronosly. This means that the browser can start rendering the webpahe while the Javascript code is still loading.
+* Event handlers: Event handlers are functions that are executed when certain events occur, such as a user clicking a button or the page loading. Event handlers can be added to HTML elements using the ``addEventListener()`` method.
+* Callbacks: Callbacks are functions that are passed as arguments to other functions. They are typically executed when the other function has finished executing.
+
 Page Rendering
 --------------
 
@@ -691,6 +709,7 @@ page rendering and painting.
 
 .. _`Creative Commons Zero`: https://creativecommons.org/publicdomain/zero/1.0/
 .. _`"CSS lexical and syntax grammar"`: http://www.w3.org/TR/CSS2/grammar.html
+.. _`"just-in-time (JIT) compilation."`: https://medium.com/@aamchora/what-exactly-just-in-time-jit-compilation-is-in-javascript-f7aea482843f
 .. _`Punycode`: https://en.wikipedia.org/wiki/Punycode
 .. _`Ethernet`: http://en.wikipedia.org/wiki/IEEE_802.3
 .. _`WiFi`: https://en.wikipedia.org/wiki/IEEE_802.11
