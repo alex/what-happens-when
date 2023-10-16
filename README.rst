@@ -506,9 +506,10 @@ and IIS for Windows.
 * The server goes to pull the content that corresponds with the request,
   in our case it will fall back to the index file, as "/" is the main file
   (some cases can override this, but this is the most common method).
-* The server parses the file according to the handler. If Google
-  is running on PHP, the server uses PHP to interpret the index file, and
-  streams the output to the client.
+* When the server gets the webpage content, it needs to understand how to
+  work with it. For example, if Google's website is built using PHP,
+  the server uses PHP to understand and process the page.
+  Then, it sends the processed page to your web browser for you to see.
 
 Behind the scenes of the Browser
 ----------------------------------
@@ -681,13 +682,12 @@ Window Server
 Post-rendering and user-induced execution
 -----------------------------------------
 
-After rendering has been completed, the browser executes JavaScript code as a result
-of some timing mechanism (such as a Google Doodle animation) or user
-interaction (typing a query into the search box and receiving suggestions).
-Plugins such as Flash or Java may execute as well, although not at this time on
-the Google homepage. Scripts can cause additional network requests to be
-performed, as well as modify the page or its layout, causing another round of
-page rendering and painting.
+After rendering has been completed, the browser executes JavaScript code
+due to various triggers, such as predefined timing mechanisms (like an animation,
+for example, a Google Doodle animation) or as a response to user interaction
+(for instance, when you type something into a search box and start receiving suggestions).
+It's worth noting that modern web technologies have reduced the usage of plugins like Flash or Java,
+so you might not encounter them often, especially on popular websites like the Google homepage. However, in some cases, these plugins can also trigger additional network requests or modify the page and its layout, which could lead to another round of rendering and painting.
 
 .. _`Creative Commons Zero`: https://creativecommons.org/publicdomain/zero/1.0/
 .. _`"CSS lexical and syntax grammar"`: http://www.w3.org/TR/CSS2/grammar.html
