@@ -208,6 +208,16 @@ Check HSTS list
 
 DNS lookup
 ----------
+Let’s know how the DNS lookup process works:
+
+When a browser sends a request to access a website, it first contacts the local DNS resolver, usually provided by the Internet Service Provider -> (ISP). The local DNS resolver then looks for the latest DNS record for the domain in its cache. If it has the record, it sends the IP address back to the browser. However, if the local DNS resolver does not have the most recent DNS record, it sends a request to a root nameserver. The root nameserver then replies with the address of a Top-Level Domain -> (TLD) nameserver, like .com, which can provide the IP address of the website’s server.
+
+First, the user’s device sends to the local DNS resolver to resolve the domain name into an IP address. The local DNS resolver then sends to the Top-Level Domain -> (TLD) nameserver to know which authoritative nameserver manages the domain. The TLD nameserver responds with the address of the authoritative nameserver, which the local DNS resolver then queries for the IP address of the domain. Once the authoritative nameserver responds with the IP address, the local DNS resolver sends it back to the user’s device, which then sends a request to the server at that IP address to retrieve the webpage.
+
+If the DNS record is not found at any of the nameservers or if it uses DNS load balancing or Content Delivery Networks -> (CDN), the process of finding it may involve additional steps.
+
+The authoritative nameserver determines the duration for which the DNS record is cached, also known as (TTL) or (Time To Live). The domain owner can customize this duration according to their requirements.
+
 
 * Browser checks if the domain is in its cache. (to see the DNS Cache in
   Chrome, go to `chrome://net-internals/#dns <chrome://net-internals/#dns>`_).
