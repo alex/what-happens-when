@@ -39,6 +39,10 @@ popular searches from the internet as a whole. As you are typing
 with each keypress. It may even suggest "google.com" before you finish typing
 it.
 
+Autocomplete predictions reflect real searches that have been done on Google.
+To determine what predictions to show, google systems look for common queries that match 'g' but also consider:
+The language of the query. The location a query is coming from.
+
 The "enter" key bottoms out
 ---------------------------
 
