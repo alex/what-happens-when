@@ -322,6 +322,7 @@ At this point the packet is ready to be transmitted through either:
 * `Ethernet`_
 * `WiFi`_
 * `Cellular data network`_
+* 'Satellite Links' _
 
 For most home or small business Internet connections the packet will pass from
 your computer, possibly through a local network, and then through a modem
