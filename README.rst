@@ -27,17 +27,25 @@ Table of Contents
 
 The "g" key is pressed
 ----------------------
-The following sections explain the physical keyboard actions
-and the OS interrupts. When you press the key "g" the browser receives the
-event and the auto-complete functions kick in.
-Depending on your browser's algorithm and if you are in
-private/incognito mode or not various suggestions will be presented
-to you in the dropdown below the URL bar. Most of these algorithms sort
-and prioritize results based on search history, bookmarks, cookies, and
-popular searches from the internet as a whole. As you are typing
-"google.com" many blocks of code run and the suggestions will be refined
-with each keypress. It may even suggest "google.com" before you finish typing
-it.
+The following sections explain the physical keyboard actions and the OS interrupts. When you press the key "g" the browser receives the event and the auto-complete functions kick in. Depending on your browser's algorithm and if you are in private/incognito mode or not various suggestions will be presented to you in the dropdown below the URL bar. Most of these algorithms sort and prioritize results based on search history, bookmarks, cookies, and popular searches from the internet as a whole. As you are typing "google.com" many blocks of code run and the suggestions will be refined with each keypress. It may even suggest "google.com" before you finish typing it.
+
+When a user presses the "g" key on their keyboard, it initiates a series of events within the computer system to handle this input. Here's what happens:
+
+Keyboard Event Detection: The first step in processing the "g" key press is the detection of the physical event. Modern keyboards use a matrix of switches beneath the keys. When you press a key, it completes an electrical circuit, sending a signal to the computer.
+
+Operating System Interrupt: This key press event generates an interrupt, which is a signal to the computer's operating system that a key has been pressed. The operating system needs to determine which key was pressed and how to handle it.
+
+Key Code Recognition: The operating system translates the electrical signal into a key code. In the case of the "g" key, it would be assigned a unique key code.
+
+Event Dispatch: The operating system dispatches this key press event to the active application or the currently focused window.
+
+Input Handling by Application: The application, which could be a web browser, text editor, or any software that accepts text input, receives the key press event and processes it. In the context of a web browser, the browser checks if the key press event occurred in a text input field, such as the address bar or a search box.
+
+Auto-Complete and Suggestions: In the case of a web browser's address bar, when "g" is pressed, auto-complete functions may kick in. The browser's algorithm might start suggesting websites or search terms based on the user's history, bookmarks, cookies, and popular internet searches. So, as the user continues typing "google.com," the suggestions may refine with each keypress.
+
+User Interaction: Finally, the user can choose to either complete the suggested entry, continue typing their query, or ignore the suggestions and continue typing freely.
+
+The process of handling a key press involves multiple layers of software and hardware, all working together to ensure a seamless and efficient user experience. This is just a glimpse into the intricate steps that occur when a single key, like "g," is pressed on a keyboard.
 
 The "enter" key bottoms out
 ---------------------------
