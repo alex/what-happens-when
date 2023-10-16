@@ -520,6 +520,30 @@ to the browser it undergoes the below process:
 * Rendering - Construct DOM Tree → Render Tree → Layout of Render Tree →
   Painting the render tree
 
+### Bug Fixes Contribution: Quick Guide
+
+1. **Understand the Bug:**
+- Identify a bug labeled in the project's issues.
+- Reproduce the bug locally to understand it clearly.
+
+2. **Fix the Bug:**
+- Isolate the problematic code.
+- Implement a clear, concise fix.
+
+3. **Prevent Future Issues:**
+- Write test cases specifically for the bug.
+- Ensure existing functionalities aren't affected.
+
+4. **Submit a Pull Request:**
+- Fork the project and create a new branch.
+- Commit your fix and create a pull request.
+- Engage with the community, respond to feedback.
+
+5. **Celebrate Your Contribution:**
+- Once approved, your fix will enhance the project!
+
+
+
 Browser
 -------
 
