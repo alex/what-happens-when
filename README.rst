@@ -628,6 +628,9 @@ CSS interpretation
   contains CSS rules with selectors and objects corresponding CSS grammar.
 * A CSS parser can be top-down or bottom-up when a specific parser generator
   is used.
+* In cases where an external stylesheet, the ``<style>`` tag contents, and ``style`` attribute values are used, the browser uses the followind precedence:
+  * ``style`` attribute values
+  * ``<style>`` tag contents and external contents would be parsed based on a factor like specificity
 
 Page Rendering
 --------------
