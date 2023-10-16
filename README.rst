@@ -299,73 +299,74 @@ the default gateway it can resume its DNS process:
 
 Opening of a socket
 -------------------
-Once the browser receives the IP address of the destination server, it takes
-that and the given port number from the URL (the HTTP protocol defaults to port
-80, and HTTPS to port 443), and makes a call to the system library function
-named ``socket`` and requests a TCP socket stream - ``AF_INET/AF_INET6`` and
-``SOCK_STREAM``.
+Understanding Data Transmission: How Sockets and TCP Work
 
-* This request is first passed to the Transport Layer where a TCP segment is
-  crafted. The destination port is added to the header, and a source port is
-  chosen from within the kernel's dynamic port range (ip_local_port_range in
-  Linux).
-* This segment is sent to the Network Layer, which wraps an additional IP
-  header. The IP address of the destination server as well as that of the
-  current machine is inserted to form a packet.
-* The packet next arrives at the Link Layer. A frame header is added that
-  includes the MAC address of the machine's NIC as well as the MAC address of
-  the gateway (local router). As before, if the kernel does not know the MAC
-  address of the gateway, it must broadcast an ARP query to find it.
+Introduction:
 
-At this point the packet is ready to be transmitted through either:
+In this article, we'll delve into the intricacies of how data is transmitted from
+your web browser to a remote server. We'll explore the essential components of the 
+process, from opening a socket to the TCP connection flow.
 
-* `Ethernet`_
-* `WiFi`_
-* `Cellular data network`_
+Opening of a Socket:
 
-For most home or small business Internet connections the packet will pass from
-your computer, possibly through a local network, and then through a modem
-(MOdulator/DEModulator) which converts digital 1's and 0's into an analog
-signal suitable for transmission over telephone, cable, or wireless telephony
-connections. On the other end of the connection is another modem which converts
-the analog signal back into digital data to be processed by the next `network
-node`_ where the from and to addresses would be analyzed further.
+When your browser receives the IP address of the destination server, it initiates 
+the process of opening a socket. Here's how it works step by step:
 
-Most larger businesses and some newer residential connections will have fiber
-or direct Ethernet connections in which case the data remains digital and
-is passed directly to the next `network node`_ for processing.
+The browser extracts the destination port from the URL (typically 80 for HTTP and 443 for HTTPS) 
+and requests a TCP socket stream using the socket system library function, specifying the address
+ family (AF_INET or AF_INET6) and socket type (SOCK_STREAM).
 
-Eventually, the packet will reach the router managing the local subnet. From
-there, it will continue to travel to the autonomous system's (AS) border
-routers, other ASes, and finally to the destination server. Each router along
-the way extracts the destination address from the IP header and routes it to
-the appropriate next hop. The time to live (TTL) field in the IP header is
-decremented by one for each router that passes. The packet will be dropped if
-the TTL field reaches zero or if the current router has no space in its queue
-(perhaps due to network congestion).
+The request travels through the Transport Layer, where a TCP segment is crafted. This segment 
+includes the destination port in the header, and a source port is selected from the kernel's 
+dynamic port range (known as ip_local_port_range in Linux).
 
-This send and receive happens multiple times following the TCP connection flow:
+At the Network Layer, an additional IP header is added, incorporating the IP addresses of both 
+the destination server and the current machine to create a packet.
 
-* Client chooses an initial sequence number (ISN) and sends the packet to the
-  server with the SYN bit set to indicate it is setting the ISN
-* Server receives SYN and if it's in an agreeable mood:
-   * Server chooses its own initial sequence number
-   * Server sets SYN to indicate it is choosing its ISN
-   * Server copies the (client ISN +1) to its ACK field and adds the ACK flag
-     to indicate it is acknowledging receipt of the first packet
-* Client acknowledges the connection by sending a packet:
-   * Increases its own sequence number
-   * Increases the receiver acknowledgment number
-   * Sets ACK field
-* Data is transferred as follows:
-   * As one side sends N data bytes, it increases its SEQ by that number
-   * When the other side acknowledges receipt of that packet (or a string of
-     packets), it sends an ACK packet with the ACK value equal to the last
-     received sequence from the other
-* To close the connection:
-   * The closer sends a FIN packet
-   * The other sides ACKs the FIN packet and sends its own FIN
-   * The closer acknowledges the other side's FIN with an ACK
+The packet then moves to the Link Layer, where a frame header is appended, including the MAC 
+address of the machine's NIC and the MAC address of the local router (gateway). If the router's 
+MAC address is unknown, an ARP query is broadcasted.
+
+Now, the packet is ready for transmission through one of the following mediums: Ethernet, WiFi, or a 
+cellular data network.
+
+For most home or small business connections, the packet passes through a modem, converting digital 
+data into an analog signal for transmission. On the receiving end, another modem reverses the process
+ to retrieve digital data for further processing by the next network node.
+
+In larger businesses and modern residential setups with fiber or direct Ethernet connections, data 
+remains digital and goes directly to the next network node for processing.
+
+The packet eventually reaches the router managing the local subnet, continuing its journey through
+ autonomous system border routers, other ASes, and ultimately to the destination server. At each router,
+  the destination address is extracted from the IP header and routed to the appropriate next hop.
+   The Time to Live (TTL) field in the IP header is decremented for each router, and the packet may
+    be dropped if the TTL reaches zero or if the current router's queue is congested.
+
+TCP Connection Flow:
+
+The process of sending and receiving data follows the TCP connection flow:
+
+The client selects an Initial Sequence Number (ISN) and sends a packet to the server with the
+ SYN bit set to initiate the ISN setup.
+
+The server receives the SYN, selects its own ISN, sets SYN to indicate its choice, adds the 
+client's ISN +1 to its ACK field, and acknowledges receipt.
+
+The client acknowledges the connection by sending a packet, updating its sequence number and 
+the receiver's acknowledgment number.
+
+Data is transferred as each side increases its SEQ by the number of data bytes sent. The other 
+side acknowledges the received packets.
+
+To close the connection, one side sends a FIN packet, the other side acknowledges the FIN and
+sends its own FIN, and the closer acknowledges the other side's FIN with an ACK.
+
+Conclusion:
+
+Understanding the journey of data transmission from opening a socket to the TCP connection flow 
+is fundamental in comprehending how web browsing and server communication work. These steps ensure 
+that data travels seamlessly from your browser to the remote server and back.
 
 TLS handshake
 -------------
