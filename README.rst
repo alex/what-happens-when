@@ -544,6 +544,8 @@ common user interface elements are:
   current documents
 * Home button that takes you to your home page
 
+Examples of browser includes:  Google Chrome, Opera, Firefox e.t.c
+
 **Browser High-Level Structure**
 
 The components of the browsers are:
