@@ -224,6 +224,16 @@ DNS lookup
 * If the DNS server is on a different subnet, the network library follows
   the ``ARP process`` below for the default gateway IP.
 
+More Info about the DNS
+DNS resolution is like a game of telephone between your browser and the DNS server. 
+The process goes like this:
+Your browser tries to access a website by entering the domain name (e.g. www.example.com).
+The browser checks its cache to see if it already has the IP address for that domain name stored locally.
+If the IP address isn't in the cache, the browser sends a request to a DNS server 
+(usually your router or ISP's DNS server) to resolve the domain name to an IP address.
+The DNS server checks its cache to see if it already has the IP address for the domain name.
+If not, it goes up the chain, asking other DNS servers for the IP address.
+Eventually, the DNS server finds the IP address and sends it back to your browser.
 
 ARP process
 -----------
