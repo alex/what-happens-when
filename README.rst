@@ -662,6 +662,10 @@ Page Rendering
 * Final layer positions are computed and the composite commands are issued
   via Direct3D/OpenGL. The GPU command buffer(s) are flushed to the GPU for
   asynchronous rendering and the frame is sent to the window server.
+* Once all necessary resources are loaded and the HTML document is fully processed, your web browser displays the
+  Google homepage on your screen. You can interact with it, enter search queries, or click on links. The entire
+  process happens so swiftly that you might take it for granted, but it involves numerous components working in
+  harmony.
 
 GPU Rendering
 -------------
