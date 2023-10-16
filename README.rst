@@ -397,6 +397,31 @@ TLS handshake
 * From now on the TLS session transmits the application (HTTP) data encrypted
   with the agreed symmetric key.
 
+Load balancer: which web server responds to my requests 
+--------------------------------------------------------
+Since google gets immense traffic each day, It\’s obvious that no single server
+can handle such immense traffic. When you have a website experiencing high traffic,
+it\’s crucial to find a reliable solution to serve all the clients effectively.
+This is where load balancers come into play.
+
+Load balancers distribute the workload of a system across multiple individual
+servers or groups of servers. This distribution helps in reducing the amount of load on
+an individual server, leading to improved reliability, efficiency, and availability of
+the website. Load balancers offer numerous advantages, including:
+
+* Increased work done in the same amount of timedue to concurrency.
+
+* Elimination of a single point of failure. If one server crashes, the website remains up and running, served by the other servers.
+
+* Scalability: The number of servers can be easily increased or decreased as needed.
+
+* Efficient resource management: When employing effective load balancing algorithms and techniques, optimal and efficient utilization of resources can be achieved.
+
+Moreover, it is a common practice to install SSL certificates on the load balancer rather than
+directly on the individual servers behind it. This approach is known as SSL termination. This allows
+the load balancers to handle the SSL/TLS encryption and decryption process, while allowing the
+backend servers to focus on processing requests and serving content more efficiently.
+
 If a packet is dropped
 ----------------------
 
