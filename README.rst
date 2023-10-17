@@ -397,6 +397,13 @@ TLS handshake
 * From now on the TLS session transmits the application (HTTP) data encrypted
   with the agreed symmetric key.
 
+Load balancer
+-------------
+Websites usually receive a massive number of requests every day, so they distribut
+requests among multiple servers using a load balancer. in this case, the browser 
+doesn't actually communicate with the server but with the load balancer.
+load balancer distributes requests on each server using load balancing algorithms.
+
 If a packet is dropped
 ----------------------
 
