@@ -39,6 +39,18 @@ popular searches from the internet as a whole. As you are typing
 with each keypress. It may even suggest "google.com" before you finish typing
 it.
 
+Further Explanation.
+-------------------
+    Key Press Event: The physical act of pressing the "g" key creates an electrical connection in the keyboard. This connection is registered as a key press event, which is then transmitted to the computer.
+
+    Browser Interaction: The key press event is first received by your web browser. The browser's job is to interpret this event and determine what action should be taken.
+
+    Auto-Complete Mechanism: In most modern browsers, an auto-complete mechanism kicks in when you start typing. This mechanism attempts to predict what you're going to type and suggests relevant URLs or search terms. The suggestions are based on a combination of factors, including your browsing history, bookmarks, cookies, and popular searches.
+
+    Algorithmic Sorting: The browser uses complex algorithms to sort and prioritize the suggestions. These algorithms take into account the relevance of the suggestions based on your browsing habits and patterns. As you type "google.com," the browser's code refines the suggestions with each keypress, often suggesting "google.com" before you've finished typing it.
+
+    Privacy and Incognito Mode: It's worth noting that if you're browsing in private or incognito mode, the browser may limit the suggestions and collect less data to respect your privacy.
+
 The "enter" key bottoms out
 ---------------------------
 
