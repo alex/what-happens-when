@@ -396,7 +396,8 @@ TLS handshake
 
 * From now on the TLS session transmits the application (HTTP) data encrypted
   with the agreed symmetric key.
-
+* both the client and server a gree on a symmetric key and then they begin
+  to communicate to each other using that secret key to secure the communication
 If a packet is dropped
 ----------------------
 
