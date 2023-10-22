@@ -397,6 +397,27 @@ TLS handshake
 * From now on the TLS session transmits the application (HTTP) data encrypted
   with the agreed symmetric key.
 
+Web Servers, Application Servers, and Databases
+--------------------------
+
+The load balancer also plays a pivotal role in directing requests to either
+a web server or an application server, depending on the type of request.
+
+* Web Servers: Web servers serves static content and handles the client's
+  content and handles the request meticulously. Based on the request, the web
+  server responds with HTML pages, images, CSS, JavaScript, and other static
+  assets.
+
+* Application Servers: Application servers, are responsible
+  for executing application logic, processing dynamic content, and interacting
+  with databases to process and manipulate data. They handle more complex 
+  tasks beyond serving static content.
+
+* Databases: If the webpage requires data from a database, the application 
+  server connects to it to retrieve the necessary information. Databases 
+  are crucial for dynamic websites and applications as they store and 
+  manage vast amounts of data.
+
 If a packet is dropped
 ----------------------
 
