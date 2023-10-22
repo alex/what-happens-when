@@ -397,7 +397,7 @@ TLS handshake
 * From now on the TLS session transmits the application (HTTP) data encrypted
   with the agreed symmetric key.
 
-Web Servers, Aplication Servers and Databases
+Web Servers, Application Servers, and Databases
 --------------------------
 
 The load balancer also plays a pivotal role in directing requests to either
