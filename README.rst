@@ -224,6 +224,16 @@ DNS lookup
 * If the DNS server is on a different subnet, the network library follows
   the ``ARP process`` below for the default gateway IP.
 
+DNS Cache and Local Hosts File
+----------
+
+Modern browsers maintain a DNS cache to store resolved domain names,
+allowing for faster subsequent lookups. When a domain is found in the cache,
+the browser can skip the full DNS lookup process.
+Additionally, before querying DNS servers, the browser checks the local hosts
+file on the user's machine. This file can be used to map hostnames
+to IP addresses and is often employed for local testing and development purposes.
+
 
 ARP process
 -----------
@@ -296,6 +306,17 @@ the default gateway it can resume its DNS process:
 * If the local/ISP DNS server does not have it, then a recursive search is
   requested and that flows up the list of DNS servers until the SOA is reached,
   and if found an answer is returned.
+
+TCP Connection Setup
+-------------------
+
+The TCP connection setup involves a three-way handshake between the client and server.
+This handshake begins with the client sending a SYN (Synchronize) packet to the server.
+The server acknowledges this request by sending a SYN-ACK (Synchronize-Acknowledge) packet
+back to the client.
+Finally, the client acknowledges the server's response with an ACK (Acknowledge) packet. 
+This process establishes a reliable connection between the client and the server,
+ensuring that data can be exchanged securely and in order.
 
 Opening of a socket
 -------------------
@@ -628,6 +649,15 @@ CSS interpretation
   contains CSS rules with selectors and objects corresponding CSS grammar.
 * A CSS parser can be top-down or bottom-up when a specific parser generator
   is used.
+
+JavaScript Execution
+------------------
+
+Once the initial rendering of a web page is complete, browsers parse and execute JavaScript code. 
+JavaScript can manipulate the Document Object Model (DOM), 
+enabling dynamic changes to the page's content and structure. 
+Additionally, JavaScript can perform asynchronous tasks, such as fetching data from servers, 
+which enhances the user experience by making web applications more responsive and interactive.
 
 Page Rendering
 --------------
