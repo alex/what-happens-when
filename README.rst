@@ -15,7 +15,7 @@ request, please!
 This is all licensed under the terms of the `Creative Commons Zero`_ license.
 
 Read this in `简体中文`_ (simplified Chinese), `日本語`_ (Japanese), `한국어`_
-(Korean) and `Spanish`_. NOTE: these have not been reviewed by the alex/what-happens-when
+(Korean) and `Spanish`_ and `French`_. NOTE: these have not been reviewed by the alex/what-happens-when
 maintainers.
 
 Table of Contents
@@ -709,3 +709,4 @@ page rendering and painting.
 .. _`downgrade attack`: http://en.wikipedia.org/wiki/SSL_stripping
 .. _`OSI Model`: https://en.wikipedia.org/wiki/OSI_model
 .. _`Spanish`: https://github.com/gonzaleztroyano/what-happens-when-ES
+.. _`French`: https://github.com/ggbaguidi/what-happens-when-FR
