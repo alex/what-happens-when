@@ -573,6 +573,56 @@ The components of the browsers are:
 
 HTML parsing
 ------------
+HTML parsing is a crucial process in web development that involves the interpretation and conversion of HTML code into a structured document, which a web browser can render as a web page. During HTML parsing, several steps are taken to understand and render the web page. Here is an overview of what happens during HTML parsing.
+
+Tokenization:
+The parsing process begins with tokenization. The HTML document is broken down into a stream of tokens. Tokens represent elements, attributes, text, comments, and other HTML components.
+
+Lexing (or Scanning):
+The tokenizer (lexer) processes the stream of tokens and separates them into meaningful parts like start tags, end tags, attributes, and text content. It also identifies the token types.
+
+DOM Tree Construction:
+The browser creates an empty Document Object Model (DOM) tree.
+As tokens are processed, elements are created and added to the tree.
+The tree structure mirrors the nesting of HTML elements in the document.
+
+Parsing of HTML Tags:
+Start Tags: When an opening tag is encountered, a corresponding element is created and added to the DOM tree.
+End Tags: When a closing tag is found, the parser identifies the current element and closes it. If tags are not properly nested, the browser will try to correct them to maintain a valid structure.
+Self-Closing Tags: Tags like <img> or <input> are automatically closed when encountered.
+
+Attribute Parsing:
+For elements with attributes, the parser reads and stores attribute name-value pairs in the element.
+Invalid attributes may be ignored, or the browser may correct them.
+
+Text and Character Data:
+Text content found between elements is added as Text nodes in the DOM tree. Whitespace and line breaks are also preserved.
+Special characters like &lt;, &gt;, and &amp; are converted to their respective entities.
+
+Script and Style Blocks:
+When the parser encounters <script> and <style> elements, it temporarily suspends parsing to execute JavaScript or apply CSS. This can be asynchronous, depending on the attribute values (e.g., async or defer for scripts).
+
+CSS Parsing:
+While parsing, if external CSS files are referenced, the browser may initiate parallel requests to download these stylesheets.
+
+Error Handling:
+If the parser encounters malformed or invalid HTML, it attempts to correct or work around the issues. This is known as error recovery.
+Errors like missing end tags, misplaced elements, or incorrect attribute values are typically handled gracefully to render a valid DOM tree.
+
+Event Handling:
+As the DOM tree is being constructed, the browser may also encounter event attributes (e.g., onclick). These are attached to the relevant DOM elements to provide interactivity.
+
+Rendering Tree:
+Once the DOM tree is constructed, the browser generates a rendering tree that's used for layout and rendering on the screen. This tree contains only the elements that are visually relevant.
+
+CSS Styling:
+The browser computes the final styles for each element by combining user styles, author styles, and browser defaults. This process is called "CSS styling."
+
+Layout and Painting:
+The browser performs layout and paints the page on the screen based on the computed styles and layout information.
+
+User Interaction:
+The parsed and rendered web page is now interactive, allowing users to interact with it, triggering JavaScript events, and navigating between pages.
 
 The rendering engine starts getting the contents of the requested
 document from the networking layer. This will usually be done in 8kB chunks.
