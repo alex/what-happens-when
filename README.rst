@@ -99,12 +99,13 @@ connection, but historically has been over PS/2 or ADB connections.
 Interrupt fires [NOT for USB keyboards]
 ---------------------------------------
 
-The keyboard sends signals on its interrupt request line (IRQ), which is mapped
-to an ``interrupt vector`` (integer) by the interrupt controller. The CPU uses
-the ``Interrupt Descriptor Table`` (IDT) to map the interrupt vectors to
-functions (``interrupt handlers``) which are supplied by the kernel. When an
-interrupt arrives, the CPU indexes the IDT with the interrupt vector and runs
-the appropriate handler. Thus, the kernel is entered.
+When the keyboard generates an interrupt, it sends signals on its interrupt request
+line (IRQ). The interrupt controller maps this IRQ to an ``interrupt vector`` 
+represented as an integer. This mapping is performed by the operating system's kernel.
+
+The kernel maintains an ``Interrupt Descriptor Table`` (IDT), which associates each interrupt vector with a specific kernel-supplied function called an ``interrupt handler`` When an interrupt event occurs, the CPU uses the IDT to look up the corresponding interrupt handler by its vector number. The kernel then executes the appropriate interrupt handler, allowing it to respond to the hardware interrupt.
+
+This process effectively transfers control from the regular program flow to the kernel's code, ensuring that the operating system can manage and handle hardware events.
 
 (On Windows) A ``WM_KEYDOWN`` message is sent to the app
 --------------------------------------------------------
@@ -192,11 +193,30 @@ Convert non-ASCII Unicode characters in the hostname
   the browser would apply `Punycode`_ encoding to the hostname portion of the
   URL.
 
+* `Punycode` is a representation method used to encode Unicode characters that
+  are outside the ASCII character set into a more restricted character set that
+  is valid for use in the `Domain Name System (DNS)`. It allows domain names
+  containing non-ASCII characters to be represented with an ASCII-compatible format,
+  ensuring compatibility with existing DNS infrastructure. This is particularly 
+  useful for internationalized domain names (IDNs) that include non-ASCII characters.
+
+* The Punycode encoding process involves converting the non-ASCII Unicode characters into
+  ASCII characters, which can be represented in the traditional DNS system. This process
+  helps maintain the integrity of the domain name system while allowing for the representation
+  of a wider range of international characters.
+
 Check HSTS list
 ---------------
+* `HSTS (HTTP Strict Transport Security)` is a web security policy
+  mechanism that helps to protect websites against protocol downgrade 
+  attacks and cookie hijacking. It works by instructing web browsers to 
+  only use secure, HTTPS connections for future communication with a 
+  particular domain.
+
 * The browser checks its "preloaded HSTS (HTTP Strict Transport Security)"
   list. This is a list of websites that have requested to be contacted via
   HTTPS only.
+
 * If the website is in the list, the browser sends its request via HTTPS
   instead of HTTP. Otherwise, the initial request is sent via HTTP.
   (Note that a website can still use the HSTS policy *without* being in the
@@ -227,6 +247,11 @@ DNS lookup
 
 ARP process
 -----------
+
+`Address Resolution Protocol (ARP)` is a crucial process in computer networking
+that facilitates the translation of IP addresses to MAC addresses. When a device
+needs to communicate with another device on the same network, it requires the
+MAC address of the target device to create a data link.
 
 In order to send an ARP (Address Resolution Protocol) broadcast the network
 stack library needs the target IP address to lookup. It also needs to know the
