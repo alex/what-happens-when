@@ -25,6 +25,26 @@ Table of Contents
    :backlinks: none
    :local:
 
+typing https://www.google.com and press enter:
+--------------------------------------------------
+Some steps occurs when we type www.google.com and press enter:
+The first step is that browser takes from you the url (Uniform Resource Locator) which is nothing more than the address of a given unique resource on the Web, The URL contains the name of the protocol needed to access a resource, as well as a resource name. The first part of a URL identifies what protocol (HTTP or HTTPS or FTP) to use as the primary access medium. The second part identifies the IP address or domain name — and possibly subdomain — where the resource is located.
+
+Now we knew what the browser and url are, then we have to know what excatly happens when you write https://www.google.com from your laptop or whatever device you are using, the device you are using sends request to DNS (Domain Name System) server which briefly is the phonebook of the Internet. Humans access information online through domain names, like www.google.com. Web browsers interact through Internet Protocol (IP) addresses. DNS translates domain names to IP addresses so browsers can load Internet resources.
+
+After that step the compter creates a connection using that IP address with the server and this connection called TCP/IP protocol which is a communications standard for delivering data and messages through networks.
+
+The request after this step will go through firewall which is a device used for network security. It monitors network traffic — both incoming and outgoing — to either allow or block data packets based on its security rules.
+
+After establishing the connection the browser send a request to the webpage using SSL or TLS which are protocols for establishing authenticated and encrypted links between networked computers which is responsible for HTTPS (Hypertext Transfer Protocol Secure) to ensure secure connection.
+
+Now let`s ask ourselves an important question .. how large websites like google, facebook, twitter handles all this traffic and this huge number of users ? the answer is by using LOAD BALANCER which is efficiently balances server load. It sits in between the user, or ‘client’, and the server cluster and distributes all the requests from users across all servers capable of fulfilling those requests, which may be local within the same data center or geographically dispersed across the internet or private networks.
+
+At this moment the server recieves the request from load balancer and sends the response again to loand balancer which in turn sends it back to your browser.
+
+The response includes all website data like HTML , CSS and Javscript if the webpage is static, but if the website is dynamic website which contains lots of Data such as Google then the web server requests data from application server which will request data from database server and take all this response then sends it to your browser so the browser will render the webpage and display it.
+
+
 The "g" key is pressed
 ----------------------
 The following sections explain the physical keyboard actions
