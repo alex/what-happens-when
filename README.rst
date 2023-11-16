@@ -223,6 +223,11 @@ DNS lookup
   ``ARP process`` below for the DNS server.
 * If the DNS server is on a different subnet, the network library follows
   the ``ARP process`` below for the default gateway IP.
+* the domain name system resolver performs DNS caching, storing IP addresses collected
+  from authoritative nameservers as temporary data. In other words, DNS caching
+  makes it so that the next time you want to visit the same site, it will simply send
+  back the IP address match obtained before.
+
 
 
 ARP process
