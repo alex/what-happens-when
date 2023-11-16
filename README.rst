@@ -688,7 +688,15 @@ Plugins such as Flash or Java may execute as well, although not at this time on
 the Google homepage. Scripts can cause additional network requests to be
 performed, as well as modify the page or its layout, causing another round of
 page rendering and painting.
-
+Cookies
+-------
+Cookies are small pieces of data stored on the user's device by the web browser.
+They are created by websites to store information about user preferences, login status, and other browsing-related details.
+Purpose:
+Cookies help in managing user sessions, allowing websites to recognize users across multiple page views or visits.
+Personalization: They store user preferences, such as language settings or theme choices.
+Tracking: Cookies are often used for tracking user behavior and gathering analytics data.
+Authentication: Cookies are crucial for user authentication, allowing users to stay logged in across different pages.
 .. _`Creative Commons Zero`: https://creativecommons.org/publicdomain/zero/1.0/
 .. _`"CSS lexical and syntax grammar"`: http://www.w3.org/TR/CSS2/grammar.html
 .. _`Punycode`: https://en.wikipedia.org/wiki/Punycode
