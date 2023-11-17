@@ -689,6 +689,51 @@ the Google homepage. Scripts can cause additional network requests to be
 performed, as well as modify the page or its layout, causing another round of
 page rendering and painting.
 
+# Load Balancing: Ensuring Efficient Traffic Distribution
+
+Load balancing is a crucial technique employed to evenly distribute incoming network traffic across
+multiple servers, preventing overload on any single server and ensuring efficient request handling.
+Google, a pioneer in web services, utilizes an advanced load balancing system named Maglev. This
+custom-built network load balancer operates as a distributed system, designed for horizontal scalability
+to handle traffic of varying sizes with low latency and high throughput.
+
+## The Load Balancing Process
+
+### 1. DNS Resolution
+When a user enters "google.com" in the browser, a DNS request is sent to a resolver to map the domain
+name to an IP address. The DNS resolver responds with the IP address of the Google load balancer, responsible
+for directing the request to the appropriate backend server.
+
+### 2. Load Balancer
+The Google load balancer receives the incoming request and employs sophisticated algorithms to determine
+the optimal backend server. Factors such as server availability, health, location, and load are considered.
+The load balancer ensures an even distribution of requests across servers, preventing any single server from
+becoming overwhelmed.
+
+### 3. Backend Servers
+Once the load balancer identifies the suitable backend server, the request is forwarded to that server.
+The backend server is tasked with processing the request, retrieving data from the database, and generating
+a response.
+
+### 4. Load Balancer (Again)
+After the backend server generates the response, it is sent back to the load balancer, which forwards it
+to the user's browser. This two-step process ensures efficient handling of requests and timely responses.
+
+### 5. Caching
+Google employs caching servers to enhance performance by storing frequently requested content closer
+to users. The load balancer checks the cache first, serving content directly if available. This reduces the
+load on backend servers, improving overall response time.
+
+### 6. Scaling
+Designed to handle millions of requests per second, Google's load balancing system incorporates auto-scaling
+during peak periods. Servers are dynamically added or removed based on traffic patterns, ensuring even
+distribution of the load and quick, efficient request processing.
+
+In summary, Google's Maglev load balancing system integrates DNS resolution, advanced load balancing
+algorithms, efficient backend server management, caching mechanisms, and dynamic scaling to create a robust
+infrastructure that delivers optimal performance even under high traffic conditions.
+
+
 .. _`Creative Commons Zero`: https://creativecommons.org/publicdomain/zero/1.0/
 .. _`"CSS lexical and syntax grammar"`: http://www.w3.org/TR/CSS2/grammar.html
 .. _`Punycode`: https://en.wikipedia.org/wiki/Punycode
