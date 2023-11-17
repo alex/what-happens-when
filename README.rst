@@ -29,7 +29,7 @@ The "g" key is pressed
 ----------------------
 The following sections explain the physical keyboard actions
 and the OS interrupts. When you press the key "g" the browser receives the
-event and the auto-complete functions kick in.
+event and the auto-complete functions kick in. With the intention of viewing "google.com," the browser will read "google" as a regular character and show the letter "g" in the URL bar. Typing the letter "g" by itself does not trigger an automated redirection to "google.com" or cause any other special action.
 Depending on your browser's algorithm and if you are in
 private/incognito mode or not various suggestions will be presented
 to you in the dropdown below the URL bar. Most of these algorithms sort
