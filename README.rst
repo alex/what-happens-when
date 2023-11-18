@@ -709,3 +709,63 @@ page rendering and painting.
 .. _`downgrade attack`: http://en.wikipedia.org/wiki/SSL_stripping
 .. _`OSI Model`: https://en.wikipedia.org/wiki/OSI_model
 .. _`Spanish`: https://github.com/gonzaleztroyano/what-happens-when-ES
+
+CORS (Cross-Origin Resource Sharing)
+------------------------------------
+
+Imagine you're hosting an event, and you have a rule that only friends from your 
+neighborhood can bring food. That's a bit like the Same-Origin Policy (SOP) in 
+web browsers. It says, "Only websites from the same neighborhood (domain) can 
+talk to each other."
+
+But what if you want food from a different neighborhood? That's where CORS 
+comes in – it's like getting special permission for your friends from other 
+areas to bring food to your event.
+
+**Relevance of CORS?**
+
+Let's say your website on "event.com" wants to fetch pictures from "food.com."
+Without CORS, the browser won't allow this because of the SOP. CORS is
+the permission slip that says, "Hey browser, it's okay for 'event.com' 
+to grab pictures from 'food.com.'"
+
+**The Permission Slip - HTTP Headers**
+
+In CORS, browsers and servers pass notes to each other through HTTP headers:
+
+* **Origin:** The browser says, "I'm from 'event.com'. Can I get food from 'food.com'?"
+* **Access-Control-Allow-Origin:** The server replies, "Sure, 'event.com,' you're 
+  welcome to grab food from me!"
+
+There are other notes like methods and headers, ensuring everyone follows the rules.
+
+**Simple Requests vs. Preflight Checks**
+
+Sometimes, the browser can make a direct request – a simple one. But if it's a 
+bit complex (like asking for special food), the browser asks for permission 
+first through a preflight check.
+
+**Credentials - Bringing Cookies to the Event**
+
+If your website needs to bring drinks to the event (user credentials), you'll 
+need to say, "Hey browser, I'm bringing drinks." The server has to agree by 
+allowing credentials.
+
+**Setting Up CORS at the Event**
+
+On the server (food.com), it's like putting up a sign saying, 
+"All parties from 'event.com' are welcome!" On the client side, your 
+website's code needs to be aware of CORS rules, like saying, 
+"Hey, we're grabbing food from 'food.com.'"
+
+**Security Measures**
+
+CORS is like having bouncers at the event – it ensures only the right websites
+get access to certain resources. It helps prevent security issues, making sure 
+the event stays safe.
+
+**Simply Put**
+
+CORS is simply a way for websites to ask, "Can I get resources from another website?" 
+It's like a friendly conversation between the browser and the server, ensuring
+everything runs smoothly in the world of web parties!
