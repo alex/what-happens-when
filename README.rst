@@ -735,7 +735,7 @@ In CORS, browsers and servers pass notes to each other through HTTP headers:
 
 * **Origin:** The browser says, "I'm from 'event.com'. Can I get food from 'food.com'?"
 * **Access-Control-Allow-Origin:** The server replies, "Sure, 'event.com,' you're 
-welcome to grab food from me!"
+  welcome to grab food from me!"
 
 There are other notes like methods and headers, ensuring everyone follows the rules.
 
