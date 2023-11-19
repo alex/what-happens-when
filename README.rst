@@ -627,7 +627,8 @@ CSS interpretation
 * Each CSS file is parsed into a ``StyleSheet object``, where each object
   contains CSS rules with selectors and objects corresponding CSS grammar.
 * A CSS parser can be top-down or bottom-up when a specific parser generator
-  is used.
+  is used. 
+  The CSS interpretation process involves breaking down CSS files and <style> tag contents using the defined lexical and syntax grammar. The result is organized into a StyleSheet object, which contains individual CSS rules. The parsing strategy, whether top-down or bottom-up, depends on the parser generator used.
 
 Page Rendering
 --------------
