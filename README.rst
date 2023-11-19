@@ -1,6 +1,8 @@
 What happens when...
 ====================
 
+![internet journey](https://imgur.com/Ve0Cjd5 )
+
 This repository is an attempt to answer the age-old interview question "What
 happens when you type google.com into your browser's address box and press
 enter?"
