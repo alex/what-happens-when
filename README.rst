@@ -663,6 +663,34 @@ Page Rendering
   via Direct3D/OpenGL. The GPU command buffer(s) are flushed to the GPU for
   asynchronous rendering and the frame is sent to the window server.
 
+Now, let's dive into what happens when your browser transforms code into a visual web page. This is a crucial part of the journey!
+
+1. Constructing the Visual Hierarchy:
+The browser starts by creating a 'Render Tree' that represents the visual structure of the page. It does this by going through all the HTML and CSS, figuring out how different elements relate visually.
+
+2. Figuring Out Sizes:
+Next, it calculates how much space each element should take. Think of it like deciding how much room each part of the webpage needs to look just right.
+
+3. Laying Things Out:
+Once it knows the sizes, it arranges everything on the page. It's like deciding where each element should go, making sure they don't overlap and look good together.
+
+4. Painting the Picture:
+Now comes the fun part – the browser actually paints the page on your screen. It draws everything you see, from text to images, backgrounds, and borders. It's the moment your webpage comes to life!
+
+5. Getting Ready for Animation:
+If there are any animations on the page, the browser creates special layers so it can show those animated parts smoothly without redrawing everything. It's a bit like setting the stage for a performance.
+
+6. Putting It All Together:
+The browser then combines all these elements – the actual webpage, the browser's interface, and any other visible parts. It's like blending different layers to create the final picture.
+
+7. Graphics Power:
+Sometimes, the browser uses your computer's graphics processor (GPU) to make all these calculations faster. It's like having a special helper for the tricky parts.
+
+8. The Grand Finale:
+Lastly, the browser sends all this hard work to your computer's screen. Everything you see – text, images, animations – all of it comes together, and voila! Your webpage is now ready for you to explore.
+
+So, that's the magic behind turning lines of code into the vibrant web pages you enjoy!
+
 GPU Rendering
 -------------
 
