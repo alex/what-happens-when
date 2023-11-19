@@ -18,6 +18,9 @@ Read this in `简体中文`_ (simplified Chinese), `日本語`_ (Japanese), `한
 (Korean) and `Spanish`_. NOTE: these have not been reviewed by the alex/what-happens-when
 maintainers.
 
+Click [here](https://medium.com/@abenapomaa/what-happens-when-you-type-https-www-google-com-in-your-browser-and-press-enter-0e7e005a8b9b) to read my article. Disclaimer: these have not been reviewed by the alex/what-happens-when team.
+
+
 Table of Contents
 ====================
 
