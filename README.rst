@@ -606,6 +606,8 @@ detail by the HTML5 specification.
 
 The algorithm consists of two stages: tokenization and tree construction.
 
+With tokenization, the source code is broken down into tokens that represent specific elements, attributes and text. This is the initial phase of the HTML parsing process. It plays a crucial role in adapting to the forgiving nature of the language as it allows the parser to make sense of the code even if it is not strictly conforming to the HTML specification. The parser reads the HTML source code character by character, determining the type of token based on the context and syntax rules. As it encounters tags, attributes, and text content, the parser generates corresponding tokens. The resulting tokens serve as the basis for constructing the Document Object Model (DOM) tree, which is essential for rendering webpages.
+
 **Actions when the parsing is finished**
 
 The browser begins fetching external resources linked to the page (CSS, images,
