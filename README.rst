@@ -674,6 +674,13 @@ GPU Rendering
   of ``GPU`` massive parallelism for float point calculations required for
   the rendering process.
 
+* Challenges:
+
+While GPUs excel at parallel processing, not all tasks are well-suited for parallelization.
+Some computations may still rely on the sequential processing power of the CPU.
+Compatibility and optimization issues may arise, and not all rendering software may fully
+leverage the capabilities of GPUs.
+
 
 Window Server
 -------------
