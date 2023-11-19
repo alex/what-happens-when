@@ -689,6 +689,26 @@ the Google homepage. Scripts can cause additional network requests to be
 performed, as well as modify the page or its layout, causing another round of
 page rendering and painting.
 
+Rendering Completion:
+
+Once the initial rendering of the webpage is completed, the browser displays the content on the user's screen. This content may include text, images, and other media elements.
+JavaScript Execution:
+
+JavaScript is a scripting language commonly used in web development to enhance the functionality of web pages. After rendering, the browser executes JavaScript code. This execution can be triggered by various events, such as a timing mechanism (like an animation) or user interaction (such as typing in a search query).
+Plugin Execution:
+
+The text mentions plugins like Flash or Java, which traditionally have been used to provide additional functionality on web pages. While Flash and Java plugins are becoming less common due to security concerns and modern web standards, other types of plugins or browser extensions may still execute code at this stage.
+Network Requests:
+
+JavaScript code and plugins can trigger additional network requests. These requests might be used to fetch data from a server, update the page dynamically, or load additional resources.
+Page Modification and Layout Changes:
+
+JavaScript code can modify the content of the page, its layout, or trigger additional rendering processes. This may result in further changes to the displayed content.
+Page Rendering and Painting:
+
+Any modifications to the page's structure or content may lead to another round of rendering and painting. Rendering involves creating a visual representation of the page, and painting involves filling in the pixels on the screen.
+It's important to note that the text doesn't explicitly mention Windows Server, and the described processes are part of the client-side (browser) interaction with web content. The server-side, which could involve a Windows Server or another operating system, is responsible for serving the initial HTML, CSS, and JavaScript files to the browser. The browser then processes and executes these files to render the web page as described in the text.
+
 .. _`Creative Commons Zero`: https://creativecommons.org/publicdomain/zero/1.0/
 .. _`"CSS lexical and syntax grammar"`: http://www.w3.org/TR/CSS2/grammar.html
 .. _`Punycode`: https://en.wikipedia.org/wiki/Punycode
