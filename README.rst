@@ -667,12 +667,45 @@ GPU Rendering
 -------------
 
 * During the rendering process the graphical computing layers can use general
-  purpose ``CPU`` or the graphical processor ``GPU`` as well.
+  puriiiipose ``CPU`` or the graphical processor ``GPU`` as well.
 
 * When using ``GPU`` for graphical rendering computations the graphical
   software layers split the task into multiple pieces, so it can take advantage
   of ``GPU`` massive parallelism for float point calculations required for
   the rendering process.
+  Rendering Process Overview:
+
+Rendering is the process of generating an image or sequence of images from a 3D model by simulating how light interacts with objects in a scene.
+Role of GPU in Rendering:
+
+Graphical rendering tasks can be handled by either the general-purpose CPU or the specialized graphical processor GPU.
+GPUs are particularly well-suited for rendering due to their parallel processing architecture.
+Parallelism in GPU Rendering:
+
+GPUs excel at parallelism, where multiple tasks are executed simultaneously. This is achieved through the use of thousands of cores in a GPU.
+In graphical rendering, tasks such as shading, lighting, and texture mapping involve a large number of repetitive floating-point calculations. GPUs can perform these calculations concurrently on a massive scale.
+Task Splitting for GPU Rendering:
+
+When using the GPU for rendering, the graphical software layers intelligently split rendering tasks into multiple pieces.
+Each piece of the rendering task can be processed independently by different GPU cores, allowing for efficient parallelization.
+This division of labor allows the GPU to handle complex scenes with many objects and intricate details more efficiently than a CPU.
+GPU Massive Parallelism:
+
+GPUs are designed with a high degree of parallelism, often having thousands of cores that can execute instructions concurrently.
+Parallelism is crucial for rendering scenes with a large number of pixels, intricate shaders, and complex lighting calculations.
+Floating-point calculations, which are common in rendering, benefit significantly from the parallel nature of GPU architecture.
+Shader Processing on GPU:
+
+Shaders, which are small programs responsible for rendering effects like lighting and shading, are often processed on the GPU.
+The GPU's parallel architecture allows for the simultaneous execution of shader programs across multiple pixels or vertices.
+Optimizing Performance with GPU:
+
+Utilizing the GPU for rendering helps in achieving higher performance and faster frame rates, especially in graphics-intensive applications and games.
+Developers optimize their rendering pipelines to leverage the strengths of the GPU, improving overall graphics performance.
+Interactions with CPU:
+
+While the GPU handles the parallelizable rendering tasks, the CPU continues to manage other aspects of the application, such as input processing, AI, and overall system coordination.
+In summary, GPU rendering takes advantage of the massive parallelism inherent in GPU architecture to accelerate the rendering process. Task splitting and concurrent processing enable efficient handling of complex graphical scenes, contributing to improved graphics performance and realism in applications and games.
 
 
 Window Server
