@@ -182,6 +182,7 @@ When no protocol or valid domain name is given the browser proceeds to feed
 the text given in the address box to the browser's default web search engine.
 In many cases the URL has a special piece of text appended to it to tell the
 search engine that it came from a particular browser's URL bar.
+When a user inputs a text string into the browser's address bar without specifying a protocol (such as "http://" or "https://") or a valid domain name, the browser typically treats it as a search query. Rather than trying to access a website directly, the browser forwards the entered text to its default search engine to perform a search.
 
 Convert non-ASCII Unicode characters in the hostname
 ------------------------------------------------
