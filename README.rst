@@ -223,6 +223,9 @@ DNS lookup
   ``ARP process`` below for the DNS server.
 * If the DNS server is on a different subnet, the network library follows
   the ``ARP process`` below for the default gateway IP.
+* The length of time that the DNS record is cached (the "TTL," or Time To Live) 
+  is determined by the authoritative nameserver and can be configured by the 
+  domain owner.
 
 
 ARP process
