@@ -229,7 +229,7 @@ ARP process
 -----------
 
 The Address Resolution Protocol (ARP) is a protocol used to map an IP address to a
-physical (MAC) address on a local network. The ARP process involves resolving the
+physical address on a local network. The ARP process involves resolving the
 layer-2 (data link layer) address of a network host or device when its IP address
 is known.
 
