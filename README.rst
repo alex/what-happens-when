@@ -509,6 +509,10 @@ and IIS for Windows.
 * The server parses the file according to the handler. If Google
   is running on PHP, the server uses PHP to interpret the index file, and
   streams the output to the client.
+* The server then processes the HTTP request, ensuring it matches a configured
+  virtual host for the specified domain (e.g., google.com), verifies compatibility 
+  with the requested HTTP method (e.g., GET), and evaluates any applicable rewrite
+  rules before retrieving and serving the corresponding content.
 
 Behind the scenes of the Browser
 ----------------------------------
