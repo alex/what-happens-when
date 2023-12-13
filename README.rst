@@ -206,6 +206,10 @@ Check HSTS list
   `downgrade attack`_, which is why the HSTS list is included in modern web
   browsers.)
 
+Browser Cache
+-------------
+Before making a network request, the browser checks its cache to see if the webpage is already stored locally. If the webpage is in the cache and is still fresh (hasn’t expired), the browser can skip the network request entirely and load the webpage from the cache. This can significantly speed up the loading process.
+
 DNS lookup
 ----------
 
