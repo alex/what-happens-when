@@ -472,7 +472,7 @@ and no payload, and the web browser instead retrieve the HTML from its cache.
 After parsing the HTML, the web browser (and server) repeats this process
 for every resource (image, CSS, favicon.ico, etc) referenced by the HTML page,
 except instead of ``GET / HTTP/1.1`` the request will be
-``GET /$(URL relative to www.google.com) HTTP/1.1``.
+``GET /$(URL relative to www.google.com) HTTP/1.1``..
 
 If the HTML referenced a resource on a different domain than
 ``www.google.com``, the web browser goes back to the steps involved in
