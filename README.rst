@@ -297,6 +297,48 @@ the default gateway it can resume its DNS process:
   requested and that flows up the list of DNS servers until the SOA is reached,
   and if found an answer is returned.
 
+Browser Caching
+---------------
+
+Upon receiving HTML content and associated resources (like CSS, JavaScript, and
+images) from the server, browsers engage caching mechanisms to optimize subsequent
+visits to the same website.
+
+**Cache Control**
+
+Servers often provide cache control directives like Cache-Control and Expires in
+their responses. These directives specify how long resources can be cached.
+
+* Cache-Control: Includes directives such as max-age, setting the maximum time in
+seconds a resource is considered fresh.
+
+* Expires: Specifies an expiration date/time for cached resources. Upon reaching
+this point, the browser revalidates the resource with the server.
+
+**Caching Types**
+
+* Browser Cache: Locally stores cached resources to prevent re-downloading when
+revisiting a webpage, enhancing page load speed.
+
+* CDN Caching: Content Delivery Networks (CDNs) cache resources across distributed
+servers, reducing latency and speeding up content delivery.
+
+**Cache Invalidation**
+
+To handle updates to resources, servers utilize cache invalidation techniques like
+versioned URLs or cache-busting methods (e.g., appending query strings with version
+numbers).
+
+**Benefits**
+
+* Faster Loading: Cached resources expedite page rendering by eliminating the need for
+re-downloading.
+
+* Reduced Server Load: Caching lessens server requests, easing server strain.
+
+* Improved User Experience: Quicker loading times contribute to a smoother browsing
+experience.
+
 Opening of a socket
 -------------------
 Once the browser receives the IP address of the destination server, it takes
