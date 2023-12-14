@@ -480,6 +480,13 @@ resolving the other domain, and follows all steps up to this point for that
 domain. The ``Host`` header in the request will be set to the appropriate
 server name instead of ``google.com``.
 
+Load Balancer
+--------------
+it comes into play after the initial TCP connection is established.
+The load balancer receives the incoming request and decides which backend server should handle it.
+The load balancer may perform health checks on the backend servers and use algorithms to distribute traffic effectively.
+
+
 HTTP Server Request Handle
 --------------------------
 The HTTPD (HTTP Daemon) server is the one handling the requests/responses on
