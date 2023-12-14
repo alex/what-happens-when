@@ -211,6 +211,10 @@ DNS lookup
 
 * Browser checks if the domain is in its cache. (to see the DNS Cache in
   Chrome, go to `chrome://net-internals/#dns <chrome://net-internals/#dns>`_).
+* *Local DNS cache*
+   - A local DNS cache is a temporary storage on the user's device that holds recent DNS resolutions.
+   - If the IP address is found which means cache hit then it means that "www.google.com" has been searched recently so it is still valid according to ``Time-to-Live(TTL)``. 
+   - This allows the browser to skip the external DNS servers thereby making the search process much faster.
 * If not found, the browser calls ``gethostbyname`` library function (varies by
   OS) to do the lookup.
 * ``gethostbyname`` checks if the hostname can be resolved by reference in the
@@ -223,6 +227,7 @@ DNS lookup
   ``ARP process`` below for the DNS server.
 * If the DNS server is on a different subnet, the network library follows
   the ``ARP process`` below for the default gateway IP.
+
 
 
 ARP process
