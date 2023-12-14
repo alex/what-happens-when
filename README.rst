@@ -403,7 +403,7 @@ If a packet is dropped
 Sometimes, due to network congestion or flaky hardware connections, TLS packets
 will be dropped before they get to their final destination. The sender then has
 to decide how to react. The algorithm for this is called `TCP congestion
-control`_. This varies depending on the sender; the most common algorithms are
+control`_. This varies depending on the sender, the most common algorithms are
 `cubic`_ on newer operating systems and `New Reno`_ on almost all others.
 
 * Client chooses a `congestion window`_ based on the `maximum segment size`_
