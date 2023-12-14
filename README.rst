@@ -509,7 +509,15 @@ and IIS for Windows.
 * The server parses the file according to the handler. If Google
   is running on PHP, the server uses PHP to interpret the index file, and
   streams the output to the client.
+Another important aspect is Content Security Policy (CSP), a crucial security mechanism implemented by web browsers to mitigate various types of attacks, including Cross-Site Scripting (XSS) and data injection attacks. CSP works by allowing web developers to define a set of directives that instruct the browser which resources are allowed to be loaded and executed on a web page. When a website deploys CSP, it provides an added layer of defense against malicious scripts and unauthorized content injection.
 
+The main directives within CSP include 'default-src', 'script-src', 'style-src', 'img-src', 'connect-src', 'font-src', 'frame-src', 'media-src', 'object-src', 'worker-src', 'base-uri', 'form-action', 'frame-ancestors', and 'sandbox'. These directives specify the allowed sources for different types of content, controlling where resources like scripts, stylesheets, images, fonts, frames, media, and more can originate from.
+
+CSP operates by defining a policy either in the HTTP header or via a meta tag within the HTML. The browser, upon receiving this policy, evaluates each resource request against the defined directives. If a resource request violates the CSP policy, the browser blocks the request, thereby preventing the execution of malicious scripts or unauthorized content from untrusted sources.
+
+Additionally, CSP supports various reporting options ('report-uri' or 'report-to') allowing website administrators to receive violation reports, aiding in identifying and fixing issues in their web applications. This reporting functionality enables continuous monitoring and refinement of the CSP policy, enhancing web security.
+
+By implementing Content Security Policy, web developers can significantly reduce the attack surface, strengthening the overall security posture of their web applications and protecting users from various common web-based attacks.
 Behind the scenes of the Browser
 ----------------------------------
 
