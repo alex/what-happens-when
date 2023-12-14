@@ -51,6 +51,7 @@ closure of the switch, and converts it to a keycode integer, in this case 13.
 The keyboard controller then encodes the keycode for transport to the computer.
 This is now almost universally over a Universal Serial Bus (USB) or Bluetooth
 connection, but historically has been over PS/2 or ADB connections.
+Upon pressing the "enter" key, an electrical circuit specific to the enter key is closed. This generates a keycode, translated by the keyboard controller and sent to the computer over USB. The operating system's hardware abstraction layer then processes this keycode.
 
 *In the case of the USB keyboard:*
 
@@ -94,6 +95,8 @@ connection, but historically has been over PS/2 or ADB connections.
 
 - This interrupt notifies the currently focused application of a 'key pressed'
   event.
+
+- For touch screens, a capacitive touch generates an interrupt. The OS notifies the focused application, and a 'key pressed' event is raised. This event is then handled by the application, providing a seamless virtual keyboard experience.
 
 
 Interrupt fires [NOT for USB keyboards]
@@ -150,6 +153,9 @@ this queue by threads with sufficient privileges calling the
 handled by, an ``NSApplication`` main event loop, via an ``NSEvent`` of
 ``NSEventType`` ``KeyDown``.
 
+On Windows, a WM_KEYDOWN message is sent, while on macOS, a KeyDown NSEvent is dispatched. In Linux, Xorg server listens for keycodes. These events trigger interrupt handlers in the kernel.
+
+
 (On GNU/Linux) the Xorg server listens for keycodes
 ---------------------------------------------------
 
@@ -173,6 +179,8 @@ Parse URL
 
     - ``Resource``  "/"
         Retrieve main (index) page
+
+* The browser extracts protocol, resource, and checks if it's a URL or search term. Punycode encoding is applied to non-ASCII characters in the hostname. The browser then checks the HSTS list and performs DNS lookup if needed.
 
 
 Is it a URL or a search term?
@@ -223,6 +231,7 @@ DNS lookup
   ``ARP process`` below for the DNS server.
 * If the DNS server is on a different subnet, the network library follows
   the ``ARP process`` below for the default gateway IP.
+* The browser checks its DNS cache and, if needed, queries the DNS server. The DNS server's response is essential for further communication.
 
 
 ARP process
@@ -296,6 +305,7 @@ the default gateway it can resume its DNS process:
 * If the local/ISP DNS server does not have it, then a recursive search is
   requested and that flows up the list of DNS servers until the SOA is reached,
   and if found an answer is returned.
+Address Resolution Protocol (ARP) resolves the target IP address to its MAC address. This involves checking the ARP cache, looking up the route table, and broadcasting ARP requests.
 
 Opening of a socket
 -------------------
@@ -366,6 +376,7 @@ This send and receive happens multiple times following the TCP connection flow:
    * The closer sends a FIN packet
    * The other sides ACKs the FIN packet and sends its own FIN
    * The closer acknowledges the other side's FIN with an ACK
+The browser creates a TCP socket, specifying source and destination ports. The packet is crafted, traverses the OSI model layers, and is transmitted over the network.
 
 TLS handshake
 -------------
@@ -662,6 +673,7 @@ Page Rendering
 * Final layer positions are computed and the composite commands are issued
   via Direct3D/OpenGL. The GPU command buffer(s) are flushed to the GPU for
   asynchronous rendering and the frame is sent to the window server.
+* The browser constructs a render tree, calculates node dimensions, creates layers for GPU acceleration, and initiates the rendering process. Incremental rendering and parallel processing may be employed.
 
 GPU Rendering
 -------------
@@ -673,6 +685,7 @@ GPU Rendering
   software layers split the task into multiple pieces, so it can take advantage
   of ``GPU`` massive parallelism for float point calculations required for
   the rendering process.
+* Graphics processing, both CPU and GPU, is utilized for rendering. Web pages are split into layers, and textures are allocated for efficient rendering.
 
 
 Window Server
@@ -680,7 +693,7 @@ Window Server
 
 Post-rendering and user-induced execution
 -----------------------------------------
-
+Post-rendering, JavaScript code is executed, plugins may run, and additional network requests might be triggered. The final rendered page is presented to the user.
 After rendering has been completed, the browser executes JavaScript code as a result
 of some timing mechanism (such as a Google Doodle animation) or user
 interaction (typing a query into the search box and receiving suggestions).
