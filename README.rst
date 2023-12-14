@@ -299,6 +299,7 @@ the default gateway it can resume its DNS process:
 
 Browser Caching
 ---------------
+
 Upon receiving HTML content and associated resources (like CSS, JavaScript, and
 images) from the server, browsers engage caching mechanisms to optimize subsequent
 visits to the same website.
@@ -307,8 +308,10 @@ visits to the same website.
 
 Servers often provide cache control directives like Cache-Control and Expires in
 their responses. These directives specify how long resources can be cached.
+
 * Cache-Control: Includes directives such as max-age, setting the maximum time in
 seconds a resource is considered fresh.
+
 * Expires: Specifies an expiration date/time for cached resources. Upon reaching
 this point, the browser revalidates the resource with the server.
 
@@ -316,6 +319,7 @@ this point, the browser revalidates the resource with the server.
 
 * Browser Cache: Locally stores cached resources to prevent re-downloading when
 revisiting a webpage, enhancing page load speed.
+
 * CDN Caching: Content Delivery Networks (CDNs) cache resources across distributed
 servers, reducing latency and speeding up content delivery.
 
@@ -329,7 +333,9 @@ numbers).
 
 * Faster Loading: Cached resources expedite page rendering by eliminating the need for
 re-downloading.
+
 * Reduced Server Load: Caching lessens server requests, easing server strain.
+
 * Improved User Experience: Quicker loading times contribute to a smoother browsing
 experience.
 
