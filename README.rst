@@ -304,6 +304,7 @@ images) from the server, browsers engage caching mechanisms to optimize subseque
 visits to the same website.
 
 **Cache Control**
+
 Servers often provide cache control directives like Cache-Control and Expires in
 their responses. These directives specify how long resources can be cached.
 * Cache-Control: Includes directives such as max-age, setting the maximum time in
@@ -312,17 +313,20 @@ seconds a resource is considered fresh.
 this point, the browser revalidates the resource with the server.
 
 **Caching Types**
+
 * Browser Cache: Locally stores cached resources to prevent re-downloading when
 revisiting a webpage, enhancing page load speed.
 * CDN Caching: Content Delivery Networks (CDNs) cache resources across distributed
 servers, reducing latency and speeding up content delivery.
 
 **Cache Invalidation**
+
 To handle updates to resources, servers utilize cache invalidation techniques like
 versioned URLs or cache-busting methods (e.g., appending query strings with version
 numbers).
 
 **Benefits**
+
 * Faster Loading: Cached resources expedite page rendering by eliminating the need for
 re-downloading.
 * Reduced Server Load: Caching lessens server requests, easing server strain.
