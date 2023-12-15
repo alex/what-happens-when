@@ -416,13 +416,10 @@ control`_. This varies depending on the sender; the most common algorithms are
 
 HTTP protocol
 ------------
-Pull Request for README.md
 I propose an enhancement to the section "HTTP protocol." The addition provides 
 a more detailed explanation of the HTTP protocol, including the negotiation 
 process between the browser and the server. It also includes considerations for SPDY protocol if supported by the browser.
 
-markdown
-Copy code
 # What happens when...
 
 ...
@@ -434,7 +431,7 @@ it will send a request to try and negotiate with the server an "upgrade" from HT
 
 If the client is using the HTTP protocol and does not support SPDY, it sends a request to the server of the form:
 
-```plaintext
+```
 GET / HTTP/1.1
 Host: google.com
 Connection: close
@@ -442,13 +439,12 @@ Connection: close
 where [other headers] refers to a series of colon-separated key-value pairs formatted as per 
 the HTTP specification and separated by single newlines. This assumes the web browser being 
 used doesn't have any bugs violating the HTTP spec. This also assumes that the web browser is using 
-HTTP/1.1; otherwise, it may not include the Host header in the request, and the version specified in the GET request will either be HTTP/1.0 or HTTP/0.9.
+HTTP/1.1; otherwise, it may not include the Host header in the request, and the version specified 
+in the GET request will either be HTTP/1.0 or HTTP/0.9.
 
 HTTP/1.1 defines the "close" connection option for the sender to signal that the connection 
 will be closed after completion of the response. For example,
 
-plaintext
-Copy code
 Connection: close
 HTTP/1.1 applications that do not support persistent connections MUST include 
 the "close" connection option in every message.
@@ -456,10 +452,9 @@ the "close" connection option in every message.
 After sending the request and headers, the web browser sends a single blank newline to the 
 server, indicating that the content of the request is done.
 
-The server responds with a response code denoting the status of the request and responds with a response of the form:
+The server responds with a response code denoting the status of the request and 
+responds with a response of the form:
 
-plaintext
-Copy code
 200 OK
 [response headers]
 Followed by a single newline, and then sends a payload of the HTML content of www.google.com. 
@@ -470,8 +465,6 @@ If the HTTP headers sent by the web browser included sufficient information for 
 to determine if the version of the file cached by the web browser has been unmodified since the last 
 retrieval (i.e., if the web browser included an ETag header), it may instead respond with a request of the form:
 
-plaintext
-Copy code
 304 Not Modified
 [response headers]
 and no payload, and the web browser instead retrieves the HTML from its cache.
@@ -485,9 +478,6 @@ browser goes back to the steps involved in resolving the other domain and follow
 all steps up to this point for that domain. The Host header in the request will be set to the appropriate server name instead of google.com.
 
 ...
-
-yaml
-Copy code
 
 This enhancement provides a clearer understanding of the HTTP negotiation process and 
 the considerations for handling different scenarios, contributing to the comprehensive answer to the overall question.
