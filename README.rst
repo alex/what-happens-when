@@ -225,6 +225,35 @@ DNS lookup
   the ``ARP process`` below for the default gateway IP.
 
 
+Load Balancing
+--------------
+
+When dealing with high incoming web traffic, load balancing plays a pivotal role in maintaining system stability and optimal performance. It involves evenly distributing incoming requests across multiple servers or resources. This prevents any single server from becoming overwhelmed, ensuring a seamless user experience.
+
+#### Load Balancing Process:
+
+1. **Incoming Traffic Management:** The load balancer receives incoming requests from users.
+2. **Decision-making:** Based on specific algorithms and criteria, the load balancer selects the appropriate server from a pool.
+3. **Request Forwarding:** The chosen server handles the user's request, providing the required response.
+
+#### Algorithms Used:
+
+- **Round Robin:** Sequentially distributes requests across servers.
+- **Least Connections:** Routes traffic to the server with the fewest active connections.
+- **Weighted Round Robin:** Assigns weights to servers based on capacity.
+- **IP Hash:** Determines the server using a hash function based on the client's IP address.
+
+#### Real-world Application:
+
+Consider a scenario where a high-traffic website like Google manages millions of search queries simultaneously. Load balancers efficiently allocate these queries across multiple servers. For instance, during sudden spikes in search traffic, the load balancer redistributes requests to maintain optimal response times and prevent server overload.
+
+#### Importance and Benefits:
+
+- **Scalability:** Allows easy scaling by adding servers to manage increased traffic.
+- **Fault Tolerance:** Ensures continuity by redirecting traffic if a server fails.
+- **Consistent Performance:** Prevents server overload, ensuring consistent user experience.
+
+
 ARP process
 -----------
 
