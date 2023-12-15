@@ -689,6 +689,26 @@ the Google homepage. Scripts can cause additional network requests to be
 performed, as well as modify the page or its layout, causing another round of
 page rendering and painting.
 
+## TCP/IP connection ##
+
+TCP (Transmission Control Protocol) and IP (Internet Protocol) are two of the main protocols that make up the internet.
+
+They work together to establish a connection between a client and a server and facilitate the transmission of data between them.
+
+When you enter "google.com" into a web browser, the browser uses TCP/IP to establish a connection with the server that hosts the website.
+
+Here's what happens in more detail:
+
+The browser sends a request to the server using IP to establish a connection.
+
+The server receives the request and sends back a message acknowledging the request to establish a connection. This is the handshake process.
+
+Once the handshake is complete, the browser can send a request for the webpage it wants to access (in this case, the homepage of google.com). This request is sent using TCP, which ensures that the request is transmitted reliably and in the correct order.
+
+The server receives the request and sends back the HTML code for the homepage of google.com to the browser. This response is also sent using TCP to ensure reliable transmission.
+
+The browser receives the HTML code and uses it to render the webpage on your screen. Any resources (such as images) that the webpage needs are also requested and received using TCP/IP.
+
 .. _`Creative Commons Zero`: https://creativecommons.org/publicdomain/zero/1.0/
 .. _`"CSS lexical and syntax grammar"`: http://www.w3.org/TR/CSS2/grammar.html
 .. _`Punycode`: https://en.wikipedia.org/wiki/Punycode
