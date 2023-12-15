@@ -297,6 +297,35 @@ the default gateway it can resume its DNS process:
   requested and that flows up the list of DNS servers until the SOA is reached,
   and if found an answer is returned.
 
+TCP/IP
+-----------
+
+Everything discussed thus far and beyond rely solemnly on some set of rules called
+TCP/IP (Transmission Control Protocol/Internet Protocol).
+This is what defines the standard of how messages are sent and recieved between computers
+that are connected on the internet.
+
+Why this is important is because different devices are built with different technologies
+that powers them underneath. Thus, this standard helps to make sure that irrespective
+of the device, for communication across networks, a set of rule will be obeyed so that
+the devices can communicate with themselves over the internet without any form of 
+hassle or trouble.
+
+This TCP/IP can be divided into Four different layers:
+        
+        * Network layer - Ethernet, Wireless LAN
+
+        * Internet layer - IPv4, IPv6
+
+        * Transport layer - TCP, UDP
+
+        * Application layer - HTTPS TLS, DNS
+
+* Each of these layers takes cares of the implementation of specific rules and function
+  of both Hardware and sometimes software of the devices that are communicating over
+  the internet.
+
+
 Opening of a socket
 -------------------
 Once the browser receives the IP address of the destination server, it takes
