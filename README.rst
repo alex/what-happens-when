@@ -509,6 +509,7 @@ and IIS for Windows.
 * The server parses the file according to the handler. If Google
   is running on PHP, the server uses PHP to interpret the index file, and
   streams the output to the client.
+* In addition to these steps, modern browsers also implement caching mechanisms to improve performance and reduce network latency. They store frequently accessed resources such as images, stylesheets, and scripts locally in their cache memory. When making subsequent requests for those resources, they first check their local cache before sending a fresh request to the server. If the resource hasn't changed since the last time it was fetched, the browser returns the cached copy rather than downloading it again, which can significantly speed up page load times. Browsers use various techniques like expiration timestamps, validation checks, and heuristics to decide whether a resource should be served from cache or fetched afresh from the server. Overall, efficient utilization of HTTP protocols and caching strategies play a crucial role in delivering fast and smooth user experiences over the internet.
 
 Behind the scenes of the Browser
 ----------------------------------
