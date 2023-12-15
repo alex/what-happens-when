@@ -175,6 +175,17 @@ Parse URL
         Retrieve main (index) page
 
 
+Language and Locale Consideration in URL Parsing
+---------
+
+Language-Specific URL Interpretation
+
+   - Browsers may interpret URLs differently based on the user's language settings. For instance, if a user has set their browser to French, typing in a company name may lead to the French version of the website, if available. This is particularly evident in multinational corporations that host region-specific versions of their sites under the same domain name.
+
+Locale-Based Content Requesting
+
+   - The locale settings of a user's browser can significantly influence how content is requested. For example, a browser set to a specific locale (like 'en-US' for American English) might request web resources tailored to that region. This includes not only the language but also cultural nuances, date formats, currency, and other region-specific elements.
+
 Is it a URL or a search term?
 -----------------------------
 
