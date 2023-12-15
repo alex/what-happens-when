@@ -367,35 +367,36 @@ This send and receive happens multiple times following the TCP connection flow:
    * The other sides ACKs the FIN packet and sends its own FIN
    * The closer acknowledges the other side's FIN with an ACK
 
-TLS handshake
+TLS Handshake
 -------------
-* The client computer sends a ``ClientHello`` message to the server with its
-  Transport Layer Security (TLS) version, list of cipher algorithms and
-  compression methods available.
 
-* The server replies with a ``ServerHello`` message to the client with the
-  TLS version, selected cipher, selected compression methods and the server's
-  public certificate signed by a CA (Certificate Authority). The certificate
-  contains a public key that will be used by the client to encrypt the rest of
-  the handshake until a symmetric key can be agreed upon.
+The TLS (Transport Layer Security) handshake is a crucial process that establishes a secure connection between a client and a server. It ensures that data transmitted between them is encrypted and secure from eavesdropping or tampering. Here's a step-by-step breakdown of the TLS handshake:
 
-* The client verifies the server digital certificate against its list of
-  trusted CAs. If trust can be established based on the CA, the client
-  generates a string of pseudo-random bytes and encrypts this with the server's
-  public key. These random bytes can be used to determine the symmetric key.
+* **ClientHello:**
+   - The client initiates the handshake by sending a ``ClientHello`` message to the server.
+   - This message includes the TLS version, a list of supported cipher algorithms, and available compression methods.
 
-* The server decrypts the random bytes using its private key and uses these
-  bytes to generate its own copy of the symmetric master key.
+* **ServerHello:**
+   - The server responds with a ``ServerHello`` message, indicating the selected TLS version, cipher, and compression methods.
+   - Additionally, the server sends its public certificate, signed by a trusted Certificate Authority (CA). This certificate contains a public key crucial for further encryption.
 
-* The client sends a ``Finished`` message to the server, encrypting a hash of
-  the transmission up to this point with the symmetric key.
+* **Certificate Verification:**
+   - The client verifies the authenticity of the server's digital certificate against its list of trusted CAs.
+   - If trust is established, the client generates a string of random bytes and encrypts them with the server's public key. These bytes contribute to deriving the symmetric key.
 
-* The server generates its own hash, and then decrypts the client-sent hash
-  to verify that it matches. If it does, it sends its own ``Finished`` message
-  to the client, also encrypted with the symmetric key.
+* **Symmetric Key Agreement:**
+   - The server decrypts the random bytes using its private key, creating its copy of the symmetric master key.
+   - Both client and server now share a common symmetric key for secure communication.
 
-* From now on the TLS session transmits the application (HTTP) data encrypted
-  with the agreed symmetric key.
+* **Finished Messages:**
+   - The client sends a ``Finished`` message to the server, encrypting a hash of the entire transmission up to this point with the symmetric key.
+   - The server decrypts the client-sent hash, verifying its integrity. If successful, the server responds with its own ``Finished`` message, also encrypted with the symmetric key.
+
+* **Secure Data Transmission:**
+   - With the handshake complete, the TLS session now encrypts and transmits application (e.g., HTTP) data using the agreed symmetric key.
+
+This comprehensive handshake process establishes a secure channel, ensuring confidentiality and integrity for the data exchanged between the client and the server.
+
 
 If a packet is dropped
 ----------------------
