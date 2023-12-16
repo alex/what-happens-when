@@ -689,6 +689,14 @@ the Google homepage. Scripts can cause additional network requests to be
 performed, as well as modify the page or its layout, causing another round of
 page rendering and painting.
 
+Closing the Connection or moving to another page
+------------------------------------------------
+
+When the browser finishes rendering the requested web page and the user has interacted with it, the connection between the browser and the server is usually closed. This closure marks the end of the communication cycle for that specific request. The whole process happens again when the user clicks on a link on the web page that leads to another page.
+Depending on the browser and website configuration, the previous page might still remain open in the background, awaiting further user interaction, or it might be unloaded if the browser decides to optimize resources.
+
+The process is similar, but the difference lies in the fact that the browser initiates a new request for a different resource (another web page or asset) based on the user's action (clicking a link) within the current page.
+
 .. _`Creative Commons Zero`: https://creativecommons.org/publicdomain/zero/1.0/
 .. _`"CSS lexical and syntax grammar"`: http://www.w3.org/TR/CSS2/grammar.html
 .. _`Punycode`: https://en.wikipedia.org/wiki/Punycode
