@@ -24,6 +24,9 @@ Table of Contents
 .. contents::
    :backlinks: none
    :local:
+OSI Model
+----------------------
+The Open Systems Interconnection (OSI) Model is a conceptual framework that defines how networking systems communicate and send data from a sender to a recipient. The model is used to describe each component in data communication so that rules and standards can be established regarding applications and network infrastructure. The OSI model contains seven layers that conceptually stack from the bottom to the top. The OSI layers include: Physical, Data Link, Network, Transport, Session, Presentation, and Application.
 
 The "g" key is pressed
 ----------------------
