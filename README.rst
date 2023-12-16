@@ -297,6 +297,28 @@ the default gateway it can resume its DNS process:
   requested and that flows up the list of DNS servers until the SOA is reached,
   and if found an answer is returned.
 
+Browser Cache Mechanism:
+-------------------
+The Browser Cache is a temporary storage location on a user's device that stores copies of files downloaded from websites, including HTML documents, stylesheets, JavaScript files, images, and more. The primary purpose of the cache is to reduce latency and server load by allowing the browser to reuse locally stored resources instead of fetching them anew from the server.
+
+How Browser Cache Works:
+-------------------
+Caching Headers:
+
+When the browser fetches a resource for the first time, the server includes caching headers in the response. These headers instruct the browser on how long it can cache the resource before checking for updates.
+Expiration and Validation:
+
+Resources are cached based on expiration times or validation checks. Expiration times are set by the server, while validation involves rechecking with the server to see if a resource has been modified.
+Cache-Control Header:
+
+The Cache-Control HTTP header is crucial for controlling caching behavior. It includes directives like max-age (specifying the maximum time a resource is considered fresh) and no-cache (indicating that the resource must be revalidated before use).
+Conditional Requests:
+
+When a cached resource is needed, the browser sends a conditional request to the server, including an If-Modified-Since or If-None-Match header. The server responds with a "304 Not Modified" status if the resource hasn't changed, allowing the browser to use the cached copy.
+Stale-while-Revalidate:
+
+Some caching strategies, like the "Stale-while-Revalidate" directive, allow the browser to serve a stale (expired) resource to the user while simultaneously revalidating it with the server in the background.
+
 Opening of a socket
 -------------------
 Once the browser receives the IP address of the destination server, it takes
