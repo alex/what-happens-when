@@ -223,6 +223,16 @@ DNS lookup
   ``ARP process`` below for the DNS server.
 * If the DNS server is on a different subnet, the network library follows
   the ``ARP process`` below for the default gateway IP.
+* Choosing between local routers and ISP's caching DNS servers for DNS
+  configurations has implications for speed, privacy, and reliability.
+  Local routers often provide faster response times due to proximity,
+  reducing latency for DNS queries. However, using ISP's caching DNS servers
+  might enhance privacy by avoiding potential logging and monitoring by the
+  local network. Relying on the ISP's servers also ensures a level of consistency
+  and reliability, but it may lead to slightly longer response times compared to
+  local routers. The decision ultimately depends on the user's priorities, whether
+  it be speed, privacy, or a balance between the two, and it's influenced by
+  individual preferences and network considerations.
 
 
 ARP process
@@ -396,6 +406,12 @@ TLS handshake
 
 * From now on the TLS session transmits the application (HTTP) data encrypted
   with the agreed symmetric key.
+
+* TLS handshake establishes a secure connection by ensuring the encryption of
+  data exchanged between the client and server. This encryption plays a crucial
+  role in safeguarding sensitive information such as login credentials and
+  personal data during transmission, enhancing overall security for users.
+
 
 If a packet is dropped
 ----------------------
