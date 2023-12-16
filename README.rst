@@ -570,6 +570,9 @@ The components of the browsers are:
   need to save all sorts of data locally, such as cookies. Browsers also
   support storage mechanisms such as localStorage, IndexedDB, WebSQL and
   FileSystem.
+**WebSocket Support:**
+
+Enhancing browser functionality by introducing native WebSocket support. WebSocket enables real-time, bidirectional communication between the browser and a server, opening up possibilities for interactive and dynamic web applications. This addition improves the user experience by reducing latency and facilitating instant updates without the need for continuous polling. The implementation includes robust security measures to ensure safe communication, making browsers even more versatile for modern web development.
 
 HTML parsing
 ------------
