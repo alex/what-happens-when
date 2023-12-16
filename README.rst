@@ -219,11 +219,14 @@ DNS lookup
 * If ``gethostbyname`` does not have it cached nor can find it in the ``hosts``
   file then it makes a request to the DNS server configured in the network
   stack. This is typically the local router or the ISP's caching DNS server.
+* The ``gethostbyname`` library function makes DNS requests over UDP port 53.
+  If no response, it may retry over TCP.
 * If the DNS server is on the same subnet the network library follows the
   ``ARP process`` below for the DNS server.
+* Tools like dig and nslookup are useful for testing and debugging DNS issues.
+* DNS requests and responses are logged by the OS and browsers to aid troubleshooting.
 * If the DNS server is on a different subnet, the network library follows
   the ``ARP process`` below for the default gateway IP.
-
 
 ARP process
 -----------
