@@ -5,6 +5,11 @@ This repository is an attempt to answer the age-old interview question "What
 happens when you type google.com into your browser's address box and press
 enter?"
 
+Now we need to know that it is not only the Internet Protocol that exists in the Internet world as we have other protocols, the IP is just a branch of the TCP/IP communication suite that helps in the interconnection of network devices on the Internet. The TCP (Transmission Control Protocol) helps in collecting and reassembling packets of data while the IP makes sure that a particular packet of data is sent to the right destination.
+
+
+Now this might be a little gurly, but let's take some of these points to delve more and understand how this works.
+
 Except instead of the usual story, we're going to try to answer this question
 in as much detail as possible. No skipping out on anything.
 
