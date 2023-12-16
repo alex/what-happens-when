@@ -38,7 +38,8 @@ popular searches from the internet as a whole. As you are typing
 "google.com" many blocks of code run and the suggestions will be refined
 with each keypress. It may even suggest "google.com" before you finish typing
 it.
-
+The request is handled by the browser’s networking component, which connects to the server using the HTTP or HTTPS protocol. It sends an HTTP GET request to the server with the URL “/” specified. Google’s web server subsequently processes the request and returns a response.
+The request is processed by the server, which generates an HTML document containing the Google homepage. As the server’s response, this HTML document is returned to the browser. The answer is delivered to the browser, which comprises HTML, CSS, and JavaScript code. 
 The "enter" key bottoms out
 ---------------------------
 
