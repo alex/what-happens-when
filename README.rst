@@ -27,17 +27,33 @@ Table of Contents
 
 The "g" key is pressed
 ----------------------
-The following sections explain the physical keyboard actions
-and the OS interrupts. When you press the key "g" the browser receives the
-event and the auto-complete functions kick in.
-Depending on your browser's algorithm and if you are in
-private/incognito mode or not various suggestions will be presented
-to you in the dropdown below the URL bar. Most of these algorithms sort
-and prioritize results based on search history, bookmarks, cookies, and
-popular searches from the internet as a whole. As you are typing
-"google.com" many blocks of code run and the suggestions will be refined
-with each keypress. It may even suggest "google.com" before you finish typing
-it.
+
+When you press the "g" key on your keyboard, a series of events unfold both at the physical hardware level and within the operating system. Here's a breakdown of the key processes:
+
+1. **Hardware Input:**
+   - Your physical keyboard sends an electrical signal corresponding to the "g" key press.
+   - This signal is interpreted by the keyboard controller, which then generates a scan code associated with the pressed key.
+
+2. **OS Interrupts:**
+   - The operating system (OS) receives the interrupt triggered by the keyboard controller.
+   - The OS identifies the scan code and translates it into a recognizable character, in this case, the letter "g."
+
+3. **Browser Event Handling:**
+   - The browser, being an application running on the operating system, captures the "g" key event.
+   - Auto-complete functions within the browser are initiated to enhance user experience.
+
+4. **Auto-Complete Algorithms:**
+   - The browser's auto-complete algorithms come into play, suggesting various options based on your browsing history, bookmarks, cookies, and popular internet searches.
+   - The suggestions are dynamically generated and refined with each subsequent keypress.
+
+5. **Dropdown Suggestions:**
+   - A dropdown below the URL bar presents you with suggestions related to your input.
+   - Depending on your browser's settings, these suggestions may consider your browsing mode, such as private/incognito mode.
+
+6. **Real-time Refinement:**
+   - As you continue typing, the browser's algorithms refine the suggestions in real-time, anticipating your input, and potentially suggesting "google.com" before you complete the entire entry.
+
+Understanding this intricate process sheds light on the seamless and intelligent features browsers employ to enhance your navigation and search experiences.
 
 The "enter" key bottoms out
 ---------------------------
