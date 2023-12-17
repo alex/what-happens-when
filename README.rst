@@ -297,6 +297,56 @@ the default gateway it can resume its DNS process:
   requested and that flows up the list of DNS servers until the SOA is reached,
   and if found an answer is returned.
 
+Firewall
+--------
+When you request a page from "www.google.com," your connection passes through
+several layers of network security, including a firewall. Here's a breakdown of
+how a firewall typically operates in the context of accessing Google's website:
+
+* Packet Inspection
+  As your request moves across the network, it's divided into smaller units known
+  as packets. The firewall meticulously inspects these packets, scrutinizing their
+  headers and content.
+
+* Rule-Based Filtering
+  Firewalls operate based on predefined rules or policies. These rules outline the
+  types of packets allowed or denied, considering various criteria like source and
+  destination IP addresses, ports, protocols, and specific content within the
+  packets.
+
+* Stateful Inspection
+  Modern firewalls often employ stateful inspection, monitoring the status of
+  active connections. This ensures that only legitimate traffic belonging to an
+  established connection, such as TCP handshakes, is permitted.
+
+* Access Control
+  Firewalls manage access at different layers of the network stack, ranging from
+  basic packet-level filtering (Layer 3 and 4 of the OSI model) to more advanced
+  filtering based on application-layer data (Layer 7).
+
+* Protection Against Threats
+  Firewalls frequently incorporate additional features to defend against known
+  threats. This may include intrusion detection and prevention systems (IDPS),
+  which analyze traffic for potential attack signs and can block suspicious
+  activity.
+
+* Firewall Placement and Operation
+  In the context of accessing "www.google.com," firewalls are positioned at various
+  network infrastructure points, including your local network, your ISP's network,
+  or within Google's network perimeter.
+
+When your request to access Google's site encounters these firewall checkpoints,
+the firewall meticulously inspects the packets. It ensures compliance with
+established security policies, verifying the request's trustworthiness, confirming
+the requested port (typically 443 for HTTPS) for outgoing traffic, and scrutinizing
+packets for malicious content or unauthorized commands.
+
+If the packets meet the firewall's criteria and are not flagged as potentially
+harmful, they are permitted to proceed to Google's servers. However, should the
+firewall detect anything suspicious or if the packets violate security rules, it can
+restrict or block access, preventing the request from reaching Google's servers.
+
+
 Opening of a socket
 -------------------
 Once the browser receives the IP address of the destination server, it takes
