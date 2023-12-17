@@ -27,6 +27,17 @@ Table of Contents
 
 The "g" key is pressed
 ----------------------
+
+To a neanderthal  who just stumbled across a computer for the first time how would you describe the "g" key of a computer to him?
+
+"Imagine this magical flat rock with many little rocks on it that can make marks. Each mark tells the magical box what you want it to do. Now, the 'g' is like a special mark. When you press the soft part where it says 'g' on this flat rock, it tells the magic box to remember the sound of 'guh,' like the 'guh' you make when you say 'great' or 'gorilla.' Try pressing it and see what happens!"
+
+To a 5 year old you might say  imagine your computer is like a magical talking toy. It understands the special marks we make on it. Now, look at the keyboard, it's like a set of buttons. See the one that has a 'g' on it? That's a special button! When you press it, the computer remembers the sound 'guh,' like when you say 'giraffe' or 'giggle.' It's like a secret code for the computer to remember that special sound. 
+
+If you are reading this post, you likely know what the "g" key already is, but for the purpose of clarity The 'g' key on the computer keyboard is one of the alphanumeric keys. When you press the 'g' key, it sends a specific electronic signal to the computer's processor, indicating that the 'g' character has been input. This input can be used in various applications and programs. For instance, if you are typing a document, each time you press the 'g' key, the letter 'g' will appear on the screen. It's essentially a way for you to communicate with the computer and input the specific character 'g' into whatever you're working on.
+
+Now we understand how the "g" key lets discuss how it works on the browser
+
 The following sections explain the physical keyboard actions
 and the OS interrupts. When you press the key "g" the browser receives the
 event and the auto-complete functions kick in.
