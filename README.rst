@@ -674,6 +674,15 @@ GPU Rendering
   of ``GPU`` massive parallelism for float point calculations required for
   the rendering process.
 
+* GPUs are designed with a large number of cores optimized for parallel processing.
+  This architecture is well-suited for the parallel nature of graphics rendering
+  tasks, where many calculations can be performed simultaneously. This is in 
+  contrast to CPUs, which are generally optimized for sequential processing.
+
+* The parallel processing capabilities of GPUs make them well-suited for real-time
+  rendering applications, such as video games and interactive simulations. The 
+  ability to quickly process and render complex scenes in real-time is a key advantage
+  of GPU rendering.
 
 Window Server
 -------------
