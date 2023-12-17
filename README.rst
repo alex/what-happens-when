@@ -510,6 +510,65 @@ and IIS for Windows.
   is running on PHP, the server uses PHP to interpret the index file, and
   streams the output to the client.
 
+
+The Load Balancer
+-------------------------------------------------------
+This is the behind-the-scenes conductor called the Load Balancer.
+It ensures a smooth and efficient distribution of your HTTPS request. Imagine Google's servers 
+as a bustling kitchen with numerous chefs ready to prepare your requested information. 
+The Load Balancer functions as the head chef, orchestrating the workflow to ensure 
+that every chef (server) is optimally utilised. Its primary role is to distribute incoming web traffic 
+evenly among the available servers, preventing any single server from being overwhelmed.
+One of the critical tasks of a Load Balancer is to prevent server overload. 
+If too many users try to access Google simultaneously, the Load Balancer ensures 
+that the incoming requests are distributed evenly among the servers. This not only prevents 
+any single server from being overwhelmed but also enhances the overall performance and responsiveness of the web service.
+
+## Ensuring Reliability: Failover and Redundancy
+
+Load Balancers contribute to the reliability of web services by implementing failover and redundancy measures. 
+If one server encounters an issue or becomes unavailable, the Load Balancer redirects traffic to healthy servers. 
+This ensures continuous service availability and minimises disruptions in the event of server failures, 
+thereby preventing a Single Point Of Failure ``(SPOF)``.
+An example of a load balancer is HAProxy.
+
+Load Balancer algorithm
+------------------------
+Load balancers use various algorithms to distribute incoming network traffic across multiple servers,
+ensuring efficient resource utilisation and high availability. 
+Here are some commonly used load-balancing algorithms:
+
+- Round Robin:
+Description: Distributes requests in a circular sequence to each server in turn,
+ regardless of the server's current load or response time.
+Use Case: Simple and easy to implement, suitable when servers have similar performance.
+
+- Least Connections:
+Description: Directs traffic to the server with the fewest active connections, 
+assuming that servers with fewer connections are less busy.
+Use Case: Effective for unevenly distributed loads where servers have varying capacities.
+
+- Least Response Time:
+Description: Routes traffic to the server with the lowest response time or latency.
+Use Case: Suitable for applications where response time is a critical factor.
+
+- Weighted Round Robin:
+Description: Similar to Round Robin, but assigns different weights to servers based on their capacity or capability to handle traffic. Servers with higher weights receive more requests.
+Use Case: Useful when servers have different capacities or performance levels.
+
+- Weighted Least Connections:
+Description: Similar to Least Connections but incorporates weighted values for servers based on their capacities. 
+Use Case: Effective for situations where servers have different capacities.
+
+- IP Hash:
+Description: Uses a hash function based on the client's IP address to determine which server receives the request. This ensures that the same client IP is consistently directed to the same server.
+Use Case: Useful for maintaining session persistence or sticky sessions.
+
+Load balancers often allow the selection of these algorithms based on the 
+specific requirements of the application or network architecture. 
+The choice of the algorithm depends on factors such as the characteristics
+of the workload, server capacities, and performance requirements.
+
 Behind the scenes of the Browser
 ----------------------------------
 
