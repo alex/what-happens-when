@@ -397,6 +397,18 @@ TLS handshake
 * From now on the TLS session transmits the application (HTTP) data encrypted
   with the agreed symmetric key.
 
+TLS Handshake Errors
+--------------------
+TLS handshake errors are critical issues that can arise during the process of establishing a secure connection between a client and a server. These errors often indicate potential security vulnerabilities or misconfigurations.
+* Common Errors:
+
+- Handshake Failure: This occurs when the client and server cannot agree on encryption parameters. Incompatibility with SSL/TLS versions or cipher suites is a common cause.
+- Expired Certificate: If the server's SSL/TLS certificate has expired, the handshake will fail.
+- Hostname Mismatch: This error happens when the common name or subject alternative name in the certificate does not match the hostname in the URL.
+- Revoked Certificate: Handshake failure can occur if the certificate has been revoked by the certificate authority.
+
+The TLS handshake errors can occur during secure connection establishment due to SSL/TLS version or cipher suite incompatibility, expired or revoked certificates, and hostname mismatches. Browsers will alert users about security risks, emphasizing the importance of compatibility, correct certificate chain configuration, and adherence to security policies. Debugging through logs and resolving issues promptly ensures secure connections.
+
 If a packet is dropped
 ----------------------
 
