@@ -296,7 +296,14 @@ the default gateway it can resume its DNS process:
 * If the local/ISP DNS server does not have it, then a recursive search is
   requested and that flows up the list of DNS servers until the SOA is reached,
   and if found an answer is returned.
-
+Firewall Inspection
+-------------------
+* The firewall acts as a security barrier between your device and the external network, typically the internet. It thoroughly inspects outgoing data to ensure it adheres to predefined security rules.
+* The firewall distinguishes between legitimate and potentially harmful data. Legitimate data, adhering to security policies, is allowed to proceed.
+* Firewalls often use Access Control Lists (ACLs) to specify which types of traffic are permitted or denied. These lists include rules based on IP addresses, port numbers, or other parameters, providing granular control over network access.
+* The firewall maintains logs of network activity, recording details about the traffic that has been allowed or denied. These logs serve as valuable tools for security analysis and auditing.
+* In the event of suspicious activity or a potential security threat, firewalls can trigger notifications or alerts.
+* Once the firewall ensures that the data complies with security policies and poses no threat, it authorizes the secure and legitimate traffic to proceed.
 Opening of a socket
 -------------------
 Once the browser receives the IP address of the destination server, it takes
