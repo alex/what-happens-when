@@ -520,6 +520,12 @@ to the browser it undergoes the below process:
 * Rendering - Construct DOM Tree → Render Tree → Layout of Render Tree →
   Painting the render tree
 
+Here's how it works:
+Tokenization: The browser first breaks down the HTML text into smaller pieces called tokens. These tokens can be elements like <div>, attributes like class="header", or even just plain text.
+Building the DOM Tree: Once the tokens are identified, the browser constructs a hierarchical tree structure called the Document Object Model (DOM). Each element in the HTML becomes a node in the tree, with child nodes for nested elements and attributes. This tree structure represents the relationships and hierarchy of all the elements on the page.
+Content Rendering: With the DOM tree in place, the browser starts interpreting the content of each element. It parses text, applies styles defined in CSS, and builds the visual representation of the page. This includes everything from displaying the text itself to handling images, videos, and other multimedia elements.
+Event Handling: The browser also parses JavaScript code embedded in the HTML, if present. This code can then interact with the DOM tree, respond to user actions, and add dynamic behavior to the page.
+
 Browser
 -------
 
