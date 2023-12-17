@@ -39,18 +39,10 @@ popular searches from the internet as a whole. As you are typing
 with each keypress. It may even suggest "google.com" before you finish typing
 it.
 
-The "enter" key bottoms out
+The "enter" key selected
 ---------------------------
 
-To pick a zero point, let's choose the Enter key on the keyboard hitting the
-bottom of its range. At this point, an electrical circuit specific to the enter
-key is closed (either directly or capacitively). This allows a small amount of
-current to flow into the logic circuitry of the keyboard, which scans the state
-of each key switch, debounces the electrical noise of the rapid intermittent
-closure of the switch, and converts it to a keycode integer, in this case 13.
-The keyboard controller then encodes the keycode for transport to the computer.
-This is now almost universally over a Universal Serial Bus (USB) or Bluetooth
-connection, but historically has been over PS/2 or ADB connections.
+Starting from the very beginning, the moment you press the Enter key on your keyboard, we embark on a journey from ground zero. As you press down on the key, a specific electrical circuit that is linked to the Enter key closes. This closure, whether it be direct or through capacitance, allows a small electric current to enter the keyboard's logic circuitry. The circuitry then diligently scans the status of each key switch, smoothing out any electrical noise that may arise from the rapid opening and closing of the switch. It further converts this electrical activity into a numeric code, typically 13 in this particular case. Subsequently, the keyboard controller carefully packages this code for seamless transfer to the computer. In modern times, this transfer commonly occurs through a Universal Serial Bus (USB) or Bluetooth connection. However, it is worth noting that historically, alternative connections such as PS/2 or ADB could have been utilized for this purpose.
 
 *In the case of the USB keyboard:*
 
