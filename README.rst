@@ -67,8 +67,6 @@ Database
 
 Now let's talk about the database, which’s a component, in this puzzle. The application server updates information from the database. Databases play a role in storing and organizing amounts of data that power dynamic web applications. They efficiently store user profiles, product listings, and various other types of data. Some used databases include MySQL, PostgreSQL, and MongoDB. The seamless interaction between the application server and the database ensures that the content you see is not only dynamic but also accurate and up-to-date.
 
-![Diagram](https://miro.medium.com/v2/format:webp/1*EWup-RIyMs-7TyBh95Htyg.jpeg)
-
 Conclusion
 
 In conclusion, understanding how URLs traverse through the intricacies of internet infrastructure is truly fascinating. It involves a symphony of technologies and systems working together harmoniously to provide users with a secure and dynamic browsing experience. By delving into these layers we develop an appreciation, for the wonders that make the Internet an essential part of our daily lives.
