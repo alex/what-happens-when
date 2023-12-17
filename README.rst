@@ -25,6 +25,53 @@ Table of Contents
    :backlinks: none
    :local:
 
+You type https://www.google.com in your browser and press Enter
+---------------------------------------------------------------
+Have you ever wondered about what happens when you type a URL like https://www.google.com in your browser and press Enter? Walk with me as we unravel the intricacies of the internet’s inner workings in this comprehensive blog. From the initial DNS request to the final rendering of webpages, we’ll explore the vital roles played by TCP/IP, firewalls, HTTPS/SSL, load balancers, web servers, application servers, and databases.
+
+DNS Request
+
+The journey begins with a hero of the internet; the Domain Name System (DNS). When you enter a URL like https://www.google.com into your browser and press Enter, your computer sends out a DNS request to translate the human domain name (www.google.com) into an IP address. This IP address is crucial, for establishing a connection to the web server that hosts the desired content. The DNS server responds with the IP address setting the stage for the next steps in the journey.
+
+TCP/IP
+
+Armed, with this IP address your computer proceeds to establish a connection using two protocols; Transmission Control Protocol (TCP) and Internet Protocol (IP).
+
+TCP ensures that data is transmitted reliably by dividing it into packets and ensuring they are delivered in order. On the other hand, IP handles the addressing and routing of these packets, across the internet. Together TCP/IP forms the foundation of internet communication enabling organized data exchange.
+
+Firewall
+
+When data packets travel through the internet they encounter network checkpoints, one of which is known as a firewall. Firewalls act as gatekeepers that monitor and control outgoing network traffic to protect against unauthorized access and potential threats. Essentially firewalls play a role in strengthening the security of the internet infrastructure.
+
+HTTPS/SSL
+
+In the internet world, security is paramount. This is where Hypertext Transfer Protocol Secure (HTTPS) comes into play. HTTPS encrypts the data exchanged between your browser and web server to ensure that sensitive information remains confidential. The encryption process often involves technologies like Secure Sockets Layer (SSL) or its successor, Transport Layer Security (TLS). These cryptographic layers provide a layer of protection, against actors attempting to intercept or tamper with data during transmission.
+
+Load-Balancer
+
+For websites dealing with volumes of traffic load balancing becomes an optimization strategy.
+
+Load balancers are responsible, for distributing requests across servers to prevent overloading a single server and optimize the utilization of resources. This improves the performance of a website. Also ensures its scalability and reliability. Sophisticated load-balancing techniques are employed by large-scale websites, including search engines and e-commerce platforms to provide users with a seamless experience.
+
+Web Server
+
+The web server acts as the component of the web infrastructure serving as the gateway between users and web content. When a request reaches the web server, it processes the request by retrieving files and sending them back to the user's browser for rendering. Popular web servers like Apache, Nginx, and Microsoft Internet Information Services (IIS) handle this task. They interpret user requests, interact with databases if needed, and serve requested content to browsers.
+
+Application Server
+
+While static content is managed by the web server itself; application servers come into play when generating content in real time. These servers execute programs or scripts often written in languages, like Java, Python, or Ruby to generate tailored content based on user interactions.
+
+For example, let's take the case of a shopping website. To enhance your browsing experience they make use of an application server that dynamically presents product recommendations based on your browsing history.
+
+Database
+
+Now let's talk about the database, which’s a component, in this puzzle. The application server updates information from the database. Databases play a role in storing and organizing amounts of data that power dynamic web applications. They efficiently store user profiles, product listings, and various other types of data. Some used databases include MySQL, PostgreSQL, and MongoDB. The seamless interaction between the application server and the database ensures that the content you see is not only dynamic but also accurate and up-to-date.
+
+Conclusion
+
+In conclusion, understanding how URLs traverse through the intricacies of internet infrastructure is truly fascinating. It involves a symphony of technologies and systems working together harmoniously to provide users with a secure and dynamic browsing experience. By delving into these layers we develop an appreciation, for the wonders that make the Internet an essential part of our daily lives.
+
+
 The "g" key is pressed
 ----------------------
 The following sections explain the physical keyboard actions
