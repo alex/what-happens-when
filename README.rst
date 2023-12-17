@@ -689,6 +689,13 @@ the Google homepage. Scripts can cause additional network requests to be
 performed, as well as modify the page or its layout, causing another round of
 page rendering and painting.
 
+Web server
+
+The web server's job is to use the Hypertext Transfer Protocol to respond to client requests. 
+Its job is to display website content through storing, processing, and delivering webpages to users.
+The request takes the form of a Hypertext Transfer Protocol (HTTP) message, as does the web server’s response.
+
+In this case, the web server is responsible for finding where the static content corresponding to the “8.8.8.8” address is living, and for serving it as an HTTP, or HTTPS response.
 .. _`Creative Commons Zero`: https://creativecommons.org/publicdomain/zero/1.0/
 .. _`"CSS lexical and syntax grammar"`: http://www.w3.org/TR/CSS2/grammar.html
 .. _`Punycode`: https://en.wikipedia.org/wiki/Punycode
