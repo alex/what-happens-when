@@ -323,6 +323,15 @@ At this point the packet is ready to be transmitted through either:
 * `WiFi`_
 * `Cellular data network`_
 
+Ethernet:
+When a packet is transmitted through Ethernet, the packet is encapsulated with Ethernet headers containing source and destination MAC addresses. The Ethernet frame is then transmitted over a wired network, such as an Ethernet cable, using a collision-detection mechanism. Ethernet operates on the Data Link Layer of the OSI model, providing a reliable and widely used method for local area network (LAN) communication.
+
+WiFi:
+In a WiFi network, packet transmission involves the use of wireless technology, allowing devices to communicate over the airwaves without physical connections. When a packet is transmitted via WiFi, it is encapsulated with WiFi headers, including information like source and destination MAC addresses, and it is modulated for wireless transmission. The WiFi-enabled device sends the packet through the air to the access point or directly to another device in the network. WiFi operates in the unlicensed 2.4 GHz or 5 GHz frequency bands, providing flexible and convenient wireless connectivity.
+
+Cellular Data Network:
+In a cellular data network, packet transmission occurs through the mobile network infrastructure. The packet is encapsulated with headers specific to the cellular technology (e.g., LTE or 5G) and is transmitted wirelessly to a nearby cell tower. The packet is then routed through the cellular network, often passing through multiple network elements like base stations and mobile switching centers. Cellular data networks enable mobile devices to transmit and receive data while on the move, providing widespread coverage for users accessing the internet, making calls, or using various applications on their mobile devices.
+
 For most home or small business Internet connections the packet will pass from
 your computer, possibly through a local network, and then through a modem
 (MOdulator/DEModulator) which converts digital 1's and 0's into an analog
