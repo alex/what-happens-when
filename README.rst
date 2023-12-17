@@ -162,6 +162,11 @@ sends the character to the ``window manager`` (DWM, metacity, i3, etc), so the
 The graphical API of the window  that receives the character prints the
 appropriate font symbol in the appropriate focused field.
 
+Internet connection
+-------------------
+For the request to be processed, an internet connection is required so that
+the circuit is complete. The internet makes the whole process to happen.
+
 Parse URL
 ---------
 
