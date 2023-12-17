@@ -606,6 +606,12 @@ detail by the HTML5 specification.
 
 The algorithm consists of two stages: tokenization and tree construction.
 
+Tokenization involves breaking down the input HTML code into chunks of meaningful information like tags, attributes, and text content. The HTML parser algorithm scans the input from start to finish, identifying and categorizing these tokens.
+
+Tree construction involves building a tree-like data structure called the Document Object Model (DOM). This tree represents the hierarchical structure of the HTML document. Tags become elements in the tree, attributes become properties of those elements, and the text content becomes the text nodes.
+
+As the parser encounters opening tags, it creates corresponding elements in the DOM tree. When it encounters text content or attributes, it associates them with the current element in the tree. Closing tags signal the end of an element, helping to structure the tree.
+
 **Actions when the parsing is finished**
 
 The browser begins fetching external resources linked to the page (CSS, images,
