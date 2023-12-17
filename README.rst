@@ -689,6 +689,15 @@ the Google homepage. Scripts can cause additional network requests to be
 performed, as well as modify the page or its layout, causing another round of
 page rendering and painting.
 
+CDN Processing :
+----------------
+
+Once the browser has parsed the HTML and identified external resources such as images, stylesheets, and scripts, it checks if these resources are available in its local cache. If not, the browser initiates requests to fetch these resources. Many modern websites utilize Content Delivery Networks (CDNs) to enhance performance.
+
+CDNs are distributed networks of servers strategically located around the world. When the browser requests a resource that is part of a CDN, the request is routed to the nearest CDN server. This reduces latency and accelerates content delivery. CDNs also help offload traffic from the origin server, contributing to better scalability and reliability.
+
+After fetching the resources from the CDN, the browser integrates them into the rendering process, completing the assembly of the web page as intended by the website's developers.
+
 .. _`Creative Commons Zero`: https://creativecommons.org/publicdomain/zero/1.0/
 .. _`"CSS lexical and syntax grammar"`: http://www.w3.org/TR/CSS2/grammar.html
 .. _`Punycode`: https://en.wikipedia.org/wiki/Punycode
