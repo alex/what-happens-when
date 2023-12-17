@@ -279,7 +279,27 @@ Switch:
 
 * If the router is on the same "wire", it will respond with an ``ARP Reply``
   (see below)
+Direct Connection to Router:
 
+Scenario: When a computer is directly connected to the router.
+Response: The router will respond directly to the computer's ARP request with an "ARP Reply." This response provides the MAC address associated with the requested IP address.
+Hub:
+
+Scenario: When a computer is connected to a hub.
+Response: The hub will broadcast the ARP request out of all other ports. If the router is also connected to the hub (on the same "wire"), the router will respond with an "ARP Reply."
+Switch:
+
+Scenario: When a computer is connected to a switch.
+Response:
+If the switch has no entry for the MAC address in its local CAM/MAC table, it will broadcast the ARP request to all other ports.
+If the switch has an entry in its MAC/CAM table mapping the MAC address, it will send the ARP request only to the specific port associated with that MAC address.
+If the router is connected to the same "wire" (same network segment), it will respond with an "ARP Reply."
+In summary:
+
+In a direct connection to a router, the router directly responds to the ARP request.
+With a hub, the ARP request is broadcast, and if the router is part of the hub network, it replies.
+In the case of a switch, its behavior depends on whether it has a mapping for the MAC address in its local table or if it needs to broadcast the request. If the router is within the same network segment, it also responds.
+These scenarios highlight how ARP requests and responses differ based on the network infrastructure, such as direct connections, hubs, or switches, and the subsequent behavior of routers in responding to ARP requests within these setups.
 ``ARP Reply``::
 
     Sender MAC: target:mac:address:here
