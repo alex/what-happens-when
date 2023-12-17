@@ -191,7 +191,7 @@ Convert non-ASCII Unicode characters in the hostname
 * Since the hostname is ``google.com`` there won't be any, but if there were
   the browser would apply `Punycode`_ encoding to the hostname portion of the
   URL.
-
+Browser cache
 Check HSTS list
 ---------------
 * The browser checks its "preloaded HSTS (HTTP Strict Transport Security)"
