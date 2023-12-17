@@ -663,6 +663,12 @@ Page Rendering
   via Direct3D/OpenGL. The GPU command buffer(s) are flushed to the GPU for
   asynchronous rendering and the frame is sent to the window server.
 
+Security Measures
+-----------------
+
+* When you connect to a website using HTTPS (Hypertext Transfer Protocol Secure), your browser establishes a secure connection to the server using SSL (Secure Sockets Layer) or its successor, TLS (Transport Layer Security). This encryption protocol ensures that the data exchanged between your browser and the server remains confidential and integral.
+
+
 GPU Rendering
 -------------
 
