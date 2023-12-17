@@ -689,6 +689,18 @@ the Google homepage. Scripts can cause additional network requests to be
 performed, as well as modify the page or its layout, causing another round of
 page rendering and painting.
 
+Firewall
+--------
+When the request for 'google.com' travels through the internet, it encounters a security guard called a firewall. Think of it as a vigilant gatekeeper; it inspects incoming and outgoing traffic. The firewall decides what data packets can enter or leave the network based on predefined security rules. Its job is to keep out unwanted or potentially harmful data, ensuring the safety of the network and the systems within it.
+
+Load Balancing in Action
+------------------------
+As the request reaches Google's servers, it encounters a load balancer—a smart traffic controller. Imagine it as a conductor in a busy orchestra; it evenly distributes incoming requests across multiple servers. This ensures no single server gets overwhelmed, optimizing performance and preventing bottlenecks. The load balancer juggles the traffic efficiently, keeping the website responsive and available, even during high user traffic.
+
+Database Interaction
+--------------------
+Within Google's server realm, the application server interacts with a database—a treasure trove of information. It's like a vast library storing and retrieving data upon request. When you search on 'google.com', the application server dives into this library, fetching relevant data and crafting personalized results for your query.
+
 .. _`Creative Commons Zero`: https://creativecommons.org/publicdomain/zero/1.0/
 .. _`"CSS lexical and syntax grammar"`: http://www.w3.org/TR/CSS2/grammar.html
 .. _`Punycode`: https://en.wikipedia.org/wiki/Punycode
