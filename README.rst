@@ -297,6 +297,15 @@ the default gateway it can resume its DNS process:
   requested and that flows up the list of DNS servers until the SOA is reached,
   and if found an answer is returned.
 
+Firewall
+--------
+A Firewall is a network security system that serves a barrier between a 
+trusted network traffic and an untrusted network traffic on the internet.
+It monitors incoming and outgoing network traffic and decides whether to 
+allow or block specific traffic based on a defined set of security rules.
+Your secured/encrypted HTTP request go through the firewall to the Load Balancer.
+
+
 Opening of a socket
 -------------------
 Once the browser receives the IP address of the destination server, it takes
