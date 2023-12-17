@@ -39,6 +39,17 @@ popular searches from the internet as a whole. As you are typing
 with each keypress. It may even suggest "google.com" before you finish typing
 it.
 
+## The 'g' Key Press Event
+
+When the 'g' key is pressed in the browser, it triggers an event that propagates through the DOM. Event propagation involves two phases:
+
+- **Capturing Phase:** The event starts from the root of the DOM tree and moves towards the target element.
+
+- **Bubbling Phase:** After the event reaches the target element, it then bubbles up through its ancestors in the DOM tree.
+
+This propagation allows various elements to respond to the 'g' key press event, executing event listeners or default behaviors accordingly.
+
+
 The "enter" key bottoms out
 ---------------------------
 
