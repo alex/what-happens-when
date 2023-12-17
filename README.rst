@@ -205,6 +205,8 @@ Check HSTS list
   single HTTP request could potentially leave the user vulnerable to a
   `downgrade attack`_, which is why the HSTS list is included in modern web
   browsers.)
+* If the hostname is not found within list, then the brawser proceeds to submit 
+  DNS request or DNS lookup
 
 DNS lookup
 ----------
