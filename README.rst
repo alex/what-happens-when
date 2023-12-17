@@ -480,6 +480,12 @@ resolving the other domain, and follows all steps up to this point for that
 domain. The ``Host`` header in the request will be set to the appropriate
 server name instead of ``google.com``.
 
+Load Balancer
+-------------
+Once the browser initiates the process of establishing a connection to the server,
+the request may first encounter a load balancer if the web service is designed to 
+distribute incoming traffic across multiple servers for improved performance and reliability.
+
 HTTP Server Request Handle
 --------------------------
 The HTTPD (HTTP Daemon) server is the one handling the requests/responses on
