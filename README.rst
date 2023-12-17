@@ -205,6 +205,8 @@ Check HSTS list
   single HTTP request could potentially leave the user vulnerable to a
   `downgrade attack`_, which is why the HSTS list is included in modern web
   browsers.)
+* If the hostname is not found within list, then the brawser proceeds to submit 
+  DNS request or DNS lookup
 
 DNS lookup
 ----------
@@ -296,6 +298,8 @@ the default gateway it can resume its DNS process:
 * If the local/ISP DNS server does not have it, then a recursive search is
   requested and that flows up the list of DNS servers until the SOA is reached,
   and if found an answer is returned.
+* This is also achieved by checking with Authoritative DNS server that instructs the
+  local DNS server to check with ISP DNS servers recursively for the A record of the address
 
 Opening of a socket
 -------------------
