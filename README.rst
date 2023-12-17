@@ -689,6 +689,13 @@ the Google homepage. Scripts can cause additional network requests to be
 performed, as well as modify the page or its layout, causing another round of
 page rendering and painting.
 
+Note:
+When a DNS lookup is made to get Google's servers, it returns an IP address for a load balancer in front of the web servers
+The requests go to the load balancer, which it distributes across Google's many web servers to balance traffic
+There can be firewalls integrated into the mobile provider's infrastructure, which analyze traffic and block prohibited content
+Google's datacenters maintain tightly controlled firewalls to filter malicious requests while allowing valid traffic 
+
+
 .. _`Creative Commons Zero`: https://creativecommons.org/publicdomain/zero/1.0/
 .. _`"CSS lexical and syntax grammar"`: http://www.w3.org/TR/CSS2/grammar.html
 .. _`Punycode`: https://en.wikipedia.org/wiki/Punycode
