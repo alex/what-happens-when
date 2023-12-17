@@ -571,6 +571,14 @@ The components of the browsers are:
   support storage mechanisms such as localStorage, IndexedDB, WebSQL and
   FileSystem.
 
+HTTPS/SSL Handshake
+
+If you've noticed the "https" in the URL, that indicates a secure connection. 
+The browser and the server perform a handshake to establish a Secure Sockets 
+Layer (SSL) or Transport Layer Security (TLS) connection. 
+This cryptographic protocol ensures that the data exchanged 
+between your browser and the server is encrypted and secure from eavesdropping.
+
 HTML parsing
 ------------
 
