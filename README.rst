@@ -709,3 +709,22 @@ page rendering and painting.
 .. _`downgrade attack`: http://en.wikipedia.org/wiki/SSL_stripping
 .. _`OSI Model`: https://en.wikipedia.org/wiki/OSI_model
 .. _`Spanish`: https://github.com/gonzaleztroyano/what-happens-when-ES
+
+## DNS Resolution and Load Balancing: A Behind-the-Scenes Look
+
+While the internet journey you've outlined is fantastic, let's delve deeper into two crucial steps often glossed over: **DNS resolution** and **load balancing**. We'll explore them not as technical jargon, but as fascinating cogs in the machine that bring you your requested information.
+
+Imagine the internet as a vast library, and the address you type ([https://www.google.com](https://www.google.com)) as a cryptic Dewey Decimal number. DNS, the "Domain Name System," acts like a librarian, translating that number into the actual physical location of the book (the server IP address). It's like a secret handshake between your browser and the internet, ensuring you reach the right destination.
+
+But what if that destination is overflowing with eager readers (requests)? Enter the **load balancer**, a digital bouncer who efficiently distributes the traffic amongst multiple servers. Imagine multiple copies of the same book spread across different shelves. The load balancer directs each request to the least crowded shelf, ensuring a smooth and speedy experience for everyone.
+
+Here's how this plays out:
+
+1. You type [https://www.google.com](https://www.google.com).
+2. DNS translates this into the server's IP address.
+3. Your request reaches the load balancer.
+4. The load balancer sends your request to the server with the least workload.
+5. The server processes your request and sends back the desired information (the web page).
+6. You see Google's familiar homepage!
+
+This might seem like a magical trick, but it's the result of clever algorithms and distributed computing working in perfect harmony. By understanding these behind-the-scenes heroes, we appreciate the intricate dance that occurs every time we click or type online.
