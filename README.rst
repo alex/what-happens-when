@@ -27,6 +27,8 @@ Table of Contents
 
 The "g" key is pressed
 ----------------------
+When the "g" key is pressed on a keyboard, the letter "g" is typically inputted into the active application or text field. The specific response may vary depending on the context, software, or operating system in use.
+
 The following sections explain the physical keyboard actions
 and the OS interrupts. When you press the key "g" the browser receives the
 event and the auto-complete functions kick in.
