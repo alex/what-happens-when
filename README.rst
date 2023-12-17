@@ -67,7 +67,7 @@ Database
 
 Now let's talk about the database, which’s a component, in this puzzle. The application server updates information from the database. Databases play a role in storing and organizing amounts of data that power dynamic web applications. They efficiently store user profiles, product listings, and various other types of data. Some used databases include MySQL, PostgreSQL, and MongoDB. The seamless interaction between the application server and the database ensures that the content you see is not only dynamic but also accurate and up-to-date.
 
-![What happens when you type https://www.google.com in your browser and press Enter](https://miro.medium.com/v2/format:webp/1*EWup-RIyMs-7TyBh95Htyg.jpeg)
+![Diagram](https://miro.medium.com/v2/format:webp/1*EWup-RIyMs-7TyBh95Htyg.jpeg)
 
 Conclusion
 
