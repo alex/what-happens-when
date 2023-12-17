@@ -709,3 +709,5 @@ page rendering and painting.
 .. _`downgrade attack`: http://en.wikipedia.org/wiki/SSL_stripping
 .. _`OSI Model`: https://en.wikipedia.org/wiki/OSI_model
 .. _`Spanish`: https://github.com/gonzaleztroyano/what-happens-when-ES
+ # Role of Firewall
+Security is a very important aspect when accessing the internet. Without security and the ability to filter malicious packets of data, it is possible we can be attacked through various tactics and our privacy infringed. A firewall serves as a critical security measure to safeguard the communication between a computer and the servers, such as when you type "www.google.com." Acting as a barrier between your device and the internet the firewall monitors and controls incoming and outgoing network traffic based on predetermined security rules. As your browser initiates a connection to Google's servers, the firewall examines the data packets to ensure they adhere to established security protocols.
