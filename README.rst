@@ -674,6 +674,34 @@ GPU Rendering
   of ``GPU`` massive parallelism for float point calculations required for
   the rendering process.
 
+New content
+```
+Handling the Response
+---------------------
+
+As packets containing the response data start arriving back to the browser:
+
+- They are reassembled by the networking layer into a continuous byte stream based on the TCP sequence numbers. Any missing packets are requested again.
+
+- Once headers from the application layer are received, the browser network stack parses the status line and response headers. 
+
+- Cookies are extracted and set based on `Set-Cookie` headers in the response. Other headers like `Cache-Control` are handled appropriately.
+
+- The headers are passed to the browser engine, which checks if this response should be loaded from cache based on header info (e.g. `If-Modified-Since`). 
+
+- Assuming cache validations pass, the HTML content starts arriving as the body of the response stream.
+
+- The browser engine passes this HTML data to the HTML parser, which starts parsing the HTML and constructing a DOM tree. 
+
+- As the parser encounters tags like `<img>` and other resources, further async requests back to the networking layer are made to fetch these assets.
+
+- Stylesheets referenced in the HTML are parsed by the CSS parser and resolved into style rules. 
+
+- Together with the DOM tree, these style rules are used to construct a render tree and layout model of the page. The page is rendered by the browser engine incrementally as content continues streaming in.
+
+- Further asynchronous JavaScript execution like event binding, Web Worker execution etc. happens concurrently by the JavaScript engine after parsing.
+```
+
 
 Window Server
 -------------
