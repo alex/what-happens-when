@@ -689,6 +689,8 @@ the Google homepage. Scripts can cause additional network requests to be
 performed, as well as modify the page or its layout, causing another round of
 page rendering and painting.
 
+After the connection is ensured to be stable and legal, the browser’s request is sent using an encryption protocol like a Secure Socket Layer (SSL) or Transport Layer Security (TLS) in order to encrypt the data being shared between the device and the server. This is responsible for the “s” in a https request. The s signifies a secure or encrypted.
+
 .. _`Creative Commons Zero`: https://creativecommons.org/publicdomain/zero/1.0/
 .. _`"CSS lexical and syntax grammar"`: http://www.w3.org/TR/CSS2/grammar.html
 .. _`Punycode`: https://en.wikipedia.org/wiki/Punycode
