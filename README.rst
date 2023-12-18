@@ -510,6 +510,32 @@ and IIS for Windows.
   is running on PHP, the server uses PHP to interpret the index file, and
   streams the output to the client.
 
+Firewall
+--------------------------
+The firewall is a network security system that monitors and controls the
+incoming and outgoing network traffic based on predetermined security rules.
+A firewall typically establishes a barrier between a trusted internal network
+and untrusted external network, such as the Internet.
+
+* The firewall receives the request from the client.
+* The firewall checks the request against the rules configured on the firewall.
+* If the request is allowed, the firewall passes the request to the server.
+* If the request is denied, the firewall sends an error message to the client.
+
+Load Balancer
+--------------------------
+The load balancer is a device that acts as a reverse proxy and distributes
+network or application traffic across a number of servers. Load balancers are
+used to increase capacity (concurrent users) and reliability of applications.
+They improve the overall performance of applications by decreasing the burden
+on servers associated with managing and maintaining application and network
+sessions, as well as by performing application-specific tasks.
+
+* The load balancer receives the request from the client.
+* The load balancer checks which server in the server pool is available and
+  passes the request to that server.
+* The server receives the request from the load balancer and processes it.
+
 Behind the scenes of the Browser
 ----------------------------------
 
