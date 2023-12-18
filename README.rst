@@ -223,6 +223,10 @@ DNS lookup
   ``ARP process`` below for the DNS server.
 * If the DNS server is on a different subnet, the network library follows
   the ``ARP process`` below for the default gateway IP.
+* In the event where the DNS is unsuccesful. There are usually timeout settings
+  for DNS resolution attempts. If a response is not received within a specified
+  time frame, the resolver may consider the attempt unsuccessful and retry or
+  report an error.
 
 
 ARP process
