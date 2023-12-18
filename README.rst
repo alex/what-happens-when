@@ -397,6 +397,27 @@ TLS handshake
 * From now on the TLS session transmits the application (HTTP) data encrypted
   with the agreed symmetric key.
 
+* The TLS handshake is a crucial process that establishes a secure communication
+  channel between a client and a server, ensuring the confidentiality and
+  integrity of the transmitted data. In the initial steps, the client initiates
+  the handshake by sending a ClientHello message, specifying its TLS version,
+  supported cipher algorithms, and compression methods. The server responds
+  with a ServerHello message, confirming the TLS version and selecting a cipher
+  suite for communication. Importantly, the server presents its digital certificate,
+  signed by a trusted Certificate Authority (CA), containing a public key that
+  will be used in subsequent encryption.
+
+* Following the certificate exchange, the client validates the server's certificate,
+  ensuring trust by matching it against its list of trusted CAs. To establish
+  a shared secret for symmetric key encryption, the client generates random bytes
+  encrypted with the server's public key. The server, in turn, decrypts this
+  information using its private key to derive the symmetric master key. Both parties
+  then exchange Finished messages, containing encrypted hashes of the preceding
+  communication, confirming the successful establishment of the secure channel.
+  Subsequently, the TLS session continues to transmit application (e.g., HTTP)
+  data encrypted with the agreed-upon symmetric key, ensuring data confidentiality
+  and integrity throughout the communication process.
+
 If a packet is dropped
 ----------------------
 
