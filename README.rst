@@ -21,15 +21,37 @@ maintainers.
 Table of Contents
 ====================
 
-.. contents::
-   :backlinks: none
-   :local:
+The "g" key is pressed
+The "enter" key bottoms out
+Interrupt fires [NOT for USB keyboards]
+(On Windows) A WM_KEYDOWN message is sent to the app
+(On OS X) A KeyDown NSEvent is sent to the app
+(On GNU/Linux) the Xorg server listens for keycodes
+Parse URL
+Is it a URL or a search term?
+Convert non-ASCII Unicode characters in the hostname
+Check HSTS list
+DNS lookup
+ARP process
+Opening of a socket
+TLS handshake
+If a packet is dropped
+HTTP protocol
+HTTP Server Request Handle
+Behind the scenes of the Browser
+Browser
+HTML parsing
+CSS interpretation
+Page Rendering
+GPU Rendering
+Window Server
+Post-rendering and user-induced execution
 
 The "g" key is pressed
 ----------------------
 The following sections explain the physical keyboard actions
 and the OS interrupts. When you press the key "g" the browser receives the
-event and the auto-complete functions kick in.
+event and the auto-complete functions kick in. 
 Depending on your browser's algorithm and if you are in
 private/incognito mode or not various suggestions will be presented
 to you in the dropdown below the URL bar. Most of these algorithms sort
