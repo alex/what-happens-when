@@ -223,7 +223,9 @@ DNS lookup
   ``ARP process`` below for the DNS server.
 * If the DNS server is on a different subnet, the network library follows
   the ``ARP process`` below for the default gateway IP.
-
+* If  the local DNS server has the IP address, it sends a response to the
+  client. The client can then use this IP address to establish a connection
+  with the server.
 
 ARP process
 -----------
