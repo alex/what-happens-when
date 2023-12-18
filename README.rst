@@ -488,9 +488,16 @@ and IIS for Windows.
 
 * The HTTPD (HTTP Daemon) receives the request.
 * The server breaks down the request to the following parameters:
-   * HTTP Request Method (either ``GET``, ``HEAD``, ``POST``, ``PUT``,
-     ``PATCH``, ``DELETE``, ``CONNECT``, ``OPTIONS``, or ``TRACE``). In the
-     case of a URL entered directly into the address bar, this will be ``GET``.
+   * HTTP Request Methods, we find:
+      * ``GET`` retrieves information to be read-only by the client/user. In the case of a URL entered directly into the address bar, this will be GET.
+      * ``HEAD`` is similar to GET method but it does not have any response body.
+      * ``POST`` creates a new resource on the backend with the information in the request body.
+      * ``PUT`` updates an existing resource with the information in the request by replacing its entire content completely.
+      * ``PATCH`` updates a resource partially and not entirely with the information in the request.
+      * ``DELETE`` deletes a resource, returning the same result regardless of the number of calls.
+      * ``CONNECT`` makes a two-way connection between a client and a server.
+      * ``OPTIONS`` gets the information about the permitted communication for a given URL or server.
+      * ``TRACE`` performs a loop-back test with the same request body that the client sent before.
    * Domain, in this case - google.com.
    * Requested path/page, in this case - / (as no specific path/page was
      requested, / is the default path).
