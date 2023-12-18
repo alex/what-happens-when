@@ -27,17 +27,33 @@ Table of Contents
 
 The "g" key is pressed
 ----------------------
-The following sections explain the physical keyboard actions
-and the OS interrupts. When you press the key "g" the browser receives the
-event and the auto-complete functions kick in.
-Depending on your browser's algorithm and if you are in
-private/incognito mode or not various suggestions will be presented
-to you in the dropdown below the URL bar. Most of these algorithms sort
-and prioritize results based on search history, bookmarks, cookies, and
-popular searches from the internet as a whole. As you are typing
-"google.com" many blocks of code run and the suggestions will be refined
-with each keypress. It may even suggest "google.com" before you finish typing
-it.
+When you press the "g" key in your browser, the specific actions that occur
+depends on the context and the webpage you are currently viewing. However, for
+a general behavior, when typing a single character in the address bar or search
+bar, here's what happens:
+
+1. **Address Bar Interaction:**
+   - **Typing a Single Character:** When you type a single character like "g" in
+the address bar, the browser often suggests relevant URLs based on your
+browsing history, bookmarks, or popular websites starting with that letter.
+This is part of the browser's autocomplete or omnibox functionality.
+
+2. **Search Bar Interaction:**
+   - **Typing in a Search Bar:** If you are using a search bar (like the one on
+the default new tab page or the search bar in some browsers), typing a single
+character might trigger suggestions or predictions based on your search history
+or popular searches.
+
+3. **Default Search Engine:**
+   - **Search Engine Integration:** If your default search engine is set to
+Google, typing a single character in the address or search bar might initiate a
+search on Google. The browser may redirect you to the search results page for
+terms starting with that letter.
+
+4. **Website-Specific Actions:**
+   - **In-Page Actions:** On certain websites, pressing the "g" key might
+trigger specific actions or interactions within the page, especially if there
+are keyboard shortcuts or hotkeys associated with that character.
 
 The "enter" key bottoms out
 ---------------------------
