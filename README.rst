@@ -20,9 +20,45 @@ maintainers.
 
 Table of Contents
 ====================
+DNS request
+TCP/IP
+Firewall
+HTTPS/SSL
+Load-balancer
+Web server
+Application server
+Database
 
-.. contents::
-   :backlinks: none
+Title: The Journey of a Web Request: Understanding the Role of Databases Beyond Typing "https://www.google.com"
+
+When you enter a URL like "https://www.google.com" into your browser and hit Enter, it sets off a cascade of events, predominantly involving DNS, server requests, encryption, and content delivery. The interaction with databases typically occurs on the server-side, assisting in managing and retrieving data necessary for generating dynamic web content.
+
+1. DNS Request:
+   As previously discussed, the Domain Name System (DNS) resolves the domain name "www.google.com" to its corresponding IP address, enabling your browser to locate Google's servers.
+
+2. Establishing Connection and Encryption:
+   The browser establishes a secure connection using protocols like HTTPS, ensuring data encryption during transmission to prevent interception or tampering.
+
+3. Load Balancing and Server Handling:
+   Requests might pass through load balancers that distribute traffic among multiple servers. These servers process incoming requests and generate responses, often involving interactions with various backend components.
+
+4. Application Server and Database Interaction:
+   Behind the scenes, the web server might communicate with application servers. These application servers, in turn, interact with databases to fetch or manipulate data needed to fulfill the user's request. For instance, Google may access databases to retrieve search results, user preferences, or other personalized information.
+
+5. Dynamic Content Generation:
+   Databases play a crucial role in providing dynamic content. When you search on Google, databases are queried to retrieve relevant data, which is then processed and structured into the familiar search results and ads you see on the webpage.
+
+6. Response to the Browser:
+   The processed data is sent back to your browser in the form of HTML, CSS, JavaScript, and other resources required to render the Google homepage.
+
+While the specific details of Google's backend infrastructure remain proprietary, databases likely form a fundamental component in managing and delivering the vast amounts of information that power Google's services.
+
+Although not directly involved in the initial request of typing the URL into your browser, databases underpin the retrieval and management of data, ensuring the delivery of personalized, relevant, and dynamic content to users.
+
+This process exemplifies the intricate dance between front-end interactions and back-end database operations that collectively create the seamless user experience we encounter daily on the web.
+
+Understanding the significance of databases in web service delivery adds depth to the appreciation of the complexities behind the seemingly simple act of typing a URL and accessing a webpage.
+  https://medium.com/@fortunatemugendi8/title-demystifying-the-journey-of-a-web-request-what-happen-when-you-type-https-www-google-com-a25de2601943
    :local:
 
 The "g" key is pressed
