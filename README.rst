@@ -205,6 +205,8 @@ Check HSTS list
   single HTTP request could potentially leave the user vulnerable to a
   `downgrade attack`_, which is why the HSTS list is included in modern web
   browsers.)
+* HSTS can also be communicated by the server via the HTTP response header (Strict-Transport-Security).
+* If the site is not on the preloaded list but sends this header, the browser will still use HTTPS.
 
 DNS lookup
 ----------
