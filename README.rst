@@ -98,7 +98,7 @@ connection, but historically has been over PS/2 or ADB connections.
 
 Interrupt fires [NOT for USB keyboards]
 ---------------------------------------
-
+This explains how everything related to interruption of fires.
 The keyboard sends signals on its interrupt request line (IRQ), which is mapped
 to an ``interrupt vector`` (integer) by the interrupt controller. The CPU uses
 the ``Interrupt Descriptor Table`` (IDT) to map the interrupt vectors to
