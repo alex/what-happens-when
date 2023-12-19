@@ -573,7 +573,14 @@ The components of the browsers are:
 
 HTML parsing
 ------------
+HTML parsing refers to the process of analyzing HTML code and extracting 
+relevant information or manipulating the structure of a web page 
+programmatically. Here are key aspects and tools related to HTML parsing:
 
+1. Parsing Methods:
+Manual Parsing: Using string manipulation techniques or regular expressions to locate and extract specific elements from HTML.
+
+HTML Parsing Libraries: Utilizing specialized libraries or modules in programming languages to parse HTML more efficiently.
 The rendering engine starts getting the contents of the requested
 document from the networking layer. This will usually be done in 8kB chunks.
 
