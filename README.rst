@@ -571,6 +571,12 @@ The components of the browsers are:
   support storage mechanisms such as localStorage, IndexedDB, WebSQL and
   FileSystem.
 
+  Cookies:
+
+    *Definition*: Small pieces of data sent from a website and stored on the user's device by the web browser.
+    *Purpose*: Cookies are commonly used for session management, personalization, and tracking user behavior.
+    *Limitations*: Limited storage capacity (usually 4KB per domain), sent with every HTTP request, and subject to privacy concerns.
+
 HTML parsing
 ------------
 
