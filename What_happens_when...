@@ -1,0 +1,50 @@
+This question is classic and still widely used as interview question for many type of software engineering position.
+
+This question is a good test of whether you understand DNS. Many software engineering candidate struggle with this question, so if you do well in this question you are already way ahead of the curve.
+
+So let’s start…
+
+DNS Request:
+First your browser initiate a DNS query through your computer DNS client to the resolver (which is your ISP that maintain a DNS Server) asking for the IP address of “https://www.google.com”.
+
+The resolver then query the authoritative DNS servers found for “https://www.google.com” which then return the IP address to your browser.
+
+Note: Your OS (Operating System) and the browser first check their cache for the IP address if not found before the DNS client query the resolver.
+
+2. TCP/IP:
+
+After the browser get the IP address of the requested website it then send http request to the IP address of the server hosting the website, and the server return the required http response back to your browser.
+
+TCP (Transmission Controller Protocol) help transport data between your browser and the server as small chuck called packet, and ensure the data send/requested was successfully.
+
+3. Firewall:
+
+Before a request from your browser reaches the required destination (https://www.google.com) it passes through a firewall. Based on the website firewall configuration it may limit, block, and allow certain connection it does this by analyzing data packet that request entry to the website network in this case “https://www.google.com”
+
+Firewall usually act as a division between a private network and an outer network, usually the internet.
+
+4. HTTPS/SSL:
+
+Hyper Text Transfer Protocol Secure (HTTPS) is the secure version of HTTP, this is the protocol used between your browser and the website for communicating and transferring data by using the Secure Socket Layer (SSL) Security Protocol for encrypting and decrypting data between your browser and the website “https://www.google.com”.
+
+This helps protects data shared between your browser and the website from attackers.
+
+5. Load-balancer:
+
+Load-balancer balance network traffic going to “https://www.google.com” by distributing traffic to various server hosting the website to manage request, this helps improve availability and performance of the website it also avoid Single Point of Failure (SPF) on the servers.
+
+6. Web server:
+
+A web server serves web pages, it understand and interpret http URL.
+
+After a request have received a web server searches for the necessary file if available on the server (that’s static content) or communicate with other software for generating the webpage (dynamic content) and serve it on the browser.
+
+7. Application server:
+
+Application server serve dynamic content. Base on a particular content request to “https://www.google.com” it will generate logic on how to serve the webpage to the browser.
+
+8. Database:
+
+Database store and manage website information and content. for example upon request to “https://www.google.com”the application server retrieve data form the database in order to dynamically generate and serve webpages.
+
+I hope this contribution was helpful, if so am very glad…
