@@ -297,6 +297,16 @@ the default gateway it can resume its DNS process:
   requested and that flows up the list of DNS servers until the SOA is reached,
   and if found an answer is returned.
 
+Recursive DNS Lookup
+-------------------
+The DNS resolve managed by your ISP sends a request to one of the available root
+name servers for the IP of the domain name. The root name server in turn makes
+a request to the appropriate top level domain (TLD) name server for the IP. The 
+TLD name server makes a request to the authoritative name server for the domain
+name. The authoritative name server then returns the IP address up the recursive
+call stack. If any of these name servers has the IP address saved in its cache,
+the recursive lookup is terminated and the IP address returned.
+
 Opening of a socket
 -------------------
 Once the browser receives the IP address of the destination server, it takes
