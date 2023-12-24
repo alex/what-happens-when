@@ -450,7 +450,7 @@ newline to the server indicating that the content of the request is done.
 The server responds with a response code denoting the status of the request and
 responds with a response of the form::
 
-    200 OK
+    200 - OK
     [response headers]
 
 Followed by a single newline, and then sends a payload of the HTML content of
