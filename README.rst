@@ -149,6 +149,12 @@ this queue by threads with sufficient privileges calling the
 ``mach_ipc_dispatch`` function. This most commonly occurs through, and is
 handled by, an ``NSApplication`` main event loop, via an ``NSEvent`` of
 ``NSEventType`` ``KeyDown``.
+The focused app (in this case, the browser) queries its port for events and pulls 
+them out of its message queue. The app uses the NSEvent keyDown: method to handle 
+the key event. If the browser window is in focus, it will receive the keyDown: event. 
+The method then checks the keyCode property of the NSEvent. If it's the Enter key 
+(equivalent to a carriage return), the browser will execute the appropriate action 
+for that event.
 
 (On GNU/Linux) the Xorg server listens for keycodes
 ---------------------------------------------------
@@ -182,6 +188,13 @@ When no protocol or valid domain name is given the browser proceeds to feed
 the text given in the address box to the browser's default web search engine.
 In many cases the URL has a special piece of text appended to it to tell the
 search engine that it came from a particular browser's URL bar.
+Browsers usually determine whether the input in the address bar is a URL or a 
+search term based on heuristics. If it contains spaces or certain characters 
+(e.g., ".", "/"), the browser is more likely to treat it as a URL. Otherwise, 
+it may interpret it as a search term.
+
+In this case, "google.com" is recognized as a URL because it doesn't contain 
+spaces, and it has a period (.) which is a common character in domain names.
 
 Convert non-ASCII Unicode characters in the hostname
 ------------------------------------------------
