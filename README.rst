@@ -543,6 +543,8 @@ common user interface elements are:
 * Refresh and stop buttons for refreshing or stopping the loading of
   current documents
 * Home button that takes you to your home page
+* Information button - provides info on site being viewed, connection status (wether secure or not),
+  cookies and site data and site settings
 
 **Browser High-Level Structure**
 
