@@ -1,0 +1,12 @@
+html parsing
+
+When a web page is requested by a user, and the application server searches from the
+database, it sends back to the browser what finds as an html document. This document becomes the 
+layout, the structure of the page.
+The web browser parses the html document to display to the user. When this happens,a DOM
+is created. It is presented in a hierarchical form with each component of the html page 
+represented as node in a tree. The browser applies CSS to the elements in a tree to 
+enhance the visual look.
+Usually, JavaScript is used to parse html pages by web browsers.The DOM allows you to manipulate the
+parsed elements.Other languages like python can be used as well to parse web pages
+
