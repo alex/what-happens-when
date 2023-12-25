@@ -582,7 +582,9 @@ The primary job of the HTML parser is to parse the HTML markup into a parse tree
 The output tree (the "parse tree") is a tree of DOM element and attribute
 nodes. DOM is short for Document Object Model. It is the object presentation
 of the HTML document and the interface of HTML elements to the outside world
-like JavaScript. The root of the tree is the "Document" object. Prior to
+like JavaScript.The DOM serves as an internal representation that the browser uses to
+manipulate and render the page.
+The root of the tree is the "Document" object. Prior to
 any manipulation via scripting, the DOM has an almost one-to-one relation to
 the markup.
 
