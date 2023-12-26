@@ -1,0 +1,21 @@
+#What Happens When You Press 'G'
+
+In the seemingly mundane act of pressing the 'G' key on your keyboard, a ballet of technological interactions is set into motion. Let's explore the concise journey of this single keystroke:
+
+1. Hardware Interaction:
+The physical press of the 'G' key completes an electrical circuit on your keyboard.
+The keyboard's controller detects this electrical change.
+2. ASCII Code Generation:
+The keyboard controller translates the 'G' key press into an ASCII (American Standard Code for Information Interchange) code.
+The ASCII code for 'G' is 71.
+3. Operating System Reception:
+The operating system's kernel intercepts the ASCII code.
+It determines the context of the keypress, whether in a text editor, browser, or any other active application.
+4. Application Notification:
+The active application receives a notification of the 'G' key press.
+If it's a text editor, the 'G' character is inserted at the cursor position.
+5. Graphical User Interface (GUI) Update:
+If the application has a graphical interface, the screen is updated to reflect the new state, showing the appearance of the letter 'G' on the display.
+6. Potential System-wide Actions:
+Depending on system settings or specific application configurations, pressing 'G' might trigger broader actions like opening the 'Games' folder or executing custom shortcuts.
+In this seemingly instantaneous process, the 'G' key press ripples through layers of hardware and software, seamlessly integrating into the user experience. While a single keypress appears simple, the orchestrated dance behind the scenes showcases the complexity of modern computing systems.
