@@ -1,0 +1,7 @@
+This is what happens. 
+I put all this together to basically let you understand the major sections of the internet when it comes to client and server-side rendering both static and dynamic, So therefore in a nutshell “what happens when you press Google.com on your device” is basically calling a server using your DNS name which is assigned to an IP address located somewhere in a computer which is actually that server you are trying to use. So when you type google.com the server simply gives you access to an html content in its system with the help of TCP/IP which enables easier communication over the internet and makes it secure. HTTPS/SSL and firewalls are used to configure security against cyber threats and unauthorized access, That way the client gains confidence in particular site safety and also in its privacy, and since you are not the only one making a request the response might be loaded and traffic may occur and that's worked loads are reduced using a load balancer to distribute workload to different servers so that application servers can retrieve dynamic data faster from a database. 
+
+
+In The End!
+Take it as a phone number you assign a name for easy remembrance to be able to communicate to your loved ones in your contacts list. All you just need to do is search for the name saved to that number and make the call but a lot is going on behind the scenes and when we talk about the internet the name google.com is just a name assigned to a number for easier access to a website.
+
