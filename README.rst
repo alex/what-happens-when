@@ -15,8 +15,8 @@ request, please!
 This is all licensed under the terms of the `Creative Commons Zero`_ license.
 
 Read this in `简体中文`_ (simplified Chinese), `日本語`_ (Japanese), `한국어`_
-(Korean) and `Spanish`_. NOTE: these have not been reviewed by the alex/what-happens-when
-maintainers.
+(Korean) and `Spanish`_. NOTE: these have not been reviewed by the
+alex/what-happens-when maintainers.
 
 Table of Contents
 ====================
@@ -85,9 +85,9 @@ connection, but historically has been over PS/2 or ADB connections.
   ``screen controller`` then raises an interrupt reporting the coordinate of
   the keypress.
 
-- Then the mobile OS notifies the currently focused application of a press event
-  in one of its GUI elements (which now is the virtual keyboard application
-  buttons).
+- Then the mobile OS notifies the currently focused application of
+  a press event in one of its GUI elements (which now is the virtual
+  keyboard application buttons).
 
 - The virtual keyboard can now raise a software interrupt for sending a
   'key pressed' message back to the OS.
@@ -174,6 +174,47 @@ Parse URL
     - ``Resource``  "/"
         Retrieve main (index) page
 
+We typed 'google.com' without the resource path "/",
+but the browser seems to be aware of it.
+To understand why and how the browser handles this,
+let's delve deeper into URL structure and how the browser interprets it.
+
+According to the URL structure as defined by `Wikipedia <https://en.wikipedia.org/wiki/URL>`_, a URL consists of several parts:
+
+    ``scheme:[//[user[:password]@]host[:port]][/path][?query][#fragment]``
+
+The ``path`` part of the URL is where the browser looks to find
+the specific resource on the server.
+This part should begin with a single slash ("/"),
+even if an authority part was present or absent.
+If the ``path`` is empty, the browser automatically
+appends a single slash to the bare domain URL.
+This will enable the browser to make a valid HTTP request to the server.
+According to RFC 2616 HTTP 1.1 specification for a valid HTTP Request-URI:
+
+    - If the abs_path is not present in the URL,
+      it MUST be given as "/" when used as a Request-URI for a resource
+      (section 5.1.2).
+
+For instance, consider the URL https://google.com.
+Here, the authority part (the scheme plus hostname: https://google.com) leaves the path empty.
+According to the specification, the path must start with a "/",
+so the browser corrects this by replacing the empty path,
+with a single slash (/).
+Therefore, the browser treats https://google.com as https://google.com/ internally.
+
+However, if you provide a valid URL with a path component, such as https://google.com/imghp,
+the browser doesn't modify it.
+This is because the path already starts with a slash and is not empty.
+Appending a trailing slash to a bare domain URL is a feature of the browser.
+It's designed to ensure that URLs are correctly are properly
+formatted for HTTP requests according to the specification.
+
+It is also important to note that,
+the trailing slash is not displayed in the browser's address bar.
+Most browsers hide the protocol and the trailing slash from the URL
+in the address bar, although the slash is present in the HTTP request.
+This is done to make the URL more readable and user-friendly.
 
 Is it a URL or a search term?
 -----------------------------
@@ -184,7 +225,7 @@ In many cases the URL has a special piece of text appended to it to tell the
 search engine that it came from a particular browser's URL bar.
 
 Convert non-ASCII Unicode characters in the hostname
-------------------------------------------------
+----------------------------------------------------
 
 * The browser checks the hostname for characters that are not in ``a-z``,
   ``A-Z``, ``0-9``, ``-``, or ``.``.
@@ -264,7 +305,8 @@ Directly connected:
 Hub:
 
 * If the computer is connected to a hub, the hub will broadcast the ARP
-  request out of all other ports. If the router is connected on the same "wire",
+  request out of all other ports.
+  If the router is connected on the same "wire",
   it will respond with an ``ARP Reply`` (see below).
 
 Switch:
@@ -577,7 +619,8 @@ HTML parsing
 The rendering engine starts getting the contents of the requested
 document from the networking layer. This will usually be done in 8kB chunks.
 
-The primary job of the HTML parser is to parse the HTML markup into a parse tree.
+The primary job of the HTML parser is
+to parse the HTML markup into a parse tree.
 
 The output tree (the "parse tree") is a tree of DOM element and attribute
 nodes. DOM is short for Document Object Model. It is the object presentation
@@ -681,7 +724,8 @@ Window Server
 Post-rendering and user-induced execution
 -----------------------------------------
 
-After rendering has been completed, the browser executes JavaScript code as a result
+After rendering has been completed,
+the browser executes JavaScript code as a result
 of some timing mechanism (such as a Google Doodle animation) or user
 interaction (typing a query into the search box and receiving suggestions).
 Plugins such as Flash or Java may execute as well, although not at this time on
