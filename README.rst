@@ -712,4 +712,38 @@ page rendering and painting.
 
 My Contribution
 ---------------
-This is well written and properly detailed, I will be back with my contribution. Thank You.
+This is well written and properly detailed, however, this is my contribution. Thank You.
+
+When you type "google.com" into your browser's address bar and press Enter, several steps occur to load the Google homepage. Here's a simplified overview of what happens:
+
+DNS Resolution:
+
+Your browser checks its cache to see if it already knows the IP address associated with "google.com." If not, it sends a Domain Name System (DNS) request to a DNS server to obtain the IP address of the domain.
+TCP Connection:
+
+Once the IP address is obtained, your browser establishes a TCP (Transmission Control Protocol) connection to the server at that IP address. The default port for HTTP is 80, and for HTTPS, it's 443.
+HTTP/HTTPS Handshake:
+
+If you entered "http://google.com" instead of "https://google.com," your browser initiates an unencrypted HTTP connection. If you entered "https://google.com," it initiates a secure HTTPS connection. The browser and the server perform a handshake to establish a secure connection, if applicable.
+HTTP Request:
+
+Your browser sends an HTTP GET request to the server, asking for the default page (usually "index.html" or a similar file).
+Server Processing:
+
+The web server at the IP address associated with "google.com" receives the request, processes it, and looks for the requested page.
+Response from Server:
+
+The server sends back an HTTP response, which includes the HTML content of the Google homepage.
+Rendering the Page:
+
+Your browser receives the HTML content and begins to parse it. It then sends additional requests for resources (such as images, stylesheets, and scripts) referenced in the HTML.
+Fetching Additional Resources:
+
+The browser sends additional HTTP requests for each resource required to render the page. These requests may include requests for CSS files, JavaScript files, images, and other assets.
+Rendering the Page:
+
+The browser renders the page by combining the HTML content with the fetched resources, applying styles, and executing JavaScript.
+Displaying the Page:
+
+The fully rendered Google homepage is displayed in your browser.
+It's important to note that Google's homepage may be highly optimized, and the actual process can vary depending on factors like browser caching, the use of Content Delivery Networks (CDNs), and the presence of any local DNS caches. Additionally, the transition to HTTPS has become more common for securing communication between the browser and the server.
