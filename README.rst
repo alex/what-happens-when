@@ -37,7 +37,10 @@ and prioritize results based on search history, bookmarks, cookies, and
 popular searches from the internet as a whole. As you are typing
 "google.com" many blocks of code run and the suggestions will be refined
 with each keypress. It may even suggest "google.com" before you finish typing
-it.
+it.To ensure a seamless user experience,browsers implement performance
+optimization strategies.The goal is to maintain responsiveness despite the
+complex computations happening in the background.Efficient algorithms and data
+caching may be enployed to achieve this delicate balance.
 
 The "enter" key bottoms out
 ---------------------------
