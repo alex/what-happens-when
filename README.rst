@@ -1,3 +1,4 @@
+
 What happens when...
 ====================
 
@@ -27,6 +28,7 @@ Table of Contents
 
 The "g" key is pressed
 ----------------------
+
 The following sections explain the physical keyboard actions
 and the OS interrupts. When you press the key "g" the browser receives the
 event and the auto-complete functions kick in.
@@ -83,7 +85,8 @@ connection, but historically has been over PS/2 or ADB connections.
   circuit through the electrostatic field of the conductive layer and
   creates a voltage drop at that point on the screen. The
   ``screen controller`` then raises an interrupt reporting the coordinate of
-  the keypress.
+the keypress.
+
 
 - Then the mobile OS notifies the currently focused application of a press event
   in one of its GUI elements (which now is the virtual keyboard application
