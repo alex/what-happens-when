@@ -397,6 +397,46 @@ TLS handshake
 * From now on the TLS session transmits the application (HTTP) data encrypted
   with the agreed symmetric key.
 
+Role of Digital Certificates:
+-------------
+In the TLS handshake process, digital certificates play a crucial role in establishing the authenticity of the server and, optionally, the client. Here's an extended explanation:
+
+Server Certificate:
+
+When the client initiates a connection to the server, the server responds by presenting its digital certificate.
+The digital certificate contains the server's public key, information about the server (such as its domain), the digital signature from a Certificate Authority (CA), and the CA's digital signature.
+
+Certificate Authority (CA):
+
+The CA's role is to verify the identity of the server before issuing the digital certificate. CAs are trusted entities that vouch for the authenticity of the information in the certificate.
+The CA's digital signature on the certificate ensures that the certificate has not been tampered with and that the information it contains is valid.
+
+Client Verification (Optional):
+
+While server authentication is mandatory in the TLS handshake, client authentication is optional. If client authentication is requested by the server, the client also presents its digital certificate to the server.
+The client's certificate includes its public key and is also signed by a CA. The server verifies the client's certificate using the CA's public key.
+
+Public Key Exchange:
+
+After the server's identity is verified, the client and server engage in key exchange. The goal is for both parties to agree on a shared symmetric key for encrypting and decrypting data during the session.
+The server's public key, obtained from its certificate, is used by the client to encrypt a pre-master secret and send it securely to the server.
+
+Master Key Derivation:
+
+Both the client and server independently derive the master secret from the pre-master secret and other exchanged parameters. This master secret is used to generate encryption keys for securing the communication.
+
+Forward Secrecy Considerations:
+
+Some modern configurations emphasize the use of forward secrecy. In such cases, the exchanged keying material is used to generate short-lived session keys that are discarded after the session ends, providing an additional layer of security.
+
+Renegotiation and Session Resumption:
+
+TLS supports session resumption for efficiency. If a client and server have previously established a secure session, they can use a session identifier or session ticket to quickly resume that session without repeating the full handshake.
+
+Revocation Checking:
+
+Browsers, upon receiving a server certificate, may check for its revocation status using Certificate Revocation Lists (CRLs) or Online Certificate Status Protocol (OCSP). This ensures that the certificate has not been revoked by the CA before its expiration.
+
 If a packet is dropped
 ----------------------
 
