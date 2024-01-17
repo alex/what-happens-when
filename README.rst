@@ -546,30 +546,39 @@ common user interface elements are:
 
 **Browser High-Level Structure**
 
-The components of the browsers are:
+The components of browsers are essential for their functionality and user experience.
+Let's delve deeper into each component:
 
-* **User interface:** The user interface includes the address bar,
-  back/forward button, bookmarking menu, etc. Every part of the browser
-  display except the window where you see the requested page.
-* **Browser engine:** The browser engine marshals actions between the UI
-  and the rendering engine.
-* **Rendering engine:** The rendering engine is responsible for displaying
-  requested content. For example if the requested content is HTML, the
-  rendering engine parses HTML and CSS, and displays the parsed content on
-  the screen.
-* **Networking:** The networking handles network calls such as HTTP requests,
-  using different implementations for different platforms behind a
-  platform-independent interface.
-* **UI backend:** The UI backend is used for drawing basic widgets like combo
-  boxes and windows. This backend exposes a generic interface that is not
-  platform-specific.
-  Underneath it uses operating system user interface methods.
-* **JavaScript engine:** The JavaScript engine is used to parse and
-  execute JavaScript code.
-* **Data storage:** The data storage is a persistence layer. The browser may
-  need to save all sorts of data locally, such as cookies. Browsers also
-  support storage mechanisms such as localStorage, IndexedDB, WebSQL and
-  FileSystem.
+* **User Interface:** The user interface is the front-facing part of the browser that users interact with. 
+  It encompasses elements like the address bar, back/forward buttons, bookmarking menu, and more.
+  Essentially, it's everything the user sees on the browser window except for the actual webpage.
+
+* **Browser Engine:** The browser engine acts as a mediator, facilitating communication between 
+  the user interface and the rendering engine. It interprets user actions and translates them into
+  rendering instructions for the rendering engine.
+
+* **Rendering Engine:** Responsible for displaying the requested content on the screen, the rendering 
+  engine parses HTML and CSS. It takes the raw content, processes it, and presents it visually.
+  For instance, when the requested content is HTML, the rendering engine ensures proper layout and rendering.
+
+* **Networking:** The networking component handles network calls, managing HTTP requests and responses.
+  Behind a platform-independent interface, various implementations cater to different platforms, 
+  ensuring consistent communication over the network.
+
+* **UI Backend:** The UI backend focuses on drawing fundamental widgets like combo boxes and windows.
+  It provides a generic interface that isn't platform-specific, utilizing underlying operating
+  system methods for user interface interactions.
+
+* **JavaScript Engine:** Tasked with parsing and executing JavaScript code, the JavaScript engine
+  is vital for dynamic and interactive web pages. It interprets and runs JavaScript,
+  enabling the execution of client-side scripts.
+
+* **Data Storage:** The data storage component serves as the persistence layer for the browser.
+  Browsers store various data locally, including cookies. Additionally, they support storage mechanisms
+  such as localStorage, IndexedDB, and WebSQL, offering methods for efficient data storage and retrieval.
+
+By understanding the roles of each browser component, we gain insights into how browsers seamlessly combine
+these elements to deliver a rich and interactive browsing experience.
 
 HTML parsing
 ------------
