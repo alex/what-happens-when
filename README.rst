@@ -224,6 +224,58 @@ DNS lookup
 * If the DNS server is on a different subnet, the network library follows
   the ``ARP process`` below for the default gateway IP.
 
+DNS RESOLUTION
+--------------
+
+As already explained, hosts over the internet have unique number address that identifies
+each host on the internet, and under normal circumstance, no two hosts within the same 
+network should have the same IP address. However, these numbers (the IP address) are 
+difficult to memorize as humans, hence the need for domain names like google.com, 
+dee-light.tech, amazon.com, and many more that reference these IP address.
+
+The DNS is thus present as a link to these different names and their respective 
+IP addresses. In order to resolve the IP address of a domain name,
+the web browser will typically check its cached values for the respective domain name.
+If the domain name is not found in its cached values, then the browser will turn to a DNS resolver.
+
+Usually, a DNS resolver will be your Internet Service Provider (ISP) 
+entity/service. The resolver will first check its cached values, 
+and if present, it will return the respective IP address.
+If the domain name is not present in this case, 
+the resolver will then reach for a root DNS server.
+
+A root DNS server contains a list of known 
+Top Level Domain (TLD) DNS servers. The resolver then 
+follows through to the TLD DNS server, while also 
+caching the value of the TLD DNS server for future use. 
+The respective TLD DNS server contains the list of 
+the domain names authoritative name servers. 
+For instance the .com TLD server will contain the authoritative 
+name servers of all websites that uses the .com TLD, 
+including google.com. The authoritative name server of a 
+domain is the server attached to a given domain name that 
+contains information (e.g. IP address) about the attached domain 
+name. The IP address returned by the authoritative name 
+servers to the resolver is then returned to the browser and 
+is cached by both the resolver and the browser for future use.
+
+The TLD DNS servers are generally updated by the domain 
+registry which is the organization that controls 
+policies of domain purchase and regulations. 
+The authoritative name server(s) attached to a domain 
+name is managed by the company that runs the domain 
+name in conjunction with the company that the 
+domain name purchase was executed 
+on — Typically called a domain registrar.
+
+Note that this entire procedure is not always 
+followed whenever you request for the IP address of a 
+domain name via your browser. Cached values from previous 
+resolutions are re-used from time to time whenever a 
+request is made. Also cached contents will often have 
+a Time To Live (TTL) which is basically the amount of time 
+for which the particular domain cached value can stay 
+in the cache before an new request is made to the DNS.
 
 ARP process
 -----------
