@@ -674,6 +674,9 @@ GPU Rendering
   of ``GPU`` massive parallelism for float point calculations required for
   the rendering process.
 
+* The division of tasks enables browsers to harness the ``GPU``'s efficient
+  parallel processing, significantly enhancing the rendering speed
+  and overall performance of web content.
 
 Window Server
 -------------
