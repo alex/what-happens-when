@@ -5,7 +5,7 @@ This repository is an attempt to answer the age-old interview question "What
 happens when you type google.com into your browser's address box and press
 enter?"
 
-Except instead of the usual story, we're going to try to answer this question
+Instead of the usual story, we're going to try to answer this question
 in as much detail as possible. No skipping out on anything.
 
 This is a collaborative process, so dig in and try to help out! There are tons
@@ -50,7 +50,7 @@ of each key switch, debounces the electrical noise of the rapid intermittent
 closure of the switch, and converts it to a keycode integer, in this case 13.
 The keyboard controller then encodes the keycode for transport to the computer.
 This is now almost universally over a Universal Serial Bus (USB) or Bluetooth
-connection, but historically has been over PS/2 or ADB connections.
+connection but historically has been over PS/2 or ADB connections.
 
 *In the case of the USB keyboard:*
 
@@ -113,7 +113,7 @@ The HID transport passes the key down event to the ``KBDHID.sys`` driver which
 converts the HID usage into a scancode. In this case, the scan code is
 ``VK_RETURN`` (``0x0D``). The ``KBDHID.sys`` driver interfaces with the
 ``KBDCLASS.sys`` (keyboard class driver). This driver is responsible for
-handling all keyboard and keypad input in a secure manner. It then calls into
+handling all keyboard and keypad input securely. It then calls into
 ``Win32K.sys`` (after potentially passing the message through 3rd party
 keyboard filters that are installed). This all happens in kernel mode.
 
@@ -129,9 +129,9 @@ pressed (they weren't), and some other state.
 The Windows ``SendMessage`` API is a straightforward function that
 adds the message to a queue for the particular window handle (``hWnd``).
 Later, the main message processing function (called a ``WindowProc``) assigned
-to the ``hWnd`` is called in order to process each message in the queue.
+to the ``hWnd`` is called to process each message in the queue.
 
-The window (``hWnd``) that is active is actually an edit control and the
+The window (``hWnd``) that is active is an edit control and the
 ``WindowProc`` in this case has a message handler for ``WM_KEYDOWN`` messages.
 This code looks within the 3rd parameter that was passed to ``SendMessage``
 (``wParam``) and, because it is ``VK_RETURN`` knows the user has hit the ENTER
@@ -180,7 +180,7 @@ Is it a URL or a search term?
 
 When no protocol or valid domain name is given the browser proceeds to feed
 the text given in the address box to the browser's default web search engine.
-In many cases the URL has a special piece of text appended to it to tell the
+In many cases, the URL has a special piece of text appended to it to tell the
 search engine that it came from a particular browser's URL bar.
 
 Convert non-ASCII Unicode characters in the hostname
@@ -228,7 +228,7 @@ DNS lookup
 ARP process
 -----------
 
-In order to send an ARP (Address Resolution Protocol) broadcast the network
+To send an ARP (Address Resolution Protocol) broadcast the network
 stack library needs the target IP address to lookup. It also needs to know the
 MAC address of the interface it will use to send out the ARP broadcast.
 
@@ -611,7 +611,7 @@ The algorithm consists of two stages: tokenization and tree construction.
 The browser begins fetching external resources linked to the page (CSS, images,
 JavaScript files, etc.).
 
-At this stage the browser marks the document as interactive and starts
+At this stage, the browser marks the document as interactive and starts
 parsing scripts that are in "deferred" mode: those that should be
 executed after the document is parsed. The document state is
 set to "complete" and a "load" event is fired.
@@ -625,7 +625,7 @@ CSS interpretation
 * Parse CSS files, ``<style>`` tag contents, and ``style`` attribute
   values using `"CSS lexical and syntax grammar"`_
 * Each CSS file is parsed into a ``StyleSheet object``, where each object
-  contains CSS rules with selectors and objects corresponding CSS grammar.
+  contains CSS rules with selectors and objects corresponding to CSS grammar.
 * A CSS parser can be top-down or bottom-up when a specific parser generator
   is used.
 
@@ -657,7 +657,7 @@ Page Rendering
 * All of the above steps may reuse calculated values from the last time the
   webpage was rendered, so that incremental changes require less work.
 * The page layers are sent to the compositing process where they are combined
-  with layers for other visible content like the browser chrome, iframes
+  with layers for other visible content like the browser Chrome, iframes
   and addon panels.
 * Final layer positions are computed and the composite commands are issued
   via Direct3D/OpenGL. The GPU command buffer(s) are flushed to the GPU for
@@ -702,7 +702,7 @@ page rendering and painting.
 .. _`New Reno`: https://en.wikipedia.org/wiki/TCP_congestion_control#TCP_New_Reno
 .. _`congestion window`: https://en.wikipedia.org/wiki/TCP_congestion_control#Congestion_window
 .. _`maximum segment size`: https://en.wikipedia.org/wiki/Maximum_segment_size
-.. _`varies by OS` : https://en.wikipedia.org/wiki/Hosts_%28file%29#Location_in_the_file_system
+.. _`varies by OS`: https://en.wikipedia.org/wiki/Hosts_%28file%29#Location_in_the_file_system
 .. _`简体中文`: https://github.com/skyline75489/what-happens-when-zh_CN
 .. _`한국어`: https://github.com/SantonyChoi/what-happens-when-KR
 .. _`日本語`: https://github.com/tettttsuo/what-happens-when-JA
