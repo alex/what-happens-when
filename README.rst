@@ -95,6 +95,15 @@ connection, but historically has been over PS/2 or ADB connections.
 - This interrupt notifies the currently focused application of a 'key pressed'
   event.
 
+* Search Journey in the Google Browser:*
+
+When a user initiates a search in the Google browser by typing a query and pressing Enter, a multi-faceted process unfolds. This journey begins with the browser capturing the user's input through event handling. Subsequently, the browser performs a Domain Name System (DNS) request to translate the human-readable domain, such as www.google.com, into an IP address.
+
+Following this, a Transmission Control Protocol (TCP) connection is established between the user's device and Google's servers, ensuring reliable and ordered data transfer. The connection is then secured using HTTPS/SSL protocols, encrypting the data to enhance security during transit.
+
+The request is intelligently distributed across multiple servers by load balancers, optimizing resource utilization and responsiveness. Upon reaching a web server, the query is processed, and an appropriate response, often in the form of an HTML document, is generated.
+
+An application server may come into play, executing complex algorithms to refine search results based on the user's query. The application server interacts with a database, retrieving and storing indexed information about web pages.
 
 Interrupt fires [NOT for USB keyboards]
 ---------------------------------------
