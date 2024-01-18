@@ -18,6 +18,59 @@ Read this in `简体中文`_ (simplified Chinese), `日本語`_ (Japanese), `한
 (Korean) and `Spanish`_. NOTE: these have not been reviewed by the alex/what-happens-when
 maintainers.
 
+MY CONTRIBUTION
+
+Understanding the Journey: What Happens When You Type "https://www.google.com" and Press Enter?
+
+Introduction: In this blog post, I want to talk on 
+the intricacies of the web stack to understand 
+the series of events that unfold when you type 
+"https://www.google.com" into your browser and hit Enter.
+
+DNS Request:
+The journey begins with a Domain Name System (DNS) request. 
+When you enter a URL, the browser needs to find the corresponding IP address. 
+It sends a request to the DNS server, which translates 
+the human-readable domain name (www.google.com) into an IP address. 
+This step is crucial for establishing a connection with the desired web server.
+TCP/IP:
+With the IP address in hand, the browser initiates a connection using 
+the Transmission Control Protocol (TCP) over the Internet Protocol (IP). 
+TCP ensures reliable, ordered, and error-checked 
+delivery of data packets between the browser and the google’s server.
+Firewall:
+The firewall acts as a gatekeeper, examining incoming and outgoing traffic. 
+It ensures that the communication conforms to predefined security rules. 
+If everything checks out, the request moves forward; otherwise, 
+it's blocked, safeguarding the user's system.
+HTTPS/SSL:
+In the era of cybersecurity concerns, securing data in transit is a necessity. 
+Hypertext Transfer Protocol Secure (HTTPS) encrypts the data exchanged between 
+the browser and the server. 
+This encryption is facilitated by Secure Sockets Layer (SSL) or Transport Layer Security (TLS), 
+adding a layer of protection against potential eavesdropping or tampering.
+Load-Balancer:
+To manage high traffic and distribute it evenly, large websites utilize load balancers. 
+These devices ensure that incoming requests are directed to 
+the most available and least loaded servers. This enhances performance, scalability, and reliability.
+Web Server:
+Upon reaching Google's servers, a web server handles the HTTP request. 
+It retrieves the requested web page or resource and sends it back to the browser through the encrypted connection.
+Application Server:
+For dynamic content, an application server comes into play. 
+It executes server-side scripts, retrieves data from databases, and generates dynamic web pages.
+Database:
+In the backend, a database stores and retrieves data as needed. 
+Google's vast database infrastructure likely manages everything 
+from user information to search indexes. 
+The application server interacts with the database to fetch the required information for the user.
+Conclusion:
+The journey from entering a URL to receiving a web page 
+involves a symphony of components seamlessly working together. 
+Understanding this process provides valuable insights into 
+the complexity of web architecture. Aspiring software engineers 
+should grasp these concepts to build robust and efficient web applications.
+
 Table of Contents
 ====================
 
