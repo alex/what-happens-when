@@ -95,7 +95,8 @@ connection, but historically has been over PS/2 or ADB connections.
 - This interrupt notifies the currently focused application of a 'key pressed'
   event.
 
-* Search Journey in the Google Browser:*
+Search Journey in the Google Browser
+---------------------------
 
 When a user initiates a search in the Google browser by typing a query and pressing Enter, a multi-faceted process unfolds. This journey begins with the browser capturing the user's input through event handling. Subsequently, the browser performs a Domain Name System (DNS) request to translate the human-readable domain, such as www.google.com, into an IP address.
 
