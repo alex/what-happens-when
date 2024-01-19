@@ -28,7 +28,13 @@ Table of Contents
 The "g" key is pressed
 ----------------------
 The following sections explain the physical keyboard actions
-and the OS interrupts. When you press the key "g" the browser receives the
+and the OS interrupts. when you pess the "g" key on the keyboard a switch closes and current flows into a small chip in the keyboard.
+Each key on the keyboard has an associated number, called a scan code. The number is based on where the key is on the keyboard. This is useful when it comes to keyboards that have different layouts and/or symbols. This scan code is sent into the computer as a binary number.The binary data is transmitted from the keyboard to your computer cpu.The operating system will convert the scan code into an ASCII or Unicode character based on the key pressed. You typically set the keyboard layout for your computer in the operating system, so it is the operating system that will know what letter is represented by, say, scan code 1 in this language/keyboard layout.
+
+The OS creates an event depending on the resulting character. In computing, an event is an action that is recognised and handled by the software. It often originates from the hardware.
+The OS must now send the event to the appropriate application. Many different applications are running, and the key press must be handled by the right one. The OS knows what software was active when the key was pressed, and sends the event to that application.
+
+The application software in this example is Microsoft Word. It captures the event from the operating system.When you press the key "g" the browser receives the
 event and the auto-complete functions kick in.
 Depending on your browser's algorithm and if you are in
 private/incognito mode or not various suggestions will be presented
