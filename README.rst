@@ -211,6 +211,9 @@ DNS lookup
 
 * Browser checks if the domain is in its cache. (to see the DNS Cache in
   Chrome, go to `chrome://net-internals/#dns <chrome://net-internals/#dns>`_).
+  The browser cache DNS resolutions locally to improve performance. DNS records
+  have a TTL (Time to live) value, if the cached entry hasn't expired, the info
+  ation can be used instead of performing a new DNS lookup.
 * If not found, the browser calls ``gethostbyname`` library function (varies by
   OS) to do the lookup.
 * ``gethostbyname`` checks if the hostname can be resolved by reference in the
