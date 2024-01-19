@@ -232,6 +232,9 @@ In order to send an ARP (Address Resolution Protocol) broadcast the network
 stack library needs the target IP address to lookup. It also needs to know the
 MAC address of the interface it will use to send out the ARP broadcast.
 
+ARP is resposible for identifying and associating IP Addresses of network nodes
+with their MAC addresses.
+
 The ARP cache is first checked for an ARP entry for our target IP. If it is in
 the cache, the library function returns the result: Target IP = MAC.
 
