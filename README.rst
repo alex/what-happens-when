@@ -628,6 +628,14 @@ CSS interpretation
   contains CSS rules with selectors and objects corresponding CSS grammar.
 * A CSS parser can be top-down or bottom-up when a specific parser generator
   is used.
+   * Top-Down Parsing: In a top-down parser, the parsing process starts from
+      the root of the CSS document and proceeds downward through the structure.
+      It's akin to reading from the top of the file and following the document
+      structure hierarchy.
+   * Bottom-Up Parsing: Conversely, a bottom-up parser starts with individual
+      tokens and gradually builds up to the higher-level structures. It's like
+      assembling pieces of the document from the bottom, putting together smaller
+      components to form the complete structure.
 
 Page Rendering
 --------------
