@@ -537,6 +537,9 @@ standards organization for the web.
 Browser user interfaces have a lot in common with each other. Among the
 common user interface elements are:
 
+Different browsers impliment the same standard but at any given the implimentation of these 
+standards vary from one browser to another.
+
 * An address bar for inserting a URI
 * Back and forward buttons
 * Bookmarking options
