@@ -674,6 +674,45 @@ GPU Rendering
   of ``GPU`` massive parallelism for float point calculations required for
   the rendering process.
 
+* Post-rendering and user-induced execution
+  After the rendering process is completed, the browser enters the post-rendering and user-induced execution phase. This phase involves the execution of JavaScript code and the handling of user interactions.
+
+1. **JavaScript Execution:**
+   - JavaScript code embedded in the HTML document or referenced from external scripts is executed. This code can manipulate the DOM (Document Object Model) and interact with the rendered page.
+   - Timing mechanisms, such as setTimeout or setInterval, may trigger the execution of specific JavaScript functions after a specified delay.
+
+2. **User Interactions:**
+   - User interactions, such as clicks, keypresses, or mouse movements, are detected by the browser.
+   - Event listeners attached to various elements on the page respond to these interactions, triggering associated JavaScript functions.
+   - User inputs, such as form submissions or text entries, may lead to additional HTTP requests, interacting with servers to fetch or send data.
+
+3. **Plugin Execution:**
+   - If the web page contains plugins, such as Flash or Java applets, they may execute after the main rendering is complete.
+   - Plugins can add interactive and multimedia elements to the page, enhancing the user experience.
+
+4. **Network Requests:**
+   - JavaScript code or user interactions may initiate additional network requests. This can include fetching data from servers through AJAX requests or dynamically updating parts of the page without requiring a full reload.
+
+5. **Dynamic Content Update:**
+   - JavaScript code can dynamically modify the content of the page, update styles, or create new elements. This dynamic content update contributes to the responsiveness and interactivity of modern web applications.
+
+6. **Asynchronous Rendering:**
+   - Some web pages may utilize asynchronous rendering techniques, where specific sections of the page are updated independently without refreshing the entire content. This is often achieved through technologies like Single Page Applications (SPAs) or frameworks like React or Vue.js.
+
+7. **Rendering Optimization:**
+   - Modern browsers employ rendering optimizations to enhance performance. Techniques like lazy loading of images, deferred loading of non-essential scripts, and efficient handling of CSS styles contribute to a smoother user experience.
+
+8. **Memory Management:**
+   - The browser manages memory to ensure optimal performance. Garbage collection processes may run to reclaim memory occupied by objects that are no longer in use.
+
+9. **Browser Storage:**
+   - Local storage, session storage, and other client-side storage mechanisms may be used to store data persistently on the user's device, reducing the need for repeated data retrieval from servers.
+
+10. **Security Measures:**
+    - Security features, such as Same-Origin Policy and Content Security Policy, are enforced to protect against cross-site scripting (XSS) attacks and other security threats.
+
+In summary, the post-rendering and user-induced execution phase is crucial for creating dynamic, interactive, and responsive web applications. JavaScript, plugins, network requests, and various optimizations contribute to the overall user experience on the web.
+
 
 Window Server
 -------------
