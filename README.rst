@@ -673,6 +673,10 @@ GPU Rendering
   software layers split the task into multiple pieces, so it can take advantage
   of ``GPU`` massive parallelism for float point calculations required for
   the rendering process.
+* GPU rendering is unique in that it can efficiently execute jobs in parallel by utilizing the architecture of contemporary GPUs,
+   which are built with several cores expressly for parallel processing. When the GPU processes data concurrently,
+   as opposed to depending only on the CPU, rendering speed is significantly increased. This is made possible by GPU parallelism.
+   This is especially useful in situations when there are intricate visual effects, high-resolution textures, and complex settings.
 
 
 Window Server
