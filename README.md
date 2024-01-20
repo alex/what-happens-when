@@ -21,3 +21,5 @@ Read this documentation in various languages:
 - [日本語 (Japanese)](link-to-japanese-version)
 - [한국어 (Korean)](link-to-korean-version)
 - [Spanish](link-to-spanish-version)
+
+(Note: Translations have not been reviewed by the maintainers.)
