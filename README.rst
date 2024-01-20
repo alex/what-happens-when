@@ -617,7 +617,8 @@ executed after the document is parsed. The document state is
 set to "complete" and a "load" event is fired.
 
 Note there is never an "Invalid Syntax" error on an HTML page. Browsers fix
-any invalid content and go on.
+any invalid content and go on, or in some cases, ignore the error like it
+doesn't exist
 
 CSS interpretation
 ------------------
