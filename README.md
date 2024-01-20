@@ -1,3 +1,7 @@
+<p align="center">
+  <img width="451" alt="image" src="https://github.com/IsmaelKiprop/alx-system_engineering-devops/assets/133222922/f11aeff0-b828-49cd-a6e2-34388f1c4f75">
+</p>
+
 # What Happens When...
 
 This repository is dedicated to exploring the intricate details of what happens when you type a URL, such as google.com, into your browser's address bar and press enter.
