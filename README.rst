@@ -224,6 +224,28 @@ DNS lookup
 * If the DNS server is on a different subnet, the network library follows
   the ``ARP process`` below for the default gateway IP.
 
+Enhancements to DNS Lookup
+--------------------------
+
+DNS Caching Mechanisms
+~~~~~~~~~~~~~~~~~~~~~
+
+DNS caching plays a crucial role in speeding up web browsing. It reduces the latency by storing responses from a DNS server locally or within a network. Here's how it works:
+
+- **Local DNS Cache**: Modern operating systems maintain a temporary database of recent DNS responses. This local cache is the first place checked during a DNS lookup.
+- **Browser DNS Cache**: Web browsers like Chrome and Firefox also maintain a DNS cache to reduce DNS query requests.
+- **Network DNS Cache**: Larger networks often employ DNS caching on network routers or dedicated DNS servers to reduce external DNS traffic.
+
+Understanding DNSSEC
+~~~~~~~~~~~~~~~~~~~
+
+DNSSEC (Domain Name System Security Extensions) adds a layer of security to DNS. It uses digital signatures to verify the authenticity of DNS responses. Here's a brief overview:
+
+- **Digital Signatures**: DNSSEC uses public key cryptography to sign DNS records. A DNS resolver can then verify these signatures to ensure the response is valid and hasn't been tampered with.
+- **Chain of Trust**: Starting from a known secure point (like the root DNS servers), DNSSEC establishes a chain of trust all the way to the requested DNS record.
+
+These enhancements are critical in preventing DNS spoofing attacks and ensuring the integrity of DNS responses.
+
 
 ARP process
 -----------
