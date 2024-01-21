@@ -510,6 +510,22 @@ and IIS for Windows.
   is running on PHP, the server uses PHP to interpret the index file, and
   streams the output to the client.
 
+
+
+Difference Between Web Server and Application Server
+
+# After that the request reachs the Web server and Application server,
+Web server serves a static web page i.e. The static web pages that are
+served by the web server are html, css, javascript and images that create
+the layout of the website.
+Application server serves a dynamic web page i.e. when you perform a search 
+for a product. Your search is a dynamic action that requires server-side processing.
+The request is sent to the application server, which executes the necessary business logic,
+interacts with the database, and generates the dynamic HTML for the search results.
+This dynamic content is then sent back to your browser to be displayed.
+
+
+
 Behind the scenes of the Browser
 ----------------------------------
 
