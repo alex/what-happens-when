@@ -297,6 +297,16 @@ the default gateway it can resume its DNS process:
   requested and that flows up the list of DNS servers until the SOA is reached,
   and if found an answer is returned.
 
+Load Balancer Check
+-------------------
+A Load Balancer is a component in distributed computing and networking environments.
+Its primary function is to efficiently distribute incoming network traffic across
+multiple servers, preventing any single server from being overwhelmed with too much load. 
+
+* Instead of directly connecting to a server, the browser interacts with a load balancer.
+* The load balancer helps distribute user requests across multiple servers for better efficiency.
+* The load balancer, using a simple method like round-robin, picks a server to handle the request.
+
 Opening of a socket
 -------------------
 Once the browser receives the IP address of the destination server, it takes
