@@ -39,10 +39,12 @@ popular searches from the internet as a whole. As you are typing
 with each keypress. It may even suggest "google.com" before you finish typing
 it.
 
-## The G Key is Pressed {#the-g-key-is-pressed}
+The G Key is Pressed (the-g-key-is-pressed)
+-------------------------------------------
 Here is a brief overview on the various scenarios that occur when the g-key is pressed.
 
 When the "g" key is pressed in a web browser, several processes are triggered to enhance the user experience. The following steps outline the key actions and system responses:
+
 1. **Event Handling:**
    - The browser captures the keypress event, signaling the initiation of user input.
 2. **Auto-Complete Mechanism:**
