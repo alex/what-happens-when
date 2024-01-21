@@ -689,6 +689,30 @@ the Google homepage. Scripts can cause additional network requests to be
 performed, as well as modify the page or its layout, causing another round of
 page rendering and painting.
 
+What Happens When You Type "google.com" in Your Browser?
+--------------------------------------------------------
+
+DNS Lookup:
+After the user hits the "enter" key, the browser initiates a DNS lookup to translate the domain name "google.com" into an IP address. This process involves querying DNS servers to obtain the correct mapping, enabling the browser to locate the server on the internet.
+
+ARP Process:
+At the lower networking layers, Address Resolution Protocol (ARP) comes into play. ARP is responsible for mapping the IP address obtained from DNS to the corresponding MAC address. This mapping is essential for communication within the local network.
+
+Opening of a Socket:
+Once the IP address is resolved, the browser opens a socket connection to the server. This connection, established through the Transmission Control Protocol (TCP), facilitates the reliable and ordered delivery of data between the user's device and the server.
+
+TLS Handshake:
+In the era of heightened security concerns, the browser and server engage in a TLS handshake to establish a secure connection. This involves a series of steps, including encryption key exchange, to ensure that the data transferred between the two ends remains confidential and secure.
+
+HTTP Protocol:
+As the connection is established, the browser sends an HTTP request to the server. This request specifies the action to be performed, such as fetching a webpage. The Hypertext Transfer Protocol (HTTP) governs this communication, defining how messages are formatted and transmitted.
+
+Behind the Scenes of the Browser:
+On the client side, the browser handles multiple layers of processing. HTML parsing dissects the received content, CSS interpretation styles it accordingly, and page rendering transforms it into a visually appealing layout. GPU rendering, handled by the graphics processing unit, further enhances the visual experience.
+
+Post-rendering and User-Induced Execution:
+After rendering, the user may interact with the webpage, triggering further actions. These could include the execution of JavaScript code, user inputs, or interactions with plugins, all contributing to the dynamic and responsive nature of modern web pages.
+
 .. _`Creative Commons Zero`: https://creativecommons.org/publicdomain/zero/1.0/
 .. _`"CSS lexical and syntax grammar"`: http://www.w3.org/TR/CSS2/grammar.html
 .. _`Punycode`: https://en.wikipedia.org/wiki/Punycode
