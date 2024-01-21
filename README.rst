@@ -709,3 +709,4 @@ page rendering and painting.
 .. _`downgrade attack`: http://en.wikipedia.org/wiki/SSL_stripping
 .. _`OSI Model`: https://en.wikipedia.org/wiki/OSI_model
 .. _`Spanish`: https://github.com/gonzaleztroyano/what-happens-when-ES
+When you type "https://www.google.com" into your browser and press Enter, a complex and fascinating journey begins behind the scenes. This process involves several key components working seamlessly to deliver the requested web page. In this blog post, we will explore the step-by-step journey of a URL, from a DNS request to the final rendering of the webpage on your browser.
