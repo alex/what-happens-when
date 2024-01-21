@@ -1,0 +1,28 @@
+# DNS request:
+The operating system checks its local cache to see if it has the IP address for www.google.com, if the IP address is found the search ends here, and the domain name gets resolved to the IP address, if not the web browser sends a query to the resolver server (Your Internet Service Provider ISP). The resolver checks its own cache memory for the IP address of www.google.com. If it can not find it a query is sent to the root server which redirect the resolver to the Top Level Domain server (A server that stores addresses for top level domains such as: .com, .net, .org). The TLD server doesn’t know the IP address for www.google.com but will be redirecting the resolver to the Authoritative Name Server ANS, which knows everything about the www.google.com domain. The IP address will be sent to the resolver and finally to the browser.
+
+# TCP/IP:
+The TCP connection is established using a three-way handshake:
+
+The browser sends a SYN (synchronize) packet to the server.
+The server responds with a SYN-ACK (synchronize-acknowledge) packet.
+The browser acknowledges the server’s response with an ACK (acknowledge) packet.
+TCP is a connected protocol who ensures reliability and order when sending and receiving data.
+
+# Firewall:
+In general a connection to www.google.com will not be blocked by the firewall because the website is legitimate and well known, unless you configured your own firewall to block traffic.
+
+# HTTPS/SSL:
+In case of a communication with www.google.com a secure connection will be established using HTTPS: all the data will be sent encrypted through HTTP, The protocol that will be used to encrypt the data is called Secure Socket Layer SSL that uses public key encryption. Your browser will ask www.google.com to send its SSL certificate, to authenticate the identity of the website and the SSL session will begin.
+
+# Load-balancer:
+When entering www.google.com, your request will typically go to a load-balancer before going to a specific server, because google.com like any large-scale website needs to control it’s huge traffic, the operation of distributing traffic is done by a load balancer that uses a certain algorithm like Round Robin, weighted Round Robin or Least connections.
+
+# Web server:
+After all the above steps are done, the web server sends the requested content (www.google.com) to your browser which will render the static content (HTML, CSS, etc.) to construct the page that we all know.
+
+# Application server:
+The role of the application server in this case will be very limited because a simple request to www.google.com doesn’t involve any business logic.
+
+# Database:
+As I mentioned above in the case of a simple request to www.google.com, functionality and business logic are not yet involved that’s why the application server and database will not be involved unless a search is done in the search engine.
