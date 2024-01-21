@@ -27,17 +27,19 @@ Table of Contents
 
 The "g" key is pressed
 ----------------------
-The following sections explain the physical keyboard actions
-and the OS interrupts. When you press the key "g" the browser receives the
-event and the auto-complete functions kick in.
-Depending on your browser's algorithm and if you are in
-private/incognito mode or not various suggestions will be presented
-to you in the dropdown below the URL bar. Most of these algorithms sort
-and prioritize results based on search history, bookmarks, cookies, and
-popular searches from the internet as a whole. As you are typing
-"google.com" many blocks of code run and the suggestions will be refined
-with each keypress. It may even suggest "google.com" before you finish typing
-it.
+## The "g" key is pressed
+
+The following sections explain the physical keyboard actions and the OS interrupts. When you press the key "g," the browser receives the event and the auto-complete functions kick in. Depending on your browser's algorithm and if you are in private/incognito mode or not, various suggestions will be presented to you in the dropdown below the URL bar.
+
+Most of these algorithms sort and prioritize results based on search history, bookmarks, cookies, and popular searches from the internet as a whole. As you are typing "google.com," many blocks of code run, and the suggestions will be refined with each keypress. It may even suggest "google.com" before you finish typing it.
+
+### Enhanced Feature: Instant Search Execution
+
+In addition to presenting auto-complete suggestions, modern browsers often incorporate instant search execution. This means that as soon as you press "Enter" after typing "google.com" (or any other search term), the browser immediately initiates the search without loading a new page. This feature provides a quicker and more seamless search experience, especially for well-known websites like Google.
+
+The browser sends the search query to the default search engine, and the search results are dynamically displayed on the same page, allowing users to preview and navigate through results without a full page reload.
+
+This enhancement optimizes the search process, offering users a faster way to access information without interrupting their browsing flow.
 
 The "enter" key bottoms out
 ---------------------------
