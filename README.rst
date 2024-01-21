@@ -22,7 +22,7 @@ Table of Contents
 ====================
 
 .. contents::
-   :backlinks: none
+   :backlinks: none made
    :local:
 
 The "g" key is pressed
