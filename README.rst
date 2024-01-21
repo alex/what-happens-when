@@ -416,6 +416,7 @@ control`_. This varies depending on the sender; the most common algorithms are
 
 HTTP protocol
 -------------
+When a web browser, especially one developed by Google, initiates a request to access www.google.com using the HTTP protocol, several steps are involved in the communication between the client and the server:
 
 If the web browser used was written by Google, instead of sending an HTTP
 request to retrieve the page, it will send a request to try and negotiate with
