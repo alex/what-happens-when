@@ -209,20 +209,26 @@ Check HSTS list
 DNS lookup
 ----------
 
-* Browser checks if the domain is in its cache. (to see the DNS Cache in
-  Chrome, go to `chrome://net-internals/#dns <chrome://net-internals/#dns>`_).
-* If not found, the browser calls ``gethostbyname`` library function (varies by
-  OS) to do the lookup.
-* ``gethostbyname`` checks if the hostname can be resolved by reference in the
-  local ``hosts`` file (whose location `varies by OS`_) before trying to
-  resolve the hostname through DNS.
-* If ``gethostbyname`` does not have it cached nor can find it in the ``hosts``
-  file then it makes a request to the DNS server configured in the network
-  stack. This is typically the local router or the ISP's caching DNS server.
-* If the DNS server is on the same subnet the network library follows the
-  ``ARP process`` below for the DNS server.
-* If the DNS server is on a different subnet, the network library follows
-  the ``ARP process`` below for the default gateway IP.
+1. Local dns lookup:
+   Both the browser and the OS look for the IP address in there cache respectively.
+   if nothing is found the process moves up to the resolver.
+
+2. External dns lookup:
+   The Resolver will take it from here and begin his journey to find that IP address
+   by visiting each of the following.
+
+   * ISP (Internet Server Provider):
+      Checks it's cache first, if nothing is found it Guides us to the Root.
+   * Root:
+      There are 13 root name servers that exist today, they sit at the top
+      of the DNS hierarchy and there job is to locate any TLD.
+   * TLD (Top Level Domain):
+      Every TLD has multiple authoritative name servers and his
+      role is all about sending the resolver to one of the name servers to get the IP address
+      we're looking for.
+   * Authoritative name servers:
+      We are finally here. this is the last place we have 
+      to visit to get the information (IP address) we're looking for.
 
 
 ARP process
