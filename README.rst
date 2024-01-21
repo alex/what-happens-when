@@ -414,6 +414,14 @@ control`_. This varies depending on the sender; the most common algorithms are
   each packet acknowledged. If a packet is dropped, the window reduces
   exponentially until another packet is acknowledged.
 
+* Fast Retransmit and Fast Recovery: If a sender detects the loss of a packet, 
+instead of waiting for a timeout, it may perform a fast retransmit. In this case, 
+the sender quickly retransmits the packet that is assumed to be lost without waiting
+for a timeout. Additionally, a mechanism called fast recovery is employed, which allows
+the sender to keep sending new packets (in a reduced rate) even before the missing 
+packet is retransmitted. This helps to maintain a more consistent flow of data
+while reacting to packet loss.
+
 HTTP protocol
 -------------
 
