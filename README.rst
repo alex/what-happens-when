@@ -397,6 +397,57 @@ TLS handshake
 * From now on the TLS session transmits the application (HTTP) data encrypted
   with the agreed symmetric key.
 
+Security Aspects
+----------------
+* Encryption
+  * Description: Encryption is a process that encodes a message or file so that it
+    can only be read by certain people. In the context of web browsing,
+    encryption is used to secure the data transmitted between the user's browser
+    and the web server.
+
+  * How it Works: When you visit a website with HTTPS (indicated by a lock
+    icon in the address bar), your browser establishes a secure connection
+    using TLS (Transport Layer Security). This process involves encrypting the
+    data sent from your browser to the server and vice versa, ensuring that
+    any sensitive information (like passwords or credit card numbers) is not
+    readable by anyone who intercepts the data.
+
+* Certificates and HTTPS
+  * Role of Certificates: Certificates are digital documents used to verify
+    the identity of a website. They are issued by Certificate Authorities (CAs)
+    and contain information like the website’s domain name and the CA’s digital
+    signature.
+
+  * HTTPS in Action: HTTPS (Hypertext Transfer Protocol Secure) uses
+    certificates to establish a secure connection. When you access an HTTPS
+    website, your browser checks the website's certificate to verify its
+    authenticity. If the certificate is valid, your browser uses the public
+    key in the certificate to encrypt data before sending it to the server.
+
+Privacy Elements in Web Browsing
+--------------------------------
+* Cookies
+  * What are Cookies?: Cookies are small pieces of data sent from a website
+    and stored on the user's computer by the user's web browser. They are used
+    to remember information about the user, such as login status or site
+    preferences.
+
+  * Privacy Implications: While cookies are crucial for functionalities like
+    keeping you logged in, they can also be used for tracking user behavior
+    across different sites. This raises privacy concerns, as it can lead to
+    the creation of a detailed profile of user activities and preferences.
+
+* Tracking and User Data Handling
+  * Tracking Methods: Websites can track users through various means like
+    cookies, web beacons, fingerprinting, etc. This tracking is often used for
+    targeted advertising and analytics.
+
+    * Browser's Role in Privacy: Modern browsers offer features to enhance
+      user privacy, such as private/incognito modes, which don’t save browsing
+      history or cookies. Browsers also provide settings to block third-party
+      cookies and features like Do Not Track (DNT) requests.
+
+
 If a packet is dropped
 ----------------------
 
