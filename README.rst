@@ -168,11 +168,12 @@ Parse URL
 * The browser now has the following information contained in the URL (Uniform
   Resource Locator):
 
-    - ``Protocol``  "http"
+    - **Protocol**  "http"
         Use 'Hyper Text Transfer Protocol'
 
-    - ``Resource``  "/"
-        Retrieve main (index) page
+    - **Resource**  
+      - the resource part of the URL is set to "/"
+      - **Use:** Retrieve the main (index) page
 
 
 Is it a URL or a search term?
