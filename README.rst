@@ -39,6 +39,11 @@ popular searches from the internet as a whole. As you are typing
 with each keypress. It may even suggest "google.com" before you finish typing
 it.
 
+Note: Not all contexts do the same behaviour when pressing the "g" key, as example:
+a "g" key pressed on an IDE suggests auto-complete for functionalities of the programming language attached to the IDE.
+or a "g" key pressed in a text input it will just type the letter "g" without suggesting or making auto-completions.
+In summary, it is based on the context that you are in, whether you are on a web-browser, IDE, text editor or text input.
+
 The "enter" key bottoms out
 ---------------------------
 
