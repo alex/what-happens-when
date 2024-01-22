@@ -410,6 +410,8 @@ control`_. This varies depending on the sender; the most common algorithms are
   (MSS) of the connection.
 * For each packet acknowledged, the window doubles in size until it reaches the
   'slow-start threshold'. In some implementations, this threshold is adaptive.
+* Initially, the congestion window size is small and increases exponentially in this slow-start phase,
+  rapidly probing the network capacity. This phase continues until packet loss is detected or the slow-start threshold is reached.
 * After reaching the slow-start threshold, the window increases additively for
   each packet acknowledged. If a packet is dropped, the window reduces
   exponentially until another packet is acknowledged.
