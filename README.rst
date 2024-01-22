@@ -38,6 +38,8 @@ popular searches from the internet as a whole. As you are typing
 "google.com" many blocks of code run and the suggestions will be refined
 with each keypress. It may even suggest "google.com" before you finish typing
 it.
+Explaining this helps you understand how keyboards, computer processes,
+and smart algorithms work together for auto-complete in your browser.
 
 The "enter" key bottoms out
 ---------------------------
