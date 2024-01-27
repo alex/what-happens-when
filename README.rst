@@ -680,6 +680,7 @@ Window Server
 
 Post-rendering and user-induced execution
 -----------------------------------------
+When you type "google.com" in your browser's address bar and press Enter, several sequential steps unfold to retrieve and display the Google homepage. Initially, your browser initiates a DNS resolution to translate the domain "google.com" into an IP address. This process involves checking the browser's local cache for the IP or querying a DNS server if not found. Subsequently, an HTTP request is sent to the server associated with the resolved IP address, usually employing HTTPS. The server processes the request, potentially involving load balancing and handling redirects. The server then responds with an HTTP response containing HTML, CSS, and JavaScript code essential for rendering the Google homepage. Upon receiving the response, your browser begins client-side rendering, constructing the Document Object Model (DOM), applying styles, and executing JavaScript for dynamic features. The rendered page may trigger additional requests for resources like images or scripts. Finally, your browser combines all acquired resources to display the fully rendered Google homepage, enabling user interaction through search queries, link clicks, and other features provided by the webpage.
 
 After rendering has been completed, the browser executes JavaScript code as a result
 of some timing mechanism (such as a Google Doodle animation) or user
