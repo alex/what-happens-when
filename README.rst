@@ -40,6 +40,7 @@ with each keypress. It may even suggest "google.com" before you finish typing
 it.
 
 The "enter" key bottoms out
+In response to the "g" keypress, the browser's auto-complete functions may kick in. This is particularly noticeable in the browser's URL bar.
 ---------------------------
 
 To pick a zero point, let's choose the Enter key on the keyboard hitting the
