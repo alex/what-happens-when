@@ -1,0 +1,75 @@
+When the 'g' key is pressed, a series of complex processes is set into motion, orchestrating the journey from a keystroke to the display of the Google homepage. Let's explore the intricate steps involved:
+
+Keystroke to Browser Actions:
+Auto-Complete Suggestions:
+The browser receives the 'g' key event, triggering auto-complete functions based on the browser's algorithm.
+Depending on the browser's mode (private/incognito), various suggestions are presented below the URL bar.
+Typing "google.com":
+
+As "google.com" is typed, numerous code blocks run, refining suggestions with each keypress.
+Advanced algorithms prioritize suggestions using data such as search history, bookmarks, cookies, and global internet trends.
+Pressing 'Enter':
+
+Electrical Circuit Action:
+Upon pressing 'Enter,' the electrical circuit specific to the 'Enter' key closes, allowing a small current to flow into the keyboard's logic circuitry.
+The keyboard controller scans the state of each key switch, debounces rapid intermittent closures, and converts it to a keycode (e.g., 13).
+
+USB Keyboard Processing:
+In the case of a USB keyboard, the keycode is stored in the keyboard's internal memory register called "endpoint."
+The USB controller polls this "endpoint" every ~10ms, converting the keycode into USB packets adhering to the low-level USB protocol.
+The packets are transmitted differentially over D+ and D- pins to the computer's host USB controller.
+
+Interrupt Handling:
+Interrupt signals are sent on the interrupt request line (IRQ) by the keyboard.
+The CPU uses the Interrupt Descriptor Table (IDT) to map interrupt vectors to kernel-supplied interrupt handlers.
+In Windows, a WM_KEYDOWN message is sent, while on macOS, a KeyDown NSEvent is triggered.
+
+URL Parsing and DNS Resolution:
+URL Processing:
+The browser parses the URL, distinguishing between protocols, resources, and search terms.
+Non-ASCII Unicode characters in the hostname are converted using Punycode encoding.
+
+DNS Lookup:
+The browser checks its DNS cache for the domain. If not found, it calls the gethostbyname library function to perform the lookup.
+The DNS client may involve ARP processes based on the DNS server's location.
+
+ARP Process:
+The ARP process involves resolving MAC addresses, essential for communication on the local network.
+ARP requests are broadcasted to find the MAC address corresponding to the IP address of the DNS server or the default gateway.
+Network Communication:
+
+Socket Creation:
+The browser opens a TCP socket stream, sending packets with crafted headers containing destination and source port information.
+The packet undergoes encapsulation at the Transport and Network Layers before reaching the Link Layer.
+
+Routing and Transmission:
+The packet traverses routers, switches, or hubs, potentially going through modems and different network nodes.
+At each router, the destination address is extracted, and the packet is routed accordingly.
+
+Browser High-Level Structure:
+Browser Engine:
+The browser engine manages actions between the UI and rendering engine.
+
+Rendering Engine:
+The rendering engine parses HTML and CSS, constructing a 'Frame Tree' or 'Render Tree.'
+CSS interpretation involves parsing style rules and creating a StyleSheet object.
+
+Page Rendering:
+The 'Frame Tree' is constructed by traversing DOM nodes and calculating CSS styles.
+Rendering involves creating layers, allocating textures, and executing drawing commands.
+GPU rendering is utilized for parallel processing capabilities, enhancing graphical computations.
+
+Post-rendering and Execution:
+JavaScript code is executed post-rendering, triggered by user interactions or timing mechanisms.
+Plugins like Flash or Java may execute additional network requests or modify the page, leading to further rendering processes.
+
+Final Display:
+Window Server:
+The final layer positions are computed, and composite commands are issued via graphics APIs.
+The frame is sent to the window server for display, completing the intricate journey from a keystroke to the Google homepage.
+This comprehensive process showcases the underlying complexity involved in the seemingly simple action of pressing the 'g' key and navigating to a webpage.
+
+
+
+
+
