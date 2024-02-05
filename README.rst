@@ -31,7 +31,7 @@ The following sections explain the physical keyboard actions
 and the OS interrupts. When you press the key "g" the browser receives the
 event and the auto-complete functions kick in.
 Depending on your browser's algorithm and if you are in
-private/incognito mode or not various suggestions will be presented
+private/incognito mode or not, various suggestions will be presented
 to you in the dropdown below the URL bar. Most of these algorithms sort
 and prioritize results based on search history, bookmarks, cookies, and
 popular searches from the internet as a whole. As you are typing
@@ -194,7 +194,7 @@ Convert non-ASCII Unicode characters in the hostname
 
 Check HSTS list
 ---------------
-* The browser checks its "preloaded HSTS (HTTP Strict Transport Security)"
+* The browser checks it's "preloaded HSTS (HTTP Strict Transport Security)"
   list. This is a list of websites that have requested to be contacted via
   HTTPS only.
 * If the website is in the list, the browser sends its request via HTTPS
@@ -305,7 +305,7 @@ that and the given port number from the URL (the HTTP protocol defaults to port
 named ``socket`` and requests a TCP socket stream - ``AF_INET/AF_INET6`` and
 ``SOCK_STREAM``.
 
-* This request is first passed to the Transport Layer where a TCP segment is
+* This request is first passed on to the Transport Layer where a TCP segment is
   crafted. The destination port is added to the header, and a source port is
   chosen from within the kernel's dynamic port range (ip_local_port_range in
   Linux).
