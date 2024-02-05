@@ -164,6 +164,27 @@ appropriate font symbol in the appropriate focused field.
 
 Parse URL
 ---------
+Firstly let's break down what a URL is.
+
+What is a URL?
+   - A URL (Uniform Resource Locator) is a string that uniquely identifies a resource on the web.
+   - It specifies the location of a web page, image, file, or any other resource accessible via the internet.
+
+What typically are the components of a URL?
+   - Protocol: Defines the communication rules between the browser and the server (e.g., “http” or “https”).
+   - Domain Name (Host): The human-readable name of the server (e.g., “google.com”).
+   - Port Number (optional): Specifies the communication port (default is 80 for HTTP and 443 for HTTPS).
+   - Path: Represents the file or directory structure on the server (e.g., “/index.html”).
+   - Query Parameters (optional): Additional information passed to the server (e.g., “?q=searchterm”).
+   - Fragment Identifier (optional): Points to a specific section within a page (e.g., “#section2”).
+
+Why Use URLs? Have a look at the following list of things URLs allow users to do.
+   - Access specific web pages (e.g., “https://www.google.com”).
+   - Share links to resources (e.g., articles, images, videos).
+   - Bookmark favorite sites.
+   - Navigate the web seamlessly.
+
+URLs are amazing!
 
 * The browser now has the following information contained in the URL (Uniform
   Resource Locator):
