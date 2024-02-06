@@ -544,6 +544,14 @@ common user interface elements are:
   current documents
 * Home button that takes you to your home page
 
+After the common user interface elements, a web server comes into play.
+A web server is a computer that stores web server software and a website's component files, including HTML documents, images, CSS stylesheets, and JavaScript files.
+It connects to the Internet and supports physical data interchange with other devices.
+The web server includes several parts that control how web users access hosted files, with an HTTP server being the minimum requirement.
+The HTTP server is software that understands URLs and HTTP, allowing it to host and serve web content. Additionally, a web server has to store the website's files, such as HTML documents and their related assets, including images, CSS stylesheets, JavaScript files, fonts, and video.
+While it's technically possible to host these files on a personal computer, using a dedicated web server is more convenient due to its availability and reliability.
+Therefore, a web server plays a crucial role in delivering web content to users and supporting the functionality of the browser.
+
 **Browser High-Level Structure**
 
 The components of the browsers are:
