@@ -571,6 +571,11 @@ The components of the browsers are:
   support storage mechanisms such as localStorage, IndexedDB, WebSQL and
   FileSystem.
 
+Database
+---------
+
+While databases may not directly serve the initial Google homepage when you type google.com, they are integral to many aspects of Google's operations, including search, personalization, advertising, analytics, and infrastructure management. They help in organizing and storing the vast amount of information available on the web.
+
 HTML parsing
 ------------
 
