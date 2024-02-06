@@ -510,6 +510,18 @@ and IIS for Windows.
   is running on PHP, the server uses PHP to interpret the index file, and
   streams the output to the client.
 
+Shift + F5 is clicked
+----------------------
+
+* When "Shift + F5" is pressed in a web browser, it triggers a forced reload of the current web page.
+* This forced reload ignores any cached content stored in the browser.
+* The browser downloads all the files associated with the page, such as JavaScript files, images, and scripts, even if they are already present in the browser's cache.
+* The purpose of this forced reload is to ensure that the browser retrieves the most recent version of the page from the server.
+* "Shift + F5" is used to bypass the browser's cache and obtain a fresh copy of the web page.
+* This keyboard combination is particularly useful when there are issues with cached content, such as images not loading correctly or when you want to ensure you are viewing the most up-to-date version of the webpage.
+* It's worth noting that the specific functionality of "Shift + F5" may vary slightly depending on the web browser being used.
+* However, the general purpose of forcing a reload and ignoring cached content remains consistent across different browsers.
+
 Behind the scenes of the Browser
 ----------------------------------
 
