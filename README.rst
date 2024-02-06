@@ -663,6 +663,25 @@ Page Rendering
   via Direct3D/OpenGL. The GPU command buffer(s) are flushed to the GPU for
   asynchronous rendering and the frame is sent to the window server.
 
+STATIC VS DYNAMIC CONTENT
+-------------------------
+- Your HTTP request maybe dynamic or static.
+- If static then the web server [the server hosting the website] will generate the needed content.
+- if request is dynamic then the webserver passes forward a request to an application server to 
+  enable it generate content on the fly.
+- It is worth noting that the request will have been filtered by other processes as explained above
+  it can be processed and a HTTP response generated.
+- Whether the content is static or dynamic, it has to be pre-generated so that the web server, the 
+  application server or the database server are able to access it and use it for generating the 
+  required content.
+- It is important to mention that the application server will act as a middleman between the web server
+  and the database.
+- Once the application server receives the HTTP(S) request, it is incharge of executing the business logic 
+  of the program. In this case, it will handle all that is required for the google.com page to load.
+- Having this knowledge should help you understand why sometimes it may take a couple of seconds before
+  some webpages can fully load.
+- There is a lot communictaion happening under the hood and this is just a part of it.
+
 GPU Rendering
 -------------
 
