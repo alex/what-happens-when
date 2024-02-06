@@ -674,6 +674,10 @@ STATIC VS DYNAMIC CONTENT
 - Whether the content is static or dynamic, it has to be pre-generated so that the web server, the 
   application server or the database server are able to access it and use it for generating the 
   required content.
+- It is important to mention that the application server will act as a middleman between the web server
+  and the database.
+- Once the application server receives the HTTP(S) request, it is incharge of executing the business logic 
+  of the program. In this case, it will handle all that is required for the google.com page to load.
 - Having this knowledge should help you understand why sometimes it may take a couple of seconds before
   some webpages can fully load.
 - There is a lot communictaion happening under the hood and this is just a part of it.
