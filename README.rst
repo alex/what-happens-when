@@ -674,6 +674,9 @@ GPU Rendering
   of ``GPU`` massive parallelism for float point calculations required for
   the rendering process.
 
+Read this article if you are still confused
+----------------------
+https://medium.com/@solomonsefah13/what-happens-when-you-type-https-www-google-com-in-your-browser-and-press-enter-f5b5b02e0db5
 
 Window Server
 -------------
@@ -688,6 +691,8 @@ Plugins such as Flash or Java may execute as well, although not at this time on
 the Google homepage. Scripts can cause additional network requests to be
 performed, as well as modify the page or its layout, causing another round of
 page rendering and painting.
+
+
 
 .. _`Creative Commons Zero`: https://creativecommons.org/publicdomain/zero/1.0/
 .. _`"CSS lexical and syntax grammar"`: http://www.w3.org/TR/CSS2/grammar.html
