@@ -194,17 +194,18 @@ Convert non-ASCII Unicode characters in the hostname
 
 Check HSTS list
 ---------------
-* The browser checks its "preloaded HSTS (HTTP Strict Transport Security)"
-  list. This is a list of websites that have requested to be contacted via
-  HTTPS only.
-* If the website is in the list, the browser sends its request via HTTPS
-  instead of HTTP. Otherwise, the initial request is sent via HTTP.
-  (Note that a website can still use the HSTS policy *without* being in the
-  HSTS list.  The first HTTP request to the website by a user will receive a
-  response requesting that the user only send HTTPS requests.  However, this
-  single HTTP request could potentially leave the user vulnerable to a
-  `downgrade attack`_, which is why the HSTS list is included in modern web
-  browsers.)
+*Security Benefits: Including a website in the HSTS preload list provides enhanced security by ensuring that all communication with the website is encrypted using HTTPS. This helps protect users from various types of attacks, including man-in-the-middle attacks and network eavesdropping.
+
+HSTS Policy: Websites can also implement the HSTS policy without being included in the preload list. When a browser receives an HTTP response from a website that includes the HSTS header, it remembers to only connect to that website via HTTPS for a specified period of time (the "max-age" directive). This helps protect against downgrade attacks during subsequent visits.
+
+Downgrade Attacks: Without HSTS or being on the preload list, a user's first visit to a website could potentially be vulnerable to a downgrade attack, where an attacker intercepts the initial HTTP request and redirects it to an insecure connection. Inclusion in the preload list mitigates this risk by ensuring that the browser automatically initiates a secure connection.
+
+Preloading Process: Websites interested in being included in the HSTS preload list must meet specific requirements and submit an application to browser vendors. Once approved, the website's domain is added to the preload list distributed with browser updates. However, it's important to note that this process may take some time, and updates to the preload list are not immediate.
+
+Impact on Performance: While the HSTS preload list enhances security, it may also impact performance slightly due to the overhead of negotiating SSL/TLS connections. However, the security benefits generally outweigh the minimal performance impact.
+
+Browser Compatibility: Most modern web browsers support the HSTS preload list functionality. However, older browsers or those with outdated versions may not fully support it, potentially leading to compatibility issues for users accessing websites on the preload list.
+
 
 DNS lookup
 ----------
