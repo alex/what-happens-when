@@ -673,6 +673,14 @@ GPU Rendering
   software layers split the task into multiple pieces, so it can take advantage
   of ``GPU`` massive parallelism for float point calculations required for
   the rendering process.
+      
+Benefits of GPU rendering
+   *GPUs are optimized for parallel processing
+   *Rendering pipelines handle various stages of the rendering process efficiently
+   *Real-time Rendering is crutial for applications like vedio games
+   *Graphics APIs harness the power of GPU's for rendering
+   *
+         
 
 
 Window Server
