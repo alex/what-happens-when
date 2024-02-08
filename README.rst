@@ -414,8 +414,17 @@ control`_. This varies depending on the sender; the most common algorithms are
   each packet acknowledged. If a packet is dropped, the window reduces
   exponentially until another packet is acknowledged.
 
+Domain Name Resolution:
+-----------------------
+The browser first performs a domain name resolution to translate the human-readable domain name "google.com" into an IP address, which is needed to locate the server hosting the website.
+
 HTTP protocol
 -------------
+The HTTP protocol governs the communication between the web browser and the server. The browser constructs an HTTP request to retrieve the requested resource from the server. This request includes various components, such as the request method (typically GET for retrieving resources), HTTP headers (e.g., User-Agent, Accept-Encoding), and the requested URL.
+
+Request Methods: The most common request method used in web browsing is GET, which retrieves a resource from the server. Other methods, such as POST, PUT, and DELETE, are used for different purposes, such as submitting form data or modifying server-side resources.
+
+HTTP Headers: Request and response headers provide additional information about the request or the resource being sent by the server. These headers include metadata such as Content-Type, Content-Length, Cache-Control, and others, which influence how the browser handles the request or response.
 
 If the web browser used was written by Google, instead of sending an HTTP
 request to retrieve the page, it will send a request to try and negotiate with
@@ -480,8 +489,18 @@ resolving the other domain, and follows all steps up to this point for that
 domain. The ``Host`` header in the request will be set to the appropriate
 server name instead of ``google.com``.
 
+Caching Mechanisms:
+-------------------
+Caching plays a crucial role in optimizing web performance and reducing server load. When the server responds to an HTTP request, it can include caching directives in the response headers to instruct the browser on how to cache the received resource. For example, the Cache-Control header specifies caching directives such as max-age (maximum time the resource can be cached) and no-cache (resource must be revalidated before use).
+
 HTTP Server Request Handle
 --------------------------
+Upon receiving the HTTP request from the client (browser), the server processes the request based on the request method, URL, and other headers provided. It interprets the request headers to determine the client's requirements and generates an appropriate response.
+
+If the request method is GET and the URL corresponds to an existing resource, the server retrieves the requested resource and returns a response with the status code 200 OK. However, if the resource is not found, the server responds with the status code 404 Not Found.
+
+The server may also utilize caching mechanisms to improve performance and reduce server load. By setting appropriate caching headers in the response (e.g., Cache-Control, Expires), the server instructs the browser to cache certain resources locally. Subsequent requests for the same resource can then be fulfilled from the browser's cache, reducing the need for repeated requests to the server.
+
 The HTTPD (HTTP Daemon) server is the one handling the requests/responses on
 the server-side. The most common HTTPD servers are Apache or nginx for Linux
 and IIS for Windows.
