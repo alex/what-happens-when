@@ -27,17 +27,20 @@ Table of Contents
 
 The "g" key is pressed
 ----------------------
-The following sections explain the physical keyboard actions
-and the OS interrupts. When you press the key "g" the browser receives the
-event and the auto-complete functions kick in.
-Depending on your browser's algorithm and if you are in
-private/incognito mode or not various suggestions will be presented
-to you in the dropdown below the URL bar. Most of these algorithms sort
-and prioritize results based on search history, bookmarks, cookies, and
-popular searches from the internet as a whole. As you are typing
-"google.com" many blocks of code run and the suggestions will be refined
-with each keypress. It may even suggest "google.com" before you finish typing
-it.
+The following sections delve into the intricate processes triggered by physical
+keyboard actions and operating system interrupts. Upon pressing the "g" key,
+the browser intercepts the event, initiating a cascade of operations. One pivotal
+function that activates is the auto-complete feature, a sophisticated mechanism
+designed to enhance user experience by predicting and suggesting relevant inputs.
+Depending on browser specifications, including the browsing mode (private/incognito or standard),
+an array of suggestions emerges within the dropdown beneath the URL bar. These
+suggestions, meticulously curated by algorithms, draw upon a myriad of data sources,
+such as browsing history, bookmarks, cookies, and global search trends. As the user
+inputs "google.com," the system dynamically refines the suggestions with each keystroke,
+employing intricate algorithms and processing vast amounts of data in real-time.
+Remarkably, the system may even preempt the user's intent by suggesting "google.com"
+before the full input is typed.
+
 
 The "enter" key bottoms out
 ---------------------------
