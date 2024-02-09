@@ -373,7 +373,7 @@ TLS handshake
   a secure connection between a client (such as a web browser) and a
   server (such as a website). It occurs at the beginning of a TLS session and
   involves several steps to negotiate encryption parameters and
-  exchange cryptographic keys.
+  exchange cryptographic keys. 
 * The client computer sends a ``ClientHello`` message to the server with its
   Transport Layer Security (TLS) version, list of cipher algorithms and
   compression methods available.
