@@ -519,6 +519,7 @@ to the browser it undergoes the below process:
 * Parsing - HTML, CSS, JS
 * Rendering - Construct DOM Tree → Render Tree → Layout of Render Tree →
   Painting the render tree
+* Compositing - This refers to combining multiple layers of the rendered content into a single image that's finally displayed on the screen
 
 Browser
 -------
