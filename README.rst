@@ -39,6 +39,72 @@ popular searches from the internet as a whole. As you are typing
 with each keypress. It may even suggest "google.com" before you finish typing
 it.
 
+When the "enter" key is pressed, it initiates a series of actions:
+
+Electrical Circuit Closure: The Enter key's circuit closes, allowing a small
+current to flow into the keyboard's logic circuitry. This circuitry scans the
+state of each key switch, debounces the electrical noise, and converts it to a
+keycode integer (in this case, 13).
+
+Encoding and Transport: The keycode is stored in the keyboard's internal memory register.
+The USB circuitry of the keyboard is powered by the computer's USB host controller.
+The keycode is then transported to the computer over USB in one or more USB packets
+following the low-level USB protocol.
+
+USB Signal Decoding: The computer's host USB controller decodes the serial signal,
+interpreting the keycode. The value is then passed into the operating system's hardware
+abstraction layer.
+
+Interrupt Handling (Windows): In Windows, a WM_KEYDOWN message is sent to the application.
+The HID transport passes the key down event to the keyboard driver (KBDHID.sys), which
+converts the HID usage into a scancode. This scancode, in this case, VK_RETURN (0x0D), is
+then passed to the keyboard class driver (KBDCLASS.sys), responsible for handling
+keyboard input securely.
+
+Window Management: The main Windows message loop identifies the active window (usually the
+browser's address box) and processes the key event accordingly. In the case of pressing Enter,
+if the focused window is an edit control, the window procedure recognizes the key press
+as the Enter key.
+
+Further Processing (OS X and Linux): On other operating systems like OS X and Linux, similar
+interrupt handling occurs, with appropriate events being sent to the active application.
+
+After parsing the URL, the browser performs various tasks:
+
+Protocol Determination: The browser identifies the protocol specified in the URL (typically "http").
+
+URL Parsing: The browser determines whether the input is a URL or a search term. If no protocol or
+valid domain name is given, the browser treats the input as a search term and feeds it to the default
+web search engine.
+
+Hostname Processing: The browser checks the hostname for non-ASCII Unicode characters
+and applies Punycode encoding if necessary.
+
+HSTS Check: The browser checks its preloaded HSTS list to determine if the website should be contacted
+via HTTPS only. If the site is listed, the browser sends the request via HTTPS; otherwise,
+it sends the request via HTTP.
+
+DNS Lookup: The browser checks its DNS cache for the domain. If not found, it performs a DNS lookup, first
+checking the local hosts file before querying the DNS server configured in the network stack.
+
+ARP Process: If necessary, the browser performs an ARP process to resolve the MAC address of the
+DNS server or default gateway.
+
+Opening a Socket: Once the IP address of the destination server is obtained, the
+browser opens a TCP socket stream using the system library function named socket.
+
+Packet Transmission: The browser crafts a TCP segment, wraps it in an IP header,
+and adds a frame header at the Link Layer. The packet is transmitted through the network to reach the destination server.
+
+HTTP Request Handling: Upon receiving a response from the server, the browser parses the HTTP response
+and processes the content accordingly, rendering the webpage for display.
+
+Browser Rendering: The browser parses HTML, CSS, and JavaScript, constructs a render tree, calculates layout
+and coordinates, and renders the webpage on the user's screen.
+
+Post-rendering Processing: After rendering, the browser executes any JavaScript code, plugins, or other actions
+triggered by user interaction, which may result in further network requests or modifications to the page layout.
+
 The "enter" key bottoms out
 ---------------------------
 
