@@ -236,7 +236,7 @@ The ARP cache is first checked for an ARP entry for our target IP. If it is in
 the cache, the library function returns the result: Target IP = MAC.
 
 If the entry is not in the ARP cache:
-
+ 
 * The route table is looked up, to see if the Target IP address is on any of
   the subnets on the local route table. If it is, the library uses the
   interface associated with that subnet. If it is not, the library uses the
@@ -251,7 +251,7 @@ If the entry is not in the ARP cache:
 
     Sender MAC: interface:mac:address:here
     Sender IP: interface.ip.goes.here
-    Target MAC: FF:FF:FF:FF:FF:FF (Broadcast)
+    Target MAC: FF:FF:FF:FF:FF:FF (Broadcast i.e. all the devices connected to a multiple access communication network)
     Target IP: target.ip.goes.here
 
 Depending on what type of hardware is between the computer and the router:
@@ -284,7 +284,7 @@ Switch:
 
     Sender MAC: target:mac:address:here
     Sender IP: target.ip.goes.here
-    Target MAC: interface:mac:address:here
+    Target MAC: interface:mac:address:here (interface i.e port which is like a door way into the client's device)
     Target IP: interface.ip.goes.here
 
 Now that the network library has the IP address of either our DNS server or
