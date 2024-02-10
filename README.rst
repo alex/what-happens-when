@@ -290,8 +290,14 @@ Switch:
 Now that the network library has the IP address of either our DNS server or
 the default gateway it can resume its DNS process:
 
-* The DNS client establishes a socket to UDP port 53 on the DNS server,
-  using a source port above 1023.
+
+* we create an IP packet containing our port our IP the DNS server IP and its port
+* and we send it to the router (our gateway)
+* the router when it receives the packet adds a net table containing the public IP of the 
+* router and our local IP then send it to the DNS server on port 53
+* once it receives the response it looks at the nat table to get our
+* ip and send the response to us
+
 * If the response size is too large, TCP will be used instead.
 * If the local/ISP DNS server does not have it, then a recursive search is
   requested and that flows up the list of DNS servers until the SOA is reached,
