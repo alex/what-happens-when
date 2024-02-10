@@ -209,6 +209,9 @@ Check HSTS list
 DNS lookup
 ----------
 
+The DNS acts as the internet's address book. It translates human-readable domain names (like google.com)
+into machine-readable IP addresses.
+
 * Browser checks if the domain is in its cache. (to see the DNS Cache in
   Chrome, go to `chrome://net-internals/#dns <chrome://net-internals/#dns>`_).
 * If not found, the browser calls ``gethostbyname`` library function (varies by
