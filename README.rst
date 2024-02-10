@@ -689,6 +689,40 @@ the Google homepage. Scripts can cause additional network requests to be
 performed, as well as modify the page or its layout, causing another round of
 page rendering and painting.
 
+What Happens When You Type Google.com In Your Browser And Press Enter
+---------------------------------------------------------------------
+
+DNS Request:
+------------
+The journey begins with a Domain Name System (DNS) request. When we type the URL, our browser first needs to resolve the domain name “www.google.com" to an IP address. It sends a DNS query to a DNS server, typically provided by our internet service provider (ISP) or a public DNS resolver like Google DNS or Cloudflare DNS.
+
+TCP/IP:
+-------
+Once the DNS server resolves the domain name to an IP address (for instance, 172.217.3.196), the browser initiates a Transmission Control Protocol (TCP) connection to that IP address. TCP ensures reliable, ordered, and error-checked delivery of data packets over the internet. Firewall:
+As the TCP connection is established, it may pass through various network devices, including firewalls. Firewalls monitor and control incoming and outgoing network traffic based on predetermined security rules, ensuring that only authorized traffic is allowed.
+
+HTTPS/SSL:
+----------
+With the TCP connection established, the browser initiates a secure communication channel using HTTPS (Hypertext Transfer Protocol Secure). HTTPS encrypts the data exchanged between the browser and the server using SSL/TLS protocols, ensuring confidentiality and integrity of the information transmitted.
+
+Load-Balancer:
+--------------
+Upon receiving the request, it may be directed to one of Google’s many servers through a load balancer. Load balancers distribute incoming traffic across multiple servers to ensure optimal resource utilization, improve responsiveness, and enhance reliability.
+
+Web Server:
+-----------
+Once the request reaches a Google server, a web server such as Apache or Nginx processes the request. The web server retrieves the requested resource, such as the HTML content of the Google homepage, and prepares it for delivery back to the browser.
+
+Application Server:
+-------------------
+In some cases, the web server may forward dynamic requests to an application server. Application servers execute the application logic, interact with databases, and generate dynamic content tailored to the user’s request. For Google, this could involve serving personalized search results or displaying targeted advertisements.
+
+Database:
+---------
+If the request requires data from a database, the application server communicates with the database server to retrieve or manipulate the necessary information. Google’s vast infrastructure likely involves complex database systems optimized for scalability, reliability, and performance.
+
+**Read the full blog post on [Medium](https://medium.com/@zakariaar/what-happens-when-you-type-google-com-in-your-browser-and-press-enter-636e45074e08)**
+
 .. _`Creative Commons Zero`: https://creativecommons.org/publicdomain/zero/1.0/
 .. _`"CSS lexical and syntax grammar"`: http://www.w3.org/TR/CSS2/grammar.html
 .. _`Punycode`: https://en.wikipedia.org/wiki/Punycode
