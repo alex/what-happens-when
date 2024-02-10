@@ -689,23 +689,3 @@ the Google homepage. Scripts can cause additional network requests to be
 performed, as well as modify the page or its layout, causing another round of
 page rendering and painting.
 
-.. _`Creative Commons Zero`: https://creativecommons.org/publicdomain/zero/1.0/
-.. _`"CSS lexical and syntax grammar"`: http://www.w3.org/TR/CSS2/grammar.html
-.. _`Punycode`: https://en.wikipedia.org/wiki/Punycode
-.. _`Ethernet`: http://en.wikipedia.org/wiki/IEEE_802.3
-.. _`WiFi`: https://en.wikipedia.org/wiki/IEEE_802.11
-.. _`Cellular data network`: https://en.wikipedia.org/wiki/Cellular_data_communication_protocol
-.. _`analog-to-digital converter`: https://en.wikipedia.org/wiki/Analog-to-digital_converter
-.. _`network node`: https://en.wikipedia.org/wiki/Computer_network#Network_nodes
-.. _`TCP congestion control`: https://en.wikipedia.org/wiki/TCP_congestion_control
-.. _`cubic`: https://en.wikipedia.org/wiki/CUBIC_TCP
-.. _`New Reno`: https://en.wikipedia.org/wiki/TCP_congestion_control#TCP_New_Reno
-.. _`congestion window`: https://en.wikipedia.org/wiki/TCP_congestion_control#Congestion_window
-.. _`maximum segment size`: https://en.wikipedia.org/wiki/Maximum_segment_size
-.. _`varies by OS` : https://en.wikipedia.org/wiki/Hosts_%28file%29#Location_in_the_file_system
-.. _`简体中文`: https://github.com/skyline75489/what-happens-when-zh_CN
-.. _`한국어`: https://github.com/SantonyChoi/what-happens-when-KR
-.. _`日本語`: https://github.com/tettttsuo/what-happens-when-JA
-.. _`downgrade attack`: http://en.wikipedia.org/wiki/SSL_stripping
-.. _`OSI Model`: https://en.wikipedia.org/wiki/OSI_model
-.. _`Spanish`: https://github.com/gonzaleztroyano/what-happens-when-ES
