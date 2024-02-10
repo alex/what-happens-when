@@ -689,6 +689,33 @@ the Google homepage. Scripts can cause additional network requests to be
 performed, as well as modify the page or its layout, causing another round of
 page rendering and painting.
 
+
+Lets view it in a Story form
+----------------------------
+
+Finding the Address:
+Imagine you want to visit a friend's house, but you only have their name. Similarly, when you type "www.google.com" into your browser, your computer needs to figure out where Google's website lives on the internet. It does this by asking a special directory service called DNS (Domain Name System) for directions. DNS translates the human-friendly website name into a computer-friendly number called an IP address.
+
+Knock, Knock – Who's There?:
+Once your computer knows the IP address of Google's website, it sends a message over the internet to that address. It's like sending a letter to your friend's house. The message uses a special language called TCP/IP to ensure it gets to the right place and in the right order. It's like having a conversation – your computer says "hello" to the Google website, and Google responds with a friendly "hello" back.
+
+Security Check:
+Just like you have a security gate at your friend's neighborhood, the internet also has security measures. One of these is called a firewall. The firewall checks incoming messages to make sure they're safe before letting them through. It's like a bouncer at a club – only letting in people who are on the guest list.
+
+Secret Code – HTTPS/SSL:
+When you send a message over the internet, it travels through many different places, like letters passing through multiple post offices. To keep your message private and secure, websites use a secret code called HTTPS (Hypertext Transfer Protocol Secure) or SSL (Secure Sockets Layer). It's like putting your message in a locked box with a special key that only you and the website have.
+
+Sharing the Load:
+Imagine if everyone wanted to visit Google's website at the same time – it would get very crowded! To prevent this, websites use something called a load balancer. It's like having multiple doors to a store, so everyone can enter smoothly without causing a jam.
+
+Getting the Goods – Web Server:
+Once your message reaches Google's website, it's time to get the information you asked for, like searching for a book in a library. The web server is like the librarian who knows where everything is stored. It finds the information you want and sends it back to you, ready to read.
+
+Adding the Extras – Application Server:
+Sometimes, websites need to do more than just show you information – they might need to calculate something or save your data. This is where the application server comes in. It's like the brain behind the scenes, doing all the thinking and processing to make sure everything works smoothly.
+
+
+
 .. _`Creative Commons Zero`: https://creativecommons.org/publicdomain/zero/1.0/
 .. _`"CSS lexical and syntax grammar"`: http://www.w3.org/TR/CSS2/grammar.html
 .. _`Punycode`: https://en.wikipedia.org/wiki/Punycode
