@@ -279,6 +279,13 @@ Switch:
 
 * If the router is on the same "wire", it will respond with an ``ARP Reply``
   (see below)
+* Router:
+
+When the ARP request is received by a router, it checks its routing table 
+to determine if it has a route to the destination IP address. If a route is found,
+the router forwards the ARP request out of the appropriate interface towards the destination.
+If no route is found, the router may drop the ARP request or send an ICMP message back to the
+sender indicating that the destination is unreachable.
 
 ``ARP Reply``::
 
