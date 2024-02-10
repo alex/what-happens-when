@@ -162,18 +162,23 @@ sends the character to the ``window manager`` (DWM, metacity, i3, etc), so the
 The graphical API of the window  that receives the character prints the
 appropriate font symbol in the appropriate focused field.
 
-Parse URL
----------
+## Parse URL
 
-* The browser now has the following information contained in the URL (Uniform
-  Resource Locator):
+When a user enters a URL (Uniform Resource Locator) into the browser's address bar and presses enter, the browser begins parsing the URL to extract various components necessary for making a request to the server.
 
-    - ``Protocol``  "http"
-        Use 'Hyper Text Transfer Protocol'
+The browser now has the following information contained in the URL:
 
-    - ``Resource``  "/"
-        Retrieve main (index) page
+- **Protocol "http":** This component indicates the communication protocol to be used, defining the rules for data transmission between the client (browser) and the server. In this case, "http" stands for 'Hyper Text Transfer Protocol', a widely used protocol for transferring hypertext documents on the World Wide Web. Other examples include "https" for secure communication and "ftp" for file transfer.
 
+- **Domain "www.example.com":** The domain or hostname identifies the specific server or website being requested. In this example, "www.example.com" is the domain of the website being accessed.
+
+- **Port (if specified):** Sometimes, URLs include a port number to specify the endpoint on the server where the request should be sent. If no port is specified, the default port for the protocol is used (e.g., 80 for HTTP and 443 for HTTPS).
+
+- **Resource "/":** The URL also specifies the resource or path requested from the server. In this instance, "/" signifies the root directory or main (index) page of the website, indicating to the server to retrieve the default webpage for the given domain.
+
+- **Query Parameters (if present):** Additionally, URLs may contain query parameters, which are used to pass data to the server as part of the request. Query parameters are typically appended to the URL following a question mark (?), with each parameter-value pair separated by an ampersand (&).
+
+After parsing the URL and extracting these components, the browser proceeds to initiate a request to the server specified by the domain using the determined protocol, port (if specified), and resource. This request forms the basis for retrieving the desired content from the server and rendering it in the browser window.
 
 Is it a URL or a search term?
 -----------------------------
