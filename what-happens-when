@@ -1,0 +1,43 @@
+WHAT HAPPENS WHEN YOU VISIT GOOGLE.COM? A JOURNEY THROUGH THE WEB STACK.
+
+Have you ever wondered what happens behind the scenes when you type a URL like https://www.google.com into your browser’s address bar and hit enter? There is a complex sequence of events that takes place to turn that simple action into the rendered web page you see. Let’s take a closer look at the journey step-by-step:
+
+1. DNS Resolution
+
+The first thing your computer needs to do is figure out which server to connect to. It does this by making a DNS (Domain Name System) lookup. DNS is like the phonebook of the Internet — it translates the domain name to an IP address.
+
+Your browser checks if the DNS record is cached locally, if not it makes a request to your configured DNS server. This server can look up the authoritative name servers for the google.com domain, which can provide the IP address for www.google.com, such as 172.217.7.206.
+
+2. Establish TCP Connection
+
+Now that your computer has the destination IP address it can send a TCP (Transmission Control Protocol) request to set up a connection to the server on port 443, the default for HTTPS communication. This ensures reliable data transmission between your computer and the server once connected.
+
+3. Pass Through Firewall
+
+If the client’s network environment includes firewalls, the requests will also need to pass through them. Firewalls provide network security by filtering permitted traffic and protocols based on predefined security rules. Our request uses standard HTTPS port 443 traffic, which firewalls normally allow.
+
+4. Encrypted HTTPS Handshake
+
+Your browser now performs a TLS handshake to establish an encrypted HTTPS connection with the server. This handshake ensures that communication from this point on will be encrypted using SSL/TLS certificates so data transmitted is secure and private.
+
+5. Load Balancer Distributes Request
+
+The request reaches a load balancer at one of Google’s data centers closest to you. This acts as a reverse proxy and distributes incoming requests across multiple servers and ensures no one server is overwhelmed, optimizing for performance and reliability.
+
+6. Web Server Responds
+
+The load balancer picks a web server within the server farm to handle the request and passes it on. This web server is responsible for delivering the appropriate HTML, CSS, JavaScript, images, and other static assets that will construct the webpage for your browser.
+
+7. Application Server Generates Page
+
+Many websites are dynamic — containing personalized or frequently changing information. The web server may handle this by making requests to an application server. In the case of Google, the application server generates personalized search results based on the latest indexed web page content.
+
+8. Database Queries
+
+The application server may require information from a database to generate the page. Databases store much of the content and user data powering websites. For Google, databases contain information about which websites exist around the web and what they contain.
+
+The application server requests this data from the database server, collates it into the search results page content and passes it back to the waiting web server.
+
+9. Web Server Responds with Page
+
+Now that the web server has the full set of content for the page it can finally respond to your browser with the complete HTML. Your browser parses this and issues additional nested requests to fetch other page assets like images, CSS stylesheets, and JavaScript files.
