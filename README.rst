@@ -689,6 +689,14 @@ the Google homepage. Scripts can cause additional network requests to be
 performed, as well as modify the page or its layout, causing another round of
 page rendering and painting.
 
+Once the browser has completed rendering the page and executing any necessary scripts, the user can interact with the page. This interaction could involve scrolling, clicking on links, entering text into forms, or any number of other actions.
+
+When the user interacts with the page, the browser captures these events and processes them accordingly. For example, if the user clicks on a link, the browser will send a request to the server for the new page and then render the response.
+
+Additionally, the browser may perform various optimizations to improve the user experience. For example, it may prefetch resources that are likely to be needed soon, or it may use caching to speed up the loading of previously visited pages.
+
+Throughout this entire process, the browser is constantly communicating with the operating system and hardware to ensure that everything runs smoothly. It's a complex dance of software and hardware working together to provide a seamless browsing experience for the user.
+
 .. _`Creative Commons Zero`: https://creativecommons.org/publicdomain/zero/1.0/
 .. _`"CSS lexical and syntax grammar"`: http://www.w3.org/TR/CSS2/grammar.html
 .. _`Punycode`: https://en.wikipedia.org/wiki/Punycode
