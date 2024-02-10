@@ -1,5 +1,6 @@
 What happens when...
 ====================
+<blockquote class="imgur-embed-pub" lang="en" data-id="a/uqHbmZr"  ><a href="//imgur.com/a/uqHbmZr">Schema illustrates the flow of the request created when you type https://www.google.com in your browser and press Enter </a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
 
 This repository is an attempt to answer the age-old interview question "What
 happens when you type google.com into your browser's address box and press
