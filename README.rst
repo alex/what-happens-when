@@ -677,6 +677,8 @@ GPU Rendering
 
 Window Server
 -------------
+The server handles the administrative group-related activities on the network.
+It organizes, stores, sends, and receives files from devices connected to a network.
 
 Post-rendering and user-induced execution
 -----------------------------------------
