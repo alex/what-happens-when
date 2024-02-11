@@ -414,6 +414,55 @@ control`_. This varies depending on the sender; the most common algorithms are
   each packet acknowledged. If a packet is dropped, the window reduces
   exponentially until another packet is acknowledged.
 
+When a packet is dropped in transit, it triggers a series of reactions within
+the TCP congestion control mechanism to manage network congestion and
+maintain efficient data transmission. Let's delve deeper into how this
+process unfolds and explore the nuances of TCP congestion control algorithms:
+
+* Packet Loss Detection:
+Upon detecting a dropped packet, either through a timeout or the reception
+of duplicate acknowledgments, the sender infers network congestion.
+
+* Congestion Window Adjustment:
+The sender dynamically adjusts its congestion window, which dictates the
+number of packets it can transmit before receiving acknowledgments. This
+adjustment aims to strike a balance between maximizing throughput and
+minimizing congestion.
+
+* Slow Start:
+Initially, the sender employs a "slow start" strategy to ramp up its
+transmission rate gradually. The congestion window size doubles for each
+acknowledged packet until it reaches a predefined threshold known as the
+slow-start threshold. This cautious approach prevents overwhelming the
+network with a sudden surge of packets.
+
+* Congestion Avoidance:
+Once the slow-start threshold is reached, the sender switches to a
+congestion avoidance mode. In this phase, the congestion window increases
+linearly or additively for every acknowledged packet. This gradual increase
+helps probe the network's capacity without triggering congestion collapse.
+
+* Exponential Backoff:
+When a packet is dropped, indicating congestion, the sender employs an
+exponential backoff mechanism. This involves reducing the congestion window
+size exponentially, signaling to the sender to throttle its transmission
+rate temporarily. This reduction in window size serves as a feedback loop to
+alleviate congestion in the network.
+
+* Adaptive Thresholds:
+Some modern implementations feature adaptive thresholds for slow start and
+congestion avoidance. These thresholds dynamically adjust based on network
+conditions, allowing for more efficient utilization of available bandwidth
+while mitigating congestion.
+
+* Congestion Control Algorithms:
+TCP congestion control encompasses various algorithms, with Cubic and New Reno
+being among the most prevalent. Cubic, favored in newer operating systems, offers
+improved congestion control by adjusting the congestion window based on network
+conditions and past performance. New Reno, widely deployed across diverse network
+environments, provides robustness and compatibility across different TCP
+implementations.
+
 HTTP protocol
 -------------
 
