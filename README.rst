@@ -367,6 +367,13 @@ This send and receive happens multiple times following the TCP connection flow:
    * The other sides ACKs the FIN packet and sends its own FIN
    * The closer acknowledges the other side's FIN with an ACK
 
+#### FireWall
+-------------
+* While the connection is being established, the firewall vets the incoming network for safety, before allowing the connection to the server of google.com. The firew
+  all protects the server of goole.com from unsafe networks trying to connect to the server.
+* It would also check to confirm that the network is tying to connect to an allowed port on the server while preventing connections to unauthorized ports on
+  the server
+
 TLS handshake
 -------------
 * The client computer sends a ``ClientHello`` message to the server with its
