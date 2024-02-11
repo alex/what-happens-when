@@ -529,8 +529,7 @@ The resource is usually an HTML document, but may also be a PDF,
 image, or some other type of content. The location of the resource is
 specified by the user using a URI (Uniform Resource Identifier).
 
-The way the browser interprets and displays HTML files is specified
-in the HTML and CSS specifications. These specifications are maintained
+The browser follows specific conventions to display HTML/CSS files. These specifications are maintained
 by the W3C (World Wide Web Consortium) organization, which is the
 standards organization for the web.
 
@@ -677,6 +676,7 @@ GPU Rendering
 
 Window Server
 -------------
+file:///home/alphaeus/Downloads/DALL%C2%B7E%202024-02-11%2009.09.35%20-%20Create%20a%20detailed%20and%20informative%20diagram%20showing%20the%20flow%20of%20a%20request%20made%20when%20typing%20https%20__www.google.com%20into%20a%20browser%20and%20pressing%20Enter.%20The.webp
 
 Post-rendering and user-induced execution
 -----------------------------------------
