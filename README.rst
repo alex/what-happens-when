@@ -674,6 +674,35 @@ GPU Rendering
   of ``GPU`` massive parallelism for float point calculations required for
   the rendering process.
 
+Browser Caching Mechanisms
+--------------------------
+
+Web browsers utilize caching mechanisms to improve performance and reduce load times
+by storing copies of resources locally. This allows browsers to retrieve frequently
+accessed resources from the cache rather than fetching them from the server every time.
+
+Types of Browser Caches
+
+- **HTTP Cache:** Browsers maintain an HTTP cache to store responses from web servers. When a browser requests a resource, it first checks the HTTP cache to see if a cached copy exists. If the resource is found in the cache and is deemed valid according to caching rules (e.g., expiration date, cache-control headers), the browser can serve the resource directly from the cache without making a request to the server.
+- **Memory Cache:** In addition to the HTTP cache, browsers may also maintain a memory cache, which stores resources in memory for faster access. The memory cache is typically smaller than the HTTP cache but provides quicker retrieval of frequently accessed resources.
+
+Cache-Control Directives
+
+The behavior of browser caching is controlled by various directives specified in the Cache-Control header sent by web servers. These directives instruct browsers on how to cache resources and when to revalidate them with the server. Common directives include:
+
+- **max-age:** Specifies the maximum time (in seconds) a resource can be cached before it is considered stale.
+- **no-cache:** Indicates that a resource must be revalidated with the server before it can be served from the cache.
+- **no-store:** Instructs browsers not to cache the resource at all, ensuring that it is fetched from the server on every request.
+
+Cache Invalidation
+
+Web developers can control cache behavior by setting appropriate cache-control headers on server responses. Additionally, techniques such as cache busting (appending query parameters or version numbers to resource URLs) can force browsers to fetch updated versions of resources, bypassing the cache.
+
+Benefits of Browser Caching
+
+- **Faster Page Load Times:** Cached resources are served more quickly, reducing latency and improving the overall user experience.
+- **Reduced Server Load:** By serving cached resources locally, browsers reduce the number of requests sent to the server, thereby lowering server load and bandwidth usage.
+- **Offline Access:** Cached resources can be accessed even when the device is offline, enabling offline browsing capabilities for web applications.
 
 Window Server
 -------------
