@@ -414,6 +414,15 @@ control`_. This varies depending on the sender; the most common algorithms are
   each packet acknowledged. If a packet is dropped, the window reduces
   exponentially until another packet is acknowledged.
 
+Firewall
+--------
+
+Before your browser can send any data to the server, it may need to pass through a firewall. A firewall is a software or hardware device that monitors and filters the incoming and outgoing network traffic based on predefined rules. A firewall can block, allow, or modify the traffic based on various criteria, such as the source and destination IP addresses, the port numbers, the protocol, or the content. A firewall can be installed on your device, on your router, on your ISP, or on the server.
+
+A firewall can prevent unauthorized access to your device or the server, protect against malicious attacks, or enforce certain policies. For example, a firewall can block access to certain websites, such as gambling or adult sites, or restrict the bandwidth usage of certain applications, such as video streaming or file sharing. A firewall can also encrypt or decrypt the traffic, depending on the configuration.
+
+If your browser’s request passes through the firewall, it can proceed to the next step. If not, the firewall may drop the request, send back an error message, or redirect the request to a different destination.
+
 HTTP protocol
 -------------
 
@@ -509,6 +518,44 @@ and IIS for Windows.
 * The server parses the file according to the handler. If Google
   is running on PHP, the server uses PHP to interpret the index file, and
   streams the output to the client.
+
+Load-balancer
+-------------
+
+The next step is to reach the server that can handle your request. However, there may not be just one server, but many servers that work together to provide the same service. This is called a server cluster, and it is a common way to improve the performance, scalability, and reliability of a web service. A server cluster can handle more traffic, distribute the workload, and recover from failures.
+
+To manage a server cluster, a load-balancer is used. A load-balancer is a device or a software that distributes the incoming requests to the available servers in the cluster, based on some criteria, such as the server load, the server capacity, the server location, or the request type. A load-balancer can also monitor the health and status of the servers and add or remove servers as needed.
+
+There are different types of load-balancers, such as hardware load-balancers, software load-balancers, or DNS load-balancers. Hardware load-balancers are physical devices that are installed in front of the server cluster, and they use specialized hardware and software to perform the load-balancing. Software load-balancers are applications that run on a server, and they use standard hardware and software to perform the load-balancing. DNS load-balancers are DNS servers that resolve the domain name to different IP addresses, depending on the load-balancing criteria.
+Web server
+
+The next step is to process your request by the web server. A web server is a software that listens for incoming HTTP or HTTPS requests and sends back HTTP or HTTPS responses. A web server can also serve static files, such as HTML, CSS, JavaScript, images, or videos, that are stored on the server’s file system. A web server can also execute dynamic scripts, such as PHP, Python, Ruby, or Java, that generate the response on the fly, based on the request parameters, the server state, or the database queries.
+
+There are many web servers available, such as Apache, Nginx, IIS, or Tomcat. Each web server has its own configuration, features, and performance. Some web servers are more suitable for certain types of applications or environments than others. For example, Nginx is known for its high performance and scalability, while Apache is known for its flexibility and modularity.
+
+When the web server receives your request, it parses the request headers and the request body, and determines the resource that you are requesting. The resource is usually identified by the URL, which consists of the scheme, the host, the port, the path, and the query string. For example, in the URL https://www.google.com/search?q=school, the scheme is https, the host is www.google.com, the port is 443 (the default for HTTPS), the path is /search, and the query string is q=school.
+
+The web server then checks if the resource is a static file or a dynamic script and if the request method is allowed. The request method is a verb that indicates the action that you want to perform on the resource, such as GET, POST, PUT, or DELETE. For example, a GET request means that you want to retrieve the resource, while a POST request means that you want to create or update the resource.
+
+If the resource is a static file and the request method is allowed, the web server looks for the file on the server’s file system and sends it back to your browser, along with the response headers and the response status code. The response headers are key-value pairs that provide additional information about the response, such as the content type, the content length, the cache control, or the cookies. The response status code is a three-digit number that indicates the outcome of the request, such as 200 (OK), 404 (Not Found), or 500 (Internal Server Error).
+
+If the resource is a dynamic script and the request method is allowed, the web server invokes the script interpreter, such as PHP, Python, Ruby, or Java, and passes the request parameters and the server environment variables to the script. The script then executes the logic and the database queries, and generates the response, which can be HTML, JSON, XML, or any other format. The script also sets the response headers and the response status code. The web server then sends the response back to your browser, along with the response headers and the response status code.
+
+Application server
+The next step is to handle the business logic and the data access by the application server. An application server is software that provides the core functionality and services for a web application, such as authentication, authorization, session management, caching, messaging, or transaction management. An application server can also interact with the database server, which is a software that stores and retrieves the data for the web application, such as MySQL, PostgreSQL, MongoDB, or Oracle.
+
+An application server can be integrated with the web server, or it can be separate from the web server. For example, PHP, Python, Ruby, or Java can run as modules or extensions of the web server, or they can run as standalone processes or servers, communicating with the web server via protocols such as CGI, FastCGI, WSGI, or AJP. Some web frameworks, such as Django, Rails, or Spring, provide their own application servers, or they can use third-party application servers, such as Gunicorn, Unicorn, or Tomcat.
+
+When the application server receives the request from the web server, it executes the business logic and the data access and returns the response to the web server. The business logic is the code that implements the rules and workflows of the web application, such as validating the input, checking the permissions, performing the calculations, or sending the notifications. Data access is the code that interacts with the database server, such as opening the connection, executing the queries, fetching the results, or closing the connection.
+
+The application server can also use various services and components to enhance the functionality and performance of the web application, such as:
+
+Authentication: This is the process of verifying the identity of the user, such as by asking for a username and a password or by using a third-party service, such as Google, Facebook, or Twitter.
+Authorization: This is the process of granting or denying access to the resources or the actions of the web application, based on the user’s role, group, or permissions.
+Session management: This is the process of maintaining the state and the context of the user across multiple requests, such as by using cookies, tokens, or databases.
+Caching: This is the process of storing and retrieving frequently used or expensive data in a fast and efficient way, such as by using memory, disc, or distributed systems such as Redis, Memcached, or Varnish.
+Messaging: This is the process of exchanging data or events between different components or services of the web application, such as by using queues, topics, or brokers, such as RabbitMQ, Kafka, or ActiveMQ.
+Transaction management: This is the process of ensuring the consistency and reliability of the data operations, such as by using ACID (Atomicity, Consistency, Isolation, Durability) or BASE (Basically Available, Soft State, Eventual Consistency) properties, or by using commit, rollback, or compensation mechanisms.
 
 Behind the scenes of the Browser
 ----------------------------------
