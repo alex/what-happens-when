@@ -628,6 +628,7 @@ CSS interpretation
   contains CSS rules with selectors and objects corresponding CSS grammar.
 * A CSS parser can be top-down or bottom-up when a specific parser generator
   is used.
+* Parser Variants: Depending on the requirements and implementation, a CSS parser can adopt either a top-down or bottom-up approach. This choice is often influenced by the specific parser generator utilized in the system. Both approaches offer distinct advantages and may be selected based on factors such as performance, complexity, and ease of implementation.
 
 Page Rendering
 --------------
