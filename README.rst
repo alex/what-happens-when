@@ -416,6 +416,19 @@ control`_. This varies depending on the sender; the most common algorithms are
 
 HTTP protocol
 -------------
+HTTPS/SSL
+-------------
+Hypertext Transfer Protocol Secure (HTTPS) is an extension of the Hypertext 
+Transfer Protocol (HTTP). It is used for secure communication over a computer 
+network, and is widely used on the Internet. In HTTPS, the communication 
+protocol is encrypted using Secure Sockets Layer (SSL). The protocol is 
+therefore also referred to as HTTP over SSL.
+
+
+Secure Sockets Layer (SSL), is a cryptographic protocol designed to provide 
+communications security over a computer network. The protocol is widely used
+in applications such as email, instant messaging, and voice over IP, but its
+use in securing HTTPS remains the most publicly visible.
 
 If the web browser used was written by Google, instead of sending an HTTP
 request to retrieve the page, it will send a request to try and negotiate with
@@ -677,6 +690,19 @@ GPU Rendering
 
 Window Server
 -------------
+
+A web server is computer software and underlying hardware that accepts requests
+via HTTP (the network protocol created to distribute web content) or its secure
+variant HTTPS. A user agent, commonly a web browser initiates communication by 
+making a request for a web page or other resource using HTTP, and the server 
+responds with the content of that resource or an error message. A web server 
+can also accept and store resources sent from the user agent if configured to do so.
+
+The hardware used to run a web server can vary according to the volume of requests
+that it needs to handle. At the low end of the range are embedded systems, such as
+a router that runs a small web server as its configuration interface. 
+A high-traffic Internet website might handle requests with hundreds of servers
+that run on racks of high-speed computers. Examples of Web servers are Nginx and Apache.
 
 Post-rendering and user-induced execution
 -----------------------------------------
