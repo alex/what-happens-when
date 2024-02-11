@@ -689,6 +689,18 @@ the Google homepage. Scripts can cause additional network requests to be
 performed, as well as modify the page or its layout, causing another round of
 page rendering and painting.
 
+Resource Management and Optimization
+--------------------------------------
+
+Efficient resource management is vital for enhancing the performance and
+responsiveness of web applications. This section delves into strategies
+for optimizing resource usage, including memory, CPU, and network bandwidth.
+Techniques such as caching, prefetching, lazy loading, and minimizing asset
+sizes are discussed to ensure smoother user experiences and reduced server load.
+Additionally, insights into profiling tools and monitoring systems are provided
+to aid in identifying bottlenecks and optimizing resource utilization.
+
+
 .. _`Creative Commons Zero`: https://creativecommons.org/publicdomain/zero/1.0/
 .. _`"CSS lexical and syntax grammar"`: http://www.w3.org/TR/CSS2/grammar.html
 .. _`Punycode`: https://en.wikipedia.org/wiki/Punycode
