@@ -571,6 +571,23 @@ The components of the browsers are:
   support storage mechanisms such as localStorage, IndexedDB, WebSQL and
   FileSystem.
 
+Browser Cache
+--------------
+
+Once the browser receives resources such as HTML, CSS, JavaScript files, images, and other assets from the server, it stores them in its cache. The cache serves as a temporary storage space to speed up subsequent visits to the same website.
+
+1\. **HTTP Caching Headers**: The server can instruct the browser on how to cache resources using HTTP headers such as `Cache-Control`, `Expires`, and `ETag`. These headers specify how long the resource should be cached and under what conditions it should be considered stale.
+
+2\. **Browser Cache-Control**: The browser uses the cache-control directives specified by the server to determine whether it should serve the resource from the cache or request it from the server again. Directives like `max-age`, `no-cache`, `no-store`, and `must-revalidate` control caching behavior.
+
+3\. **Validation and Revalidation**: When a cached resource expires or is considered stale, the browser can perform validation or revalidation to determine if the resource has changed. It sends conditional requests to the server using headers like `If-Modified-Since`, `If-None-Match`, or `Last-Modified` to check if the cached copy is still valid.
+
+4\. **Cache Storage**: The browser maintains separate caches for different types of resources, such as HTTP cache for web content, DNS cache for domain name resolution, and SSL certificate cache for secure connections. These caches improve performance and reduce network latency.
+
+5\. **Cache-Control Overrides**: Sometimes, developers override default caching behavior using meta tags or JavaScript to ensure that critical resources are always fetched from the server. This is common for dynamic content or resources that frequently change.
+
+By utilizing browser caching effectively, websites can reduce server load, minimize network traffic, and improve page load times, resulting in a better user experience. However, improper cache configuration can lead to issues such as stale content delivery or inconsistent user experiences across devices.
+
 HTML parsing
 ------------
 
