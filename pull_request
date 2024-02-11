@@ -1,0 +1,43 @@
+ntroduction:
+
+Ever wondered what happens behind the scenes when you type https://www.google.com into your browser and hit Enter? Let’s take a journey through the intricate steps that bring your favorite websites to life.
+
+1. DNS Request:
+
+The adventure begins with a Domain Name System (DNS) request. Your browser seeks the IP address of www.google.com, starting with a query to your local DNS resolver. If cached, the IP is retrieved; if not, it embarks on a journey through root DNS servers, TLD servers, and authoritative DNS servers to find the desired IP.
+
+2. TCP/IP Connection:
+
+With the IP in hand, your browser establishes a reliable Transmission Control Protocol (TCP) and Internet Protocol (IP) connection with the server, ensuring the ordered and secure delivery of data between client and server.
+
+3. Firewall Check:
+
+Before reaching the server, the connection may encounter a firewall — a gatekeeper ensuring the safety of your browsing experience. If approved, the browser proceeds with an HTTP request to the server.
+
+4. HTTPS/SSL Encryption:
+
+To safeguard your data, your browser may request an encrypted connection using Hypertext Transfer Protocol Secure (HTTPS). This encrypts the communication using Secure Sockets Layer (SSL) or Transport Layer Security (TLS), preventing eavesdropping. The server responds with an SSL/TLS certificate.
+
+5. Load-Balancer:
+
+The journey continues as your request encounters a load-balancer, a traffic manager distributing requests among multiple servers to prevent overload. Various algorithms, like round-robin or least connections, guide the load-balancer’s decisions.
+
+6. Web Server:
+
+The load-balancer then directs your request to a web server, responsible for handling HTTP requests. The web server retrieves the requested content, either from disk or dynamically generated using scripting languages like PHP or Python.
+
+7. Application Server:
+
+For dynamic content, such as user logins or database queries, the web server may delegate the task to an application server. This server executes code, often written in languages like Java, Ruby, or Node.js, to generate dynamic content.
+
+8. Database Server:
+
+When data from a database is required, the application server communicates with a database server. This server stores and retrieves data in various formats, such as relational or NoSQL databases.
+
+9. Final Output:
+
+After the intricate web of servers has done its job, the web server generates a response. This response, containing the requested web page and other resources like images and stylesheets, is sent back to the client over the established TCP/IP connection.
+
+Conclusion:
+
+The journey initiated by a simple DNS request unveils the complexity behind loading a website. From establishing connections to navigating firewalls, encryption protocols, load-balancers, web servers, application servers, and database servers — each step contributes to delivering the seamless web experience we often take for granted. Next time you hit Enter, remember the intricate journey your browser embarks on to bring the digital world to your fingertips.
