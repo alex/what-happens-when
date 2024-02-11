@@ -1,5 +1,5 @@
-What happens when...
-====================
+What happens when you type www.gooogle.com in your browser and press Enter
+==========================================================================
 
 This repository is an attempt to answer the age-old interview question "What
 happens when you type google.com into your browser's address box and press
