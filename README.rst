@@ -558,18 +558,21 @@ The components of the browsers are:
   rendering engine parses HTML and CSS, and displays the parsed content on
   the screen.
 * **Networking:** The networking handles network calls such as HTTP requests,
-  using different implementations for different platforms behind a
-  platform-independent interface.
+  utilizing techniques such as lazy loading to improve performance and 
+  prioritizing critical rendering paths for faster display.
 * **UI backend:** The UI backend is used for drawing basic widgets like combo
   boxes and windows. This backend exposes a generic interface that is not
-  platform-specific.
-  Underneath it uses operating system user interface methods.
+  platform-specific, leveraging the GPU for rendering tasks to improve 
+  performance and enabling smoother animations and transitions.
 * **JavaScript engine:** The JavaScript engine is used to parse and
-  execute JavaScript code.
-* **Data storage:** The data storage is a persistence layer. The browser may
-  need to save all sorts of data locally, such as cookies. Browsers also
+  execute JavaScript code, with support for WebAssembly enabling more complex
+  and computationally intensive applications on the web.
+* **Data storage:** The data storage is a persistence layer, supporting features
+  like service workers for offline browsing and push notifications. The browser
+  may need to save all sorts of data locally, such as cookies. Browsers also
   support storage mechanisms such as localStorage, IndexedDB, WebSQL and
-  FileSystem.
+  FileSystem. All these enhance the capabilities of web applications and improves
+  user experience.
 
 HTML parsing
 ------------
