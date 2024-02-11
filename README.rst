@@ -369,6 +369,7 @@ This send and receive happens multiple times following the TCP connection flow:
 
 TLS handshake
 -------------
+* By definition ''TLShandshake'' is the method of establishing a secure connection between a client and a server on the internet. This occurs before any transfer of data is initiated and it involves steps that has been explained below.
 * The client computer sends a ``ClientHello`` message to the server with its
   Transport Layer Security (TLS) version, list of cipher algorithms and
   compression methods available.
@@ -419,7 +420,7 @@ HTTP protocol
 
 If the web browser used was written by Google, instead of sending an HTTP
 request to retrieve the page, it will send a request to try and negotiate with
-the server an "upgrade" from HTTP to the SPDY protocol.
+the server an "upgrade" from HTTP to the SPDY protocol. An example of a web browser written by Google is the Google Chrome browser.
 
 If the client is using the HTTP protocol and does not support SPDY, it sends a
 request to the server of the form::
