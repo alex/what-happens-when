@@ -570,6 +570,7 @@ The components of the browsers are:
   need to save all sorts of data locally, such as cookies. Browsers also
   support storage mechanisms such as localStorage, IndexedDB, WebSQL and
   FileSystem.
+* **Browser Extensions:** If the user has installed browser extensions, they may also contribute to the post-rendering phase by adding functionality or modifying the page content.
 
 HTML parsing
 ------------
