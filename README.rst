@@ -674,6 +674,9 @@ GPU Rendering
   of ``GPU`` massive parallelism for float point calculations required for
   the rendering process.
 
+Still confused about the intricative process behing the scenes read this article
+--------------------------------------------------------------------------------
+
 
 Window Server
 -------------
