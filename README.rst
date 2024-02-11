@@ -663,17 +663,20 @@ Page Rendering
   via Direct3D/OpenGL. The GPU command buffer(s) are flushed to the GPU for
   asynchronous rendering and the frame is sent to the window server.
 
-GPU Rendering
--------------
+Hardware Acceleration with GPU:
+--------------------------------
 
-* During the rendering process the graphical computing layers can use general
-  purpose ``CPU`` or the graphical processor ``GPU`` as well.
+GPU rendering leverages the parallel processing power of the graphical processor unit (GPU) to accelerate rendering tasks.
+Unlike the CPU, which is optimized for sequential processing, modern GPUs are designed with thousands of cores capable of executing multiple calculations simultaneously.
+This parallel architecture makes GPUs well-suited for computationally intensive tasks like graphical rendering, where many calculations need to be performed concurrently.
 
-* When using ``GPU`` for graphical rendering computations the graphical
-  software layers split the task into multiple pieces, so it can take advantage
-  of ``GPU`` massive parallelism for float point calculations required for
-  the rendering process.
+Graphics APIs and Libraries for GPU Rendering:
+----------------------------------------------
 
+To harness the power of the GPU for rendering, graphical software layers utilize graphics APIs (Application Programming Interfaces) and libraries designed for GPU-accelerated rendering.
+Common graphics APIs include DirectX by Microsoft, OpenGL by Khronos Group, and Vulkan, a low-overhead, cross-platform API.
+These APIs provide developers with low-level access to GPU hardware, allowing them to offload rendering tasks to the GPU and take advantage of its parallel processing capabilities.
+Additionally, graphics libraries like CUDA (Compute Unified Device Architecture) by NVIDIA enable developers to write parallel computing algorithms specifically optimized for GPU execution, further enhancing rendering performance.
 
 Window Server
 -------------
