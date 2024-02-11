@@ -571,6 +571,25 @@ The components of the browsers are:
   support storage mechanisms such as localStorage, IndexedDB, WebSQL and
   FileSystem.
 
+Browser JavaScript Engine
+--------------------------
+
+The JavaScript engine in the browser plays a crucial role in executing JavaScript code found within web pages. JavaScript is a high-level programming language often used to add interactivity and dynamic behavior to web pages. When the browser encounters JavaScript code, it passes it to the JavaScript engine for execution.
+
+* Parsing: The JavaScript engine parses the JavaScript code to understand its structure and semantics. This involves breaking down the code into smaller components such as tokens, expressions, and statements.
+
+* Compilation: After parsing, the JavaScript code is compiled into an intermediate representation or bytecode. This step involves optimizing the code for performance and reducing redundancy.
+
+* Execution: The bytecode generated during compilation is executed by the JavaScript engine. This step involves interpreting the bytecode and performing the operations specified by the JavaScript code.
+
+* Optimization: Modern JavaScript engines use sophisticated optimization techniques such as Just-In-Time (JIT) compilation to improve the performance of JavaScript code. JIT compilation dynamically translates portions of the bytecode into native machine code for faster execution.
+
+* Memory Management: The JavaScript engine is responsible for managing memory usage by allocating and deallocating memory as needed for objects, variables, and other data structures created during JavaScript execution.
+
+* Garbage Collection: JavaScript engines employ garbage collection algorithms to reclaim memory occupied by objects that are no longer needed. This helps prevent memory leaks and ensures efficient memory usage.
+
+The JavaScript engine works closely with the rendering engine and other components of the browser to provide a seamless user experience when interacting with JavaScript-powered web applications.
+
 HTML parsing
 ------------
 
