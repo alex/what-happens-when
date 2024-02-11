@@ -209,6 +209,7 @@ Check HSTS list
 DNS lookup
 ----------
 
+(Known as a process of translating a domain name into an IP address)
 * Browser checks if the domain is in its cache. (to see the DNS Cache in
   Chrome, go to `chrome://net-internals/#dns <chrome://net-internals/#dns>`_).
 * If not found, the browser calls ``gethostbyname`` library function (varies by
