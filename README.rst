@@ -369,7 +369,7 @@ This send and receive happens multiple times following the TCP connection flow:
 
 TLS handshake
 -------------
-* By definition ''TLShandshake'' is the method of establishing a secure connection between a client and a server on the internet. This occurs befor any transfer of data is initiated and it involves steps that has been explained below.
+* By definition ''TLShandshake'' is the method of establishing a secure connection between a client and a server on the internet. This occurs before any transfer of data is initiated and it involves steps that has been explained below.
 * The client computer sends a ``ClientHello`` message to the server with its
   Transport Layer Security (TLS) version, list of cipher algorithms and
   compression methods available.
