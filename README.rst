@@ -223,6 +223,11 @@ DNS lookup
   ``ARP process`` below for the DNS server.
 * If the DNS server is on a different subnet, the network library follows
   the ``ARP process`` below for the default gateway IP.
+* before reaching the DNS server. The ARP process involves broadcasting an ARP request
+  on the local network to discover the MAC (Media Access Control) address corresponding
+  to the IP address of the default gateway. Once the MAC address is obtained, the
+  network library can send packets to the default gateway, 
+  which will forward them to the DNS server for further resolution.
 
 
 ARP process
