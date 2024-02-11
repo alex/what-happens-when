@@ -1,7 +1,7 @@
-## Looking into the discuss what the "g" key does
+# Looking into the discuss what the "g" key does
+=================================================
 
-
-1. The "g" Key is Pressed:
+## 1. The "g" Key is Pressed:<br>
 Our journey begins with a simple keystroke - the pressing of the "g" key on your keyboard. This action triggers a cascade of events within your browser as it receives the key event and activates its auto-complete functionality. Suggestions start to populate the dropdown below the URL bar based on your browsing history, bookmarks, cookies, and popular searches from the internet at large. As you continue typing "google.com," the suggestions refine themselves, potentially even preempting your full input before you finish typing it.
 
 2. The "Enter" Key Bottoms Out:
