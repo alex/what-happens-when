@@ -213,6 +213,7 @@ DNS lookup
   Chrome, go to `chrome://net-internals/#dns <chrome://net-internals/#dns>`_).
 * If not found, the browser calls ``gethostbyname`` library function (varies by
   OS) to do the lookup.
+* In a recursive DNS lookup, when a server receives a request for an uncached domain, it queries authoritative DNS servers hierarchically—root, TLD, and domain-specific servers. This process continues until the server obtains the IP address, ensuring accurate and efficient resolution.
 * ``gethostbyname`` checks if the hostname can be resolved by reference in the
   local ``hosts`` file (whose location `varies by OS`_) before trying to
   resolve the hostname through DNS.
