@@ -396,6 +396,12 @@ TLS handshake
 
 * From now on the TLS session transmits the application (HTTP) data encrypted
   with the agreed symmetric key.
+  Note: The TLS handshake establishes secure connections by verifying server
+  identity, ensuring future security, supporting session resumption, enhancing
+  certificate transparency, enabling client authentication, utilizing efficient
+  cryptography, offering various key exchange algorithms, verifying certificate
+  revocation, implementing additional authentication mechanisms, and adhering 
+  to forward secrecy best practices.
 
 If a packet is dropped
 ----------------------
