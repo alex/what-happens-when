@@ -619,6 +619,12 @@ set to "complete" and a "load" event is fired.
 Note there is never an "Invalid Syntax" error on an HTML page. Browsers fix
 any invalid content and go on.
 
+CSS Styling
+----------------
+Once the HTML document is parsed and the browser understands the structure of
+the webpage, it's time to make it visually appealing. This is where Cascading
+Style Sheets (CSS) comes into play.
+
 CSS interpretation
 ------------------
 
