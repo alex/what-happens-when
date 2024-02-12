@@ -519,6 +519,8 @@ to the browser it undergoes the below process:
 * Parsing - HTML, CSS, JS
 * Rendering - Construct DOM Tree → Render Tree → Layout of Render Tree →
   Painting the render tree
+* If you would like to understand  more of what happen behind the scenes of a Browser,
+check out this article -> https://steveric.hashnode.dev/what-happens-when-you-type-googlecom-in-your-browser-and-press-enter
 
 Browser
 -------
