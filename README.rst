@@ -297,7 +297,7 @@ the default gateway it can resume its DNS process:
   requested and that flows up the list of DNS servers until the SOA is reached,
   and if found an answer is returned.
 
-Server IP address is still not known
+When Server IP address is still not known
 ------------------------------------
 All Resolver servers, typically operated by your Internet Service Provider (ISP), 
 are required to possess the knowledge of how to locate the root servers. If the 
