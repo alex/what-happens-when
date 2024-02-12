@@ -297,6 +297,22 @@ the default gateway it can resume its DNS process:
   requested and that flows up the list of DNS servers until the SOA is reached,
   and if found an answer is returned.
 
+When Server IP address is still not known
+------------------------------------
+All Resolver servers, typically operated by your Internet Service Provider (ISP), 
+are required to possess the knowledge of how to locate the root servers. If the 
+resolver encounters difficulty in identifying the IP address for 
+"https://www.google.com," it initiates a connection with the root server, 
+which then instructs it on how to find the .COM Top-Level Domain (TLD) server. 
+The resolver retains this information, eliminating the need to repeatedly 
+query the root server. Upon establishing communication with the .COM TLD server, 
+the resolver obtains information about the authoritative name servers for 
+"https://www.google.com" in case it is unaware of the IP address. Once again, 
+the resolver stores this updated information. The authoritative name server 
+serves as the ultimate authority responsible for handling requests of this 
+nature. The resolver acquires the IP address, preserves it, and subsequently 
+provides this information to the operating system.
+
 Opening of a socket
 -------------------
 Once the browser receives the IP address of the destination server, it takes
