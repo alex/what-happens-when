@@ -205,6 +205,8 @@ Check HSTS list
   single HTTP request could potentially leave the user vulnerable to a
   `downgrade attack`_, which is why the HSTS list is included in modern web
   browsers.)
+  When you type "google.com" in your browser's address bar and press Enter,
+  several steps are involved in fetching and displaying the Google homepage
 
 DNS lookup
 ----------
