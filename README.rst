@@ -414,6 +414,15 @@ control`_. This varies depending on the sender; the most common algorithms are
   each packet acknowledged. If a packet is dropped, the window reduces
   exponentially until another packet is acknowledged.
 
+LOAD BALANCER
+-------------
+Depending on the load balancing algorithm like Round Robin, Weighted Scheduling
+and others. The algorithm used solves the problem of overload of a single server
+which can leads to single point of failure. 
+Upon receiving the request to a particular such as Google Database server, the 
+load balancer direct it to the available database.
+ The distributes base on the capacity of the servers and availabilty
+
 HTTP protocol
 -------------
 
