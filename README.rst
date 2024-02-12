@@ -414,6 +414,12 @@ control`_. This varies depending on the sender; the most common algorithms are
   each packet acknowledged. If a packet is dropped, the window reduces
   exponentially until another packet is acknowledged.
 
+Load Balancer
+-------------
+
+Load balancers, like those used by Google.com, are essential for distributing incoming web traffic efficiently. They work by evenly distributing requests to multiple servers to ensure optimal performance, availability, and reliability. This means that when you enter "www.google.com" into your web browser, a load balancer routes your request to the least busy server, preventing any single server from becoming overwhelmed. This load distribution helps maintain fast response times and ensures that google.com remains accessible even during high-traffic periods or server failures, providing users with a seamless and reliable web experience.
+
+
 HTTP protocol
 -------------
 
