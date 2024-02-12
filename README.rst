@@ -665,6 +665,7 @@ Page Rendering
 
 GPU Rendering
 -------------
+* A CPU, or central processing unit, is a hardware component that is the core computational unit in a server. It handles all types of computing tasks required for the operating system and applications to run. A graphics processing unit (GPU) is a similar hardware component but more specialized. 
 
 * During the rendering process the graphical computing layers can use general
   purpose ``CPU (Central Processing Unit)`` or the graphical processor ``GPU(Graphics Processing Unit)`` as well.
