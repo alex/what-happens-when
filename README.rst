@@ -689,6 +689,10 @@ the Google homepage. Scripts can cause additional network requests to be
 performed, as well as modify the page or its layout, causing another round of
 page rendering and painting.
 
+link to a post that explain what happens when type google.com and press enter
+
+https://www.linkedin.com/posts/malak-ehab-008477205_webdevelopment-alx-techjourney-activity-7162605493830443008-Fti2?utm_source=share&utm_medium=member_desktop
+
 .. _`Creative Commons Zero`: https://creativecommons.org/publicdomain/zero/1.0/
 .. _`"CSS lexical and syntax grammar"`: http://www.w3.org/TR/CSS2/grammar.html
 .. _`Punycode`: https://en.wikipedia.org/wiki/Punycode
