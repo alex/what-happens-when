@@ -5,7 +5,7 @@ This repository is an attempt to answer the age-old interview question "What
 happens when you type google.com into your browser's address box and press
 enter?"
 
-Except instead of the usual story, we're going to try to answer this question
+Except instead of the usual story, we're going to try to answer this question.
 in as much detail as possible. No skipping out on anything.
 
 This is a collaborative process, so dig in and try to help out! There are tons
