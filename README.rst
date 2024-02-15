@@ -183,6 +183,8 @@ the text given in the address box to the browser's default web search engine.
 In many cases the URL has a special piece of text appended to it to tell the
 search engine that it came from a particular browser's URL bar.
 
+*In cases where the search engine can not decipher where the text comes from, it relies on certain algorithms such as browsing history, session data or precious interactions to make an educated guess.
+
 Convert non-ASCII Unicode characters in the hostname
 ------------------------------------------------
 
