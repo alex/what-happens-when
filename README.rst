@@ -209,20 +209,18 @@ Check HSTS list
 DNS lookup
 ----------
 
-* Browser checks if the domain is in its cache. (to see the DNS Cache in
-  Chrome, go to `chrome://net-internals/#dns <chrome://net-internals/#dns>`_).
-* If not found, the browser calls ``gethostbyname`` library function (varies by
-  OS) to do the lookup.
-* ``gethostbyname`` checks if the hostname can be resolved by reference in the
-  local ``hosts`` file (whose location `varies by OS`_) before trying to
-  resolve the hostname through DNS.
-* If ``gethostbyname`` does not have it cached nor can find it in the ``hosts``
-  file then it makes a request to the DNS server configured in the network
-  stack. This is typically the local router or the ISP's caching DNS server.
-* If the DNS server is on the same subnet the network library follows the
-  ``ARP process`` below for the DNS server.
-* If the DNS server is on a different subnet, the network library follows
-  the ``ARP process`` below for the default gateway IP.
+Here's how the DNS lookup process works:
+The browser sends a request to the local DNS resolver, which is often provided by the internet service provider (ISP). The local DNS resolver checks its cache for the most recent copy of the DNS record for the domain. If it has it, it sends the IP address back to the browser. If the local DNS resolver does not have the most recent copy of the DNS record, it sends a request to a root nameserver. The root nameserver replies with the address of a top-level domain (TLD) nameserver, such as .com 
+The local DNS resolver sends a request to the TLD nameserver.
+The TLD nameserver responds with the address of the authoritative nameserver for the domain.
+The local DNS resolver sends a request to the authoritative nameserver.
+The authoritative nameserver responds with the IP address for the domain.
+The local DNS resolver sends the IP address back to the browser.
+The browser sends a request to the server at the IP address to retrieve the webpage.
+
+This process may involve additional steps if the DNS record is not found at any of the nameservers or if the DNS record is set up to use a service such as DNS load balancing or content delivery networks (CDN).
+
+The duration for which the DNS record is cached (known as the "TTL" or "Time To Live") is determined by the authoritative nameserver and can be customized by the domain owner.
 
 
 ARP process
