@@ -667,7 +667,7 @@ GPU Rendering
 -------------
 
 * During the rendering process the graphical computing layers can use general
-  purpose ``CPU`` or the graphical processor ``GPU`` as well.
+  purpose ``CPU`` or the graphical processor ``GPU`` as well
 
 * When using ``GPU`` for graphical rendering computations the graphical
   software layers split the task into multiple pieces, so it can take advantage
@@ -683,7 +683,7 @@ Post-rendering and user-induced execution
 
 After rendering has been completed, the browser executes JavaScript code as a result
 of some timing mechanism (such as a Google Doodle animation) or user
-interaction (typing a query into the search box and receiving suggestions).
+interaction (typing a query into the search box and receiving suggestions)
 Plugins such as Flash or Java may execute as well, although not at this time on
 the Google homepage. Scripts can cause additional network requests to be
 performed, as well as modify the page or its layout, causing another round of
