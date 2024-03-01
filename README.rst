@@ -678,6 +678,18 @@ GPU Rendering
 Window Server
 -------------
 
+
+The Firewall
+-------------
+* Firewalls protect your computer or network from unwanted traffic coming in or going out. Firewalls can also inspect and authenticate all data packets in network traffic before they are allowed to move to a more secure environment.
+
+Whether a hardware appliance or a software program that is protecting a corporate network or a personal computer, a firewall is essential to network security. For example, depending on where a firewall is installed, it may guard against insider threats in a network segment or act as a barrier against external threats at the network perimeter. 
+
+* As your organization’s first line of defense, a firewall monitors and filters all network traffic including outgoing traffic, application-layer traffic, online transactions, communications, and connectivity. It blocks  incoming threats based on a set of pre-programmed rules that also may dictate which users can access specific network areas. 
+
+What does a firewall do? It protects your network from unauthorized access to mitigate the risk from cyber attacks.
+
+
 Post-rendering and user-induced execution
 -----------------------------------------
 
