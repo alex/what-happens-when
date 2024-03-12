@@ -319,6 +319,8 @@ named ``socket`` and requests a TCP socket stream - ``AF_INET/AF_INET6`` and
 
 At this point the packet is ready to be transmitted through either:
 
+
+
 * `Ethernet`_
 * `WiFi`_
 * `Cellular data network`_
