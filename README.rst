@@ -211,6 +211,7 @@ DNS lookup
 
 * Browser checks if the domain is in its cache. (to see the DNS Cache in
   Chrome, go to `chrome://net-internals/#dns <chrome://net-internals/#dns>`_).
+  Note that this cache helps speed up subsequent visits to the same website by avoiding redundant DNS lookups.
 * If not found, the browser calls ``gethostbyname`` library function (varies by
   OS) to do the lookup.
 * ``gethostbyname`` checks if the hostname can be resolved by reference in the
@@ -570,6 +571,12 @@ The components of the browsers are:
   need to save all sorts of data locally, such as cookies. Browsers also
   support storage mechanisms such as localStorage, IndexedDB, WebSQL and
   FileSystem.
+* **WebAssembly (Wasm) Support:** In addition to the existing components,
+  modern browsers also support WebAssembly (Wasm), a binary instruction format
+  that allows for high-performance execution of code directly in the browser.
+  Wasm enables web applications to run complex tasks efficiently, providing an
+  altenative to traditional Javascript execution. This extends the capabilities
+  of a browser, enabling developers to build more powerful and resource-efficient web applications.
 
 HTML parsing
 ------------
