@@ -510,6 +510,54 @@ and IIS for Windows.
   is running on PHP, the server uses PHP to interpret the index file, and
   streams the output to the client.
 
+Caching in the Browser:
+______________________
+
+Caching plays a crucial role in optimizing web performance by storing
+previously accessed resources locally in the browser.
+Here's how caching works during the request process:
+
+1. Cache Lookup:
+   - Before making a request to the server, the browser checks its local cache
+     to see if the requested resource is already stored.
+   - The cache stores various types of resources, including HTML pages,
+     CSS files, JavaScript files, images, and more.
+
+2. Conditional Requests:
+   - If the resource is found in the cache and it hasn't expired, the browser
+     may issue a conditional request to the server to check if the resource
+     has been updated since it was last cached.
+   - Conditional requests include headers like `If-Modified-Since`,
+     `If-None-Match`, or `If-Unmodified-Since`, allowing the server to respond
+     with a status code indicating whether the resource has been modified.
+
+3. Cache Validation:
+   - Upon receiving a conditional request, the server compares the timestamp
+     or entity tag (ETag) of the requested resource with the one provided in
+     the request headers.
+   - If the resource hasn't been modified (based on the provided criteria),
+     the server responds with a status code indicating that the cached version
+     can be reused (e.g., 304 Not Modified).
+   - In this case, the browser retrieves the resource from its cache instead of
+     downloading it from the server, saving bandwidth and reducing latency.
+
+4. Cache Expiration and Control:
+   - Resources stored in the cache have expiration policies defined by their
+     HTTP headers, such as `Cache-Control` and `Expires`.
+   - These headers specify the maximum age of the resource, after which it is
+     considered stale and must be revalidated with the server.
+   - Developers can control caching behavior using cache-control directives
+     like `max-age`, `no-cache`, `no-store`, and `must-revalidate`, ensuring
+     optimal caching strategies for different types of resources.
+
+5. Cache Invalidation:
+   - In some cases, cached resources may become invalid due to changes on the
+     server (e.g., content updates).
+   - Developers can force cache invalidation by changing the resource's URL
+     (e.g., by appending version numbers or timestamps to the file names) or
+     by explicitly sending cache-control directives instructing the browser to
+     revalidate the resource.
+
 Behind the scenes of the Browser
 ----------------------------------
 
