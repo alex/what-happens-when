@@ -297,6 +297,27 @@ the default gateway it can resume its DNS process:
   requested and that flows up the list of DNS servers until the SOA is reached,
   and if found an answer is returned.
 
+Additionally, another ARP-related phenomenon worth mentioning is Gratuitous ARP.
+In Gratuitous ARP, a device on the network may issue an ARP request or response
+where both the source and destination IP addresses are the same. Unlike regular
+ARP requests used for MAC address resolution, Gratuitous ARP messages serve other purposes.
+
+* One common use case for Gratuitous ARP is when a device wants to announce its
+  presence on the network or update its MAC address association with its IP address.
+  For example, when a device boots up, it may send out a Gratuitous ARP message to
+  inform other devices on the network of its IP-to-MAC address mapping, even if no
+  ARP request has been made for that IP address. This helps to update ARP caches
+  on other devices, preventing potential connectivity issues due to stale ARP entries.
+
+* Gratuitous ARP can also be used as a troubleshooting tool to detect IP address conflicts.
+  When a device sends out a Gratuitous ARP message and receives a response with its own IP
+  address, it indicates that another device on the network is already using the same IP address,
+  prompting further investigation to resolve the conflict.
+
+In summary, Gratuitous ARP plays a vital role in network communication by facilitating 
+the announcement and updating of MAC address associations with IP addresses,
+as well as aiding in the detection of IP address conflicts.
+
 Opening of a socket
 -------------------
 Once the browser receives the IP address of the destination server, it takes
