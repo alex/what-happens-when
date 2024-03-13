@@ -689,6 +689,11 @@ the Google homepage. Scripts can cause additional network requests to be
 performed, as well as modify the page or its layout, causing another round of
 page rendering and painting.
 
+After these processes, the browser continues to manage the webpage's display, handling
+any user interactions that may require further updates or changes to the page. 
+Additionally, the Window Server plays a role in managing graphical user interface 
+elements, ensuring smooth rendering and interaction with the webpage.
+
 .. _`Creative Commons Zero`: https://creativecommons.org/publicdomain/zero/1.0/
 .. _`"CSS lexical and syntax grammar"`: http://www.w3.org/TR/CSS2/grammar.html
 .. _`Punycode`: https://en.wikipedia.org/wiki/Punycode
