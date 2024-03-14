@@ -1,11 +1,15 @@
 language: python
-
+# The following YAML configuration file sets up a Travis CI build for a Python project.
+# It specifies the installation steps and the script to be executed.
 sudo: false
-
+# Installation steps:
+# 1. Install the 'doc8' package using pip.
+# 2. Install the 'write-good' package using npm.
 install: 
     - pip install doc8
     - npm install -g write-good
 
+# Script execution
 script:
     - doc8 README.rst
     - write-good README.rst --so --thereIs --cliches
