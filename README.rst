@@ -510,6 +510,20 @@ and IIS for Windows.
   is running on PHP, the server uses PHP to interpret the index file, and
   streams the output to the client.
 
+The role of application Servers in serving Dynamic content of the webpage:
+--------------------------------------------------------------------------
+
+  * after the request reaches the web server the server may forward the
+    request to an apllication server if the request invloves dynamic content
+    the application server will run necessary business logic to generate
+    dynamic content which allow user input or interactions with the database
+  * This take us to the database as the application server will make a query
+    to the database retrieve the data and process it and fabricate it as a
+    reponse
+  * Once it has finished processing the request it vreate the HTTP response
+    including HTML content of the webpage
+
+    
 Behind the scenes of the Browser
 ----------------------------------
 
