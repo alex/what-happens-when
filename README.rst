@@ -140,32 +140,6 @@ key.
 (On OS X) A ``KeyDown`` NSEvent is sent to the app
 --------------------------------------------------
 
-(On macOS) A ``KeyDown`` NSEvent is sent to the app
------------------------------------------------------
-
-When the user touches the virtual "Enter" key on a modern capacitive touch screen, a tiny amount of current is transferred to the user's finger, completing a circuit through the electrostatic field of the screen's conductive layer. This creates a voltage drop at the touched point on the screen. The screen controller detects this voltage drop and raises an interrupt, reporting the coordinates of the key press to the mobile operating system (OS).
-
-The mobile OS, such as iOS or Android, then notifies the currently focused application of a press event in one of its graphical user interface (GUI) elements, which in this case is the virtual keyboard application buttons. The virtual keyboard application can then raise a software interrupt to send a 'key pressed' message back to the OS.
-
-Interrupt Handling (NOT for USB keyboards)
---------------------------------------------
-
-When an interrupt is raised by the screen controller, the mobile OS handles it by invoking the appropriate interrupt handler routine. This routine is mapped to an interrupt vector (integer) by the interrupt controller and is provided by the kernel. The kernel, upon receiving the interrupt, indexes the Interrupt Descriptor Table (IDT) to locate the appropriate interrupt handler function.
-
-On Windows, for example, when the interrupt arrives, the CPU runs the appropriate interrupt handler provided by the kernel. This handler processes the interrupt and sends a ``WM_KEYDOWN`` message to the application currently in focus. 
-
-The HID transport layer then passes the key down event to the appropriate device driver, such as ``KBDHID.sys``, which converts the HID usage into a scancode (e.g., ``VK_RETURN`` for the "Enter" key). The kernel's keyboard class driver, ``KBDCLASS.sys``, handles keyboard input securely and interfaces with ``Win32K.sys``, passing the message through any installed third-party keyboard filters.
-
-Message Processing and Application Response
---------------------------------------------
-
-The ``Win32K.sys`` driver identifies the active window using the ``GetForegroundWindow()`` API. It then calls ``SendMessage(hWnd, WM_KEYDOWN, VK_RETURN, lParam)``, where ``hWnd`` is the handle of the active window. This message is added to a queue for processing by the window's message processing function, known as ``WindowProc``.
-
-The ``WindowProc`` for the active window, in this case, processes the ``WM_KEYDOWN`` message and identifies the "Enter" key press. Depending on the application's logic, it may trigger specific actions associated with the "Enter" key press event, such as submitting a form or executing a command.
-
-On macOS, a similar process occurs, where the operating system delivers a ``KeyDown`` NSEvent to the application currently in focus, allowing the application to handle the key press event accordingly.
-
-
 The interrupt signal triggers an interrupt event in the I/O Kit kext keyboard
 driver. The driver translates the signal into a key code which is passed to the
 OS X ``WindowServer`` process. Resultantly, the ``WindowServer`` dispatches an
