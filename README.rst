@@ -522,7 +522,6 @@ to the browser it undergoes the below process:
 
 To contribute to the explanation of the rendering process in browsers, particularly the steps involved in rendering HTML, CSS, and JavaScript, I would suggest adding further detail about each stage. Here's the proposed addition:
 
----
 
 **Rendering Process in Browsers**
 
