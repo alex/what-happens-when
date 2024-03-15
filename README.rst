@@ -223,6 +223,8 @@ DNS lookup
   ``ARP process`` below for the DNS server.
 * If the DNS server is on a different subnet, the network library follows
   the ``ARP process`` below for the default gateway IP.
+* Browser also checks if the domain's IP was recently cached to make the conncection
+   process faster
 
 
 ARP process
