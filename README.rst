@@ -30,6 +30,8 @@ The "g" key is pressed
 The following sections explain the physical keyboard actions
 and the OS interrupts. When you press the key "g" the browser receives the
 event and the auto-complete functions kick in.
+As you type each character, the browser's address bar captures the input. 
+This is done in real-time, so each keystroke is immediately registered by the browser.
 Depending on your browser's algorithm and if you are in
 private/incognito mode or not various suggestions will be presented
 to you in the dropdown below the URL bar. Most of these algorithms sort
@@ -37,7 +39,14 @@ and prioritize results based on search history, bookmarks, cookies, and
 popular searches from the internet as a whole. As you are typing
 "google.com" many blocks of code run and the suggestions will be refined
 with each keypress. It may even suggest "google.com" before you finish typing
-it.
+it. Some browsers employ pre-fetching mechanisms to improve performance. 
+As you type, the browser might start pre-fetching resources related to the suggested URL. 
+This could include DNS resolution, establishing connections, 
+and downloading content in the background to speed up the loading process if you eventually select that URL.
+The browser continuously parses the characters you've entered in the address bar to determine if it matches any known URLs or patterns. 
+This helps it provide more accurate suggestions and handle various protocols (e.g., "http://" or "https://") appropriately.
+The browser performs basic validation on the URL as you type. 
+It checks for syntax errors and ensures that the entered characters are within the permissible range for a URL.
 
 The "enter" key bottoms out
 ---------------------------
