@@ -624,10 +624,16 @@ CSS interpretation
 
 * Parse CSS files, ``<style>`` tag contents, and ``style`` attribute
   values using `"CSS lexical and syntax grammar"`_
-* Each CSS file is parsed into a ``StyleSheet object``, where each object
-  contains CSS rules with selectors and objects corresponding CSS grammar.
+* Each CSS file is parsed into a ``Cascade StyleSheet Object Model`` or  CSSOM for short, 
+  where each object contains CSS rules with selectors and objects corresponding CSS grammar.
 * A CSS parser can be top-down or bottom-up when a specific parser generator
   is used.
+* The browser parses CSS into the CSSOM by organizing the CSS rules into a tree structure, creating a well-organized
+  representation of all CSS rules. This CSSOM is then combined with the DOM to form the render tree, which the
+  browser uses to compute the layout and paint the visual representation on the screen.
+
+  Note: The only part of the CSS that does not appear in the tree are comments
+  because they will be ignored.
 
 Page Rendering
 --------------
