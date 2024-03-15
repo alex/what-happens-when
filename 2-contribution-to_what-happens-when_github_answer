@@ -1,0 +1,29 @@
+So What happens when you type 'www.google.com' and press enter? 🤔 Lets go!
+
+When you type "www.google.com" into your web browser's address bar and hit enter, several steps occur:
+ First, Domain Name System (DNS) Resolution is done,
+This means translating this domain name 'google.com' into an IP address. The browser checks its local cache to see if it already knows the IP address associated with "www.google.com", browsers often cache DNS records for a certain period of time to speed up subsequent visits to websites. If the IP address is found in the cache and is still valid (i.e., it hasn't expired), the browser can skip the DNS resolution process and directly use the cached IP address.
+If it doesn't find it, it sends a DNS request to a DNS resolver, typically provided by the ISP (Internet Service Provider) or a third-party DNS service. The resolver then looks up the IP address associated with "www.google.com" and returns it to your browser. *A DNS resolver is a server responsible for resolving domain names to IP addresses.
+DNS resolver Upon receiving the DNS request, begins the resolution process by querying authoritative DNS servers.
+Authoritative DNS servers are servers responsible for storing and providing DNS records for specific domains. When a resolver needs to resolve a domain name, it queries these authoritative servers to obtain the necessary information.
+The resolver starts by querying the root DNS servers to find the authoritative servers responsible for the top-level domain (TLD) of the requested domain name (e.g., ".com" for "www.google.com").
+The root Domain Name Servers respond with the IP addresses of the authoritative servers for the TLD.
+The resolver then sends a query to one of the authoritative servers for the TLD, asking for the IP addresses of the DNS servers responsible for the second-level domain i.e the subdomain ("google.com").
+The authoritative server for the TLD responds with the IP addresses of the DNS servers responsible for the "google.com" sub-domain.
+Finally, the resolver sends a query to one of the DNS servers responsible for the "google.com" domain, requesting the IP address of "www.google.com".
+The authoritative server for "google.com" responds with the IP address(es) associated with "www.google.com".
+ 2. Response to Browser:
+The DNS resolver receives the IP address(es) for "www.google.com" from the authoritative server and returns them to your browser.
+Your browser now has the necessary IP address(es) and can proceed to establish a connection with the web server hosting the "www.google.com" website.
+
+3. TCP Connection
+ Your browser opens a TCP (Transmission Control Protocol) connection to the IP address of "www.google.com" on port 80 (HTTP) or port 443 (HTTPS). If the website supports HTTPS, which is the case for Google, it will use port 443 for secure communication.
+4. HTTP Request: Your browser sends an HTTP GET request to the IP address of "www.google.com" over the established TCP connection. This request includes additional information such as the user agent, cookies, and other headers.
+5. Server Processing: The server at "www.google.com" receives the HTTP request and processes it. For Google, this typically involves running search algorithms and generating a search results page.
+6. HTTP Response: The server constructs an HTTP response containing the requested content, in this case, the Google search results page. The response includes headers like status codes, content type, and content length.
+7. Content Rendering: Your browser receives the HTTP response and begins rendering the content. For HTML content, the browser parses the HTML, renders any CSS styles, executes JavaScript code, and displays the page to the user.
+8. Additional Requests: The browser may need to make additional requests for resources such as images, scripts, or stylesheets referenced in the HTML content. It repeats steps 2-6 for each of these resources.
+10. Page Load Completion: Once all resources are fetched and rendered, the browser finishes loading the page, and you can interact with it.
+
+
+see this schema to visually get the concept
