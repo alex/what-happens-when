@@ -520,6 +520,35 @@ to the browser it undergoes the below process:
 * Rendering - Construct DOM Tree → Render Tree → Layout of Render Tree →
   Painting the render tree
 
+To contribute to the explanation of the rendering process in browsers, particularly the steps involved in rendering HTML, CSS, and JavaScript, I would suggest adding further detail about each stage. Here's the proposed addition:
+
+---
+
+**Rendering Process in Browsers**
+
+After the server supplies the resources (HTML, CSS, JS, images, etc.) to the browser, the rendering process begins :
+
+1. **Parsing HTML**: 
+   - The browser parses the HTML markup received from the server.
+   - It constructs the Document Object Model (DOM) tree, representing the hierarchical structure of the HTML document.
+  
+2. **Parsing CSS**:
+   - Concurrently with HTML parsing, the browser parses the CSS stylesheets linked to or embedded within the HTML document.
+   - It constructs the CSS Object Model (CSSOM), representing the styles and rules applied to the elements in the DOM tree.
+
+3. **Constructing Render Tree**:
+   - Once the DOM and CSSOM are constructed, the browser combines them to create the render tree.
+   - The render tree represents the visual representation of the document, including elements and their styles to be rendered on the screen.
+
+4. **Layout of Render Tree**:
+   - The browser calculates the layout of each element in the render tree.
+   - It determines the position, size, and arrangement of elements based on CSS box model, positioning properties, and other layout rules.
+
+5. **Painting the Render Tree**:
+   - Finally, the browser paints the render tree on the screen.
+   - It converts the layout information into actual pixels on the display, rendering text, images, backgrounds, borders, and other visual elements.
+
+
 Browser
 -------
 
