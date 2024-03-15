@@ -709,3 +709,50 @@ page rendering and painting.
 .. _`downgrade attack`: http://en.wikipedia.org/wiki/SSL_stripping
 .. _`OSI Model`: https://en.wikipedia.org/wiki/OSI_model
 .. _`Spanish`: https://github.com/gonzaleztroyano/what-happens-when-ES
+
+
+
+
+
+"what_happens_when_your_type_google_com_in_your_browser_and_press_enter"
+
+
+  
+                           1. Introduction:
+        Every time we type a URL into our browser and hit Enter, a complex series of events is triggered behind the scenes, ultimately resulting in the web page loading on our screen. In this blog post, we'll delve into the journey of a web request, from the moment you type "[https://www.google.com](https://www.google.com/?trk=article-ssr-frontend-pulse_little-text-block)" in your browser to the point where the Google homepage appears on your screen.
+
+
+                          2. DNS Request:
+        The journey begins with a Domain Name System (DNS) request. When you type "[https://www.google.com](https://www.google.com/?trk=article-ssr-frontend-pulse_little-text-block)" into your browser, your computer sends a DNS query to a DNS server, requesting the IP address associated with the domain name "[www.google.com](http://www.google.com/?trk=article-ssr-frontend-pulse_little-text-block)". The DNS server responds with the corresponding IP address, allowing your browser to establish a connection to the server hosting Google's website.
+
+
+                             3. TCP/IP:
+        Once your browser obtains the IP address of "[www.google.com](http://www.google.com/?trk=article-ssr-frontend-pulse_little-text-block)", it initiates a Transmission Control Protocol (TCP) connection to the server using Internet Protocol (IP). TCP ensures reliable communication by breaking data into packets, numbering them for reassembly at the destination, and implementing error-checking mechanisms.
+
+
+                           4. Firewall:
+        Before the TCP connection is established, it may pass through a firewall—a network security system that monitors and controls incoming and outgoing network traffic based on predetermined security rules. The firewall may inspect the packets to ensure they meet the organization's security policies before allowing them to proceed.
+
+
+                          5. HTTPS/SSL:
+        In the case of accessing a secure website like Google (indicated by "https://"), an additional layer of security is implemented using Secure Socket Layer (SSL) or its successor Transport Layer Security (TLS). This encryption protocol ensures that data transmitted between your browser and the web server is encrypted, safeguarding it from potential eavesdropping or tampering by malicious actors.
+
+
+                        6. Load-Balancer:
+        Upon reaching Google's servers, the request may encounter a load balancer—a device or software component responsible for distributing incoming network traffic across multiple servers. Load balancers help optimize resource utilization, improve responsiveness, and ensure high availability of web applications by evenly distributing the workload among servers.
+
+
+                          7. Web Server:
+        Once the request reaches the appropriate server within Google's infrastructure, a web server—such as Apache, Nginx, or Microsoft IIS—receives the request. The web server processes the request, retrieves the requested web page or resources, and prepares a response to send back to the client.
+
+ 
+                      8. Application Server:
+        In more complex web applications, the web server may forward the request to an application server, which hosts the business logic and handles dynamic content generation. The application server executes the necessary code, interacts with databases or other backend services, and generates a response to be sent back to the client.
+
+
+                            9. Database:
+        In cases where the requested content is stored in a database, the application server may query the database to retrieve the relevant data. The database server processes the query, retrieves the requested data, and returns it to the application server, which then incorporates it into the response to be sent back to the client.
+
+
+                           10. Conclusion:
+        In summary, the journey of a web request from typing "[https://www.google.com](https://www.google.com/?trk=article-ssr-frontend-pulse_little-text-block)" into your browser to loading the Google homepage involves multiple stages, including DNS resolution, TCP/IP communication, firewall checks, HTTPS encryption, load balancing, web server processing, application server execution, and database interactions. Each component plays a crucial role in ensuring a seamless and secure browsing experience for users worldwide.
