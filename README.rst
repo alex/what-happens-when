@@ -219,6 +219,26 @@ DNS lookup
 * If ``gethostbyname`` does not have it cached nor can find it in the ``hosts``
   file then it makes a request to the DNS server configured in the network
   stack. This is typically the local router or the ISP's caching DNS server.
+* Example 1: Suppose you are using a Windows system. You can open the Command Prompt and use the `nslookup` command to perform a DNS lookup for a domain name. For example:
+```
+nslookup google.com
+```
+This command will return the IP address associated with the domain name "google.com".
+* Example 2: In a Linux environment, you can use the `dig` command in the terminal to perform DNS lookups. For instance:
+```
+dig google.com
+```
+This command will provide detailed information about the DNS resolution process for the domain "google.com", including the IP address.
+* In Python, you can perform a DNS lookup using the following code snippet:
+```python
+import socket
+
+def dns_lookup(hostname):
+    ip_address = socket.gethostbyname(hostname)
+    print("IP Address for", hostname, ":", ip_address)
+
+dns_lookup("google.com")
+```
 * If the DNS server is on the same subnet the network library follows the
   ``ARP process`` below for the DNS server.
 * If the DNS server is on a different subnet, the network library follows
