@@ -414,6 +414,12 @@ control`_. This varies depending on the sender; the most common algorithms are
   each packet acknowledged. If a packet is dropped, the window reduces
   exponentially until another packet is acknowledged.
 
+Load Balancer
+-------------
+
+It is used to distribute the data flow in multiple servers stack using a specific
+algorithm like Round-Robin, but also to eliminate the SPOFs (Single Points Of Failure)
+
 HTTP protocol
 -------------
 
