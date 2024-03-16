@@ -232,11 +232,11 @@ DNS lookup
 
 - The VPN service provider will encrypt the request of the user
   to protect the user's data. The request will be sent to another server that belongs
-  to the VPN service provider (With IP in the country you selected) to mask your IP and  
-  hide your actual location.
+  to the VPN service provider (With IP in the country the user selected) to mask the user's IP and  
+  hide the user's actual location.
 
 - Server Monitoring in Google Server may detect activities like frequent IP changes, 
-  suspicious activity, or regional restrictions that may cause Google to test you with
+  suspicious activity, or regional restrictions that may cause Google to test user with
   a reCAPTCHA to make sure that the user is not a bot.
 
 - Finally, the VPN server gets the user's response and redirects it back to where it belongs
