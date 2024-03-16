@@ -510,15 +510,34 @@ and IIS for Windows.
   is running on PHP, the server uses PHP to interpret the index file, and
   streams the output to the client.
 
-Behind the scenes of the Browser
-----------------------------------
+Behind the Scenes of the Browser
+--------------------------------
 
-Once the server supplies the resources (HTML, CSS, JS, images, etc.)
-to the browser it undergoes the below process:
+Once the server supplies the resources (HTML, CSS, JS, images, etc.) to the browser,
+it undergoes the following process:
 
-* Parsing - HTML, CSS, JS
-* Rendering - Construct DOM Tree → Render Tree → Layout of Render Tree →
-  Painting the render tree
+1. **Parsing**: The browser parses HTML, CSS, and JS files delivered from the server. This parsing process involves:
+    - **HTML Parsing**: The browser parses the HTML document to construct the DOM (Document Object Model) tree.
+      The DOM tree is a representation of the HTML document that JavaScript can interact with. The HTML parser
+      also takes care of correcting any syntax errors present in the HTML document.
+    - **CSS Parsing**: The browser parses the CSS styles associated with the HTML. These styles will be used when
+      rendering the page. The CSS parser also resolves conflicts in CSS rules by following the cascade rules.
+    - **JS Parsing**: The browser parses the JavaScript code. JavaScript can manipulate the DOM, register event
+      handlers, or perform other actions. The JavaScript engine in the browser compiles the JavaScript into bytecode
+      or machine code to execute it more efficiently.
+
+2. **Rendering**: The browser goes through several steps to display the page on the screen:
+    - **Construct DOM Tree**: The browser constructs the DOM tree from the parsed HTML document. Each element,
+      attribute, and piece of text becomes a DOM node in the tree structure.
+    - **Render Tree Construction**: The browser combines the DOM tree with CSS to create the render tree. The render
+      tree contains information about layout and styles for each node on the page. It only includes nodes that will
+      be rendered on the page, so nodes for elements like `<head>` and `<script>` are typically omitted.
+    - **Layout of Render Tree**: The browser calculates the exact position and size of each object in the render tree.
+      This process is often called "reflow." During reflow, the browser considers the viewport size, device resolution,
+      and element positioning defined in CSS.
+    - **Painting the Render Tree**: The browser fills in pixels into layers based on the information in the render tree.
+      It involves drawing out text, colors, images, borders, and shadows, essentially every visual part of the elements.
+      The painting process is performed on the GPU for efficiency.
 
 Browser
 -------
