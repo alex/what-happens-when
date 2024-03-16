@@ -296,6 +296,12 @@ the default gateway it can resume its DNS process:
 * If the local/ISP DNS server does not have it, then a recursive search is
   requested and that flows up the list of DNS servers until the SOA is reached,
   and if found an answer is returned.
+* The exact route that the ISP DNS server (Resolver) follows is as follows: It
+  queries the Global root server for the IP address of the domain. The root server
+  directs the resolver to the Top Level Domain(TLD) associated with that domain. The
+  TLD server is then queried the IP address of the domain by resolver which then
+  gives it the IP address of the *name server* of that domain which is then
+  queried and provides the IP address of the domain.
 
 Opening of a socket
 -------------------
