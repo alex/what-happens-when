@@ -224,6 +224,7 @@ DNS lookup
 * If the DNS server is on a different subnet, the network library follows
   the ``ARP process`` below for the default gateway IP.
 
+DNS requests might be routed through a proxy server
 
 ARP process
 -----------
