@@ -510,6 +510,32 @@ and IIS for Windows.
   is running on PHP, the server uses PHP to interpret the index file, and
   streams the output to the client.
 
+HTTP Response Processing
+------------------------
+Once the browser sends an HTTP request to the server and receives a response, it undergoes processing to interpret and display the content to the user.
+
+The HTTP response typically consists of a status line, headers, and an optional message body. Here's an overview of each component:
+1. Status Line: Contains the HTTP version, status code, and a status message.
+2. Headers: Provide additional information about the response, such as content type, content length, caching directives, and more.
+3. Message Body: Contains the actual content of the response, which could be HTML, CSS, JavaScript, images, or other media types.
+
+Upon receiving the response, the browser parses it to extract relevant information:
+1. Status Code: Determines the outcome of the request (e.g., 200 for success, 404 for not found, etc.).
+2. Headers: Extracts header information to understand content type, encoding, and caching directives.
+3. Message Body: Processes the message body based on its content type. For example, HTML content is parsed to construct the Document Object Model (DOM).
+
+The browser handles different content types appropriately:
+1. HTML: Constructs the DOM tree and initiates rendering.
+2. CSS: Parses and applies styles to the rendered page.
+3. JavaScript: Executes JavaScript code, potentially modifying the DOM or triggering additional network requests.
+4. Images and Media: Renders images and media content within the page.
+
+After processing the response, the browser renders and displays the content to the user:
+1. DOM Construction: Constructs the Document Object Model (DOM) based on the parsed HTML.
+2. Style Application: Applies CSS styles to elements, determining their visual appearance.
+3. Layout: Computes the layout of elements based on their styles and content.
+4. Display: Displays the rendered page in the browser window for user interaction.
+
 Behind the scenes of the Browser
 ----------------------------------
 
