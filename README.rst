@@ -517,12 +517,14 @@ Once the server supplies the resources (HTML, CSS, JS, images, etc.)
 to the browser it undergoes the below process:
 
 -   **Parsing (HTML, CSS, JS):**  The browser breaks down the code and understands its structure.
+
 -   **Rendering:**
-    -   **Construct DOM Tree:**  The browser creates a tree-like structure representing the webpage's content and organization.
-    -   **Render Tree:**  A subset of the DOM tree is created, focusing on elements that will be displayed on the page.
-    -   **Layout of Render Tree:**  The browser calculates the size and position of each element in the render tree.
-    -   **Painting the render tree:**  The browser paints the elements on the screen according to their styles and layout.
-    -   **Compositing (optional):**  The browser combines elements from the render tree into layers for efficient display.
+
+        -   **Construct DOM Tree:**  The browser creates a tree-like structure representing the webpage's content and organization.
+        -   **Render Tree:**  A subset of the DOM tree is created, focusing on elements that will be displayed on the page.
+        -   **Layout of Render Tree:**  The browser calculates the size and position of each element in the render tree.
+        -   **Painting the render tree:**  The browser paints the elements on the screen according to their styles and layout.
+        -   **Compositing (optional):**  The browser combines elements from the render tree into layers for efficient display.
 Browser
 -------
 
