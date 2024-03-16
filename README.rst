@@ -5,7 +5,7 @@ This repository is an attempt to answer the age-old interview question "What
 happens when you type google.com into your browser's address box and press
 enter?"
 
-Except instead of the usual story, we're going to try to answer this question
+Instead of the usual story, we're going to try to answer this question
 in as much detail as possible. No skipping out on anything.
 
 This is a collaborative process, so dig in and try to help out! There are tons
@@ -28,47 +28,47 @@ Table of Contents
 The "g" key is pressed
 ----------------------
 The following sections explain the physical keyboard actions
-and the OS interrupts. When you press the key "g" the browser receives the
-event and the auto-complete functions kick in.
-Depending on your browser's algorithm and if you are in
-private/incognito mode or not various suggestions will be presented
-to you in the dropdown below the URL bar. Most of these algorithms sort
+and the OS interrupts. When you press the "g" key on the keyboard
+the browser receives the event and the auto-complete functions kicks in.
+Depending on your browser's algorithm and whether you are in
+private/incognito mode or not, various suggestions will be presented
+to you in the dropdown menu below the URL bar. Most of these algorithms sort
 and prioritize results based on search history, bookmarks, cookies, and
-popular searches from the internet as a whole. As you are typing
-"google.com" many blocks of code run and the suggestions will be refined
+popular searches from the internet. As you are typing
+"google.com" many blocks of codes are run and the suggestions will be refined
 with each keypress. It may even suggest "google.com" before you finish typing
 it.
 
 The "enter" key bottoms out
 ---------------------------
 
-To pick a zero point, let's choose the Enter key on the keyboard hitting the
-bottom of its range. At this point, an electrical circuit specific to the enter
+To pick a zero point, let's choose the Enter key on the keyboard being pressed.
+At this point, an electrical circuit specific to the enter
 key is closed (either directly or capacitively). This allows a small amount of
 current to flow into the logic circuitry of the keyboard, which scans the state
 of each key switch, debounces the electrical noise of the rapid intermittent
-closure of the switch, and converts it to a keycode integer, in this case 13.
-The keyboard controller then encodes the keycode for transport to the computer.
-This is now almost universally over a Universal Serial Bus (USB) or Bluetooth
-connection, but historically has been over PS/2 or ADB connections.
+closure of the switch, and converts it to a keycode integer, in this our case 13.
+The keyboard's IC then encodes the keycode and sends it to the computer either
+over a Universal Serial Bus (USB) or a Bluetooth
+connection depending on the keyboard type you are using.
 
 *In the case of the USB keyboard:*
 
 - The USB circuitry of the keyboard is powered by the 5V supply provided over
-  pin 1 from the computer's USB host controller.
+  pin 1 from the computer's host controller.
 
-- The keycode generated is stored by internal keyboard circuitry memory in a
+- The keycode generated is stored by an internal keyboard circuitry memory in a
   register called "endpoint".
 
 - The host USB controller polls that "endpoint" every ~10ms (minimum value
-  declared by the keyboard), so it gets the keycode value stored on it.
+  declared by the keyboard), to handle any keycode value stored on it.
 
-- This value goes to the USB SIE (Serial Interface Engine) to be converted in
+- This value goes to the USB SIE (Serial Interface Engine) to be converted into
   one or more USB packets that follow the low-level USB protocol.
 
-- Those packets are sent by a differential electrical signal over D+ and D-
+- Those packets are sent through electrical signal over D+ and D-
   pins (the middle 2) at a maximum speed of 1.5 Mb/s, as an HID
-  (Human Interface Device) device is always declared to be a "low-speed device"
+  (Human Interface Device) device is always declared as a "low-speed device"
   (USB 2.0 compliance).
 
 - This serial signal is then decoded at the computer's host USB controller, and
@@ -96,68 +96,68 @@ connection, but historically has been over PS/2 or ADB connections.
   event.
 
 
-Interrupt fires [NOT for USB keyboards]
+Interrupt fires [NON-USB keyboards]
 ---------------------------------------
 
-The keyboard sends signals on its interrupt request line (IRQ), which is mapped
+The keyboard sends signals on its interrupt request line (IRQ) and mappes it
 to an ``interrupt vector`` (integer) by the interrupt controller. The CPU uses
 the ``Interrupt Descriptor Table`` (IDT) to map the interrupt vectors to
-functions (``interrupt handlers``) which are supplied by the kernel. When an
-interrupt arrives, the CPU indexes the IDT with the interrupt vector and runs
+functions (``interrupt handlers``) supplied by the kernel. When an
+interrupt occurs, the CPU indexes the IDT with the interrupt vector and runs
 the appropriate handler. Thus, the kernel is entered.
 
 (On Windows) A ``WM_KEYDOWN`` message is sent to the app
 --------------------------------------------------------
 
 The HID transport passes the key down event to the ``KBDHID.sys`` driver which
-converts the HID usage into a scancode. In this case, the scan code is
+converts the HID usage into a scancode. In our case, the scan code is
 ``VK_RETURN`` (``0x0D``). The ``KBDHID.sys`` driver interfaces with the
 ``KBDCLASS.sys`` (keyboard class driver). This driver is responsible for
-handling all keyboard and keypad input in a secure manner. It then calls into
+handling all keyboard and keypad input securely. It then calls into
 ``Win32K.sys`` (after potentially passing the message through 3rd party
-keyboard filters that are installed). This all happens in kernel mode.
+keyboard filters that are installed). It all happens in kernel mode.
 
 ``Win32K.sys`` figures out what window is the active window through the
 ``GetForegroundWindow()`` API. This API provides the window handle of the
-browser's address box. The main Windows "message pump" then calls
-``SendMessage(hWnd, WM_KEYDOWN, VK_RETURN, lParam)``. ``lParam`` is a bitmask
-that indicates further information about the keypress: repeat count (0 in this
+browser's address box. The main Windows "message pump" calls
+``SendMessage(hWnd, WM_KEYDOWN, VK_RETURN, lParam)``, where ``lParam`` is a bitmask
+that indicates further information about the keypress's repeat count (0 in this
 case), the actual scan code (can be OEM dependent, but generally wouldn't be
-for ``VK_RETURN``), whether extended keys (e.g. alt, shift, ctrl) were also
-pressed (they weren't), and some other state.
+for ``VK_RETURN``), extended keys (e.g. alt, shift, ctrl) were also
+pressed (they weren't), or some other state.
 
 The Windows ``SendMessage`` API is a straightforward function that
-adds the message to a queue for the particular window handle (``hWnd``).
-Later, the main message processing function (called a ``WindowProc``) assigned
-to the ``hWnd`` is called in order to process each message in the queue.
+adds the message to a queue for the particular window handler (``hWnd``).
+Later, the main message processing function (``WindowProc``) assigned
+to the ``hWnd`` is called to process each message in the queue.
 
-The window (``hWnd``) that is active is actually an edit control and the
-``WindowProc`` in this case has a message handler for ``WM_KEYDOWN`` messages.
+The window (``hWnd``) that is active is on edit control and the
+``WindowProc`` in our case has a message handler for ``WM_KEYDOWN`` messages.
 This code looks within the 3rd parameter that was passed to ``SendMessage``
-(``wParam``) and, because it is ``VK_RETURN`` knows the user has hit the ENTER
+(``wParam``) and, because it is ``VK_RETURN``, it knows the user has hit the ENTER
 key.
 
 (On OS X) A ``KeyDown`` NSEvent is sent to the app
 --------------------------------------------------
 
-The interrupt signal triggers an interrupt event in the I/O Kit kext keyboard
+The interrupt signal triggers an interrupt event in the I/O Kit of the keyboard
 driver. The driver translates the signal into a key code which is passed to the
 OS X ``WindowServer`` process. Resultantly, the ``WindowServer`` dispatches an
-event to any appropriate (e.g. active or listening) applications through their
+event to any appropriate (e.g. active or listening) application through their
 Mach port where it is placed into an event queue. Events can then be read from
 this queue by threads with sufficient privileges calling the
 ``mach_ipc_dispatch`` function. This most commonly occurs through, and is
 handled by, an ``NSApplication`` main event loop, via an ``NSEvent`` of
 ``NSEventType`` ``KeyDown``.
 
-(On GNU/Linux) the Xorg server listens for keycodes
+On GNU/Linux, the Xorg server listens for keycodes
 ---------------------------------------------------
 
 When a graphical ``X server`` is used, ``X`` will use the generic event
-driver ``evdev`` to acquire the keypress. A re-mapping of keycodes to scancodes
+driver ``evdev`` to acquire the keypress. Re-mapping of keycodes to scancodes
 is made with ``X server`` specific keymaps and rules.
 When the scancode mapping of the key pressed is complete, the ``X server``
-sends the character to the ``window manager`` (DWM, metacity, i3, etc), so the
+sends the character to the ``window manager`` (DWM, metacity, i3... etc), so the
 ``window manager`` in turn sends the character to the focused window.
 The graphical API of the window  that receives the character prints the
 appropriate font symbol in the appropriate focused field.
@@ -178,30 +178,30 @@ Parse URL
 Is it a URL or a search term?
 -----------------------------
 
-When no protocol or valid domain name is given the browser proceeds to feed
+When no protocol or a valid domain name is given, the browser proceeds to feed
 the text given in the address box to the browser's default web search engine.
-In many cases the URL has a special piece of text appended to it to tell the
-search engine that it came from a particular browser's URL bar.
+In many cases, the URL has a special piece of code whose sole task is to 
+tell the search engine that it came from a particular browser's URL bar.
 
 Convert non-ASCII Unicode characters in the hostname
 ------------------------------------------------
 
 * The browser checks the hostname for characters that are not in ``a-z``,
   ``A-Z``, ``0-9``, ``-``, or ``.``.
-* Since the hostname is ``google.com`` there won't be any, but if there were
-  the browser would apply `Punycode`_ encoding to the hostname portion of the
+* Since the hostname is ``google.com`` there won't be any, but if there is any,
+  the browser would apply `Punycode_` encoding to the hostname portion of the
   URL.
 
 Check HSTS list
 ---------------
 * The browser checks its "preloaded HSTS (HTTP Strict Transport Security)"
-  list. This is a list of websites that have requested to be contacted via
-  HTTPS only.
+  list. This is a list of websites that requested to be contacted only via
+  HTTPS.
 * If the website is in the list, the browser sends its request via HTTPS
   instead of HTTP. Otherwise, the initial request is sent via HTTP.
   (Note that a website can still use the HSTS policy *without* being in the
-  HSTS list.  The first HTTP request to the website by a user will receive a
-  response requesting that the user only send HTTPS requests.  However, this
+  HSTS list. In the first HTTP request to the website, the response received
+  is a request that the user only send HTTPS requests.  However, this
   single HTTP request could potentially leave the user vulnerable to a
   `downgrade attack`_, which is why the HSTS list is included in modern web
   browsers.)
@@ -209,15 +209,15 @@ Check HSTS list
 DNS lookup
 ----------
 
-* Browser checks if the domain is in its cache. (to see the DNS Cache in
+* The Browser checks if the domain is on its local cache. (to see the DNS Cache in
   Chrome, go to `chrome://net-internals/#dns <chrome://net-internals/#dns>`_).
-* If not found, the browser calls ``gethostbyname`` library function (varies by
-  OS) to do the lookup.
-* ``gethostbyname`` checks if the hostname can be resolved by reference in the
+* If found, the browser calls the ``gethostbyname`` library function (varies by
+  OS) to do the lookup process.
+* ``gethostbyname`` checks if the hostname can be resolved by a reference in the
   local ``hosts`` file (whose location `varies by OS`_) before trying to
   resolve the hostname through DNS.
 * If ``gethostbyname`` does not have it cached nor can find it in the ``hosts``
-  file then it makes a request to the DNS server configured in the network
+  file, it requests the DNS server configured in the network
   stack. This is typically the local router or the ISP's caching DNS server.
 * If the DNS server is on the same subnet the network library follows the
   ``ARP process`` below for the DNS server.
@@ -228,16 +228,16 @@ DNS lookup
 ARP process
 -----------
 
-In order to send an ARP (Address Resolution Protocol) broadcast the network
-stack library needs the target IP address to lookup. It also needs to know the
+To send an ARP (Address Resolution Protocol) broadcast, the network
+stack library needs the target's IP address to lookup. It also needs to know the
 MAC address of the interface it will use to send out the ARP broadcast.
 
-The ARP cache is first checked for an ARP entry for our target IP. If it is in
-the cache, the library function returns the result: Target IP = MAC.
+The ARP cache is first checked for an ARP entry for our target's IP. If it is on
+the cache, the library function returns the result: Target's IP = MAC.
 
 If the entry is not in the ARP cache:
 
-* The route table is looked up, to see if the Target IP address is on any of
+* The route table is looked up, to see if the Target's IP address is on any of
   the subnets on the local route table. If it is, the library uses the
   interface associated with that subnet. If it is not, the library uses the
   interface that has the subnet of our default gateway.
@@ -254,27 +254,27 @@ If the entry is not in the ARP cache:
     Target MAC: FF:FF:FF:FF:FF:FF (Broadcast)
     Target IP: target.ip.goes.here
 
-Depending on what type of hardware is between the computer and the router:
+Depending on the type of hardware between the computer and the router:
 
 Directly connected:
 
-* If the computer is directly connected to the router the router response
+* If the computer is directly connected to the router, the router response
   with an ``ARP Reply`` (see below)
 
 Hub:
 
 * If the computer is connected to a hub, the hub will broadcast the ARP
-  request out of all other ports. If the router is connected on the same "wire",
+  request to all the other ports. If the router is connected on the same "wire",
   it will respond with an ``ARP Reply`` (see below).
 
 Switch:
 
 * If the computer is connected to a switch, the switch will check its local
-  CAM/MAC table to see which port has the MAC address we are looking for. If
-  the switch has no entry for the MAC address it will rebroadcast the ARP
-  request to all other ports.
+  CAM/MAC table to see which port has the MAC address we requested. If
+  the switch has no entry for the MAC address it will re-broadcast the ARP
+  request to all the other ports.
 
-* If the switch has an entry in the MAC/CAM table it will send the ARP request
+* If the switch has an entry on its MAC/CAM table, it will send the ARP request
   to the port that has the MAC address we are looking for.
 
 * If the router is on the same "wire", it will respond with an ``ARP Reply``
@@ -288,7 +288,7 @@ Switch:
     Target IP: interface.ip.goes.here
 
 Now that the network library has the IP address of either our DNS server or
-the default gateway it can resume its DNS process:
+the default gateway, it can resume its DNS process:
 
 * The DNS client establishes a socket to UDP port 53 on the DNS server,
   using a source port above 1023.
@@ -310,25 +310,25 @@ named ``socket`` and requests a TCP socket stream - ``AF_INET/AF_INET6`` and
   chosen from within the kernel's dynamic port range (ip_local_port_range in
   Linux).
 * This segment is sent to the Network Layer, which wraps an additional IP
-  header. The IP address of the destination server as well as that of the
-  current machine is inserted to form a packet.
+  header. The destination's server IP and that of the
+  current machine are inserted to form a packet.
 * The packet next arrives at the Link Layer. A frame header is added that
   includes the MAC address of the machine's NIC as well as the MAC address of
   the gateway (local router). As before, if the kernel does not know the MAC
   address of the gateway, it must broadcast an ARP query to find it.
 
-At this point the packet is ready to be transmitted through either:
+At this point, the packet is ready to be transmitted through either:
 
 * `Ethernet`_
 * `WiFi`_
 * `Cellular data network`_
 
-For most home or small business Internet connections the packet will pass from
+For most home or small business Internet connections, the packet will pass from
 your computer, possibly through a local network, and then through a modem
 (MOdulator/DEModulator) which converts digital 1's and 0's into an analog
 signal suitable for transmission over telephone, cable, or wireless telephony
 connections. On the other end of the connection is another modem which converts
-the analog signal back into digital data to be processed by the next `network
+the analogue signal back into digital data to be processed by the next `network
 node`_ where the from and to addresses would be analyzed further.
 
 Most larger businesses and some newer residential connections will have fiber
@@ -355,7 +355,7 @@ This send and receive happens multiple times following the TCP connection flow:
      to indicate it is acknowledging receipt of the first packet
 * Client acknowledges the connection by sending a packet:
    * Increases its own sequence number
-   * Increases the receiver acknowledgment number
+   * Increases the receiver acknowledgement number
    * Sets ACK field
 * Data is transferred as follows:
    * As one side sends N data bytes, it increases its SEQ by that number
@@ -364,17 +364,17 @@ This send and receive happens multiple times following the TCP connection flow:
      received sequence from the other
 * To close the connection:
    * The closer sends a FIN packet
-   * The other sides ACKs the FIN packet and sends its own FIN
+   * The other side ACKs the FIN packet and sends its own FIN
    * The closer acknowledges the other side's FIN with an ACK
 
 TLS handshake
 -------------
 * The client computer sends a ``ClientHello`` message to the server with its
-  Transport Layer Security (TLS) version, list of cipher algorithms and
+  Transport Layer Security (TLS) version, list of cypher algorithms and
   compression methods available.
 
 * The server replies with a ``ServerHello`` message to the client with the
-  TLS version, selected cipher, selected compression methods and the server's
+  TLS version, selected cypher, selected compression methods and the server's
   public certificate signed by a CA (Certificate Authority). The certificate
   contains a public key that will be used by the client to encrypt the rest of
   the handshake until a symmetric key can be agreed upon.
@@ -390,7 +390,7 @@ TLS handshake
 * The client sends a ``Finished`` message to the server, encrypting a hash of
   the transmission up to this point with the symmetric key.
 
-* The server generates its own hash, and then decrypts the client-sent hash
+* The server generates its own hash and then decrypts the client-sent hash
   to verify that it matches. If it does, it sends its own ``Finished`` message
   to the client, also encrypted with the symmetric key.
 
@@ -437,7 +437,7 @@ otherwise it may not include the ``Host`` header in the request and the version
 specified in the ``GET`` request will either be ``HTTP/1.0`` or ``HTTP/0.9``.)
 
 HTTP/1.1 defines the "close" connection option for the sender to signal that
-the connection will be closed after completion of the response. For example,
+the connection will be closed after the completion of the response. For example,
 
     Connection: close
 
@@ -448,13 +448,13 @@ After sending the request and headers, the web browser sends a single blank
 newline to the server indicating that the content of the request is done.
 
 The server responds with a response code denoting the status of the request and
-responds with a response of the form::
+responds with a response to the form::
 
     200 OK
     [response headers]
 
 Followed by a single newline, and then sends a payload of the HTML content of
-``www.google.com``. The server may then either close the connection, or if
+``www.google.com``. The server may then either close the connection or if
 headers sent by the client requested it, keep the connection open to be reused
 for further requests.
 
@@ -467,23 +467,23 @@ the form::
     304 Not Modified
     [response headers]
 
-and no payload, and the web browser instead retrieve the HTML from its cache.
+and no payload, and the web browser instead retrieves the HTML from its cache.
 
 After parsing the HTML, the web browser (and server) repeats this process
 for every resource (image, CSS, favicon.ico, etc) referenced by the HTML page,
 except instead of ``GET / HTTP/1.1`` the request will be
 ``GET /$(URL relative to www.google.com) HTTP/1.1``.
 
-If the HTML referenced a resource on a different domain than
+If the HTML referenced a resource on a different domain than the one
 ``www.google.com``, the web browser goes back to the steps involved in
-resolving the other domain, and follows all steps up to this point for that
+resolving the other domain, and following all steps up to this point for that
 domain. The ``Host`` header in the request will be set to the appropriate
 server name instead of ``google.com``.
 
 HTTP Server Request Handle
 --------------------------
 The HTTPD (HTTP Daemon) server is the one handling the requests/responses on
-the server-side. The most common HTTPD servers are Apache or nginx for Linux
+the server-side. The most common HTTPD servers are Apache or Nginx for Linux
 and IIS for Windows.
 
 * The HTTPD (HTTP Daemon) receives the request.
@@ -514,7 +514,7 @@ Behind the scenes of the Browser
 ----------------------------------
 
 Once the server supplies the resources (HTML, CSS, JS, images, etc.)
-to the browser it undergoes the below process:
+to the browser, it undergoes the below process:
 
 * Parsing - HTML, CSS, JS
 * Rendering - Construct DOM Tree → Render Tree → Layout of Render Tree →
@@ -554,8 +554,8 @@ The components of the browsers are:
 * **Browser engine:** The browser engine marshals actions between the UI
   and the rendering engine.
 * **Rendering engine:** The rendering engine is responsible for displaying
-  requested content. For example if the requested content is HTML, the
-  rendering engine parses HTML and CSS, and displays the parsed content on
+  requested content. AS an example, if the requested content is HTML, the
+  rendering engine parses HTML and CSS and displays the parsed content on
   the screen.
 * **Networking:** The networking handles network calls such as HTTP requests,
   using different implementations for different platforms behind a
@@ -598,7 +598,7 @@ The reasons are:
 * The parsing process is reentrant. For other languages, the source doesn't
   change during parsing, but in HTML, dynamic code (such as script elements
   containing `document.write()` calls) can add extra tokens, so the parsing
-  process actually modifies the input.
+  process modifies the input.
 
 Unable to use the regular parsing techniques, the browser utilizes a custom
 parser for parsing HTML. The parsing algorithm is described in
@@ -611,7 +611,7 @@ The algorithm consists of two stages: tokenization and tree construction.
 The browser begins fetching external resources linked to the page (CSS, images,
 JavaScript files, etc.).
 
-At this stage the browser marks the document as interactive and starts
+At this stage, the browser marks the document as interactive and starts
 parsing scripts that are in "deferred" mode: those that should be
 executed after the document is parsed. The document state is
 set to "complete" and a "load" event is fired.
@@ -657,7 +657,7 @@ Page Rendering
 * All of the above steps may reuse calculated values from the last time the
   webpage was rendered, so that incremental changes require less work.
 * The page layers are sent to the compositing process where they are combined
-  with layers for other visible content like the browser chrome, iframes
+  with layers for other visible content like the browser Chrome, iframes
   and addon panels.
 * Final layer positions are computed and the composite commands are issued
   via Direct3D/OpenGL. The GPU command buffer(s) are flushed to the GPU for
