@@ -1,6 +1,7 @@
 What happens when...
 ====================
-
+What happens when you type google.com in your browser and press Enter
+.. _`What happens when`: https://medium.com/@abdallah.saleh11295/what-happens-when-you-type-google-com-in-your-browser-and-press-enter-30a1cb14913a
 This repository is an attempt to answer the age-old interview question "What
 happens when you type google.com into your browser's address box and press
 enter?"
