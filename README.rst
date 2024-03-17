@@ -106,6 +106,30 @@ functions (``interrupt handlers``) which are supplied by the kernel. When an
 interrupt arrives, the CPU indexes the IDT with the interrupt vector and runs
 the appropriate handler. Thus, the kernel is entered.
 
+Interrupts play a crucial role in computer systems, facilitating efficient communication 
+between hardware devices and the CPU. While the provided paragraph highlights the process 
+of handling interrupts for keyboards, it's essential to understand that interrupts are not 
+exclusive to keyboards and are integral to the functioning of various hardware components.
+
+For instance, in addition to keyboards, interrupt handling is crucial for other peripherals 
+such as mice, network adapters, storage devices, and graphics cards. Each device typically 
+has its dedicated interrupt request line (IRQ) and interrupt vector, allowing the CPU to 
+efficiently respond to incoming signals from multiple sources.
+
+Furthermore, the Interrupt Descriptor Table (IDT) mentioned in the paragraph is a vital data 
+structure maintained by the operating system kernel. It contains entries corresponding to 
+different interrupt vectors, each pointing to the memory address of an interrupt handler function.
+These interrupt handlers are responsible for managing the specific actions required when an interrupt 
+occurs, such as processing data from the device, updating system status, or initiating further processing.
+
+In addition to hardware-generated interrupts, software-generated interrupts, known as software interrupts 
+or system calls, are also handled similarly by the CPU. These interrupts are triggered by software requests 
+for specific services from the operating system, such as file operations, process management, or memory allocation.
+
+Overall, understanding the broader context of interrupts in computer systems enhances our appreciation of their role 
+in facilitating efficient communication and coordination between hardware devices and the CPU, contributing to the 
+overall functionality and performance of the system.
+
 (On Windows) A ``WM_KEYDOWN`` message is sent to the app
 --------------------------------------------------------
 
@@ -223,6 +247,44 @@ DNS lookup
   ``ARP process`` below for the DNS server.
 * If the DNS server is on a different subnet, the network library follows
   the ``ARP process`` below for the default gateway IP.
+
+DNS lookup is a fundamental process in the operation of the internet, 
+responsible for translating human-readable domain names into machine-readable IP addresses. 
+The provided paragraph outlines the steps involved in a typical DNS lookup process, 
+shedding light on how browsers and operating systems handle domain resolution requests.
+
+However, it's worth expanding upon some key concepts and clarifying certain details:
+
+DNS Cache: In addition to the browser's cache, various components of the networking stack,
+including the operating system and DNS resolver libraries, may maintain their DNS caches. 
+These caches help expedite subsequent lookups by storing recently resolved domain names 
+and their corresponding IP addresses.
+
+gethostbyname Function: While the gethostbyname function is indeed a legacy function used 
+in older operating systems (such as Windows XP), modern systems typically employ more 
+advanced mechanisms, such as the getaddrinfo function, for DNS resolution. 
+Additionally, some operating systems may use different resolver 
+libraries, such as libresolv or libdns, to perform DNS lookups.
+
+Hosts File: The hosts file serves as a local DNS resolver, allowing users to manually 
+map domain names to IP addresses. This file, typically located in /etc/hosts on 
+Unix-like systems and C:\Windows\System32\drivers\etc\hosts on Windows systems, takes 
+precedence over DNS resolution and can be used for various purposes, including local testing and development.
+
+DNS Server Configuration: The DNS server configured in the network stack is crucial for 
+resolving domain names that are not found in local caches or the hosts file. 
+This DNS server, often provided by the ISP or network administrator, is 
+responsible for querying authoritative DNS servers to obtain the IP 
+address corresponding to the requested domain name.
+
+ARP Process: The Address Resolution Protocol (ARP) process mentioned in the paragraph
+is responsible for resolving the MAC address of a device on the local network given its
+IP address. This process is necessary for communication within the local subnet 
+and is unrelated to DNS resolution across different subnets.
+
+By providing a more comprehensive understanding of the DNS lookup process, 
+users can gain insight into how internet communication is facilitated 
+and troubleshoot DNS-related issues more effectively.
 
 
 ARP process
