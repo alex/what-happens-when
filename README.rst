@@ -453,6 +453,8 @@ responds with a response of the form::
     200 OK
     [response headers]
 
+Note: The HTTP code 200 indicates that the HTTP request was successful.
+
 Followed by a single newline, and then sends a payload of the HTML content of
 ``www.google.com``. The server may then either close the connection, or if
 headers sent by the client requested it, keep the connection open to be reused
@@ -543,6 +545,8 @@ common user interface elements are:
 * Refresh and stop buttons for refreshing or stopping the loading of
   current documents
 * Home button that takes you to your home page
+* Tabs
+* Settings menu
 
 **Browser High-Level Structure**
 
