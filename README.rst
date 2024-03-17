@@ -689,6 +689,24 @@ the Google homepage. Scripts can cause additional network requests to be
 performed, as well as modify the page or its layout, causing another round of
 page rendering and painting.
 
+In a Nutshell: Understanding How the Browser Handles Response Files
+-------------------------------------------------------------------
+
+After getting the server's response, the browser follows specific steps for each file type to show the webpage.
+
+-  ``HTML``: The browser unwraps the HTML code to understand how the
+   page is built. Then it constructs the **DOM**, which is like a
+   blueprint of the web page's structure.
+-  ``CSS``: Applying styles from CSS files, making everything look
+   pretty and organized.
+-  ``JavaScript``: It adds interactive elements like pop-ups,
+   animations, and dynamic content.
+-  ``Media files``: The browser goes on a quick process to fetch images,
+   videos, and other media to complete the page's look.
+
+Once these steps are finished, the browser unveils the fully dressed
+web page for you to enjoy, complete with all the bells and whistles 🙌
+
 .. _`Creative Commons Zero`: https://creativecommons.org/publicdomain/zero/1.0/
 .. _`"CSS lexical and syntax grammar"`: http://www.w3.org/TR/CSS2/grammar.html
 .. _`Punycode`: https://en.wikipedia.org/wiki/Punycode
