@@ -28,7 +28,7 @@ Table of Contents
 The "g" key is pressed
 ----------------------
 The following sections explain the physical keyboard actions
-and the OS interrupts. When you press the key "g" the browser receives the
+and the OS interrupts. When you press the key "g" in the URL bar of the browser receives the
 event and the auto-complete functions kick in.
 Depending on your browser's algorithm and if you are in
 private/incognito mode or not various suggestions will be presented
@@ -37,7 +37,8 @@ and prioritize results based on search history, bookmarks, cookies, and
 popular searches from the internet as a whole. As you are typing
 "google.com" many blocks of code run and the suggestions will be refined
 with each keypress. It may even suggest "google.com" before you finish typing
-it.
+it. In contemporary desktop browsers, you might encounter a notification on the right ahand side of the address bar
+inviting you to "Press 'Tab' to search". This feature assists in auto-completing the domain and awaits your search input or query.
 
 The "enter" key bottoms out
 ---------------------------
