@@ -689,6 +689,49 @@ the Google homepage. Scripts can cause additional network requests to be
 performed, as well as modify the page or its layout, causing another round of
 page rendering and painting.
 
+The summary of the process is as follows:
+
+A series of steps take place. First, your browser initiates a Domain Name System (DNS) request
+to resolve the domain name "www.google.com" into an IP address. DNS servers translate human-readable
+domain names into machine-readable IP addresses. If the IP address for "www.google.com" is not
+cached locally, your browser queries DNS servers recursively until it receives a response with
+the IP address of Google's servers.
+
+Once the IP address is obtained, your browser initiates a Transmission Control Protocol (TCP)
+connection to the server at that IP address. TCP ensures reliable and ordered delivery of data
+packets between the client (your browser) and the server.
+
+The TCP connection may pass through firewalls, which act as gatekeepers to the network. Firewalls
+enforce security policies, filtering incoming and outgoing traffic based on predefined rules. If
+the connection is allowed by the firewall, the request proceeds to the server.
+
+If "https://" is specified in the URL, the connection is secured using Hypertext Transfer
+Protocol Secure (HTTPS) and Secure Sockets Layer (SSL) or Transport Layer Security (TLS) encryption.
+SSL/TLS encryption ensures that the data exchanged between the client and server is encrypted,
+protecting it from eavesdropping and tampering.
+
+Large websites like Google typically employ load-balancers to distribute incoming traffic across
+multiple servers. Load-balancers improve performance, scalability, and reliability by evenly
+distributing the workload among server instances.
+
+The request reaches one of Google's web servers, which hosts the Google homepage. The web
+servers processes the request, retrieves the requested content (in this case, the Google homepage),
+and prepares a response.
+
+In some cases, the web server may communicate with an application server to generate dynamic context.
+Application servers execute server-side code, interact with databases, and perform other business
+logic tasks. For Google's homepage, which is primarily static content, an application server may
+not be necessary.
+
+If the web server needs to retrieve data from a database, it communicates with the database server.
+In Google's case, the homepage likely does not require real-time database queries, as the content
+is primarily static.
+
+Finally, the response containing the Google homepage HTML, CSS, JavaScript and other resources travel
+back along the same path to your browser. Your browser then renders the received content, displaying
+the familiar Google homepage.
+
+
 .. _`Creative Commons Zero`: https://creativecommons.org/publicdomain/zero/1.0/
 .. _`"CSS lexical and syntax grammar"`: http://www.w3.org/TR/CSS2/grammar.html
 .. _`Punycode`: https://en.wikipedia.org/wiki/Punycode
