@@ -162,6 +162,20 @@ sends the character to the ``window manager`` (DWM, metacity, i3, etc), so the
 The graphical API of the window  that receives the character prints the
 appropriate font symbol in the appropriate focused field.
 
+(On GNU/Linux with Wayland) Input Handling:
+---------------------------------------------------
+In a Wayland-based graphical environment, the process of handling keypress events differs
+from the Xorg server paradigm. Wayland, being a protocol for a compositor to talk to its clients, 
+handles input events in a more direct and streamlined manner. Instead of relying on the X server's 
+evdev and keymaps, Wayland compositors interface directly with the kernel's input subsystem, 
+such as libinput. When a key is pressed, the compositor receives the event directly from the 
+input subsystem, bypassing the X server entirely. The compositor then processes this event 
+internally and sends it to the appropriate client, typically the focused window, using the Wayland 
+protocol. The window receives the event and handles it accordingly, updating the user interface 
+as necessary. This streamlined approach to input handling is one of the many advantages of the 
+Wayland display server protocol, offering improved performance and security compared to the 
+traditional Xorg server.
+
 Parse URL
 ---------
 
