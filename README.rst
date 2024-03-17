@@ -453,6 +453,8 @@ responds with a response of the form::
     200 OK
     [response headers]
 
+where ``[response headers]`` contains additional information provided by the
+server to the client. e.g ``Content-Type``, ``Content-Length`` etc.
 Followed by a single newline, and then sends a payload of the HTML content of
 ``www.google.com``. The server may then either close the connection, or if
 headers sent by the client requested it, keep the connection open to be reused
