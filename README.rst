@@ -297,6 +297,13 @@ the default gateway it can resume its DNS process:
   requested and that flows up the list of DNS servers until the SOA is reached,
   and if found an answer is returned.
 
+Firewall Protection
+-------------------
+A firewall is a network security device or software application designed to monitor and control
+incoming and outgoing network traffic based on predetermined security rules.
+It acts as a barrier between a trusted internal network (such as a company's intranet) and untrusted external
+networks (such as the internet), helping to prevent unauthorized access and protect against various cyber threats.
+
 Opening of a socket
 -------------------
 Once the browser receives the IP address of the destination server, it takes
