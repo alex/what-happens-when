@@ -491,7 +491,7 @@ and IIS for Windows.
    * HTTP Request Method (either ``GET``, ``HEAD``, ``POST``, ``PUT``,
      ``PATCH``, ``DELETE``, ``CONNECT``, ``OPTIONS``, or ``TRACE``). In the
      case of a URL entered directly into the address bar, this will be ``GET``.
-   ``TRACE maybe available based on compatabilitylike HTTP 1.0``
+   * ``TRACE maybe available based on compatability like HTTP/1.0``
    * Domain, in this case - google.com.
    * Requested path/page, in this case - / (as no specific path/page was
      requested, / is the default path).
