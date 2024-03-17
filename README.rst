@@ -225,6 +225,40 @@ DNS lookup
   the ``ARP process`` below for the default gateway IP.
 
 
+Cache Management
+----------------
+
+Browser Cache
+-------------
+
+Once the web resources are fetched and rendered, modern browsers often store copies of these resources locally, in what is commonly known as the browser cache. This cache serves as a temporary storage mechanism to expedite subsequent visits to the same website, as fetching resources from a local cache is generally faster than retrieving them from the web server.
+
+The browser cache management involves several key aspects:
+
+1. **Cache Control Headers**: When the browser requests resources from the server, the server can include certain HTTP headers such as `Cache-Control` and `Expires` to specify caching directives. These directives instruct the browser on how long it should retain the cached copies before considering them stale and needing to revalidate with the server.
+
+2. **Cache Storage**: Cached resources are stored locally on the user's device, typically in a designated cache directory. The browser employs algorithms to manage the size of the cache, evicting older or less frequently accessed resources to make room for new ones when necessary.
+
+3. **Cache Revalidation**: When the browser revisits a website, it checks the cache to see if it already has copies of the requested resources. If the cached resources are still valid according to the caching directives, the browser can serve them directly without contacting the server again. However, if the cached resources have expired or if the server indicates that they have been modified since they were cached, the browser may need to revalidate them by sending conditional requests to the server.
+
+4. **Cache Invalidation**: In some cases, such as when a website updates its design or content, it may want to invalidate certain cached resources to ensure that users receive the latest version. This can be achieved through mechanisms like versioning URLs, appending query parameters, or explicitly sending cache invalidation directives via HTTP headers like `Cache-Control: no-cache` or `Cache-Control: must-revalidate`.
+
+### DNS Cache
+--------------
+
+Apart from the browser cache, DNS resolution results are also cached locally to speed up subsequent domain name lookups. This DNS cache, maintained by the operating system or network stack, stores mappings between domain names and their corresponding IP addresses for a certain duration specified by the Time-to-Live (TTL) value received from the authoritative DNS servers.
+
+The DNS cache management involves:
+----------------------------------
+
+1. **Cache Expiry**: Similar to browser cache, DNS cache entries have a TTL associated with them. Once this TTL expires, the DNS resolver may discard the cached entry and perform a fresh lookup when the domain is queried again.
+
+2. **Cache Flushing**: Users or system administrators may sometimes need to manually flush the DNS cache to clear outdated or incorrect mappings. This can be done through system commands or utilities provided by the operating system.
+
+3. **Negative Caching**: DNS resolvers also cache negative responses, such as when a domain name does not exist or when the resolver fails to reach the authoritative DNS servers. These negative cache entries are stored for a certain duration to avoid repeated lookup attempts for non-existent domains.
+
+
+
 ARP process
 -----------
 
