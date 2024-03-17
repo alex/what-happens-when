@@ -223,6 +223,10 @@ DNS lookup
   ``ARP process`` below for the DNS server.
 * If the DNS server is on a different subnet, the network library follows
   the ``ARP process`` below for the default gateway IP.
+->the key points here are the following:
+* The DNS lookup process typically happens behind the scenes in a matter of milliseconds, often unnoticed by users.
+* DNS servers play a vital role in connecting users to websites by translating domain names into IP addresses.
+* Understanding DNS lookup can be helpful for troubleshooting web browsing issues and optimizing internet performance.
 
 
 ARP process
