@@ -164,7 +164,12 @@ appropriate font symbol in the appropriate focused field.
 
 Parse URL
 ---------
-
+URL parsing is the process of breaking down a Uniform Resource Locator (URL)
+into its constituent parts to extract information such as the protocol, domain,
+path, query parameters, and fragment identifier. The URL parsing process remains 
+relatively consistent across different programming languages and frameworks, 
+but there have been some additions and changes to URL schemes and protocols since
+the knowledge cutoff in 2021.
 * The browser now has the following information contained in the URL (Uniform
   Resource Locator):
 
