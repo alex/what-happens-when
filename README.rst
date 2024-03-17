@@ -397,6 +397,36 @@ TLS handshake
 * From now on the TLS session transmits the application (HTTP) data encrypted
   with the agreed symmetric key.
 
+Content Delivery Networks: Speeding Up the Web
+-------------
+While the core communication happens between your browser and the web server, 
+there's another player that can sometimes come into action: the Content Delivery Network (CDN). 
+Think of a CDN as a network of warehouses strategically located around the world, 
+all stocked with the most popular website content.
+
+Here's how a CDN can improve your browsing experience:
+
+* Reduced Latency: When you request a webpage,
+ the content might be stored on a server far away. 
+ This distance creates a delay, impacting loading times. 
+ CDNs store copies of static content (images, JavaScript 
+ files, etc.) on servers geographically closer to users. 
+ By fetching content from a nearby server, the data travels a 
+ shorter distance, resulting in faster loading times.
+
+* Improved Scalability: Sometimes, a website might experience a surge in traffic,
+ overwhelming the main server. CDNs can handle these spikes by distributing the load across 
+ their network of servers. This ensures the website remains accessible and responsive even 
+ during high traffic periods.
+
+* Enhanced Security: Some CDNs offer additional security features,
+ such as filtering malicious content or mitigating DDoS attacks 
+ (Distributed Denial-of-Service attacks).
+
+So, the next time you experience a website loading quickly,
+even with images and videos, there's a good chance a CDN is 
+working behind the scenes to deliver the content efficiently.
+
 If a packet is dropped
 ----------------------
 
