@@ -38,6 +38,8 @@ popular searches from the internet as a whole. As you are typing
 "google.com" many blocks of code run and the suggestions will be refined
 with each keypress. It may even suggest "google.com" before you finish typing
 it.
+As the user types the letter "g" and beyond, the browser may suggest previously
+visited websites, URLs from bookmarks, or frequently visited sites based on browsing history.
 
 The "enter" key bottoms out
 ---------------------------
