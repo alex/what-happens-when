@@ -689,6 +689,12 @@ the Google homepage. Scripts can cause additional network requests to be
 performed, as well as modify the page or its layout, causing another round of
 page rendering and painting.
 
+Once the webpage is loaded, the browser may store certain resources
+locally in its cache or persistent storage mechanisms
+such as localStorage or IndexedDB.
+This allows subsequent visits to the same website to load faster by 
+serving resources from the local cache when possible.
+
 .. _`Creative Commons Zero`: https://creativecommons.org/publicdomain/zero/1.0/
 .. _`"CSS lexical and syntax grammar"`: http://www.w3.org/TR/CSS2/grammar.html
 .. _`Punycode`: https://en.wikipedia.org/wiki/Punycode
