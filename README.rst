@@ -537,12 +537,12 @@ standards organization for the web.
 Browser user interfaces have a lot in common with each other. Among the
 common user interface elements are:
 
-* An address bar for inserting a URI
-* Back and forward buttons
-* Bookmarking options
+* An address bar for inserting a URI.
+* Back and forward buttons.
+* Bookmarking options.
 * Refresh and stop buttons for refreshing or stopping the loading of
-  current documents
-* Home button that takes you to your home page
+  current documents.
+* Home button that takes you to your home page.
 
 **Browser High-Level Structure**
 
