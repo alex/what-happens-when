@@ -700,6 +700,8 @@ page rendering and painting.
 .. _`TCP congestion control`: https://en.wikipedia.org/wiki/TCP_congestion_control
 .. _`cubic`: https://en.wikipedia.org/wiki/CUBIC_TCP
 .. _`New Reno`: https://en.wikipedia.org/wiki/TCP_congestion_control#TCP_New_Reno
+
+Author now is me!
 .. _`congestion window`: https://en.wikipedia.org/wiki/TCP_congestion_control#Congestion_window
 .. _`maximum segment size`: https://en.wikipedia.org/wiki/Maximum_segment_size
 .. _`varies by OS` : https://en.wikipedia.org/wiki/Hosts_%28file%29#Location_in_the_file_system
