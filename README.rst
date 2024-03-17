@@ -217,12 +217,41 @@ DNS lookup
   local ``hosts`` file (whose location `varies by OS`_) before trying to
   resolve the hostname through DNS.
 * If ``gethostbyname`` does not have it cached nor can find it in the ``hosts``
-  file then it makes a request to the DNS server configured in the network
-  stack. This is typically the local router or the ISP's caching DNS server.
+  file then it makes a request to the DNS server, also know as the DNS resolver,
+  configured in the network stack. This is typically the local router or the 
+  ISP's caching DNS server. There are also public DNS servers like Google's
+  8.8.8.8. 
+* The browser typically sends DNS requests over ``User Datagram Protcol (UDP)``
+  by default. However if UDP communication is not possible, such as due to 
+  packet size limitations, it may resort to using ``Transmission Control Protocol (TCP)``.
+  The DNS request is sent over port 53, adhering to the standard port for DNS
+  communication, for both UDP and TCP. However, the DNS server may be configured
+  to use ``DNS over HTTPS (DoH)`` or ``DNS over TLS (DoT)`` which would use port
+  443 and 853 respectively. This offers a more secure and private way to resolve
+  DNS queries through encrypted channels. If DoT is implemented, the DNS request
+  is encapsulated within a TLS connection, securing the DNS query and response
+  transmission. If DoH is implemented, the DNS request is sent over standard 
+  HTTPS ports (443) and is encrypted using the HTTPS protocol. This disguises
+  DNS queries as regular HTTPS traffic.
 * If the DNS server is on the same subnet the network library follows the
   ``ARP process`` below for the DNS server.
 * If the DNS server is on a different subnet, the network library follows
   the ``ARP process`` below for the default gateway IP.
+* If the IP address is not in the DNS server's cache, the DNS server will query 
+  one of the 13 ``root nameserver`` (in this case the ``.COM root nameserver``)
+  for the ``top-level domain (TLD)`` of the domain name. The root nameserver
+  will respond with the IP address of the TLD nameserver and the DNS resolver
+  will cache the .COM TLD address for future uses. 
+* The DNS server then queries the TLD nameserver for the domain name. The TLD 
+  nameserver will respond with the glue records of the ``authoritative name 
+  servers (ANS)`` for the domain name. The ANS is stored in the ``TLD registry``
+  when the domain is registered. The glue records are pairs of domain names and
+  IP addresses that are used to avoid circular references.
+* The resolver will route to one of the ANS and query it for the domain's IP 
+  address. The ANS will respond with the IP address of the domain name and the
+  DNS resolver will cache it for future uses. Once the IP address is resolved,
+  the DNS resolver will return the IP address to the network stack library to 
+  continue with the ``ARP process``.
 
 
 ARP process
