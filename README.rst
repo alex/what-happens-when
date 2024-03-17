@@ -1,4 +1,4 @@
-What happens when...
+git branch e.what-happens-whenWhat happens when...
 ====================
 
 This repository is an attempt to answer the age-old interview question "What
@@ -400,19 +400,24 @@ TLS handshake
 If a packet is dropped
 ----------------------
 
-Sometimes, due to network congestion or flaky hardware connections, TLS packets
-will be dropped before they get to their final destination. The sender then has
-to decide how to react. The algorithm for this is called `TCP congestion
-control`_. This varies depending on the sender; the most common algorithms are
-`cubic`_ on newer operating systems and `New Reno`_ on almost all others.
 
-* Client chooses a `congestion window`_ based on the `maximum segment size`_
-  (MSS) of the connection.
-* For each packet acknowledged, the window doubles in size until it reaches the
-  'slow-start threshold'. In some implementations, this threshold is adaptive.
-* After reaching the slow-start threshold, the window increases additively for
-  each packet acknowledged. If a packet is dropped, the window reduces
-  exponentially until another packet is acknowledged.
+In certain instances, such as network congestion or unreliable hardware connections,
+packets transmitted via TLS (Transport Layer Security) may fail to reach their
+intended destination. When this occurs, it prompts the sender to determine an
+appropriate course of action. This process is governed by the TCP congestion control
+algorithm, which varies based on the sender's configuration. Commonly used algorithms
+include 'Cubic' for newer operating systems and 'New Reno' for most others.
+
+During TCP communication, the client initiates by selecting a congestion
+window size, which is influenced by the Maximum Segment Size (MSS) of the
+connection. Initially, during the slow-start phase, the congestion window
+doubles in size for each acknowledged packet until it reaches a predefined
+'slow-start threshold.' In some implementations, this threshold adapts
+dynamically based on network conditions. Subsequently, in the congestion
+avoidance phase, the congestion window increases incrementally for each
+acknowledged packet. However, in the event of a packet loss, the congestion
+window undergoes exponential reduction until the transmission of another packet
+is acknowledged, aiming to mitigate network congestion effectively.
 
 HTTP protocol
 -------------
