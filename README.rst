@@ -709,3 +709,19 @@ page rendering and painting.
 .. _`downgrade attack`: http://en.wikipedia.org/wiki/SSL_stripping
 .. _`OSI Model`: https://en.wikipedia.org/wiki/OSI_model
 .. _`Spanish`: https://github.com/gonzaleztroyano/what-happens-when-ES
+
+ # What happens when i upload a file on a website
+
+ ## Summary
+Uploading files on websites is a routine activity for users worldwide, yet the intricate processes behind this seemingly simple task often go unnoticed. This article aims to demystify the journey of a file upload, shedding light on the technical intricacies involved.
+
+Beginning with an exploration of the user experience, we delve into the common types of files uploaded and the interface through which users interact with websites. Moving behind the scenes, we uncover the client-side and server-side components responsible for orchestrating file uploads.
+
+Data transmission emerges as a pivotal stage, as we elucidate the mechanisms employed to transmit files from user devices to web servers. Server-side processing mechanisms are then unveiled, revealing the storage, processing, and management of uploaded files.
+
+Security considerations loom large, with a discussion on safeguarding file uploads against malicious activities. From file size limits to input validation, we dissect the measures implemented by websites to fortify their defenses.
+
+Communication between websites and users takes center stage in the final sections, as we explore feedback mechanisms and user notifications post-upload.
+
+Ultimately, this journey through cyberspace unveils the complex interplay of technologies and protocols underpinning the seemingly straightforward act of uploading a file on a website. Armed with this understanding, users and developers alike are better equipped to navigate the digital landscape with confidence and clarity.
+
