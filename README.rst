@@ -709,3 +709,21 @@ page rendering and painting.
 .. _`downgrade attack`: http://en.wikipedia.org/wiki/SSL_stripping
 .. _`OSI Model`: https://en.wikipedia.org/wiki/OSI_model
 .. _`Spanish`: https://github.com/gonzaleztroyano/what-happens-when-ES
+
+Debouncing in Keyboard Inputs
+-----------------------------
+- Debouncing refers to the process of filtering out rapid, unintended fluctuations in an electrical signal, often caused by mechanical contacts in switches and buttons.
+
+- In keyboards, debouncing ensures that a single keypress is registered as a single input, preventing multiple signals from being sent due to the mechanical bounce of the key switch.
+
+**Historical Background**
+
+- **Mechanical Solutions**: In the early days, debouncing was primarily addressed through mechanical means. Stiffer springs and dampening materials were used to physically reduce the bounce of the key switches, thereby decreasing the likelihood of multiple contacts for a single keypress.
+
+- **Software Solutions**: Modern keyboards predominantly use software algorithms to debounce keypresses. These algorithms typically involve ignoring rapid, successive signals within a certain timeframe, ensuring that only one input is registered for each keypress. This approach allows for a more reliable and consistent typing experience.
+
+**Impact on User Experience**
+
+- **Reliability**: Effective debouncing is crucial for the reliability and accuracy of keyboard inputs. It ensures that each keypress is registered as intended, without any spurious additional inputs caused by mechanical bounce.
+
+- **Response Time**: While debouncing is necessary for accuracy, it is also important to strike a balance with response time. A well-designed debouncing algorithm will filter out unintended signals without introducing noticeable delays in the registration of keypresses, maintaining a responsive typing experience for the user.
