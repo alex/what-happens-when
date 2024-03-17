@@ -1,4 +1,4 @@
-language: python
+language: Python 3
 
 sudo: false
 
