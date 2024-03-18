@@ -417,9 +417,10 @@ control`_. This varies depending on the sender; the most common algorithms are
 HTTP protocol
 -------------
 
-If the web browser used was written by Google, instead of sending an HTTP
-request to retrieve the page, it will send a request to try and negotiate with
-the server an "upgrade" from HTTP to the SPDY protocol.
+
+If the web browser is developed by Google, it will attempt to 
+negotiate an "upgrade" from HTTP to the SPDY protocol with the server 
+instead of sending a standard HTTP request to retrieve the page.
 
 If the client is using the HTTP protocol and does not support SPDY, it sends a
 request to the server of the form::
