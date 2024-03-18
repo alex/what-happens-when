@@ -510,6 +510,16 @@ and IIS for Windows.
   is running on PHP, the server uses PHP to interpret the index file, and
   streams the output to the client.
 
+HTTPS/SSL
+----------------------------------
+Remember HTTP, this is an anti-sniffer version, properly, a more secure version.
+
+
+Using  `auto-magic <https://medium.com/naukri-engineering/which-algorithm-to-choose-while-issuing-ordering-an-ssl-tls-certificate-b421ea6f7e38>`_ encryption algorithms, we can abstract a cryptographic protocol *SSL (Secure Sockets Layer)* designed to provide secure communication over a computer network, typically the internet.
+
+In today's digital age, security is a must. HTTPS ensures secure communication over the internet by encrypting data exchanged between your browser and the web server. When you type *https://www.google.com*, your browser initiates a secure connection using SSL/TLS protocols. This encryption protects sensitive information such as passwords, credit card details, and personal data from eavesdropping and tampering.
+
+
 Behind the scenes of the Browser
 ----------------------------------
 
