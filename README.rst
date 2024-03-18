@@ -25,6 +25,10 @@ Table of Contents
    :backlinks: none
    :local:
 
+when you type google.com in your browser and press Enter
+reference
+https://medium.com/@abdoyasser2018a/what-happens-when-you-type-google-com-in-your-browser-and-press-enter-f0f3bf3c5937
+
 The "g" key is pressed
 ----------------------
 The following sections explain the physical keyboard actions
