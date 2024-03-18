@@ -224,6 +224,60 @@ DNS lookup
 * If the DNS server is on a different subnet, the network library follows
   the ``ARP process`` below for the default gateway IP.
 
+Content Delivery Networks (CDN)
+-------------------------------
+
+Following the DNS lookup process, when your browser is directed towards
+``google.com``, one of the pivotal technologies that enhances your browsing
+experience comes into play: the Content Delivery Network (CDN).
+
+CDNs are essentially a geographically distributed network of proxy servers and
+their respective data centers. The fundamental aim of a CDN is to provide high
+availability and high performance by distributing the service spatially
+relative to users. This is achieved through a variety of mechanisms that
+include, but are not limited to, caching content closer to the user, optimizing
+connection reuse, and reducing bandwidth costs.
+
+**How CDNs Operate**
+
+CDNs operate by serving a user's request from the nearest geographical server.
+Here's a simplified step-by-step process:
+
+1. **Request Routing**: The CDN network routes the user's request to the
+   nearest edge server, making the assumption based on the user's geographical
+   location.
+
+2. **Content Serving Strategy**: If the requested content is available on the
+   edge server (cache hit), it is served directly to the user. If the content
+   is not available (cache miss), the edge server requests it from the origin
+   server or a closer edge server, caches it for future requests, and then
+   serves it to the user.
+
+3. **Content Delivery**: The CDN delivers the content to the user, potentially
+   using optimizations such as compression to reduce file sizes and secure
+   delivery mechanisms like HTTPS to ensure data integrity and privacy.
+
+**Benefits of Using CDNs**
+
+The use of CDNs offers several benefits, including but not limited to:
+
+- **Reduced Latency**: By serving content from locations geographically closer
+  to the user, CDNs can significantly reduce the time it takes for content to
+  travel between the server and the user.
+
+- **Increased Redundancy**: CDNs provide additional reliability through content
+  replication, thereby reducing the risk of site outages.
+
+- **Enhanced Security**: CDNs can enhance security by providing DDoS
+  mitigation, improving security certificate management, and other web
+  security features.
+
+**Conclusion**
+
+In the journey of a request to ``google.com``, the role of CDNs is crucial in
+ensuring that the content is delivered in the most efficient and secure manner
+possible. By leveraging the distributed nature of CDNs, websites can ensure
+that users around the world experience fast, reliable access to web content.
 
 ARP process
 -----------
