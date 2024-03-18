@@ -673,6 +673,7 @@ GPU Rendering
   software layers split the task into multiple pieces, so it can take advantage
   of ``GPU`` massive parallelism for float point calculations required for
   the rendering process.
+* GPU rendering takes a single set of instructions and runs them across multiple cores on multiple data, emphasizing parallel processing on one specific task while freeing up the CPU to focus on a variety of different sequential serial processing jobs. Rasterization, the rendering method used by all current graphics cards, geometrically projects objects in the scene to an image plane, which is an extremely fast process, but does not include advanced optical effects.
 
 
 Window Server
