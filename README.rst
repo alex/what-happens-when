@@ -38,8 +38,40 @@ popular searches from the internet as a whole. As you are typing
 "google.com" many blocks of code run and the suggestions will be refined
 with each keypress. It may even suggest "google.com" before you finish typing
 it.
+When the 'G' key is pressed on a keyboard, several processes are initiated at different levels of the computer system, from hardware to software. Here's a detailed explanation of what happens:
 
-The "enter" key bottoms out
+Hardware Level:
+
+When the 'G' key is pressed, a physical mechanism within the keyboard detects the keypress. Each key on a keyboard typically has a switch underneath it.
+The switch is a simple circuit that gets closed when the key is pressed, completing an electrical connection.
+This action sends an electrical signal to the keyboard controller, a component embedded within the keyboard itself.
+Keyboard Controller:
+
+The keyboard controller is a microcontroller responsible for managing keypress events.
+Upon receiving the signal from the 'G' keypress, the keyboard controller processes this event.
+It converts the electrical signal into a digital code that represents the specific key pressed (in this case, the code corresponding to the 'G' key).
+Interface Protocol:
+
+The keyboard controller then communicates this digital code to the computer through a communication interface such as USB (Universal Serial Bus), PS/2, or Bluetooth, depending on the type of keyboard.
+The interface protocol ensures proper transmission of data between the keyboard and the computer.
+Operating System Input Handling:
+
+The computer's operating system (OS) receives the data packet containing the code for the 'G' keypress.
+The OS has a keyboard driver, a software component responsible for handling input from the keyboard.
+The keyboard driver interprets the received code and generates an event indicating that the 'G' key has been pressed.
+Event Queuing:
+
+The generated event is placed into a queue within the operating system. The event queue is a data structure that holds input events (such as keypresses) until they can be processed by the system.
+Other events, such as mouse clicks or system notifications, may also be present in the queue.
+Application Event Handling:
+
+Applications running on the computer can register to receive notifications about keyboard events.
+When the 'G' keypress event reaches the front of the event queue, the OS dispatches it to the appropriate application(s) that have registered to listen for keyboard input.
+If an application is currently focused (in the foreground), it receives the event directly. Otherwise, the event may be sent to the operating system's event dispatcher, which routes it to the appropriate application when it gains focus.
+Application Response:
+
+Upon receiving the 'G' keypress event, the application executes the corresponding action or function associated with the 'G' key.
+This action could be anything from inserting the letter 'G' into a text document to triggering a specific command or function within the application.The "enter" key bottoms out
 ---------------------------
 
 To pick a zero point, let's choose the Enter key on the keyboard hitting the
