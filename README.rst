@@ -208,6 +208,7 @@ Check HSTS list
 
 DNS lookup
 ----------
+Like a phonebook, DNS maintains and maps the name of the website, i.e. URL, and particular IP address it links to. Every URL on the internet has a unique IP address which is of the computer which hosts the server(think about files that contain documents, graphics, dynamic contents) of the website requested.
 
 * Browser checks if the domain is in its cache. (to see the DNS Cache in
   Chrome, go to `chrome://net-internals/#dns <chrome://net-internals/#dns>`_).
