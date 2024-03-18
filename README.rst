@@ -209,11 +209,11 @@ Check HSTS list
 DNS lookup
 ----------
 
-You web browser initially examines it’s local data including its cache, followed by checks the operating system cache which is stored in the /etc/hosts file, if the information wasn’t available there, a DNS query - Domain Name System, is sent to a DNS Resolver, These servers are specialized in finding the IP address you're seeking, like the local ISP, cloud fire 1.1.1.1 or google DNS 8.8.8.8, which also checks its local cache first for any relevant data about your query, otherwise it proceeds to make its own inquiries to obtain the answers you seek.
+- You web browser initially examines it’s local data including its cache, followed by checks the operating system cache which is stored in the /etc/hosts file, if the information wasn’t available there, a DNS query - Domain Name System, is sent to a DNS Resolver, These servers are specialized in finding the IP address you're seeking, like the local ISP, cloud fire 1.1.1.1 or google DNS 8.8.8.8, which also checks its local cache first for any relevant data about your query, otherwise it proceeds to make its own inquiries to obtain the answers you seek.
 
-When you type “www.google.com” a dot at the end of the domain name is added by default to refer to the root server which is the first location in which the DNS resolver hurry up to, and this dot added represent the root of the DNS hierarchy. Root servers are scattered around the globe and based on your geographic location, the query is sent to the nearest server to retrieve the Top-Level Domain (TLD).  For example, the root server will return to you the IP address of .com name server which is the TLD, and your DNS resolver will use this address to find the next clue of your mystery.
+- When you type “www.google.com” a dot at the end of the domain name is added by default to refer to the root server which is the first location in which the DNS resolver hurry up to, and this dot added represent the root of the DNS hierarchy. Root servers are scattered around the globe and based on your geographic location, the query is sent to the nearest server to retrieve the Top-Level Domain (TLD).  For example, the root server will return to you the IP address of .com name server which is the TLD, and your DNS resolver will use this address to find the next clue of your mystery.
 
-The DNS resolver queries the .com name server and asks for the authoritative name server for google.com, as an IP address, Using this new location, it requests the specific IP address for the website. Once it receives the answer, it caches the data in its system and returns it to the browser, guiding it to the correct destination.
+- The DNS resolver queries the .com name server and asks for the authoritative name server for google.com, as an IP address, Using this new location, it requests the specific IP address for the website. Once it receives the answer, it caches the data in its system and returns it to the browser, guiding it to the correct destination.
 
 
 ARP process
@@ -439,7 +439,7 @@ After sending the request and headers, the web browser sends a single blank
 newline to the server indicating that the content of the request is done.
 
 The server responds with a response code denoting the status of the request and
-responds with a response of the form::
+responds with a response of the form:
 
     200 OK
     [response headers]
