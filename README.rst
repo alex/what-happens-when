@@ -413,7 +413,11 @@ control`_. This varies depending on the sender; the most common algorithms are
 * After reaching the slow-start threshold, the window increases additively for
   each packet acknowledged. If a packet is dropped, the window reduces
   exponentially until another packet is acknowledged.
-
+* Reduced throughput: Overall data transfer slows down, especially with TCP.
+* Increased latency (lag): Delays due to retransmissions or packets taking less direct routes to compensate.
+* Choppy audio/video: Gaps, distortion, and freezing in streaming media.
+* Glitches and delays in online games: Inconsistent responsiveness, rubber-banding (objects appearing to jump around).
+ 
 HTTP protocol
 -------------
 
