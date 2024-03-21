@@ -588,7 +588,7 @@ the markup.
 
 **The parsing algorithm**
 
-HTML cannot be parsed using the regular top-down or bottom-up parsers.
+HTML cannot  be parsed using the regular top-down or bottom-up parsers.
 
 The reasons are:
 
@@ -609,7 +609,7 @@ The algorithm consists of two stages: tokenization and tree construction.
 **Actions when the parsing is finished**
 
 The browser begins fetching external resources linked to the page (CSS, images,
-JavaScript files, etc.).
+JavaScript files, etc..).
 
 At this stage the browser marks the document as interactive and starts
 parsing scripts that are in "deferred" mode: those that should be
