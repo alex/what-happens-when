@@ -709,3 +709,21 @@ page rendering and painting.
 .. _`downgrade attack`: http://en.wikipedia.org/wiki/SSL_stripping
 .. _`OSI Model`: https://en.wikipedia.org/wiki/OSI_model
 .. _`Spanish`: https://github.com/gonzaleztroyano/what-happens-when-ES
+WHAT HAPPENS  WHEN THE REQUEST GUEST TO THE LOAD BALANCER 
+When you type "www.google.com" into your web browser and hit Enter, your request doesn't go directly to a single server handling all of Google's traffic. Instead, it goes through a series of steps, one of which involves a load balancer. Here's how the load balancer works in the context of accessing Google:
+
+DNS Resolution: The process starts with your browser sending a Domain Name System (DNS) query to resolve the domain name "www.google.com" into an IP address. The DNS resolver returns one or more IP addresses associated with Google's servers.
+
+Client Request Reaches Google's Network: After obtaining the IP address, your browser establishes a connection with one of Google's servers using the Transmission Control Protocol (TCP) over the Internet Protocol (IP).
+
+Load Balancer Decision: When the request reaches Google's network, it often encounters a load balancer first. Load balancers are specialized devices or software that evenly distribute incoming network traffic across multiple servers (or a cluster of servers) to ensure optimal resource utilization, maximize throughput, and minimize response time.
+
+Routing Traffic: The load balancer evaluates various factors to determine which server should handle the incoming request. These factors may include server health (checking if servers are up and running), server load (measuring current CPU, memory, and network usage), geographic location of the client, and specific routing rules configured by Google.
+
+Request Forwarding: Once the load balancer selects a server, it forwards the incoming request to that server. The selected server then processes the request, which may involve retrieving web pages, executing scripts, accessing databases, or generating dynamic content.
+
+Response Delivery: After processing the request, the selected server generates a response and sends it back to your browser through the load balancer. The load balancer ensures that the response is delivered efficiently by maintaining connections with clients and managing the flow of data between clients and servers.
+
+Session Persistence (Optional): In some cases, such as maintaining session state for logged-in users, the load balancer may employ session persistence techniques to ensure that subsequent requests from the same client are routed to the same server. This helps maintain continuity and consistency for user sessions.
+
+Scalability and Redundancy: Load balancers play a crucial role in Google's infrastructure by enabling horizontal scalability and redundancy. By distributing traffic across multiple servers, load balancers allow Google to handle large volumes of requests efficiently while also providing fault tolerance and high availability.
