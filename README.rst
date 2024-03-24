@@ -666,7 +666,7 @@ Page Rendering
 GPU Rendering
 -------------
 
-* During the rendering process the graphical computing layers can use general
+* During the rendering, process the graphical computing layers can use general
   purpose ``CPU`` or the graphical processor ``GPU`` as well.
 
 * When using ``GPU`` for graphical rendering computations the graphical
