@@ -369,6 +369,12 @@ This send and receive happens multiple times following the TCP connection flow:
 
 TLS handshake
 -------------
+TLS Handshake Process:
+The TLS handshake is crucial for establishing a secure connection between the client and the server.
+It involves several steps such as client-server communication, encryption, and verification.
+Addition: This process ensures that data exchanged between the client and server remains confidential and secure.
+It begins with the client sending a "ClientHello" message to the server, initiating the negotiation of encryption algorithms and exchanging digital certificates.
+
 * The client computer sends a ``ClientHello`` message to the server with its
   Transport Layer Security (TLS) version, list of cipher algorithms and
   compression methods available.
@@ -397,6 +403,14 @@ TLS handshake
 * From now on the TLS session transmits the application (HTTP) data encrypted
   with the agreed symmetric key.
 
+Firewalls:
+Description: Firewalls are network security devices or software applications that monitor and control incoming and outgoing network traffic based on predetermined security rules. 
+They act as barriers between a trusted internal network and untrusted external networks, such as the internet.
+Addition: Firewalls play a critical role in protecting the web server from unauthorized access, malicious attacks, and other security threats.
+They inspect incoming and outgoing traffic, filtering packets based on predefined rulesets, such as allowing or blocking specific IP addresses,
+ports, or protocols. 
+This helps prevent unauthorized access to sensitive data and mitigate the risk of cyberattacks.
+
 If a packet is dropped
 ----------------------
 
@@ -416,6 +430,12 @@ control`_. This varies depending on the sender; the most common algorithms are
 
 HTTP protocol
 -------------
+
+Description: HTTP (Hypertext Transfer Protocol) is the foundation of data communication on the World Wide Web.
+It defines how messages are formatted and transmitted, as well as how web servers and browsers should respond to various commands.
+Addition: After the TLS handshake, the client proceeds to send an HTTP request to the server.
+The request typically includes the requested resource's method (e.g., GET, POST), the domain name, and additional headers.
+The server responds with a status code indicating the outcome of the request, along with the requested content.
 
 If the web browser used was written by Google, instead of sending an HTTP
 request to retrieve the page, it will send a request to try and negotiate with
@@ -519,6 +539,16 @@ to the browser it undergoes the below process:
 * Parsing - HTML, CSS, JS
 * Rendering - Construct DOM Tree → Render Tree → Layout of Render Tree →
   Painting the render tree
+
+Load Balancers:
+---------------
+
+Description: Load balancers distribute incoming network traffic across multiple servers to optimize resource utilization,
+maximize throughput, minimize response time, and avoid overload on any single server.
+Addition: After the server receives an HTTP request from the client, if the application is hosted on multiple servers,
+a load balancer can intelligently route the request to the least busy server.
+This ensures that the workload is evenly distributed, preventing any single server from becoming overwhelmed
+and improving the overall performance and reliability of the application.
 
 Browser
 -------
@@ -709,3 +739,4 @@ page rendering and painting.
 .. _`downgrade attack`: http://en.wikipedia.org/wiki/SSL_stripping
 .. _`OSI Model`: https://en.wikipedia.org/wiki/OSI_model
 .. _`Spanish`: https://github.com/gonzaleztroyano/what-happens-when-ES
+
