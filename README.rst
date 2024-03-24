@@ -709,3 +709,5 @@ page rendering and painting.
 .. _`downgrade attack`: http://en.wikipedia.org/wiki/SSL_stripping
 .. _`OSI Model`: https://en.wikipedia.org/wiki/OSI_model
 .. _`Spanish`: https://github.com/gonzaleztroyano/what-happens-when-ES
+
+By understanding the journey of a web request from DNS resolution to database interaction, we gain insight into the complex infrastructure and protocols that power the modern web. Each step of the process plays a crucial role in delivering a seamless and secure web browsing experience. As software engineers, it's essential to have a comprehensive understanding of these concepts to design, build, and maintain robust web applications and services.
