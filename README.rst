@@ -397,6 +397,12 @@ TLS handshake
 * From now on the TLS session transmits the application (HTTP) data encrypted
   with the agreed symmetric key.
 
+* Throughout the handshake, both the client and server perform various checks to
+  ensure the integrity and security of the connection, including verifying certificates,
+  checking for common vulnerabilities, and protecting against attacks such
+  as man-in-the-middle (MITM) attacks. Once the handshake is complete, the client
+  and the service securely exchange data over the encrypted connection.
+
 If a packet is dropped
 ----------------------
 
