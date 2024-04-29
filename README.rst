@@ -417,6 +417,8 @@ control`_. This varies depending on the sender; the most common algorithms are
 HTTP protocol
 -------------
 
+HTTPS which stands for Hypertext Transfer Protocol Secure, is an encrypted iteration of the HTTP protocol utilized for data transmission over the internet. Its purpose is to secure the data exchange between the browser and Google’s server.
+
 If the web browser used was written by Google, instead of sending an HTTP
 request to retrieve the page, it will send a request to try and negotiate with
 the server an "upgrade" from HTTP to the SPDY protocol.
