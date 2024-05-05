@@ -674,6 +674,14 @@ GPU Rendering
   of ``GPU`` massive parallelism for float point calculations required for
   the rendering process.
 
+CPU vs. GPU Rendering
+-------------
+
+*CPU (Central Processing Unit): The CPU is the general-purpose workhorse of a computer. It handles a wide range of tasks, including running applications, managing memory, and 
+ executing instructions.
+
+*GPU (Graphics Processing Unit): The GPU, on the other hand, is specialized for graphics-related computations. It excels at parallel processing and is optimized for tasks like rendering images, videos, and 3D graphics.
+
 
 Window Server
 -------------
