@@ -689,6 +689,24 @@ the Google homepage. Scripts can cause additional network requests to be
 performed, as well as modify the page or its layout, causing another round of
 page rendering and painting.
 
+
+
+Browser Rendering Process
+After the browser receives the requested content from the server, it undergoes a complex process known as rendering to display the web page accurately. The rendering process can be broken down into several key steps:
+
+HTML Parsing: The browser parses the HTML markup into a parse tree, which is a tree of DOM (Document Object Model) element and attribute nodes. This parse tree forms the basis for rendering the web page.
+CSS Interpretation: CSS files, <style> tag contents, and style attribute values are parsed using the CSS lexical and syntax grammar. Each CSS file is parsed into a StyleSheet object containing CSS rules with selectors and corresponding CSS properties.
+Page Rendering:
+Frame Tree Creation: A 'Frame Tree' or 'Render Tree' is created by traversing the DOM nodes and calculating the CSS style values for each node.
+Width Calculation: The preferred width of each node in the 'Frame Tree' is calculated by summing the preferred widths of child nodes and accounting for margins, borders, and padding.
+Height Calculation: Similarly, the height of each node is calculated by applying text wrapping and summing child node heights along with margins, borders, and padding.
+Positioning: Coordinates for each node are determined based on the calculated width and height values.
+Layer Creation: Layers are created to describe which parts of the page can be animated as a group without needing to be re-rendered. Each frame/render object is assigned to a layer, optimizing rendering performance.
+Textures Allocation: Textures are allocated for each layer of the page, which are then used for rendering graphics and elements efficiently.
+GPU Rendering: In modern browsers, graphical rendering computations can be offloaded to the GPU for faster and more efficient processing. This involves splitting rendering tasks into multiple pieces to leverage the GPU's parallel processing capabilities.
+Window Server Interaction: Post-rendering, the graphical output is sent to the window server for display on the user's screen. The window server manages the final presentation of the rendered content.
+This intricate process ensures that web pages are displayed accurately and responsively, taking into account HTML structure, CSS styling, and graphical rendering optimizations.
+
 .. _`Creative Commons Zero`: https://creativecommons.org/publicdomain/zero/1.0/
 .. _`"CSS lexical and syntax grammar"`: http://www.w3.org/TR/CSS2/grammar.html
 .. _`Punycode`: https://en.wikipedia.org/wiki/Punycode
