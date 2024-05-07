@@ -225,6 +225,30 @@ DNS lookup
   the ``ARP process`` below for the default gateway IP.
 
 
+Loadbalancer
+------------
+When you type ``google.com`` into your browser, your DNS resolver typically resolves
+the domain name to one or more IP addresses associated with Google’s servers.
+These IP addresses are usually returned in a specific order, 
+and the client (e.g., a web browser) typically tries to connect to the first IP address in the list. 
+If the connection attempt fails or times out, it may then try the next IP address in the list. 
+This means that different servers are responding to the request by using the principle of ``load balancer``. 
+Google’s load balancing infrastructure then directs your request to one of its
+many servers based on various factors, including ``server health``, ``proximity``, and ``current load``.
+Google uses ``load balancing algorithm`` to manage the request from a client to lighten the web server load.
+However, this process typically happens behind the scenes, and the end-user doesn’t typically notice IP address changes with each request.
+
+The order in which these IP addresses are returned can vary depending on several factors:
+
+**DNS Server Configuration** : The DNS server can be configured to return IP addresses in a specific order. For example, it may prioritize servers based on their proximity to the DNS resolver or based on predefined rules.
+
+**Load Balancer Configuration**: If the domain is using a load balancer, the load balancer may influence the order in which IP addresses are returned. It may prioritize healthy servers or distribute the load evenly across servers.
+
+**Geographical Considerations**: Some DNS servers consider the geographical location of the client and may prioritize IP addresses of servers that are closer to the client.
+
+**DNS Cache**: DNS resolvers often cache DNS records for a certain period of time. If a DNS resolver has cached the IP addresses for a domain, it may return the cached list of IP addresses in the order they were originally retrieved, regardless of any changes made on the authoritative DNS server.
+
+
 ARP process
 -----------
 
