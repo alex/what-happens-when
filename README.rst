@@ -664,31 +664,17 @@ Page Rendering
   asynchronous rendering and the frame is sent to the window server.
 
 GPU Rendering
--------------
-
-* During the rendering process the graphical computing layers can use general
-  purpose ``CPU`` or the graphical processor ``GPU`` as well.
-
-* When using ``GPU`` for graphical rendering computations the graphical
-  software layers split the task into multiple pieces, so it can take advantage
-  of ``GPU`` massive parallelism for float point calculations required for
-  the rendering process.
-
-
+During the rendering process, graphical computing layers can use either a general-purpose CPU or a specialized GPU.
+When using a GPU for graphical rendering, the graphical software layers split the task into multiple pieces to take advantage of the GPU's massive parallelism, which is ideal for the floating-point calculations required for the rendering process.
 Window Server
--------------
+{Provide more details about the Window Server and its role in rendering, as the current text lacks information}
 
-Post-rendering and user-induced execution
------------------------------------------
+Post-rendering and User-induced Execution
+After rendering is complete, a browser can execute JavaScript code due to timing mechanisms (like animations) or user interactions (such as typing into a search box). Plugins like Flash or Java can also execute, although not on the Google homepage. JavaScript can:
 
-After rendering has been completed, the browser executes JavaScript code as a result
-of some timing mechanism (such as a Google Doodle animation) or user
-interaction (typing a query into the search box and receiving suggestions).
-Plugins such as Flash or Java may execute as well, although not at this time on
-the Google homepage. Scripts can cause additional network requests to be
-performed, as well as modify the page or its layout, causing another round of
-page rendering and painting.
-
+Perform additional network requests.
+Modify the page or its layout, leading to another round of page rendering and painting.
+References
 .. _`Creative Commons Zero`: https://creativecommons.org/publicdomain/zero/1.0/
 .. _`"CSS lexical and syntax grammar"`: http://www.w3.org/TR/CSS2/grammar.html
 .. _`Punycode`: https://en.wikipedia.org/wiki/Punycode
