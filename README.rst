@@ -678,6 +678,25 @@ GPU Rendering
 Window Server
 -------------
 
+what happens when
+---------------
+Many individuals use web browser to access millions of sites, but only few really try to wonder what happens behind the scenes when you type in a url and get access to the website. 
+When you type https://www.google.com in your browser and press "Enter" the following steps take place in the background:
+
+DNS request: The browser sends a DNS request to resolve the domain name www.google.com to an IP address, the DNS server searches for the IP address linked to Google web server in its database. The DNS server then responds with the IP address of the Google web server.
+TCP/IP: The browser establishes a TCP/IP connection to the Google web server using the IP address obtained from the DNS request. The browser sends an HTTPS request to the web server.
+Firewall: The firewall on the web server checks the incoming HTTPS request sent from the connected port and allows it to pass through if it is allowed by the firewall rules but disallows it if it doesn't check the rules
+HTTPS/SSL: The web server receives the HTTPS request and decrypts it using its SSL certificate. The web server sends the decrypted request to the application server.
+Load-balancer: If the web server is part of a load-balanced cluster, the load balancer distributes the incoming HTTPS request to one of the web servers in the cluster.
+Web server: The web server processes the HTTPS request and sends a response to the browser.
+Application server: The application server processes the request and sends a response to the web server.
+Database: The database stores and retrieves data as needed by the application server.
+The browser displays the response from the web server in the browser window.
+
+For every domain name sent to the web browser the same process is repeated.
+this is the mechanism behind accessing a website from a web browser using the domain name. 
+
+
 Post-rendering and user-induced execution
 -----------------------------------------
 
