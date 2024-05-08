@@ -629,6 +629,10 @@ CSS interpretation
 * A CSS parser can be top-down or bottom-up when a specific parser generator
   is used.
 
+The browser
+-----------
+The browser first parses the HTML file, and if it recognizes element references to CSS or JavaScript files (i.e ``<link>`` or ``<script>``), it sends requests back to the server for those files. The browser generates an in-memory DOM tree from the parsed HTML, CSSOM structure from the parsed CSS, then executes the parsed JavaScript.
+
 Page Rendering
 --------------
 
