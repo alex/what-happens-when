@@ -666,13 +666,15 @@ Page Rendering
 GPU Rendering
 -------------
 
-* During the rendering process the graphical computing layers can use general
-  purpose ``CPU`` or the graphical processor ``GPU`` as well.
+In addition to the traditional rendering process, modern web browsers and applications often leverage the power of the Graphics Processing Unit (GPU) for rendering graphics and visual elements efficiently. Unlike the CPU, which is a general-purpose processor, the GPU is specifically designed to handle parallel processing tasks, making it well-suited for graphical computations.
 
-* When using ``GPU`` for graphical rendering computations the graphical
-  software layers split the task into multiple pieces, so it can take advantage
-  of ``GPU`` massive parallelism for float point calculations required for
-  the rendering process.
+When utilizing the GPU for rendering, the graphical software layers, such as the browser's rendering engine, split the rendering task into multiple smaller pieces. This segmentation allows the GPU to leverage its massive parallelism for floating-point calculations required during the rendering process.
+
+The GPU's architecture is optimized for parallel processing, with thousands of cores capable of executing tasks simultaneously. This parallelism enables the GPU to handle complex graphical computations efficiently, including vertex transformations, rasterization, shading, and texture mapping.
+
+By offloading rendering tasks to the GPU, web browsers and applications can achieve smoother animations, faster page load times, and improved overall performance. GPU rendering also allows for more realistic and immersive visual experiences, with support for advanced graphical effects such as shaders, lighting, and reflections.
+
+Furthermore, modern web standards like WebGL enable developers to harness the power of the GPU directly from within web applications, allowing for the creation of interactive 3D graphics and visualizations directly in the browser.
 
 
 Window Server
