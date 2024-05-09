@@ -677,6 +677,10 @@ GPU Rendering
 
 Window Server
 -------------
+Windows Server is a line of operating systems developed by Microsoft designed to power 
+server infrastructure and support enterprise-level computing needs. It is built on the 
+same foundation as the Windows desktop operating systems but is optimized for server-specific tasks 
+and functionalities.
 
 Post-rendering and user-induced execution
 -----------------------------------------
