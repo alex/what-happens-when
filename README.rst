@@ -571,6 +571,15 @@ The components of the browsers are:
   support storage mechanisms such as localStorage, IndexedDB, WebSQL and
   FileSystem.
 
+The browser's role extends beyond just displaying web resources. It also emcompasses
+interpreting and executing JavaScript code embedded within HTML files, thanks to
+the JavaScript engine. This engine parses and executes JavaScript to enable
+interactive features and dynamic content on web pages. Additionally, browsers
+include a data storage component, serving as a persistence layer for locally saving
+various types of data, such as cookies. Moreover, browsers support different
+storage mechanisms like localStorage, IndexedDB, WebSQL, and FileSystem, ensuring
+efficient data management for enhanced user experiences.
+
 HTML parsing
 ------------
 
