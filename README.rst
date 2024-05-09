@@ -296,6 +296,11 @@ the default gateway it can resume its DNS process:
 * If the local/ISP DNS server does not have it, then a recursive search is
   requested and that flows up the list of DNS servers until the SOA is reached,
   and if found an answer is returned.
+* Each server in the hierarchy checks its cache for an old dns request to the same
+  server, and if available, transmits it back. If no cached requests are found, the
+  request continues its way until it reaches one of the 13 major root dns servers,
+  scattered around the world. They are responsible of every dns resolution in the world
+  and they are responsible of maintaining the web as it is right now.
 
 Opening of a socket
 -------------------
