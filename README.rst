@@ -709,3 +709,236 @@ page rendering and painting.
 .. _`downgrade attack`: http://en.wikipedia.org/wiki/SSL_stripping
 .. _`OSI Model`: https://en.wikipedia.org/wiki/OSI_model
 .. _`Spanish`: https://github.com/gonzaleztroyano/what-happens-when-ES
+
+What happens when...
+====================
+
+This repository is an attempt to answer the age-old interview question "What
+happens when you type google.com into your browser's address box and press
+enter?"
+
+Except instead of the usual story, we're going to try to answer this question
+in as much detail as possible. No skipping out on anything.
+
+This is a collaborative process, so dig in and try to help out! There are tons
+of details missing, just waiting for you to add them! So send us a pull
+request, please!
+
+This is all licensed under the terms of the `Creative Commons Zero`_ license.
+
+Read this in `简体中文`_ (simplified Chinese), `日本語`_ (Japanese), `한국어`_
+(Korean) and `Spanish`_. NOTE: these have not been reviewed by the alex/what-happens-when
+maintainers.
+
+Table of Contents
+====================
+
+.. contents::
+   :backlinks: none
+   :local:
+
+The "g" key is pressed
+----------------------
+The following sections explain the physical keyboard actions
+and the OS interrupts. When you press the key "g" the browser receives the
+event and the auto-complete functions kick in.
+Depending on your browser's algorithm and if you are in
+private/incognito mode or not various suggestions will be presented
+to you in the dropdown below the URL bar. Most of these algorithms sort
+and prioritize results based on search history, bookmarks, cookies, and
+popular searches from the internet as a whole. As you are typing
+"google.com" many blocks of code run and the suggestions will be refined
+with each keypress. It may even suggest "google.com" before you finish typing
+it.
+
+The "enter" key bottoms out
+---------------------------
+To pick a zero point, let's choose the Enter key on the keyboard hitting the
+bottom of its range. At this point, an electrical circuit specific to the enter
+key is closed (either directly or capacitively). This allows a small amount of
+current to flow into the logic circuitry of the keyboard, which scans the state
+of each key switch, debounces the electrical noise of the rapid intermittent
+closure of the switch, and converts it to a keycode integer, in this case 13.
+The keyboard controller then encodes the keycode for transport to the computer.
+This is now almost universally over a Universal Serial Bus (USB) or Bluetooth
+connection, but historically has been over PS/2 or ADB connections.
+
+*In the case of the USB keyboard:*
+
+- The USB circuitry of the keyboard is powered by the 5V supply provided over
+  pin 1 from the computer's USB host controller.
+
+- The keycode generated is stored by internal keyboard circuitry memory in a
+  register called "endpoint".
+
+- The host USB controller polls that "endpoint" every ~10ms (minimum value
+  declared by the keyboard), so it gets the keycode value stored on it.
+
+- This value goes to the USB SIE (Serial Interface Engine) to be converted in
+  one or more USB packets that follow the low-level USB protocol.
+
+- Those packets are sent by a differential electrical signal over D+ and D-
+  pins (the middle 2) at a maximum speed of 1.5 Mb/s, as an HID
+  (Human Interface Device) device is always declared to be a "low-speed device"
+  (USB 2.0 compliance).
+
+- This serial signal is then decoded at the computer's host USB controller, and
+  interpreted by the computer's Human Interface Device (HID) universal keyboard
+  device driver.  The value of the key is then passed into the operating
+  system's hardware abstraction layer.
+
+*In the case of Virtual Keyboard (as in touch screen devices):*
+
+- When the user puts their finger on a modern capacitive touch screen, a
+  tiny amount of current gets transferred to the finger. This completes the
+  circuit through the electrostatic field of the conductive layer and
+  creates a voltage drop at that point on the screen. The
+  ``screen controller`` then raises an interrupt reporting the coordinate of
+- Then the mobile OS notifies the currently focused application of a press event
+  in one of its GUI elements (which now is the virtual keyboard application
+  buttons).
+
+- The virtual keyboard can now raise a software interrupt for sending a
+  'key pressed' message back to the OS.
+
+Interrupt fires [NOT for USB keyboards]
+---------------------------------------
+
+The keyboard sends signals on its interrupt request line (IRQ), which is mapped
+to an ``interrupt vector`` (integer) by the interrupt controller. The CPU uses
+the ``Interrupt Descriptor Table`` (IDT) to map the interrupt vectors to
+functions (``interrupt handlers``) which are supplied by the kernel. When an
+interrupt arrives, the CPU indexes the IDT with the interrupt vector and runs
+the corresponding interrupt handler.
+
+The OS reacts
+-------------
+The OS has registered itself with the keyboard's interrupt (IRQ 1 for PS/2, 12
+for USB) using the PIC or APIC, depending on the system architecture. When the
+interrupt handler for the keyboard fires, it reads the keyboard scancode from
+the keyboard's data buffer.
+
+NOTE: For USB keyboards, the IRQ is managed by the USB host controller driver,
+and a different procedure is followed.
+
+The OS finds the keycode from the scancode
+-------------------------------------------
+The OS then looks up the keycode associated with this scancode in the currently
+active ``keyboard layout``. This is determined by the current language input
+method. These are loaded into kernel memory at boot time.
+
+The OS decides what to do with the keycode
+--------------------------------------------
+- If it's a 'printable' character, the OS sends it to the currently focused
+  application. This application is usually determined by the window with
+  focus or is the application currently running full screen.
+
+- If it's a 'non-printable' character, the OS invokes the appropriate system
+  call, which in the case of Enter is to the system's GUI framework.
+
+  - In the case of a GUI, like X.org or Wayland, this will be the GUI server
+    (usually a program called ``X``). This reads the keypress from the OS and
+    sends the event to the window which has focus.
+
+  - In the case of a TTY (text console), the system call writes the character
+    to the currently active TTY. This usually belongs to a terminal emulator
+    running in a graphical environment like X.org or Wayland, but may also be a
+    raw TTY device.
+
+DNS Lookup
+----------
+
+The browser uses the system API `gethostbyname()` (for IPv4) and/or
+`getaddrinfo()` (for IPv6) to translate the hostname "google.com" into an IP
+address.
+
+Depending on your operating system configuration, this request might be handled
+by a local DNS cache or forwarded to one or more DNS servers configured in
+your network settings.
+
+If the hostname is cached, the browser retrieves the corresponding IP address
+directly. Otherwise, it sends a DNS query to the configured DNS servers.
+
+If the DNS query is successful, the DNS server returns the IP address(es)
+associated with the hostname "google.com" to the browser.
+
+If the DNS query fails, the browser may retry the query or display an error
+message to the user.
+
+The browser initiates a TCP connection
+--------------------------------------
+
+The browser opens a TCP connection to the IP address(es) obtained from the DNS
+lookup, typically on port 80 for HTTP or port 443 for HTTPS.
+
+For HTTP connections, the browser sends a plaintext HTTP request to the server,
+including the requested resource (e.g., "/") and additional headers such as
+`User-Agent`, `Accept`, and `Host`.
+
+For HTTPS connections, the browser initiates a TLS handshake to establish a
+secure encrypted connection with the server. This involves negotiating
+encryption algorithms, exchanging cryptographic keys, and verifying the server's
+identity using its SSL certificate.
+
+The server handles the request
+-------------------------------
+
+Upon receiving the HTTP request, the web server processes the request and
+generates an HTTP response. This may involve querying a database, executing
+server-side code (e.g., PHP, Python, Node.js), or retrieving static files from
+disk.
+
+The server constructs an HTTP response containing the requested resource (e.g.,
+HTML document), status code (e.g., 200 OK), and additional headers (e.g.,
+`Content-Type`, `Content-Length`, `Cache-Control`).
+
+The server sends the HTTP response back to the browser over the established TCP
+connection.
+
+The browser receives the response
+----------------------------------
+
+The browser receives the HTTP response from the server and begins processing
+the response.
+
+For HTML responses, the browser parses the HTML document, constructs the
+Document Object Model (DOM), and renders the web page on the screen.
+
+For other types of responses (e.g., images, stylesheets, scripts), the browser
+handles them accordingly, such as displaying images, applying styles, or
+executing JavaScript code.
+
+The browser may also cache certain resources (e.g., images, stylesheets) to
+improve performance and reduce bandwidth usage for future requests.
+
+The web page is displayed
+--------------------------
+
+Once the browser has processed the HTTP response and constructed the DOM, it
+renders the web page on the screen, displaying text, images, and other content
+according to the specified layout and styles.
+
+The user can interact with the web page by clicking links, filling out forms,
+and performing other actions supported by the browser and web page.
+
+The browser may continue to fetch additional resources (e.g., images, scripts)
+as the user interacts with the web page or as specified by the HTML document
+(e.g., through `<img>` or `<script>` tags).
+
+Additional Considerations
+-------------------------
+
+The process described above is a high-level overview of what happens when you
+type "google.com" into your browser's address box and press enter. However,
+there are many additional factors and optimizations involved, such as browser
+caching, HTTP/2 multiplexing, content compression, and prefetching, which can
+significantly impact the browsing experience.
+
+Modern browsers also include features such as tabbed browsing, private browsing,
+and built-in developer tools (e.g., Chrome DevTools, Firefox Developer Tools)
+that provide additional functionality and control to users and developers.
+
+Overall, the process of loading a web page involves a complex interaction
+between the browser, operating system, network infrastructure, and web server,
+each contributing to the overall performance and user experience.
+
