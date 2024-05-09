@@ -447,7 +447,7 @@ the "close" connection option in every message.
 After sending the request and headers, the web browser sends a single blank
 newline to the server indicating that the content of the request is done.
 
-The server responds with a response code denoting the status of the request and
+The server always responds with a response code denoting the status of the request and
 responds with a response of the form::
 
     200 OK
