@@ -678,6 +678,13 @@ GPU Rendering
 Window Server
 -------------
 
+**Web Servers:**
+Web servers handle HTTP requests from clients and deliver web content. Popular ones include Apache, Nginx, and IIS. They typically serve static content efficiently but rely on application servers for dynamic content.
+**Application Servers:**
+Application servers provide an environment for hosting and running web applications. They handle business logic, data processing, and interactions with databases. Examples include Apache Tomcat, Nginx Unit, IIS, Node.js, and Java application servers like GlassFish and JBoss.
+Web servers and application servers often work together. The web server receives the initial request and passes dynamic content requests to the application server for processing. The application server generates the dynamic content by executing server-side code or querying databases, and sends the response back to the web server for delivery to the client.
+This separation allows better scalability, load balancing, and resource management. Application servers also provide features like transaction management, clustering, and support for various web development frameworks and technologies
+
 Post-rendering and user-induced execution
 -----------------------------------------
 
