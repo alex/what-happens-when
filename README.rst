@@ -372,7 +372,8 @@ TLS handshake
 * The client computer sends a ``ClientHello`` message to the server with its
   Transport Layer Security (TLS) version, list of cipher algorithms and
   compression methods available.
-
+* During the TLS handshake, the client and server may negotiate compression 
+  methods to reduce the size of data exchanged over the connection.
 * The server replies with a ``ServerHello`` message to the client with the
   TLS version, selected cipher, selected compression methods and the server's
   public certificate signed by a CA (Certificate Authority). The certificate
