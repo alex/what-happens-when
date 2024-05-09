@@ -480,6 +480,79 @@ resolving the other domain, and follows all steps up to this point for that
 domain. The ``Host`` header in the request will be set to the appropriate
 server name instead of ``google.com``.
 
+HTTP/2 
+======
+
+HTTP/2 was published as RFC 7540 in 2015 and builds on top of the semantics of HTTP/1.1 with several performance enhancements:
+
+Binary Framing Layer
+--------------------
+
+HTTP/2 introduces a new binary framing layer that serves as a mechanism for exchanging data between the client and server. This layer breaks messages into independent frames that can be interleaved and prioritized, solving the head-of-line blocking problem in HTTP/1.1.
+
+An HTTP/2 connection is divided into multiple streams, each with a unique integer identifier. Frames are the smallest unit of communication within a stream, and each frame contains a frame header that specifies its length, type, flags, and the stream identifier it belongs to.
+
+Streams, Messages and Frames
+----------------------------
+
+A stream is an independent, bi-directional sequence of frames exchanged between the client and server. A single HTTP/2 connection can contain multiple concurrently open streams, with either endpoint interleaving frames from multiple streams. Streams can be established and used unilaterally or shared by either the client or server, and can be closed by either endpoint.
+
+Messages, in the form of requests and responses, are mapped to streams and broken down into one or more frames before being sent. For example, an HTTP request message is mapped to a stream and split into HEADERS and DATA frames, while an HTTP response is mapped to the same stream and also split into HEADERS and DATA frames.
+
+Frame Types
+-----------
+
+HTTP/2 defines several types of frames, each serving a different purpose:
+
+* DATA: carries the message payload
+* HEADERS: carries the header block fragments  
+* PRIORITY: specifies the sender-advised priority of a stream
+* RST_STREAM: allows for immediate termination of a stream
+* SETTINGS: conveys configuration parameters for the connection
+* PUSH_PROMISE: announces a server push of response data
+* PING: measures the round-trip time and performs "liveness" checks
+* GOAWAY: initiates a graceful shutdown of a connection
+* WINDOW_UPDATE: implements flow control
+* CONTINUATION: continues a sequence of header block fragments
+
+Flow Control
+------------
+
+HTTP/2 implements flow control to prevent the sender from overwhelming the receiver with data it may not want or be able to process. Flow control is directional with overall connection and per-stream flow control.
+
+Flow control is implemented using the WINDOW_UPDATE frame. The receiver advertises how many octets it is prepared to receive on a stream and for the entire connection. The sender must respect flow control limits imposed by the receiver.
+
+Stream Prioritization
+---------------------
+
+HTTP/2 allows for each stream to have an associated weight and dependency. Each stream may be given an integer weight between 1 and 256, and each stream may be given an explicit dependency on another stream.
+
+The combination of stream dependencies and weights allows an HTTP/2 client to construct and communicate a "prioritization tree" that expresses how it would prefer to receive responses. The server can use this information to prioritize stream processing, transfer of frame data, and to make better use of network resources.
+
+Header Compression
+------------------
+
+HTTP/2 compresses request and response headers using the HPACK compression format, significantly reducing overhead. HPACK is resilient against security attacks such as CRIME, uses static Huffman encoding for efficient compression, and allows for future optimization of encoding without breaking backwards compatibility.
+
+HTTP/2 Implementations
+----------------------
+
+Several popular HTTP/2 server and client implementations exist:
+
+* Servers:
+    * Apache HTTP Server (mod_h2)
+    * nginx (module ngx_http_v2_module)  
+    * IIS (Windows Server 2016+)
+    * h2o (lightweight C server)
+
+* Clients:
+    * Chrome, Firefox, Safari, Edge, Opera (browser support)
+    * curl (command line tool) 
+    * OkHttp (Java library)
+    * hyper (Rust library)
+
+Most implementations support HTTP/2 over TLS (h2), while some also support HTTP/2 over TCP (h2c).
+
 HTTP Server Request Handle
 --------------------------
 The HTTPD (HTTP Daemon) server is the one handling the requests/responses on
