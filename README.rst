@@ -414,6 +414,19 @@ control`_. This varies depending on the sender; the most common algorithms are
   each packet acknowledged. If a packet is dropped, the window reduces
   exponentially until another packet is acknowledged.
 
+After the browser sends the HTTP request to the server, if the website is configured to use HTTPS, a TLS (Transport Layer Security) handshake is initiated. This handshake is crucial for establishing a secure connection between the client (browser) and the server, ensuring that the data transmitted between them is encrypted and secure from eavesdropping or tampering.
+
+ClientHello: The client sends a ClientHello message to the server, indicating its supported TLS version, cipher suites, and other parameters necessary for the handshake.
+ServerHello: In response to the ClientHello, the server sends a ServerHello message back to the client, selecting the appropriate TLS version, cipher suite, and other parameters from the options provided by the client.
+Server Certificate: The server sends its digital certificate to the client. This certificate contains the server's public key, which is used by the client to establish an encrypted channel with the server.
+Key Exchange: The client verifies the authenticity of the server's certificate using its list of trusted Certificate Authorities (CAs). If the certificate is valid and trusted, the client generates a pre-master secret, encrypts it with the server's public key, and sends it back to the server.
+Session Keys Generation: Both the client and server independently derive session keys using the pre-master secret and other exchanged parameters. These session keys will be used for symmetric encryption and decryption of data during the TLS session.
+Finished Messages: Both the client and server exchange Finished messages, which are encrypted and hashed using the derived session keys. These messages confirm that both parties have successfully completed the handshake and are ready to proceed with secure communication.
+Secure Communication: With the handshake completed and session keys established, the client and server can now securely exchange data over the encrypted TLS connection. Any data transmitted between them is encrypted using the agreed-upon cipher suite and session keys, ensuring confidentiality and integrity.
+The TLS handshake process ensures that sensitive information, such as login credentials, personal data, and financial details, remains protected from unauthorized access or interception while in transit between the client and server. It forms the foundation of secure communication on the web and is essential for maintaining user privacy and security online.
+
+By providing a secure and encrypted connection, TLS helps to mitigate various security risks, including man-in-the-middle attacks, eavesdropping, and data tampering, making it a fundamental component of modern web browsing and online transactions.
+
 HTTP protocol
 -------------
 
