@@ -689,6 +689,20 @@ the Google homepage. Scripts can cause additional network requests to be
 performed, as well as modify the page or its layout, causing another round of
 page rendering and painting.
 
+Content Delivery Networks (CDNs) and Edge Computing
+---------------------------------------------------
+
+When you enter [(link unavailable)]((link unavailable)) and press Enter, your request may also be routed through a Content Delivery Network (CDN) or Edge Computing platform. CDNs and Edge Computing platforms have edge locations strategically placed around the world, which cache and process content closer to users. This reduces latency and improves performance by minimizing the distance between users and content.
+
+When a CDN or Edge Computing platform is involved, the process works as follows:
+   * Your browser sends a request to a CDN or Edge Computing platform's edge location.
+   * The edge location checks its cache for the requested content. If it's already cached, the content is delivered directly to your browser.
+   * If the content is not cached, the edge location requests it from the origin server (Google's servers, in this case).
+   * The origin server responds with the content, which is then cached at the edge location for future requests.
+   * The edge location delivers the content to your browser, reducing latency and improving performance.
+
+CDNs and Edge Computing platforms play a vital role in optimizing content delivery, especially for global audiences and high-traffic websites like Google.
+
 .. _`Creative Commons Zero`: https://creativecommons.org/publicdomain/zero/1.0/
 .. _`"CSS lexical and syntax grammar"`: http://www.w3.org/TR/CSS2/grammar.html
 .. _`Punycode`: https://en.wikipedia.org/wiki/Punycode
