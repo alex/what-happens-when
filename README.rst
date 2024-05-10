@@ -224,6 +224,21 @@ DNS lookup
 * If the DNS server is on a different subnet, the network library follows
   the ``ARP process`` below for the default gateway IP.
 
+Content Delivery Networks (CDNs): Taking the Fast Lane to Your Content
+DNS lookup successfully translates the human-readable URL (e.g., google.com) into a machine-readable IP address. But the journey isn't over yet. Here's where Content Delivery Networks (CDNs) come into play:
+
+The CDN Advantage:
+
+Imagine you're ordering a pizza. The traditional way (without a CDN) would be for the pizzeria to have only one kitchen location. If you live far away, your pizza would take a long time to arrive, and might even get cold.
+
+A CDN acts like a network of pizza delivery stores closer to your location. They keep popular pizzas pre-made and ready to go, significantly reducing your waiting time. Here's how CDNs work in the context of web browsing:
+
+Request and Routing: After the DNS lookup, the CDN can intercept the request to access the website's IP address. Using smart algorithms, the CDN determines the optimal edge server to deliver the content from. Factors like user location, server load, and content availability are considered.
+
+Edge Server Caching:  The edge server checks its local cache. If the requested content (webpage components like HTML, CSS, Javascript) is fresh and available, it delivers that content directly to your browser. This significantly reduces latency (wait time) compared to fetching it from the origin server which might be geographically far away.
+
+Origin Server Retrieval: If the content is not available on the edge server, the CDN retrieves it from the website's origin server and caches it locally for future requests. This offloads traffic from the origin server, improving its performance and scalability.
+
 
 ARP process
 -----------
@@ -479,6 +494,29 @@ If the HTML referenced a resource on a different domain than
 resolving the other domain, and follows all steps up to this point for that
 domain. The ``Host`` header in the request will be set to the appropriate
 server name instead of ``google.com``.
+
+Building Upon the Foundation: Content Security Policy (CSP)
+
+The HTTP protocol establishes the communication channel between the browser and server. However, an additional layer of security is often implemented using Content Security Policy (CSP).  Think of CSP as a set of security instructions included by the server within its HTTP response.  These instructions, conveyed through specific directives within the Content-Security-Policy header, dictate what resources (scripts, images, stylesheets, etc.) can be loaded from that domain and others.
+
+CSP Directives: Defining Security Rules
+
+These directives act as the building blocks of your website's security policy. Let's explore some common directives:
+
+default-src: Sets the default policy for loading various resources like scripts, images, and fonts.
+script-src: Specifies authorized sources for executable scripts on the page.
+style-src: Defines permitted sources for stylesheets.
+img-src: Restricts where images can be loaded from.
+connect-src: Determines allowed domains for network requests (e.g., AJAX, WebSockets).
+Additional directives control other resources like fonts, iframes, and plugins.
+Enforcing Security: How Browsers Interpret CSP
+
+Once the browser receives the CSP header from the server, it parses the directives and enforces the defined security policy.  If a web page attempts to load or execute a resource that violates the policy, the browser will block or restrict it based on the specific directive.
+
+Reporting Mechanism: Identifying Potential Issues
+
+CSP offers more than just enforcement. It can also provide valuable insights into potential security issues.  The report-uri directive or the Content-Security-Policy-Report-Only header allows website owners to specify a URL where violation reports are sent.  By analyzing these reports, website administrators can identify potential vulnerabilities and take corrective measures to strengthen their website's security posture.
+
 
 HTTP Server Request Handle
 --------------------------
