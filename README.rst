@@ -571,6 +571,26 @@ The components of the browsers are:
   support storage mechanisms such as localStorage, IndexedDB, WebSQL and
   FileSystem.
 
+## Content Delivery Networks (CDNs):
+
+Content Delivery Networks (CDNs) are a crucial component of modern web
+browsing, playing a significant role in optimizing website performance and
+reliability. CDNs operate by distributing website content, including images,
+CSS files, JavaScript, and other resources, across a network of geographically
+distributed servers, often referred to as edge servers or points of presence
+(PoPs). When a user requests content from a website, the CDN automatically
+identifies the closest edge server to the user's location, reducing latency and
+accelerating content delivery. This proximity ensures faster load times and a
+smoother browsing experience for users regardless of their geographical
+location. Moreover, CDNs provide additional benefits such as:
+
+1.  Load Balancing
+2.  Distributed Caching
+3.  DDoS Mitigation
+4.  Global Reach In summary, CDNs play a vital role in optimizing website
+5. performance, improving scalability, enhancing security, and ensuring a
+seamless browsing experience for users worldwide.
+
 HTML parsing
 ------------
 
