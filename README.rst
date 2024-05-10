@@ -323,7 +323,7 @@ At this point the packet is ready to be transmitted through either:
 * `WiFi`_
 * `Cellular data network`_
 
-For most home or small business Internet connections the packet will pass from
+For most home or small business Internet connections, the packet will pass from
 your computer, possibly through a local network, and then through a modem
 (MOdulator/DEModulator) which converts digital 1's and 0's into an analog
 signal suitable for transmission over telephone, cable, or wireless telephony
@@ -364,7 +364,7 @@ This send and receive happens multiple times following the TCP connection flow:
      received sequence from the other
 * To close the connection:
    * The closer sends a FIN packet
-   * The other sides ACKs the FIN packet and sends its own FIN
+   * The other side ACKs the FIN packet and sends its own FIN
    * The closer acknowledges the other side's FIN with an ACK
 
 TLS handshake
@@ -374,7 +374,7 @@ TLS handshake
   compression methods available.
 
 * The server replies with a ``ServerHello`` message to the client with the
-  TLS version, selected cipher, selected compression methods and the server's
+  TLS version, selected cipher, selected compression methods, and the server's
   public certificate signed by a CA (Certificate Authority). The certificate
   contains a public key that will be used by the client to encrypt the rest of
   the handshake until a symmetric key can be agreed upon.
