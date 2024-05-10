@@ -628,6 +628,10 @@ CSS interpretation
   contains CSS rules with selectors and objects corresponding CSS grammar.
 * A CSS parser can be top-down or bottom-up when a specific parser generator
   is used.
+* CSS Specificity determines which CSS rule is applied by the browsers.
+  It’s calculated based on the types of selectors (inline styles, ID,
+  class, etc.) used in the rule. Higher specificity or later definition
+  wins when multiple rules could apply to an element.
 
 Page Rendering
 --------------
