@@ -174,6 +174,16 @@ Parse URL
     - ``Resource``  "/"
         Retrieve main (index) page
 
+     ``Sub-domain`` "www"
+       It preceeds the domain name and useful for the quirks of DNS and CNAME.
+
+     ``Domain name`` "google.com"
+       This translates human-adapted, text-based domain name to machine-adapted,
+       numerial-based Internet Protocol(IP) address. The browser which may be
+       Chrome, Internet Explorer, Safari, Firefox etc from devices which may
+       be a laptop or a mobile phone as the case may be points the domain name to 
+       a valid IP address.
+
 
 Is it a URL or a search term?
 -----------------------------
