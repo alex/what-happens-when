@@ -187,10 +187,17 @@ Convert non-ASCII Unicode characters in the hostname
 ------------------------------------------------
 
 * The browser checks the hostname for characters that are not in ``a-z``,
-  ``A-Z``, ``0-9``, ``-``, or ``.``.
+  ``A-Z``, ``0-9``, ``-``, or ``.``. Non-ASCII characters can include letters, 
+  symbols, or characters from languages other than English.
 * Since the hostname is ``google.com`` there won't be any, but if there were
   the browser would apply `Punycode`_ encoding to the hostname portion of the
   URL.
+* Browsers use Punycode encoding to handle domain names with non-ASCII characters, 
+  ensuring compatibility with the DNS system and preventing potential security 
+  vulnerabilities such as homograph attacks.
+* Examples of non-ASCII characters that may require Punycode encoding include accented 
+  letters (e.g., "é", "ö"), characters from non-Latin scripts (e.g., Cyrillic, Greek, Chinese), 
+  and special symbols (e.g., emojis).
 
 Check HSTS list
 ---------------
