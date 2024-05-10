@@ -691,6 +691,7 @@ page rendering and painting.
 
 .. _`Creative Commons Zero`: https://creativecommons.org/publicdomain/zero/1.0/
 .. _`"CSS lexical and syntax grammar"`: http://www.w3.org/TR/CSS2/grammar.html
+.. _`"0x11. What happens when you type google.com in your browser and press Enter"`: https://medium.com/@jfrancoiszouba72/what-happens-when-you-type-google-com-in-your-browser-and-press-enter-5552c10041c4
 .. _`Punycode`: https://en.wikipedia.org/wiki/Punycode
 .. _`Ethernet`: http://en.wikipedia.org/wiki/IEEE_802.3
 .. _`WiFi`: https://en.wikipedia.org/wiki/IEEE_802.11
