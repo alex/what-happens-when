@@ -1,3 +1,5 @@
+https://www.linkedin.com/pulse/what-happens-when-you-type-httpswwwgooglecom-your-browser-bampoe-3voyf
+
 What happens when...
 ====================
 
