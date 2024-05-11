@@ -480,6 +480,13 @@ resolving the other domain, and follows all steps up to this point for that
 domain. The ``Host`` header in the request will be set to the appropriate
 server name instead of ``google.com``.
 
+Database
+--------
+If your request requires data retrieval or storage, the application server 
+communicates with various database servers on the client premise. The database 
+server stores and retrieves data, such as user information, search results to 
+fulfill your request.
+
 HTTP Server Request Handle
 --------------------------
 The HTTPD (HTTP Daemon) server is the one handling the requests/responses on
