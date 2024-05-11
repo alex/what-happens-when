@@ -397,6 +397,28 @@ TLS handshake
 * From now on the TLS session transmits the application (HTTP) data encrypted
   with the agreed symmetric key.
 
+
+Firewall, Load balancing and Proxy server
+-----------------------------------------
+Before the TLS handshake, when our browser gets the IP address (our destination)
+and we go to the internet trying to access that computer on the internet, more
+often than not, in a large setup like google that IP will belong to a load balancer.
+
+* We get to the load balancer that has a firewall, the firewall examines us, confirms
+  if our IP is an allowable one and if our request is not among google's list of prohibited
+  requests. If we satisfy the requirements of the firewall, we are then allowed access into
+  the load balancer. The firewall is also a method used to prevent people from one region of
+  the world or a specific country from accessing a certain service of your website.
+
+* Based on how loaded all the computers serving google's homepage is, the load balancer will
+  send us to a proxy server which helps send our request to the least loaded web server (There
+  are often many identical distributed servers running in parallel to add redundancy and improve
+  reliability of a software system).
+
+* The proxy server keeps us at the door and go fetch our request for us. The proxy also helps with
+  caching and storing session data.
+
+
 If a packet is dropped
 ----------------------
 
