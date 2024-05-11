@@ -198,13 +198,15 @@ Check HSTS list
   list. This is a list of websites that have requested to be contacted via
   HTTPS only.
 * If the website is in the list, the browser sends its request via HTTPS
-  instead of HTTP. Otherwise, the initial request is sent via HTTP.
+  instead of HTTP. This is HTTP redirection since google is HTTPS.
   (Note that a website can still use the HSTS policy *without* being in the
   HSTS list.  The first HTTP request to the website by a user will receive a
   response requesting that the user only send HTTPS requests.  However, this
   single HTTP request could potentially leave the user vulnerable to a
-  `downgrade attack`_, which is why the HSTS list is included in modern web
-  browsers.)
+  `downgrade attack`_, if not redirected it means the rquest is not 
+   authenticated means respose can come from any webiste not correct 
+   google.com which is why the HSTS list is included in modern web
+  browsers. )
 
 DNS lookup
 ----------
@@ -290,7 +292,7 @@ Switch:
 Now that the network library has the IP address of either our DNS server or
 the default gateway it can resume its DNS process:
 
-* The DNS client establishes a socket to UDP port 53 on the DNS server,
+* The DNS client establishes a socket to TCP/IP port 80 on the DNS server,
   using a source port above 1023.
 * If the response size is too large, TCP will be used instead.
 * If the local/ISP DNS server does not have it, then a recursive search is
