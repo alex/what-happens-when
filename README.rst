@@ -39,6 +39,14 @@ popular searches from the internet as a whole. As you are typing
 with each keypress. It may even suggest "google.com" before you finish typing
 it.
 
+In addition to the browser's autocomplete feature, pressing the 'G' key triggers various network requests and data transfers. As you type 'google.com' or any other search query, the browser communicates with DNS servers to resolve the domain name to an IP address. Once the IP address is obtained, the browser establishes a TCP connection to the Google servers. This involves a series of handshakes and acknowledgments to ensure reliable data transmission.
+
+Upon establishing the connection, the browser sends an HTTP request to the Google servers, specifying the desired resource (in this case, the search query). The server processes the request, executes the search algorithm, and retrieves relevant search results from its database. These results are then sent back to the browser in the form of an HTTP response.
+
+The browser receives the response, parses the HTML content, and renders it on the screen. This includes displaying the search results, along with any additional elements such as ads, images, or suggestions. The user can then interact with the search results, click on links, or refine their search query further.
+
+Overall, pressing the 'G' key initiates a complex sequence of events involving user input, browser functionality, network communication, and server-side processing. It highlights the interconnected nature of modern web browsing and the underlying technologies that make it possible.
+
 The "enter" key bottoms out
 ---------------------------
 
