@@ -485,6 +485,8 @@ HTTP Server Request Handle
 The HTTPD (HTTP Daemon) server is the one handling the requests/responses on
 the server-side. The most common HTTPD servers are Apache or nginx for Linux
 and IIS for Windows.
+In google's case, they use Google Web Server (GWS) which is proprietary web server software that Google uses for its web infrastructure.
+GWS is used exclusively inside Google's ecosystem for website hosting. 
 
 * The HTTPD (HTTP Daemon) receives the request.
 * The server breaks down the request to the following parameters:
