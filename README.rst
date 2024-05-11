@@ -520,6 +520,11 @@ to the browser it undergoes the below process:
 * Rendering - Construct DOM Tree → Render Tree → Layout of Render Tree →
   Painting the render tree
 
+
+#Load_balancer
+Google's servers are not a single monolithic entity, but a distributed network of devices working side by side. The load balancer is located in front of these servers and distributes incoming requests across them to ensure optimal performance and prevent overloading any one server.
+
+
 Browser
 -------
 
