@@ -38,6 +38,38 @@ popular searches from the internet as a whole. As you are typing
 "google.com" many blocks of code run and the suggestions will be refined
 with each keypress. It may even suggest "google.com" before you finish typing
 it.
+Imagine you press the "g" key. This action triggers a signal, an interrupt, that
+travels from the keyboard to the operating system (OS). The OS recognizes this 
+interrupt and identifies it as a keypress. It then relays this information to the
+browser application that's currently in focus.
+
+Within the browser, a specific module responsible for handling user input takes over. 
+This module parses the keypress data, recognizing it as the letter "g." Now, the
+browser's auto-complete functionality comes into play. It consults several resources to
+generate suggestions for you:
+
+Search History: The browser analyzes your past searches to see if "g" appears at the 
+beginning of any frequently visited websites. If there's a match, like "google.com," 
+it gets prioritized in the suggestion list.
+
+Bookmarks: Similar to search history, the browser checks your bookmarks for any URLs
+that begin with "g." Bookmarked entries often hold higher weight in auto-complete suggestions.
+
+Cookies: Websites you visit often store small data files called cookies on your device.
+These cookies can contain information about your preferences and browsing habits. The auto-complete 
+feature may consider cookies to suggest relevant websites based on your past interactions.
+
+Popular Searches: The browser might also incorporate a broader search by factoring in 
+popular searches from the internet as a whole. This ensures the suggestions include 
+commonly visited websites that begin with "g," even if you haven't interacted with them before.
+
+With every subsequent keypress, like "o" or "o," the auto-complete algorithm refines 
+the suggestions further. By the time you reach "google.com," the browser may have predicted 
+your intent and placed "google.com" at the top of the list, ready for you to simply 
+select it and navigate to the website.
+
+This entire process, from the physical keypress to the refined suggestions, 
+happens incredibly fast, creating a seamless and time-saving user experience.
 
 The "enter" key bottoms out
 ---------------------------
