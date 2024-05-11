@@ -294,8 +294,8 @@ the default gateway it can resume its DNS process:
   using a source port above 1023.
 * If the response size is too large, TCP will be used instead.
 * If the local/ISP DNS server does not have it, then a recursive search is
-  requested and that flows up the list of DNS servers until the SOA is reached,
-  and if found an answer is returned.
+  requested and that flows up the list of DNS servers until the Service Oriented Architecture(SOA) is reached, and if found an answer is returned.
+  *The returned IP address is stored in the browser cache and also by reference in the local ``hosts`` file. So it can be retrieved when the same search request is issued again in the future.
 
 Opening of a socket
 -------------------
