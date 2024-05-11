@@ -510,6 +510,20 @@ and IIS for Windows.
   is running on PHP, the server uses PHP to interpret the index file, and
   streams the output to the client.
 
+When a client sends a request to an HTTP server, the server processes the request according to the HTTP method used (e.g., GET, POST, PUT, DELETE). Here's a breakdown of how servers typically handle different types of requests:
+
+- **GET Request**: A GET request is used to retrieve data from the server. The server parses the request URI (Uniform Resource Identifier) to determine the resource being requested. It then retrieves the resource and sends it back to the client in the response body. GET requests are often cached to improve performance.
+
+- **POST Request**: A POST request is used to submit data to the server, often as part of a form submission. The server processes the request body, which contains the data submitted by the client. This data is typically used to update a database or perform some other action on the server.
+
+- **Other Request Methods**: There are several other HTTP request methods, such as PUT (to update a resource), DELETE (to delete a resource), HEAD (to retrieve headers only), OPTIONS (to retrieve supported HTTP methods), and more. Each of these methods is handled differently by the server, depending on the intended action.
+
+- **Error Handling**: Servers must also handle errors gracefully. For example, if a requested resource is not found (404 error), the server should return an appropriate error response to the client. Other common errors include 400 (Bad Request), 500 (Internal Server Error), and 503 (Service Unavailable).
+
+- **Interaction with Backend Systems**: HTTP servers often interact with backend systems, such as databases or other services, to process requests. For example, when handling a POST request to submit a form, the server may need to update a database with the submitted data.
+
+HTTP servers use various techniques and technologies to handle requests efficiently, including multithreading, connection pooling, and caching. These techniques help improve the server's performance and scalability, ensuring that it can handle a large number of requests concurrently.
+
 Behind the scenes of the Browser
 ----------------------------------
 
