@@ -25,6 +25,18 @@ Table of Contents
    :backlinks: none
    :local:
 
+New Section: The "g" Key and Keyboard Shortcuts
+
+The current content on the GitHub repository focuses on the technical aspects of what happens when a key is pressed. Let's expand on how the "g" key plays a role in keyboard shortcuts, which is a meaningful addition.
+
+Here's the content for the new section:
+
+Keyboard Shortcuts: Many applications and programs utilize keyboard shortcuts for faster navigation and actions. The "g" key can be part of various shortcuts depending on the software. Here are some examples:
+Web Browsers: Pressing "g" in combination with the "Ctrl" key (Ctrl+g) in some browsers can jump you to the address bar.
+Text Editors: Some text editors use "Ctrl+g" to go to a specific line number.
+Video Games: "g" might be assigned to perform an action specific to the game, like throwing a grenade or using an item.
+Custom Shortcuts: Advanced users can leverage software like AutoHotkey to assign custom macros or functions to any key, including "g." This allows for personalized workflows.
+
 The "g" key is pressed
 ----------------------
 The following sections explain the physical keyboard actions
