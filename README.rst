@@ -27,17 +27,12 @@ Table of Contents
 
 The "g" key is pressed
 ----------------------
-The following sections explain the physical keyboard actions
-and the OS interrupts. When you press the key "g" the browser receives the
-event and the auto-complete functions kick in.
-Depending on your browser's algorithm and if you are in
-private/incognito mode or not various suggestions will be presented
-to you in the dropdown below the URL bar. Most of these algorithms sort
-and prioritize results based on search history, bookmarks, cookies, and
-popular searches from the internet as a whole. As you are typing
-"google.com" many blocks of code run and the suggestions will be refined
-with each keypress. It may even suggest "google.com" before you finish typing
-it.
+Hitting the "g" key on a standard keyboard transmits a signal to your computer, signifying the entry of the letter "g." This signal is then deciphered by both the operating system and any programs you're currently using. The outcome can vary depending on the situation:
+
+- **Text-based applications:** When working in a text editor, word processor, or any program that allows text input, the letter "g" will show up on the screen at the position of your cursor.
+- **Web browsers:** Pressing "g" in a web browser might have no effect if it's not part of a keyboard shortcut or if there's no active text field. However, it could also trigger web page actions like scrolling if used with other keys like Ctrl or Shift.
+- **Specialized software:** In some programs, particularly video games or specialized applications, the "g" key might be programmed to execute a specific function or command.
+- **Custom shortcuts:** If you're using software for managing shortcuts or customizing your keyboard, pressing "g" could initiate a custom action or macro that you've assigned to it.
 
 The "enter" key bottoms out
 ---------------------------
