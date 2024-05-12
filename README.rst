@@ -27,17 +27,25 @@ Table of Contents
 
 The "g" key is pressed
 ----------------------
-The following sections explain the physical keyboard actions
-and the OS interrupts. When you press the key "g" the browser receives the
-event and the auto-complete functions kick in.
-Depending on your browser's algorithm and if you are in
-private/incognito mode or not various suggestions will be presented
-to you in the dropdown below the URL bar. Most of these algorithms sort
-and prioritize results based on search history, bookmarks, cookies, and
-popular searches from the internet as a whole. As you are typing
-"google.com" many blocks of code run and the suggestions will be refined
-with each keypress. It may even suggest "google.com" before you finish typing
-it.
+When the user presses the "g" key on the keyboard, several processes are initiated, both at the hardware and software levels.
+
+Physical Keyboard Actions:
+
+The physical action of pressing the "g" key triggers a series of electrical signals within the keyboard, which are then transmitted to the computer through the keyboard's connection interface.
+Operating System (OS) Interrupts:
+
+The operating system, upon receiving the signal from the keyboard, generates an interrupt to notify the browser of the key press event.
+Browser Event Handling:
+
+The browser receives the event and begins processing it. This triggers the browser's auto-complete functionality, especially if the user is typing in the address bar (URL bar).
+Auto-Complete Functionality:
+
+Depending on the browser's algorithm and whether the user is in private or incognito mode, the browser displays suggestions in a dropdown below the URL bar. These suggestions are based on various factors such as search history, bookmarks, cookies, and popular searches from the internet.
+As the user types "google.com," the browser's algorithms refine the suggestions with each keypress. This refinement process may include suggesting "google.com" before the user finishes typing it, based on predictive text algorithms and user behavior patterns.
+Algorithmic Sorting and Prioritization:
+
+The browser's auto-complete functionality relies on algorithms that sort and prioritize suggestions based on relevance to the user's search history, frequently visited sites, and other factors. This ensures that the most relevant suggestions are presented to the user in real time.
+
 
 The "enter" key bottoms out
 ---------------------------
