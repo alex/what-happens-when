@@ -27,17 +27,24 @@ Table of Contents
 
 The "g" key is pressed
 ----------------------
-The following sections explain the physical keyboard actions
-and the OS interrupts. When you press the key "g" the browser receives the
-event and the auto-complete functions kick in.
-Depending on your browser's algorithm and if you are in
-private/incognito mode or not various suggestions will be presented
-to you in the dropdown below the URL bar. Most of these algorithms sort
-and prioritize results based on search history, bookmarks, cookies, and
-popular searches from the internet as a whole. As you are typing
-"google.com" many blocks of code run and the suggestions will be refined
-with each keypress. It may even suggest "google.com" before you finish typing
-it.
+When you press the "g" key, the browser first analyzes the text present in the address bar to determine the user's intent:
+
+- **URL Detection:** The browser checks for patterns like "http://", "https://", or "www." to identify potential URLs. 
+- **Search Intent:** If no URL pattern is found, the browser assumes the user is entering a search query.
+
+Based on the detected intent, the browser proceeds as follows:
+
+- **URL:** The browser parses the URL, performs a DNS lookup, and initiates a connection to the server. The "enter" key is not required at this stage.
+- **Search Query:** The browser waits for the user to finish typing and press "Enter" before passing the query to the default search engine.
+
+- **Autocomplete Functionality:** As you continue typing, the browser's autocomplete feature kicks in, offering suggestions based on:
+
+      - Browsing history
+      - Bookmarks
+      - Cookies
+      - Popular searches
+
+The suggestions are refined with each keypress, helping you reach your desired destination faster.
 
 The "enter" key bottoms out
 ---------------------------
