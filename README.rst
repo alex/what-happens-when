@@ -27,17 +27,33 @@ Table of Contents
 
 The "g" key is pressed
 ----------------------
-The following sections explain the physical keyboard actions
-and the OS interrupts. When you press the key "g" the browser receives the
-event and the auto-complete functions kick in.
-Depending on your browser's algorithm and if you are in
-private/incognito mode or not various suggestions will be presented
-to you in the dropdown below the URL bar. Most of these algorithms sort
-and prioritize results based on search history, bookmarks, cookies, and
-popular searches from the internet as a whole. As you are typing
-"google.com" many blocks of code run and the suggestions will be refined
-with each keypress. It may even suggest "google.com" before you finish typing
-it.
+Here's a detailed explanation of what happens when the "g" key is pressed, from the physical key press to the digital signal:
+
+- Step 1: Physical Key Press
+You press the "g" key on your keyboard, which is a physical switch that closes an electrical circuit.
+The key press causes a mechanical contact to touch a conductive material, completing the circuit.
+
+- Step 2: Electrical Signal
+The closed circuit allows an electrical current to flow through the keyboard's circuitry.
+The current is detected by the keyboard's controller, a small computer chip that processes keyboard input.
+
+- Step 3: Keyboard Controller
+The keyboard controller receives the electrical signal and translates it into a digital code (e.g., the ASCII code for "g", which is 0x67).
+The controller sends the digital code to the computer's processor through a communication protocol (e.g., USB or PS/2).
+
+- Step 4: Processor Interrupt
+The processor receives the digital code and interrupts its current tasks to process the keyboard input.
+The processor executes a interrupt handler routine, which determines the type of input (in this case, a key press).
+
+- Step 5: Operating System
+The interrupt handler routine notifies the operating system (OS) of the key press event.
+The OS processes the event, determining which application should receive the input (in this case, the web browser).
+
+- Step 6: Application Processing
+The OS sends the key press event to the web browser application.
+The browser receives the event and updates its internal state to reflect the new input (the "g" character).
+
+And that's what happens when the "g" key is pressed! From physical switch to digital signal, the process involves a combination of electrical and digital signals, keyboard controller processing, processor interrupts, and operating system and application processing.
 
 The "enter" key bottoms out
 ---------------------------
