@@ -296,6 +296,9 @@ the default gateway it can resume its DNS process:
 * If the local/ISP DNS server does not have it, then a recursive search is
   requested and that flows up the list of DNS servers until the SOA is reached,
   and if found an answer is returned.
+* If the domain name ends up being an alias to another domain name (identified
+  by a CNAME record in the DNS server), a new lookup is initiated with the
+  canonical name in the CNAME record as the new domain to resolve.
 
 Opening of a socket
 -------------------
