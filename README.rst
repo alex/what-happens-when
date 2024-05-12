@@ -205,6 +205,8 @@ Check HSTS list
   single HTTP request could potentially leave the user vulnerable to a
   `downgrade attack`_, which is why the HSTS list is included in modern web
   browsers.)
+* Browsers maintain a list of websites that have requested to be contacted only via HTTPS (encrypted HTTP). This list is known as the "preloaded HSTS list." Websites are added to this list whenWebsites included in the preloaded HSTS list enforce an "HTTPS only" policy, meaning that they instruct browsers to always use HTTPS for communication instead of HTTP. This helps to ensure that all communication between the browser and the website is encrypted, enhancing security and protecting users' data from interception or tampering. they meet certain criteria and request inclusion. This list is distributed with the browser and is periodically updated by browser vendors.
+* 
 
 DNS lookup
 ----------
