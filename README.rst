@@ -689,6 +689,21 @@ the Google homepage. Scripts can cause additional network requests to be
 performed, as well as modify the page or its layout, causing another round of
 page rendering and painting.
 
+
+After the Search Engine Results Page (SERP) is rendered, you can interact with the
+page in several ways. You can click on the blue titles of the search results to visit
+the corresponding web pages, which are the organic search results, not paid for by website owners.
+Google may also show advertisements labeled as such at the top, bottom, or side of the search results page, 
+often relevant to your search query or browsing history. Additionally, Google sometimes displays a featured 
+snippet at the top of the search results, providing a concise answer to your query extracted from a relevant web page.
+You can click on the snippet to read more or visit the source page. For certain queries, Google may show a Knowledge 
+Graph panel on the right side of the search results, offering additional information about the query topic, such as key facts, 
+related topics, and images. Google also offers various tools and filters to refine your search results, 
+such as filtering by time (e.g., past hour, past year), by type (e.g., videos, news), or by location. 
+At the bottom of the SERP, Google often shows a list of related search queries, clicking on which can help you refine your 
+search or explore related topics.
+
+
 .. _`Creative Commons Zero`: https://creativecommons.org/publicdomain/zero/1.0/
 .. _`"CSS lexical and syntax grammar"`: http://www.w3.org/TR/CSS2/grammar.html
 .. _`Punycode`: https://en.wikipedia.org/wiki/Punycode
