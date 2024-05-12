@@ -663,6 +663,9 @@ Page Rendering
   via Direct3D/OpenGL. The GPU command buffer(s) are flushed to the GPU for
   asynchronous rendering and the frame is sent to the window server.
 
+For more clarity read this article: https://medium.com/@chabangmnisi/what-happens-when-you-type-google-com-in-your-browser-and-press-enter-ec46f24d7dce
+
+
 GPU Rendering
 -------------
 
