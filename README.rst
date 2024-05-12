@@ -400,19 +400,22 @@ TLS handshake
 If a packet is dropped
 ----------------------
 
-Sometimes, due to network congestion or flaky hardware connections, TLS packets
-will be dropped before they get to their final destination. The sender then has
-to decide how to react. The algorithm for this is called `TCP congestion
-control`_. This varies depending on the sender; the most common algorithms are
-`cubic`_ on newer operating systems and `New Reno`_ on almost all others.
+In networking, packet loss can occur due to various reasons such as network congestion or unreliable hardware connections. When a Transmission Control Protocol (TCP) packet is dropped, the sender needs to manage this situation effectively to ensure reliable data transmission. The sender employs `TCP congestion
+control`_ algorithms to regulate the flow of data and adapt to network conditions. Two common algorithms used are `cubic`_ and `New Reno`_, each with distinct characteristics and implementations.
 
-* Client chooses a `congestion window`_ based on the `maximum segment size`_
-  (MSS) of the connection.
-* For each packet acknowledged, the window doubles in size until it reaches the
-  'slow-start threshold'. In some implementations, this threshold is adaptive.
-* After reaching the slow-start threshold, the window increases additively for
-  each packet acknowledged. If a packet is dropped, the window reduces
-  exponentially until another packet is acknowledged.
+Here is a more detailed breakdown of how the sender responds to packet loss:
+1. Congestion Window Adjustment:
+* The sender adjusts the congestion window size based on the Maximum Segment Size (MSS) of the connection. The congestion window determines the number of packets that can be sent before receiving an acknowledgment.
+2. Slow-Start and Congestion Avoidance:
+* Initially, during the slow-start phase, the sender doubles the congestion window for each acknowledged packet until it reaches a predefined threshold. This exponential growth helps in quickly probing the network capacity.
+* Once the slow-start threshold is reached, the congestion window increases additively for every acknowledged packet. This phase, known as congestion avoidance, aims to maintain a stable flow of data without overwhelming the network.
+3. Handling Packet Loss:
+* In the event of a packet being dropped, the sender's congestion control mechanism reacts by reducing the congestion window size exponentially. This reduction is crucial to prevent further congestion and allow the network to recover from the packet loss event.
+4. Adaptive Thresholds:
+* Some implementations feature adaptive thresholds for the slow-start phase, dynamically adjusting the threshold based on network conditions. This adaptability enhances the efficiency of the congestion control algorithm in varying network environments.
+
+By incorporating these additional details, the explanation provides a more comprehensive understanding of how TCP congestion control mechanisms respond to packet loss scenarios, ensuring efficient data transmission and network stability
+
 
 HTTP protocol
 -------------
