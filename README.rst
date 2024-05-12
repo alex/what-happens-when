@@ -25,6 +25,7 @@ Table of Contents
    :backlinks: none
    :local:
 
+
 The "g" key is pressed
 ----------------------
 The following sections explain the physical keyboard actions
@@ -688,6 +689,47 @@ Plugins such as Flash or Java may execute as well, although not at this time on
 the Google homepage. Scripts can cause additional network requests to be
 performed, as well as modify the page or its layout, causing another round of
 page rendering and painting.
+
+Summary Conclusion
+---------------------------
+
+# Exploring the Journey of a URL: What Happens When You Type https://www.google.com in Your Browser?
+
+Have you ever wondered what goes on behind the scenes when you hit that Enter key after typing a URL into your browser's address bar? The seemingly simple act of accessing a website involves a complex sequence of events orchestrated by various components of the internet infrastructure. Let's delve into the journey of a URL, using the example of typing "https://www.google.com".
+
+## DNS Request:
+---------------
+The journey begins with a Domain Name System (DNS) request. Your browser needs to translate the human-readable domain name "www.google.com" into an IP address that computers can understand. It sends a DNS query to a DNS server, typically operated by your Internet Service Provider (ISP) or a third-party DNS provider, asking for the IP address associated with "www.google.com".
+
+## TCP/IP:
+---------------------------
+Once the browser obtains the IP address of Google's servers, it establishes a connection using the Transmission Control Protocol (TCP) and Internet Protocol (IP). TCP ensures that data packets are transmitted reliably and in the correct order, while IP handles the routing of these packets across the internet to reach their destination.
+
+## Firewall:
+---------------------------
+As the connection is established, it may encounter firewalls along the way. Firewalls are network security systems that monitor and control incoming and outgoing traffic based on predetermined security rules. If the traffic passes through without any issues, it proceeds to the next step.
+
+## HTTPS/SSL:
+---------------------------
+The next crucial step is establishing a secure connection using HTTPS (Hypertext Transfer Protocol Secure) with SSL (Secure Sockets Layer) or its successor TLS (Transport Layer Security). This ensures that the data exchanged between your browser and Google's servers is encrypted, safeguarding it from eavesdropping and tampering.
+
+## Load-Balancer:
+---------------------------
+Upon reaching Google's infrastructure, the incoming request may encounter a load balancer. Load balancers distribute incoming web traffic across multiple servers to ensure optimal resource utilization and prevent any single server from being overwhelmed. This improves reliability, scalability, and performance.
+
+## Web Server:
+---------------------------
+After passing through the load balancer, the request reaches one of Google's web servers. These servers host the web pages and handle the initial processing of the request. In the case of Google, which serves millions of users simultaneously, these web servers are highly optimized and distributed across various data centers worldwide for redundancy and performance.
+
+## Application Server:
+---------------------------
+In complex web applications like Google Search, there's often a separation between the web server and the application server. The application server executes the business logic, processes dynamic content, interacts with databases, and generates the final response to be sent back to the user.
+
+## Database:
+---------------------------
+Many websites, including Google, rely on databases to store and retrieve data dynamically. When you search for something on Google, for instance, your query is processed by the application server, which may interact with databases containing indexed web pages, user preferences, and other relevant information. The results are then compiled and sent back to your browser.
+
+In conclusion, typing "https://www.google.com" into your browser initiates a fascinating journey through the intricate layers of the internet's infrastructure. From DNS resolution to load balancing, from encryption to database queries, each step plays a vital role in delivering the seamless web experience we often take for granted. Understanding this journey can deepen our appreciation for the complexity and reliability of the modern internet.
 
 .. _`Creative Commons Zero`: https://creativecommons.org/publicdomain/zero/1.0/
 .. _`"CSS lexical and syntax grammar"`: http://www.w3.org/TR/CSS2/grammar.html
