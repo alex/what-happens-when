@@ -168,8 +168,8 @@ Parse URL
 * The browser now has the following information contained in the URL (Uniform
   Resource Locator):
 
-    - ``Protocol``  "http"
-        Use 'Hyper Text Transfer Protocol'
+    - ``Protocol``  "http" or "https"
+        Use 'Hyper Text Transfer Protocol' or 'Hyper Text Transfer Protocol Secure'
 
     - ``Resource``  "/"
         Retrieve main (index) page
