@@ -510,6 +510,11 @@ and IIS for Windows.
   is running on PHP, the server uses PHP to interpret the index file, and
   streams the output to the client.
 
+Response of server
+The https request may ask for html content which is served by the web server, however data
+processing maybe needed, if that is the case, the application sever handles this process and interacts
+with the databases whenever necessary to generate the required date for the user to send it back.
+
 Behind the scenes of the Browser
 ----------------------------------
 
