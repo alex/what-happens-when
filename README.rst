@@ -622,12 +622,22 @@ any invalid content and go on.
 CSS interpretation
 ------------------
 
-* Parse CSS files, ``<style>`` tag contents, and ``style`` attribute
-  values using `"CSS lexical and syntax grammar"`_
-* Each CSS file is parsed into a ``StyleSheet object``, where each object
-  contains CSS rules with selectors and objects corresponding CSS grammar.
-* A CSS parser can be top-down or bottom-up when a specific parser generator
-  is used.
+CSS (Cascading Style Sheets) plays a pivotal role in web development, defining how HTML elements are displayed on a webpage. Let's delve into the process of CSS interpretation to understand how browsers translate CSS instructions into visual elements on the screen.
+
+Parsing CSS Files
+-----------------
+
+The first step in CSS interpretation is parsing CSS files, along with the contents of <style> tags and the style attributes within HTML elements. This involves analyzing the structure and syntax of CSS code according to the "CSS lexical and syntax grammar."
+
+Creating StyleSheet Objects
+---------------------------
+
+Once parsed, each CSS file is transformed into a StyleSheet object. This object serves as a container for CSS rules, each comprising selectors and corresponding properties defined in the CSS grammar. These rules dictate how HTML elements are styled and presented to users.
+
+Choice of Parser
+----------------
+
+CSS parsers can adopt different parsing approaches, such as top-down or bottom-up, depending on the parser generator employed. These parsing strategies determine how CSS rules are interpreted and applied to HTML elements within the document.
 
 Page Rendering
 --------------
