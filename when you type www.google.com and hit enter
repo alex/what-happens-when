@@ -1,0 +1,19 @@
+Title: Decoding the Web Journey: From URL Entry to Web Page Display
+Introduction:
+In the vast realm of software engineering, understanding the intricacies of the web stack is paramount. Let's delve into the journey of a web request, exploring each vital step from typing a URL to displaying a web page.
+DNS Request:
+When you type "https://www.google.com" in your browser and hit Enter, the first step is a DNS (Domain Name System) request. This process involves translating the human-readable domain name "www.google.com" into an IP address, enabling your browser to locate the server hosting Google's website.
+TCP/IP:
+The TCP/IP protocol suite plays a pivotal role in establishing a reliable connection between your browser and Google's server. This involves a series of steps known as the TCP handshake, including SYN, SYN-ACK, and ACK, ensuring seamless data transmission.
+Firewall:
+In the realm of network security, firewalls act as sentinels, filtering incoming and outgoing traffic based on predefined rules. They play a crucial role in safeguarding against unauthorized access and potential threats, ensuring a secure browsing experience.
+HTTPS/SSL:
+The adoption of HTTPS (Hypertext Transfer Protocol Secure) is instrumental in ensuring secure communication between your browser and the server. SSL/TLS encryption encrypts data transmitted over the network, thwarting eavesdropping and tampering attempts, and bolstering data integrity.
+Load Balancer:
+Load balancers are pivotal in distributing incoming web traffic across multiple servers, optimizing performance, scalability, and fault tolerance. They ensure efficient resource utilization, enhancing user experience and system reliability.
+Web Server:
+Upon receiving the request for "www.google.com," the web server (e.g., Apache, Nginx) processes the HTTP request, retrieves the relevant web page, and sends it back to your browser for display. It plays a crucial role in serving static content and handling client requests.
+Application Server:
+For dynamic web applications, the application server executes application logic, processes user inputs, and generates dynamic content. It collaborates with the web server and database to fulfill client requests, facilitating interactive and personalized user experiences.
+Database:
+The database server (e.g., MySQL, PostgreSQL) stores and retrieves data for web applications, handling queries related to the requested web page. It ensures data persistence, integrity, and accessibility, crucial for data-driven web applications.
