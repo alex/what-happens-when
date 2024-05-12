@@ -37,7 +37,7 @@ and prioritize results based on search history, bookmarks, cookies, and
 popular searches from the internet as a whole. As you are typing
 "google.com" many blocks of code run and the suggestions will be refined
 with each keypress. It may even suggest "google.com" before you finish typing
-it.
+it. in programmable keys, You will notice both the G17 up/down and the keystroke if your G-key is configured in the hardware to transmit one as well.
 
 The "enter" key bottoms out
 ---------------------------
