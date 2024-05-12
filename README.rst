@@ -39,6 +39,18 @@ popular searches from the internet as a whole. As you are typing
 with each keypress. It may even suggest "google.com" before you finish typing
 it.
 
+The specific result of pressing the "g" key will depend on the context in which it is being pressed.
+
+For example:
+
+If you are typing in a text editor, pressing the "g" key will simply result in the letter "g" being inserted into the document at the current cursor position.
+
+If you are using a web browser and have a text field selected, pressing the "g" key will enter the letter "g" into the text field.
+
+If you are using a keyboard shortcut, pressing the "g" key may have different effects depending on the application or operating system being used. For example, in some applications, pressing "g" followed by "g" may move the cursor to the top of the document.
+
+In general, the result of pressing the "g" key will depend on the specific software being used and any keyboard shortcuts or customizations that have been configured.
+
 The "enter" key bottoms out
 ---------------------------
 
