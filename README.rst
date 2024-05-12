@@ -602,7 +602,7 @@ The reasons are:
 
 Unable to use the regular parsing techniques, the browser utilizes a custom
 parser for parsing HTML. The parsing algorithm is described in
-detail by the HTML5 specification.
+detail by the HTML5 specifications.
 
 The algorithm consists of two stages: tokenization and tree construction.
 
