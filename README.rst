@@ -689,6 +689,18 @@ the Google homepage. Scripts can cause additional network requests to be
 performed, as well as modify the page or its layout, causing another round of
 page rendering and painting.
 
+---------------------------------------
+GPU Rendering and Hardware Acceleration:
+
+
+* Once the browser constructs the render tree from the DOM, it leverages the power of the Graphics Processing Unit (GPU) for efficient rendering.
+* GPU rendering involves three main steps:
+1-Layout: The browser calculates the position and size of each element on the page.
+2-Painting: The GPU applies colors, gradients, and images to the layout.
+3-Compositing: The final visual output is composed by blending individual layers (e.g., background, text, images) into a single frame.
+* Hardware acceleration ensures smoother animations, faster scrolling, and improved overall performance.
+
+
 .. _`Creative Commons Zero`: https://creativecommons.org/publicdomain/zero/1.0/
 .. _`"CSS lexical and syntax grammar"`: http://www.w3.org/TR/CSS2/grammar.html
 .. _`Punycode`: https://en.wikipedia.org/wiki/Punycode
