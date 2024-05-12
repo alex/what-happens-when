@@ -294,8 +294,15 @@ the default gateway it can resume its DNS process:
   using a source port above 1023.
 * If the response size is too large, TCP will be used instead.
 * If the local/ISP DNS server does not have it, then a recursive search is
-  requested and that flows up the list of DNS servers until the SOA is reached,
-  and if found an answer is returned.
+  requested from local/ISP DNS server to the following levels
+   * first to the Root nameserver which returns a list of the designated 
+      authoritative name servers for the appropriate top-level domain 
+      like .com, .net, .org.
+   * then to the TLD nameserver of our interest which is .com in "google.com",
+      this nameserver would then typically respond with ns1.google.com, ns2.google.com ...
+   * finally, to the authoritative nameserver which has the ip record for the
+      target server, this would then respond with ip address of google servers
+      like 172.253.63.100 if found.
 
 Opening of a socket
 -------------------
