@@ -663,6 +663,8 @@ Page Rendering
   via Direct3D/OpenGL. The GPU command buffer(s) are flushed to the GPU for
   asynchronous rendering and the frame is sent to the window server.
 
+Rendering Optimization: Browsers employ rendering optimization techniques like lazy loading, image compression, and font rendering optimization to enhance the user experience and improve page load performance.
+
 GPU Rendering
 -------------
 
