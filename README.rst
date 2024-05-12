@@ -27,17 +27,19 @@ Table of Contents
 
 The "g" key is pressed
 ----------------------
-The following sections explain the physical keyboard actions
-and the OS interrupts. When you press the key "g" the browser receives the
-event and the auto-complete functions kick in.
-Depending on your browser's algorithm and if you are in
-private/incognito mode or not various suggestions will be presented
-to you in the dropdown below the URL bar. Most of these algorithms sort
-and prioritize results based on search history, bookmarks, cookies, and
-popular searches from the internet as a whole. As you are typing
-"google.com" many blocks of code run and the suggestions will be refined
-with each keypress. It may even suggest "google.com" before you finish typing
-it.
+When you press the "g" key on a keyboard, a series of actions typically occur:
+
+1. **Keyboard Input Event**: The physical keyboard detects the key press and creates an electrical signal corresponding to the "g" key.
+   
+2. **Operating System Event**: The operating system (OS) receives this signal from the keyboard and generates a keyboard input event specific to the "g" key press.
+   
+3. **Keyboard Driver Processing**: The OS's keyboard driver processes this input event and translates it into a keycode or character that represents the "g" key.
+   
+4. **Application Event Handling**: If there is an active application (like a text editor or web browser), the OS forwards the keyboard input event to that application.
+   
+5. **Application Response**: The application then acts on this event. For instance, in a text editor, it would insert the character "g" at the current cursor position. In a web browser, it might trigger a specific action associated with the "g" key, like opening a new tab or searching within a webpage.
+
+In essence, the outcome of pressing the "g" key varies based on the active application and how that application is programmed to respond to keyboard input events.
 
 The "enter" key bottoms out
 ---------------------------
