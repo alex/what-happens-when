@@ -378,6 +378,7 @@ TLS handshake
   public certificate signed by a CA (Certificate Authority). The certificate
   contains a public key that will be used by the client to encrypt the rest of
   the handshake until a symmetric key can be agreed upon.
+  Also included are other server info like the domain names associated with the server.
 
 * The client verifies the server digital certificate against its list of
   trusted CAs. If trust can be established based on the CA, the client
