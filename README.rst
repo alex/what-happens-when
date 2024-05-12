@@ -709,3 +709,7 @@ page rendering and painting.
 .. _`downgrade attack`: http://en.wikipedia.org/wiki/SSL_stripping
 .. _`OSI Model`: https://en.wikipedia.org/wiki/OSI_model
 .. _`Spanish`: https://github.com/gonzaleztroyano/what-happens-when-ES
+
+
+## Enhancing Security in Web Communication
+In addition, it's crucial to explore the intricacies of HTTP/HTTPS protocol negotiation and SSL/TLS handshake. When a user types a URL into the browser's address bar and presses Enter, the browser initiates a series of negotiations with the server to establish a secure connection using HTTPS. This involves the exchange of encryption algorithms, digital certificates, and the execution of the SSL/TLS handshake protocol. By delving into this aspect of web communication, readers can gain a deeper appreciation for the security mechanisms that safeguard their online interactions, fostering a more comprehensive understanding of the browsing experience.
