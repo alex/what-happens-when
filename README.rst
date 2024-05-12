@@ -393,6 +393,11 @@ TLS handshake
 * The server generates its own hash, and then decrypts the client-sent hash
   to verify that it matches. If it does, it sends its own ``Finished`` message
   to the client, also encrypted with the symmetric key.
+* Then the connection is established via TCP 3-way handshake (where the client and
+  the server synchronize (SYN) and acknowledge (ACK) each other). The client chooses an
+  initial sequence number set in the first SYN packet. The server also chooses its own initial
+  sequence number increments the client's SYN number sets it to the SYN/ACK packet and waits for
+  the client to ACK by incrementing its SYN number.
 
 * From now on the TLS session transmits the application (HTTP) data encrypted
   with the agreed symmetric key.
