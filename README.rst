@@ -689,6 +689,19 @@ the Google homepage. Scripts can cause additional network requests to be
 performed, as well as modify the page or its layout, causing another round of
 page rendering and painting.
 
+Following GPU processing, once the GPU has executed the necessary graphical tasks and 
+generated the final frame, the resulting image data is transmitted to the display device 
+(such as a monitor or screen) for user presentation. The speed and efficiency of GPU 
+processing significantly enhance the overall responsiveness and visual quality of 
+web applications, especially those incorporating dynamic content and animations.
+
+In essence, page rendering encompasses the creation of a visual representation of 
+a web page using HTML and CSS. Concurrently, GPU processing optimizes and expedites 
+graphical operations to ensure smoother performance and an improved user experience. 
+The collaboration between page rendering and GPU processing is pivotal in modern web 
+development, facilitating the development of more immersive, interactive, and visually 
+appealing web applications.
+
 .. _`Creative Commons Zero`: https://creativecommons.org/publicdomain/zero/1.0/
 .. _`"CSS lexical and syntax grammar"`: http://www.w3.org/TR/CSS2/grammar.html
 .. _`Punycode`: https://en.wikipedia.org/wiki/Punycode
