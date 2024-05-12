@@ -488,9 +488,22 @@ and IIS for Windows.
 
 * The HTTPD (HTTP Daemon) receives the request.
 * The server breaks down the request to the following parameters:
-   * HTTP Request Method (either ``GET``, ``HEAD``, ``POST``, ``PUT``,
-     ``PATCH``, ``DELETE``, ``CONNECT``, ``OPTIONS``, or ``TRACE``). In the
+   * HTTP Request Method (
+HTTP defines several methods that dictate the action to be performed on a resource. Common methods include:
+
+"GET": Retrieves data from a specified resource.
+"POST": Submits data to be processed to a specified resource.
+"PUT": Updates a specified resource with new data.
+"DELETE": Deletes a specified resource.
+"PATCH": Applies partial modifications to a resource.
+"CONNECT":  serves a specific purpose in the HTTP protocol. It's primarily used to establish a tunnel to the server identified by the target resource, typically for secure communication over HTTPS or for proxying TCP connections.
+"HEAD": Retrieves only the HTTP headers of a resource, excluding the message body, useful for obtaining metadata without downloading the entire content.
+"TRACE":  Echoes back the received request from the server to the client, facilitating diagnostic analysis of request processing across intermediary servers.
+"OPTION": is used to request information about the communication options available for a target resource, including the HTTP methods supported by the server.) In the
      case of a URL entered directly into the address bar, this will be ``GET``.
+        for examples GET /index.html HTTP/1.1
+Host: example.com
+
    * Domain, in this case - google.com.
    * Requested path/page, in this case - / (as no specific path/page was
      requested, / is the default path).
@@ -509,6 +522,25 @@ and IIS for Windows.
 * The server parses the file according to the handler. If Google
   is running on PHP, the server uses PHP to interpret the index file, and
   streams the output to the client.
+
+Statelessness and Sessions
+--------------------------
+HTTP is inherently stateless, meaning each request from a client to a server is independent. However, sessions can be set up using mechanisms like cookies or session tokens to maintain state across multiple requests. Sessions enable functionalities like user authentication, shopping carts, and personalized experiences.
+
+Secure HTTP (HTTPS)
+-------------------
+HTTPS is the secure version of HTTP, utilizing SSL/TLS encryption to protect data transmitted between clients and servers. It ensures the confidentiality, integrity, and authenticity of communications, making it essential for transmitting sensitive information over the web.
+
+Performance Optimization Techniques
+-----------------------------------
+To optimize HTTP performance, consider techniques such as caching, compression, pipelining, and resource minification. These practices help improve website loading times, reduce bandwidth usage, and enhance the user experience by optimizing the delivery of web resources.
+
+References and External Resources
+---------------------------------
+HTTP/1.1 Specification
+MDN Web Docs: HTTP
+HTTP Headers
+HTTP Status Codes
 
 Behind the scenes of the Browser
 ----------------------------------
