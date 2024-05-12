@@ -480,6 +480,13 @@ resolving the other domain, and follows all steps up to this point for that
 domain. The ``Host`` header in the request will be set to the appropriate
 server name instead of ``google.com``.
 
+Load-Balancer
+-------------
+A load-balancer is a hardware or software that distributes incoming traffic evenly between multiple servers.
+When you enter www.google.com into your browser, your browser sends a request to the load balancer associated
+with Google’s servers. This load-balancer will choose which of Google servers will handle it depending on the
+algorithm used by that balancer.
+
 HTTP Server Request Handle
 --------------------------
 The HTTPD (HTTP Daemon) server is the one handling the requests/responses on
