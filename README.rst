@@ -423,7 +423,6 @@ the server an "upgrade" from HTTP to the SPDY protocol.
 
 If the client is using the HTTP protocol and does not support SPDY, it sends a
 request to the server of the form::
-
     GET / HTTP/1.1
     Host: google.com
     Connection: close
