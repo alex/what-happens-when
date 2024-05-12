@@ -440,7 +440,6 @@ HTTP/1.1 defines the "close" connection option for the sender to signal that
 the connection will be closed after completion of the response. For example,
 
     Connection: close
-
 HTTP/1.1 applications that do not support persistent connections MUST include
 the "close" connection option in every message.
 
