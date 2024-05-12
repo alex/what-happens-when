@@ -323,7 +323,7 @@ At this point the packet is ready to be transmitted through either:
 * `WiFi`_
 * `Cellular data network`_
 
-For most home or small business Internet connections the packet will pass from
+For th most home or small business Internet connections the packet will pass from
 your computer, possibly through a local network, and then through a modem
 (MOdulator/DEModulator) which converts digital 1's and 0's into an analog
 signal suitable for transmission over telephone, cable, or wireless telephony
