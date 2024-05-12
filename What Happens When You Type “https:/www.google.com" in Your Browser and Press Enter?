@@ -1,0 +1,44 @@
+
+Introduction:
+
+Have you ever wondered what goes on behind the scenes when you enter a website address in your browser and hit Enter? It may seem like a simple action, but a complex series of steps occurs to bring you the desired webpage. In this blog post, we will take a closer look at the journey of your request to load Google’s homepage, from DNS resolution to database retrieval.
+
+DNS Request:
+
+
+The first step in accessing a website is to resolve the domain name to an IP address. When you type “https://www.google.com" in your browser, it sends a DNS (Domain Name System) request to a DNS server. The DNS server looks up the IP address associated with the domain name “www.google.com" and sends it back to your browser.
+
+TCP/IP:
+
+
+With the IP address in hand, your browser establishes a TCP (Transmission Control Protocol) connection with the server hosting Google’s website. TCP ensures reliable data transmission by dividing the information into packets and reassembling them at the destination.
+
+Firewall:
+
+
+Before your request reaches the server, it passes through a firewall. A firewall acts as a barrier, analyzing incoming and outgoing network traffic to ensure security and prevent unauthorized access. It checks if the request is safe and complies with the specified rules.
+
+HTTPS/SSL:
+
+
+Once the connection is established, your browser initiates a secure HTTPS (Hypertext Transfer Protocol Secure) handshake with the server. This involves an SSL (Secure Sockets Layer) or TLS (Transport Layer Security) encryption process, where both parties exchange digital certificates to authenticate and encrypt the data being transmitted.
+
+Load-Balancer:
+
+
+Google’s infrastructure employs load-balancers to distribute incoming requests across multiple servers. A load-balancer acts as a traffic manager, ensuring efficient utilization of server resources and preventing overload. It directs your request to an available web server capable of handling it.
+
+Web Server:
+
+
+After the load-balancer selects an appropriate web server, your request reaches the web server responsible for hosting the Google homepage. The web server receives the request, processes it, and generates a response.
+
+Application Server:
+
+
+In the case of dynamic websites, an application server may come into play. The application server executes various scripts or applications required to generate the webpage dynamically. It retrieves data from databases and performs any necessary computations before sending the processed information back to the web server.
+
+Database:
+
+
+If the webpage requires data from a database, the application server queries the database server. The database server retrieves the requested information and sends it back to the application server, which then combines it with other elements to form the final webpage.
