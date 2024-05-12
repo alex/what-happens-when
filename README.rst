@@ -629,6 +629,14 @@ CSS interpretation
 * A CSS parser can be top-down or bottom-up when a specific parser generator
   is used.
 
+Optimizations and Performance
+-----------------------------
+
+* Modern browser engines incorporate optimizations such as incremental rendering, 
+  where only parts of the page that have changed are re-rendered, improving performance 
+  and reducing resource consumption. 
+* Additionally, some engines leverage hardware acceleration and GPU rendering for smoother and faster rendering of complex web content.
+
 Page Rendering
 --------------
 
