@@ -182,6 +182,19 @@ When no protocol or valid domain name is given the browser proceeds to feed
 the text given in the address box to the browser's default web search engine.
 In many cases the URL has a special piece of text appended to it to tell the
 search engine that it came from a particular browser's URL bar.
+Additionally, modern browsers often provide autocomplete or suggestion features as users type,
+drawing from browsing history, bookmarks, and popular search queries.
+Users can usually customize their default search engine preference and may even
+switch between search engines directly from the address bar.
+The text entered is formatted as a search query before being sent,
+with the search engine returning relevant results based on algorithms and the query's terms.
+Privacy considerations are also important, as search queries may be logged,
+prompting the use of private browsing modes or anonymous searching options.
+Furthermore, some browsers integrate additional functionality into the address bar,
+offering direct access to settings, bookmarks, or other features through specific
+commands or shortcuts entered into the address bar. Overall,
+this process is fundamental to web browsing,
+enabling users to navigate the internet effectively and find desired information
 
 Convert non-ASCII Unicode characters in the hostname
 ------------------------------------------------
@@ -191,6 +204,14 @@ Convert non-ASCII Unicode characters in the hostname
 * Since the hostname is ``google.com`` there won't be any, but if there were
   the browser would apply `Punycode`_ encoding to the hostname portion of the
   URL.
+ * Punycode encoding converts non-ASCII Unicode characters into a special ASCII-compatible format,
+   typically consisting of the prefix "xn--" followed by a series of
+   ASCII characters representing the encoded Unicode characters.
+ * This process enables browsers to handle Internationalized Domain Names (IDNs)
+   containing non-ASCII characters while maintaining compatibility with DNS
+   and ensuring security against domain spoofing attacks.
+ * Despite the encoding, browsers usually display the
+   original Unicode characters to users for a better user experience.
 
 Check HSTS list
 ---------------
@@ -205,7 +226,17 @@ Check HSTS list
   single HTTP request could potentially leave the user vulnerable to a
   `downgrade attack`_, which is why the HSTS list is included in modern web
   browsers.)
+* However, it's important to note that even if a website is not explicitly included in the HSTS list,
+  it can still enforce an HSTS policy. In such cases,
+* when a user initially accesses the website via HTTP,
+  the server responds with a header indicating that future requests should only be made via HTTPS.
+  This mechanism helps protect users from potential downgrade attacks,
+  where an attacker tries to force communication over insecure HTTP instead of secure HTTPS.
+* Furthermore, modern browsers also employ additional security measures,
+  such as certificate pinning, to further enhance the trustworthiness of HTTPS connections
+  and mitigate potential security risks associated with HSTS policies.
 
+Overall, the integration of HSTS and the preloaded HSTS list into web browsers significantly improves the security of web browsing by promoting the use of HTTPS and protecting users from various types of attacks.
 DNS lookup
 ----------
 
