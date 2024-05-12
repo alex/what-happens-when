@@ -510,6 +510,12 @@ and IIS for Windows.
   is running on PHP, the server uses PHP to interpret the index file, and
   streams the output to the client.
 
+Firewall
+---------
+
+Filter rules on a firewall are used to ensure the traffic passes only through the allowed ports.
+The unwanted traffic on a firewall is denied and the rest is allowed based on the filter set on the firewall.
+
 Behind the scenes of the Browser
 ----------------------------------
 
