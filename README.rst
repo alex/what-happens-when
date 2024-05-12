@@ -76,6 +76,13 @@ connection, but historically has been over PS/2 or ADB connections.
   device driver.  The value of the key is then passed into the operating
   system's hardware abstraction layer.
 
+- Keyboard Controller: Inside the keyboard, a dedicated microcontroller known as
+  the keyboard controller plays a pivotal role. It manages tasks such as
+  scanning the state of each key switch, eliminating electrical noise through
+  debouncing, and converting physical keypresses into digital keycode integers.
+  Once the keycode is generated, the keyboard controller facilitates its
+  transmission to the computer's USB host controller for further processing.
+
 *In the case of Virtual Keyboard (as in touch screen devices):*
 
 - When the user puts their finger on a modern capacitive touch screen, a
