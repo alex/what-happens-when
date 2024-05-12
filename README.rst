@@ -225,6 +225,10 @@ DNS lookup
   the ``ARP process`` below for the default gateway IP.
 
 
+.. image:: https://github.com/rekebuba/diagram/blob/main/diagram.png?raw=true
+  :alt: DNS lookup diagram
+
+
 ARP process
 -----------
 
