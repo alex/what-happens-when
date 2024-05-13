@@ -482,6 +482,15 @@ server name instead of ``google.com``.
 
 HTTP Server Request Handle
 --------------------------
+The web server is the heart of the operation. It receives your request (often 
+an HTTP request specifying the webpage you want to access) and fetches the 
+necessary files – HTML, CSS, JavaScript, and images – to build the webpage.
+Behind the Curtain: Application Server
+While the web server delivers static content, websites often rely on dynamic
+content generated in real-time. This might involve fetching data from a database 
+or personalizing your search results. Here's where the application server steps in. 
+It processes these dynamic requests and interacts with databases to deliver the tailored content you see.
+
 The HTTPD (HTTP Daemon) server is the one handling the requests/responses on
 the server-side. The most common HTTPD servers are Apache or nginx for Linux
 and IIS for Windows.
