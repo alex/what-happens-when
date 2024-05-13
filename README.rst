@@ -205,6 +205,7 @@ Check HSTS list
   single HTTP request could potentially leave the user vulnerable to a
   `downgrade attack`_, which is why the HSTS list is included in modern web
   browsers.)
+* HSTS helps prevent downgrade attacks by ensuring that subsequent connections to the website are made securely over HTTPS, even if an initial HTTP request is made.
 
 DNS lookup
 ----------
@@ -223,7 +224,7 @@ DNS lookup
   ``ARP process`` below for the DNS server.
 * If the DNS server is on a different subnet, the network library follows
   the ``ARP process`` below for the default gateway IP.
-
+* DNS resolution involves querying a series of DNS servers, starting from the local cache and escalating to ISP's caching servers or authoritative DNS servers if necessary. This process ensures that the correct IP address is retrieved for the requested domain name.
 
 ARP process
 -----------
