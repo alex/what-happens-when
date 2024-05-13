@@ -667,7 +667,7 @@ GPU Rendering
 -------------
 
 * During the rendering process the graphical computing layers can use general
-  purpose ``CPU`` or the graphical processor ``GPU`` as well.
+  purpose ``CPU`` or the graphical processor ``GPU``as well.
 
 * When using ``GPU`` for graphical rendering computations the graphical
   software layers split the task into multiple pieces, so it can take advantage
