@@ -224,6 +224,17 @@ DNS lookup
 * If the DNS server is on a different subnet, the network library follows
   the ``ARP process`` below for the default gateway IP.
 
+### Additional Information:
+* **DNS Cache**: Browsers maintain a DNS cache to store previously resolved domain names and their corresponding IP addresses. This cache helps in speeding up subsequent DNS lookups for frequently accessed websites.
+
+* **Hosts File**: The local ``hosts`` file, located in different directories depending on the operating system (e.g., ``/etc/hosts`` in Unix-like systems and ``C:\Windows\System32\drivers\etc\hosts`` in Windows), can be manually edited to map hostnames to IP addresses. Entries in this file take precedence over DNS lookup.
+
+* **Network Stack Configuration**: The DNS server configured in the network stack is usually assigned by the local router or the Internet Service Provider (ISP). This server is responsible for resolving domain names to IP addresses for the browser.
+
+* **ARP Process**: Address Resolution Protocol (ARP) is used to map an IP address to a MAC address on the local network. When the DNS server is on the same subnet, the browser performs ARP to discover the MAC address of the DNS server. If the DNS server is on a different subnet, ARP is used to resolve the MAC address of the default gateway (router).
+
+By providing this additional information, we gain a deeper understanding of the DNS lookup process and the underlying mechanisms involved in resolving domain names to IP addresses during web browsing.
+
 
 ARP process
 -----------
