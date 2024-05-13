@@ -674,6 +674,10 @@ GPU Rendering
   of ``GPU`` massive parallelism for float point calculations required for
   the rendering process.
 
+* Additionally, GPU rendering often results in faster rendering times, and improved
+  performance, especially when dealing with complex graphics and visual effects.
+  This is due to the GPU's ability to handle multiple calculations simultaneously,
+  leading to more efficient rendering workflows and enhanced visual quality.
 
 Window Server
 -------------
