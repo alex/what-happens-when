@@ -510,6 +510,56 @@ and IIS for Windows.
   is running on PHP, the server uses PHP to interpret the index file, and
   streams the output to the client.
 
+
+* The HTTP server request handling process involves several steps to ensure
+  that incoming requests are appropriately processed and responded to.
+  Below is a detailed explanation of each stage:
+
+1. Parsing the Request:
+   - Upon receiving an HTTP request from a client, the server begins by parsing
+     the request to extract essential information such as the request method
+     (e.g., GET, POST), the requested URI, and any additional headers.
+
+2. Handling Virtual Hosts:
+   - If the server hosts multiple websites on the same IP address, it checks
+     the request's hostname (provided in the Host header) to determine which
+     virtual host configuration to use. This allows servers to serve different
+     content based on the requested domain.
+
+3. Request Verification:
+   - Before proceeding with request processing, the server verifies various aspects
+     of the request, including:
+     * Validity of the request method: Servers ensure that the requested method
+       (e.g., GET, POST) is allowed based on server configuration.
+     * Access control: Servers may enforce access control policies based on client
+       IP addresses, authentication credentials, or other factors.
+   
+4. URL Rewriting and Routing:
+   - Many servers support URL rewriting, which allows them to map incoming request
+     URLs to internal server paths or execute rewrite rules to modify request paths
+     before processing. Additionally, servers may employ routing mechanisms to direct
+     requests to the appropriate handlers or endpoints within the server application.
+
+5. Content Retrieval:
+   - After verifying the request and determining the appropriate route, the server
+     retrieves the requested content. This may involve accessing files from the server's
+     filesystem, querying databases, or generating dynamic content based on application
+     logic.
+
+6. Response Generation:
+   - Once the requested content is obtained, the server constructs an HTTP response
+     containing the content along with appropriate response headers, status codes, and
+     any additional metadata required.
+
+7. Transmission to Client:
+   - Finally, the server transmits the generated HTTP response back to the client over
+     the network connection established during the request. The client then processes
+     the response and renders the content accordingly.
+
+By following these steps, HTTP servers efficiently handle incoming requests, delivering
+web content to users in a timely and reliable manner.
+
+
 Behind the scenes of the Browser
 ----------------------------------
 
