@@ -170,6 +170,7 @@ Parse URL
 
     - ``Protocol``  "http"
         Use 'Hyper Text Transfer Protocol'
+        Nowadays, there's a secure version called 'https' in which the 's' stands for 'secure'.
 
     - ``Resource``  "/"
         Retrieve main (index) page
