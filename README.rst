@@ -5,7 +5,7 @@ This repository is an attempt to answer the age-old interview question "What
 happens when you type google.com into your browser's address box and press
 enter?"
 
-Except instead of the usual story, we're going to try to answer this question
+Instead of the usual story, we're going to try to answer this question
 in as much detail as possible. No skipping out on anything.
 
 This is a collaborative process, so dig in and try to help out! There are tons
@@ -50,7 +50,7 @@ of each key switch, debounces the electrical noise of the rapid intermittent
 closure of the switch, and converts it to a keycode integer, in this case 13.
 The keyboard controller then encodes the keycode for transport to the computer.
 This is now almost universally over a Universal Serial Bus (USB) or Bluetooth
-connection, but historically has been over PS/2 or ADB connections.
+connection but historically has been over PS/2 or ADB connections.
 
 *In the case of the USB keyboard:*
 
@@ -68,7 +68,7 @@ connection, but historically has been over PS/2 or ADB connections.
 
 - Those packets are sent by a differential electrical signal over D+ and D-
   pins (the middle 2) at a maximum speed of 1.5 Mb/s, as an HID
-  (Human Interface Device) device is always declared to be a "low-speed device"
+  (Human Interface Device) the device is always declared to be a "low-speed device"
   (USB 2.0 compliance).
 
 - This serial signal is then decoded at the computer's host USB controller, and
@@ -113,7 +113,7 @@ The HID transport passes the key down event to the ``KBDHID.sys`` driver which
 converts the HID usage into a scancode. In this case, the scan code is
 ``VK_RETURN`` (``0x0D``). The ``KBDHID.sys`` driver interfaces with the
 ``KBDCLASS.sys`` (keyboard class driver). This driver is responsible for
-handling all keyboard and keypad input in a secure manner. It then calls into
+handling all keyboard and keypad input securely. It then calls into
 ``Win32K.sys`` (after potentially passing the message through 3rd party
 keyboard filters that are installed). This all happens in kernel mode.
 
@@ -129,18 +129,18 @@ pressed (they weren't), and some other state.
 The Windows ``SendMessage`` API is a straightforward function that
 adds the message to a queue for the particular window handle (``hWnd``).
 Later, the main message processing function (called a ``WindowProc``) assigned
-to the ``hWnd`` is called in order to process each message in the queue.
+to the ``hWnd`` is called to process each message in the queue.
 
-The window (``hWnd``) that is active is actually an edit control and the
+The window (``hWnd``) that is active is an edit control and the
 ``WindowProc`` in this case has a message handler for ``WM_KEYDOWN`` messages.
 This code looks within the 3rd parameter that was passed to ``SendMessage``
 (``wParam``) and, because it is ``VK_RETURN`` knows the user has hit the ENTER
 key.
 
-(On OS X) A ``KeyDown`` NSEvent is sent to the app
+(On OS X) A ``KeyDown`` DNSEvent is sent to the app
 --------------------------------------------------
 
-The interrupt signal triggers an interrupt event in the I/O Kit kext keyboard
+The interrupt signal triggers an interrupt event in the I/O Kit text keyboard
 driver. The driver translates the signal into a key code which is passed to the
 OS X ``WindowServer`` process. Resultantly, the ``WindowServer`` dispatches an
 event to any appropriate (e.g. active or listening) applications through their
@@ -157,7 +157,7 @@ When a graphical ``X server`` is used, ``X`` will use the generic event
 driver ``evdev`` to acquire the keypress. A re-mapping of keycodes to scancodes
 is made with ``X server`` specific keymaps and rules.
 When the scancode mapping of the key pressed is complete, the ``X server``
-sends the character to the ``window manager`` (DWM, metacity, i3, etc), so the
+sends the character to the ``window manager`` (DWM, Metacity, i3, etc), so the
 ``window manager`` in turn sends the character to the focused window.
 The graphical API of the window  that receives the character prints the
 appropriate font symbol in the appropriate focused field.
@@ -180,7 +180,7 @@ Is it a URL or a search term?
 
 When no protocol or valid domain name is given the browser proceeds to feed
 the text given in the address box to the browser's default web search engine.
-In many cases the URL has a special piece of text appended to it to tell the
+In many cases, the URL has a special piece of text appended to it to tell the
 search engine that it came from a particular browser's URL bar.
 
 Convert non-ASCII Unicode characters in the hostname
