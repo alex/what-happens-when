@@ -168,11 +168,16 @@ Parse URL
 * The browser now has the following information contained in the URL (Uniform
   Resource Locator):
 
-    - ``Protocol``  "http"
+    - ``Protocol or scheme``  "http"
         Use 'Hyper Text Transfer Protocol'
 
-    - ``Resource``  "/"
+    - ``Resource or resource path``  "/" - means root the root or starting point of the resource
         Retrieve main (index) page
+
+    - ``Other components of a URL not present in this url (google.com)``
+        - Query Parameters
+        - Fragment Identifier (also known as Hash)
+        - Port
 
 
 Is it a URL or a search term?
