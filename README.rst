@@ -296,6 +296,8 @@ the default gateway it can resume its DNS process:
 * If the local/ISP DNS server does not have it, then a recursive search is
   requested and that flows up the list of DNS servers until the SOA is reached,
   and if found an answer is returned.
+* Once the IP address is resolved, it is cached at various levels (browser cache,
+  operating system cache, DNS resolver cache) to speed up future lookups.
 
 Opening of a socket
 -------------------
