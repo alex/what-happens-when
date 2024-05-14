@@ -25,6 +25,9 @@ Table of Contents
    :backlinks: none
    :local:
 
+Before we start let's have a look at an attempt of answering the old-age question
+* [link](https://tinyurl.com/lyte-medium)
+
 The "g" key is pressed
 ----------------------
 The following sections explain the physical keyboard actions
