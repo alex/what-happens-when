@@ -291,11 +291,15 @@ Now that the network library has the IP address of either our DNS server or
 the default gateway it can resume its DNS process:
 
 * The DNS client establishes a socket to UDP port 53 on the DNS server,
-  using a source port above 1023.
+ also called a recursive resolver, using a source port above 1023.
 * If the response size is too large, TCP will be used instead.
-* If the local/ISP DNS server does not have it, then a recursive search is
-  requested and that flows up the list of DNS servers until the SOA is reached,
-  and if found an answer is returned.
+* If the local/ISP DNS server does not have an answer, it will query a
+  a series of other servers in the following order: DNS root name servers,
+  top-level domain (TLD) name srvers and authoritative name servers.
+* The three server types work together and continue redirecting
+  until they retrieve a DNS record that contains the queried IP address.
+* If the query reaches the authoritative server and it cannot find the information,
+  it returns an error message.
 
 Opening of a socket
 -------------------
