@@ -222,7 +222,8 @@ DNS lookup
 * If the DNS server is on the same subnet the network library follows the
   ``ARP process`` below for the DNS server.
 * If the DNS server is on a different subnet, the network library follows
-  the ``ARP process`` below for the default gateway IP.
+  the ``ARP process`` below to obtain the MAC address of the DNS server or
+  the default gateway IP, enabling communication at the data link layer.
 
 
 ARP process
