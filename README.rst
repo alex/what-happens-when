@@ -1,3 +1,5 @@
+Before we delve into the technical details, let's break down the URL you entered into smaller pieces. The first part, everything to the right of the protocol identifier (like "https://" in this case), is the domain name. This is the human-readable address that corresponds to a specific website on the internet.  Think of it as the easily remembered name for a location on the internet.
+
 What happens when...
 ====================
 
@@ -24,6 +26,7 @@ Table of Contents
 .. contents::
    :backlinks: none
    :local:
+
 
 The "g" key is pressed
 ----------------------
