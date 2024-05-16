@@ -26,6 +26,9 @@ Table of Contents
    :local:
 
 The "g" key is pressed
+Pressing the "g" key on your keyboard sets off a chain reaction. Initially, your hardware detects the physical press. Then, your operating system interprets this action, adding it to a queue of keyboard events. If you're typing in a document or text field, the "g" character appears at the cursor's location. In some cases, pressing "g" may trigger specific actions within applications, like opening menus or executing commands. Each keystroke, no matter how simple, initiates a series of events that seamlessly integrate into your computer experience.
+
+The "g" key is pressed
 ----------------------
 The following sections explain the physical keyboard actions
 and the OS interrupts. When you press the key "g" the browser receives the
