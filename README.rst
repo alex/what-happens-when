@@ -673,6 +673,11 @@ GPU Rendering
   software layers split the task into multiple pieces, so it can take advantage
   of ``GPU`` massive parallelism for float point calculations required for
   the rendering process.
+* Parallel Processing: GPUs excel in parallel computations, speeding up rendering tasks.
+* Shader Optimization: Efficient processing of shaders enhances visual effects and realism.
+* High Memory Bandwidth: GPUs handle large datasets swiftly for detailed rendering.
+* Specialized Compute Units: Dedicated units optimize floating-point operations crucial for graphics.
+* Ray Tracing Acceleration: Modern GPUs accelerate real-time ray tracing, improving rendering quality.
 
 
 Window Server
