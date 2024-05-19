@@ -519,6 +519,18 @@ to the browser it undergoes the below process:
 * Parsing - HTML, CSS, JS
 * Rendering - Construct DOM Tree → Render Tree → Layout of Render Tree →
   Painting the render tree
+Parsing:
+
+HTML Parsing: The browser parses the HTML markup to create the Document Object Model (DOM) tree, representing the structure of the webpage.
+CSS Parsing: If CSS stylesheets are present, the browser parses them to create the CSS Object Model (CSSOM), representing the styles applied to the elements in the DOM tree.
+JS Parsing: Any JavaScript code included in the webpage is parsed and executed.
+Rendering:
+
+Construct DOM Tree: The browser constructs the DOM tree based on the parsed HTML.
+Construct Render Tree: The browser combines the DOM tree with the CSSOM to create the Render Tree. This tree represents the visual elements of the webpage and their styles.
+Layout of Render Tree: The browser calculates the layout (size and position) of each element in the Render Tree.
+Painting the Render Tree: Finally, the browser paints the pixels on the screen according to the layout and styles of the elements in the Render Tree.
+This process ensures that the webpage is displayed correctly and efficiently on the user's screen. Each step is crucial for rendering a smooth and visually appealing user experience.
 
 Browser
 -------
