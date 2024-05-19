@@ -178,6 +178,21 @@ Parse URL
 Is it a URL or a search term?
 -----------------------------
 
+1. htttps:// - this means, hypertext transfer protocol secure. It serves as
+a communication encrypting medium between a web browser and a web server, mak
+ing sure that transmitted data cannot be easily intercepted.
+
+2. 'www' - subdomain - This is a component of a domain name.It aids navigation
+within a larger domain as it mostly points to specific server IP addresses
+serving a page.
+
+3. 'google' second-level domain- This is the name given to the website that enables
+identification of the company or brand by thw owner or user.
+
+4. '.com' top-level domain - This helps to categorize websites under the different
+entities that they fall.
+
+
 When no protocol or valid domain name is given the browser proceeds to feed
 the text given in the address box to the browser's default web search engine.
 In many cases the URL has a special piece of text appended to it to tell the
