@@ -689,6 +689,84 @@ the Google homepage. Scripts can cause additional network requests to be
 performed, as well as modify the page or its layout, causing another round of
 page rendering and painting.
 
+**SUMMARY**
+**Key Press and Initial Processing**
+**1. Key Detection and Processing:**
+
+Physical or virtual keyboard interaction.
+Operating system and browser handle key events (e.g., WM_KEYDOWN on Windows, NSEvent on macOS, and X server events on Linux).
+
+**2. Autocomplete and Suggestions:**
+
+Browser algorithms suggest URLs based on history, bookmarks, cookies, etc.
+
+**URL Parsing and Protocol Handling**
+**3. URL Analysis:**
+
+Determine if the input is a URL or search term.
+Apply Punycode encoding for non-ASCII characters in the hostname if necessary.
+
+**4. HTTP Strict Transport Security (HSTS) Check:**
+
+Check if the site is on the preloaded HSTS list to enforce HTTPS.
+
+**DNS Resolution**
+**5. DNS Lookup:**
+Check browser cache and local hosts file.
+Perform DNS queries to resolve the domain name to an IP address.
+Use ARP (Address Resolution Protocol) to find the MAC address of the gateway if needed.
+
+**Establishing a Connection**
+
+**6. TCP Connection:**
+
+Open a socket and initiate a TCP connection.
+Perform the TCP three-way handshake (SYN, SYN-ACK, ACK).
+
+**7. TLS Handshake (if HTTPS):**
+
+Negotiate encryption keys using the server’s public certificate.
+Establish a secure session for data transmission.
+
+**HTTP Request and Response**
+**8. Sending HTTP Request:**
+
+Construct and send an HTTP request to the server.
+HTTP headers and methods (GET, POST, etc.).
+
+**9. Server Processing:**
+
+Server receives and processes the request.
+Retrieve or generate the requested resource.
+
+**10. Server Response:**
+
+Server sends back the HTTP response, including status code and resource content.
+**Rendering the Page**
+
+**11. Resource Loading:**
+
+Browser starts fetching external resources (CSS, JavaScript, images, etc.).
+
+**12. HTML Parsing and DOM Construction:**
+
+Parse HTML and build the Document Object Model (DOM) tree.
+
+**13. CSS and JavaScript Execution:**
+
+Apply CSS to style the page.
+Execute JavaScript to enhance interactivity.
+
+**14. Layout and Painting:**
+
+Calculate the layout based on the DOM and CSSOM (CSS Object Model).
+Render the visual representation on the screen.
+
+**User Interaction and Updates**
+
+**15. Handling User Input and Dynamic Content:**
+Continuously handle user interactions and dynamically update the DOM and layout as needed.
+
 .. _`Creative Commons Zero`: https://creativecommons.org/publicdomain/zero/1.0/
 .. _`"CSS lexical and syntax grammar"`: http://www.w3.org/TR/CSS2/grammar.html
 .. _`Punycode`: https://en.wikipedia.org/wiki/Punycode
