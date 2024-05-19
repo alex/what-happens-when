@@ -95,6 +95,43 @@ connection, but historically has been over PS/2 or ADB connections.
 - This interrupt notifies the currently focused application of a 'key pressed'
   event.
 
+You Type https://www.google.com in Your Browser and Press Enter?"
+-----------------------------------------------------------------
+
+When you type https://www.google.com into your browser and press Enter, a fascinating series of events unfolds behind the scenes to display the Google homepage. Let’s break down this process step-by-step, covering key components like DNS requests, TCP/IP, firewalls, HTTPS/SSL, load-balancers, web servers, application servers, and databases.
+
+1. DNS Request
+First, the browser needs to translate the human-readable domain name www.google.com into a numerical IP address, which it can use to locate the server. This is where the Domain Name System (DNS) comes into play. DNS is a decentralized and hierarchical system that matches domain names with their corresponding IP addresses.
+When you enter the URL, your browser sends a DNS query to a DNS server. The server responds with the IP address associated with www.google.com. For example, the IP address could be something like “172.217.17.36”.
+
+2. TCP/IP
+With the IP address in hand, the browser initiates a connection to the server using the Transmission Control Protocol (TCP). TCP is a connection-oriented protocol that ensures reliable communication between the client (your browser) and the server (Google’s server). The Internet Protocol (IP) handles the addressing and routing of the packets of data sent over the network.
+This process involves a TCP handshake, where the client and server exchange packets to establish a connection before any data is transferred.
+
+3. Firewall
+Both the client and server may have firewalls in place to protect against unauthorized access and potential attacks. A firewall monitors and controls incoming and outgoing network traffic based on predetermined security rules. When your browser’s request reaches Google’s server, it passes through a firewall that checks the legitimacy of the request. If deemed safe, the request proceeds; otherwise, it is blocked.
+
+4. HTTPS/SSL
+The https:// part of the URL indicates that the connection will be secured using HyperText Transfer Protocol Secure (HTTPS). HTTPS encrypts data exchanged between your browser and the server using Secure Sockets Layer (SSL) or its successor, Transport Layer Security (TLS). This encryption ensures that sensitive information, such as personal data or login credentials, remains private and secure from potential eavesdroppers.
+
+5. Load-Balancer
+Once the secure connection is established, the request often hits a load-balancer. A load-balancer distributes incoming network traffic across multiple servers to ensure no single server becomes overwhelmed with requests, improving overall reliability and performance. Google’s infrastructure likely involves sophisticated load-balancers like HAProxy to manage vast amounts of traffic efficiently.
+
+6. Web Server
+The load-balancer routes the request to one of the many web servers. A web server is software that handles HTTP/HTTPS requests, serving static content such as HTML pages, images, and other resources. Popular web servers include Nginx and Apache. In this step, the web server processes the incoming request and identifies the appropriate response, which could be a static web page or a dynamic request needing further processing.
+
+7. Application Server
+For dynamic content, the request is forwarded to an application server. Application servers host web applications and handle the business logic needed to generate dynamic content. These servers can process user inputs, access databases, and perform other functions necessary for creating a personalized and interactive experience. They run software frameworks that provide a runtime environment for executing web applications.
+
+8. Database
+To retrieve or store data, the application server interacts with a database. Databases manage collections of data, enabling efficient storage, retrieval, and modification of information. Google’s backend likely uses a combination of relational databases (like MySQL or PostgreSQL) and non-relational databases (like MongoDB or other NoSQL databases) to handle different types of data.
+The database management system (DBMS) processes queries from the application server, returning the necessary data to generate the response. This could include user account information, search results, or other data-driven content.
+
+Conclusion
+After the application server processes the request and retrieves any necessary data from the database, it sends the response back through the web server. The web server packages this response into an HTTP/HTTPS response and sends it back to your browser via the load-balancer.
+Finally, your browser receives the response, renders the HTML, applies CSS for styling, executes JavaScript, and displays the Google homepage or search results. All these steps occur in milliseconds, providing a seamless browsing experience.
+By understanding these processes, we gain a greater appreciation for the complex infrastructure that makes modern web browsing possible. Each component, from DNS and TCP/IP to firewalls, HTTPS/SSL, load-balancers, web servers, application servers, and databases, plays a crucial role in delivering web content efficiently and securely.
+
 
 Interrupt fires [NOT for USB keyboards]
 ---------------------------------------
