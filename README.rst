@@ -206,24 +206,32 @@ Check HSTS list
   `downgrade attack`_, which is why the HSTS list is included in modern web
   browsers.)
 
-DNS lookup
-----------
+Domain Name Resolution Process
+------------------------------
 
-* Browser checks if the domain is in its cache. (to see the DNS Cache in
-  Chrome, go to `chrome://net-internals/#dns <chrome://net-internals/#dns>`_).
-* If not found, the browser calls ``gethostbyname`` library function (varies by
-  OS) to do the lookup.
-* ``gethostbyname`` checks if the hostname can be resolved by reference in the
-  local ``hosts`` file (whose location `varies by OS`_) before trying to
-  resolve the hostname through DNS.
-* If ``gethostbyname`` does not have it cached nor can find it in the ``hosts``
-  file then it makes a request to the DNS server configured in the network
-  stack. This is typically the local router or the ISP's caching DNS server.
-* If the DNS server is on the same subnet the network library follows the
-  ``ARP process`` below for the DNS server.
-* If the DNS server is on a different subnet, the network library follows
-  the ``ARP process`` below for the default gateway IP.
+* Browser Cache Check:
+The browser first checks its own DNS cache for the domain. If found, it uses the cached IP address. (To see the DNS cache in Chrome, go to `chrome://net-internals/#dns`).
 
+* System Resolver Call:
+If the domain is not in the browser’s cache, the browser calls the system’s DNS resolver, typically through the `gethostbyname` function or its equivalent.
+
+* Local Hosts File Check:
+The resolver checks the local hosts file, which contains static mappings of hostnames to IP addresses. This file’s location varies by OS (e.g., `/etc/hosts` on Unix-based systems and `C:\Windows\System32\drivers\etc\hosts` on Windows).
+
+* DNS Server Query:
+If the hostname is not found in the hosts file, the resolver queries the DNS server configured in the network settings. This DNS server is often a local router or an ISP’s caching DNS server.
+
+* TTL and Caching:
+DNS records come with a TTL (Time To Live) value, which specifies how long a DNS record should be cached before it is discarded and re-queried. This helps reduce latency and the load on DNS servers.
+
+* DNS over HTTPS (DoH):
+To enhance privacy and security, many modern browsers support DNS over HTTPS (DoH). This protocol encrypts DNS queries, preventing third parties from snooping on the websites you are trying to visit.
+
+* Recursive Resolution:
+If the DNS server doesn’t have the domain cached, it performs a recursive lookup, querying multiple DNS servers starting from the root DNS servers, then the TLD servers (for example, `.com`), and finally the authoritative DNS servers for the domain.
+
+* Response Handling:
+Once the IP address is obtained, the browser caches the result for future requests and proceeds to establish a connection with the server
 
 ARP process
 -----------
