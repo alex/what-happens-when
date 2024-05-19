@@ -653,7 +653,8 @@ Page Rendering
 * Textures are allocated for each layer of the page.
 * The frame/render objects for each layer are traversed and drawing commands
   are executed for their respective layer. This may be rasterized by the CPU
-  or drawn on the GPU directly using D2D/SkiaGL.
+  or drawn on the GPU directly using D2D/SkiaGL. 
+*  A z-index is then assigned to each layer to manage the stacking order of elements on the page.
 * All of the above steps may reuse calculated values from the last time the
   webpage was rendered, so that incremental changes require less work.
 * The page layers are sent to the compositing process where they are combined
