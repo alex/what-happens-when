@@ -684,6 +684,9 @@ Post-rendering and user-induced execution
 After rendering has been completed, the browser executes JavaScript code as a result
 of some timing mechanism (such as a Google Doodle animation) or user
 interaction (typing a query into the search box and receiving suggestions).
+Once the server has processed the request, it sends back the appropriate HTML file in an HTTP response.
+The browser then renders this HTML file, displaying the web page to the user.
+This process completes the journey from entering a web address to viewing the website content.
 Plugins such as Flash or Java may execute as well, although not at this time on
 the Google homepage. Scripts can cause additional network requests to be
 performed, as well as modify the page or its layout, causing another round of
