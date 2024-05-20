@@ -574,17 +574,10 @@ The components of the browsers are:
 HTML parsing
 ------------
 
-The rendering engine starts getting the contents of the requested
-document from the networking layer. This will usually be done in 8kB chunks.
-
-The primary job of the HTML parser is to parse the HTML markup into a parse tree.
-
-The output tree (the "parse tree") is a tree of DOM element and attribute
-nodes. DOM is short for Document Object Model. It is the object presentation
-of the HTML document and the interface of HTML elements to the outside world
-like JavaScript. The root of the tree is the "Document" object. Prior to
-any manipulation via scripting, the DOM has an almost one-to-one relation to
-the markup.
+Behind the scenes, a web browser fetches the content of a requested webpage in pieces, typically 8KB at a time.  
+A special program called an HTML parser takes this code and organizes it into a structured format that resembles an upside-down tree.  
+This tree, known as the Document Object Model (DOM), reflects the elements and attributes that make up the webpage.  
+Before any scripting comes into play, this tree closely mirrors the HTML code itself.
 
 **The parsing algorithm**
 
@@ -681,13 +674,11 @@ Window Server
 Post-rendering and user-induced execution
 -----------------------------------------
 
-After rendering has been completed, the browser executes JavaScript code as a result
-of some timing mechanism (such as a Google Doodle animation) or user
-interaction (typing a query into the search box and receiving suggestions).
-Plugins such as Flash or Java may execute as well, although not at this time on
-the Google homepage. Scripts can cause additional network requests to be
-performed, as well as modify the page or its layout, causing another round of
-page rendering and painting.
+Once a web page finishes loading its content (rendering), JavaScript code kicks in. 
+This can happen automatically (like flashy animations) or because of something you do (like typing in a search bar). 
+While not used on Google's homepage anymore, some websites might also use plugins like Flash or Java at this stage. 
+These scripts can fetch more stuff from the internet, change the way the page looks, or rearrange its layout. 
+This back-and-forth of adding content and changing the layout can happen multiple times until everything settles down.
 
 .. _`Creative Commons Zero`: https://creativecommons.org/publicdomain/zero/1.0/
 .. _`"CSS lexical and syntax grammar"`: http://www.w3.org/TR/CSS2/grammar.html
