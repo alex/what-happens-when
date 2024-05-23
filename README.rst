@@ -709,3 +709,39 @@ page rendering and painting.
 .. _`downgrade attack`: http://en.wikipedia.org/wiki/SSL_stripping
 .. _`OSI Model`: https://en.wikipedia.org/wiki/OSI_model
 .. _`Spanish`: https://github.com/gonzaleztroyano/what-happens-when-ES
+
+
+DNS Resolution
+DNS Resolution is a process that translates a domain name into an IP address. This is the first step that occurs when you type a URL into your browser. Here’s a detailed breakdown of the DNS resolution process:
+
+Browser Cache: The browser first checks its cache to see if it has recently resolved this domain name.
+Operating System Cache: If the browser cache does not have the information, the request is sent to the operating system's cache.
+Router Cache: If the OS cache is empty, the query is sent to the router, which may have its own cache.
+ISP DNS Server: If the router cannot resolve the domain name, the request is sent to the ISP's DNS server.
+Recursive DNS Resolution:
+The ISP's DNS server acts as a recursive resolver. It starts by querying the root DNS servers.
+The root servers respond with the address of the top-level domain (TLD) DNS servers (e.g., .com).
+The resolver then queries the TLD servers, which respond with the authoritative DNS server for the domain (e.g., google.com).
+Finally, the authoritative DNS server provides the IP address for www.google.com.
+This multi-step process ensures that the domain name is translated into the correct IP address required for further communication.
+
+TCP/IP Connection
+Once the IP address is resolved, the browser establishes a connection to the server using the TCP/IP protocol suite:
+
+TCP Handshake:
+SYN: The client sends a TCP packet with the SYN (synchronize) flag set to the server to initiate a connection.
+SYN-ACK: The server responds with a TCP packet with both SYN and ACK (acknowledge) flags set, acknowledging the request.
+ACK: The client sends a final acknowledgment (ACK) packet back to the server.
+This three-way handshake establishes a reliable TCP connection between the client and server, allowing for data transfer.
+
+IP Packets: Data is encapsulated in IP packets for transmission over the internet. The IP layer handles routing the packets to the correct destination based on the resolved IP address.
+SSL/TLS Handshake
+To secure the communication, an SSL/TLS handshake is performed:
+
+ClientHello: The client sends a ClientHello message to the server, initiating the handshake. This message includes supported cipher suites and the highest protocol version the client supports.
+ServerHello: The server responds with a ServerHello message, selecting the cipher suite and protocol version to be used for the session.
+Certificate: The server sends its SSL certificate to the client. This certificate contains the server's public key and is signed by a trusted Certificate Authority (CA).
+Key Exchange:
+Diffie-Hellman (DH) Key Exchange: The client and server exchange cryptographic keys using the DH algorithm, establishing a shared secret without directly transmitting it.
+RSA Key Exchange: Alternatively, the server's public key (from its certificate) can be used to encrypt a pre-master secret, which the server decrypts with its private key.
+Finished Messages: Both the client and server send Finished messages to each other, encrypted with the session keys derived from the shared secret. These messages ensure that the handshake was successful and the session is secure.
