@@ -367,6 +367,12 @@ This send and receive happens multiple times following the TCP connection flow:
    * The other sides ACKs the FIN packet and sends its own FIN
    * The closer acknowledges the other side's FIN with an ACK
 
+Establishing a Secure HTTPS Connection
+--------------------------------------
+
+When the URL uses the "https" protocol, the browser initiates a secure connection to the server. This involves performing a TLS (Transport Layer Security) handshake. During this handshake, the browser and the server exchange cryptographic keys and negotiate encryption algorithms to secure the data transmitted. The process begins with the browser sending a "ClientHello" message to the server, which responds with a "ServerHello" message containing its digital certificate. The browser verifies this certificate against trusted Certificate Authorities (CAs). If the certificate is valid, the browser generates a session key, encrypts it using the server’s public key, and sends it to the server. The server decrypts the session key with its private key, and both parties use this session key to encrypt and decrypt the data exchanged during the session, ensuring privacy and integrity of the communication.
+
+
 TLS handshake
 -------------
 * The client computer sends a ``ClientHello`` message to the server with its
