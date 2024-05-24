@@ -510,6 +510,44 @@ and IIS for Windows.
   is running on PHP, the server uses PHP to interpret the index file, and
   streams the output to the client.
 
+###My Additions
+
+* HTTP Protocol: Advances with HTTP/2 and HTTP/3
+
+HTTP/1.1 has long been the standard HTTP protocol, but newer versions like HTTP/2 and HTTP/3 bring significant improvements to web communication.
+
+* HTTP/2
+HTTP/2 introduces several enhancements that make web traffic more efficient and reduce latency. Key features include:
+
+- **Multiplexing**: Allows multiple requests and responses to be sent over a single TCP connection, improving network resource utilization.
+- **Header Compression**: Uses HPACK to compress HTTP headers, reducing bandwidth consumption.
+- **Server Push**: Allows servers to send additional resources to the client proactively, without waiting for explicit requests.
+
+An HTTP/2 request typically looks like this::
+
+  method = GET
+  authority = google.com
+  path = /
+
+The use of colon-prefixed pseudo-headers simplifies header structure compared to HTTP/1.1.
+
+* HTTP/3
+HTTP/3 is the latest evolution of the HTTP protocol, built on top of QUIC, a transport protocol that uses UDP instead of TCP. This shift brings several benefits:
+
+- **Reduced Latency**: QUIC establishes connections more quickly, thanks to a streamlined handshake process.
+- **Connection Resilience**: QUIC can handle network changes, making it more robust for mobile environments.
+- **Stream Independence**: Unlike HTTP/2, HTTP/3 avoids head-of-line blocking by ensuring streams are processed independently.
+
+An HTTP/3 request follows a similar structure to HTTP/2, but uses QUIC for transport::
+  
+  method = GET
+  authority = google.com
+  path = /
+
+HTTP/3's integration with TLS enhances security, offering a more secure and reliable protocol.
+
+These advancements in HTTP/2 and HTTP/3 represent ongoing efforts to improve web performance and security. Leading browsers like Chrome and Firefox now support these protocols, contributing to a better web experience.
+
 Behind the scenes of the Browser
 ----------------------------------
 
