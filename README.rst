@@ -209,21 +209,21 @@ Check HSTS list
 DNS lookup
 ----------
 
-* Browser checks if the domain is in its cache. (to see the DNS Cache in
-  Chrome, go to `chrome://net-internals/#dns <chrome://net-internals/#dns>`_).
-* If not found, the browser calls ``gethostbyname`` library function (varies by
-  OS) to do the lookup.
-* ``gethostbyname`` checks if the hostname can be resolved by reference in the
+* Browser Cache: The browser first checks its own cache to see if it has recently resolved the domain name. If the IP address is found in the cache, it is used directly without further queries. 
+* Operating System Cache: If the IP address is not in the browser cache, the browser makes a system call to the operating system to check the OS-level DNS cache. The browser calls ``gethostbyname`` library function (varies by
+  OS) to do the lookup. ``gethostbyname`` checks if the hostname can be resolved by reference in the
   local ``hosts`` file (whose location `varies by OS`_) before trying to
   resolve the hostname through DNS.
-* If ``gethostbyname`` does not have it cached nor can find it in the ``hosts``
+* Router Cache: If ``gethostbyname`` does not have it cached nor can find it in the ``hosts``
   file then it makes a request to the DNS server configured in the network
-  stack. This is typically the local router or the ISP's caching DNS server.
+  stack. This is typically the local router.
+* ISP DNS Resolver: If the router does not have the information, the query is forwarded to the ISP's DNS resolver. The ISP's resolver may have the IP address cached from previous queries.
+* Recursive Search: If the IP address is not found in the ISP's cache, the resolver performs a recursive search, starting from the root DNS servers, moving to the top-level domain (TLD) servers, and finally to the authoritative DNS servers for the domain.
+* Note: During the resolution process, DNS Security Extensions (DNSSEC) can be used to provide an extra layer of security by authenticating the DNS data. Without DNSSEC, attackers could tamper with DNS responses and redirect users to malicious websites (DNS spoofing). DNSSEC adds cryptographic signatures to DNS records, which are validated by resolvers to ensure the response has not been tampered with.
 * If the DNS server is on the same subnet the network library follows the
   ``ARP process`` below for the DNS server.
 * If the DNS server is on a different subnet, the network library follows
   the ``ARP process`` below for the default gateway IP.
-
 
 ARP process
 -----------
