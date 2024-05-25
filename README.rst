@@ -480,6 +480,103 @@ resolving the other domain, and follows all steps up to this point for that
 domain. The ``Host`` header in the request will be set to the appropriate
 server name instead of ``google.com``.
 
+Firewall
+-------------
+Firewall Check: The request passes through multiple firewalls – both at your local network
+and within the internet infrastructure. Firewalls inspect the packets for security threats, ensuring
+that only legitimate requests proceed. After the firewall inspects the packets,
+and they are malware free, it will allow the requests pass through.
+
+Load Balancer
+--------------------
+A load balancer acts as a reverse proxy, distributing network
+or application traffic across several servers. It sits between the client
+and the servers, receiving incoming requests and distributing them to available servers based
+ on various algorithms and rules.
+
+Types of Load Balancers
+------------------
+
+1. Hardware Load Balancers:
+  Physical Devices: These are dedicated hardware appliances.
+  High Performance: They offer robust performance and are often used in data centers for large-scale applications.
+Vendors: F5 Networks, Cisco, and Citrix.
+
+2. Software Load Balancers:
+
+  Applications: These run on standard hardware and offer flexibility.
+  Scalability: Easier to scale as they can be deployed on virtual machines or cloud instances.
+  Examples: HAProxy, Nginx, Apache Traffic Server.
+
+3. Cloud Load Balancers:
+  Managed Services: Offered by cloud providers.
+  Integration: Seamlessly integrate with cloud infrastructure.
+  Examples: AWS Elastic Load Balancing (ELB), Google Cloud Load Balancing, Azure Load Balancer.
+
+Load Balancing Algorithms
+-----------------
+
+Load balancers use various algorithms to determine which server should handle each incoming request:
+
+1. Round Robin:
+Simple Distribution: Requests are distributed sequentially across the servers in a round manner.
+Equal Load: Assumes all servers have the same capacity.
+
+2. Least Connections:
+Dynamic Distribution: Requests are sent to the server with the fewest active connections.
+Ideal for: Environments where connections have varying durations.
+
+3. IP Hash:
+Client-Server Consistency: The client’s IP address is hashed to determine which server receives the request.
+Sticky Sessions: Ensures that a client consistently interacts with the same server.
+
+4. Weighted Round Robin:
+Custom Distribution: Servers are assigned weights based on their capacity or performance. Higher-weighted servers receive more requests.
+Balancing Capacity: Useful when servers have different capabilities.
+
+5. Least Response Time:
+Performance Optimization: Directs traffic to the server with the lowest response time, enhancing user experience.
+
+* Key Functions of Load Balancers
+
+1. Health Checks:
+Server Monitoring: Continuously monitors the health of servers.
+Failover: Redirects traffic away from unhealthy or down servers to ensure high availability.
+
+2. SSL Termination:
+Offloading SSL Processing: Handles SSL decryption, reducing the load on backend servers.
+Improved Performance: Frees up server resources for application processing.
+
+3. Session Persistence (Sticky Sessions):
+Consistent User Experience: Ensures subsequent requests from a client are sent to the same server.
+Methods: Can be implemented using cookies, IP hashing, or other techniques.
+
+4. Load Balancing Across Multiple Data Centers:
+Global Load Balancing: Distributes traffic across servers in different geographic locations.
+Disaster Recovery: Provides redundancy and ensures continuity in case of a data center failure.
+
+Benefits of Load Balancers
+------------------------
+
+1. High Availability and Reliability:
+Redundancy: Ensures no single point of failure by distributing traffic across multiple servers.
+Failover Capabilities: Automatically reroutes traffic from failed servers.
+
+2. Scalability:
+Resource Optimization: Efficiently utilizes server resources, allowing for horizontal scaling.
+Traffic Handling: Can handle sudden spikes in traffic without degrading performance.
+
+3. Performance Optimization:
+Reduced Latency: Distributes requests to the most responsive servers.
+Efficient Utilization: Balances the load to prevent server overload.
+
+4. Security Enhancements:
+DDoS Mitigation: Helps in mitigating distributed denial-of-service attacks by distributing malicious traffic.
+SSL Offloading: Enhances security by managing SSL certificates and decryption.
+
+The load balancer sends the request to any of the available servers
+based on the algorithm set.
+
 HTTP Server Request Handle
 --------------------------
 The HTTPD (HTTP Daemon) server is the one handling the requests/responses on
