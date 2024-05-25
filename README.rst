@@ -1,3 +1,11 @@
+ection added by Christian Igwebuike\
+Email: christianigwebuike31@gmail.com\
+url to blog post: https://medium.com/@christianigwebuike30/what-happens-when-you-type-https-www-google-com-in-\
+your-browser-and-press-enter-3fd7db42017e
+\
+url to schema or diagram: https://imgbox.com/zQKutFPq
+\
+
 What happens when...
 ====================
 
