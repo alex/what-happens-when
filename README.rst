@@ -689,6 +689,51 @@ the Google homepage. Scripts can cause additional network requests to be
 performed, as well as modify the page or its layout, causing another round of
 page rendering and painting.
 
+Summary:
+---
+DNS Lookup:
+--------
+Your browser sends a request to resolve "google.com" to an IP address.  
+The request is processed through the browser cache, OS cache, router cache, ISP DNS server, and finally recursive DNS servers if needed.  
+The IP address of "google.com" is returned to your browser.
+TCP/IP Connection:
+
+Your browser establishes a connection with the server using the IP address obtained.
+This involves a TCP handshake (SYN, SYN-ACK, ACK) to establish a reliable connection.
+SSL/TLS Handshake (if using HTTPS):
+
+Your browser initiates an SSL/TLS handshake to establish a secure connection.
+The server's certificate is verified, and a secure session key is exchanged.
+HTTP Request and Response:
+
+Your browser sends an HTTP request to the server.
+The server processes the request and sends back an HTTP response with the requested content (e.g., HTML, CSS, JavaScript).
+Firewalls:
+
+Firewalls between your computer and the server inspect and control the incoming and outgoing network traffic based on security rules.
+They ensure that only legitimate traffic reaches its destination.
+Load Balancer:
+
+The load balancer at the data center distributes the incoming request to one of the multiple web servers.
+It uses algorithms to balance the load and ensures no single server is overwhelmed.
+Web Server:
+
+The chosen web server receives the request.
+It serves static content directly if requested, or forwards the request to the application server for dynamic content.
+Application Server:
+
+The application server processes the request for dynamic content.
+It executes business logic and interacts with the database to retrieve the necessary data.
+Database:
+
+The database stores and organizes data needed by the application server.
+It processes queries from the application server and returns the required data.
+Rendering the Web Page:
+
+The application server sends the processed data back to the web server.
+The web server sends the final response to your browser.
+Your browser parses the HTML, CSS, and JavaScript, creates the DOM and CSSOM, constructs the render tree, and paints the content on the screen.
+
 .. _`Creative Commons Zero`: https://creativecommons.org/publicdomain/zero/1.0/
 .. _`"CSS lexical and syntax grammar"`: http://www.w3.org/TR/CSS2/grammar.html
 .. _`Punycode`: https://en.wikipedia.org/wiki/Punycode
