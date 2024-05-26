@@ -689,6 +689,44 @@ the Google homepage. Scripts can cause additional network requests to be
 performed, as well as modify the page or its layout, causing another round of
 page rendering and painting.
 
+Interaction with Content Delivery Networks (CDNs)
+-------------------------------------------------
+
+When you enter google.com into your browser and press enter, after the DNS resolution process and establishing a TCP connection, the request often interacts with a Content Delivery Network (CDN). CDNs are a crucial part of modern web infrastructure, enabling faster and more reliable access to web content.
+
+**Purpose of CDNs:**
+CDNs are designed to distribute the delivery of web content by using a network of servers located in various geographical locations. This ensures that users are served content from a server that is geographically closest to them, thereby reducing latency and improving load times.
+
+**Process Overview:**
+
+* DNS Resolution:
+
+After the initial DNS lookup, instead of resolving to a single IP address, the domain google.com often resolves to multiple IP addresses, which belong to CDN servers.
+
+* Request Routing:
+
+The browser's request for the web page is directed to the nearest CDN server based on factors like geographic location, server load, and response times.
+
+* Content Delivery:
+
+The CDN server delivers cached content if available. This includes static assets such as images, stylesheets, JavaScript files, and sometimes entire HTML pages.
+If the requested content is not in the CDN cache, the CDN server retrieves it from the origin server (Google's main servers) and then serves it to the browser while caching it for future requests.
+
+**Advantages of Using CDNs:**
+
+* Reduced Latency: By serving content from a nearby server, the time taken to deliver content is significantly reduced.
+
+* Load Balancing: CDNs distribute the traffic across multiple servers, preventing any single server from becoming a bottleneck.
+
+* Improved Availability: In case of server failures or high traffic, CDNs can reroute requests to other available servers, ensuring high availability.
+
+* Enhanced Security: CDNs offer protection against DDoS attacks and can provide secure delivery of content through SSL/TLS encryption.
+
+**Example with Google:**
+For a globally accessed website like Google, using a CDN is essential to handle millions of requests per second efficiently. When you type google.com and press enter, the content you see is likely served from a CDN server close to your location, which has cached versions of Google's homepage and other resources, making your browsing experience faster and more reliable.
+
+
+
 .. _`Creative Commons Zero`: https://creativecommons.org/publicdomain/zero/1.0/
 .. _`"CSS lexical and syntax grammar"`: http://www.w3.org/TR/CSS2/grammar.html
 .. _`Punycode`: https://en.wikipedia.org/wiki/Punycode
