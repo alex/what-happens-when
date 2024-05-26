@@ -570,6 +570,8 @@ The components of the browsers are:
   need to save all sorts of data locally, such as cookies. Browsers also
   support storage mechanisms such as localStorage, IndexedDB, WebSQL and
   FileSystem.
+* **History:** google.com is added to the history of the browseer. This will make accessing it easier
+  the next time and also make it show up in the suggestions for another search.
 
 HTML parsing
 ------------
