@@ -411,8 +411,29 @@ control`_. This varies depending on the sender; the most common algorithms are
 * For each packet acknowledged, the window doubles in size until it reaches the
   'slow-start threshold'. In some implementations, this threshold is adaptive.
 * After reaching the slow-start threshold, the window increases additively for
-  each packet acknowledged. If a packet is dropped, the window reduces
+  each packet acknowledged. If a packet is dropped, the window reduces 
   exponentially until another packet is acknowledged.
+
+
+Load Balancer
+Once the secure connection is established, your request reaches Google’s infrastructure. 
+The load balancer’s first role is to distribute incoming requests evenly across multiple 
+servers to prevent a single server being overwhelmed. The load balancer provides redundancy 
+so that when a server fails, others are available to be accessed and response time improves.
+Load balancer ensures that you always get access to the URL you need even when a server is 
+down by ensuring access to another.
+
+Web and Application Server
+The load balancer forwards your request to one of Google’s web servers running software like 
+Nginx or Apache to process the incoming request. The web server confirms if the request is static,
+and sends it to the browser. Static content are images, CSS files, and JavaScript.
+
+In the case where your request is a dynamic content, the web server forwards your request to an
+application server. The application server is responsible for running the necessary code to 
+generate dynamic content. This could involve executing scripts written in languages like Python, 
+Java, or Node.js. The application server handles the core business logic, processing user inputs,
+querying databases, and preparing data for the user.
+
 
 HTTP protocol
 -------------
