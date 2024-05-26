@@ -183,6 +183,118 @@ the text given in the address box to the browser's default web search engine.
 In many cases the URL has a special piece of text appended to it to tell the
 search engine that it came from a particular browser's URL bar.
 
+User Input and URL Parsing
+-------------------------
+When a user types a URL into a browser's address bar and presses enter, the browser needs to parse the URL to understand how to locate and request the desired resource. This process involves breaking down the URL into its individual components and handling any potential errors that may arise from malformed URLs.
+
+URL Components
+--------------
+A URL (Uniform Resource Locator) is composed of several components, each serving a specific purpose. Here’s a detailed breakdown of each component:
+
+* Scheme:
+
+Description: The scheme specifies the protocol to be used for the communication.
+Examples: http, https, ftp, mailto
+Usage: https://www.example.com uses the https scheme to indicate a secure connection.
+
+Host:
+Description: The host indicates the domain name or IP address of the server where the resource resides.
+Examples: www.example.com, 192.168.1.1
+Usage: In https://www.example.com, www.example.com is the host.
+
+Port:
+Description: The port specifies the communication endpoint on the host. It's optional and defaults to standard ports if omitted (80 for HTTP, 443 for HTTPS).
+Examples: :80, :443
+Usage: https://www.example.com:443 explicitly specifies port 443.
+
+Path:
+Description: The path points to a specific resource on the host, often representing a file system path.
+Examples: /index.html, /users/profile
+Usage: https://www.example.com/index.html uses /index.html as the path.
+
+Query:
+Description: The query string contains data to be sent to the server, usually in key-value pairs.
+Examples: ?id=123&sort=ascending
+Usage: https://www.example.com/search?q=openai has a query string q=openai.
+
+Fragment:
+Description: The fragment identifier points to a specific part of the resource, often an HTML element with a corresponding id.
+Examples: #section1, #top
+Usage: https://www.example.com/page#section1 navigates to section1 on the page.
+
+URL Parsing
+-----------
+The browser parses the URL to separate these components, allowing it to handle the request appropriately. Parsing involves:
+
+* Scheme Identification:
+The browser identifies the scheme and determines the protocol.
+Errors: If the scheme is unknown or missing, the browser may default to http or show an error.
+
+Host Resolution:
+The browser extracts the host and resolves the domain name to an IP address.
+Errors: Invalid domains (e.g., typos, non-existent domains) result in DNS resolution errors.
+
+Port Handling:
+If the port is specified, the browser uses it; otherwise, it defaults to the standard port for the scheme.
+Errors: Invalid port numbers or blocked ports can cause connection failures.
+Path, Query, and Fragment Parsing:
+
+The browser separates the path, query, and fragment from the URL.
+Errors: Malformed paths or query strings can lead to resource not found errors or server-side parsing issues.
+
+Error Handling
+--------------
+Handling errors is crucial to ensure a smooth user experience. Here are common errors and how browsers handle them:
+
+Malformed URLs:
+Error: Incorrect syntax in the URL (e.g., missing scheme or double slashes).
+Handling: The browser may attempt to correct common mistakes (e.g., adding http:// if the scheme is missing) or display an error message.
+
+DNS Resolution Errors:
+Error: The domain cannot be resolved to an IP address.
+Handling: Display an error message indicating the server could not be found (e.g., ERR_NAME_NOT_RESOLVED).
+
+Connection Timeouts:
+Error: The server does not respond within a certain timeframe.
+Handling: Display a timeout error message (e.g., ERR_CONNECTION_TIMED_OUT).
+
+Invalid Ports:
+Error: The port number is outside the valid range (1-65535) or blocked.
+Handling: Display an error indicating the connection could not be established.
+HTTP Errors:
+
+Error: The server returns an error status code (e.g., 404 Not Found, 500 Internal Server Error).
+Handling: Display the appropriate error message based on the HTTP status code.
+
+Example of URL Parsing and Error Handling
+-----------------------------------------
+Here’s a step-by-step example using a sample URL:
+
+URL: https://www.example.com:443/search?q=openai#result
+
+
+Scheme Identification:
+Extracted Scheme: https
+Action: Use HTTPS protocol.
+
+Host Resolution:
+Extracted Host: www.example.com
+Action: Resolve www.example.com to an IP address.
+
+Port Handling:
+Extracted Port: 443
+Action: Use port 443 (standard for HTTPS).
+
+Path, Query, and Fragment Parsing:
+Extracted Path: /search
+Extracted Query: q=openai
+Extracted Fragment: #result
+Action: Send request to /search?q=openai and navigate to #result on the page.
+
+Conclusion
+----------
+Understanding URL components and proper error handling are fundamental for the browser to accurately request and display the desired resource. By breaking down the URL and managing potential errors, the browser ensures a robust and user-friendly experience.
+
 Convert non-ASCII Unicode characters in the hostname
 ------------------------------------------------
 
@@ -223,6 +335,102 @@ DNS lookup
   ``ARP process`` below for the DNS server.
 * If the DNS server is on a different subnet, the network library follows
   the ``ARP process`` below for the default gateway IP.
+
+DNS (Domain Name System) resolution is the process of translating a domain name (like www.example.com) into an IP address that computers can use to identify each other on the network. The DNS resolution process involves several steps and can include both recursive and iterative queries.
+
+DNS Resolution Steps
+-------------------
+
+Client Request:
+When a user enters a URL into a browser, the browser first checks its cache to see if it has a recent IP address for the domain.
+
+Browser Cache Check:
+If the IP address is found in the browser’s cache, it is used directly.
+If not, the request is forwarded to the operating system.
+
+OS Cache Check:
+The operating system checks its own cache for the IP address.
+If found, it returns the IP address to the browser.
+If not found, the OS queries the configured DNS resolver (usually the ISP’s DNS server or a public DNS server).
+
+DNS Resolver (Recursive Resolver):
+The DNS resolver first checks its own cache.
+If the cache does not contain the required IP address, it initiates a recursive query on behalf of the client.
+
+Recursive and Iterative Queries
+-------------------------------
+
+Recursive Query:
+The DNS resolver takes full responsibility for resolving the domain name.
+It queries other DNS servers in sequence until it gets an answer, and then returns the IP address to the client.
+
+Iterative Query:
+The DNS resolver may perform iterative queries to obtain the IP address.
+In an iterative query, each DNS server queried returns the best answer it has, which might be a referral to another DNS server closer to the final answer.
+
+DNS Query Process:
+-----------------
+
+Root DNS Servers:
+The recursive resolver first contacts a root DNS server.
+The root server responds with a referral to a top-level domain (TLD) server (e.g., for .com, .org).
+
+TLD DNS Servers:
+The recursive resolver then queries the TLD server.
+The TLD server responds with a referral to the authoritative DNS server for the specific domain (e.g., example.com).
+Authoritative DNS Servers:
+
+The recursive resolver queries the authoritative DNS server for the domain.
+The authoritative server responds with the IP address of the domain.
+
+Return to Client:
+The recursive resolver returns the IP address to the client (OS).
+The OS then provides the IP address to the browser, which can now contact the server directly.
+
+DNS Caching
+-----------
+DNS caching helps reduce latency and the load on DNS servers by storing previous query results. Caching occurs at multiple levels:
+
+Browser Cache:
+The browser caches DNS responses for a certain period, based on the TTL (Time to Live) value.
+Pros: Reduces lookup times for frequently visited sites.
+Cons: Cached entries might become stale if the DNS records change frequently.
+
+OS Cache:
+The operating system maintains its own DNS cache.
+This cache is checked after the browser’s cache but before querying external DNS servers.
+The caching mechanism and duration can be configured via system settings or files like /etc/nsswitch.conf on Unix systems.
+
+Router Cache:
+Some routers have a built-in DNS cache to speed up DNS resolution for all devices on the local network.
+Reduces the number of external DNS queries for the entire network.
+
+ISP Cache:
+ISPs maintain large DNS caches to serve their customers efficiently.
+This is typically the first external DNS cache checked during the resolution process.
+
+Common DNS Issues and Solutions
+-------------------------------
+
+DNS Spoofing (Cache Poisoning):
+Issue: Attackers insert malicious entries into the DNS cache, redirecting traffic to fraudulent sites.
+Solution: Use DNSSEC (DNS Security Extensions) to authenticate responses, ensuring data integrity and authenticity.
+
+TTL Settings:
+Issue: Short TTL values can lead to increased DNS queries, whereas long TTL values can lead to stale data.
+Solution: Set an appropriate TTL based on the frequency of DNS record changes. Frequently changing records should have shorter TTLs, while stable records can have longer TTLs.
+
+DNS Server Failures:
+Issue: DNS server outages can prevent domain resolution.
+Solution: Configure multiple DNS servers (primary and secondary) to ensure redundancy.
+
+Slow DNS Resolution:
+Issue: Slow DNS resolution can lead to delayed page loads.
+Solution: Use a fast and reliable DNS resolver, such as Google Public DNS or Cloudflare’s 1.1.1.1, and optimize DNS caching settings.
+
+Summary
+------
+DNS resolution is a complex process involving multiple steps and components, each playing a crucial role in translating domain names to IP addresses. Understanding the steps of DNS resolution, including recursive and iterative queries, and implementing proper DNS caching strategies at various levels can significantly improve the efficiency and security of DNS operations. Addressing common DNS issues with appropriate solutions helps maintain a robust and reliable network infrastructure
 
 
 ARP process
