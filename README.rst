@@ -95,6 +95,10 @@ connection, but historically has been over PS/2 or ADB connections.
 - This interrupt notifies the currently focused application of a 'key pressed'
   event.
 
+### The Browser Sends a DNS Query
+
+After pressing enter, the browser initiates a DNS (Domain Name System) query to resolve "google.com" to an IP address. This process involves querying DNS servers to obtain the IP address associated with the domain name.
+
 
 Interrupt fires [NOT for USB keyboards]
 ---------------------------------------
