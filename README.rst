@@ -689,6 +689,28 @@ the Google homepage. Scripts can cause additional network requests to be
 performed, as well as modify the page or its layout, causing another round of
 page rendering and painting.
 
+Web Security
+----------------
+Modern web security practices are crucial for protecting user data and ensuring safe browsing experiences. Browsers employ various security mechanisms, such as HTTPS, to encrypt data during transmission. Additionally, features like Content Security Policy (CSP) help prevent cross-site scripting (XSS) attacks.
+
+#### Browser Security Features
+Browsers incorporate a range of security features to safeguard users. Sandboxing isolates web content to prevent malicious code from affecting the system. The same-origin policy restricts how documents or scripts loaded from one origin can interact with resources from another origin. Secure cookies and mechanisms like Subresource Integrity (SRI) further enhance security.
+
+#### Privacy Enhancements
+As concerns about online tracking and data collection grow, privacy features are becoming increasingly important. Modern browsers have several key privacy enhancements:
+
+1. **Tracking Protection**: Browsers block third-party trackers that collect user data across multiple sites, reducing the amount of information shared with advertisers and data brokers.
+
+2. **Privacy Modes**: Features like Incognito mode in Chrome or Private Browsing in Firefox ensure that browsing history, cookies, and site data are not saved. This allows users to browse the web without leaving traces on their devices.
+
+3. **Third-Party Cookie Controls**: Recent updates have focused on reducing third-party cookie tracking. Browsers now offer enhanced cookie controls, allowing users to block third-party cookies entirely or limit their use.
+
+4. **Browser Fingerprinting Protection**: To combat sophisticated tracking methods like browser fingerprinting, which use unique combinations of browser and device settings to track users, browsers have started implementing protections to make it harder to uniquely identify users.
+
+5. **Enhanced Cookie Management**: Features like SameSite cookie attributes provide more control over how cookies are shared between websites, helping to prevent cross-site request forgery (CSRF) attacks.
+
+By integrating these privacy enhancements, modern browsers give users more control over their online privacy and help protect against unwanted tracking and data collection.
+
 .. _`Creative Commons Zero`: https://creativecommons.org/publicdomain/zero/1.0/
 .. _`"CSS lexical and syntax grammar"`: http://www.w3.org/TR/CSS2/grammar.html
 .. _`Punycode`: https://en.wikipedia.org/wiki/Punycode
