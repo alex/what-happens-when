@@ -206,6 +206,56 @@ Check HSTS list
   `downgrade attack`_, which is why the HSTS list is included in modern web
   browsers.)
 
+
+
+#### HTTP/3 Protocol
+---------------
+
+HTTP/3 is the latest version of the Hypertext Transfer Protocol (HTTP) and is designed to improve web performance and security. It builds upon the principles of HTTP/2 but uses QUIC as its transport protocol instead of TCP.
+
+##### Key Features of HTTP/3
+
+1. **QUIC Transport Protocol**:
+   - QUIC (Quick UDP Internet Connections) is a transport layer protocol that uses UDP instead of TCP.
+   - It reduces latency by establishing connections faster and improving data transmission speeds.
+   - QUIC includes built-in encryption, which enhances security.
+
+2. **Improved Performance**:
+   - **Reduced Latency**: QUIC's connection establishment is faster than TCP's three-way handshake. QUIC combines the initial handshake and TLS (Transport Layer Security) setup, reducing the time to start data transfer.
+   - **Multiplexing Without Head-of-Line Blocking**: Unlike TCP, which can suffer from head-of-line blocking, QUIC allows multiple streams of data to be sent simultaneously without one stream blocking others.
+
+3. **Enhanced Security**:
+   - **Built-in Encryption**: QUIC integrates TLS 1.3, ensuring all connections are encrypted by default.
+   - **Forward Error Correction (FEC)**: QUIC can recover from packet loss more efficiently, improving reliability.
+
+4. **Better Handling of Network Changes**:
+   - **Connection Migration**: QUIC supports connection migration, allowing a connection to survive changes in the network, such as switching from Wi-Fi to cellular data.
+
+##### How HTTP/3 Works
+
+1. **DNS Resolution**: When you type `google.com`, the browser first resolves the domain to an IP address using DNS.
+2. **Establishing a Connection**: The browser establishes a QUIC connection to the server. This involves a single round-trip handshake that sets up both the transport connection and the encryption keys.
+3. **Sending Requests**: The browser sends HTTP/3 requests over the QUIC connection. Each request is sent on a separate stream, which can be processed independently.
+4. **Server Response**: The server responds with the requested resources, again using separate streams for each response.
+5. **Rendering the Page**: The browser renders the page using the received resources, such as HTML, CSS, JavaScript, and images.
+
+##### Benefits of HTTP/3
+
+- **Faster Page Loads**: Reduced latency and head-of-line blocking result in faster page loads.
+- **Improved Security**: Built-in encryption and forward error correction enhance security and reliability.
+- **Better User Experience**: Connection migration and improved handling of network changes provide a smoother user experience, especially on mobile devices.
+
+### Example Scenario
+
+When you type `google.com` and press Enter, if the server and browser support HTTP/3, the following happens:
+1. The browser performs a DNS lookup to find the IP address of `google.com`.
+2. The browser initiates a QUIC handshake with the server.
+3. The browser sends an HTTP/3 request over the QUIC connection.
+4. The server processes the request and sends the response using HTTP/3.
+5. The browser receives the response and renders the page.
+
+This entire process is designed to be faster and more secure than previous versions of HTTP, providing a better user experience.
+
 DNS lookup
 ----------
 
