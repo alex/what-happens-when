@@ -206,6 +206,20 @@ Check HSTS list
   `downgrade attack`_, which is why the HSTS list is included in modern web
   browsers.)
 
+DNS infra
+---------------
+The infrastructure of the Domain Name System (DNS) is a complex network of servers and protocols that enable the translation of human-readable domain names into IP addresses, allowing computers to communicate with each other on the internet. The DNS infrastructure consists of several key components and layers, including:
+
+Root Servers: At the top of the DNS hierarchy are the root servers, which are responsible for maintaining a list of authoritative name servers for top-level domains (TLDs) like .com, .org, .net, etc. There are 13 root servers distributed globally, operated by various organizations.
+
+
+TLD Name Servers: Below the root servers are the TLD name servers, which handle queries for specific TLDs. For example, the name servers for .com TLD are responsible for maintaining information about domain names ending in .com.
+
+
+Authoritative Name Servers: Authoritative name servers are responsible for storing and serving DNS records for individual domain names. When a DNS query is made, the authoritative name server for the requested domain provides the IP address associated with that domain.
+
+
+Recursive Resolvers: These are DNS servers provided by internet service providers (ISPs) or other organizations. When a user makes a DNS query, the recursive resolver acts as an intermediary between the user and the DNS infrastructure. It recursively queries other DNS servers until it obtains the final IP address for the requested domain.
 DNS lookup
 ----------
 
