@@ -21,7 +21,34 @@ maintainers.
 Table of Contents
 ====================
 
-.. contents::
+.. Table of Contents:
+   : 'The "g" key is pressed' -> -> Explains the physical keboar actions
+   from when the g key is pressed and how the browser levarages the
+   autocomplete function
+   : The "enter" key bottoms out
+   : Interrupt fires [NOT for USB keyboards]
+   : (On Windows) A WM_KEYDOWN message is sent to the app
+   : (On OS X) A KeyDown NSEvent is sent to the app
+   : (On GNU/Linux) the Xorg server listens for keycodes
+   : Parse URL
+   : Is it a URL or a search term?
+   : Check HSTS list
+   : DNS lookup
+   : ARP process
+   : Opening of a socket
+   : TLS handshake
+   : If a packet is dropped
+   : HTTP protocol
+   : HTTP Server Request Handle
+   :    Behind the scenes of the Browser
+   : Browser
+   : HTML parsing
+   :    The parsing algorithm
+   :    Actions when parsing is finished
+   : CSS interpretation
+   : Page Rendering
+   : GPU Rendering
+   : Post-rendering and user-induced execution
    :backlinks: none
    :local:
 
