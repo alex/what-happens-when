@@ -674,6 +674,28 @@ GPU Rendering
   of ``GPU`` massive parallelism for float point calculations required for
   the rendering process.
 
+## Firewall Traversal
+
+When you type `https://www.google.com` and press Enter, your request must pass through various firewalls to ensure security and integrity. Here’s an expanded explanation of what happens during this stage:
+
+1. **Outgoing Firewall on Client Side:**
+   - When the browser on your device sends a request, it first passes through your local network’s firewall. This firewall checks outgoing traffic against a set of rules to ensure no malicious or unauthorized requests are sent. It verifies that the request is made to a legitimate external server (Google’s server in this case) and that it’s over a secure protocol (HTTPS).
+
+2. **Network Firewalls:**
+   - As the request traverses the internet, it passes through several intermediate network firewalls. These firewalls, often managed by ISPs (Internet Service Providers) and data centers, perform similar checks to filter out harmful traffic and prevent network attacks. They use various techniques such as packet inspection and traffic analysis.
+
+3. **Incoming Firewall on Server Side:**
+   - Upon reaching Google’s infrastructure, the request encounters Google's incoming firewalls. These firewalls scrutinize the incoming traffic to protect against DDoS (Distributed Denial of Service) attacks, unauthorized access attempts, and other security threats. Google's firewalls are configured to allow traffic on port 443 (the default port for HTTPS) while blocking potentially harmful traffic.
+
+4. **Deep Packet Inspection (DPI):**
+   - Some advanced firewalls use DPI to analyze the data part (and sometimes the header) of the packet. This method helps in detecting sophisticated threats by looking beyond basic packet headers and examining the payload.
+
+5. **Network Address Translation (NAT):**
+   - Firewalls often perform NAT, which maps private local addresses to a public address before packets are forwarded. This step is crucial for routing traffic correctly through the internet while maintaining the internal network’s security.
+
+By passing through these firewalls, the request ensures that it reaches Google’s servers securely and without interference from malicious actors. This robust process is a cornerstone of internet security, protecting both users and service providers.
+
+
 
 Window Server
 -------------
