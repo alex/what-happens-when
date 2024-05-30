@@ -5,7 +5,7 @@ This repository is an attempt to answer the age-old interview question "What
 happens when you type google.com into your browser's address box and press
 enter?"
 
-Except instead of the usual story, we're going to try to answer this question
+Instead of the usual story, we will try to answer this question
 in as much detail as possible. No skipping out on anything.
 
 This is a collaborative process, so dig in and try to help out! There are tons
@@ -50,7 +50,7 @@ of each key switch, debounces the electrical noise of the rapid intermittent
 closure of the switch, and converts it to a keycode integer, in this case 13.
 The keyboard controller then encodes the keycode for transport to the computer.
 This is now almost universally over a Universal Serial Bus (USB) or Bluetooth
-connection, but historically has been over PS/2 or ADB connections.
+connection but historically has been over PS/2 or ADB connections.
 
 *In the case of the USB keyboard:*
 
@@ -618,6 +618,24 @@ set to "complete" and a "load" event is fired.
 
 Note there is never an "Invalid Syntax" error on an HTML page. Browsers fix
 any invalid content and go on.
+
+Order In Which Component Files are Parsed
+-----------------------------------------
+
+HTML often contains ``<link>`` elements referencing external CSS and ``<script>`` elements for
+external JavaScript scripts. Here is the order at which those files are parsed by the
+browser as the page is being loaded.
+
+*  The browser parses the HTML first and looks for any ``<link>`` or ``<script>`` elements
+   referencing external CSS and JavaScript respectively.
+*  As the browser parses the HTML, it sends back requests to the server for any CSS files
+   it found in the ``<link>`` element and any JavaScript files it found in the ``<script>``
+   element.
+*  The browser generates an in-memory DOM tree of the parsed HTML, an in-memory CSSOM
+   structure from the parsed CSS, and compiles and executes the parsed JavaScript.
+*  As the browser builds the DOM tree and apply the styles from the CSSOM tree and
+   execute the JavaScript, a visual representation of the page is painted on the screen
+   and the user can see the page content and interact with it.
 
 CSS interpretation
 ------------------
