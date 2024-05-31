@@ -674,6 +674,53 @@ GPU Rendering
   of ``GPU`` massive parallelism for float point calculations required for
   the rendering process.
 
+Firewall
+--------
+
+Firewalls are security systems designed to protect networks and devices from unauthorized
+access and various types of cyber threats. They function by controlling the incoming and outgoing
+network traffic based on predetermined security rules. Firewalls can be implemented as hardware,
+software, or a combination of both. below are some basic concepts with regards firewalls:
+
+Basic Concepts
+--------------
+* Packet Filtering: Firewalls inspect each packet (a small unit of data transmitted over a network) 
+and decide whether to allow or block it based on predefined rules. This process involves examining
+packet headers, source and destination IP addresses, ports, and protocols.
+
+* Stateful Inspection: Unlike simple packet filters, stateful firewalls track the state of active
+connections and make decisions based on the context of the traffic. They maintain a state table
+that records the details of active sessions, ensuring that only legitimate packets belonging to an established session are allowed.
+
+* Proxy Service: Proxy firewalls act as intermediaries between users and the services they access.
+They intercept requests, filter them, and forward legitimate ones to the intended destination.
+This method can provide deep packet inspection and hide the internal network structure.
+
+* Network Address Translation (NAT): Firewalls often perform NAT, which modifies IP addresses in packet headers
+to map private internal addresses to a public address. This not only conserves public IP addresses but also hides 
+internal network structures from the outside world.
+
+Types of Firewalls
+Packet-Filtering Firewalls: These are the most basic type of firewalls, operating at the network layer (Layer 3 of the OSI model).
+They inspect packets in isolation, without keeping track of their state. Rules are set based on IP addresses, ports, and protocols.
+
+Stateful Firewalls: These firewalls operate at the network and transport layers (Layers 3 and 4).
+They keep track of the state of active connections and make decisions based on the context of the traffic.
+They can block packets that do not match an existing connection state.
+
+Application-Level Gateways (Proxy Firewalls): Operating at the application layer (Layer 7), these firewalls intercept all messages
+entering or leaving the network. They can inspect the content of traffic, making them effective at blocking
+malicious content and unauthorized access to applications.
+
+Next-Generation Firewalls (NGFWs): NGFWs combine the features of traditional firewalls with additional
+capabilities like deep packet inspection, intrusion detection and prevention systems (IDS/IPS), and advanced threat protection.
+They operate across multiple layers and provide more granular control.
+
+Web Application Firewalls (WAFs): Specifically designed to protect web applications,
+WAFs monitor and filter HTTP/HTTPS traffic. They can protect against common web exploits
+like SQL injection, cross-site scripting (XSS), and other OWASP Top Ten vulnerabilities.
+
+
 
 Window Server
 -------------
