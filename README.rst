@@ -224,6 +224,42 @@ DNS lookup
 * If the DNS server is on a different subnet, the network library follows
   the ``ARP process`` below for the default gateway IP.
 
+After the browser initiates a DNS lookup for the domain name provided in the URL,
+the process of resolving the domain name to its
+corresponding IP address begins. This process typically involves multiple steps,
+including recursive DNS resolution, caching, and communication with authoritative DNS servers.
+
+**Recursive DNS Resolution:**
+
+Recursive DNS resolution is the process by which a DNS resolver, typically operated by the 
+user's Internet Service Provider (ISP) or a public DNS resolver service, performs the task of resolving
+ a domain name on behalf of the client. This process involves multiple steps:
+
+1. **Client Query:** The client's DNS resolver receives the initial DNS query from the browser,
+requesting the IP address associated with the domain name.
+
+2. **Iterative Queries:** If the resolver does not have the requested information in its cache, 
+it initiates a series of iterative queries to resolve the domain name. In an iterative query,
+the resolver starts by querying the root DNS servers to obtain the authoritative DNS servers
+responsible for the top-level domain (TLD) of the domain name (e.g., .com, .org, .net).
+
+3. **Root DNS Servers:** The resolver sends a query to one of the root DNS servers, asking for the authoritative DNS servers
+responsible for the TLD of the domain name. The root DNS servers respond with the IP addresses of the TLD DNS servers.
+
+4. **TLD DNS Servers:** Upon receiving the IP addresses of the TLD DNS servers, the resolver sends another query to
+one of these servers, requesting the authoritative DNS servers responsible for the second-level domain (SLD) of the domain name.
+
+5. **Authoritative DNS Servers:** The resolver sends a final query to one of the authoritative DNS servers responsible
+for the SLD of the domain name, asking for the IP address associated with the domain name.
+
+6. **Response Caching:** Once the resolver receives the IP address from the authoritative DNS servers,
+it caches the response for future use. This caching helps improve DNS lookup performance
+and reduces the load on the DNS infrastructure.
+
+By performing recursive DNS resolution, the DNS resolver effectively navigates
+through the hierarchical DNS system to obtain the IP address corresponding to the requested domain name.
+This process ensures that users can access websites and other online services using human-readable domain names,
+without needing to know the underlying IP addresses.
 
 ARP process
 -----------
