@@ -344,7 +344,8 @@ decremented by one for each router that passes. The packet will be dropped if
 the TTL field reaches zero or if the current router has no space in its queue
 (perhaps due to network congestion).
 
-This send and receive happens multiple times following the TCP connection flow:
+This send and receive happens multiple times following the TCP connection flow,
+which starts with the three-way handshake:
 
 * Client chooses an initial sequence number (ISN) and sends the packet to the
   server with the SYN bit set to indicate it is setting the ISN
@@ -371,28 +372,31 @@ TLS handshake
 -------------
 * The client computer sends a ``ClientHello`` message to the server with its
   Transport Layer Security (TLS) version, list of cipher algorithms and
-  compression methods available.
+  compression methods available, and a randomly generated number called a
+  "client random."
 
 * The server replies with a ``ServerHello`` message to the client with the
-  TLS version, selected cipher, selected compression methods and the server's
-  public certificate signed by a CA (Certificate Authority). The certificate
-  contains a public key that will be used by the client to encrypt the rest of
-  the handshake until a symmetric key can be agreed upon.
+  TLS version, selected cipher, selected compression methods, another randomly
+  generated number called a "server random," and the server's public certificate
+  signed by a CA (Certificate Authority). The certificate contains a public key
+  that will be used by the client to encrypt the rest of the handshake until a
+  symmetric key can be agreed upon.
 
 * The client verifies the server digital certificate against its list of
   trusted CAs. If trust can be established based on the CA, the client
-  generates a string of pseudo-random bytes and encrypts this with the server's
-  public key. These random bytes can be used to determine the symmetric key.
+  generates a string of pseudo-random bytes, known as the "pre-master secret",
+  and encrypts this with the server's public key. These random bytes can be used
+  to determine the symmetric key.
 
 * The server decrypts the random bytes using its private key and uses these
-  bytes to generate its own copy of the symmetric master key.
+  bytes to generate its own copy of the symmetric master key, derived from the pre-master secret, the client random, and the server random.
 
 * The client sends a ``Finished`` message to the server, encrypting a hash of
-  the transmission up to this point with the symmetric key.
+  the transmission up to this point with the symmetric key, indicating that the client part of the handshake is complete.
 
 * The server generates its own hash, and then decrypts the client-sent hash
   to verify that it matches. If it does, it sends its own ``Finished`` message
-  to the client, also encrypted with the symmetric key.
+  to the client, also encrypted with the symmetric key, indicating that the server part of the handshake is complete.
 
 * From now on the TLS session transmits the application (HTTP) data encrypted
   with the agreed symmetric key.
