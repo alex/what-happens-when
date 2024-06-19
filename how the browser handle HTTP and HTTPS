@@ -1,0 +1,11 @@
+The browser's handling of HTTP (Hypertext Transfer Protocol) requests differs from HTTPS (Hypertext Transfer Protocol Secure) requests primarily in terms of the underlying security mechanisms and the way the data is transmitted.
+
+HTTP is a protocol used for transmitting data over the internet. It operates over a plain text connection, which means that the data sent between the browser and the server is not encrypted. This lack of encryption makes HTTP requests vulnerable to eavesdropping, data tampering, and other security risks. When a browser sends an HTTP request, the data is transmitted in clear text, allowing anyone who can intercept the communication to read its contents.
+
+On the other hand, HTTPS is designed to provide a secure and encrypted communication channel between the browser and the server. It uses SSL/TLS (Secure Sockets Layer/Transport Layer Security) protocols to encrypt the data before transmission. HTTPS requests establish a secure connection between the browser and the server, ensuring that the data exchanged cannot be easily intercepted or modified by unauthorized parties.
+
+To establish an HTTPS connection, the browser and the server perform a series of steps known as the "SSL/TLS handshake." This handshake involves the exchange of cryptographic keys, negotiation of encryption algorithms, and verification of the server's identity through digital certificates. Once the secure connection is established, the data transmitted between the browser and the server is encrypted and decrypted at each end, ensuring its confidentiality and integrity.
+
+From a user's perspective, the difference between HTTP and HTTPS is often indicated by the URL scheme and a padlock icon in the browser's address bar. When accessing a website over HTTP, the URL starts with "http://" and does not display a padlock. In contrast, when accessing a website over HTTPS, the URL starts with "https://" and typically displays a padlock icon, indicating that the connection is secure.
+
+In summary, the main difference in the browser's handling of HTTP and HTTPS requests lies in the security measures applied to the data transmission. HTTP requests are sent over an unencrypted connection, while HTTPS requests use encryption to protect the confidentiality and integrity of the transmitted data.
