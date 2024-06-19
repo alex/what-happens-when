@@ -150,8 +150,8 @@ this queue by threads with sufficient privileges calling the
 handled by, an ``NSApplication`` main event loop, via an ``NSEvent`` of
 ``NSEventType`` ``KeyDown``.
 
-(On GNU/Linux) the Xorg server listens for keycodes
----------------------------------------------------
+(On GNU/Linux) the event is handled either by Xorg or wayland
+--------------------------------------------------------------
 
 When a graphical ``X server`` is used, ``X`` will use the generic event
 driver ``evdev`` to acquire the keypress. A re-mapping of keycodes to scancodes
@@ -159,7 +159,10 @@ is made with ``X server`` specific keymaps and rules.
 When the scancode mapping of the key pressed is complete, the ``X server``
 sends the character to the ``window manager`` (DWM, metacity, i3, etc), so the
 ``window manager`` in turn sends the character to the focused window.
-The graphical API of the window  that receives the character prints the
+The process is similar when using the graphical server wayland, which is meant
+to be a successor to Xorg. However in wayland, the compositor manages both 
+input events and window management, making the process more efficient.
+The graphical API of the window that receives the character then prints the
 appropriate font symbol in the appropriate focused field.
 
 Parse URL
