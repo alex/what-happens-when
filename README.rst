@@ -708,4 +708,48 @@ page rendering and painting.
 .. _`日本語`: https://github.com/tettttsuo/what-happens-when-JA
 .. _`downgrade attack`: http://en.wikipedia.org/wiki/SSL_stripping
 .. _`OSI Model`: https://en.wikipedia.org/wiki/OSI_model
-.. _`Spanish`: https://github.com/gonzaleztroyano/what-happens-when-ES
+.. _`Spanish`: https://github.com/gonzaleztroyano/what-happens-when-EC
+
+Server Response and HTML Parsing
+-------------
+
+When the browser sends an HTTP GET request for the "/" resource on "google.com",
+the web server responds with an HTTP 200 OK status code, indicating that the 
+request was successful and the requested resource is being returned.
+
+The server's response includes several headers that provide additional information:
+
+*Content-Type: This header specifies the MIME type of the content being returned,
+which in this case is "text/html; charset=UTF-8", indicating that the response body contains HTML content encoded in UTF-8.
+
+*Content-Length: This header specifies the size of the response body in bytes.
+
+*Date: This header indicates the date and time when the response was generated.
+
+*Server: This header identifies the web server software being used, which may be Apache, Nginx, Microsoft IIS, or another server implementation.
+
+The response body contains the HTML content of the Google homepage. The browser then begins parsing 
+this HTML content to construct the Document Object Model (DOM) tree.
+
+The HTML parsing process involves two main stages:
+
+ 1.Tokenization:
+
+ *The HTML parser breaks down the HTML markup into individual tokens, such as start tags, end tags,
+ attribute names and values, text content, and so on.
+ This tokenization process follows the rules defined in the 
+ HTML specification to handle the various syntactic constructs of the language.
+
+ 2.Tree Construction:
+ 
+  *The parser then takes these tokens and constructs the DOM tree, which represents the structure of the HTML document.
+
+  *The DOM tree is a hierarchical representation of the HTML elements, with the <html> element as the root,
+  followed by the <head> and <body> elements, and then all the other nested elements.
+
+Each element in the DOM tree is represented as a node, and the relationships between the nodes (parent-child, sibling, etc.) are maintained.
+The DOM is the fundamental representation of the HTML document that the browser uses for further processing and rendering. 
+JavaScript can interact with the DOM, allowing dynamic manipulation of the web page's content and structure.
+
+By parsing the HTML and constructing the DOM tree, the browser can now proceed to the next steps of the page rendering process, 
+such as processing the CSS, executing JavaScript, and painting the final visual representation of the web page.
