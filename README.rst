@@ -509,6 +509,10 @@ and IIS for Windows.
 * The server parses the file according to the handler. If Google
   is running on PHP, the server uses PHP to interpret the index file, and
   streams the output to the client.
+* Large websites like Google often use CDNs to deliver content faster. 
+  A CDN is a geographically distributed network of servers that store cached 
+  copies of the website's content. This way, users can access the content 
+  from the nearest server, reducing latency.
 
 Behind the scenes of the Browser
 ----------------------------------
