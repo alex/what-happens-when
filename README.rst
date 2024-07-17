@@ -209,20 +209,53 @@ Check HSTS list
 DNS lookup
 ----------
 
-* Browser checks if the domain is in its cache. (to see the DNS Cache in
-  Chrome, go to `chrome://net-internals/#dns <chrome://net-internals/#dns>`_).
-* If not found, the browser calls ``gethostbyname`` library function (varies by
-  OS) to do the lookup.
-* ``gethostbyname`` checks if the hostname can be resolved by reference in the
-  local ``hosts`` file (whose location `varies by OS`_) before trying to
-  resolve the hostname through DNS.
-* If ``gethostbyname`` does not have it cached nor can find it in the ``hosts``
-  file then it makes a request to the DNS server configured in the network
-  stack. This is typically the local router or the ISP's caching DNS server.
-* If the DNS server is on the same subnet the network library follows the
-  ``ARP process`` below for the DNS server.
-* If the DNS server is on a different subnet, the network library follows
-  the ``ARP process`` below for the default gateway IP.
+* Browser Cache:
+  - Checks internal cache for a recent entry for the domain.
+
+* Operating System Cache:
+  - If the browser cache misses, the browser calls the OS library function (`gethostbyname` or similar) to resolve the hostname.
+  - OS maintains its own DNS cache, which is checked next.
+
+* Hosts File:
+  - OS library function checks the local hosts file for manual mappings of hostnames to IP addresses.
+  - Location of hosts file:
+    - Windows: `C:\Windows\System32\drivers\etc\hosts`
+    - Linux and macOS: `/etc/hosts`
+
+* DNS Server Query:
+  - If not found in the hosts file, the OS library function queries the DNS server configured in the network settings.
+  - Typically, this DNS server is the local router or the ISP's caching DNS server.
+
+* ARP (Address Resolution Protocol):
+  - If the DNS server is on the same subnet, ARP is used to find the MAC address of the DNS server.
+  - If the DNS server is on a different subnet, ARP is used to find the MAC address of the default gateway.
+
+* DNS Query Process:
+  - Query is sent to the DNS server, involving several steps:
+    - **Recursive Query:** DNS server queries other DNS servers on behalf of the client until the IP address is found.
+    - **Iterative Query:** DNS server provides the address of another DNS server for the client to query.
+
+* DNS Server Types:
+  - **Root DNS Servers:** At the top of the DNS hierarchy, providing referrals to authoritative servers for TLDs.
+  - **TLD DNS Servers:** Manage top-level domains (like .com, .net) and provide referrals to authoritative servers for domain names.
+  - **Authoritative DNS Servers:** Contain DNS records for specific domains.
+
+* DNS Record Types:
+  - **A Record:** Maps a hostname to an IPv4 address.
+  - **AAAA Record:** Maps a hostname to an IPv6 address.
+  - **CNAME Record:** Alias for another domain.
+  - **MX Record:** Mail exchange record, specifies mail servers for a domain.
+  - **NS Record:** Nameserver record, specifies DNS servers for a domain.
+  - **PTR Record:** Pointer record, used for reverse DNS lookups.
+
+* Response:
+  - DNS server responds with the IP address.
+  - IP address is cached by the OS and the browser for future queries.
+
+* Handling Failures:
+  - If the DNS query fails, the browser might display an error message indicating the site cannot be reached.
+  - Possible reasons for failure include network issues, incorrect DNS server settings, or issues with the domain itself.
+
 
 
 ARP process
