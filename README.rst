@@ -1,4 +1,4 @@
-What happens when...
+Wat happens when...
 ====================
 
 This repository is an attempt to answer the age-old interview question "What
@@ -27,6 +27,12 @@ Table of Contents
 
 The "g" key is pressed
 ----------------------
+The specific result of pressing the "g" key will depend on the context in which it is being pressed.
+
+For example:
+
+If you are typing in a text editor, pressing the "g" key will simply result in the letter "g" being inserted into the document at the current cursor position.
+
 The following sections explain the physical keyboard actions
 and the OS interrupts. When you press the key "g" the browser receives the
 event and the auto-complete functions kick in.
