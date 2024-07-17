@@ -674,6 +674,28 @@ GPU Rendering
   of ``GPU`` massive parallelism for float point calculations required for
   the rendering process.
 
+GPU Rendering Process:
+---------------------
+
+1) Task Division:
+
+The rendering task is divided into smaller sub-tasks that can be processed in parallel. For example, an image might be divided into smaller tiles or chunks.
+
+2) Vertex Processing:
+
+Vertices of 3D models are transformed into 2D coordinates using vertex shaders. This involves computations like translations, rotations, and scaling.
+
+3) Rasterization:
+
+The transformed vertices are converted into pixels. This step determines which pixels correspond to which parts of the 3D models.
+
+4) Pixel Shading:
+
+Each pixel is shaded based on lighting, textures, and other effects. Pixel shaders calculate the color and brightness of each pixel.
+
+5) Image Composition:
+
+The final image is composed by combining all the processed pixels. This image is then displayed on the screen.
 
 Window Server
 -------------
