@@ -570,6 +570,17 @@ The components of the browsers are:
   need to save all sorts of data locally, such as cookies. Browsers also
   support storage mechanisms such as localStorage, IndexedDB, WebSQL and
   FileSystem.
+--------
+**Load Balancer: Traffic Director Extraordinaire**
+
+Google, being one of the most visited sites on the internet, doesn’t rely on a single server to handle all incoming requests. Instead, they use load balancers to distribute traffic across multiple servers.
+
+Common load balancing algorithms include:
+- Round Robin: Requests are distributed evenly in a circular order.
+- Least Connections: Sends requests to the server with the fewest active connections.
+- IP Hash: Uses the client’s IP address to determine which server receives the request.
+
+According to a study by NGINX, proper load balancing can improve application response times by up to 60%.
 
 HTML parsing
 ------------
@@ -579,10 +590,10 @@ document from the networking layer. This will usually be done in 8kB chunks.
 
 The primary job of the HTML parser is to parse the HTML markup into a parse tree.
 
-The output tree (the "parse tree") is a tree of DOM element and attribute
+The output tree (the "parse tree") is a tree of DOM elements and attribute
 nodes. DOM is short for Document Object Model. It is the object presentation
 of the HTML document and the interface of HTML elements to the outside world
-like JavaScript. The root of the tree is the "Document" object. Prior to
+like JavaScript. The root of the tree is the "Document" object. Before
 any manipulation via scripting, the DOM has an almost one-to-one relation to
 the markup.
 
@@ -651,13 +662,13 @@ Page Rendering
 * Create layers to describe which parts of the page can be animated as a group
   without being re-rasterized. Each frame/render object is assigned to a layer.
 * Textures are allocated for each layer of the page.
-* The frame/render objects for each layer are traversed and drawing commands
+* Each layer's frame/render objects are traversed and drawing commands
   are executed for their respective layer. This may be rasterized by the CPU
   or drawn on the GPU directly using D2D/SkiaGL.
 * All of the above steps may reuse calculated values from the last time the
   webpage was rendered, so that incremental changes require less work.
 * The page layers are sent to the compositing process where they are combined
-  with layers for other visible content like the browser chrome, iframes
+  with layers for other visible content like the browser Chrome, iframes
   and addon panels.
 * Final layer positions are computed and the composite commands are issued
   via Direct3D/OpenGL. The GPU command buffer(s) are flushed to the GPU for
@@ -670,7 +681,7 @@ GPU Rendering
   purpose ``CPU`` or the graphical processor ``GPU`` as well.
 
 * When using ``GPU`` for graphical rendering computations the graphical
-  software layers split the task into multiple pieces, so it can take advantage
+  software layers split the task into multiple pieces so that it can take advantage
   of ``GPU`` massive parallelism for float point calculations required for
   the rendering process.
 
@@ -681,8 +692,7 @@ Window Server
 Post-rendering and user-induced execution
 -----------------------------------------
 
-After rendering has been completed, the browser executes JavaScript code as a result
-of some timing mechanism (such as a Google Doodle animation) or user
+After rendering has been completed, the browser executes JavaScript code due to some timing mechanism (such as a Google Doodle animation) or user
 interaction (typing a query into the search box and receiving suggestions).
 Plugins such as Flash or Java may execute as well, although not at this time on
 the Google homepage. Scripts can cause additional network requests to be
