@@ -223,7 +223,13 @@ DNS lookup
   ``ARP process`` below for the DNS server.
 * If the DNS server is on a different subnet, the network library follows
   the ``ARP process`` below for the default gateway IP.
-
+* There are different types of DNS servers, the local DNS from the router or ISP
+  is called Local DNS, if the local DNS can't find the IP address, it will
+  contact the root server for the IP address of TLD server .com(Eg;  example.com)
+* The local server will then contact the TLD server of .com and ask for the IP 
+  address of the Authoritative Name server.
+* The Authoritative name server suppleis the local server with the IP which is 
+  supplied to the client asking
 
 ARP process
 -----------
