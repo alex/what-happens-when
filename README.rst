@@ -492,6 +492,8 @@ and IIS for Windows.
      ``PATCH``, ``DELETE``, ``CONNECT``, ``OPTIONS``, or ``TRACE``). In the
      case of a URL entered directly into the address bar, this will be ``GET``.
    * Domain, in this case - google.com.
+   # What does GET request does?
+   A GET request is a type of HTTP request method used to retrieve data from a server. When you type a URL into your browser and press Enter, the browser sends a GET request to the server to fetch the specified resource (e.g., a web page or API data). The server processes this request and returns the requested data, usually in the form of an HTML page, which the browser then renders for you to view.
    * Requested path/page, in this case - / (as no specific path/page was
      requested, / is the default path).
 * The server verifies that there is a Virtual Host configured on the server
