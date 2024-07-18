@@ -673,6 +673,8 @@ GPU Rendering
   software layers split the task into multiple pieces, so it can take advantage
   of ``GPU`` massive parallelism for float point calculations required for
   the rendering process.
+* The GPU rendering also works by shader processing which involves processing programs that compute effects applied to objects in a scene.Shaders are applied in lighting,reflections,textures,shadows to generate a realistic effect in 3D graphics.
+* GPU Rendering is widely used in scientific simulations e.g  weather forecast, 3D rendering e.gin architectectural designs,animations and in Video editing.
 
 
 Window Server
