@@ -1,6 +1,5 @@
 What happens when...
 ====================
-
 This repository is an attempt to answer the age-old interview question "What
 happens when you type google.com into your browser's address box and press
 enter?"
@@ -491,6 +490,12 @@ and IIS for Windows.
    * HTTP Request Method (either ``GET``, ``HEAD``, ``POST``, ``PUT``,
      ``PATCH``, ``DELETE``, ``CONNECT``, ``OPTIONS``, or ``TRACE``). In the
      case of a URL entered directly into the address bar, this will be ``GET``.
+* a what the GET request entails and what it does)
+  GET REQUEST
+  The GET method is used to retrieve informationfromthe given server using a
+  given URL.
+  Requests using GET should only retrieve data and would have no other effect
+  on the data.
    * Domain, in this case - google.com.
    * Requested path/page, in this case - / (as no specific path/page was
      requested, / is the default path).
