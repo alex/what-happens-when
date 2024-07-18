@@ -491,6 +491,8 @@ and IIS for Windows.
    * HTTP Request Method (either ``GET``, ``HEAD``, ``POST``, ``PUT``,
      ``PATCH``, ``DELETE``, ``CONNECT``, ``OPTIONS``, or ``TRACE``). In the
      case of a URL entered directly into the address bar, this will be ``GET``.
+ #what the GET request entails and what it does?
+  A GET request, in simple terms, is a way for you to grab data from a data source with the help of the internet. It's done using the GET request method, which is a very common HTTP request method (like POST, PUT, or DELETE
    * Domain, in this case - google.com.
    * Requested path/page, in this case - / (as no specific path/page was
      requested, / is the default path).
