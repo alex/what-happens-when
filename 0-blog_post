@@ -1,0 +1,22 @@
+The breakdown of the processes is explained below:
+ DNS Request: Your browser first sends a request to the Domain Name System (DNS) server to resolve the URL into an IP address. It does this by querying a DNS server which acts like a phonebook for the internet.
+
+TCP/IP: Internet communications are based on IP addresses, not domain names. Once the IP address is obtained, your browser initiates a Transmission Control Protocol (TCP) connection to the server at that IP address. It involves a process that ensures the browser and server are ready to communicate called a TLS handshake.
+
+
+Firewall: A firewall is a network security device that monitors and controls incoming and outgoing network traffic based on security rules. It helps prevent unauthorized access and threats between a trusted network and an untrusted network,
+
+
+HTTPS/SSL: This request specifies that you want to retrieve the web page at the specified URL. The browser sends a request to the Google server using HTTP (Hypertext Transfer Protocol). The protocol HTTPS shows an encrypted communication between your browser and the server, ensuring that any data transferred between them is protected from tampering. 
+
+
+Load-balancer: The request is distributed via a load balancer to manage traffic and ensure availability. This is part of the processes behind the scenes that help deliver a webpage efficiently. It acts as the intermediary between your web browser's request and the servers that hold the website's data. It helps spread the workload of multiple servers and ensures the site stays available even if one server gets overloaded. They improve performance and increase reliability and scalability. 
+
+
+Web server: The web server that receives the request and serves the web page. This receives the request, fetches the HTML/CSS/JavaScript, images etc) file for the homepage from the file system, or executes a script to generate the page dynamically. Google server’s server also handles load balancing and possibly other backend processing to provide a fast response.
+
+
+Application server: The application server processes the requests and generates dynamic content if necessary. Application Server retrieves product details and availability from the database, processes user actions, manages the user session, handles the checkout process and sends confirmation emails or notification
+
+
+Database: The application server requests data from the database to generate the web page. A database is an organised collection of structured information or data that interacts with end-users, applications, and the database itself to capture and analyze data. 
