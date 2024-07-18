@@ -162,6 +162,16 @@ sends the character to the ``window manager`` (DWM, metacity, i3, etc), so the
 The graphical API of the window  that receives the character prints the
 appropriate font symbol in the appropriate focused field.
 
+Additionally, Xorg allows for extensive customization through configuration
+files, enabling users to modify key mappings, set up multiple monitors, an
+d customize input device behavior. Advanced users can create custom scripts and
+use tools like xmodmap or setxkbmap to further tweak their keyboard layouts and
+functionalities. The X server's ability to handle various input devices and
+configurations makes it a versatile and powerful component of the GNU/Linux
+graphical environment. Furthermore, Xorg's network transparency feature allows
+graphical applications to be run on a remote machine, with the output displayed
+locally, providing flexibility in how and where applications are used.
+
 Parse URL
 ---------
 
