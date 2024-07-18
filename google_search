@@ -1,0 +1,54 @@
+Ever wondered what magic happens behind the scenes when you type a URL in your browser's address bar and hit Enter? Let's demystify this process by breaking down each step.
+
+1. DNS Request
+When you type https://www.google.com and press Enter, the first thing that happens is a DNS (Domain Name System) request. Your browser needs to convert the human-readable domain name (www.google.com) into an IP address that it can use to communicate with Google's servers.
+
+Here's a simplified version of how this works:
+
+Your browser checks its cache to see if it has recently looked up the IP address for www.google.com.
+If not found, it checks the operating system's cache.
+If still not found, the request is sent to a DNS server, usually provided by your ISP (Internet Service Provider).
+The DNS server looks up the IP address associated with www.google.com and returns it to your browser.
+2. TCP/IP Connection
+Once the IP address is obtained, your browser initiates a TCP (Transmission Control Protocol) connection to the server at that IP address over the Internet Protocol (IP). This involves a three-way handshake process to establish a reliable connection:
+
+Your browser sends a SYN (synchronize) packet to the server.
+The server responds with a SYN-ACK (synchronize-acknowledge) packet.
+Your browser sends an ACK (acknowledge) packet back to the server, and the connection is established.
+3. Firewall
+During this connection process, your request might pass through multiple firewalls. Firewalls are security devices designed to monitor and filter incoming and outgoing network traffic based on predetermined security rules. They ensure that only legitimate traffic reaches its destination and protect against malicious activity.
+
+4. HTTPS/SSL
+Since you're using https, the next step is establishing a secure connection using HTTPS (HyperText Transfer Protocol Secure), which relies on SSL/TLS (Secure Sockets Layer / Transport Layer Security) protocols. Here's how it works:
+
+Your browser requests the server's SSL certificate to verify its identity.
+The server sends its SSL certificate, which your browser verifies against a list of trusted certificate authorities (CAs).
+If the certificate is valid, your browser and the server establish an encrypted session using asymmetric and symmetric encryption.
+5. Load Balancer
+Google employs load balancers to distribute incoming traffic across multiple servers to ensure reliability and performance. The load balancer receives your request and forwards it to one of the many web servers based on current load, server health, and other algorithms.
+
+6. Web Server
+The web server is responsible for handling your request. It processes the request, interacts with the application server if needed, and prepares a response. Google's web servers are highly optimized for speed and efficiency.
+
+7. Application Server
+For more complex requests, the web server may pass the request to an application server. The application server executes the business logic, processes data, and interacts with databases if required. This layer is crucial for dynamic content generation and handling user-specific operations.
+
+8. Database
+If the request involves data storage or retrieval, the application server interacts with a database. Google's databases are designed to handle massive amounts of data and provide quick access. The database executes queries, retrieves or updates data, and sends the results back to the application server.
+
+Response Back to the Browser
+After processing your request:
+
+The application server sends the response back to the web server.
+The web server prepares the final response, which may include HTML, CSS, JavaScript, images, etc.
+The load balancer forwards the response from the web server back to your browser.
+Rendering the Web Page
+Finally, your browser receives the response, decrypts it (if HTTPS), parses the HTML, CSS, and JavaScript, and renders the web page. This involves:
+
+Constructing the DOM (Document Object Model) from the HTML.
+Applying CSS to style the DOM elements.
+Executing JavaScript to enable dynamic functionality.
+And voila! You see the Google homepage displayed on your screen.
+
+Conclusion
+The simple act of typing https://www.google.com and pressing Enter triggers a complex sequence of events involving DNS resolution, secure connections, traffic distribution, and data processing. Each component plays a crucial role in delivering a seamless and secure web experience. Understanding these steps helps appreciate the intricate technologies working together to make the internet functional and reliable.
