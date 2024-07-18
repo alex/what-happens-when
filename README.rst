@@ -491,6 +491,10 @@ and IIS for Windows.
    * HTTP Request Method (either ``GET``, ``HEAD``, ``POST``, ``PUT``,
      ``PATCH``, ``DELETE``, ``CONNECT``, ``OPTIONS``, or ``TRACE``). In the
      case of a URL entered directly into the address bar, this will be ``GET``.
+     #what
+     GET REQUEST
+     The GET method is used to retrieve information from the given server using a given URIgit add.
+     Reuests usign GET should only retrieve data and would have no other effet on a data.
    * Domain, in this case - google.com.
    * Requested path/page, in this case - / (as no specific path/page was
      requested, / is the default path).
