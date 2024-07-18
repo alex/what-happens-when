@@ -27,17 +27,38 @@ Table of Contents
 
 The "g" key is pressed
 ----------------------
-The following sections explain the physical keyboard actions
-and the OS interrupts. When you press the key "g" the browser receives the
-event and the auto-complete functions kick in.
-Depending on your browser's algorithm and if you are in
-private/incognito mode or not various suggestions will be presented
-to you in the dropdown below the URL bar. Most of these algorithms sort
-and prioritize results based on search history, bookmarks, cookies, and
-popular searches from the internet as a whole. As you are typing
-"google.com" many blocks of code run and the suggestions will be refined
-with each keypress. It may even suggest "google.com" before you finish typing
-it.
+## The "g" key is pressed
+
+The following sections explain the physical keyboard actions and the OS interrupts.
+
+When you press the key "g", several things happen almost simultaneously:
+
+1. **Keyboard Action**:
+    - The physical action of pressing the "g" key generates an electrical signal.
+    - This signal is sent to the computer's keyboard controller.
+
+2. **OS Interrupt**:
+    - The keyboard controller sends an interrupt signal to the CPU.
+    - The CPU processes this interrupt and triggers the appropriate interrupt handler in the operating system.
+
+3. **Browser Event Handling**:
+    - The operating system sends the key press event to the active application, which in this case is your browser.
+    - The browser receives the event and determines that the "g" key has been pressed.
+
+4. **Auto-Complete Functions**:
+    - The browser's auto-complete functions kick in. These functions analyze the input in real-time to provide suggestions.
+    - Depending on your browser's algorithm and if you are in private/incognito mode, various suggestions will be presented in the dropdown below the URL bar.
+    - These algorithms sort and prioritize results based on several factors, including search history, bookmarks, cookies, and popular searches from the internet as a whole.
+
+5. **Incremental Search**:
+    - As you continue typing "google.com", the browser refines the suggestions with each keypress.
+    - The browser may suggest "google.com" before you finish typing it, due to its predictive text algorithms.
+
+6. **User Selection**:
+    - If you select a suggestion from the dropdown, the browser populates the URL bar with the selected suggestion and prepares to send a request once you press Enter.
+
+This process involves a seamless interaction between hardware, the operating system, and the browser, showcasing the complexity and efficiency of modern computing systems.
+
 
 The "enter" key bottoms out
 ---------------------------
