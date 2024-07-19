@@ -25,6 +25,23 @@ Table of Contents
    :backlinks: none
    :local:
 
+DNS Resolution Summary
+-----------------------
+
+When you type `https://www.google.com` in your browser, the first step is resolving
+the domain name to an IP address through DNS resolution. Here's a detailed breakdown
+of this process:
+
+1. **Browser Cache**: The browser first checks its own cache to see if it has recently resolved the domain.
+2. **Operating System Cache**: If the browser cache is empty, the request is sent to the operating system's DNS cache.
+3. **Router Cache**: If the OS cache has no record, the request is forwarded to the router, which also has a DNS cache.
+4. **ISP DNS Server**: If the router cache is empty, the request is sent to the ISP's DNS server, which performs the following:
+    - **Root Nameservers**: The ISP DNS server queries the root nameservers, which respond with the address of the Top-Level Domain (TLD) nameserver (.com, .org, etc.).
+    - **TLD Nameservers**: The TLD nameserver provides the address of the authoritative nameserver for `google.com`.
+    - **Authoritative Nameservers**: The authoritative nameserver responds with the IP address associated with `www.google.com`.
+
+This multi-layered caching mechanism ensures DNS resolution is efficient and reduces latency in domain name resolution.
+
 The "g" key is pressed
 ----------------------
 The following sections explain the physical keyboard actions
