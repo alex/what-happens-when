@@ -677,6 +677,17 @@ GPU Rendering
 
 Window Server
 -------------
+The web server during the process receives the request and processes it.
+This involves several steps including ;
+Routing:The server determines which application or script should handle the
+request based on the URL
+Authentication and Authorization: If required, the server checks if the user is
+authenticated and authorized to access the requested resource.
+Business Logic: The server runs the necessary application logic to generate the
+content for the response. This might involve:
+*Fetching data from a database
+*Performing calculations or processing data.
+*Integrating with other services or APIs
 
 Post-rendering and user-induced execution
 -----------------------------------------
