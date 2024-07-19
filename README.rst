@@ -709,3 +709,17 @@ page rendering and painting.
 .. _`downgrade attack`: http://en.wikipedia.org/wiki/SSL_stripping
 .. _`OSI Model`: https://en.wikipedia.org/wiki/OSI_model
 .. _`Spanish`: https://github.com/gonzaleztroyano/what-happens-when-ES
+
+What happens when you type google.com in your browser and press Enter
+---------------------------------------------------------------------
+In the next section, I will talk about the DNS (Domain Name System) only.
+
+DNS Request
+-----------
+
+A query is sent to a DNS server to translate the human-friendly domain name to an IP address.
+In our example “www.google.com” is translated to 172.217.14.100 .
+The browser searches for the IP address in the DNS cache of the browser.
+If it is not found there, it looks up the operating system (OS) and checks the host file of the local computer and then the OS cache.
+If it is also not found, it looks up at the ISP (Internet Service Provider).
+When it is able to translate the domain name to the IP, your browser knows that it has to send packets to the domain name.
