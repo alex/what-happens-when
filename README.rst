@@ -369,9 +369,12 @@ This send and receive happens multiple times following the TCP connection flow:
 
 TLS handshake
 -------------
-* The client computer sends a ``ClientHello`` message to the server with its
-  Transport Layer Security (TLS) version, list of cipher algorithms and
-  compression methods available.
+* The client computer initiates the TLS handshake by sending a ClientHello message to the server. This message includes the client's TLS version, 
+  cipher suites supported, and a randomly generated value. The server responds with a ServerHello message, which includes the selected TLS version, 
+  cipher suite, and a server-generated random value. The server then sends its digital certificate containing its public key. The client verifies this
+  certificate against a list of trusted certificate authorities. Once verified, the client and server perform a key exchange to agree on a shared secret.
+  This shared secret is used to encrypt the rest of the communication, ensuring the confidentiality and integrity of the data transmitted between the client 
+  and server.
 
 * The server replies with a ``ServerHello`` message to the client with the
   TLS version, selected cipher, selected compression methods and the server's
