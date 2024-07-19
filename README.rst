@@ -1,6 +1,19 @@
 What happens when...
 ====================
 
+Before we go to the details, let me summarize what heppens so everyone reading
+this article can have a "big picture" in their mind:
+
+Step 1: URL Parsing
+Step 2: DNS Lookup
+Step 3 – TCP/IP communication
+Step 3 – SSL (secure connection)
+Step 4 – Load Balancing
+Step 5 – Firewall & encription
+Step 6 – Hosting by server
+Step 7 – Page Rendering
+
+
 This repository is an attempt to answer the age-old interview question "What
 happens when you type google.com into your browser's address box and press
 enter?"
