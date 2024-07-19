@@ -73,8 +73,27 @@ connection, but historically has been over PS/2 or ADB connections.
 
 - This serial signal is then decoded at the computer's host USB controller, and
   interpreted by the computer's Human Interface Device (HID) universal keyboard
-  device driver.  The value of the key is then passed into the operating
-  system's hardware abstraction layer.
+  device driver. 
+ - These serial signals are sent in a structured and serialized manner, which means that the intial bits of the packets which are now serial signals are sent one after another over the USB connection.The decoding of serial signals also known as input reports, by the host USB controller involves several steps:
+
+  - Signal Reception: The USB controller of the user's PC receives the signals transmitted over the USB bus. These signals are represented as sequeces of binary data (0s and 1s)
+
+  - Signal Conversion: The controller then converts the analog signal levels into digital data by voltage level detection. High voltage and low voltage levels correspond to logical high and low states respectively. The signals at these points are now called bits.
+
+  - Packet  Reformation: The data packet is reformed at the USB controller using a set of well defined USB protocol, which underlines a structured format for data transmission, including headers and checksums. Now the incoming bits are organized into packets, which must contain information such as device address, data length, and the actual data payload.
+
+  - Error Checking: The controller performs error checking using CRC (Cyclic Redundancy Check) to ensure data integrity. If errors are detected, the packet may be discarded or a request for retransmission may be initiated.
+
+  - And lastly, data Transfer: Once the packets are successfully formed and verified, they are passed to the operating system for interpretation by the keyboard's universal HID driver which must have been previously installed on the user's PC.
+
+ - The interpretation of data packets by the HID universal keyboard driver also involves several key steps, the major steps include: 
+  - Packet Reception: The HID driver is ready and receives  a different kind of input report, one which contain data packets structured according to the HID protocol from the USB host controller. Each report includes information about key states, such as which keys are pressed. 
+  - Report Description: The HID driver uses a report descriptor to understand the format and meaning of the data. This descriptor defines the data structure, including the types of reports (input, output, feature) and the specific usages for each key, allowing the driver to interpret the raw data correctly. 
+  - Mapping Usages to Actions: The driver maps the received HID usages (defined in the report descriptor) to corresponding scan codes or actions. For example, pressing the 'g' key generates a specific HID usage that the driver recognizes and translates into a scan code that the operating system can understand.
+  - Once the driver translates the HID data into scan codes, it communicates this information to the keyboard class driver (KBDCLASS.sys).The HID driver also includes mechanisms for error handling and ensuring data integrity, allowing it to manage any discrepancies in input reports.
+
+- Such driver processes at the abstraction layer of the USB connection, allows the operating system and other running applications to respond to the keystrokes by displaying letters in the web browser's search bar.
+
 
 *In the case of Virtual Keyboard (as in touch screen devices):*
 
