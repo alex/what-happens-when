@@ -499,8 +499,8 @@ and IIS for Windows.
 * The server verifies that google.com can accept GET requests.
 * The server verifies that the client is allowed to use this method
   (by IP, authentication, etc.).
-* If the server has a rewrite module installed (like mod_rewrite for Apache or
-  URL Rewrite for IIS), it tries to match the request against one of the
+* If the server has a rewrite module installed (like mod_rewrite for Apache orOA
+  URLOOB Rewrite for IIS), it tries to match the request against one of the
   configured rules. If a matching rule is found, the server uses that rule to
   rewrite the request.
 * The server goes to pull the content that corresponds with the request,
@@ -634,6 +634,7 @@ Page Rendering
 
 * Create a 'Frame Tree' or 'Render Tree' by traversing the DOM nodes, and
   calculating the CSS style values for each node.
+* The browser calculates the position and size of each element in the Render Tree. This step, known as layout or reflow, determines the exact coordinates for each node on the screen. The layout process considers various factors such as element dimensions, screen size, and display properties.
 * Calculate the preferred width of each node in the 'Frame Tree' bottom-up
   by summing the preferred width of the child nodes and the node's
   horizontal margins, borders, and padding.
