@@ -689,6 +689,58 @@ the Google homepage. Scripts can cause additional network requests to be
 performed, as well as modify the page or its layout, causing another round of
 page rendering and painting.
 
+What Happens When You Type https://www.google.com in Your Browser and Press Enter
+---------------------------------------------------------------------------------
+DNS Request
+-----------
+When you type https://www.google.com into your browser, the first thing that happens is a DNS (Domain
+Name System) request. DNS is like the phonebook of the internet. Your browser needs to translate the
+human-readable domain name (www.google.com) into an IP address that computers use to identify each other on the network.
+The browser first checks its Browser cache to see if it has recently looked up www.google.com.
+If not found. The request is sent to the operating system's DNS resolver cache. If still unresolved.
+The request goes to the router's DNS cache. Finally, the request reaches your Internet Service Provider’s DNS server.
+If the ISP’s server doesn’t have the IP address, it queries other DNS servers until it finds the correct IP address.
+Once the IP address (e.g., 172.217.6.238) is found, it’s returned to your browser.
+TCP/IP
+After the IP address is found, your browser initiates a TCP (Transmission Control Protocol) connection to the web server.
+TCP/IP is the suite of communication protocols used to interconnect network devices on the internet.
+This connection ensures that both the client and server are ready to communicate.
+Firewall
+--------
+Firewalls are security systems that monitor and control incoming and outgoing network traffic based on predetermined security rules.
+Both your local machine and the server you’re connecting to likely have firewalls in place.
+Local Firewall: Ensures that only legitimate outbound connections from your machine are allowed.
+Server Firewall: Protects the server from unauthorized access and malicious traffic. It ensures only legitimate traffic reaches the web server.
+HTTPS/SSL
+The www.google.com you entered uses HTTPS, which stands for HyperText Transfer Protocol Secure. 
+HTTPS encrypts data between your browser and the web server using SSL/TLS (Secure Sockets Layer/Transport Layer Security).
+HTTPS traffic is encrypted using SSL/TLS and by convention, it operates over TCP port 443.
+The traffic is encrypted using HTTPS/SSL certificate.
+Load Balancer
+-------------
+Google uses multiple servers to handle the massive amount of traffic it receives. 
+A load balancer distributes incoming network traffic across multiple servers to ensure no single server becomes overwhelmed.
+When your request reaches Google’s infrastructure, it first hits a load balancer.
+The load balancer determines which server is best suited to handle your request based on factors like current load, server health, and proximity.
+Web Serve
+-----------
+After passing through the load balancer, your request is forwarded to one of Google’s web servers.
+The web server’s job is to handle HTTP requests from clients (your browser).
+The web server receives your request for https://www.google.com, processes it, and serves static content (HTML, CSS, JavaScript, images)
+directly or forwards it to an application server for further processing.
+Application Server
+In many web applications, web servers work together with application servers that handle dynamic content and business logic.
+The application server processes your search query, interacts with databases, applies business rules, and generates dynamic content.
+If your request requires data retrieval or storage, the application server will interact with the database to fetch or update information.
+Database
+-----------
+The database is where the application’s data is stored and managed. For a search engine like Google.
+When you search for something, the application server queries the database to retrieve relevant results.
+Databases handle everything from indexing and searching to data replication and backup to ensure data integrity and availability.
+Once the application server has processed your request and fetched the necessary data from the database, it sends the response back to the web server, which in turn sends it back to the load balancer. The load balancer then forwards the response to your browser.
+Your browser receives the response, renders the HTML, CSS, and JavaScript, and displays the search results on your screen.
+
+
 .. _`Creative Commons Zero`: https://creativecommons.org/publicdomain/zero/1.0/
 .. _`"CSS lexical and syntax grammar"`: http://www.w3.org/TR/CSS2/grammar.html
 .. _`Punycode`: https://en.wikipedia.org/wiki/Punycode
