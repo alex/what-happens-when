@@ -25,142 +25,92 @@ Table of Contents
    :backlinks: none
    :local:
 
-The "g" key is pressed
-----------------------
-The following sections explain the physical keyboard actions
-and the OS interrupts. When you press the key "g" the browser receives the
-event and the auto-complete functions kick in.
-Depending on your browser's algorithm and if you are in
-private/incognito mode or not various suggestions will be presented
-to you in the dropdown below the URL bar. Most of these algorithms sort
-and prioritize results based on search history, bookmarks, cookies, and
-popular searches from the internet as a whole. As you are typing
-"google.com" many blocks of code run and the suggestions will be refined
-with each keypress. It may even suggest "google.com" before you finish typing
-it.
+# The "g" Key is Pressed
 
-The "enter" key bottoms out
----------------------------
+## Physical Keyboard Action
+When you press the "g" key, the key completes an electrical circuit in the keyboard. This closure allows current to flow, signaling the key press to the keyboard’s logic circuitry. The keyboard scans the state of each key, debounces the signal to eliminate noise, and translates it into a keycode (for "g", typically 71 in ASCII).
 
-To pick a zero point, let's choose the Enter key on the keyboard hitting the
-bottom of its range. At this point, an electrical circuit specific to the enter
-key is closed (either directly or capacitively). This allows a small amount of
-current to flow into the logic circuitry of the keyboard, which scans the state
-of each key switch, debounces the electrical noise of the rapid intermittent
-closure of the switch, and converts it to a keycode integer, in this case 13.
-The keyboard controller then encodes the keycode for transport to the computer.
-This is now almost universally over a Universal Serial Bus (USB) or Bluetooth
-connection, but historically has been over PS/2 or ADB connections.
+### Browser Auto-Complete
+The browser receives the key press event and initiates the auto-complete function. Suggestions are presented based on search history, bookmarks, cookies, and popular searches. As you type "google.com", various blocks of code run to refine suggestions with each key press, possibly suggesting "google.com" before you finish typing it.
 
-*In the case of the USB keyboard:*
+## The "enter" Key Bottoms Out
 
-- The USB circuitry of the keyboard is powered by the 5V supply provided over
-  pin 1 from the computer's USB host controller.
+### Electrical Circuit
+The Enter key hits the bottom of its range, closing an electrical circuit specific to the Enter key. This allows a small amount of current to flow into the keyboard's logic circuitry, which scans each key switch, debounces the signal, and converts it to a keycode integer (13).
 
-- The keycode generated is stored by internal keyboard circuitry memory in a
-  register called "endpoint".
+### USB Keyboard Transmission
+* **Power Supply:** The USB circuitry of the keyboard is powered by a 5V supply from the computer’s USB host controller.
+* **Keycode Storage:** The keycode generated is stored in an internal register called "endpoint".
+* **Polling:** The host USB controller polls this "endpoint" every ~10ms to retrieve the keycode.
+* **USB Packet Formation:** The USB SIE converts the keycode into USB packets following the low-level USB protocol.
+* **Data Transmission:** Packets are sent over D+ and D- pins at a maximum speed of 1.5 Mb/s, with the keyboard operating as a "low-speed device" (USB 2.0 compliance).
+* **Decoding:** The serial signal is decoded at the computer’s USB controller and interpreted by the HID driver, then passed to the operating system’s hardware abstraction layer.
 
-- The host USB controller polls that "endpoint" every ~10ms (minimum value
-  declared by the keyboard), so it gets the keycode value stored on it.
+### Virtual Keyboard (Touch Screen Devices)
+* **Capacitive Touch Detection:** When you touch a modern capacitive touch screen, a small current transfers to your finger, completing a circuit through the electrostatic field and creating a voltage drop.
+* **Screen Controller Interrupt:** The screen controller raises an interrupt reporting the coordinates of the keypress.
+* **OS Notification:** The mobile OS notifies the currently focused application of a press event.
+* **Software Interrupt:** The virtual keyboard raises a software interrupt to send a 'key pressed' message back to the OS, notifying the focused application.
 
-- This value goes to the USB SIE (Serial Interface Engine) to be converted in
-  one or more USB packets that follow the low-level USB protocol.
+# Interrupt Handling
 
-- Those packets are sent by a differential electrical signal over D+ and D-
-  pins (the middle 2) at a maximum speed of 1.5 Mb/s, as an HID
-  (Human Interface Device) device is always declared to be a "low-speed device"
-  (USB 2.0 compliance).
+## Interrupt Request (IRQ)
+For USB keyboards, the key press generates an IRQ. The interrupt request is mapped to an interrupt vector by the interrupt controller. The CPU uses the Interrupt Descriptor Table (IDT) to map the interrupt vector to the appropriate interrupt handler provided by the kernel.
 
-- This serial signal is then decoded at the computer's host USB controller, and
-  interpreted by the computer's Human Interface Device (HID) universal keyboard
-  device driver.  The value of the key is then passed into the operating
-  system's hardware abstraction layer.
+# Operating System Handling
 
-*In the case of Virtual Keyboard (as in touch screen devices):*
+## Windows
+### `WM_KEYDOWN` Message
+* **HID Transport:** The HID transport passes the key down event to the `KBDHID.sys` driver, converting it to a scancode (`VK_RETURN` or `0x0D`).
+* **Driver Interaction:** `KBDHID.sys` interfaces with `KBDCLASS.sys`, which then calls `Win32K.sys`.
+* **Active Window:** `Win32K.sys` determines the active window using `GetForegroundWindow()` and sends a `SendMessage` call with `WM_KEYDOWN`.
+* **Message Processing:** `SendMessage` adds the message to a queue for the window handle (`hWnd`). The `WindowProc` processes the message, identifying the `VK_RETURN` key press.
 
-- When the user puts their finger on a modern capacitive touch screen, a
-  tiny amount of current gets transferred to the finger. This completes the
-  circuit through the electrostatic field of the conductive layer and
-  creates a voltage drop at that point on the screen. The
-  ``screen controller`` then raises an interrupt reporting the coordinate of
-  the keypress.
+## macOS
+### `KeyDown` NSEvent
+* **Interrupt Signal:** The interrupt triggers an event in the I/O Kit kext keyboard driver, translating the signal into a key code.
+* **Event Dispatch:** The `WindowServer` dispatches the event to active applications through Mach ports, placing it into an event queue.
+* **Event Handling:** Events are read from the queue by threads with privileges calling `mach_ipc_dispatch`, commonly handled by an `NSApplication` main event loop via `NSEvent` of type `KeyDown`.
 
-- Then the mobile OS notifies the currently focused application of a press event
-  in one of its GUI elements (which now is the virtual keyboard application
-  buttons).
+## GNU/Linux
+### Xorg Server
+* **Event Driver:** The X server uses the `evdev` driver to acquire the key press.
+* **Keycode Mapping:** Keycodes are mapped to scancodes using X server-specific keymaps and rules.
+* **Character Transmission:** The X server sends the character to the window manager, which forwards it to the focused window. The graphical API prints the character in the appropriate field.
 
-- The virtual keyboard can now raise a software interrupt for sending a
-  'key pressed' message back to the OS.
+# Processing the URL
 
-- This interrupt notifies the currently focused application of a 'key pressed'
-  event.
+## URL Parsing
+The browser determines if the input is a valid URL or a search term. If no protocol or valid domain name is present, the text is fed to the browser’s default search engine. Special text may be appended to indicate it came from the URL bar.
+
+## Convert Non-ASCII Characters
+Non-ASCII characters in the hostname are converted using Punycode if necessary.
+
+## HSTS Check
+The browser checks if the URL is in its preloaded HSTS list to enforce HTTPS. If the URL is not in the list, the request is sent via HTTP initially. If HTTPS is required, the browser will use it based on the HSTS policy.
+
+## DNS Lookup
+* **Cache Check:** The browser checks its DNS cache and local hosts file.
+* **DNS Request:** If not cached, the browser requests resolution from the DNS server. ARP is used to find the MAC address of the DNS server or default gateway if necessary.
+
+# ARP Process
+
+## ARP Request
+* **Request Broadcast:** If the ARP entry is missing, an ARP request is broadcast to find the MAC address.
+* **ARP Reply:** The target device responds with an ARP reply containing its MAC address, allowing the network stack to continue the DNS process.
+
+# Network Communication
+
+## Socket Creation
+* **TCP Socket Request:** The browser requests a TCP socket using system library functions. The request is passed through the Transport Layer to form a TCP segment.
+* **Packet Formation:** The Network Layer wraps the segment in an IP packet, and the Link Layer adds a data frame header with the MAC addresses.
+
+## TCP Connection Establishment
+* **Three-Way Handshake:** Involves SYN, SYN-ACK, and ACK packets to establish the connection.
+* **Data Transfer:** Data is transferred in segments with sequence numbers and acknowledgments.
+* **Connection Closure:** A FIN packet is sent and acknowledged by both sides to close the connection.
 
 
-Interrupt fires [NOT for USB keyboards]
----------------------------------------
-
-The keyboard sends signals on its interrupt request line (IRQ), which is mapped
-to an ``interrupt vector`` (integer) by the interrupt controller. The CPU uses
-the ``Interrupt Descriptor Table`` (IDT) to map the interrupt vectors to
-functions (``interrupt handlers``) which are supplied by the kernel. When an
-interrupt arrives, the CPU indexes the IDT with the interrupt vector and runs
-the appropriate handler. Thus, the kernel is entered.
-
-(On Windows) A ``WM_KEYDOWN`` message is sent to the app
---------------------------------------------------------
-
-The HID transport passes the key down event to the ``KBDHID.sys`` driver which
-converts the HID usage into a scancode. In this case, the scan code is
-``VK_RETURN`` (``0x0D``). The ``KBDHID.sys`` driver interfaces with the
-``KBDCLASS.sys`` (keyboard class driver). This driver is responsible for
-handling all keyboard and keypad input in a secure manner. It then calls into
-``Win32K.sys`` (after potentially passing the message through 3rd party
-keyboard filters that are installed). This all happens in kernel mode.
-
-``Win32K.sys`` figures out what window is the active window through the
-``GetForegroundWindow()`` API. This API provides the window handle of the
-browser's address box. The main Windows "message pump" then calls
-``SendMessage(hWnd, WM_KEYDOWN, VK_RETURN, lParam)``. ``lParam`` is a bitmask
-that indicates further information about the keypress: repeat count (0 in this
-case), the actual scan code (can be OEM dependent, but generally wouldn't be
-for ``VK_RETURN``), whether extended keys (e.g. alt, shift, ctrl) were also
-pressed (they weren't), and some other state.
-
-The Windows ``SendMessage`` API is a straightforward function that
-adds the message to a queue for the particular window handle (``hWnd``).
-Later, the main message processing function (called a ``WindowProc``) assigned
-to the ``hWnd`` is called in order to process each message in the queue.
-
-The window (``hWnd``) that is active is actually an edit control and the
-``WindowProc`` in this case has a message handler for ``WM_KEYDOWN`` messages.
-This code looks within the 3rd parameter that was passed to ``SendMessage``
-(``wParam``) and, because it is ``VK_RETURN`` knows the user has hit the ENTER
-key.
-
-(On OS X) A ``KeyDown`` NSEvent is sent to the app
---------------------------------------------------
-
-The interrupt signal triggers an interrupt event in the I/O Kit kext keyboard
-driver. The driver translates the signal into a key code which is passed to the
-OS X ``WindowServer`` process. Resultantly, the ``WindowServer`` dispatches an
-event to any appropriate (e.g. active or listening) applications through their
-Mach port where it is placed into an event queue. Events can then be read from
-this queue by threads with sufficient privileges calling the
-``mach_ipc_dispatch`` function. This most commonly occurs through, and is
-handled by, an ``NSApplication`` main event loop, via an ``NSEvent`` of
-``NSEventType`` ``KeyDown``.
-
-(On GNU/Linux) the Xorg server listens for keycodes
----------------------------------------------------
-
-When a graphical ``X server`` is used, ``X`` will use the generic event
-driver ``evdev`` to acquire the keypress. A re-mapping of keycodes to scancodes
-is made with ``X server`` specific keymaps and rules.
-When the scancode mapping of the key pressed is complete, the ``X server``
-sends the character to the ``window manager`` (DWM, metacity, i3, etc), so the
-``window manager`` in turn sends the character to the focused window.
-The graphical API of the window  that receives the character prints the
-appropriate font symbol in the appropriate focused field.
 
 Parse URL
 ---------
