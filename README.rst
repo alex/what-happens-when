@@ -709,3 +709,67 @@ page rendering and painting.
 .. _`downgrade attack`: http://en.wikipedia.org/wiki/SSL_stripping
 .. _`OSI Model`: https://en.wikipedia.org/wiki/OSI_model
 .. _`Spanish`: https://github.com/gonzaleztroyano/what-happens-when-ES
+
+
+
+Understanding Web Requests: A Shopping Analogy
+=============================================
+
+This document explains the complex processes involved when you type a URL into your browser, using a shopping analogy for clarity.
+
+1. **Deciding to Go Shopping (Typing google.com)**
+
+   One day, Corn decides to visit the new bookstore in town. Corn doesn’t know the exact address, so he decides to look it up first.
+
+2. **Asking for Directions (DNS Request)**
+
+   Corn asks his neighbor (the DNS server) for the address of the bookstore (google.com). The neighbor doesn’t know but calls the town’s information center (ISP DNS server), which provides the exact location: "123 Main Street" (the IP address).
+
+3. **Traveling to the Store (TCP/IP Connection)**
+
+   With the address in hand, Corn sets off. He uses his car (Internet Protocol) to drive there. Along the way, he follows traffic rules and signs (routing and addressing) to ensure he reaches the right place.
+
+4. **Security Check at the Entrance (Firewall and SSL/TLS Handshake)**
+
+   At the entrance to the bookstore’s parking lot, there’s a security guard (firewall) who checks that Corn is allowed in. Once past the guard, Corn heads to the main entrance, where a friendly staff member verifies his ID (SSL/TLS handshake), ensuring it’s safe for both to interact.
+
+5. **Guided to the Correct Aisle (Load Balancer)**
+
+   Inside the store, a staff member (load balancer) greets Corn and guides him to the specific section where he can find what he needs, ensuring the store remains organized and no section gets too crowded.
+
+6. **Finding the Item (Web Server)**
+
+   Corn reaches the right aisle (web server) and locates the book he’s looking for. This aisle is well-organized and stocked, ready to provide the book immediately.
+
+7. **Checking Additional Information (Application Server)**
+
+   If Corn wants more detailed information about the book (like author interviews or reviews), he asks a knowledgeable store clerk (application server) who provides the additional details from their system (processing complex logic).
+
+8. **Confirming Stock Availability (Database)**
+
+   To ensure the book is available for purchase, the clerk checks the store’s inventory system (database). The system confirms that the book is indeed available.
+
+9. **Completing the Purchase (Rendering the Page)**
+
+   Corn takes the book to the checkout counter. The cashier processes the transaction, packaging the book and giving Corn a receipt (rendering the page).
+
+10. **Returning Home (Displaying the Page)**
+
+    Corn returns home with his new book, ready to read and enjoy (displaying the content on the browser).
+
+
+Simplified Steps with Story Analogy
+-----------------------------------
+
+1. **DNS Lookup**: Asking a neighbor for the bookstore’s address.
+2. **TCP/IP Connection**: Driving to the store following traffic rules.
+3. **Firewall Check**: Passing through security at the store entrance.
+4. **SSL/TLS Handshake**: Verifying ID at the store entrance.
+5. **Load Balancing**: Being guided to the correct section in the store.
+6. **Web Server**: Finding the book in the right aisle.
+7. **Application Server**: Asking for more information from a store clerk.
+8. **Database Query**: Confirming the book is in stock.
+9. **Rendering**: Completing the purchase at checkout.
+10. **Displaying**: Bringing the book home to read.
+
+This analogy helps illustrate the complex processes involved in loading a webpage, making it easier to understand through a familiar everyday experience.
