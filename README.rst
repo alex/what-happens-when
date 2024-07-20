@@ -401,18 +401,42 @@ If a packet is dropped
 ----------------------
 
 Sometimes, due to network congestion or flaky hardware connections, TLS packets
-will be dropped before they get to their final destination. The sender then has
+will be dropped before they get to their final destination. When this happens, the sender then has
 to decide how to react. The algorithm for this is called `TCP congestion
 control`_. This varies depending on the sender; the most common algorithms are
 `cubic`_ on newer operating systems and `New Reno`_ on almost all others.
 
-* Client chooses a `congestion window`_ based on the `maximum segment size`_
-  (MSS) of the connection.
-* For each packet acknowledged, the window doubles in size until it reaches the
-  'slow-start threshold'. In some implementations, this threshold is adaptive.
-* After reaching the slow-start threshold, the window increases additively for
-  each packet acknowledged. If a packet is dropped, the window reduces
-  exponentially until another packet is acknowledged.
+#### TCP Congestion Control Process
+
+1. **Client chooses a congestion window based on the maximum segment size (MSS) of the connection.**
+   - The congestion window (cwnd) is the amount of data that can be sent over the network before receiving an acknowledgment (ACK) from the receiver. The MSS is the largest segment of data that the network can accommodate in a single packet, typically determined during the connection setup phase.
+
+2. **Slow Start Phase:**
+   - The connection begins with the slow start phase, where the congestion window size starts small.
+   - For each packet acknowledged, the window doubles in size (exponential growth). This allows the network to quickly ramp up to its capacity.
+3. **Reaching the Slow-Start Threshold:**
+   - The congestion window grows exponentially until it reaches a pre-defined threshold known as the slow-start threshold (ssthresh). This threshold helps prevent congestion by capping the exponential growth.
+   - In some implementations, this threshold is adaptive and can change based on network conditions.
+
+4. **Congestion Avoidance Phase:**
+   - Once the congestion window reaches the slow-start threshold, the growth rate slows down. Instead of doubling, the window increases additively for each packet acknowledged (linear growth).
+   - This phase ensures a more stable and gradual increase in data transmission, reducing the risk of network congestion.
+
+5. **Handling Packet Drops:**
+   - If a packet is dropped, the sender infers that the network is congested.
+   - The congestion window size is reduced exponentially (multiplicative decrease) to quickly alleviate the congestion. For example, if the current window size is 16 MSS and a packet is dropped, the window size might be reduced to 8 MSS.
+   - After reducing the window, the sender enters the slow start phase again until it reaches the slow-start threshold. This adaptive behavior helps the sender probe the network for available bandwidth without overwhelming it.
+
+6. **TCP Cubic:**
+   - Cubic is a more advanced congestion control algorithm designed for high-speed networks. It uses a cubic function to adjust the congestion window, providing better scalability and efficiency over long-distance and high-bandwidth networks.
+   - Cubic increases the congestion window rapidly at first, then more slowly as it approaches the saturation point, and finally, very slowly once it surpasses the point where the last congestion event occurred.
+
+7. **TCP New Reno:**
+   - New Reno is a modification of the original Reno algorithm and is widely used in many operating systems.
+   - It improves the recovery process from packet drops by ensuring more efficient retransmission of lost packets.
+   - When a packet drop is detected, New Reno reduces the congestion window and enters the fast recovery phase, allowing the sender to continue sending some data while waiting for the acknowledgment of the retransmitted packet.
+
+By following these congestion control mechanisms, TCP ensures reliable data transmission even in the presence of network congestion and packet loss, maintaining a balance between efficient data flow and network stability.
 
 HTTP protocol
 -------------
