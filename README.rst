@@ -629,83 +629,35 @@ CSS interpretation
 * A CSS parser can be top-down or bottom-up when a specific parser generator
   is used.
 
-Page Rendering
---------------
+**Page Rendering: The Magic Behind the Scenes**
 
-* Create a 'Frame Tree' or 'Render Tree' by traversing the DOM nodes, and
-  calculating the CSS style values for each node.
-* Calculate the preferred width of each node in the 'Frame Tree' bottom-up
-  by summing the preferred width of the child nodes and the node's
-  horizontal margins, borders, and padding.
-* Calculate the actual width of each node top-down by allocating each node's
-  available width to its children.
-* Calculate the height of each node bottom-up by applying text wrapping and
-  summing the child node heights and the node's margins, borders, and padding.
-* Calculate the coordinates of each node using the information calculated
-  above.
-* More complicated steps are taken when elements are ``floated``,
-  positioned ``absolutely`` or ``relatively``, or other complex features
-  are used. See
-  http://dev.w3.org/csswg/css2/ and http://www.w3.org/Style/CSS/current-work
-  for more details.
-* Create layers to describe which parts of the page can be animated as a group
-  without being re-rasterized. Each frame/render object is assigned to a layer.
-* Textures are allocated for each layer of the page.
-* The frame/render objects for each layer are traversed and drawing commands
-  are executed for their respective layer. This may be rasterized by the CPU
-  or drawn on the GPU directly using D2D/SkiaGL.
-* All of the above steps may reuse calculated values from the last time the
-  webpage was rendered, so that incremental changes require less work.
-* The page layers are sent to the compositing process where they are combined
-  with layers for other visible content like the browser chrome, iframes
-  and addon panels.
-* Final layer positions are computed and the composite commands are issued
-  via Direct3D/OpenGL. The GPU command buffer(s) are flushed to the GPU for
-  asynchronous rendering and the frame is sent to the window server.
+When you load a webpage, there's a fascinating process that transforms the code into the visual experience you see. Let's dive into the intricate journey of page rendering, where each step ensures your webpage looks just right.
 
-GPU Rendering
--------------
+### Frame Tree Creation
+The first step is creating a 'Frame Tree' or 'Render Tree'. This involves traversing the DOM (Document Object Model) nodes and calculating the CSS style values for each node. Imagine this as a blueprint where every element on your page gets its design instructions.
 
-* During the rendering process the graphical computing layers can use general
-  purpose ``CPU`` or the graphical processor ``GPU`` as well.
+### Width Calculation
+Next, the preferred width of each node in the 'Frame Tree' is calculated from the bottom up. This involves summing the preferred width of the child nodes and adding the node's horizontal margins, borders, and padding. Think of it as determining how wide each piece of your webpage should be based on its content and spacing.
 
-* When using ``GPU`` for graphical rendering computations the graphical
-  software layers split the task into multiple pieces, so it can take advantage
-  of ``GPU`` massive parallelism for float point calculations required for
-  the rendering process.
+### Height Calculation
+Following the width calculation, the actual width of each node is determined from the top down by allocating the available width to its children. The height of each node is then calculated from the bottom up by applying text wrapping and summing the heights of the child nodes along with their margins, borders, and padding. This step ensures that each element's height fits perfectly within its allocated space.
 
+### Positioning
+With the dimensions set, the coordinates of each node are calculated using the previously determined information. This positions each element precisely where it needs to be on the page. For more complex layouts involving floated elements or absolute and relative positioning, additional steps are taken to ensure everything lines up correctly. For more details, you can explore resources like the [CSS2 specification](http://dev.w3.org/csswg/css2/) and the [current CSS work](http://www.w3.org/Style/CSS/current-work).
 
-Window Server
--------------
+### Layer Creation
+Once positioning is complete, layers are created to describe which parts of the page can be animated as a group without being re-rasterized. Each frame or render object is assigned to a layer, and textures are allocated for each layer. This helps in optimizing animations and transitions.
 
-Post-rendering and user-induced execution
------------------------------------------
+### Drawing Commands
+The frame/render objects for each layer are traversed, and drawing commands are executed for their respective layers. This may involve rasterization by the CPU or direct drawing on the GPU using D2D/SkiaGL. Calculated values from previous renders are often reused to minimize workload, especially for incremental changes.
 
-After rendering has been completed, the browser executes JavaScript code as a result
-of some timing mechanism (such as a Google Doodle animation) or user
-interaction (typing a query into the search box and receiving suggestions).
-Plugins such as Flash or Java may execute as well, although not at this time on
-the Google homepage. Scripts can cause additional network requests to be
-performed, as well as modify the page or its layout, causing another round of
-page rendering and painting.
+### Compositing Process
+The page layers are then sent to the compositing process, where they are combined with layers for other visible content like the browser chrome, iframes, and addon panels. Final layer positions are computed, and composite commands are issued via Direct3D/OpenGL. The GPU command buffer(s) are flushed to the GPU for asynchronous rendering, and the frame is sent to the window server.
 
-.. _`Creative Commons Zero`: https://creativecommons.org/publicdomain/zero/1.0/
-.. _`"CSS lexical and syntax grammar"`: http://www.w3.org/TR/CSS2/grammar.html
-.. _`Punycode`: https://en.wikipedia.org/wiki/Punycode
-.. _`Ethernet`: http://en.wikipedia.org/wiki/IEEE_802.3
-.. _`WiFi`: https://en.wikipedia.org/wiki/IEEE_802.11
-.. _`Cellular data network`: https://en.wikipedia.org/wiki/Cellular_data_communication_protocol
-.. _`analog-to-digital converter`: https://en.wikipedia.org/wiki/Analog-to-digital_converter
-.. _`network node`: https://en.wikipedia.org/wiki/Computer_network#Network_nodes
-.. _`TCP congestion control`: https://en.wikipedia.org/wiki/TCP_congestion_control
-.. _`cubic`: https://en.wikipedia.org/wiki/CUBIC_TCP
-.. _`New Reno`: https://en.wikipedia.org/wiki/TCP_congestion_control#TCP_New_Reno
-.. _`congestion window`: https://en.wikipedia.org/wiki/TCP_congestion_control#Congestion_window
-.. _`maximum segment size`: https://en.wikipedia.org/wiki/Maximum_segment_size
-.. _`varies by OS` : https://en.wikipedia.org/wiki/Hosts_%28file%29#Location_in_the_file_system
-.. _`简体中文`: https://github.com/skyline75489/what-happens-when-zh_CN
-.. _`한국어`: https://github.com/SantonyChoi/what-happens-when-KR
-.. _`日本語`: https://github.com/tettttsuo/what-happens-when-JA
-.. _`downgrade attack`: http://en.wikipedia.org/wiki/SSL_stripping
-.. _`OSI Model`: https://en.wikipedia.org/wiki/OSI_model
-.. _`Spanish`: https://github.com/gonzaleztroyano/what-happens-when-ES
+### GPU Rendering
+During rendering, the graphical computing layers can use either the general-purpose CPU or the graphical processor GPU. When utilizing the GPU, the graphical software layers split the task into multiple pieces to leverage the GPU's massive parallelism for the floating-point calculations required for rendering.
+
+### Window Server: The Final Step
+After rendering is completed, the browser executes JavaScript code triggered by timing mechanisms (such as animations) or user interactions (like typing a query). Plugins like Flash or Java may also execute, although they are less common today. Scripts can cause additional network requests and modify the page or its layout, prompting another round of rendering and painting.
+
+This meticulous process happens in the blink of an eye, allowing you to enjoy a seamless browsing experience. So, the next time you open a webpage, you'll know about the intricate steps that bring it to life.
