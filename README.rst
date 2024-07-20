@@ -384,6 +384,11 @@ TLS handshake
   generates a string of pseudo-random bytes and encrypts this with the server's
   public key. These random bytes can be used to determine the symmetric key.
 
+* Depending on the chosen cipher suite, the key exchange method varies. For 
+  example, with RSA, the client encrypts a random number using the server’s 
+  public key and sends it to the server. With Diffie-Hellman, both parties 
+  exchange public keys and use their private keys to compute a shared secret.
+
 * The server decrypts the random bytes using its private key and uses these
   bytes to generate its own copy of the symmetric master key.
 
@@ -573,6 +578,13 @@ The components of the browsers are:
 
 HTML parsing
 ------------
+HTML parsing involves analyzing the HTML code of a webpage to extract data, 
+manipulate the structure, or convert it into a more readable format. 
+This process can be performed using various tools and libraries such as 
+BeautifulSoup in Python, Cheerio in JavaScript, or built-in browser DOM methods. 
+HTML parsing is commonly used in web scraping, data extraction, and content 
+manipulation for web development. It allows developers to programmatically 
+interact with webpage elements, retrieve specific information, and automate web-based tasks.
 
 The rendering engine starts getting the contents of the requested
 document from the networking layer. This will usually be done in 8kB chunks.
