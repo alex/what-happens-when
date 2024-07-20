@@ -323,7 +323,11 @@ At this point the packet is ready to be transmitted through either:
 * `WiFi`_
 * `Cellular data network`_
 
-For most home or small business Internet connections the packet will pass from
+For most home or small business Internet connections the packet (A data packet
+ is a formatted unit of data carried by a packet-switched network. Networks break
+ down large files or data streams into smaller, manageable pieces to improve the
+ efficiency and reliability of data transmission. Here's an extensive explanation of
+ the components and function of a data packet:) will pass from
 your computer, possibly through a local network, and then through a modem
 (MOdulator/DEModulator) which converts digital 1's and 0's into an analog
 signal suitable for transmission over telephone, cable, or wireless telephony
