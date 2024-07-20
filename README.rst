@@ -709,3 +709,9 @@ page rendering and painting.
 .. _`downgrade attack`: http://en.wikipedia.org/wiki/SSL_stripping
 .. _`OSI Model`: https://en.wikipedia.org/wiki/OSI_model
 .. _`Spanish`: https://github.com/gonzaleztroyano/what-happens-when-ES
+
+Conclusion
+-----------------------------------------
+
+This is still work in progress and we shall together make a good conclusion here when the
+right time comes. For now, we keep digging!
