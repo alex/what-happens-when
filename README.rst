@@ -27,17 +27,31 @@ Table of Contents
 
 The "g" key is pressed
 ----------------------
-The following sections explain the physical keyboard actions
-and the OS interrupts. When you press the key "g" the browser receives the
-event and the auto-complete functions kick in.
-Depending on your browser's algorithm and if you are in
-private/incognito mode or not various suggestions will be presented
-to you in the dropdown below the URL bar. Most of these algorithms sort
-and prioritize results based on search history, bookmarks, cookies, and
-popular searches from the internet as a whole. As you are typing
-"google.com" many blocks of code run and the suggestions will be refined
-with each keypress. It may even suggest "google.com" before you finish typing
-it.
+When you press the "g" key on your keyboard, the following sequence of events takes place:
+
+- Physical Keyboard Input: The actual “g” key on the keyboard is pressed and this results in the formation of an electrical signal which transmits the input to the keyboard controller part of the computer.
+
+- Operating System Interrupt: The OS as a Windows, Mac OS, or Linux, captures the Keyboard interrupt and passes the key press event of the keyboard controller. 
+
+- Keyboard Driver Processing: The OS’s keyboard driver software translates the key press event and the entry of the “g” character is detected. 
+
+- Application Input Handling: This active application, in this case, the web browser the receives the “g” character input from the key driver of the OS. 
+
+- Browser's Auto-complete Functionality: Auto-complete or auto-suggest feature of the web browser is invoked, because browser sensing that the user entered the first several symbols of a URL or search keyword. 
+
+- Suggestion Algorithm Processing: Consequently, the auto-complete algorithm of the browser studies the “g” input and begins with the following criteria for the suggestion list:. 
+
+- The user's browsing history: The browser sign by analyzing the user’s previous searches and browsing history to suggest relevant items. 
+
+- Bookmarked websites: Some examples are as follows: The browser identifies the sites that have been bookmarked and aims at suggesting sites that are related to the bookmarks. 
+
+- Cookies and cached data: The remaining two, cookies and cached data, the browser utilizes to deduce the user’s preference and the topics of interest by the user which in turn determines the suggestions. 
+
+- Popular searches: The browser may also look at the overall Internet trends and common website to suggest to the user. 
+- Suggestion Refinement: When the user continues typing, for instance, “google. com,” the auto-complete concept in the browser re-defines the recommendations and becomes even more precise due to the increasing input completeness. 
+
+- Suggestion Display: The browsers make the suggestions appear as a drop-down list or a list below the URL bar where the user types the desired URL depending on the choice made.
+
 
 The "enter" key bottoms out
 ---------------------------
