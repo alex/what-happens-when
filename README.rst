@@ -1,6 +1,89 @@
 What happens when...
 ====================
 
+What Happens When You Type google.com Into Your Browser and Press Enter?
+
+DNS Request:
+When you enter "google.com", your browser initiates a DNS lookup. This process involves multiple steps:
+
+
+Check browser cache
+Check OS cache
+Query local DNS resolver
+If not found, the query goes through a hierarchy:
+
+Root DNS servers
+Top-level domain (.com) servers
+Authoritative DNS servers for google.com
+This hierarchical system ensures efficient and distributed domain name resolution.
+
+
+
+
+TCP/IP:
+Once the IP is obtained, your browser establishes a TCP connection. This involves:
+
+
+Three-way handshake (SYN, SYN-ACK, ACK)
+The connection is typically made to port 80 (HTTP) or 443 (HTTPS)
+
+
+Firewall:
+As the request travels, it passes through firewalls on both client and server sides:
+
+
+Client-side firewalls check outgoing requests
+Server-side firewalls inspect incoming traffic
+Firewalls use predefined rules to allow or block packets based on source, destination, and port numbers
+
+
+HTTPS/SSL:
+For secure connections, HTTPS is used:
+
+
+Client and server perform a TLS handshake
+This involves certificate verification and key exchange
+Subsequent communication is encrypted using agreed-upon symmetric keys
+This protects against eavesdropping and man-in-the-middle attacks
+
+
+Load Balancer:
+Large websites like Google use load balancers to distribute traffic:
+
+
+Incoming requests are distributed across multiple servers
+Various algorithms can be used (e.g., round-robin, least connections)
+This ensures high availability and optimal resource utilization
+
+
+Web Server:
+The web server processes the HTTP request:
+
+
+Parses the request headers and body
+Retrieves requested resources (HTML, images, etc.)
+Generates appropriate HTTP response headers
+Sends the response back to the client
+
+
+Application Server:
+For dynamic content, an application server may be involved:
+
+
+Executes server-side scripts (e.g., PHP, Python, Java)
+Processes business logic
+Generates dynamic HTML content
+
+
+Database:
+Many web applications interact with databases:
+
+
+Application servers query databases for dynamic content
+Database management systems (e.g., MySQL, PostgreSQL) process these queries
+Results are sent back to the application server
+Caching mechanisms may be used to improve performance
+
 This repository is an attempt to answer the age-old interview question "What
 happens when you type google.com into your browser's address box and press
 enter?"
