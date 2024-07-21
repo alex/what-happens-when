@@ -1,4 +1,4 @@
-What happens when...
+What happens when we press go...
 ====================
 
 This repository is an attempt to answer the age-old interview question "What
@@ -628,6 +628,7 @@ CSS interpretation
   contains CSS rules with selectors and objects corresponding CSS grammar.
 * A CSS parser can be top-down or bottom-up when a specific parser generator
   is used.
+* A CSS Parser might be Controlled with A javascript engine.
 
 Page Rendering
 --------------
