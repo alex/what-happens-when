@@ -25,6 +25,8 @@ Table of Contents
    :backlinks: none
    :local:
 
+Typing a simple URL sets off a surprisingly complex chain of events. Understanding these steps not only provides a glimpse into the inner workings of the web but also highlights the importance of the web stack, a set of technologies that work together to deliver web content. This intricate dance of technologies showcases the incredible effort required to bring a simple web page to your screen
+
 The "g" key is pressed
 ----------------------
 The following sections explain the physical keyboard actions
