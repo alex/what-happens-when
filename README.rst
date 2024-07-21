@@ -678,6 +678,14 @@ GPU Rendering
 Window Server
 -------------
 
+Window Server
+The window server  manages the display and organization of windows on the screen, acting as an intermediary between applications and the display hardware.
+When the browser is launched, it communicates with the window server to create a window for displaying web content. The window server manages the size and position of the browser window on the screen.
+
+It determines the positioning, size, and visibility of browser windows, It also captures and communicates user input events (e.g., pen touch, mouse clicks, keyboard strokes).
+
+The browser renders web content to off-screen buffers (back buffers). This off-screen rendering allows for smooth animations and transitions, the window server composites the off-screen buffers to create the final image displayed on the screen. It manages overlapping windows, transparency, and other visual effects.
+
 Post-rendering and user-induced execution
 -----------------------------------------
 
