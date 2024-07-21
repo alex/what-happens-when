@@ -39,6 +39,27 @@ popular searches from the internet as a whole. As you are typing
 with each keypress. It may even suggest "google.com" before you finish typing
 it.
 
+When the "g" key is entered in the search bar of a web browser, its action can
+vary depending on the browser, customizations or extensions installed.
+
+Some of its action include:
+
+- Auto-suggestions: Modern web browser provides auto-complete or
+auto-suggestions functionality in the search bar. As the "g" key is pressed
+suggestions may be based on browsing history or search engine predictions may
+appear.
+
+- Browser Extension: If a web browser extension is installed it may also modify the
+search engine behaviour.
+
+- Search Engine Action: Web broswers use default search engine(like Google, Bing,
+		DuckDuckGo, and other search engines) for their search bar. Pressing
+"g" means searches would be done by the default search engine.
+
+- Custom Action: Some broswers allow setting a keyword for specific search
+engines(like "g" for Google, "b" for Bing). Pressing "g" followed by space or
+tab might trigger a search using the specific search engine.
+
 The "enter" key bottoms out
 ---------------------------
 
