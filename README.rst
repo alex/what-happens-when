@@ -709,3 +709,7 @@ page rendering and painting.
 .. _`downgrade attack`: http://en.wikipedia.org/wiki/SSL_stripping
 .. _`OSI Model`: https://en.wikipedia.org/wiki/OSI_model
 .. _`Spanish`: https://github.com/gonzaleztroyano/what-happens-when-ES
+
+
+The Frontman: Web Server
+Post load balancing, the web server takes the stage, handling the HTTP request. It decides what action is needed, often communicating with an application server to process the request further.
