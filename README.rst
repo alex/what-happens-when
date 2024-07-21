@@ -570,6 +570,7 @@ The components of the browsers are:
   need to save all sorts of data locally, such as cookies. Browsers also
   support storage mechanisms such as localStorage, IndexedDB, WebSQL and
   FileSystem.
+ GET REQUEST
 
 HTML parsing
 ------------
