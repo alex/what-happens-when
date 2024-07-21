@@ -674,6 +674,15 @@ GPU Rendering
   of ``GPU`` massive parallelism for float point calculations required for
   the rendering process.
 
+Application Server and its Benefits
+Logic Execution:
+    The application server processes the logic required to generate dynamic content (content that changes such as new search results, new blog posts, e-commerce websites with high traffic of new user data). This includes interpreting user requests, executing business rules, and integrating with backend services. Common technologies include Node.js, Apache Tomcat (for Java applications), and ASP.NET Core.
+Session Management:
+    Application servers often handle session management, which involves keeping track of user state across multiple requests. This can be managed through cookies, tokens, or server-side sessions.
+Middleware and Frameworks:
+    Application servers utilize various middleware and frameworks to streamline the development and execution of web applications. For instance, Express.js for Node.js, Spring for Java, and ASP.NET MVC for .NET applications.
+Scaling and Clustering:
+    Application servers can be scaled horizontally by adding more instances to handle increased load. Clustering involves grouping multiple servers to work together, providing redundancy and fault tolerance.
 
 Window Server
 -------------
