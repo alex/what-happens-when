@@ -532,7 +532,9 @@ specified by the user using a URI (Uniform Resource Identifier).
 The way the browser interprets and displays HTML files is specified
 in the HTML and CSS specifications. These specifications are maintained
 by the W3C (World Wide Web Consortium) organization, which is the
-standards organization for the web.
+standards organization for the web. The specifications ensure that the
+interpretations and display of a web page are uniform irrespective of the
+type of browser used to access the URL.
 
 Browser user interfaces have a lot in common with each other. Among the
 common user interface elements are:
