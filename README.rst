@@ -709,3 +709,7 @@ page rendering and painting.
 .. _`downgrade attack`: http://en.wikipedia.org/wiki/SSL_stripping
 .. _`OSI Model`: https://en.wikipedia.org/wiki/OSI_model
 .. _`Spanish`: https://github.com/gonzaleztroyano/what-happens-when-ES
+**Summary**
+When you press "g," the browser shows suggestions based on history and popular searches. Typing refines these suggestions. Pressing "enter" sends a keycode to the OS, which triggers actions in the browser.
+If the text is a URL, the browser might use HTTPS, perform a DNS lookup, and establish a TCP/TLS connection. It sends an HTTP request, and the server responds with the resource or cached content.
+The browser then parses and renders the HTML, CSS, and JavaScript, displaying the web page using its various components like the rendering engine and JavaScript engine.
