@@ -206,6 +206,35 @@ Check HSTS list
   `downgrade attack`_, which is why the HSTS list is included in modern web
   browsers.)
 
+How DNS works
+-------------
+## DNS (Domain Name System)
+
+The Domain Name System (DNS) is a hierarchical and decentralized naming system used to translate human-readable domain names (like `www.google.com`) into IP addresses (like `172.217.10.46`) that computers use to identify each other on the network. DNS operates like a phonebook for the internet.
+
+### How DNS Works:
+1. **DNS Query:**
+   - When you type `www.google.com` into your browser, your computer sends a DNS query to a DNS resolver, which is usually provided by your Internet Service Provider (ISP).
+
+2. **DNS Resolver:**
+   - The DNS resolver checks its cache to see if it already has the IP address for `www.google.com`. If not, it queries other DNS servers on behalf of the client.
+
+3. **Root DNS Server:**
+   - The DNS resolver first contacts a root DNS server, which responds with the address of a Top-Level Domain (TLD) DNS server (e.g., `.com`).
+
+4. **TLD DNS Server:**
+   - The resolver then contacts the TLD DNS server, which responds with the address of an authoritative DNS server for the domain `google.com`.
+
+5. **Authoritative DNS Server:**
+   - The resolver finally contacts the authoritative DNS server, which responds with the IP address for `www.google.com`.
+
+6. **Response:**
+   - The DNS resolver returns the IP address to your computer, which can now use it to establish a connection with the Google server.
+
+### Example:
+Imagine you're looking for a friend's house. You know their name (domain name), but not their address (IP address). You ask a local directory (DNS resolver) for their address. If the local directory doesn't know, it asks a city directory (root server), which points to a neighborhood directory (TLD server), and finally to the exact house's address (authoritative server).
+
+
 DNS lookup
 ----------
 
@@ -223,7 +252,6 @@ DNS lookup
   ``ARP process`` below for the DNS server.
 * If the DNS server is on a different subnet, the network library follows
   the ``ARP process`` below for the default gateway IP.
-
 
 ARP process
 -----------
