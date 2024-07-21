@@ -709,3 +709,5 @@ page rendering and painting.
 .. _`downgrade attack`: http://en.wikipedia.org/wiki/SSL_stripping
 .. _`OSI Model`: https://en.wikipedia.org/wiki/OSI_model
 .. _`Spanish`: https://github.com/gonzaleztroyano/what-happens-when-ES
+.. _ Browser Caching Mechanism:
+Caching is a technique used to improve web performance by storing copies of resources (like images, scripts, and stylesheets) on the user's device. This way, when a user revisits a website, the browser can retrieve these resources from the local cache rather than downloading them again from the server, which reduces load times and saves bandwidth.
