@@ -629,6 +629,21 @@ CSS interpretation
 * A CSS parser can be top-down or bottom-up when a specific parser generator
   is used.
 
+Caching and Optimization
+------------------------
+
+To speed up your browsing, modern browsers use clever tricks:
+
+* **Browser Cache:** Stores copies of web files like images and scripts. When you revisit a site, it loads these files from your local cache instead of re-downloading them, making the page load faster.
+
+* **Service Workers:** Act as background helpers that can cache resources and enable offline access to previously visited sites.
+
+* **Prefetching and Preloading:** Browsers anticipate which resources you'll need next and start loading them in advance to reduce wait times.
+
+* **CDNs (Content Delivery Networks):** Distribute website content across servers worldwide, so it’s delivered from a location closer to you, speeding up loading times.
+
+These techniques help make your web experience faster and more efficient by reducing load times and improving performance.
+
 Page Rendering
 --------------
 
