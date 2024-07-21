@@ -570,6 +570,49 @@ The components of the browsers are:
   need to save all sorts of data locally, such as cookies. Browsers also
   support storage mechanisms such as localStorage, IndexedDB, WebSQL and
   FileSystem.
+# What Happens When You Type https://www.google.com in Your Browser and Press Enter
+
+Have you ever wondered what happens behind the scenes when you type a URL like https://www.google.com into your browser and press Enter? Let’s break down the complex process into simpler components: DNS requests, TCP/IP, firewalls, HTTPS/SSL, load balancers, web servers, application servers, and databases.
+
+# DNS Request
+
+The journey begins with the Domain Name System (DNS). The DNS is like the internet’s phonebook, translating human-readable domain names (e.g., www.google.com) into IP addresses that computers use to communicate. When you press Enter, your browser first checks its cache to see if it has recently visited the site and has the IP address stored. If not, it sends a request to a DNS resolver. The resolver queries various DNS servers, starting with the root server, then the top-level domain (TLD) server (for .com, .org, etc.), and finally the authoritative nameserver, which provides the IP address of the domain.
+
+# TCP/IP
+
+Once the browser has the IP address, it uses the Transmission Control Protocol (TCP) to establish a connection with the server. TCP is part of the larger Internet Protocol (IP) suite, commonly referred to as TCP/IP. TCP ensures reliable delivery of data packets from your computer to the server and vice versa. It establishes a three-way handshake between your device and the server, confirming that both are ready to communicate.
+
+# Firewall
+
+As the data packets travel across the internet, they pass through multiple firewalls. Firewalls are security systems that monitor and control incoming and outgoing network traffic based on predetermined security rules. They act as barriers between trusted and untrusted networks, ensuring that no malicious data can compromise the systems involved. If your computer is behind a firewall, the firewall verifies that the specific request you are making is authorized before admitting it. Similar checks will be conducted before you can connect with the server.
+
+# HTTPS/SSL
+
+The URL you entered begins with https://, which means the connection is secured using HTTPS (HyperText Transfer Protocol Secure). HTTPS uses SSL (Secure Sockets Layer) or its successor TLS (Transport Layer Security) to encrypt the data transferred between your browser and the server. This encryption ensures that any data exchanged, such as login credentials or personal information, is protected from eavesdroppers and cyberattacks
+
+# Load Balancer
+
+For high-traffic websites like Google, a load balancer distributes incoming network traffic across multiple servers. This distribution ensures that no single server becomes overwhelmed, which enhances performance and reliability. The load balancer decides which server will handle your request based on current server load, geographic location, and other factors.
+
+# Web Server
+
+Once the load balancer directs your request to a specific server, it reaches the web server. The web server’s primary job is to serve static content like HTML, CSS, JavaScript, images, and videos. It processes your request, retrieves the necessary files, and sends them back to your browser.
+
+# Application Server
+
+For dynamic content, the web server forwards the request to an application server. The application server runs the backend logic of the website, such as user authentication, business processes, and data manipulation. It interacts with the database server to fetch or update data as needed.
+
+# Database
+
+The database server stores all the dynamic data for the website. This can include user profiles, posts, comments, transactions, and more. When the application server queries the database, it retrieves the requested information and sends it back to the application server, which then generates the dynamic content and sends it back to the web server.
+
+Finally, the web server sends the combined static and dynamic content back to your browser. Your browser renders this content, and you see the fully loaded webpage. This entire process happens in mere milliseconds, providing you with the seamless browsing experience you enjoy every day.
+
+
+
+
+
+
 
 HTML parsing
 ------------
