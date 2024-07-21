@@ -344,6 +344,11 @@ decremented by one for each router that passes. The packet will be dropped if
 the TTL field reaches zero or if the current router has no space in its queue
 (perhaps due to network congestion).
 
+Then TCP handshake come into process which involves a three-step handshake for the tcp connection flow:
+* SYN (synchronize)
+* SYN-ACK (synchronize-acknowledge)
+* ACK (acknowledge)
+
 This send and receive happens multiple times following the TCP connection flow:
 
 * Client chooses an initial sequence number (ISN) and sends the packet to the
