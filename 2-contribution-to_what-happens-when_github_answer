@@ -1,0 +1,87 @@
+When you type `https://www.google.com` in your browser and press Enter, a series of complex interactions between various technologies occur to fetch and display the Google homepage. Let’s break down each step of this journey:
+
+1. DNS Request
+Domain Name System (DNS) is like the phonebook of the internet. When you type a URL in your browser, the browser first checks if it knows the IP address for the domain. If not, it sends a DNS request to a DNS server to resolve the domain name to an IP address.
+
+- Step 1: The browser checks its cache to see if it already has the IP address for `www.google.com`.
+
+- Step 2: If not found, the request is sent to the local DNS resolver, usually provided by your ISP.
+
+- Step 3: The local resolver checks its cache. If still unresolved, it queries the root DNS servers.
+
+- Step 4: The root server directs the request to the top-level domain (TLD) server, which in this case is the `.com` server.
+
+- Step 5: The TLD server forwards the request to Google’s authoritative DNS server, which finally provides the IP address.
+
+2. TCP/IP
+With the IP address obtained, the browser initiates a connection using the Transmission Control Protocol (TCP)** over the **Internet Protocol (IP).
+
+- Step 1: The browser sends a TCP SYN (synchronize) packet to the IP address.
+
+- Step 2: The server responds with a SYN-ACK (synchronize-acknowledge) packet.
+
+- Step 3: The browser sends an ACK (acknowledge) packet to establish a TCP connection.
+
+This three-way handshake ensures a reliable connection is established between the browser and the server.
+
+3. Firewall:
+Firewalls are security systems that monitor and control incoming and outgoing network traffic based on predetermined security rules.
+
+- Step 1: The packets pass through your local network’s firewall.
+
+- Step 2: The packets may encounter firewalls at various points on the internet.
+
+- Step 3:Finally, the packets pass through Google’s firewall, which protects their servers.
+
+4. HTTPS/SSL
+HTTPS (Hypertext Transfer Protocol Secure) ensures the data transferred between your browser and the server is encrypted using SSL/TLS (Secure Sockets Layer/Transport Layer Security).
+
+- Step 1: The browser requests a secure connection by sending an SSL/TLS handshake.
+
+- Step 2: The server responds with its SSL certificate, containing its public key.
+
+- Step 3: The browser verifies the certificate with a trusted Certificate Authority (CA).
+
+- Step 4: A symmetric session key is generated, encrypted with the server’s public key, and sent to the server.
+
+- Step 5: The server decrypts the session key using its private key. Now, all data sent over the connection is encrypted.
+
+5. Load Balancer
+
+Google uses load balancers to distribute incoming traffic across multiple servers to ensure reliability and performance.
+
+- Step 1: The load balancer receives the request and determines which backend server is best suited to handle the request based on current load and server health.
+
+- Step 2: The request is forwarded to the selected backend server.
+
+6. Web Server
+The web server handles the request, serving static content such as HTML, CSS, JavaScript, and images.
+
+- Step 1: The load balancer forwards the request to the web server.
+
+- Step 2: The web server processes the request and sends back the appropriate response, such as an HTML file.
+
+7. Application Server
+For dynamic content, the request is forwarded to an application server which runs the backend code.
+
+- Step 1: The web server forwards requests for dynamic content to the application server.
+
+- Step 2: The application server executes the backend logic, interacting with databases and other services if needed, and generates the dynamic content.
+
+- Step 3: The generated content is sent back to the web server.
+
+8. Database
+If the request requires data storage or retrieval, the database comes into play.
+
+- Step 1: The application server sends a query to the database.
+
+- Step 2: The database processes the query and returns the results to the application server.
+
+- Step 3: The application server uses the data to generate the dynamic content.
+
+Final Steps
+- The response from the web server (static or dynamic content) is sent back to the load balancer.
+
+- The load balancer forwards the response to the client’s browser.
+
+- The browser receives the response, processes the HTML, CSS, and JavaScript, and renders the page.
