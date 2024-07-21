@@ -579,6 +579,9 @@ document from the networking layer. This will usually be done in 8kB chunks.
 
 The primary job of the HTML parser is to parse the HTML markup into a parse tree.
 
+Parsing of the HTLM goes through the following two steps:
+* tokenization
+* coverting tokens into nodes.
 The output tree (the "parse tree") is a tree of DOM element and attribute
 nodes. DOM is short for Document Object Model. It is the object presentation
 of the HTML document and the interface of HTML elements to the outside world
