@@ -25,6 +25,9 @@ Table of Contents
    :backlinks: none
    :local:
 
+Diagramatic link: https://miro.com/app/board/uXjVKU0n9YQ=/?share_link_id=717592864591
+-------------------------------------------------------------------------------------
+
 The "g" key is pressed
 ----------------------
 The following sections explain the physical keyboard actions
@@ -209,8 +212,12 @@ Check HSTS list
 DNS lookup
 ----------
 
-* Browser checks if the domain is in its cache. (to see the DNS Cache in
-  Chrome, go to `chrome://net-internals/#dns <chrome://net-internals/#dns>`_).
+* DNS stands for Domain Name Server. When the user types the web address
+  (https:/www.google.com/) and presses Enter, a DNS Request lookup is created
+  by the web browser
+* 
+* Firstly, the web browser searches for this in the browsers DNS cache
+* Browser checks if the domain is in its cache.
 * If not found, the browser calls ``gethostbyname`` library function (varies by
   OS) to do the lookup.
 * ``gethostbyname`` checks if the hostname can be resolved by reference in the
@@ -369,6 +376,10 @@ This send and receive happens multiple times following the TCP connection flow:
 
 TLS handshake
 -------------
+*  TLS (Transport Layer Security) “handshake”  involves exchange of encryption
+   parameters and cryptographic keys used in encrypting and decrypting data
+   transferred between the client (You) and server (Google)
+
 * The client computer sends a ``ClientHello`` message to the server with its
   Transport Layer Security (TLS) version, list of cipher algorithms and
   compression methods available.
