@@ -441,6 +441,11 @@ the connection will be closed after completion of the response. For example,
 
     Connection: close
 
+    HTTP/1.1 defines the "close" connection option for the sender to signal that the connection will be closed after completion of the response. When a server receives a request with Connection: close, it indicates that it will close the TCP connection after sending the response. This allows the server to free up resources associated with the connection promptly.
+
+Upon receiving a response from the server with Connection: close, compliant HTTP/1.1 clients should understand that the connection will be closed by the server after the response is complete. Consequently, the client should refrain from sending further requests on the same connection, avoiding potential errors due to attempting to reuse a closed connection.
+
+However, it's important to note that not all servers or clients handle the Connection: close header correctly. Some may not close the connection immediately after the response, leading to different behaviors in practice. Additionally, HTTP/1.1 introduced persistent connections (Connection: keep-alive), which allows multiple requests and responses to be sent over the same TCP connection, reducing the overhead of establishing new connections for each request.
 HTTP/1.1 applications that do not support persistent connections MUST include
 the "close" connection option in every message.
 
