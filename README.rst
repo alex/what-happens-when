@@ -323,6 +323,38 @@ At this point the packet is ready to be transmitted through either:
 * `WiFi`_
 * `Cellular data network`_
 
+In case of Ethernet:
+The Ethernet frame is converted into electrical signals (if using Ethernet over copper) or light signals (if using fiber optics) and transmitted over the physical medium (Ethernet cable).
+
+An Ethernet frame consists of:
+
+Preamble: Synchronizes communication.
+SFD: Marks the start of the frame.
+Destination MAC Address: Address of the next hop (usually your router).
+Source MAC Address: Your device’s MAC address.
+EtherType: Indicates the network protocol (IP in this case).
+Payload: The encapsulated IP packet.
+FCS: Ensures data integrity.
+
+Ethernet Transmission Process
+Carrier Sense Multiple Access with Collision Detection (CSMA/CD)
+Your network interface card (NIC) listens to the network to ensure no other device is transmitting (Carrier Sense).
+If the network is clear, your NIC sends the Ethernet frame.
+If a collision is detected, your NIC stops transmitting, waits for a random backoff period, and retries.
+
+Frame Reception by Router
+
+Frame Reception
+Your router receives the Ethernet frame, checks the destination MAC address, and processes the frame.
+
+Error Checking
+The router checks the Frame Check Sequence (FCS) for errors.
+If no errors are found, the router de-encapsulates the frame to extract the IP packet.
+
+Routing
+The router examines the destination IP address in the IP packet.
+It forwards the packet to the appropriate next hop towards the Google server.
+
 For most home or small business Internet connections the packet will pass from
 your computer, possibly through a local network, and then through a modem
 (MOdulator/DEModulator) which converts digital 1's and 0's into an analog
