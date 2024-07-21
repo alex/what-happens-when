@@ -1,4 +1,4 @@
-What happens when...
+
 ====================
 
 This repository is an attempt to answer the age-old interview question "What
@@ -491,6 +491,10 @@ and IIS for Windows.
    * HTTP Request Method (either ``GET``, ``HEAD``, ``POST``, ``PUT``,
      ``PATCH``, ``DELETE``, ``CONNECT``, ``OPTIONS``, or ``TRACE``). In the
      case of a URL entered directly into the address bar, this will be ``GET``.
+     # what the get request entails and what it does?
+     GET REQUEST?
+     The GET method is used to retrieve information from a given server using a given URI.
+     Request using GET should only retrieve data and wll have no other effect on the data.
    * Domain, in this case - google.com.
    * Requested path/page, in this case - / (as no specific path/page was
      requested, / is the default path).
