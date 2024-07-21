@@ -224,6 +224,53 @@ DNS lookup
 * If the DNS server is on a different subnet, the network library follows
   the ``ARP process`` below for the default gateway IP.
 
+Key Components of DNS
+Domain Names:
+
+Hierarchical structure organized into different levels (Top-Level Domains (TLDs), Second-Level Domains, etc.).
+Example: In www.example.com, com is the TLD, example is the Second-Level Domain, and www is a subdomain.
+DNS Servers:
+
+Root Name Servers: The top of the DNS hierarchy, handling requests for TLDs.
+TLD Name Servers: Handle requests for specific TLDs (like .com, .org).
+Authoritative Name Servers: Store DNS records for specific domains and respond to queries about them.
+Recursive Resolvers: Intermediaries that query authoritative name servers on behalf of clients.
+DNS Records:
+
+A Record: Maps a domain name to an IPv4 address.
+AAAA Record: Maps a domain name to an IPv6 address.
+CNAME Record: Maps a domain name to another domain name (alias).
+MX Record: Specifies mail servers for a domain.
+TXT Record: Holds arbitrary text, often used for verification and policy purposes.
+NS Record: Specifies the authoritative name servers for a domain.
+How DNS Works
+DNS Query:
+
+When a user types a domain name into their browser, a DNS query is initiated to find the corresponding IP address.
+Recursive Resolution:
+
+The query goes to a recursive resolver, which may have cached information about the domain.
+If not cached, the resolver queries a root name server to find the TLD server responsible for the domain.
+Query to TLD Server:
+
+The resolver queries the TLD server for information about the domain.
+Query to Authoritative Server:
+
+The TLD server responds with the authoritative name server for the domain.
+The resolver then queries the authoritative server, which provides the IP address.
+Response to Client:
+
+The resolver sends the IP address back to the client.
+The client can now connect to the target server using the IP address.
+Example of DNS Query Process
+User enters www.example.com in their browser.
+Browser sends the query to the local recursive resolver.
+Recursive resolver checks its cache. If not found, it queries a root name server.
+Root name server directs the resolver to the .com TLD server.
+.com TLD server directs the resolver to the authoritative server for example.com.
+Authoritative server for example.com returns the IP address for www.example.com.
+Recursive resolver caches the response and sends it back to the browser.
+Browser connects to the IP address and retrieves the website
 
 ARP process
 -----------
