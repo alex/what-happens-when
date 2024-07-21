@@ -225,6 +225,30 @@ DNS lookup
   the ``ARP process`` below for the default gateway IP.
 
 
+What happens DNS lookup does not find the IP address associated to domain name
+------------------------------------------------------------------------------
+
+If the DNS server cannot find the IP address associated with the domain name,
+several things happen, and different fallback mechanisms and error message may
+be triggered.
+* ``Exhaustion of DNS Resolver Cache`` First, if the DNS resolver (e.g., your 
+ISP's DNS service like Google DNS) does not have the IP address cached and cannot 
+find it, it will attempt to contact other DNS servers to resolve the address.
+* ``Failure to Resolve Domain Name`` if the recursive DNS queries to the root, 
+TLD, and authoritative DNS servers all fail to resolve the IP address, the DNS 
+resolver will return a failure response to the client(your browser). This failure 
+can occur for several reasons:
+- The domain does not exist (NXDOMAIN).
+- There is a configuration error in the DNS settings for the domain.
+- The DNS servers for the domain are unreachable or not responding.
+* ``Browser Error Handling`` When the browser receives a failure response from the
+DNS resolver, it will display an error message to the user. Common error messages
+include:
+- "Server not found"(Firefox)
+- "This site can't be reached"(Chrome)
+- "Hmm. We're having trouble finding that site"(Edge)
+
+
 ARP process
 -----------
 
