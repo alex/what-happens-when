@@ -689,6 +689,50 @@ the Google homepage. Scripts can cause additional network requests to be
 performed, as well as modify the page or its layout, causing another round of
 page rendering and painting.
 
+
+Summary of the Key Press and URL Entry Process
+=============================================
+
+Physical Key Press
+------------------
+
+* Pressing the "g" key closes an electrical circuit in the keyboard, generating a keycode (13 for Enter).
+* This keycode is transported via USB/Bluetooth to the computer's host USB controller, decoded, and passed to the OS.
+
+Browser Event Handling
+----------------------
+
+* The browser receives the key press event, triggering autocomplete functions based on search history, bookmarks, cookies, and popular searches.
+* The "Enter" key press sends the URL to the browser’s address bar.
+
+Network Communication
+---------------------
+
+* The browser parses the URL, determining the protocol (HTTP/HTTPS), resource path, and whether the input is a search term or URL.
+* If HTTPS, the browser checks the HSTS list to ensure secure communication.
+* DNS lookup is performed to resolve the domain to an IP address using cache or recursive DNS queries.
+* ARP is used to find the MAC address for the target IP.
+
+Opening a Socket
+----------------
+
+* A TCP connection is established with the server, involving a three-way handshake (SYN, SYN-ACK, ACK).
+* If HTTPS, a TLS handshake is performed to establish a secure connection.
+
+HTTP Request and Response
+-------------------------
+
+* The browser sends an HTTP request to the server.
+* The server processes the request, checks for a matching virtual host, verifies permissions, and fetches the requested resource.
+* The server responds with the requested HTML content or a 304 Not Modified status if the resource is cached.
+
+Rendering in the Browser
+------------------------
+
+* The browser parses HTML, CSS, and JavaScript.
+* Constructs the DOM tree, render tree, and layout before painting the render tree on the screen.
+
+
 .. _`Creative Commons Zero`: https://creativecommons.org/publicdomain/zero/1.0/
 .. _`"CSS lexical and syntax grammar"`: http://www.w3.org/TR/CSS2/grammar.html
 .. _`Punycode`: https://en.wikipedia.org/wiki/Punycode
