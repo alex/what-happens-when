@@ -483,8 +483,8 @@ server name instead of ``google.com``.
 HTTP Server Request Handle
 --------------------------
 The HTTPD (HTTP Daemon) server is the one handling the requests/responses on
-the server-side. The most common HTTPD servers are Apache or nginx for Linux
-and IIS for Windows.
+the server-side Apache, while ``nginx`` does same for Nginx. The most
+common HTTPD servers are Apache or nginx for Linux and IIS for Windows.
 
 * The HTTPD (HTTP Daemon) receives the request.
 * The server breaks down the request to the following parameters:
@@ -502,13 +502,16 @@ and IIS for Windows.
 * If the server has a rewrite module installed (like mod_rewrite for Apache or
   URL Rewrite for IIS), it tries to match the request against one of the
   configured rules. If a matching rule is found, the server uses that rule to
-  rewrite the request.
+  rewrite the request. Nginx doesn't have embedded modules. The routes and rules
+  are defined in the server block.
 * The server goes to pull the content that corresponds with the request,
   in our case it will fall back to the index file, as "/" is the main file
   (some cases can override this, but this is the most common method).
 * The server parses the file according to the handler. If Google
   is running on PHP, the server uses PHP to interpret the index file, and
-  streams the output to the client.
+  streams the output to the client. On Nginx, if dynamic content is required,
+  nginx proxies it to the application server to handle the relevant request
+  since it doesn't have modules that extend its functions.
 
 Behind the scenes of the Browser
 ----------------------------------
