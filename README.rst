@@ -397,6 +397,10 @@ TLS handshake
 * From now on the TLS session transmits the application (HTTP) data encrypted
   with the agreed symmetric key.
 
+* In summary, the TLS handshake, also known as the 3-way handshake, allows the
+user to initiate, negotiate, and manage TCP socket connections, enabling
+simultaneous transfer of multiple TCP socket connections in both directions.
+
 If a packet is dropped
 ----------------------
 
