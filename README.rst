@@ -437,7 +437,7 @@ otherwise it may not include the ``Host`` header in the request and the version
 specified in the ``GET`` request will either be ``HTTP/1.0`` or ``HTTP/0.9``.)
 
 HTTP/1.1 defines the "close" connection option for the sender to signal that
-the connection will be closed after completion of the response. For example,
+the connection will be closed after the completion of the response. For example,
 
     Connection: close
 
