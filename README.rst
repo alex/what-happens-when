@@ -208,6 +208,8 @@ Check HSTS list
 
 DNS lookup
 ----------
+The DNS is a phonebook of the Internet. Information are accessed online through domain names like google.com.
+internet browsers interact through Internet Protocol (IP) addresses and DNS translates these domain names to IP addresses.
 
 * Browser checks if the domain is in its cache. (to see the DNS Cache in
   Chrome, go to `chrome://net-internals/#dns <chrome://net-internals/#dns>`_).
