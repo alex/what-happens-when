@@ -709,3 +709,26 @@ page rendering and painting.
 .. _`downgrade attack`: http://en.wikipedia.org/wiki/SSL_stripping
 .. _`OSI Model`: https://en.wikipedia.org/wiki/OSI_model
 .. _`Spanish`: https://github.com/gonzaleztroyano/what-happens-when-ES
+
+## Enhancing Security and Performance with DNS over HTTPS (DoH)
+
+### DNS over HTTPS (DoH)
+
+Traditionally, DNS queries are sent over plain text, making them susceptible to eavesdropping and manipulation. However, with the advent of DNS over HTTPS (DoH), DNS queries are encrypted using the HTTPS protocol, significantly enhancing security and privacy.
+
+**How DoH Works:**
+
+- **Encryption:** When a DNS query is made, it is encrypted using HTTPS, preventing intermediaries from viewing or tampering with the request.
+- **Privacy:** Encrypted queries ensure that third parties cannot track the websites you visit based on DNS traffic.
+- **Integration:** Modern browsers like Google Chrome and Mozilla Firefox support DoH, and it can be enabled in their settings.
+
+**Advantages of DoH:**
+
+- **Security:** Prevents DNS spoofing and man-in-the-middle attacks.
+- **Privacy:** Protects user data from being intercepted by ISPs or malicious actors.
+- **Performance:** In some cases, DoH can improve DNS resolution speed due to optimized servers and protocols.
+
+**Setting Up DoH:**
+
+To enable DoH, users can configure their browser settings or use a DNS resolver that supports DoH, such as Cloudflare's 1.1.1.1 or Google's Public DNS.
+
