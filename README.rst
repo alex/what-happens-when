@@ -367,6 +367,14 @@ This send and receive happens multiple times following the TCP connection flow:
    * The other sides ACKs the FIN packet and sends its own FIN
    * The closer acknowledges the other side's FIN with an ACK
 
+Firewall
+--------
+Before the request leaves your computer, it passes through a firewall.
+A firewall is a security system that monitors and controls
+incoming and outgoing network traffic based on predetermined
+security rules. Its job is to protect your system from
+unauthorized access or malicious traffic.
+
 TLS handshake
 -------------
 * The client computer sends a ``ClientHello`` message to the server with its
@@ -674,6 +682,13 @@ GPU Rendering
   of ``GPU`` massive parallelism for float point calculations required for
   the rendering process.
 
+Load Balancer
+-------------
+Google receives countless requests at any given moment.
+To manage this, your request might first hit a load balancer,
+which distributes incoming network traffic across multiple servers.
+This ensures no single server becomes overwhelmed, improves responsiveness,
+and increases availability.
 
 Window Server
 -------------
@@ -688,6 +703,15 @@ Plugins such as Flash or Java may execute as well, although not at this time on
 the Google homepage. Scripts can cause additional network requests to be
 performed, as well as modify the page or its layout, causing another round of
 page rendering and painting.
+
+Database
+--------
+For operations that require data retrieval or storage (like searching or logging in),
+the application server interacts with a database.
+A database is an organized collection of data that can be easily accessed,
+managed, and updated. Google uses sophisticated databases
+to store and manage the vast amount of data it handles.
+
 
 .. _`Creative Commons Zero`: https://creativecommons.org/publicdomain/zero/1.0/
 .. _`"CSS lexical and syntax grammar"`: http://www.w3.org/TR/CSS2/grammar.html
@@ -709,3 +733,4 @@ page rendering and painting.
 .. _`downgrade attack`: http://en.wikipedia.org/wiki/SSL_stripping
 .. _`OSI Model`: https://en.wikipedia.org/wiki/OSI_model
 .. _`Spanish`: https://github.com/gonzaleztroyano/what-happens-when-ES
+.. _`rallmac`: https://github.com/rallmac/alx-system_engineering-devops/blob/a021b2017332f6208011f20489f32ec7af045bff/0x11-what_happens_when_your_type_google_com_in_your_browser_and_press_enter/0-blog_post
