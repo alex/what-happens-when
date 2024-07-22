@@ -105,6 +105,15 @@ the ``Interrupt Descriptor Table`` (IDT) to map the interrupt vectors to
 functions (``interrupt handlers``) which are supplied by the kernel. When an
 interrupt arrives, the CPU indexes the IDT with the interrupt vector and runs
 the appropriate handler. Thus, the kernel is entered.
+• **Keyboard Hardware and Firmware**
+• - **Key Press Detection:** The keyboard firmware uses debounce logic to ensure that only a single key press is registered even if the key bounces when pressed. This involves a small delay to confirm the key state.
+• - **Scancode Generation:** Each key on the keyboard is mapped to a unique scancode. The firmware translates the physical key press into this scancode, which is then sent to the computer via the keyboard controller.
+
+• **Operating System Handling**
+• - **Device Driver Interaction:** The operating system kernel manages the key press event through several layers of handling.
+• - **Interrupt Descriptor Table (IDT):** The IDT is a data structure used by the x86 architecture to implement interrupt vector tables. When a key press is detected, the corresponding entry in the IDT points to the interrupt service routine (ISR) for keyboard events.
+• - **ISR Execution:** The ISR executes in the kernel space and processes the scancode received from the keyboard controller. It then places this scancode into a buffer that is accessible by the OS’s input handling subsystem.
+• - **Input Event Queue:** After processing, the scancode is placed into the input event queue for further handling by user-space applications.
 
 (On Windows) A ``WM_KEYDOWN`` message is sent to the app
 --------------------------------------------------------
