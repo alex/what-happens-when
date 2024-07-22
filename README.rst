@@ -421,7 +421,7 @@ If the web browser used was written by Google, instead of sending an HTTP
 request to retrieve the page, it will send a request to try and negotiate with
 the server an "upgrade" from HTTP to the SPDY protocol.
 
-If the client is using the HTTP protocol and does not support SPDY, it sends a
+If the client is making use of the HTTP protocol and does not support SPDY, it sends a
 request to the server of the form::
 
     GET / HTTP/1.1
@@ -548,8 +548,8 @@ common user interface elements are:
 
 The components of the browsers are:
 
-* **User interface:** The user interface includes the address bar,
-  back/forward button, bookmarking menu, etc. Every part of the browser
+* **User interface:** The user  interface includes the address bar,
+  navigation bar, bookmarking menu, etc. Every part of the browser
   display except the window where you see the requested page.
 * **Browser engine:** The browser engine marshals actions between the UI
   and the rendering engine.
@@ -604,7 +604,7 @@ Unable to use the regular parsing techniques, the browser utilizes a custom
 parser for parsing HTML. The parsing algorithm is described in
 detail by the HTML5 specification.
 
-The algorithm consists of two stages: tokenization and tree construction.
+The algorithm is made up of two stages: tokenization and tree construction.
 
 **Actions when the parsing is finished**
 
@@ -671,8 +671,8 @@ GPU Rendering
 
 * When using ``GPU`` for graphical rendering computations the graphical
   software layers split the task into multiple pieces, so it can take advantage
-  of ``GPU`` massive parallelism for float point calculations required for
-  the rendering process.
+of ``GPU`` massive parallelism for float point calculations required for
+ the rendering process.
 
 
 Window Server
@@ -709,3 +709,4 @@ page rendering and painting.
 .. _`downgrade attack`: http://en.wikipedia.org/wiki/SSL_stripping
 .. _`OSI Model`: https://en.wikipedia.org/wiki/OSI_model
 .. _`Spanish`: https://github.com/gonzaleztroyano/what-happens-when-ES
+.. _'DNS (Domain Name System)': https://en.m.wikipedia.org/wiki/Domain_Name_System
