@@ -344,7 +344,14 @@ decremented by one for each router that passes. The packet will be dropped if
 the TTL field reaches zero or if the current router has no space in its queue
 (perhaps due to network congestion).
 
-This send and receive happens multiple times following the TCP connection flow:
+This send and receive happens multiple times following the TCP connection flow
+which makes use of a process known as the Three-way Handshake.
+The three-way handshake is a process used in the Transmission Control Protocol
+(TCP) to establish a reliable connection between a client and a server. This
+process ensures that both parties are ready to transmit and receive data and
+synchronizes their sequence numbers.
+
+The process is as follows:
 
 * Client chooses an initial sequence number (ISN) and sends the packet to the
   server with the SYN bit set to indicate it is setting the ISN
