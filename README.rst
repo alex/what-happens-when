@@ -689,6 +689,8 @@ the Google homepage. Scripts can cause additional network requests to be
 performed, as well as modify the page or its layout, causing another round of
 page rendering and painting.
 
+In conclusion, after processing the request and retrieving the necessary data, the web server sends the response back through the same network path — via the load balancer, TCP/IP, and SSL/TLS layers — until it reaches your browser.The browser then renders the search results page, completing the process.
+
 .. _`Creative Commons Zero`: https://creativecommons.org/publicdomain/zero/1.0/
 .. _`"CSS lexical and syntax grammar"`: http://www.w3.org/TR/CSS2/grammar.html
 .. _`Punycode`: https://en.wikipedia.org/wiki/Punycode
