@@ -488,11 +488,15 @@ and IIS for Windows.
 
 * The HTTPD (HTTP Daemon) receives the request.
 * The server breaks down the request to the following parameters:
-   * HTTP Request Method (either ``GET``, ``HEAD``, ``POST``, ``PUT``,
+* HTTP Request Method (either ``GET``, ``HEAD``, ``POST``, ``PUT``,
      ``PATCH``, ``DELETE``, ``CONNECT``, ``OPTIONS``, or ``TRACE``). In the
      case of a URL entered directly into the address bar, this will be ``GET``.
-   * Domain, in this case - google.com.
-   * Requested path/page, in this case - / (as no specific path/page was
+* What the GET request entails and what it does?
+* GET REQUEST
+* The GET method is used to retrieve information from the given server using a given URI.
+* Request using GET would only retrieve data and would have no other effect on the data. 
+* Domain, in this case - google.com.
+* Requested path/page, in this case - / (as no specific path/page was
      requested, / is the default path).
 * The server verifies that there is a Virtual Host configured on the server
   that corresponds with google.com.
