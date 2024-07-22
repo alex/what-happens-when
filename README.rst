@@ -27,17 +27,43 @@ Table of Contents
 
 The "g" key is pressed
 ----------------------
-The following sections explain the physical keyboard actions
-and the OS interrupts. When you press the key "g" the browser receives the
-event and the auto-complete functions kick in.
-Depending on your browser's algorithm and if you are in
-private/incognito mode or not various suggestions will be presented
-to you in the dropdown below the URL bar. Most of these algorithms sort
-and prioritize results based on search history, bookmarks, cookies, and
-popular searches from the internet as a whole. As you are typing
-"google.com" many blocks of code run and the suggestions will be refined
-with each keypress. It may even suggest "google.com" before you finish typing
-it.
+What happens when the "g" key is pressed
+
+When you press the "g" key into your browser's address bar and hit enter, several things typically happen in sequence.The following sections explain the physical keyboard actions, the OS interrupts and sophisticated autocomplete algorithms within the browser, depending on your browser's configuration and settings:
+
+Physical Keyboard Actions
+
+Key Press: When you press the "g" key, the key makes contact with an underlying circuit, completing a circuit that sends an electrical signal to the keyboard's microcontroller. The microcontroller processes the signal and determines that the "g" key has been pressed.
+
+OS Interrupts
+
+Interrupt Request (IRQ): The signal from the keyboard triggers an interrupt request (IRQ) to the operating system (OS). The OS has an interrupt handler for keyboard events. This handler reads the scan code from the keyboard buffer mapping it to the corresponding character "g" based on the keyboard layout (e.g., QWERTY).
+
+Browser Event Handling
+
+Event Dispatch: The OS sends the "g" character to the active application, which in this case is the web browser. The browser's event handler detects the keypress and processes it accordingly. This may involve placing the "g" character in the address bar if it is focused.
+
+Auto-suggestions: As the browser detects "g" it activates its autocomplete algorithm. If your browser has auto-suggestions enabled, as you type "g", it may suggest previously visited websites or search terms starting with "g". The browser displays a dropdown list of suggestions below the URL bar. These suggestions are refined with each subsequent keypress
+
+Completion and Prediction: Based on your browsing history, bookmarks, and search engine settings, the browser might predict where you intend to go. For example, if you frequently visit "google.com", it might complete the address for you.
+
+Search Engine Integration: Many browsers are integrated with a default search engine. If you haven't specified a different search engine or set a custom address bar behavior, typing a single character like "g" followed by enter may trigger a search using the default search engine.
+
+Navigation or Search Execution
+
+If "g" is recognized as a keyword or a shortcut (e.g., "g" could be associated with Google in some configurations), the browser might redirect you to Google's homepage (google.com).
+Alternatively, if it's treated as a search term, your browser could initiate a search query using the default search engine (like Google Search, Bing, etc.) for the term "g".
+HTTPS and URL Validation: Before loading any webpage or initiating a search, the browser verifies the format of the input (e.g., checking for "http://" or "https://" at the beginning). If the input doesn't match a URL format, it's interpreted as a search query.
+
+Loading the Page or Displaying Search Results: Depending on the interpretation of "g", the browser will either load the Google homepage or display search results for the term "g".
+
+User Experience: Throughout this process, the browser aims to provide a smooth and responsive user experience, offering suggestions, predictions, and quick navigation options based on your input history and settings.
+
+Each browser may handle these steps slightly differently, and user settings, extensions, or custom configurations can significantly influence the behavior described above.
+
+Summary
+
+In summary, pressing the "g" key initiates a complex chain of events that involves physical keyboard actions, OS-level interrupts, and sophisticated autocomplete algorithms within the browser, ultimately providing a smooth and responsive user experience.
 
 The "enter" key bottoms out
 ---------------------------
