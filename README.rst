@@ -397,6 +397,11 @@ TLS handshake
 * From now on the TLS session transmits the application (HTTP) data encrypted
   with the agreed symmetric key.
 
+* TLS 1.3 is the latest version of the Transport Layer Security protocol, designed to provide improved security and performance. Key features include:
+   - Reduced Handshake Time**: TLS 1.3 reduces the number of round trips required to establish a secure connection, leading to faster connection times.
+   - Forward Secrecy**: Ensures that session keys are not compromised even if the server’s private key is exposed.
+   - Simplified Protocol**: By removing outdated features and options, TLS 1.3 is easier to implement and less prone to vulnerabilities.
+
 If a packet is dropped
 ----------------------
 
