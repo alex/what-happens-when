@@ -37,7 +37,7 @@ and prioritize results based on search history, bookmarks, cookies, and
 popular searches from the internet as a whole. As you are typing
 "google.com" many blocks of code run and the suggestions will be refined
 with each keypress. It may even suggest "google.com" before you finish typing
-it.
+it.Some of the algorithms used for suggestions include Contextual Search and Personalization, Prefix Matching, Levenshtein Distance (Edit Distance), Machine Learning Models, Frequency-Based Suggestions among others.
 
 The "enter" key bottoms out
 ---------------------------
