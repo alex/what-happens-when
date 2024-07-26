@@ -206,23 +206,29 @@ Check HSTS list
   `downgrade attack`_, which is why the HSTS list is included in modern web
   browsers.)
 
-DNS lookup
-----------
+DNS Lookup Process
+------------------
 
-* Browser checks if the domain is in its cache. (to see the DNS Cache in
-  Chrome, go to `chrome://net-internals/#dns <chrome://net-internals/#dns>`_).
-* If not found, the browser calls ``gethostbyname`` library function (varies by
-  OS) to do the lookup.
-* ``gethostbyname`` checks if the hostname can be resolved by reference in the
-  local ``hosts`` file (whose location `varies by OS`_) before trying to
-  resolve the hostname through DNS.
-* If ``gethostbyname`` does not have it cached nor can find it in the ``hosts``
-  file then it makes a request to the DNS server configured in the network
-  stack. This is typically the local router or the ISP's caching DNS server.
-* If the DNS server is on the same subnet the network library follows the
-  ``ARP process`` below for the DNS server.
-* If the DNS server is on a different subnet, the network library follows
-  the ``ARP process`` below for the default gateway IP.
+* Browser Cache Check
+
+When you enter a URL like "https://www.google.com" in your browser and press Enter, the first step is to check if the domain is already cached in the browser. Browsers maintain a cache of recently resolved domain names to expedite subsequent requests. If the domain is found in the cache, the browser can immediately use the cached IP address, saving time by skipping the DNS resolution process. This cache can be viewed in Chrome by navigating to    `chrome://net-internals/#dns`.
+
+* gethostbyname Library Function
+
+If the domain is not found in the browser's cache, the browser calls the gethostbyname function, a standard library function in most operating systems responsible for resolving hostnames to IP addresses.
+
+* Local Hosts File Check
+
+The gethostbyname function first checks the local hosts file to see if the hostname can be resolved. The hosts file is a simple text file containing mappings of IP addresses to hostnames, which can be used to bypass DNS lookup for specific domains. The location of the hosts file varies by OS:
+
+    - On Windows, it is typically located at ``C:\Windows\System32\drivers\etc\hosts``.
+    - On Unix-based systems, it is usually found at /etc/hosts.
+
+If the hostname is found in the hosts file, gethostbyname returns the corresponding IP address.
+
+* DNS Server Request
+
+If the hostname is not found in the hosts file, gethostbyname proceeds to query the DNS server configured in the network stack. This DNS server is usually provided by your Internet Service Provider (ISP) or specified in your router settings.
 
 
 ARP process
