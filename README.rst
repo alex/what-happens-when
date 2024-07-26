@@ -367,6 +367,23 @@ This send and receive happens multiple times following the TCP connection flow:
    * The other sides ACKs the FIN packet and sends its own FIN
    * The closer acknowledges the other side's FIN with an ACK
 
+DNS Resolution
+--------------
+* When you type https://www.google.com in your browser, one of the first steps 
+  is DNS resolution. This process translates the human-readable domain name 
+  into an IP address that computers can use to locate each other on the network.
+
+* Recursive vs. Iterative Queries: The browser's DNS resolver sends a recursive 
+  query to the DNS server, which then performs iterative queries on behalf of the 
+  resolver to locate the IP address of the domain.
+
+* Caching: DNS responses are cached at various levels, including the browser, 
+  operating system, and ISP, to reduce lookup times for frequently visited domains.
+
+* DNS Hierarchy: The query process involves navigating through a hierarchy of DNS 
+  servers, starting from the root servers to top-level domain (TLD) servers and 
+  finally the authoritative DNS server for the domain.
+
 TLS handshake
 -------------
 * The client computer sends a ``ClientHello`` message to the server with its
