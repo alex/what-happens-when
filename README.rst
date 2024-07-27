@@ -571,6 +571,43 @@ The components of the browsers are:
   support storage mechanisms such as localStorage, IndexedDB, WebSQL and
   FileSystem.
 
+TLS Handshake process
+---------------------
+
+when establishing a secure connection over HTTPS,the TLS handshake ensure
+privcay and data integrity between the client and server.Here's step by step 
+explanation of the TLS handshake process:
+
+**ClientHello:**
+The client send a 'ClientHello' message to the server with its TLS version,
+a list of support cipher algorithms,and available compression methods.
+
+**ServerHello:**
+The server responds with 'ServerHello'message, which include the TLS version
+the selected cipher,selected compression method, and the server's public
+certificate Authority(CA).This ceritifcate contains a public key used by the
+client to encrypt subsequent message until a symmetric key is established.
+
+**Certificate Verification**
+The client verifies the server's digital certificate against its list of trusted
+CAs. If the certificate is trusted, the client proceeds
+
+**Client Key Exchange:**
+The client generates a string of pseudo-random bytes (pre-master secret
+) and encrypts it with the server's public key, sending it to the server.
+
+**Server Key Exchange:**
+The server decrypts the pre-master secret using its private key and uses 
+it to generate the symmetric key, which will be used for the rest of the communication.
+
+**Finished Messages:**
+The client sends a 'Finished' message, encrypted with the symmetric key,
+containing a hash of the previous messages.
+
+**Secure Communication:**
+With the handshake complete,the client and server use the symmetric key 
+for encrypted communication,ensuring data privacy and integrity
+
 HTML parsing
 ------------
 
