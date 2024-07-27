@@ -628,6 +628,7 @@ CSS interpretation
   contains CSS rules with selectors and objects corresponding CSS grammar.
 * A CSS parser can be top-down or bottom-up when a specific parser generator
   is used.
+  * Imagine you have a coloring book and a box of crayons. The pages in your coloring book are plain black-and-white pictures. CSS, which stands for Cascading Style Sheets, is like the crayons you use to add color and style to the pictures.When you use CSS with a website, it's like you're taking a plain page from the internet (called HTML) and using your crayons to make it look pretty. CSS lets you choose colors, sizes, fonts, and even how things are arranged on the page. Just like how you decide what colors to use and where to color, CSS tells the website how it should look.So, in simple terms, CSS is the magical box of crayons that makes plain web pages look beautiful and fun!
 
 Page Rendering
 --------------
