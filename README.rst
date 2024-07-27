@@ -674,6 +674,14 @@ GPU Rendering
   of ``GPU`` massive parallelism for float point calculations required for
   the rendering process.
 
+Browser Developer Tool
+----------------------
+With the browser developer tool one can inspect the html elements, cookies, browser console
+endponts that are being called, response headers, ip address of the server responding to the
+request and lot of other information about the page using the: ``F12`` key or ``CTRL SHIFT I``
+on Windows/Linux and ``COMMAND SHIFT C`` or ``COMMAND SHIFT I`` on Mac then check for network tab
+on the listed tabs which usually appear at the top or side of the developer tool window.
+
 
 Window Server
 -------------
