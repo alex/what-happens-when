@@ -1,0 +1,46 @@
+### Detailed Explanation: What Happens When You Type https://www.google.com and Press Enter
+
+1. **DNS Resolution**
+   - When you type a URL (https://www.google.com) into the browser and press Enter, the first step is to resolve the domain name into an IP address. This process involves a DNS (Domain Name System) lookup.
+   - Your browser checks its cache for a recently stored DNS record. If not found, it queries the local DNS resolver provided by your ISP, which in turn queries other DNS servers if needed.
+   - The resolved IP address (e.g., 172.217.16.195) is returned to your browser.
+
+2. **TCP/IP Connection**
+   - With the IP address, the browser initiates a TCP (Transmission Control Protocol) connection to the server.
+   - The TCP three-way handshake is performed:
+     1. The client sends a SYN packet to the server.
+     2. The server responds with a SYN-ACK packet.
+     3. The client sends an ACK packet to establish the connection.
+   - This ensures a reliable connection is established over the IP (Internet Protocol) network.
+
+3. **Firewall**
+   - The request passes through various firewalls configured to allow or block traffic based on predefined security rules.
+   - Firewalls protect the client and server from unauthorized access and ensure secure communication.
+
+4. **HTTPS/SSL**
+   - HTTPS (Hypertext Transfer Protocol Secure) ensures that communication between the client and server is encrypted using SSL/TLS (Secure Sockets Layer/Transport Layer Security).
+   - The browser and server perform an SSL handshake to establish a secure connection, exchanging certificates and encryption keys.
+
+5. **Load Balancer**
+   - Once the connection is secured, the request may pass through a load balancer if the server infrastructure uses one.
+   - The load balancer distributes incoming requests across multiple servers to ensure high availability and reliability.
+
+6. **Web Server**
+   - The load balancer forwards the request to one of the web servers in the server farm.
+   - The web server processes the request and serves static content (HTML, CSS, JavaScript) or forwards dynamic content requests to an application server.
+
+7. **Application Server**
+   - For dynamic content, the web server communicates with an application server that runs the backend logic.
+   - The application server may process data, interact with databases, and perform business logic to generate the requested web page.
+
+8. **Database Interaction**
+   - If needed, the application server queries a database to fetch or store data required for generating the web page.
+   - The database server processes these queries and returns the results to the application server.
+
+9. **Response to Client**
+   - The application server constructs the web page and sends it back to the web server.
+   - The web server delivers the final web page to the client’s browser over the established HTTPS connection.
+   - The browser renders the web page, displaying the content to the user.
+
+This entire process happens in milliseconds, ensuring a seamless and fast browsing experience for the user.
+
