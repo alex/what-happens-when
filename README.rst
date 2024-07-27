@@ -492,6 +492,18 @@ and IIS for Windows.
      ``PATCH``, ``DELETE``, ``CONNECT``, ``OPTIONS``, or ``TRACE``). In the
      case of a URL entered directly into the address bar, this will be ``GET``.
    * Domain, in this case - google.com.
+     The `GET` method is one of the fundamental operations in the HTTP protocol, used primarily for retrieving data from a server. When you enter a URL into your web browser or click on a link, your browser typically sends a `GET` request to the server to fetch the resource.
+
+## Characteristics of the GET Method
+
+- **Safe Method**: The `GET` method is considered safe because it is used to retrieve data without causing any side effects on the server. In other words, making a `GET` request should not modify or change the state of the resource on the server.
+
+- **Idempotent**: `GET` requests are idempotent, meaning that making the same request multiple times will produce the same result. This characteristic ensures that repeating a `GET` request does not cause unintended effects.
+
+- **Cacheable**: Responses to `GET` requests can be cached by browsers, proxies, and other intermediaries. This helps improve performance by reducing the need to repeatedly fetch the same resource from the server.
+
+- **Request Body**: The `GET` method does not include a request body. All necessary data for the request must be included in the URL, typically as query parameters.
+
    * Requested path/page, in this case - / (as no specific path/page was
      requested, / is the default path).
 * The server verifies that there is a Virtual Host configured on the server
