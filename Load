@@ -1,0 +1,13 @@
+### Load Balancer
+
+The moment the initial security measures are passed, the request get a load balancer which plays a vital role in sharing the network traffic effectively across multiple servers.Here's how it works:
+
+1. **Traffic Distribution**: It uses some algorithms to choose which server gets which request. This ensures that no single server becomes a bottleneck.
+
+2. **Health Checks**: Regular health checks are performed on servers to make sure they are able to handle requests. If a server fails a health check, the load balancer removes it from the pool of available servers until it becomes healthy again.
+
+3. **Session Persistence**: This ensures that a user's requests are consistently routed to the same server for the duration of their session. This is neccessary for applications that store session data locally on a server.
+
+4. **SSL Offloading**: In many set-ups, the load balancer handles SSL decryption, freeing backend servers from this computationally intensive task and thereby improving performance.
+
+5. **Scaling and Availability**: By distributing requests and providing failover support, load balancers help ensure that applications remain scalable and available even under heavy load or in the event of server failures.
