@@ -571,6 +571,7 @@ The components of the browsers are:
   support storage mechanisms such as localStorage, IndexedDB, WebSQL and
   FileSystem.
 
+
 HTML parsing
 ------------
 
@@ -628,6 +629,23 @@ CSS interpretation
   contains CSS rules with selectors and objects corresponding CSS grammar.
 * A CSS parser can be top-down or bottom-up when a specific parser generator
   is used.
+
+Browser Rendering process
+------------
+Once the browser receives the HTML, CSS, and JavaScript resources, it enters the rendering phase, where the rendering engine plays a crucial role. This process involves several steps to convert the resources into pixels on the screen:
+
+    Parsing: The browser parses the HTML to construct the Document Object Model (DOM) and parses the CSS to create the CSS Object Model (CSSOM). These models represent the structure and style of the web page.
+
+    Construction of the Render Tree: The DOM and CSSOM are combined to form the render tree, which contains only the nodes required for visible elements. It represents the document structure and the styles that need to be applied.
+
+    Layout: The layout step involves calculating the size and position of each element on the screen. This is also known as the reflow process. The browser computes the geometry of the render tree elements and determines how they fit within the viewport.
+
+    Painting: The painting phase converts each node in the render tree into actual pixels on the screen. This involves drawing text, colors, images, borders, shadows, and other visual elements.
+
+    Compositing: Modern browsers often divide the page into multiple layers for complex web pages, allowing for more efficient rendering and animations. These layers are composited to form the final displayed page.
+
+This process ensures that dynamic content can be displayed interactively and efficiently, leveraging modern GPU acceleration where applicable. The rendering engine optimizes rendering to be as fast as possible, often reusing previous computations when incremental changes occur.
+
 
 Page Rendering
 --------------
