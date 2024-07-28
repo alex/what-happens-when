@@ -1,0 +1,39 @@
+DNS Request:
+Your browser sends a DNS request to resolve "www.youtube.com" into an IP address.
+The DNS server responds with the IP address of YouTube’s servers.
+
+TCP/IP:
+Your browser establishes a TCP connection with YouTube's server using the IP address.
+Data is exchanged using the TCP/IP protocol suite.
+
+Firewall:
+Network firewalls inspect incoming and outgoing traffic to ensure it meets security policies.
+They allow or block traffic based on predefined rules, protecting YouTube’s infrastructure.
+
+HTTPS/SSL:
+Your browser and YouTube's server establish an encrypted connection using HTTPS.
+SSL/TLS encryption ensures the data exchanged is secure and private.
+
+Load-balancer:
+A load-balancer distributes incoming requests across multiple YouTube servers.
+This ensures efficient use of resources and prevents any single server from being overwhelmed.
+
+Web Server:
+The load-balanced request reaches a web server that handles HTTP(S) requests.
+The web server processes the request and forwards it to the appropriate application server.
+
+Application Server:
+The application server runs YouTube’s backend code to handle video streaming requests.
+It processes the request, performs necessary computations, and interacts with the database.
+
+Database:
+The application server queries the database to fetch video metadata, user preferences, and other relevant data.
+The database server responds with the requested information.
+
+Video Delivery:
+The application server prepares the response, including video data fetched from YouTube’s Content Delivery Network (CDN).
+The response is sent back through the web server, load-balancer, and over the HTTPS/TCP connection to your browser.
+Playback:
+
+Your browser starts receiving the video data and begins playback.
+Additional video data is streamed progressively as you watch the video.
