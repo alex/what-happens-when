@@ -502,13 +502,30 @@ and IIS for Windows.
 * If the server has a rewrite module installed (like mod_rewrite for Apache or
   URL Rewrite for IIS), it tries to match the request against one of the
   configured rules. If a matching rule is found, the server uses that rule to
-  rewrite the request.
+-  rewrite the request.
 * The server goes to pull the content that corresponds with the request,
   in our case it will fall back to the index file, as "/" is the main file
   (some cases can override this, but this is the most common method).
 * The server parses the file according to the handler. If Google
   is running on PHP, the server uses PHP to interpret the index file, and
   streams the output to the client.
+
+** Details on HTTP Protocol Versions
+______________________________________
+
+** HTTP/2 and HTTP/3:** 
+_______________________
+These newer HTTP versions improve on HTTP/1.1 by enhancing performance and efficiency. 
+HTTP/2 introduces multiplexing to handle multiple requests in parallel over a single 
+connection, header compression to reduce data size, and lower latency. 
+HTTP/3, built on QUIC, further reduces latency by using UDP for faster and more 
+reliable connections.
+
+**SPDY:** 
+_________
+SPDY, developed by Google, served as a precursor to HTTP/2. It introduced key 
+concepts like multiplexing and header compression, which were integral to the 
+evolution of HTTP/2 and laid the groundwork for future enhancements in HTTP protocols.
 
 Behind the scenes of the Browser
 ----------------------------------
