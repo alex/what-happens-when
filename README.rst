@@ -358,7 +358,8 @@ This send and receive happens multiple times following the TCP connection flow:
    * Increases the receiver acknowledgment number
    * Sets ACK field
 * Data is transferred as follows:
-   * As one side sends N data bytes, it increases its SEQ by that number
+   * As one side sends N data bytes, it increases its SEQ by that number "SEQ" stands for "Sequence Number."
+     It is a crucial part of how TCP ensures reliable data transfer over the network.
    * When the other side acknowledges receipt of that packet (or a string of
      packets), it sends an ACK packet with the ACK value equal to the last
      received sequence from the other
