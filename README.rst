@@ -674,6 +674,10 @@ GPU Rendering
   of ``GPU`` massive parallelism for float point calculations required for
   the rendering process.
 
+* By leveraging the power of GPUs, rendering tasks can achieve significantly
+  higher performance and quality compared to traditional CPU rendering.
+  This capability is increasingly important as the demand for complex,
+  high-resolution graphics continues to grow across various industries
 
 Window Server
 -------------
