@@ -224,6 +224,10 @@ DNS lookup
 * If the DNS server is on a different subnet, the network library follows
   the ``ARP process`` below for the default gateway IP.
 
+The first thing your browser does is reach out to the Domain Name System (DNS)
+to translate the human-readable website address (https://www.google.com) into
+the numerical IP address that computers use to locate the website. The DNS acts 
+like a phonebook, matching domain names to their corresponding IP addresses.
 
 ARP process
 -----------
