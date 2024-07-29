@@ -191,6 +191,43 @@ Convert non-ASCII Unicode characters in the hostname
 * Since the hostname is ``google.com`` there won't be any, but if there were
   the browser would apply `Punycode`_ encoding to the hostname portion of the
   URL.
+##What is Punycode?
+
+Definition: Punycode is an encoding system used to convert non-ASCII characters into a format that can be used in the existing DNS infrastructure. It translates Unicode characters into ASCII-compatible encoding.
+Example: The Unicode character ü is represented as xn--frh in Punycode.
+How Punycode Works:
+
+Conversion Process: When a domain name with non-ASCII characters (e.g., münich.com) is used, it is converted into a Punycode representation (e.g., xn--mnich-kva.com) so that it can be processed by DNS systems and browsers that support only ASCII characters.
+Prefix: Punycode-encoded domain names start with the prefix xn-- to indicate that they are encoded in this way. This is followed by the Punycode-encoded string of the original Unicode domain.
+Process of Handling Non-ASCII Hostnames in Browsers
+Browser Checks:
+
+Initial Check: When a browser encounters a hostname, it first checks whether the hostname contains only valid ASCII characters. Valid ASCII characters include a-z, A-Z, 0-9, -, and ..
+Application of Punycode Encoding:
+
+For Non-ASCII Hostnames: If the hostname contains characters outside the ASCII range, the browser applies Punycode encoding to convert these characters into an ASCII-compatible format.
+Example:
+Unicode Hostname: münich.com
+Punycode Encoding: The browser converts it to xn--mnich-kva.com.
+Resolution:
+
+DNS Query: After encoding, the browser queries the DNS system using the Punycode representation of the hostname. The DNS system then resolves this encoded name to the appropriate IP address.
+Example Walkthrough
+Hostname with Non-ASCII Characters:
+
+Suppose you have a domain name 北京.com (which is Chinese for Beijing).
+Conversion to Punycode:
+
+The domain name is converted to its Punycode equivalent, which might look like xn--fsq.com.
+Browser Handling:
+
+The browser detects the non-ASCII characters in 北京.com and applies Punycode encoding to transform it into xn--fsq.com.
+DNS Query:
+
+The browser uses xn--fsq.com in DNS queries to find the IP address associated with the original domain name.
+User Experience:
+
+The user still sees 北京.com in the address bar, but the browser and DNS system handle the underlying conversion automatically.
 
 Check HSTS list
 ---------------
