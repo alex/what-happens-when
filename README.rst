@@ -24,7 +24,66 @@ Table of Contents
 .. contents::
    :backlinks: none
    :local:
+A lot of times, it must have really left your mind in a state of limbo of what really happens behind the scene when you type a URL link(like www.google.com) in your browser and hit the enter key on your computer. With good internet connection, you’d get a response in the form of a beautifully crafted webpage before you’re done hitting the enter button. And I’m about to further make your mind delve into a state of consternation with the knowledge that there are about a thousand and one processes that make the final result of the webpage a possibility. But little worries, I’m about to break the whole process down for your simple consumption and understanding.
 
+The following are the steps involved in the process of the inner workings of the internet.
+
+Step 1: DNS Request & Resolution
+The first act that really takes place is the resolution of the DNS which involves the conversion of the domain name which in this case would be google.com to its IP address(8.8.8.8 and/or 8.8.4.4). This conversion is necessary because the human-readable domain name needs to be changed to its corresponding IP address so that the browser can locate and access the website.
+
+On inputting the domain name into your browser, the browser checks up the cache to see if the IP address for the URL has been in use recently. If that’s the case, this helps the browser to quickly locate the IP address.
+
+However, if the IP address is not found in the cache of your browser, the DNS(Domain Name System) comes in handy as it is tasked with finding the location of the IP address of the domain name in request. This request would be filtered through several DNS servers till the exact server is gotten. This then points the browser in the location to look up the IP address it needs.
+
+Step 2: TCP/IP
+Following the discovery of the IP address of the URL, the computer attempts to establish connection using two protocols; Transmission Control Protocol (TCP) and Internet Protocol (IP). The browser initiates a TCP (Transmission Control Protocol) connection to the Google server at the IP address. TCP ensures reliable communication by managing the connection setup, data transfer, acknowledgment, and termination processes.
+
+Your computer makes sure the other computer, which hosts Google’s server, is available for communication before starting the conversation. This involves a three-way handshake process:
+
+SYN: Your browser sends a synchronized packet to Google’s server to start the connection
+SYN-ACK: The server then responds with a synchronize-acknowledgment packet.
+ACK: Your browser sends an acknowledgment packet back to the server.
+Following the successful connection between the computers, data is transferred in smaller segments. Each data segment has a sequence number that helps in the arrangement of the data at the destination. Each segment also includes a checksum to detect errors in the data. If a segment is corrupted, it is retransmitted.
+
+On the other hand, IP(Internet Protocol) handles the addressing and routing of these packets, across the internet. Together TCP/IP forms the foundation of internet communication enabling organized data exchange.
+
+Step 3: HTTPS/SSL
+Following the establishment of a TCP connection between the client and the server, the browser sends a Hypertext Transfer Protocol (HTTP) request to the server. This protocol is responsible for transferring data over the web and defines how messages are formatted and exchanged between the client and the server. But this protocol being exchanged between the client and the server is not secure.
+
+Hypertext Transfer Protocol Secure (HTTPS) which is an extension of HTTP adds a layer of security. This layer of security is achieved using SSL (Secure Shell Layer) or its successor TLS (Transport Layer Security) to secure the data being exchanged between your browser and the server. These cryptographic layers provide a layer of protection, against actors attempting to intercept or tamper with data during transmission.
+
+Step 4: Firewall
+On the initiation of a TCP connection by the browser, the data packets being transmitted must first pass through several layers of security before getting to the Google server. And one of this security layer is the firewall.
+
+Firewalls are important because they help to ensure the security of web interaction. They protect the client’s computer and Google network servers from unauthorized access and malicious traffic. Essentially firewalls play a role in strengthening the security of the internet infrastructure.
+
+Step 5: Load Balancer
+With the establishment of a secure connection, the request has to first pass through the Google’s load balancer. This step becomes necessary because it helps in the management of internet traffic to a particular website. They act like traffic directors, distributing incoming requests across multiple servers to ensure no single server becomes overwhelmed. This helps to improve the optimization of resources being utilized, reduce delays and enhances reliability. The load balancer decides which server will handle your request based on factors like how busy each server is, the health of each server, and where the server is located geographically. After considering all these factors, it then sends your request to one of Google’s web servers.
+
+Step 6: Web Server
+When the request reaches the selected Google web server from the load balancer, the server processes the request to determine the content to transmit back to the user’s browser following retrieval of the files, which in this case is the Google homepage for rendering. Popular web servers like Apache, Nginx, and Microsoft Internet Information Services (IIS) handle this task. This includes fetching the HTML, images, and other static resources that make up the main page.
+
+However, the web server forwards the request to the application server for dynamic content (text, audio, or video formats) and more complex processing.
+
+Step 7: Application Server
+The application server takes over the request to perform in-depth processes (if needed). It is crucial for managing more complex tasks beyond serving static files and resources. It plays a key role in turning the static resources provided by the web server into a fully functional and customized webpage. Some of the tasks undertaken by the application server include; Generation and running of dynamic codes, handling business logic, interaction with databases, managing of sessions and preparation of responses.
+
+Business logic refers to the rules and processes that ensure the software behaves in a way that aligns with the business’s policies and goals. After performing these tasks, the application server constructs a response, which is sent back to the web server.
+
+Step 8: Database
+Databases which are a component of the internet’s inner working also play an important role. It holds a wealth of information necessary for various features and services. This include storing user preferences, session information, and any data relevant to personalization. They efficiently store user profiles, product listings, and various other types of data. Some used databases include MySQL, PostgreSQL, and MongoDB. The seamless interaction between the application server and the database ensures that the content you see is not only dynamic but also accurate and up-to-date.
+
+Step 9: Rendering and Displaying of Page
+After processing the request and running the necessary code, the application server collaborates with the webserver to prepare the HTTP response. When the response reaches the client, your browser or application processes render the received data. For a web browser, this involves interpreting the HTML to construct the Document Object Model (DOM), applying CSS to style the elements, and executing JavaScript to enhance interactivity and functionality. The browser may also make additional asynchronous requests (AJAX) to fetch more data without reloading the entire page.
+
+This rendering process converts the raw response data into a visually and functionally rich user interface, providing the end user with a seamless and interactive experience. For other types of clients, rendering might involve parsing JSON or XML data and displaying it in a relevant format, such as a mobile app interface or a desktop application.
+
+Summary
+
+To sum it all up, when you type “https://google.com" and hit enter, your browser first checks its cache for Google’s IP address. If not found, it queries the DNS system to obtain the IP address. Once the IP is obtained, the browser initiates a TCP connection using a three-way handshake (SYN, SYN-ACK, ACK). If a TCP connection is established, the client creates an HTTPS request which passes through firewalls for security checks before reaching Google’s load balancer, which distributes the request to a web server. The web server processes the request, possibly forwarding it to an application server for dynamic content and database interaction. The web server then creates an HTTPS response and sends it back to your browser, and the Google homepage is displayed.
+
+Conclusion
+To conclude, an understanding of how URLs traverse through the intricacies of internet infrastructure is truly fascinating. It involves a symphony of technologies and systems working together harmoniously to provide users with a secure and dynamic browsing experience. By delving into these layers we develop an appreciation, for the wonders that make the Internet an essential part of our daily lives.
 The "g" key is pressed
 ----------------------
 The following sections explain the physical keyboard actions
