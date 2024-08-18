@@ -208,7 +208,11 @@ Check HSTS list
 
 DNS lookup
 ----------
-
+* Before your computer can contact google.com, it needs to translate that domain name into an IP address, which is the numerical address computers use to find each other on the internet. This translation process is called a DNS lookup.
+*Two Levels of Caching for Speed:
+   * Your computer leverages two layers of caching to speed up DNS lookups:
+      - Browser DNS Cache: Your web browser (Chrome, Firefox, Safari, etc.) maintains its own cache of recently resolved domain names. This is the first place your browser checks for the IP address of google.com.
+      - Operating System DNS Cache: If the browser's cache doesn't have an entry for google.com, your operating system (Windows, macOS, Linux) steps in. The OS has its own DNS resolver, which maintains a larger cache.
 * Browser checks if the domain is in its cache. (to see the DNS Cache in
   Chrome, go to `chrome://net-internals/#dns <chrome://net-internals/#dns>`_).
 * If not found, the browser calls ``gethostbyname`` library function (varies by
