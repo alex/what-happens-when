@@ -209,21 +209,29 @@ Check HSTS list
 DNS lookup
 ----------
 
-* Browser checks if the domain is in its cache. (to see the DNS Cache in
-  Chrome, go to `chrome://net-internals/#dns <chrome://net-internals/#dns>`_).
-* If not found, the browser calls ``gethostbyname`` library function (varies by
-  OS) to do the lookup.
-* ``gethostbyname`` checks if the hostname can be resolved by reference in the
-  local ``hosts`` file (whose location `varies by OS`_) before trying to
-  resolve the hostname through DNS.
-* If ``gethostbyname`` does not have it cached nor can find it in the ``hosts``
-  file then it makes a request to the DNS server configured in the network
-  stack. This is typically the local router or the ISP's caching DNS server.
-* If the DNS server is on the same subnet the network library follows the
-  ``ARP process`` below for the DNS server.
-* If the DNS server is on a different subnet, the network library follows
-  the ``ARP process`` below for the default gateway IP.
+* The browser first checks if the domain is in its cache. (To see the DNS cache in Chrome, go to `chrome://net-internals/#dns`.)
+  If the domain is found in the cache, the browser uses the cached IP address to connect to the server, skipping the rest of the DNS resolution process.
 
+* If the domain is not found in the cache, the browser calls the `gethostbyname` library function (the specific function may vary by operating system) to perform the DNS lookup.
+
+* The ``gethostbyname`` function checks if the hostname can be resolved by reference in the local `hosts` file (the location of which varies by OS). This file can contain static mappings of hostnames to IP addresses.
+
+* If the hostname is not found in the cache or the `hosts` file, the browser makes a request to the DNS server configured in the network stack. This is typically the local router or the ISP's caching DNS server.
+
+* If the DNS server is on the same subnet, the network library follows the ``ARP process`` to resolve the IP address of the DNS server:
+  The browser sends an ``ARP request`` to find the ``MAC address`` associated with the DNS server's IP address.
+  The DNS server responds with its MAC address, allowing the browser to send the DNS query.
+
+* If the DNS server is on a different subnet, the network library follows the ``ARP process`` for the default gateway IP:
+  The browser sends an ``ARP request`` to the default gateway to obtain its ``MAC address``.
+  The gateway forwards the DNS request to the appropriate DNS server.
+
+* The DNS server receives the ``query`` and checks its cache. If the IP address is ``cached``, it returns the IP address to the browser.
+  If not cached, the DNS server performs a ``recursive query`` to find the ``authoritative DNS server`` for the domain:
+  It may query ``root DNS servers``, then ``TLD (Top-Level Domain) servers``, and finally the ``authoritative DNS server`` for the specific domain.
+  Once the authoritative DNS server responds with the IP address, the DNS server caches the result for future requests and sends the IP address back to the browser.
+
+* The browser receives the IP address and can now initiate a TCP connection to the server, beginning the process of loading the requested web page.
 
 ARP process
 -----------
