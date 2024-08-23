@@ -520,6 +520,12 @@ to the browser it undergoes the below process:
 * Rendering - Construct DOM Tree → Render Tree → Layout of Render Tree →
   Painting the render tree
 
+HTML Parsing: The browser starts by parsing the HTML document. It reads the HTML line by line and converts it into a structure known as the Document Object Model (DOM). The DOM is a tree-like structure where each node represents an element in the HTML document. As the browser encounters different tags (like <div>, <p>, <img>, etc.), it creates corresponding nodes in the DOM tree.
+
+CSS Parsing: Simultaneously, the browser parses any linked CSS files or embedded style tags. The CSS rules are applied to the HTML elements, determining how they should be styled. This process generates a separate structure known as the CSSOM (CSS Object Model).
+
+JavaScript Parsing: If the HTML contains any <script> tags, the browser will download and parse the JavaScript code. Depending on where the script is placed (either in the head or body), it might pause the parsing of the HTML (especially if the script is not marked as asynchronous or deferred) to execute the JavaScript. This is important because the JavaScript might modify the DOM or CSSOM.
+
 Browser
 -------
 
