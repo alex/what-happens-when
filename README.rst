@@ -689,6 +689,14 @@ the Google homepage. Scripts can cause additional network requests to be
 performed, as well as modify the page or its layout, causing another round of
 page rendering and painting.
 
+Don't Forget the Role of Load Balancers In Resolving Requests
+-------------------------------------------------------------
+Many web applications are hosted in several servers distributed across various
+geographical regions, for requests to be resolved quickly enough, Load Balancers
+are placed in front of web infrastructures to distribute requests to web servers
+and application servers using appropriate algorithms. Doing this not only improve
+performance but also guarantee reliability since requests are distributed efficiently.
+
 .. _`Creative Commons Zero`: https://creativecommons.org/publicdomain/zero/1.0/
 .. _`"CSS lexical and syntax grammar"`: http://www.w3.org/TR/CSS2/grammar.html
 .. _`Punycode`: https://en.wikipedia.org/wiki/Punycode
