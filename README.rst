@@ -689,6 +689,38 @@ the Google homepage. Scripts can cause additional network requests to be
 performed, as well as modify the page or its layout, causing another round of
 page rendering and painting.
 
+
+What happens when you type google.com in your browser and press Enter
+------------------------------------------------------------------------
+
+The steps below explain what happens when you type `https://www.google.com` in your browser and press Enter.
+
+## Step 1: Domain Name System (DNS) Resolution
+When you type `https://www.google.com`, the first thing the browser does is to check its local cache to see if the IP address of `https://www.google.com` is cached. If not, it checks if the IP address is cached in the Operating System. If the IP address is still not found, the client system makes a DNS request to the DNS server for the IP address of `https://www.google.com`. This DNS request is sent using the UDP (User Datagram Protocol) part of the TCP/IP suite.
+
+## Step 2: Establishing a Connection
+After the IP address of `https://www.google.com` is returned to the client browser, a TCP connection is established with the web server using the IP address. This involves a three-way handshake (SYN, SYN-ACK, ACK) to ensure reliable data transmission. An HTTP request is made to the web server over the TCP connection.
+
+## Step 3: Firewall Inspection
+Before the request reaches the web server, it passes through a firewall. The firewall acts as a security check. It monitors and controls outgoing and incoming network traffic based on predefined security guidelines, ensuring that only legitimate traffic reaches the server.
+
+## Step 4: HTTPS/SSL Encryption
+Since the request made is over HTTPS, the data exchanged between the client and the web server is encrypted using SSL/TLS. This encryption ensures that any data transmitted, including sensitive information, remains secure and cannot be easily intercepted by malicious actors.
+
+## Step 5: Distribution of Loads Through Load Balancer
+If the web infrastructure uses a load balancer, the incoming request is distributed across multiple servers through the load balancer, thus optimizing resource usage.
+
+## Step 6: Web Server Interaction
+The web server receives the request and it is only responsible for serving static content like HTML, CSS, and JavaScript files. However, if the content is dynamic, the web server, which has a 2-way communication with the application server, communicates with the application server.
+
+## Step 7: Application Server and Database Interactions
+The application servers process the dynamic requests, which often involve retrieving, adding, deleting, and/or updating data in a database. The database is the repository where all data is stored. When the application server needs to access data, it interacts with the database to retrieve or carry out other manipulation on the data. The application server generates the necessary content from the database and sends it back to the web server over TCP.
+
+## Step 8: Serving Content to the Browser
+Once the content is ready, the web server sends it back to the browser over TCP, which then renders the webpage and the necessary content. At this point, you see the Google home page.
+
+
+
 .. _`Creative Commons Zero`: https://creativecommons.org/publicdomain/zero/1.0/
 .. _`"CSS lexical and syntax grammar"`: http://www.w3.org/TR/CSS2/grammar.html
 .. _`Punycode`: https://en.wikipedia.org/wiki/Punycode
