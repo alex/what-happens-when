@@ -1,0 +1,11 @@
+### Detailed Explanation of HTTPS/SSL Process
+
+When a secure connection is established between your browser and the server using HTTPS, the process involves several steps:
+
+1. **Browser Request**: Your browser requests a secure connection by sending a message to the server.
+2. **Server Responds**: The server responds with a copy of its SSL certificate.
+3. **Browser Verification**: Your browser verifies the SSL certificate against a list of trusted Certificate Authorities (CAs).
+4. **Encryption Keys**: Once verified, your browser and the server create session keys for encryption.
+5. **Secure Connection**: All data sent between your browser and the server is now encrypted and secure.
+
+This process ensures that sensitive information like passwords and credit card numbers are protected from eavesdropping and tampering.
