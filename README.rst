@@ -491,6 +491,8 @@ and IIS for Windows.
    * HTTP Request Method (either ``GET``, ``HEAD``, ``POST``, ``PUT``,
      ``PATCH``, ``DELETE``, ``CONNECT``, ``OPTIONS``, or ``TRACE``). In the
      case of a URL entered directly into the address bar, this will be ``GET``.
+     #What the GET method does ?
+     The GET method is used to retrieve information from a server using a specified URI (Uniform Resource Identifier). Requests made using GET are designed to only fetch data and should have no side effects on the server or its data. This makes GET a safe and idempotent method, meaning multiple identical requests will always return the same result without altering the server's state. Any data sent to the server with a GET request is appended as query parameters in the URL, and the response typically contains the requested resource, such as HTML, JSON, or other formats. GET requests do not include a request body.
    * Domain, in this case - google.com.
    * Requested path/page, in this case - / (as no specific path/page was
      requested, / is the default path).
