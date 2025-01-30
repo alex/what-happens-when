@@ -369,33 +369,55 @@ This send and receive happens multiple times following the TCP connection flow:
 
 TLS handshake
 -------------
-* The client computer sends a ``ClientHello`` message to the server with its
-  Transport Layer Security (TLS) version, list of cipher algorithms and
-  compression methods available.
+TLS 1.2 (Legacy Process)
+------------------------
 
-* The server replies with a ``ServerHello`` message to the client with the
-  TLS version, selected cipher, selected compression methods and the server's
-  public certificate signed by a CA (Certificate Authority). The certificate
-  contains a public key that will be used by the client to encrypt the rest of
-  the handshake until a symmetric key can be agreed upon.
+* **ClientHello**:
+  The client sends a ``ClientHello`` message specifying its supported TLS versions (e.g., TLS 1.2), cipher suites (e.g., AES-GCM, ChaCha20), and compression methods.
 
-* The client verifies the server digital certificate against its list of
-  trusted CAs. If trust can be established based on the CA, the client
-  generates a string of pseudo-random bytes and encrypts this with the server's
-  public key. These random bytes can be used to determine the symmetric key.
+* **ServerHello**:
+  The server replies with a ``ServerHello`` message, selecting the TLS version, cipher suite, and compression method. It also sends its SSL/TLS certificate (signed by a trusted Certificate Authority) containing its public key.
 
-* The server decrypts the random bytes using its private key and uses these
-  bytes to generate its own copy of the symmetric master key.
+* **Key Exchange**:
+  - The client verifies the server’s certificate against its trusted CA list.
+  - It generates a pre-master secret, encrypts it with the server’s public key, and sends it to the server.
 
-* The client sends a ``Finished`` message to the server, encrypting a hash of
-  the transmission up to this point with the symmetric key.
+* **Session Keys**:
+  Both client and server use the pre-master secret and exchanged random values to derive symmetric session keys for encryption.
 
-* The server generates its own hash, and then decrypts the client-sent hash
-  to verify that it matches. If it does, it sends its own ``Finished`` message
-  to the client, also encrypted with the symmetric key.
+* **Handshake Completion**:
+  - The client sends a ``Finished`` message (encrypted with the session key) to confirm handshake integrity.
+  - The server responds with its own ``Finished`` message.
 
-* From now on the TLS session transmits the application (HTTP) data encrypted
-  with the agreed symmetric key.
+TLS 1.3 (Modern Improvements)
+-----------------------------
+
+TLS 1.3 improves security and performance by eliminating outdated cryptographic methods and optimizing handshake efficiency:
+
+* **1-RTT Handshake**:
+  - The client sends a ``ClientHello`` with a guess for the key exchange method (e.g., Diffie-Hellman).
+  - The server responds immediately with a ``ServerHello``, certificate, and shared secret, reducing handshake time by 50%.
+
+* **Zero-RTT Resumption**:
+  - On subsequent connections, cached session keys allow clients to send encrypted data immediately (0 round trips).
+
+* **Removed Vulnerabilities**:
+  - TLS 1.3 eliminates insecure ciphers (RC4, SHA-1) and features like compression or renegotiation.
+
+HTTP/3 and QUIC
+---------------
+
+Modern websites increasingly use **HTTP/3**, which replaces TCP with the UDP-based QUIC protocol:
+
+* **Integrated TLS 1.3**:
+  - QUIC combines the TLS handshake with transport setup, eliminating separate TCP/TLS steps.
+  - Encryption begins instantly.
+
+* **Resilient to Packet Loss**:
+  - QUIC uses forward error correction (FEC) and retransmits only lost packets, avoiding TCP’s "head-of-line blocking."
+
+* **Connection Migration**:
+  - QUIC maintains connections via a unique ID (not IP addresses), enabling seamless network switches (e.g., Wi-Fi to 5G).
 
 If a packet is dropped
 ----------------------
