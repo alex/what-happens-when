@@ -520,6 +520,30 @@ to the browser it undergoes the below process:
 * Rendering - Construct DOM Tree → Render Tree → Layout of Render Tree →
   Painting the render tree
 
+### TLS Handshake
+-----------------
+
+The TLS (Transport Layer Security) handshake is a critical process that ensures secure communication between the client (browser) and the server. Here’s a detailed breakdown of the steps involved:
+
+1. ClientHello: The client initiates the handshake by sending a `ClientHello` message to the server. This message includes:
+   - The TLS version supported by the client.
+   - A list of cipher suites (encryption algorithms) the client can use.
+   - A randomly generated string called the "client random."
+
+2. ServerHello: The server responds with a `ServerHello` message, which includes:
+   - The selected TLS version.
+   - The chosen cipher suite from the client’s list.
+   - A "server random" string.
+   - The server’s digital certificate, which contains the server’s public key and is signed by a Certificate Authority (CA).
+
+3. Certificate Verification: The client verifies the server’s certificate using its list of trusted CAs. If the certificate is valid, the client proceeds to generate a "pre-master secret," which is encrypted using the server’s public key and sent to the server.
+
+4. Key Exchange: The server decrypts the pre-master secret using its private key. Both the client and server now use the pre-master secret, along with the client random and server random, to generate a symmetric session key. This key will be used for encrypting and decrypting data during the session.
+
+5. Finished Messages: Both the client and server send a `Finished` message to confirm that the handshake is complete. These messages are encrypted using the session key to ensure that the handshake was successful and secure.
+
+6. Secure Communication: Once the handshake is complete, all data exchanged between the client and server is encrypted using the symmetric session key, ensuring confidentiality and integrity.
+
 Browser
 -------
 
@@ -570,6 +594,7 @@ The components of the browsers are:
   need to save all sorts of data locally, such as cookies. Browsers also
   support storage mechanisms such as localStorage, IndexedDB, WebSQL and
   FileSystem.
+
 
 HTML parsing
 ------------
