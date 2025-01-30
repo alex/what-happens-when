@@ -678,6 +678,24 @@ GPU Rendering
 Window Server
 -------------
 
+Virtual Memory Operations
+-------------------------
+
+* Address Space Allocation
+ Browser process initial memory mapping
+ Dynamic heap expansion during page load
+ Memory-mapped files for cached resources
+
+* Page Fault Handling
+ Demand paging during JavaScript execution
+ Copy-on-write optimizations for process forking
+ Lazy loading of rendered content
+
+* Memory Pressure Management
+ Tab content prioritization
+ Background tab memory trimming
+ Emergency memory reclamation procedures
+
 Post-rendering and user-induced execution
 -----------------------------------------
 
