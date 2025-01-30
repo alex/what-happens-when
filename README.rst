@@ -674,6 +674,24 @@ GPU Rendering
   of ``GPU`` massive parallelism for float point calculations required for
   the rendering process.
 
+* GPU Pipeline Details
+ When the browser initiates GPU-accelerated rendering, the following detailed pipeline is executed:
+ Command Buffer Generation
+* The browser's rendering engine generates GPU commands
+ Commands are batched into command buffers to minimize API overhead
+ Priority queuing is implemented for critical rendering tasks
+ Shader Compilation and Management
+* Just-in-time compilation of vertex and fragment shaders
+ Shader program caching to improve subsequent page loads
+ Dynamic shader permutation handling for different rendering scenarios
+ Memory Management
+* Texture atlasing for efficient GPU memory usage
+ Unified memory architecture utilization on supported hardware
+ Sophisticated memory pooling for dynamic content
+ Hardware-Specific Optimizations
+* Vendor-specific extensions detection and utilization
+ Multi-GPU handling for systems with discrete and integrated graphics
+ Power state management for mobile devices
 
 Window Server
 -------------
