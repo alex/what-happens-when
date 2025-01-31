@@ -463,7 +463,7 @@ the webserver to determine if the version of the file cached by the web
 browser has been unmodified since the last retrieval (ie. if the web browser
 included an ``ETag`` header), it may instead respond with a request of
 the form::
-
+ and for a good reason—it tests your understanding of how the web works at a fundamental level.ask your interviewer if they’d lik
     304 Not Modified
     [response headers]
 
@@ -519,6 +519,24 @@ to the browser it undergoes the below process:
 * Parsing - HTML, CSS, JS
 * Rendering - Construct DOM Tree → Render Tree → Layout of Render Tree →
   Painting the render tree
+
+Additional Processes Performed by Modern Browsers
+----------------------------------
+
+* Optimization Techniques: Modern browsers implement various performance optimizations such as speculative parsing,
+  lazy loading of images, and preloading important resources to speed up page rendering.
+
+* Security Mechanisms: Browsers enforce security policies like Same-Origin Policy (SOP) and
+  Content Security Policy (CSP) to prevent cross-site scripting (XSS) and other vulnerabilities.
+
+* JavaScript Execution Optimization: JavaScript engines use Just-In-Time (JIT) compilation
+  to convert JavaScript code into optimized machine code for faster execution.
+
+* Multithreading with Web Workers: Browsers support Web Workers to run scripts in background threads,
+  preventing UI freezing and improving responsiveness.
+
+* Hardware Acceleration: Browsers leverage GPU acceleration to offload rendering tasks from the CPU, improving graphics performance.
+
 
 Browser
 -------
