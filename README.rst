@@ -463,7 +463,7 @@ the webserver to determine if the version of the file cached by the web
 browser has been unmodified since the last retrieval (ie. if the web browser
 included an ``ETag`` header), it may instead respond with a request of
 the form::
-
+The authority from which the index HTML page will be requested is specified—in this case, google.com. Once google.com is resolved to its corresponding IP address by the DNS, this IP address is then used to send an HTTP GET request to retrieve the index HTML page.
     304 Not Modified
     [response headers]
 
