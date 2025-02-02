@@ -223,6 +223,20 @@ DNS lookup
   ``ARP process`` below for the DNS server.
 * If the DNS server is on a different subnet, the network library follows
   the ``ARP process`` below for the default gateway IP.
+* In the case where the DNS server has to be accessed on a different subnet,
+  the DNS query may be sent to the ISP's DNS server. If that domain's IP is not
+  cached on the ISP's DNS server, the query will be forwarded to a recursive
+  DNS resolver.
+* The DNS resolver first checks its cache for the domain IP address. If not
+  present, it queries the root DNS nameserver.
+* The root DNS nameserver will provide the TLD nameservers for that domain.
+  Root nameserver does not hold IP addresses for any domains.
+* The resolver moves to query the provided TLD nameservers. The TLD nameserver
+  provides the authoritative nameservers for that domain.
+* The resolver queries the authoritative nameserver, which resolves the domain
+  name to its IP address.
+* The resolver caches the IP address for future DNS lookups and sends resolved
+  IP address back.
 
 
 ARP process
