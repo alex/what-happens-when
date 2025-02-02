@@ -674,6 +674,11 @@ GPU Rendering
   of ``GPU`` massive parallelism for float point calculations required for
   the rendering process.
 
+* Modern browsers optimize ``GPU`` usage for tasks beyond just rendering,  
+  including video decoding, ``CSS`` animations, and ``WebGL``/``WebGPU`` graphics.  
+  ``GPU``-based compositing ensures smooth scrolling and transitions,  
+  reducing ``CPU`` overhead. 
+
 
 Window Server
 -------------
