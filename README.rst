@@ -297,6 +297,14 @@ the default gateway it can resume its DNS process:
   requested and that flows up the list of DNS servers until the SOA is reached,
   and if found an answer is returned.
 
+Content delivery networks
+-------------------------
+
+After the DNS lookup and connection setup, web content is often retrieved from a Content Delivery Network (CDN) rather than the origin server.
+
+A CDN is a network of geographically distributed servers designed to deliver static assets (e.g., images, JavaScript, CSS) efficiently. When a user requests a webpage, the CDN serves cached content from the nearest server, reducing latency, bandwidth usage, and server load. This ensures faster load times and a smoother browsing experience, especially for global websites like Google.
+
+
 Opening of a socket
 -------------------
 Once the browser receives the IP address of the destination server, it takes
