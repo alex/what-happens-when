@@ -223,6 +223,12 @@ DNS lookup
   ``ARP process`` below for the DNS server.
 * If the DNS server is on a different subnet, the network library follows
   the ``ARP process`` below for the default gateway IP.
+* If the configured DNS server (e.g., ISP’s caching DNS) does not have the record,
+  it performs a recursive or iterative query.
+* In a recursive query, the resolver contacts other DNS servers on behalf of the
+  client until it finds the answer.
+* In an iterative query, the resolver returns a referral to another DNS server
+  that might have the answer, and the client follows up with additional queries.
 
 
 ARP process
