@@ -709,3 +709,51 @@ page rendering and painting.
 .. _`downgrade attack`: http://en.wikipedia.org/wiki/SSL_stripping
 .. _`OSI Model`: https://en.wikipedia.org/wiki/OSI_model
 .. _`Spanish`: https://github.com/gonzaleztroyano/what-happens-when-ES
+
+Firewall
+````````
+Before reaching Google's servers, the request passes through multiple firewalls that filter traffic based on security rules.
+Firewalls prevent unauthorized access, block malicious traffic, and allow legitimate requests.
+Google's firewall rules may include:
+Blocking requests from blacklisted IPs.
+Filtering requests with suspicious headers.
+Rate-limiting excessive traffic to prevent DDoS attacks.
+
+Load Balancer
+`````````````
+Once the request reaches Google’s infrastructure, it is handled by a load balancer, which:
+Distributes traffic across multiple web servers.
+Ensures high availability and fault tolerance.
+Routes requests to the nearest data center for low latency.
+Load balancers use Layer 4 (TCP) or Layer 7 (HTTP/HTTPS) routing to optimize performance.
+
+Application Server
+``````````````````
+For dynamic content (e.g., search results), the web server forwards the request to an application server (e.g., Python, Java, Node.js).
+The application server:
+Processes business logic.
+Executes user authentication, data processing, and API calls.
+Interacts with the database for retrieving or storing information.
+
+Database
+````````
+The application server queries a database (e.g., MySQL, PostgreSQL, Google Bigtable).
+The database:
+Retrieves stored indexed search results.
+Handles user account data if logged in.
+Optimizes queries using caching layers (e.g., Redis, Memcached) to improve response times.
+
+The response is sent back through:
+``````````````````````````````````
+Application server
+Web server
+Load balancer
+Firewall
+TCP/IP network
+Browser (where rendering happens)
+
+Final Rendering and User Interaction
+````````````````````````````````````
+The browser parses HTML, applies CSS, and executes JavaScript.
+GPU acceleration is used for rendering images, animations, and transitions.
+The page is displayed, and user interactions trigger further AJAX requests or WebSocket connections.
