@@ -520,6 +520,86 @@ to the browser it undergoes the below process:
 * Rendering - Construct DOM Tree → Render Tree → Layout of Render Tree →
   Painting the render tree
 
+When you type google.com and press enter
+-----------------------------------------
+
+1. The Browser Query:
+This is the first step of the process where you type a URL on the search
+bar of the browser.
+
+2. The DNS Resolver:
+The Domain Name Server (DNS) in simple words, is a technology that translates
+human adapted text-based domain names to machine adapted numerical based IP.
+When you type "google.com" on your browser, the browser needs to find the IP
+address of the server hosting the website.
+
+What is an IP address?
+Imagine every device on the internet was a house. To send a letter to a
+friend's house you would need your friend's house address. That house address
+is what we call IP (Internet Protocol) address. An IP address
+(Internet Protocol address) is a unique number assigned to a device on a
+network. It helps identify and locate devices, allowing them to communicate
+over the internet.
+It is difficult for humans to always remember the IP address for a device
+because it is a set of number. It is for this reason that the DNS was created,
+as it maps an IP address to a text-based name (e.g.
+google.com - 142.250.200.142)
+
+The browser has to find the IP address of the "google.com" domain:
+
+Browser Cache: The browser checks its storage to see if it has the IP address
+
+OS Cache: If the browser doesn't have it reaches out to the OS who also checks
+its storage for the IP address
+
+DNS Resolver: When they both don't have it, the browser reaches out to the DNS
+resolver (usually managed by your internet service provider (ISP)).
+The DNS resolver begins a recursive search, from the root nameserver, through the
+.com top-level nameserver, to the Authoritative DNS server of "google.com"
+which then gives the actual IP address closest to your location.
+
+Upon getting the IP address the DNS resolver then returns it to the browser.
+
+3. HTTP Request:
+Upon getting the IP address, the browser initiates a TCP/IP connection with
+google on port 443 (The default port for HTTPS).
+Then a sequence of processes occurs:
+
+Firewall: A firewall is a network security device, either hardware or
+software-based, which monitors all incoming and outgoing traffic and based
+on a defined set of security rules accepts, rejects, or drops
+that specific traffic. The request is checked by "google.com" firewall to
+verify if it passes the security rules set in place.
+
+HTTPS: To ensure that the data going to and from the browser is secure the
+browser establishes a Hyper Text Transfer Protocol Secure (HTTPS).
+The HTTPS is a secure extension of the HTTP protocol. The browser and website
+agree on encryption methods and the website sends its SSL/TLS
+certificate (issued by a trusted authority). The browser then verifies the
+certificate to ensure that the website is genuine.
+
+Load Balancer: Most websites have more than one server to handle various
+amount of traffic. Websites like "google.com" have thousands of servers due
+to the amount of traffic. To balance this traffic among different servers,
+a load balancer is used with a combination of algorithms.
+The load balancer sends the request to a web server to process the request.
+
+4. HTTP Response:
+Web Server: A webserver is a hardware device or a software that is used to
+host static files of a website. The webserver receives the request from the
+load balancer and sends it to the Application server.
+
+Application server: The application server is programmed with a template to
+create dynamic content using information from the database.
+
+Database: The database contains information about the site which is used
+queried and use to create dynamic content to be served to the browser.
+
+After creating the content, the Application server sends it to the web server
+which then sends back an HTTP response containing the contents of the webpage.
+The browser receives the response in packets through the TCP/IP connection.
+When the packets are complete the browser renders the response on a webpage.
+
 Browser
 -------
 
