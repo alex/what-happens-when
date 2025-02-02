@@ -619,6 +619,34 @@ set to "complete" and a "load" event is fired.
 Note there is never an "Invalid Syntax" error on an HTML page. Browsers fix
 any invalid content and go on.
 
+Advanced Load Balancing Techniques
+----------------------------------
+
+When a user types https://www.google.com into their browser, the request is not handled by a single server. Instead, load balancing ensures the request is efficiently routed to an available, geographically optimal server. Google employs sophisticated load-balancing mechanisms to maintain performance and reliability at a global scale.
+
+__Anycast DNS: The First Layer of Distribution__
+
+Google leverages Anycast DNS to route users to the nearest data center. Instead of a single IP address pointing to one server, multiple geographically distributed servers share the same IP. The request is automatically directed to the closest, healthiest data center, reducing latency and improving fault tolerance.
+
+__Google’s Maglev Load Balancer__
+
+Once inside a data center, the request is further distributed using Maglev, Google’s software-based load balancer. Maglev offers:
+
+- Consistent hashing to evenly distribute traffic across backend servers.
+- Connection tracking to ensure requests from the same user go to the same backend.
+- High availability by automatically rerouting traffic in case of server failure.
+
+__Layer 7 Load Balancing for Intelligent Routing__
+
+Google also employs Layer 7 (Application Layer) load balancing, which enables:
+
+- SSL Termination, reducing the processing overhead on backend servers.
+- Content-based routing, directing requests to different backend pools based on URL paths or request types.
+- Autoscaling, dynamically adjusting the number of servers based on demand.
+
+Google’s multi-layered load balancing approach—leveraging Anycast DNS, Maglev, and Layer 7 strategies—ensures that requests to google.com are handled with maximum speed, reliability, and efficiency. Understanding these techniques is crucial for engineers working with distributed systems and high-traffic applications.
+
+
 CSS interpretation
 ------------------
 
