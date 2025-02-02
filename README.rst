@@ -519,6 +519,7 @@ to the browser it undergoes the below process:
 * Parsing - HTML, CSS, JS
 * Rendering - Construct DOM Tree → Render Tree → Layout of Render Tree →
   Painting the render tree
+* Caching - The browser caches the documents received to prevent if from making a request to google's servers as long as the documents are not modified
 
 Browser
 -------
@@ -662,6 +663,15 @@ Page Rendering
 * Final layer positions are computed and the composite commands are issued
   via Direct3D/OpenGL. The GPU command buffer(s) are flushed to the GPU for
   asynchronous rendering and the frame is sent to the window server.
+
+Caching
+-------
+* The browser caches the documents received to prevent if from making a request to google's servers as long as the documents are not modified.
+* When a request is made for that same resource in the future, the browser sends an HTTP request with the header `If-Not-Modified:`.
+* The header's value is the value of `Last-Modified:` header of the previous request
+* The server compares the values. If they are the same the server sends an HTTP `304 Not Modified` response with an empty body.
+* The browser renders the documents it has in its cache.
+  
 
 GPU Rendering
 -------------
