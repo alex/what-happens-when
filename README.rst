@@ -224,6 +224,37 @@ DNS lookup
 * If the DNS server is on a different subnet, the network library follows
   the ``ARP process`` below for the default gateway IP.
 
+DNS Lookup Process
+----------
+
+1. **Browser Cache Check**  
+   - The browser first checks its **local DNS cache** for a cached IP address for `www.google.com`.  
+     - *Example*: In Chrome, view the DNS cache at `chrome://net-internals/#dns`.  
+   - If the entry is expired or missing, the lookup proceeds to the OS level.
+
+2. **Operating System (OS) Query**  
+   - The browser invokes the OS’s DNS resolver via a system call (e.g., `gethostbyname` on Linux/Unix or `getaddrinfo` on modern systems).  
+   - The OS checks:  
+     - **Hosts File**: A local file mapping domains to IPs (e.g., `/etc/hosts` on Linux/macOS, `C:\Windows\System32\drivers\etc\hosts` on Windows).  
+     - **OS DNS Cache**: Windows caches in the "DNS Client" service; Linux/macOS use `nscd` or `systemd-resolved`.  
+
+3. **DNS Server Query**  
+   - If no local entry exists, the OS contacts the **configured DNS resolver** (e.g., your router, ISP’s DNS, or a custom resolver like `8.8.8.8`).  
+   - **Subnet Handling**:  
+     - If the DNS server is on the **same subnet**, the OS uses **ARP** to resolve the DNS server’s MAC address.  
+     - If on a **different subnet**, the OS sends the DNS query to the **default gateway** (router), which requires ARP for the gateway’s MAC address.  
+
+4. **DNS Resolution Workflow**  
+   - The DNS resolver performs a **recursive lookup**:  
+     1. **Root DNS Servers**: Direct the resolver to TLD (Top-Level Domain) servers for `.com`.  
+     2. **.com TLD Servers**: Refer to Google’s authoritative DNS servers.  
+     3. **Authoritative DNS Servers**: Return the final IP for `www.google.com`, often with **CNAME records** (aliases) pointing to Google’s infrastructure (e.g., `google.com.edgekey.net`).  
+   - The resolver caches the result based on the **TTL (Time to Live)** value.  
+
+5. **Edge Cases & Security**  
+   - **DNS Over HTTPS (DoH)**: Modern browsers may bypass traditional DNS and use encrypted DoH (e.g., Firefox/Cloudflare).  
+   - **DNS Cache Poisoning**: Malicious actors can inject false DNS records; mitigations like **DNSSEC** (DNS Security Extensions) validate responses.  
+   - **Troubleshooting**: Use tools like `nslookup`, `dig`, or `whois` to debug DNS issues.  
 
 ARP process
 -----------
