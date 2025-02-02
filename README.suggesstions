@@ -1,0 +1,2 @@
+SSL can terminated at the Load balancer which then splits the requests to the best server possible based on the algorithm of choice. This can be round robin. As google is a distributed system load balancing has to be a very crucial part of everything googling.
+To minimize unwanted intruders the system has to have a firewall that is a security feature preventing access to parts of the code or system/ servers
