@@ -367,6 +367,37 @@ This send and receive happens multiple times following the TCP connection flow:
    * The other sides ACKs the FIN packet and sends its own FIN
    * The closer acknowledges the other side's FIN with an ACK
 
+Load Balancing and Traffic Distribution
+----------------------------------------
+
+Once the connection reaches the destination server, it may not be processed by a single machine.
+Instead, **a load balancer** is used to distribute incoming traffic across multiple backend servers
+to optimize resource use, maximize throughput, and minimize response time.
+
+**Types of Load Balancing:**
+1. **DNS-Based Load Balancing**
+   - Uses DNS to resolve the same hostname to different IP addresses.
+   - Often used in **CDNs (Content Delivery Networks)**.
+
+2. **Layer 4 Load Balancing (Transport Layer)**
+   - Operates at the **TCP/UDP level**.
+   - Distributes traffic based on **IP address and port**.
+
+3. **Layer 7 Load Balancing (Application Layer)**
+   - Operates at the **HTTP/HTTPS** level.
+   - Makes routing decisions based on **URL paths, HTTP headers, cookies, or user sessions**.
+
+Modern **cloud providers** such as AWS, Google Cloud, and Azure offer **load balancing solutions** to
+automatically scale resources based on demand. Load balancers also support **SSL termination**,
+caching, and security features to reduce server load.
+
+✅ **Example: How Google Uses Load Balancing**
+- A user request to **google.com** first reaches a **DNS-based load balancer** that directs the request to a data center.
+- Within the data center, a **Layer 4 load balancer** directs the request to an available server.
+- A **Layer 7 load balancer** may further route requests based on content type (e.g., search vs. images).
+
+Next, the **TLS handshake** begins to establish a secure connection.
+
 TLS handshake
 -------------
 * The client computer sends a ``ClientHello`` message to the server with its
