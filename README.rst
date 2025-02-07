@@ -224,6 +224,21 @@ DNS lookup
 * If the DNS server is on a different subnet, the network library follows
   the ``ARP process`` below for the default gateway IP.
 
+### DNS Resolution
+------------------
+
+When you type a URL, the first step is resolving the domain name using the Domain Name System (DNS). 
+Most systems use recursive DNS resolvers to find the IP address of the requested website.
+
+#### DNSSEC: Secure DNS Resolution
+----------------------------------
+
+DNSSEC (Domain Name System Security Extensions) adds a layer of cryptographic security to DNS queries. 
+It prevents DNS spoofing attacks by ensuring DNS records are digitally signed and authenticated.
+
+- **How it works:** DNSSEC uses public-key cryptography to sign responses.
+- **Benefit:** Protects against "man-in-the-middle" and cache poisoning attacks.
+- **Adoption:** Google Public DNS and Cloudflare DNS support DNSSEC validation.
 
 ARP process
 -----------
