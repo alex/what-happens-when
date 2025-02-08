@@ -367,6 +367,12 @@ This send and receive happens multiple times following the TCP connection flow:
    * The other sides ACKs the FIN packet and sends its own FIN
    * The closer acknowledges the other side's FIN with an ACK
 
+Here's what each term means:
+
+SYN: Short for "synchronize." It's a message sent to initiate a connection.
+ACK: Short for "acknowledge." It indicates that a packet or request has been received.
+SYN-ACK: A combined message that both synchronizes (SYN) and acknowledges (ACK) the receipt of the initial SYN.
+
 TLS handshake
 -------------
 * The client computer sends a ``ClientHello`` message to the server with its
