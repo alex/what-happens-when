@@ -689,6 +689,45 @@ the Google homepage. Scripts can cause additional network requests to be
 performed, as well as modify the page or its layout, causing another round of
 page rendering and painting.
 
+Updates on HTTP/3 and TLS 1.3
+-----------------------------
+
+HTTP/3 is the latest version of the HTTP protocol, designed to address the
+performance limitations of previous versions. Unlike HTTP/1.1 and HTTP/2, which
+rely on TCP, HTTP/3 is built on top of QUIC (Quick UDP Internet Connections).
+This results in several benefits:
+
+* **Faster Handshake:** QUIC reduces connection setup time by combining the TLS
+  handshake with the transport handshake.
+* **Multiplexing Without Head-of-Line Blocking:** Unlike HTTP/2 over TCP, where
+  a single lost packet can block the delivery of other streams, QUIC allows
+  independent streams to continue without being affected by packet loss.
+* **Improved Mobile Performance:** QUIC’s connection migration allows seamless
+  transitions between networks (e.g., switching from Wi-Fi to mobile data)
+  without re-establishing a new connection.
+
+Many modern browsers, including ``Chrome``, ``Firefox``, and ``Edge``, have
+already adopted HTTP/3. Major websites such as Google and Facebook also support
+HTTP/3 for better performance.
+
+**TLS 1.3: Enhanced Security and Speed**
+
+TLS 1.3 is the latest version of the Transport Layer Security (TLS) protocol,
+which encrypts data to ensure secure communication over the internet. Compared
+to TLS 1.2, it brings:
+
+* **Faster Handshake (Zero Round-Trip Time Resumption - 0-RTT):** Reduces the
+  number of round-trips required to establish a secure connection, improving
+  load times.
+* **Stronger Encryption:** Removes outdated cryptographic algorithms (e.g., RSA
+  key exchange, SHA-1) and enforces forward secrecy by default.
+* **Improved Performance:** TLS 1.3 is more efficient, reducing latency and
+  improving response times, particularly in mobile environments.
+
+Since most major browsers and web servers (e.g., ``NGINX``, ``Apache``,
+``Cloudflare``) have already adopted TLS 1.3, websites benefit from better
+security and improved performance.
+
 .. _`Creative Commons Zero`: https://creativecommons.org/publicdomain/zero/1.0/
 .. _`"CSS lexical and syntax grammar"`: http://www.w3.org/TR/CSS2/grammar.html
 .. _`Punycode`: https://en.wikipedia.org/wiki/Punycode
