@@ -290,6 +290,33 @@ Switch:
 Now that the network library has the IP address of either our DNS server or
 the default gateway it can resume its DNS process:
 
+Traditionally, DNS queries were sent unencrypted over UDP or TCP to a DNS 
+resolver. However, modern browsers and operating systems increasingly use 
+encrypted DNS protocols to enhance privacy and security.
+
+DNS over HTTPS (DoH):
+
+* The browser sends DNS queries over HTTPS instead of raw UDP.
+* This prevents ISPs and other network intermediaries from snooping on or
+  modifying DNS requests.
+* DoH is enabled by default in some browsers and can be configured manually.
+
+DNS over TLS (DoT):
+
+* Similar to DoH, but runs on a dedicated port (TCP/853) instead of HTTPS.
+* Typically used at the OS or network level rather than by browsers directly.
+
+When DoH or DoT is enabled, the browser first checks its local cache. If no 
+record is found:
+
+* Sends an encrypted request to the configured resolver.
+* The resolver decrypts the request, resolves the domain, and sends an encrypted
+  response.
+* The browser extracts the IP address and proceeds with the connection.
+
+If DoH/DoT is unavailable, the browser falls back to traditional DNS 
+resolution:
+
 * The DNS client establishes a socket to UDP port 53 on the DNS server,
   using a source port above 1023.
 * If the response size is too large, TCP will be used instead.
@@ -417,7 +444,18 @@ control`_. This varies depending on the sender; the most common algorithms are
 HTTP protocol
 -------------
 
-If the web browser used was written by Google, instead of sending an HTTP
+Modern browsers attempt to establish a connection using HTTP/3, which is built
+on QUIC which operates over UDP and removes head-of-line blocking at the
+transport layer. If the browser supports HTTP/3 and the server advertises
+support via the Alt-Svc header, the browser:
+
+* Sends an initial QUIC handshake over UDP to establish a secure connection.
+* Negotiates encryption parameters inline using TLS 1.3.
+* Begins transmitting HTTP requests as soon as the handshake completes.
+
+If HTTP/3 fails, the browser falls back to HTTP/2 or HTTP/1.1 over TCP.
+
+If the browser is older and was written by Google, instead of sending an HTTP
 request to retrieve the page, it will send a request to try and negotiate with
 the server an "upgrade" from HTTP to the SPDY protocol.
 
