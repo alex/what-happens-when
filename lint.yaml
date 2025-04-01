@@ -1,0 +1,53 @@
+name: Lint with write-good and doc8
+
+on:
+  push:
+    branches:
+      - master
+      - main
+  pull_request:
+    branches:
+      - master
+      - main
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.13' 
+
+      - name: Install doc8
+        run: |
+          python -m pip install -U pip setuptools wheel
+          python -m pip install doc8
+          python -m pip install -U sphinx
+          python -m pip install restructuredtext_lint
+
+      - name: Run doc8
+        run: doc8 *.rst
+
+      - name: Run rst-lint
+        run: |
+          rst-lint .
+  style:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+
+      - name: Install dependencies
+        run: npm install -g write-good
+
+      - name: Run write-good
+        run: write-good *.rst --so --thereIs --cliches
