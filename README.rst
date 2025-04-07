@@ -674,7 +674,17 @@ GPU Rendering
   of ``GPU`` massive parallelism for float point calculations required for
   the rendering process.
 
+### Load Balancing and Traffic Distribution :
 
+After the DNS resolves the domain name to an IP address, and before the web server processes the request, traffic is often routed through a **Load Balancer**.
+
+A load balancer:
+- Distributes incoming traffic across multiple servers
+- Ensures high availability and reliability
+- Uses strategies like Round Robin, Least Connections, or IP Hashing
+- May integrate with CDNs for global traffic management
+
+This allows Google (or any high-traffic service) to efficiently serve billions of users with speed and redundancy. 
 Window Server
 -------------
 
