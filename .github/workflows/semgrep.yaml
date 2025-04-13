@@ -1,0 +1,31 @@
+name: Semgrep
+
+on:
+  pull_request:
+    branches:
+      - main
+      - master
+  push:
+    branches:
+      - main
+      - master
+
+jobs:
+  semgrep:
+    name: Run Semgrep
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python (for Semgrep CLI)
+        uses: actions/setup-python@v5
+        with:
+            python-version: '3.13'
+
+      - name: Install Semgrep
+        run: pip install semgrep
+
+      - name: Run Semgrep
+        run: semgrep scan --config .semgrep/*.yaml

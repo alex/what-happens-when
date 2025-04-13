@@ -1,0 +1,23 @@
+name: 'Close stale PRs'
+
+on:
+  schedule:
+    - cron: '0 0 * * *' # Runs daily at midnight UTC
+
+permissions:
+  issues: write
+  pull-requests: write
+
+jobs:
+  stale:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/stale@v9
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          stale-pr-message: 'This PR has been automatically marked as stale due to 90 days of inactivity. It will be closed soon if no further activity occurs.'
+          close-pr-message: 'Closing this PR due to 90 days of inactivity. Feel free to reopen or open a new one if needed.'
+          days-before-pr-stale: 90
+          days-before-pr-close: 0
+          stale-issue-message: '' # Leave blank to ignore issues
+          close-issue-message: '' # Leave blank to ignore issues

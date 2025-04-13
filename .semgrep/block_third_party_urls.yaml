@@ -1,0 +1,92 @@
+rules:
+  - id: broken-link-suspect
+    name: Suspicious or broken link reference
+    message: Possible broken or invalid link. Double-check the URL or reference.
+    severity: WARNING
+    languages: [generic]
+    patterns:
+      - pattern: 'http[s]?://[^ ]*(\.\.\.|#)$'
+      - pattern: 'http[s]?://[^ ]*(example\.com|localhost|127\.0\.0\.1)'
+      - pattern: '`[^`]+ <http[s]?://[^>]+>`_'  # reST style — catch if pointing to junk
+    paths:
+      include: ['README.rst']
+
+  - id: crlf-in-string
+    name: Detect CRLF in string literals
+    message: CRLF line endings detected in string literal. Use LF (`\n`) instead.
+    severity: WARNING
+    languages: [python, javascript]
+    pattern: '"%r\\n%"'
+    metadata:
+      category: formatting
+
+  - id: markdown-in-rst
+    name: Markdown syntax in reStructuredText
+    message: Detected Markdown syntax in a .rst file. Did you mean to use reST formatting?
+    severity: WARNING
+    languages: [generic]
+    patterns:
+      - pattern: '^# '
+      - pattern: '^- '
+      - pattern: '```'
+    paths:
+      include: ["README.rst"]
+
+  - id: placeholder-language
+    message: Placeholder text detected — replace with real content.
+    severity: ERROR
+    languages: [generic]
+    patterns:
+      - pattern: 'your project'
+      - pattern: 'lorem ipsum'
+      - pattern: 'description goes here'
+    paths:
+      include: ['README.rst']
+
+  - id: raw-urls
+    name: Avoid raw URLs
+    message: Use reStructuredText-style links instead of raw URLs.
+    severity: WARNING
+    languages: [generic]
+    pattern: 'http[s]?://[^\s)]+'
+    paths:
+      include: ["README.rst"]
+
+  - id: third-party-urls
+    name: Block third-party URLs
+    message: Avoid using hardcoded third-party URLs. Use environment variables or config files instead.
+    severity: ERROR
+    languages: [python, javascript, typescript]
+    patterns:
+      - pattern: $URL
+      - metavariable-regex:
+          metavariable: $URL
+          regex: '"https?://(?!yourdomain\.com|yourcompany\.io).*"'
+    metadata:
+      category: security
+      technology: web
+
+  - id: todos-in-docs
+    name: Avoid TODOs in documentation
+    message: Remove TODO or FIXME before merging.
+    severity: ERROR
+    languages: [generic]
+    pattern: '(TODO|FIXME)'
+    paths:
+      include: ["README.rst"]
+
+  - id: weak-language
+    name: Weak or vague language in documentation
+    message: This phrase is weak or unclear. Consider rewriting for clarity and impact.
+    severity: INFO
+    languages: [generic]
+    patterns:
+      - pattern: 'very'
+      - pattern: 'really'
+      - pattern: 'just'
+      - pattern: 'basically'
+      - pattern: 'simple'
+      - pattern: 'obviously'
+      - pattern: 'clearly'
+    paths:
+      include: ['README.rst']
