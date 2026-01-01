@@ -174,6 +174,24 @@ Parse URL
     - ``Resource``  "/"
         Retrieve main (index) page
 
+Uniform Resource Locator (URL)
+------------------------------
+
+A URL (Uniform Resource Locator) is a reference or address used to access resources on the internet. It specifies the location of a resource as well as the protocol used to retrieve it. A typical URL consists of several components:
+
+A full URL might look like this: `https://www.google.com/path/to/resource?key1=value1&key2=value2#section1`.
+
+1. **Protocol**: Indicates the method used to access the resource. Common protocols include HTTP (HyperText Transfer Protocol), HTTPS (HTTP Secure), FTP (File Transfer Protocol), and others. Example: `https://`.
+
+2. **Domain Name**: Specifies the domain that hosts the resource. This can be a website's name or IP address. Example: `www.google.com`.
+
+3. **Path**: Specifies the exact location of the resource within the domain. It often represents a directory or file structure, if no explicit path is provided, the default path is the root. Example: `/path/to/resource`.
+
+4. **Query String**: Provides additional parameters for the resource, often used in web forms and database queries. It follows a `?` and consists of key-value pairs separated by `&`. Example: `?key1=value1&key2=value2`.
+
+5. **Fragment**: An optional part that specifies a section within the resource, indicated by a `#`. Example: `#section1`.
+
+If the URL does not specify a protocol, the browser assumes the default protocol, which is typically http:// or https://. Modern browsers usually default to https:// for security reasons. Therefore, the URL is interpreted as https://google.com.
 
 Is it a URL or a search term?
 -----------------------------
