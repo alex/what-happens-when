@@ -39,6 +39,14 @@ popular searches from the internet as a whole. As you are typing
 with each keypress. It may even suggest "google.com" before you finish typing
 it.
 
+The short process of browsing "google.com"
+------------------------------------------------------
+
+Your browser sends a request to your Internet Service Provider (ISP) to locate the IP address associated with "google.com"
+The ISP, through a series of Domain Name System (DNS) queries, resolves the domain name to an IP address, directing the request to Google's servers.
+Google's servers receive the request, process it, and send back the website's data as HTML, CSS, and other resources.
+Your browser interprets and renders the received data, displaying the Google homepage on your screen
+
 The "enter" key bottoms out
 ---------------------------
 
