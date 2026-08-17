@@ -367,6 +367,23 @@ This send and receive happens multiple times following the TCP connection flow:
    * The other sides ACKs the FIN packet and sends its own FIN
    * The closer acknowledges the other side's FIN with an ACK
 
+Path MTU Discovery
+-------------------
+
+Before an appreciable amount of data is sent, the client and server determine
+the largest packet size that can travel the path between them without being
+fragmented. This value is known as the Path MTU (Maximum Transmission Unit).
+
+- During the TCP handshake, each side advertises its Maximum Segment Size
+  (MSS) in the SYN packet's options field. This is typically derived from
+  the MTU of the sender's outgoing network interface (commonly 1500 bytes
+  for Ethernet, minus the IP and TCP header overhead).
+- The smaller of the two advertised MSS values is used for the connection,
+  but this only accounts for the two endpoints - it says nothing about the
+  MTU of every hop along the path between them.
+- To discover the actual path MTU, the sender sets the "Don't Fragment"
+  (DF) bit in the IP header of its outgoing packets.
+
 TLS handshake
 -------------
 * The client computer sends a ``ClientHello`` message to the server with its
