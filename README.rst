@@ -480,6 +480,77 @@ resolving the other domain, and follows all steps up to this point for that
 domain. The ``Host`` header in the request will be set to the appropriate
 server name instead of ``google.com``.
 
+HTTP/2 and HTTP/3
+
+**----------------**
+
+The HTTP request described above uses HTTP/1.1 as an example. Modern browsers can also use HTTP/2 or HTTP/3, which change how HTTP messages are transported over the network.
+
+HTTP/2
+
+**-----**
+
+HTTP/2 is normally used over a TCP connection protected by TLS. Unlike HTTP/1.1, HTTP/2 uses a binary framing layer instead of sending requests and responses as plain-text messages.
+
+Multiple HTTP requests and responses can be multiplexed over a single TCP connection. This means that the browser can send multiple requests at the same time over the same connection instead of requiring a separate connection for each request.
+
+For example, after receiving the initial HTML document, the browser may need to request several resources:
+
+* HTML
+* CSS
+* JavaScript
+* Images
+* Fonts
+
+With HTTP/2, these requests can be sent as separate streams over the same TCP connection.
+
+HTTP/2 also supports header compression using HPACK, which reduces the amount of repeated header data that needs to be transmitted.
+
+The HTTP/2 connection therefore looks approximately like::
+
+```
+Browser
+   |
+   | TCP connection
+   |
+   | TLS
+   |
+   | HTTP/2 streams
+   |
+Server
+```
+
+HTTP/3
+
+**-----**
+
+HTTP/3 uses a different transport protocol called QUIC instead of TCP.
+
+QUIC runs over UDP and provides features normally associated with the transport layer, including reliable delivery, connection establishment, and stream multiplexing. TLS 1.3 is integrated into the QUIC connection establishment.
+
+Because HTTP/3 uses QUIC, losing a packet belonging to one stream does not require other independent streams to wait for that packet in the same way that TCP's ordered byte stream can cause head-of-line blocking.
+
+The HTTP/3 connection therefore looks approximately like::
+
+```
+Browser
+   |
+   | UDP
+   |
+   | QUIC + TLS 1.3
+   |
+   | HTTP/3 streams
+   |
+Server
+```
+
+A browser can use HTTP/1.1, HTTP/2, or HTTP/3 depending on the protocols supported by the browser and server and the protocol negotiated for the connection.
+
+HTTP/2 and HTTP/3 still use the same basic HTTP concepts such as methods, headers, status codes, and resources. The main difference is how HTTP messages are transported and framed.
+
+Thus, after the browser has resolved the server's address and established the appropriate connection, the HTTP request may be carried by HTTP/1.1, HTTP/2, or HTTP/3 depending on the negotiated protocol.
+
+
 HTTP Server Request Handle
 --------------------------
 The HTTPD (HTTP Daemon) server is the one handling the requests/responses on
